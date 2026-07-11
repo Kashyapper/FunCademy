@@ -840,12 +840,39 @@ const ART_LESSON_TITLES = {
   30: ["Storytelling in Art", "Discover how paintings and drawings tell exciting stories."]
 };
 
-function buildCurriculum() {
+function getLevenshteinDistance(a, b) {
+  const matrix = [];
+  for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+  for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) === a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1, // substitution
+          Math.min(
+            matrix[i][j - 1] + 1, // insertion
+            matrix[i - 1][j] + 1  // deletion
+          )
+        );
+      }
+    }
+  }
+  return matrix[b.length][a.length];
+}
+
+function buildCurriculum(grade) {
+  if (!grade) {
+    grade = (typeof appState !== 'undefined' && appState) ? (appState.currentGrade || 1) : 1;
+  }
+  
   GRADE_1_MATH_CURRICULUM.length = 0;
   for (let i = 1; i <= 110; i++) {
     const unit = i <= 20 ? 1 : i <= 40 ? 2 : i <= 60 ? 3 : i <= 80 ? 4 : i <= 95 ? 5 : 6;
-    const standard = unit === 1 ? "1.NBT.A.1" : unit === 2 ? "1.OA.A.1" : unit === 3 ? "1.OA.A.2" : unit === 4 ? "1.NBT.B.2" : unit === 5 ? "1.MD.B.3" : "1.G.A.1";
-    const [title, desc] = LESSON_TITLES[i] || [`Lesson ${i}`, "Learn Grade 1 Math standard."];
+    const standard = `${grade}.Math.${unit}`;
+    const [title, desc] = getLessonTitleAndDesc('math', grade, i);
     GRADE_1_MATH_CURRICULUM.push({
       id: i,
       unit,
@@ -859,8 +886,8 @@ function buildCurriculum() {
   GRADE_1_ELA_CURRICULUM.length = 0;
   for (let i = 1; i <= 110; i++) {
     const unit = i <= 20 ? 1 : i <= 40 ? 2 : i <= 60 ? 3 : i <= 80 ? 4 : i <= 95 ? 5 : 6;
-    const standard = unit === 1 ? "RF.1.2" : unit === 2 ? "RF.1.3" : unit === 3 ? "L.1.1" : unit === 4 ? "L.1.5" : unit === 5 ? "RL.1.1" : "W.1.1";
-    const [title, desc] = ELA_LESSON_TITLES[i] || [`Lesson ${i}`, "Learn Grade 1 ELA standard."];
+    const standard = `${grade}.ELA.${unit}`;
+    const [title, desc] = getLessonTitleAndDesc('ela', grade, i);
     GRADE_1_ELA_CURRICULUM.push({
       id: i,
       unit,
@@ -874,8 +901,8 @@ function buildCurriculum() {
   GRADE_1_HISTORY_CURRICULUM.length = 0;
   for (let i = 1; i <= 30; i++) {
     const unit = i <= 5 ? 1 : i <= 10 ? 2 : i <= 15 ? 3 : i <= 20 ? 4 : i <= 25 ? 5 : 6;
-    const standard = `H.1.${unit}`;
-    const [title, desc] = HISTORY_LESSON_TITLES[i] || [`Lesson ${i}`, "Learn Grade 1 History."];
+    const standard = `${grade}.History.${unit}`;
+    const [title, desc] = getLessonTitleAndDesc('history', grade, i);
     GRADE_1_HISTORY_CURRICULUM.push({
       id: i,
       unit,
@@ -889,8 +916,8 @@ function buildCurriculum() {
   GRADE_1_GEOGRAPHY_CURRICULUM.length = 0;
   for (let i = 1; i <= 30; i++) {
     const unit = i <= 5 ? 1 : i <= 10 ? 2 : i <= 15 ? 3 : i <= 20 ? 4 : i <= 25 ? 5 : 6;
-    const standard = `G.1.${unit}`;
-    const [title, desc] = GEOGRAPHY_LESSON_TITLES[i] || [`Lesson ${i}`, "Learn Grade 1 Geography."];
+    const standard = `${grade}.Geography.${unit}`;
+    const [title, desc] = getLessonTitleAndDesc('geography', grade, i);
     GRADE_1_GEOGRAPHY_CURRICULUM.push({
       id: i,
       unit,
@@ -904,8 +931,8 @@ function buildCurriculum() {
   GRADE_1_SCIENCE_CURRICULUM.length = 0;
   for (let i = 1; i <= 30; i++) {
     const unit = i <= 5 ? 1 : i <= 10 ? 2 : i <= 15 ? 3 : i <= 20 ? 4 : i <= 25 ? 5 : 6;
-    const standard = `S.1.${unit}`;
-    const [title, desc] = SCIENCE_LESSON_TITLES[i] || [`Lesson ${i}`, "Learn Grade 1 Science."];
+    const standard = `${grade}.Science.${unit}`;
+    const [title, desc] = getLessonTitleAndDesc('science', grade, i);
     GRADE_1_SCIENCE_CURRICULUM.push({
       id: i,
       unit,
@@ -919,8 +946,8 @@ function buildCurriculum() {
   GRADE_1_ART_CURRICULUM.length = 0;
   for (let i = 1; i <= 30; i++) {
     const unit = i <= 5 ? 1 : i <= 10 ? 2 : i <= 15 ? 3 : i <= 20 ? 4 : i <= 25 ? 5 : 6;
-    const standard = `A.1.${unit}`;
-    const [title, desc] = ART_LESSON_TITLES[i] || [`Lesson ${i}`, "Learn Grade 1 Art."];
+    const standard = `${grade}.Art.${unit}`;
+    const [title, desc] = getLessonTitleAndDesc('art', grade, i);
     GRADE_1_ART_CURRICULUM.push({
       id: i,
       unit,
@@ -931,7 +958,8 @@ function buildCurriculum() {
     });
   }
 }
-buildCurriculum();
+
+buildCurriculum();buildCurriculum();
 
 Object.defineProperty(window, 'GRADE_1_CURRICULUM', {
   get: () => {
@@ -2933,6 +2961,10 @@ function generateElaQuestion(lessonId) {
 }
 
 function getQuestionsForLesson(subject, lessonId) {
+  const grade = (typeof appState !== 'undefined' && appState) ? (appState.currentGrade || 1) : 1;
+  const dynQ = getGradeSpecificDynamicQuestion(subject, grade, lessonId);
+  if (dynQ) return [dynQ];
+
   if (subject === 'history') return HISTORY_QUESTIONS_LIST[lessonId] || [];
   if (subject === 'geography') return GEOGRAPHY_QUESTIONS_LIST[lessonId] || [];
   if (subject === 'science') return SCIENCE_QUESTIONS_LIST[lessonId] || [];
@@ -2984,6 +3016,20 @@ function getQuestionsForLesson(subject, lessonId) {
 }
 
 function generateMathQuestion(lessonId, index) {
+  const grade = appState.currentGrade || 1;
+  const dynQ = getGradeSpecificDynamicQuestion(appState.currentSubject, grade, lessonId);
+  if (dynQ) {
+    let options = [...dynQ.options];
+    options = options.sort(() => Math.random() - 0.5);
+    return {
+      questionText: dynQ.questionText,
+      correctAnswer: dynQ.correctAnswer,
+      options: options,
+      visualContent: dynQ.visualContent,
+      hint: dynQ.hint
+    };
+  }
+
   if (appState.currentSubject === 'ela' || appState.currentSubject === 'history' || appState.currentSubject === 'geography' || appState.currentSubject === 'science' || appState.currentSubject === 'art' || (appState.currentSubject === 'math' && lessonId === 5)) {
     const qList = getQuestionsForLesson(appState.currentSubject, lessonId);
     const idx = (index !== undefined && index !== null) ? index : 0;
@@ -3224,6 +3270,795 @@ const NARRATION_SCRIPTS = {
 };
 
 // 5. App State Controller
+function migrateProgressMap(savedVal) {
+  const freshCounts = {
+    lessonsCompleted: 0,
+    examsPassed: [false, false, false, false, false, false],
+    reviewCompleted: false,
+    gradeTestPassed: false
+  };
+
+  const map = {
+    1: JSON.parse(JSON.stringify(freshCounts)),
+    2: JSON.parse(JSON.stringify(freshCounts)),
+    3: JSON.parse(JSON.stringify(freshCounts)),
+    4: JSON.parse(JSON.stringify(freshCounts)),
+    5: JSON.parse(JSON.stringify(freshCounts))
+  };
+
+  if (savedVal) {
+    if (savedVal[1] || savedVal["1"]) {
+      for (let g = 1; g <= 5; g++) {
+        if (savedVal[g]) {
+          map[g] = savedVal[g];
+        }
+      }
+    } else {
+      map[1] = savedVal;
+    }
+  }
+  return map;
+}
+
+function createFreshProgressMap() {
+  const freshCounts = {
+    lessonsCompleted: 0,
+    examsPassed: [false, false, false, false, false, false],
+    reviewCompleted: false,
+    gradeTestPassed: false
+  };
+  return {
+    1: JSON.parse(JSON.stringify(freshCounts)),
+    2: JSON.parse(JSON.stringify(freshCounts)),
+    3: JSON.parse(JSON.stringify(freshCounts)),
+    4: JSON.parse(JSON.stringify(freshCounts)),
+    5: JSON.parse(JSON.stringify(freshCounts))
+  };
+}
+
+function getGradeSpecificDynamicQuestion(subject, grade, lessonId) {
+  if (grade <= 1) return null;
+
+  if (subject === 'science') {
+    const unit30 = lessonId <= 5 ? 1 : lessonId <= 10 ? 2 : lessonId <= 15 ? 3 : lessonId <= 20 ? 4 : lessonId <= 25 ? 5 : 6;
+    if (grade === 2) {
+      if (unit30 === 1) {
+        return {
+          questionText: "Which of these is a gas?",
+          correctAnswer: "Water vapor 💨",
+          options: ["Water vapor 💨", "Ice cube 🧊", "Liquid water 💧", "Wood block 🪵"],
+          visualContent: `<div style="font-size: 48px;">💨</div>`,
+          hint: "Gases float and expand to fill any space, like steam or air!"
+        };
+      } else if (unit30 === 2) {
+        return {
+          questionText: "Where would a polar bear feel most at home?",
+          correctAnswer: "The snowy Arctic ❄️",
+          options: ["The snowy Arctic ❄️", "A hot desert 🌵", "A tropical rainforest 🌴", "A grassy savanna 🦁"],
+          visualContent: `<div style="font-size: 48px;">❄️🐻</div>`,
+          hint: "Polar bears have thick white fur to stay warm in freezing cold ice!"
+        };
+      } else {
+        return {
+          questionText: "What can help stop wind or water from washing away soil?",
+          correctAnswer: "Planting tree roots 🌳",
+          options: ["Planting tree roots 🌳", "Pouring more water 💧", "Blowing strong fans 💨", "Digging deeper holes 🕳️"],
+          visualContent: `<div style="font-size: 48px;">🌳🌱</div>`,
+          hint: "Roots act like tiny anchors that hold the dirt tightly in place!"
+        };
+      }
+    }
+    if (grade === 3) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What happens when you push a toy car with unbalanced force?",
+          correctAnswer: "It speeds up and rolls away 🚗",
+          options: ["It speeds up and rolls away 🚗", "It stays completely still 🛑", "It turns into a block 🧱", "It floats to the ceiling 🎈"],
+          visualContent: `<div style="font-size: 48px;">🚗💨</div>`,
+          hint: "Unbalanced forces always make objects speed up, slow down, or turn!"
+        };
+      } else if (unit30 === 2) {
+        return {
+          questionText: "Which trait is inherited from parent animals?",
+          correctAnswer: "Eye color and fur pattern 👁️",
+          options: ["Eye color and fur pattern 👁️", "Knowing how to do tricks 🎪", "Having a favorite toy 🧸", "Being named Buster 🐶"],
+          visualContent: `<div style="font-size: 48px;">🐕🐩</div>`,
+          hint: "Inherited traits are passed down in genes from parents, not learned!"
+        };
+      } else {
+        return {
+          questionText: "Which tool is used to measure how hot or cold the air is?",
+          correctAnswer: "Thermometer 🌡️",
+          options: ["Thermometer 🌡️", "Barometer 🌀", "Rain gauge 🌧️", "Wind vane 💨"],
+          visualContent: `<div style="font-size: 48px;">🌡️</div>`,
+          hint: "A thermometer has liquid inside that rises when it gets warm!"
+        };
+      }
+    }
+    if (grade === 4) {
+      if (unit30 === 1) {
+        return {
+          questionText: "Which moving object has the most kinetic energy?",
+          correctAnswer: "A fast speeding train 🚄",
+          options: ["A fast speeding train 🚄", "A slowly crawling snail 🐌", "A parked bicycle 🚲", "A walking toddler 🚶"],
+          visualContent: `<div style="font-size: 48px;">🚄⚡</div>`,
+          hint: "Kinetic energy is energy of motion. The faster and heavier it is, the more energy it has!"
+        };
+      } else if (unit30 === 2) {
+        return {
+          questionText: "What is the highest point of a wave called?",
+          correctAnswer: "Crest 🌊",
+          options: ["Crest 🌊", "Trough 📉", "Amplitude 📏", "Wavelength ↔️"],
+          visualContent: `<div style="font-size: 48px;">🌊</div>`,
+          hint: "The top of a wave is the crest, and the lowest bottom is the trough!"
+        };
+      } else {
+        return {
+          questionText: "Where are the oldest rock layers usually found in a cliff?",
+          correctAnswer: "At the very bottom layer 🪨",
+          options: ["At the very bottom layer 🪨", "At the very top layer 🏔️", "In the exact middle 🧭", "Floating in the air ☁️"],
+          visualContent: `<div style="font-size: 48px;">⛰️🪨</div>`,
+          hint: "New layers pile on top over millions of years, leaving the oldest at the bottom!"
+        };
+      }
+    }
+    if (grade === 5) {
+      if (unit30 === 1) {
+        return {
+          questionText: "If you melt 100 grams of ice, how many grams of liquid water do you get?",
+          correctAnswer: "Exactly 100 grams 💧",
+          options: ["Exactly 100 grams 💧", "50 grams 🥛", "150 grams 🌊", "0 grams 💨"],
+          visualContent: `<div style="font-size: 48px;">🧊💧</div>`,
+          hint: "Matter cannot be created or destroyed, only changed in form!"
+        };
+      } else if (unit30 === 2) {
+        return {
+          questionText: "Where do green plants get the energy to make food?",
+          correctAnswer: "Direct sunlight ☀️",
+          options: ["Direct sunlight ☀️", "Soil minerals 🪨", "Rain water 🌧️", "Nighttime air 🌙"],
+          visualContent: `<div style="font-size: 48px;">☀️🌱</div>`,
+          hint: "Plants use photosynthesis to convert sun energy into sugar food!"
+        };
+      } else {
+        return {
+          questionText: "Why do star constellations seem to move across the night sky?",
+          correctAnswer: "Because the Earth rotates on its axis 🌍",
+          options: ["Because the Earth rotates on its axis 🌍", "Because stars are flying fast 🌠", "Because the Sun pushes them ☀️", "Because clouds pull them ☁️"],
+          visualContent: `<div style="font-size: 48px;">🌌🌍</div>`,
+          hint: "The Earth spins around once every 24 hours, making stars appear to move!"
+        };
+      }
+    }
+  }
+
+  if (subject === 'history') {
+    const unit30 = lessonId <= 5 ? 1 : lessonId <= 10 ? 2 : lessonId <= 15 ? 3 : lessonId <= 20 ? 4 : lessonId <= 25 ? 5 : 6;
+    if (grade === 2) {
+      if (unit30 === 1) {
+        return {
+          questionText: "Who was the first President of the United States?",
+          correctAnswer: "George Washington 🇺🇸",
+          options: ["George Washington 🇺🇸", "Abraham Lincoln 🎩", "Thomas Jefferson 📜", "Barack Obama 🏛️"],
+          visualContent: `<div style="font-size: 48px;">🇺🇸🏛️</div>`,
+          hint: "He was a general in the war and is on the one-dollar bill!"
+        };
+      } else {
+        return {
+          questionText: "How did people travel long distances before cars were invented?",
+          correctAnswer: "Horse and carriage 🐴",
+          options: ["Horse and carriage 🐴", "Electric trains 🚄", "Subway systems 🚇", "Supersonic jets ✈️"],
+          visualContent: `<div style="font-size: 48px;">🐴🚜</div>`,
+          hint: "People relied on animals like horses and oxen for travel and farming!"
+        };
+      }
+    }
+    if (grade === 3) {
+      if (unit30 === 1) {
+        return {
+          questionText: "Which home was a cone-shaped tent made of buffalo hides?",
+          correctAnswer: "Tipi (Tepee) ⛺",
+          options: ["Tipi (Tepee) ⛺", "Longhouse 🪵", "Pueblo adobe 🧱", "Log cabin 🪵"],
+          visualContent: `<div style="font-size: 48px;">⛺🦬</div>`,
+          hint: "Tipis could be packed up easily as tribes followed buffalo herds!"
+        };
+      } else {
+        return {
+          questionText: "Who is the leader of a local city government?",
+          correctAnswer: "The Mayor 👔",
+          options: ["The Mayor 👔", "The Governor 🏛️", "The President 🇺🇸", "The Senator 📜"],
+          visualContent: `<div style="font-size: 48px;">👔🏢</div>`,
+          hint: "Mayors lead the city council to make local laws and manage services!"
+        };
+      }
+    }
+    if (grade === 4) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What was the first permanent English settlement in America?",
+          correctAnswer: "Jamestown ⚓",
+          options: ["Jamestown ⚓", "Plymouth Rock 🪨", "Roanoke Island 🏝️", "New Amsterdam 🗽"],
+          visualContent: `<div style="font-size: 48px;">⚓⛵</div>`,
+          hint: "It was founded in Virginia in 1607 by explorers seeking gold!"
+        };
+      } else {
+        return {
+          questionText: "Which invention by Eli Whitney made cotton cleaning much faster?",
+          correctAnswer: "Cotton Gin ⚙️",
+          options: ["Cotton Gin ⚙️", "Steam Engine 🚂", "Telegraph 📟", "Spinning Jenny 🧵"],
+          visualContent: `<div style="font-size: 48px;">⚙️🌾</div>`,
+          hint: "It separated cotton fibers from seeds using a system of wire screens!"
+        };
+      }
+    }
+    if (grade === 5) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What famous document declared the colonies free from British rule in 1776?",
+          correctAnswer: "Declaration of Independence 📜",
+          options: ["Declaration of Independence 📜", "The US Constitution 🏛️", "The Articles of Confederation 📑", "The Bill of Rights 🗽"],
+          visualContent: `<div style="font-size: 48px;">📜🇺🇸</div>`,
+          hint: "It was written by Thomas Jefferson and signed on the Fourth of July!"
+        };
+      } else {
+        return {
+          questionText: "Which president signed the Emancipation Proclamation during the Civil War?",
+          correctAnswer: "Abraham Lincoln 🎩",
+          options: ["Abraham Lincoln 🎩", "George Washington 🇺🇸", "Andrew Johnson 🏛️", "Ulysses S. Grant ⚔️"],
+          visualContent: `<div style="font-size: 48px;">🎩🤝</div>`,
+          hint: "He wore a tall top hat and led the Union to preserve the United States!"
+        };
+      }
+    }
+  }
+
+  if (subject === 'geography') {
+    const unit30 = lessonId <= 5 ? 1 : lessonId <= 10 ? 2 : lessonId <= 15 ? 3 : lessonId <= 20 ? 4 : lessonId <= 25 ? 5 : 6;
+    if (grade === 2) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What does the Equator divide the Earth into?",
+          correctAnswer: "Northern and Southern Hemispheres 🌐",
+          options: ["Northern and Southern Hemispheres 🌐", "East and West Oceans 🌊", "Hot and Cold zones ❄️", "Continents and Islands 🏝️"],
+          visualContent: `<div style="font-size: 48px;">🌐</div>`,
+          hint: "The Equator is an imaginary line right in the middle, splitting top and bottom!"
+        };
+      } else {
+        return {
+          questionText: "What do people build across rivers to generate power and control flooding?",
+          correctAnswer: "Dams 🧱",
+          options: ["Dams 🧱", "Bridges 🌉", "Tunnels 🚇", "Canals 🚣"],
+          visualContent: `<div style="font-size: 48px;">🧱💧</div>`,
+          hint: "Dams hold back massive walls of water, releasing it slowly to turn generators!"
+        };
+      }
+    }
+    if (grade === 3) {
+      if (unit30 === 1) {
+        return {
+          questionText: "Which lines run east to west and measure distance north/south of the Equator?",
+          correctAnswer: "Latitude lines 🧭",
+          options: ["Latitude lines 🧭", "Longitude lines 🌐", "Prime Meridian 🕰️", "Time zones ⏰"],
+          visualContent: `<div style="font-size: 48px;">🧭🗺️</div>`,
+          hint: "Latitude lines are like rungs on a ladder (flat lines)!"
+        };
+      } else {
+        return {
+          questionText: "What climate zone near the Equator is warm and rainy year-round?",
+          correctAnswer: "Tropical zone 🌴",
+          options: ["Tropical zone 🌴", "Polar zone ❄️", "Temperate zone 🍂", "Arid Desert 🌵"],
+          visualContent: `<div style="font-size: 48px;">🌴🌧️</div>`,
+          hint: "It features lush rain forests and diverse animal habitats!"
+        };
+      }
+    }
+    if (grade === 4) {
+      if (unit30 === 1) {
+        return {
+          questionText: "Which US region is famous for the Grand Canyon and hot deserts?",
+          correctAnswer: "Southwest 🌵",
+          options: ["Southwest 🌵", "Northeast 🍁", "Midwest 🌽", "Pacific Northwest 🌲"],
+          visualContent: `<div style="font-size: 48px;">🌵🏜️</div>`,
+          hint: "It contains states like Arizona, New Mexico, and Texas!"
+        };
+      } else {
+        return {
+          questionText: "Why do countries trade resources with each other?",
+          correctAnswer: "Because resources are distributed unequally 🌍",
+          options: ["Because resources are distributed unequally 🌍", "Because they speak the same language 🗣️", "Because they have the same currency 💵", "Because they want to travel ✈️"],
+          visualContent: `<div style="font-size: 48px;">🌍🚢</div>`,
+          hint: "No single country has every resource (like oil, wheat, or metal) it needs!"
+        };
+      }
+    }
+    if (grade === 5) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What do we call the official city where a state or national government meets?",
+          correctAnswer: "Capital 🏛️",
+          options: ["Capital 🏛️", "Metropolis 🏙️", "Seaport ⚓", "Border town 🚧"],
+          visualContent: `<div style="font-size: 48px;">🏛️🇺🇸</div>`,
+          hint: "Washington D.C. is the capital of the United States!"
+        };
+      } else {
+        return {
+          questionText: "What is a major environmental effect of cutting down forests for cities?",
+          correctAnswer: "Loss of animal habitats 🦊",
+          options: ["Loss of animal habitats 🦊", "More rainfall 🌧️", "Cleaner air 🍃", "More fertile soil 🌱"],
+          visualContent: `<div style="font-size: 48px;">🦊🌲</div>`,
+          hint: "Deforestation removes the natural shelter and food sources of local wildlife!"
+        };
+      }
+    }
+  }
+
+  if (subject === 'art') {
+    const unit30 = lessonId <= 5 ? 1 : lessonId <= 10 ? 2 : lessonId <= 15 ? 3 : lessonId <= 20 ? 4 : lessonId <= 25 ? 5 : 6;
+    if (grade === 2) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What color do you get by mixing the primary colors Yellow and Blue?",
+          correctAnswer: "Green 💚",
+          options: ["Green 💚", "Orange 🧡", "Purple 💜", "Brown 🤎"],
+          visualContent: `<div style="font-size: 48px;">🎨💛💙</div>`,
+          hint: "Think of green grass or green leaves!"
+        };
+      } else {
+        return {
+          questionText: "What makes a 3D form different from a 2D shape?",
+          correctAnswer: "It has depth and volume 📦",
+          options: ["It has depth and volume 📦", "It is drawn on paper 📝", "It has only two sides 📐", "It is invisible 👻"],
+          visualContent: `<div style="font-size: 48px;">📦⚽</div>`,
+          hint: "A circle is a 2D shape, but a sphere (like a soccer ball) is a 3D form!"
+        };
+      }
+    }
+    if (grade === 3) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What is it called when a design is balanced around a central point, like a snowflake?",
+          correctAnswer: "Radial Symmetry ❄️",
+          options: ["Radial Symmetry ❄️", "Bilateral Symmetry 🦋", "Asymmetry 🌀", "Linear patterns 📏"],
+          visualContent: `<div style="font-size: 48px;">❄️🕸️</div>`,
+          hint: "It radiates outward in all directions from the center like spokes on a wheel!"
+        };
+      } else {
+        return {
+          questionText: "Which art style uses bold, repeating geometric patterns, popular in folk art?",
+          correctAnswer: "Pattern Folk Art 🎨",
+          options: ["Pattern Folk Art 🎨", "Impressionism 🌸", "Abstract Expressionism 🖌️", "Hyperrealism 📷"],
+          visualContent: `<div style="font-size: 48px;">🎨🏺</div>`,
+          hint: "Folk artists use simple repeating lines and shapes to decorate pottery and textiles!"
+        };
+      }
+    }
+    if (grade === 4) {
+      if (unit30 === 1) {
+        return {
+          questionText: "What is the spot on the horizon where parallel lines seem to meet and disappear?",
+          correctAnswer: "Vanishing Point 🧳",
+          options: ["Vanishing Point 🧳", "Center Stage 🎭", "Focal point 👁️", "Horizon marker 🌅"],
+          visualContent: `<div style="font-size: 48px;">🛤️🌅</div>`,
+          hint: "It is the point where road lines converge in one-point perspective!"
+        };
+      } else {
+        return {
+          questionText: "Why do artists add dark shading and bright highlights to drawings?",
+          correctAnswer: "To make flat drawings look three-dimensional 🎨",
+          options: ["To make flat drawings look three-dimensional 🎨", "To make drawings colorful 🌈", "To erase mistakes ✏️", "To write notes 📝"],
+          visualContent: `<div style="font-size: 48px;">🌗🍎</div>`,
+          hint: "Shading shows how light hits a form, creating the illusion of real depth!"
+        };
+      }
+    }
+    if (grade === 5) {
+      if (unit30 === 1) {
+        return {
+          questionText: "When drawing a human face, where are the eyes horizontally located?",
+          correctAnswer: "Exactly halfway down the head 👁️",
+          options: ["Exactly halfway down the head 👁️", "At the very top near the hair 💇", "Right above the chin 👄", "Near the ears only 👂"],
+          visualContent: `<div style="font-size: 48px;">👤👁️</div>`,
+          hint: "Many beginners draw eyes too high, but they are actually right in the middle of the head!"
+        };
+      } else {
+        return {
+          questionText: "What is art that is created for a specific space, often filling a whole room?",
+          correctAnswer: "Installation Art 🏛️",
+          options: ["Installation Art 🏛️", "Digital painting 💻", "Classic portraiture 🖼️", "Clay sculpture 🏺"],
+          visualContent: `<div style="font-size: 48px;">🏛️🗿</div>`,
+          hint: "The viewer walks inside the artwork itself to interact with it!"
+        };
+      }
+    }
+  }
+
+  if (subject === 'ela') {
+    const unit = lessonId <= 20 ? 1 : lessonId <= 40 ? 2 : lessonId <= 60 ? 3 : lessonId <= 80 ? 4 : lessonId <= 95 ? 5 : 6;
+    if (grade === 2) {
+      if (unit === 1) {
+        const vowels = [
+          { letter: "o", correct: "BOAT ⛵", options: ["BOAT ⛵", "BOTTLE 🧴", "HOT 🌶️", "LOG 🪵"] },
+          { letter: "a", correct: "CAKE 🍰", options: ["CAKE 🍰", "CAT 🐱", "HAT 🎩", "BAG 🎒"] },
+          { letter: "i", correct: "KITE 🪁", options: ["KITE 🪁", "KITTEN 🐱", "PIN 📌", "LID 🥛"] },
+          { letter: "u", correct: "TUBE 🧪", options: ["TUBE 🧪", "TUB 🛁", "BUG 🐛", "MUG ☕"] }
+        ];
+        const v = vowels[Math.floor(Math.random() * vowels.length)];
+        return {
+          questionText: `Which word features a long '${v.letter}' vowel sound?`,
+          correctAnswer: v.correct,
+          options: v.options,
+          visualContent: `<div style="font-size: 48px;">🗣️📣</div>`,
+          hint: `Long vowels say their own name: ${v.correct.split(" ")[0]} says '${v.letter.toUpperCase()}'!`
+        };
+      } else {
+        const collectives = [
+          { name: "fish 🐟", correct: "A school 🐟", options: ["A school 🐟", "A pack 🐺", "A herd 🐄", "A flock 🐦"] },
+          { name: "wolves 🐺", correct: "A pack 🐺", options: ["A pack 🐺", "A school 🐟", "A herd 🐄", "A flock 🐦"] },
+          { name: "cows 🐄", correct: "A herd 🐄", options: ["A herd 🐄", "A pack 🐺", "A school 🐟", "A flock 🐦"] },
+          { name: "birds 🐦", correct: "A flock 🐦", options: ["A flock 🐦", "A pack 🐺", "A school 🐟", "A herd 🐄"] }
+        ];
+        const c = collectives[Math.floor(Math.random() * collectives.length)];
+        return {
+          questionText: `What collective noun is used for a group of ${c.name}?`,
+          correctAnswer: c.correct,
+          options: c.options,
+          visualContent: `<div style="font-size: 48px;">👥🦁</div>`,
+          hint: `Groups of different animals have special names, like a ${c.correct.toLowerCase()} of ${c.name.split(" ")[0]}s!`
+        };
+      }
+    }
+    if (grade === 3) {
+      if (unit === 1) {
+        const sentences = [
+          { text: "The puppy barked happily.", word: "happily 🐶", options: ["happily 🐶", "barked 🗣️", "puppy 🐕", "The 📝"] },
+          { text: "The turtle walked slowly.", word: "slowly 🐢", options: ["slowly 🐢", "walked 🚶", "turtle 🐢", "The 📝"] },
+          { text: "The lion roared loudly.", word: "loudly 🦁", options: ["loudly 🦁", "roared 🗣️", "lion 🦁", "The 📝"] }
+        ];
+        const s = sentences[Math.floor(Math.random() * sentences.length)];
+        return {
+          questionText: `Identify the ADVERB in the sentence: '${s.text}'`,
+          correctAnswer: s.word,
+          options: s.options,
+          visualContent: `<div style="font-size: 48px;">📝✨</div>`,
+          hint: "Adverbs tell how, when, or where an action happens. They often end in -ly!"
+        };
+      } else {
+        const prefixes = [
+          { pref: "pre-", words: "'preheat' or 'preview'", correct: "Before ⏳", options: ["Before ⏳", "After ⌛", "Again 🔄", "Not 🛑"] },
+          { pref: "re-", words: "'reheat' or 'rewrite'", correct: "Again 🔄", options: ["Again 🔄", "Before ⏳", "After ⌛", "Not 🛑"] },
+          { pref: "un-", words: "'unhappy' or 'undo'", correct: "Not 🛑", options: ["Not 🛑", "Before ⏳", "Again 🔄", "After ⌛"] }
+        ];
+        const p = prefixes[Math.floor(Math.random() * prefixes.length)];
+        return {
+          questionText: `What does the prefix '${p.pref}' mean in words like ${p.words}?`,
+          correctAnswer: p.correct,
+          options: p.options,
+          visualContent: `<div style="font-size: 48px;">🔄⏳</div>`,
+          hint: `Prefixes attach to the start of a word to modify its meaning. '${p.pref}' means '${p.correct.toLowerCase().replace(/[^a-z]/g, "")}'!`
+        };
+      }
+    }
+    if (grade === 4) {
+      if (unit === 1) {
+        const pronouns = [
+          { text: "The teacher ___ teaches science is nice.", correct: "who 👩‍🏫", options: ["who 👩‍🏫", "whose 🔑", "which 📦", "whom 👤"] },
+          { text: "The book ___ I read was exciting.", correct: "which 📦", options: ["which 📦", "who 👩‍🏫", "whose 🔑", "whom 👤"] },
+          { text: "The girl ___ dog ran away is sad.", correct: "whose 🔑", options: ["whose 🔑", "who 👩‍🏫", "which 📦", "whom 👤"] }
+        ];
+        const p = pronouns[Math.floor(Math.random() * pronouns.length)];
+        return {
+          questionText: `Which relative pronoun best completes the sentence: '${p.text}'`,
+          correctAnswer: p.correct,
+          options: p.options,
+          visualContent: `<div style="font-size: 48px;">✍️👤</div>`,
+          hint: "Use 'who' for people acting as the subject, 'which' for objects, and 'whose' for possession!"
+        };
+      } else {
+        const figurative = [
+          { text: "Her smile was as bright as the sun", correct: "Simile ☀️", options: ["Simile ☀️", "Metaphor 📖", "Idiom 💬", "Personification 🧸"] },
+          { text: "He has a heart of gold", correct: "Metaphor 📖", options: ["Metaphor 📖", "Simile ☀️", "Idiom 💬", "Personification 🧸"] },
+          { text: "It is raining cats and dogs", correct: "Idiom 💬", options: ["Idiom 💬", "Simile ☀️", "Metaphor 📖", "Personification 🧸"] }
+        ];
+        const f = figurative[Math.floor(Math.random() * figurative.length)];
+        return {
+          questionText: `What type of figurative language is used here: '${f.text}'?`,
+          correctAnswer: f.correct,
+          options: f.options,
+          visualContent: `<div style="font-size: 48px;">🎭📖</div>`,
+          hint: "Similes compare using 'like' or 'as'. Metaphors compare directly. Idioms are common expressions."
+        };
+      }
+    }
+    if (grade === 5) {
+      if (unit === 1) {
+        const conjunctions = [
+          { text: "I wanted to go play, ___ it started to rain.", correct: "but 🌧️", options: ["but 🌧️", "and ☀️", "or ⛈️", "so 🌈"] },
+          { text: "I bought apples, ___ I bought oranges.", correct: "and 🍊", options: ["and 🍊", "but 🌧️", "or ⛈️", "so 🌈"] },
+          { text: "You can have cake, ___ you can have pie.", correct: "or 🥧", options: ["or 🥧", "and 🍊", "but 🌧️", "so 🌈"] }
+        ];
+        const c = conjunctions[Math.floor(Math.random() * conjunctions.length)];
+        return {
+          questionText: `Which coordinating conjunction best completes the sentence: '${c.text}'`,
+          correctAnswer: c.correct,
+          options: c.options,
+          visualContent: `<div style="font-size: 48px;">🌉🔗</div>`,
+          hint: "Use 'and' to add info, 'but' for contrast/exceptions, and 'or' for choice!"
+        };
+      } else {
+        const tenses = [
+          { desc: "Yesterday", correct: "Yesterday I walked to school and saw a bird. 🐦", options: ["Yesterday I walked to school and saw a bird. 🐦", "Yesterday I walk to school and saw a bird. 🚶", "Yesterday I walked to school and see a bird. 👀", "Yesterday I will walk to school and saw a bird. ⏳"] },
+          { desc: "Tomorrow", correct: "Tomorrow I will study math and pass the test. 📝", options: ["Tomorrow I will study math and pass the test. 📝", "Tomorrow I studied math and pass the test. 📝", "Tomorrow I will study math and passed the test. 📝", "Tomorrow I study math and pass the test. 📝"] }
+        ];
+        const t = tenses[Math.floor(Math.random() * tenses.length)];
+        return {
+          questionText: `Identify the sentence with correct consistent verb tense for '${t.desc}':`,
+          correctAnswer: t.correct,
+          options: t.options,
+          visualContent: `<div style="font-size: 48px;">⏰📆</div>`,
+          hint: "Verbs must stay in the same tense (past, present, or future) throughout the sentence!"
+        };
+      }
+    }
+  }
+
+  if (subject === 'math') {
+    const unit = lessonId <= 20 ? 1 : lessonId <= 40 ? 2 : lessonId <= 60 ? 3 : lessonId <= 80 ? 4 : lessonId <= 95 ? 5 : 6;
+    if (grade === 2) {
+      if (unit === 1) {
+        const a = Math.floor(Math.random() * 50) + 10;
+        const b = Math.floor(Math.random() * 40) + 5;
+        const ans = a + b;
+        return {
+          questionText: `Solve: ${a} + ${b}`,
+          correctAnswer: `${ans} 🔢`,
+          options: [`${ans} 🔢`, `${ans + 10} 🔢`, `${ans - 5} 🔢`, `${ans + 2} 🔢`],
+          visualContent: `<div style="font-size: 48px;">🔢➕</div>`,
+          hint: "Add the ones place first, then add the tens place together!"
+        };
+      } else if (unit === 2) {
+        const h = Math.floor(Math.random() * 8) + 1;
+        const t = Math.floor(Math.random() * 9);
+        const o = Math.floor(Math.random() * 9);
+        const ans = h * 100 + t * 10 + o;
+        return {
+          questionText: `What number is made of ${h} Hundreds, ${t} Tens, and ${o} Ones?`,
+          correctAnswer: `${ans} 🔢`,
+          options: [`${ans} 🔢`, `${ans + 10} 🔢`, `${ans - 100} 🔢`, `${ans + 2} 🔢`],
+          visualContent: `<div style="font-size: 48px;">💯🔢</div>`,
+          hint: "Combine the hundreds, tens, and ones in order to write the full number!"
+        };
+      } else if (unit === 3) {
+        const objects = [
+          { name: "school bus 🚌", unit: "Feet 🚌", wrongs: ["Inches 📐", "Centimeters 📏", "Millimeters 🔍"] },
+          { name: "pencil ✏️", unit: "Inches 📐", wrongs: ["Feet 🚌", "Miles 🛣️", "Yards 📏"] },
+          { name: "paperclip 📎", unit: "Centimeters 📏", wrongs: ["Yards 📏", "Meters 🏢", "Kilometers 🛣️"] }
+        ];
+        const obj = objects[Math.floor(Math.random() * objects.length)];
+        return {
+          questionText: `Which unit is best for measuring the length of a real ${obj.name}?`,
+          correctAnswer: obj.unit,
+          options: [obj.unit, ...obj.wrongs],
+          visualContent: `<div style="font-size: 48px;">📐📏</div>`,
+          hint: "Use larger units for long things, and tiny units for very small items!"
+        };
+      } else if (unit === 4) {
+        const d = Math.floor(Math.random() * 4) + 1;
+        const n = Math.floor(Math.random() * 3) + 1;
+        const p = Math.floor(Math.random() * 5) + 1;
+        const total = d * 10 + n * 5 + p;
+        return {
+          questionText: `If you have ${d} Dimes, ${n} Nickels, and ${p} Pennies, how much money do you have?`,
+          correctAnswer: `${total} cents 🪙`,
+          options: [`${total} cents 🪙`, `${total + 5} cents 🪙`, `${total - 10} cents 🪙`, `${total + 2} cents 🪙`],
+          visualContent: `<div style="font-size: 48px;">🪙💵</div>`,
+          hint: "Dimes are 10¢, Nickels are 5¢, and Pennies are 1¢!"
+        };
+      } else {
+        const slices = [
+          { n: 2, name: "halves 🍕", wrongs: ["thirds 🍕", "fourths 🍕", "fifths 🍕"] },
+          { n: 3, name: "thirds 🍕", wrongs: ["halves 🍕", "fourths 🍕", "sixths 🍕"] },
+          { n: 4, name: "fourths (or quarters) 🍕", wrongs: ["halves 🍕", "thirds 🍕", "fifths 🍕"] }
+        ];
+        const s = slices[Math.floor(Math.random() * slices.length)];
+        return {
+          questionText: `If you cut a round pizza into ${s.n} equal slices, what is each slice called?`,
+          correctAnswer: `A ${s.name}`,
+          options: [`A ${s.name}`, ...s.wrongs.map(w => `A ${w}`)],
+          visualContent: `<div style="font-size: 48px;">🍕🍕</div>`,
+          hint: `Cutting a whole object into ${s.n} equal pieces creates ${s.name.split(" ")[0]}!`
+        };
+      }
+    }
+    if (grade === 3) {
+      if (unit === 1) {
+        const a = Math.floor(Math.random() * 8) + 2;
+        const b = Math.floor(Math.random() * 8) + 2;
+        const ans = a * b;
+        return {
+          questionText: `Solve: ${a} x ${b}`,
+          correctAnswer: `${ans} 🔢`,
+          options: [`${ans} 🔢`, `${ans + b} 🔢`, `${ans - a} 🔢`, `${ans + 4} 🔢`],
+          visualContent: `<div style="font-size: 48px;">✖️🔢</div>`,
+          hint: `${a} groups of ${b} equals ${ans}!`
+        };
+      } else if (unit === 2) {
+        const n = Math.floor(Math.random() * 7) + 2;
+        return {
+          questionText: "Which fraction is equivalent to one whole (1)?",
+          correctAnswer: `${n}/${n} 🍰`,
+          options: [`${n}/${n} 🍰`, `1/${n} 🍰`, `${n - 1}/${n} 🍰`, `${n}/${n + 1} 🍰`],
+          visualContent: `<div style="font-size: 48px;">🍰📐</div>`,
+          hint: "When the top number (numerator) equals the bottom number (denominator), it equals 1 whole!"
+        };
+      } else if (unit === 3) {
+        const objects = [
+          { name: "paperclip 📎", unit: "Grams (g) 📎", wrongs: ["Kilograms (kg) ⚖️", "Liters (L) 🧪", "Meters (m) 📏"] },
+          { name: "heavy textbook 📚", unit: "Kilograms (kg) ⚖️", wrongs: ["Grams (g) 📎", "Liters (L) 🧪", "Milliliters (mL) 🧪"] },
+          { name: "juice box 🧃", unit: "Milliliters (mL) 🧪", wrongs: ["Kilograms (kg) ⚖️", "Meters (m) 📏", "Liters (L) 🧪"] }
+        ];
+        const obj = objects[Math.floor(Math.random() * objects.length)];
+        return {
+          questionText: `What is the best metric unit to measure the mass/volume of a ${obj.name}?`,
+          correctAnswer: obj.unit,
+          options: [obj.unit, ...obj.wrongs],
+          visualContent: `<div style="font-size: 48px;">🧪⚖️</div>`,
+          hint: "Grams and milliliters are for small/light things; kilograms and liters are for large/heavy items."
+        };
+      } else if (unit === 4) {
+        const l = Math.floor(Math.random() * 7) + 3;
+        const w = Math.floor(Math.random() * 6) + 2;
+        const ans = l * w;
+        return {
+          questionText: `Find the area of a rectangle with length ${l} cm and width ${w} cm.`,
+          correctAnswer: `${ans} sq cm 📐`,
+          options: [`${ans} sq cm 📐`, `${(l + w) * 2} sq cm 📐`, `${ans + 5} sq cm 📐`, `${ans - 3} sq cm 📐`],
+          visualContent: `<div style="font-size: 48px;">📐🟩</div>`,
+          hint: "Area is calculated by multiplying length times width!"
+        };
+      } else {
+        const shapes = [
+          { name: "Square 🟦", desc: "exactly 4 sides of equal length and 4 right corners" },
+          { name: "Rectangle 🟦", desc: "4 sides with opposite sides equal, and 4 right corners" },
+          { name: "Rhombus 🔶", desc: "exactly 4 sides of equal length but not necessarily right corners" }
+        ];
+        const s = shapes[Math.floor(Math.random() * shapes.length)];
+        return {
+          questionText: `Which shape has ${s.desc}?`,
+          correctAnswer: s.name,
+          options: shapes.map(item => item.name),
+          visualContent: `<div style="font-size: 48px;">📐🟦</div>`,
+          hint: "Review side lengths and angles to identify the correct quadrilateral!"
+        };
+      }
+    }
+    if (grade === 4) {
+      if (unit === 1) {
+        const primes = [2, 3, 5, 7, 11, 13, 17, 19];
+        const prime = primes[Math.floor(Math.random() * primes.length)];
+        const wrongs = [6, 8, 9, 12, 15, 20].sort(() => Math.random() - 0.5).slice(0, 3);
+        return {
+          questionText: "Which of the following is a prime number (has only 1 and itself as factors)?",
+          correctAnswer: `${prime} 🔢`,
+          options: [`${prime} 🔢`, ...wrongs.map(w => `${w} 🔢`)],
+          visualContent: `<div style="font-size: 48px;">🔑🔢</div>`,
+          hint: "A prime number cannot be divided evenly by any numbers other than 1 and itself!"
+        };
+      } else if (unit === 2) {
+        const a = [50, 100, 150, 200, 250, 300, 400][Math.floor(Math.random() * 7)];
+        const b = Math.floor(Math.random() * 3) + 3;
+        const ans = a * b;
+        return {
+          questionText: `Solve: ${a} x ${b}`,
+          correctAnswer: `${ans} 🔢`,
+          options: [`${ans} 🔢`, `${ans - 50} 🔢`, `${ans + a} 🔢`, `${ans + 100} 🔢`],
+          visualContent: `<div style="font-size: 48px;">🔢✖️</div>`,
+          hint: "Multiply the non-zero digits first, then append the trailing zeros!"
+        };
+      } else if (unit === 3) {
+        const bases = [
+          { num: 6, den: 8, correct: "3/4 🍰", options: ["3/4 🍰", "2/3 🍰", "1/2 🍰", "5/6 🍰"] },
+          { num: 4, den: 6, correct: "2/3 🍰", options: ["2/3 🍰", "1/2 🍰", "3/4 🍰", "5/6 🍰"] },
+          { num: 3, den: 9, correct: "1/3 🍰", options: ["1/3 🍰", "1/2 🍰", "2/3 🍰", "1/4 🍰"] },
+          { num: 2, den: 8, correct: "1/4 🍰", options: ["1/4 🍰", "1/2 🍰", "3/4 🍰", "1/3 🍰"] }
+        ];
+        const base = bases[Math.floor(Math.random() * bases.length)];
+        return {
+          questionText: `Simplify the fraction: ${base.num}/${base.den}`,
+          correctAnswer: base.correct,
+          options: base.options,
+          visualContent: `<div style="font-size: 48px;">🍰📐</div>`,
+          hint: "Divide both the numerator and denominator by their greatest common factor!"
+        };
+      } else if (unit === 4) {
+        const n = Math.floor(Math.random() * 9) + 1;
+        return {
+          questionText: `Convert the fraction ${n}/100 to a decimal number.`,
+          correctAnswer: `0.0${n} 🔢`,
+          options: [`0.0${n} 🔢`, `0.${n} 🔢`, `${n}.0 🔢`, `0.00${n} 🔢`],
+          visualContent: `<div style="font-size: 48px;">🔢🪙</div>`,
+          hint: "Hundredths are placed in the second decimal position to the right of the decimal point!"
+        };
+      } else {
+        const syms = [
+          { name: "Standard circle 🔴", count: "Infinite (an endless amount) ♾️", wrongs: ["1 🔢", "2 🔢", "4 🔢"] },
+          { name: "Square 🟦", count: "4 🔢", wrongs: ["2 🔢", "8 🔢", "Infinite ♾️"] },
+          { name: "Rectangle 🟩", count: "2 🔢", wrongs: ["4 🔢", "8 🔢", "Infinite ♾️"] }
+        ];
+        const s = syms[Math.floor(Math.random() * syms.length)];
+        return {
+          questionText: `How many lines of symmetry does a ${s.name} have?`,
+          correctAnswer: s.count,
+          options: [s.count, ...s.wrongs],
+          visualContent: `<div style="font-size: 48px;">🔴🟦</div>`,
+          hint: "A line of symmetry is a line along which you can fold a shape exactly in half!"
+        };
+      }
+    }
+    if (grade === 5) {
+      if (unit === 1) {
+        const a = Math.floor(Math.random() * 6) + 2;
+        const b = Math.floor(Math.random() * 4) + 2;
+        const c = Math.floor(Math.random() * 3) + 2;
+        const d = Math.floor(Math.random() * 2) + 1;
+        const ans = a + (b * c) - d;
+        return {
+          questionText: `Solve using order of operations: ${a} + (${b} x ${c}) - ${d}`,
+          correctAnswer: `${ans} 🔢`,
+          options: [`${ans} 🔢`, `${(a + b) * c - d} 🔢`, `${ans + 5} 🔢`, `${ans - 4} 🔢`],
+          visualContent: `<div style="font-size: 48px;">🔢➕✖️</div>`,
+          hint: "Perform multiplication inside the parentheses first, then do addition and subtraction from left to right!"
+        };
+      } else if (unit === 2) {
+        const n = Math.floor(Math.random() * 90) + 10;
+        return {
+          questionText: `Compare: 0.${n}0 vs 0.${n}`,
+          correctAnswer: "They are exactly equal ⚖️",
+          options: ["They are exactly equal ⚖️", `0.${n}0 is greater 📈`, `0.${n} is greater 📉`, "They are negative ❄️"],
+          visualContent: `<div style="font-size: 48px;">⚖️🔢</div>`,
+          hint: "Adding zeros at the very end of a decimal number does not change its value!"
+        };
+      } else if (unit === 3) {
+        const d = Math.floor(Math.random() * 4) + 2;
+        const w = Math.floor(Math.random() * 4) + 2;
+        const ans = d * w;
+        return {
+          questionText: `Solve: 1/${d} divided by ${w}`,
+          correctAnswer: `1/${ans} 🍰`,
+          options: [`1/${ans} 🍰`, `${w}/${d} 🍰`, `${d}/${w} 🍰`, `${ans} 🍰`],
+          visualContent: `<div style="font-size: 48px;">🍰➗</div>`,
+          hint: "Dividing a unit fraction by a whole number multiplies the denominator!"
+        };
+      } else if (unit === 4) {
+        const l = Math.floor(Math.random() * 5) + 3;
+        const w = Math.floor(Math.random() * 3) + 2;
+        const h = Math.floor(Math.random() * 3) + 2;
+        const ans = l * w * h;
+        return {
+          questionText: `Find the volume of a box with length ${l} cm, width ${w} cm, and height ${h} cm.`,
+          correctAnswer: `${ans} cubic cm 📦`,
+          options: [`${ans} cubic cm 📦`, `${l + w + h} cubic cm 📦`, `${ans + 10} cubic cm 📦`, `${ans - 5} cubic cm 📦`],
+          visualContent: `<div style="font-size: 48px;">📦📐</div>`,
+          hint: "Volume is calculated by multiplying length x width x height!"
+        };
+      } else {
+        const x = Math.floor(Math.random() * 8) + 1;
+        const y = Math.floor(Math.random() * 8) + 1;
+        const selectX = Math.random() < 0.5;
+        const correct = selectX ? "The distance along the horizontal X-axis ➡️" : "The distance along the vertical Y-axis ⬆️";
+        const wrong = selectX ? "The distance along the vertical Y-axis ⬆️" : "The distance along the horizontal X-axis ➡️";
+        return {
+          questionText: `In the coordinate point (${x}, ${y}), what does the ${selectX ? 'first' : 'second'} number ${selectX ? x : y} represent?`,
+          correctAnswer: correct,
+          options: [correct, wrong, "The diagonal distance ↗️", "The starting origin point 🛑"],
+          visualContent: `<div style="font-size: 48px;">🗺️📈</div>`,
+          hint: "Ordered pairs are written as (x, y) where x is horizontal and y is vertical!"
+        };
+      }
+    }
+  }
+
+  return null;
+}
+
 class AppState {
   constructor() {
     this.stars = 0;
@@ -3232,31 +4067,13 @@ class AppState {
     this.avatarIndex = 0; // Default Panda
     this.username = "Learning Explorer";
     
-    // Progress tracking for Grade 1 Math and ELA curriculums
-    this.completedCountsMath = {
-      lessonsCompleted: 0,
-      examsPassed: [false, false, false, false, false, false],
-      reviewCompleted: false,
-      gradeTestPassed: false
-    };
-    this.completedCountsEla = {
-      lessonsCompleted: 0,
-      examsPassed: [false, false, false, false, false, false],
-      reviewCompleted: false,
-      gradeTestPassed: false
-    };
-    this.completedCountsHistory = {
-      lessonsCompleted: 0,
-      examsPassed: [false, false, false, false, false, false],
-      reviewCompleted: false,
-      gradeTestPassed: false
-    };
-    this.completedCountsGeography = {
-      lessonsCompleted: 0,
-      examsPassed: [false, false, false, false, false, false],
-      reviewCompleted: false,
-      gradeTestPassed: false
-    };
+    // Progress tracking partitioned by grade (1 to 5) for all subjects
+    this.completedCountsMath = createFreshProgressMap();
+    this.completedCountsEla = createFreshProgressMap();
+    this.completedCountsHistory = createFreshProgressMap();
+    this.completedCountsGeography = createFreshProgressMap();
+    this.completedCountsScience = createFreshProgressMap();
+    this.completedCountsArt = createFreshProgressMap();
     this.currentSubject = "math";
 
     this.isSoundOn = true;
@@ -3295,6 +4112,7 @@ class AppState {
     this.testProblems = [];
     this.testAttemptsCount = 0;
     this.chatbotUsedForCurrentQuestion = false;
+    this.spellingWarningShown = false;
 
     // Gamification & Shop state variables (Forced test mode: 1000 points and 24 hours game time)
     this.points = 1000;
@@ -3351,20 +4169,48 @@ class AppState {
   }
 
   get completedCounts() {
-    if (this.currentSubject === "math") return this.completedCountsMath;
-    if (this.currentSubject === "ela") return this.completedCountsEla;
-    if (this.currentSubject === "history") return this.completedCountsHistory;
-    return this.completedCountsGeography;
+    const subject = this.currentSubject;
+    const grade = this.currentGrade || 1;
+    let countsMap;
+    if (subject === "math") countsMap = this.completedCountsMath;
+    else if (subject === "ela") countsMap = this.completedCountsEla;
+    else if (subject === "history") countsMap = this.completedCountsHistory;
+    else if (subject === "geography") countsMap = this.completedCountsGeography;
+    else if (subject === "science") countsMap = this.completedCountsScience;
+    else countsMap = this.completedCountsArt;
+
+    if (!countsMap) {
+      return {
+        lessonsCompleted: 0,
+        examsPassed: [false, false, false, false, false, false],
+        reviewCompleted: false,
+        gradeTestPassed: false
+      };
+    }
+    if (!countsMap[grade]) {
+      const freshCounts = {
+        lessonsCompleted: 0,
+        examsPassed: [false, false, false, false, false, false],
+        reviewCompleted: false,
+        gradeTestPassed: false
+      };
+      countsMap[grade] = JSON.parse(JSON.stringify(freshCounts));
+    }
+    return countsMap[grade];
   }
   set completedCounts(val) {
-    if (this.currentSubject === "math") {
-      this.completedCountsMath = val;
-    } else if (this.currentSubject === "ela") {
-      this.completedCountsEla = val;
-    } else if (this.currentSubject === "history") {
-      this.completedCountsHistory = val;
-    } else {
-      this.completedCountsGeography = val;
+    const subject = this.currentSubject;
+    const grade = this.currentGrade || 1;
+    let countsMap;
+    if (subject === "math") countsMap = this.completedCountsMath;
+    else if (subject === "ela") countsMap = this.completedCountsEla;
+    else if (subject === "history") countsMap = this.completedCountsHistory;
+    else if (subject === "geography") countsMap = this.completedCountsGeography;
+    else if (subject === "science") countsMap = this.completedCountsScience;
+    else countsMap = this.completedCountsArt;
+
+    if (countsMap) {
+      countsMap[grade] = val;
     }
   }
 
@@ -3380,41 +4226,13 @@ class AppState {
         this.username = state.username ?? "Learning Explorer";
         this.currentSubject = state.currentSubject ?? "math";
         
-        // Progress tracking maps
-        this.completedCountsMath = state.completedCountsMath || state.completedCounts || {
-          lessonsCompleted: 0,
-          examsPassed: [false, false, false, false, false, false],
-          reviewCompleted: false,
-          gradeTestPassed: false
-        };
-        // Migration support for older single-subject format
-        if (this.completedCountsMath.lessonsCompleted === undefined) {
-          this.completedCountsMath.lessonsCompleted = (state.completedCounts && state.completedCounts.numbersense >= 4) ? 1 : 0;
-        }
-        if (this.completedCountsMath.examsPassed === undefined) {
-          this.completedCountsMath.examsPassed = [false, false, false, false, false, false];
-        }
-        
-        this.completedCountsEla = state.completedCountsEla || {
-          lessonsCompleted: 0,
-          examsPassed: [false, false, false, false, false, false],
-          reviewCompleted: false,
-          gradeTestPassed: false
-        };
-
-        this.completedCountsHistory = state.completedCountsHistory || {
-          lessonsCompleted: 0,
-          examsPassed: [false, false, false, false, false, false],
-          reviewCompleted: false,
-          gradeTestPassed: false
-        };
-
-        this.completedCountsGeography = state.completedCountsGeography || {
-          lessonsCompleted: 0,
-          examsPassed: [false, false, false, false, false, false],
-          reviewCompleted: false,
-          gradeTestPassed: false
-        };
+        // Progress tracking maps migrated/loaded dynamically by grade
+        this.completedCountsMath = migrateProgressMap(state.completedCountsMath || state.completedCounts);
+        this.completedCountsEla = migrateProgressMap(state.completedCountsEla);
+        this.completedCountsHistory = migrateProgressMap(state.completedCountsHistory);
+        this.completedCountsGeography = migrateProgressMap(state.completedCountsGeography);
+        this.completedCountsScience = migrateProgressMap(state.completedCountsScience);
+        this.completedCountsArt = migrateProgressMap(state.completedCountsArt);
         
         this.isSoundOn = state.isSoundOn ?? true;
         this.testAttemptsCount = state.testAttemptsCount ?? 0;
@@ -3448,6 +4266,7 @@ class AppState {
         this.dailyCrossSubjectBonusAwardedToday = state.dailyCrossSubjectBonusAwardedToday ?? false;
 
         this.checkDateResets();
+        buildCurriculum(this.currentGrade);
       }
     } catch (e) {
       console.warn("Could not load state:", e);
@@ -3467,6 +4286,8 @@ class AppState {
         completedCountsEla: this.completedCountsEla,
         completedCountsHistory: this.completedCountsHistory,
         completedCountsGeography: this.completedCountsGeography,
+        completedCountsScience: this.completedCountsScience,
+        completedCountsArt: this.completedCountsArt,
         isSoundOn: this.isSoundOn,
         testAttemptsCount: this.testAttemptsCount,
         masteryHistory: this.masteryHistory,
@@ -3567,6 +4388,12 @@ class AppState {
         avatarWrapperEl.style.background = 'white';
       }
     }
+
+    // Update active class on grade buttons
+    document.querySelectorAll('.menu-grid button[data-grade]').forEach(btn => {
+      const g = parseInt(btn.getAttribute('data-grade'));
+      btn.classList.toggle('active', g === this.currentGrade);
+    });
 
     // Render dynamic curriculum roadmap
     renderCurriculumRoadmap();
@@ -3974,11 +4801,25 @@ window.AuthSystem = {
 
   // ── Password hashing (SHA-256 via SubtleCrypto) ──────────
   async hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password + 'funcademy_salt_v1');
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    const salted = password + 'funcademy_salt_v1';
+    if (window.crypto && window.crypto.subtle) {
+      try {
+        const encoder = new TextEncoder();
+        const data = encoder.encode(salted);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      } catch (e) {
+        console.warn("SubtleCrypto failed, falling back to simple hash", e);
+      }
+    }
+    let hash = 0;
+    for (let i = 0; i < salted.length; i++) {
+      const chr = salted.charCodeAt(i);
+      hash = ((hash << 5) - hash) + chr;
+      hash |= 0;
+    }
+    return 'fb_' + Math.abs(hash).toString(16);
   },
 
   // ── Register a new user ──────────────────────────────────
@@ -4061,12 +4902,14 @@ window.AuthSystem = {
       appState.dailyCompletedSubjects = [];
       appState.dailyCrossSubjectBonusAwardedToday = false;
       appState.dailyAssignmentSkipped = false;
-      const freshCounts = { lessonsCompleted: 0, examsPassed: [false,false,false,false,false,false], reviewCompleted: false, gradeTestPassed: false };
-      appState.completedCountsMath = JSON.parse(JSON.stringify(freshCounts));
-      appState.completedCountsEla = JSON.parse(JSON.stringify(freshCounts));
-      appState.completedCountsHistory = JSON.parse(JSON.stringify(freshCounts));
-      appState.completedCountsGeography = JSON.parse(JSON.stringify(freshCounts));
+      appState.completedCountsMath = createFreshProgressMap();
+      appState.completedCountsEla = createFreshProgressMap();
+      appState.completedCountsHistory = createFreshProgressMap();
+      appState.completedCountsGeography = createFreshProgressMap();
+      appState.completedCountsScience = createFreshProgressMap();
+      appState.completedCountsArt = createFreshProgressMap();
       document.documentElement.classList.remove('arcade-theme');
+      buildCurriculum(1);
     }
     // Set display name and avatar to match the account
     appState.username = userRecord.displayName;
@@ -4193,18 +5036,26 @@ async function handleSignIn(event) {
   btn.disabled = true;
   btnText.textContent = 'Signing in…';
 
-  const result = await window.AuthSystem.login(username, password);
-  if (!result.ok) {
-    errEl.textContent = result.error;
+  try {
+    const result = await window.AuthSystem.login(username, password);
+    if (!result.ok) {
+      errEl.textContent = result.error;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btnText.textContent = 'Sign In ➔';
+      return;
+    }
+
+    window.AuthSystem.saveSession(result.username, rememberMe);
+    window.AuthSystem.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: result.state });
+    hideLoginScreen();
+  } catch (err) {
+    console.error("Sign in failed:", err);
+    errEl.textContent = "An unexpected error occurred. Please try again!";
     errEl.style.display = 'block';
     btn.disabled = false;
     btnText.textContent = 'Sign In ➔';
-    return;
   }
-
-  window.AuthSystem.saveSession(result.username, rememberMe);
-  window.AuthSystem.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: result.state });
-  hideLoginScreen();
 }
 
 async function handleSignUp(event) {
@@ -4227,27 +5078,52 @@ async function handleSignUp(event) {
   btn.disabled = true;
   btnText.textContent = 'Creating account…';
 
-  const result = await window.AuthSystem.register(username, password);
-  if (!result.ok) {
-    errEl.textContent = result.error;
+  try {
+    const result = await window.AuthSystem.register(username, password);
+    if (!result.ok) {
+      errEl.textContent = result.error;
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btnText.textContent = 'Create Account 🎉';
+      return;
+    }
+
+    // Auto-login after sign-up
+    window.AuthSystem.saveSession(result.username, true);
+    window.AuthSystem.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: null });
+    hideLoginScreen();
+  } catch (err) {
+    console.error("Sign up failed:", err);
+    errEl.textContent = "An unexpected error occurred. Please try again!";
     errEl.style.display = 'block';
     btn.disabled = false;
     btnText.textContent = 'Create Account 🎉';
-    return;
   }
-
-  // Auto-login after sign-up
-  window.AuthSystem.saveSession(result.username, true);
-  window.AuthSystem.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: null });
-  hideLoginScreen();
 }
 
-const appState = new AppState();
+var appState = new AppState();
 
 // 6. DOM Events Bootstrapper
 document.addEventListener('DOMContentLoaded', () => {
   appState.confetti = new ConfettiEngine('celebrationCanvas');
   
+  // Grade selector buttons listeners
+  document.querySelectorAll('.menu-grid button[data-grade]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.classList.contains('locked')) {
+        sounds.playWrong();
+        return;
+      }
+      sounds.playPop();
+      const grade = parseInt(btn.getAttribute('data-grade'));
+      appState.currentGrade = grade;
+      buildCurriculum(grade);
+      updateSubjectTabs();
+      appState.saveState();
+      appState.renderUI();
+    });
+  });
+
   // Subject Tab Toggle listeners in sidebar
   const sidebarMath = document.getElementById('sidebarMathBtn');
   const sidebarEnglish = document.getElementById('sidebarEnglishBtn');
@@ -4268,12 +5144,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Title text
     const titleEl = document.getElementById('subjectSectionTitle');
     if (titleEl) {
-      if (sub === 'math') titleEl.innerHTML = `<span>🔢</span> Grade 1 Math Quests`;
-      else if (sub === 'ela') titleEl.innerHTML = `<span>📚</span> Grade 1 ELA Quests`;
-      else if (sub === 'history') titleEl.innerHTML = `<span>📜</span> Grade 1 History Quests`;
-      else if (sub === 'geography') titleEl.innerHTML = `<span>🌍</span> Grade 1 Geography Quests`;
-      else if (sub === 'science') titleEl.innerHTML = `<span>🧪</span> Grade 1 Science Quests`;
-      else if (sub === 'art') titleEl.innerHTML = `<span>🎨</span> Grade 1 Art Quests`;
+      if (sub === 'math') titleEl.innerHTML = `<span>🔢</span> Grade ${appState.currentGrade} Math Quests`;
+      else if (sub === 'ela') titleEl.innerHTML = `<span>📚</span> Grade ${appState.currentGrade} ELA Quests`;
+      else if (sub === 'history') titleEl.innerHTML = `<span>📜</span> Grade ${appState.currentGrade} History Quests`;
+      else if (sub === 'geography') titleEl.innerHTML = `<span>🌍</span> Grade ${appState.currentGrade} Geography Quests`;
+      else if (sub === 'science') titleEl.innerHTML = `<span>🧪</span> Grade ${appState.currentGrade} Science Quests`;
+      else if (sub === 'art') titleEl.innerHTML = `<span>🎨</span> Grade ${appState.currentGrade} Art Quests`;
     }
   }
 
@@ -5209,6 +6085,69 @@ function getTextLessonExplanation(subject, lessonId) {
   const title = lesson ? lesson.title : "Lesson Explanation";
   const desc = lesson ? lesson.desc : "Let's learn!";
   const unit = lesson ? lesson.unit : 1;
+
+  const grade = (typeof appState !== 'undefined' && appState) ? (appState.currentGrade || 1) : 1;
+  if (grade >= 3) {
+    const questions = getQuestionsForLesson(subject, lessonId);
+    let example = "";
+    if (questions && questions[0]) {
+      const q = questions[0];
+      example = `
+        Let's analyze a sample problem for this lesson:
+        <div style="background: rgba(0,0,0,0.25); border-radius: 8px; padding: 16px; margin: 16px 0; border-left: 5px solid var(--color-orange-accent); border: 2px solid rgba(255,255,255,0.1); border-left-width: 5px;">
+          <div style="font-weight: 850; font-size: 15px; margin-bottom: 8px; color: var(--color-orange-accent); display: flex; align-items: center; gap: 6px;">❓ Sample Question:</div>
+          <p style="margin: 0; font-size: 15px; color: white; font-weight: 700; line-height: 1.5;">${q.questionText}</p>
+          ${q.visualContent ? `<div style="margin-top: 14px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; display: flex; justify-content: center; align-items: center;">${q.visualContent}</div>` : ''}
+        </div>
+        
+        <div style="background: rgba(16, 185, 129, 0.15); border: 3px solid var(--success); border-radius: 8px; padding: 14px; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);">
+          <span style="font-size: 24px;">⭐</span>
+          <div>
+            <div style="font-weight: 850; font-size: 14px; color: var(--success); text-transform: uppercase; letter-spacing: 0.5px;">Correct Answer:</div>
+            <div style="font-size: 16px; font-weight: 800; color: white;">${q.correctAnswer}</div>
+          </div>
+        </div>
+        
+        <div style="font-size: 15px; line-height: 1.6; color: #e2e8f0; font-weight: 600; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 14px; border: 1px dashed rgba(255,255,255,0.15);">
+          <span style="color: var(--color-blue-light); font-weight: 800;">💡 Step-by-Step Explanation:</span> ${q.hint || 'Understand the rule or pattern to find the solution.'}
+        </div>
+      `;
+    } else {
+      example = `Analyze the problem statement, identify key variables, and apply standard formulas or rules to calculate the exact solution.`;
+    }
+
+    let concept = "";
+    let challenge = "";
+    let tip = "";
+
+    if (subject === 'math') {
+      concept = `Welcome to Grade ${grade} Math. In this lesson, we cover <b>"${title}"</b>. ${desc}. Quantitative logic and standard mathematical procedures are essential for precision. We analyze values, apply operators, and evaluate expressions to arrive at exact solutions. Let's focus on accuracy and follow structural steps.`;
+      challenge = `Review the mathematical properties: can you define how today's laws apply to this concept?`;
+      tip = `Always check your operations and perform a reverse calculation to verify your final output.`;
+    } else if (subject === 'ela') {
+      concept = `Welcome to Grade ${grade} Language Arts. In this lesson, we study <b>"${title}"</b>. ${desc}. Mastering syntax, word acquisition, and structural text analysis improves our reading and communication skills. Understanding grammatical patterns allows us to interpret complex texts and write with higher clarity.`;
+      challenge = `Can you identify the subject, predicate, and parts of speech in a sentence of your choice?`;
+      tip = `When analyzing reading comprehension passages, look for direct textual evidence to support your inferences.`;
+    } else if (subject === 'science') {
+      concept = `Welcome to Grade ${grade} Science. In this lesson, we investigate <b>"${title}"</b>. ${desc}. Scientific inquiry is based on empirical observations, formulating hypotheses, and testing variables. We analyze systems, states, orbits, and cycles to understand how the physical world behaves.`;
+      challenge = `Formulate a scientific question about today's concept and list the independent and dependent variables.`;
+      tip = `Pay close attention to measurements, units, and structural properties when documenting observations.`;
+    } else if (subject === 'history') {
+      concept = `Welcome to Grade ${grade} History. In this lesson, we examine <b>"${title}"</b>. ${desc}. Historical analysis requires reading primary sources, understanding cause-and-effect relationships, and tracing changes in human societies over time. By looking at laws, documents, and historical events, we see how today's institutions were formed.`;
+      concept = `Welcome to Grade ${grade} History. In this lesson, we examine <b>"${title}"</b>. ${desc}. Historical analysis requires reading primary sources, understanding cause-and-effect relationships, and tracing changes in human societies over time. By looking at laws, documents, and historical events, we see how today's institutions were formed.`;
+      challenge = `Explain the primary cause and secondary effects of the historical event covered in this lesson.`;
+      tip = `Compare and contrast multiple accounts of the same event to gain a balanced perspective.`;
+    } else if (subject === 'geography') {
+      concept = `Welcome to Grade ${grade} Geography. In this lesson, we analyze <b>"${title}"</b>. ${desc}. Geography covers spatial relationships, ecosystems, trade patterns, and geopolitical regions. We utilize coordinate grids (latitude and longitude) and physical attributes to map our global environments.`;
+      challenge = `Locate the geographical feature discussed in today's lesson on a physical map.`;
+      tip = `Understand how climate, trade routes, and natural barriers impact the development of local populations.`;
+    } else {
+      concept = `Welcome to Grade ${grade} Art. In this lesson, we analyze <b>"${title}"</b>. ${desc}. Art theory involves composition, color value scales, perspectives, and architectural symmetry. By studying historical art movements and creative techniques, we learn to analyze visual media critically.`;
+      challenge = `Sketch a simple drawing using the perspective or shading techniques discussed in this lesson.`;
+      tip = `Consider how light sources, geometric balance, and composition direct the viewer's attention.`;
+    }
+    return { title, desc, concept, example, challenge, tip };
+  }
 
   let concept = "";
   let challenge = "";
@@ -6916,6 +7855,7 @@ function setupStep2Practice() {
 }
 
 function renderPracticeLayout() {
+  appState.spellingWarningShown = false;
   const container = document.getElementById('step-view-2');
   container.innerHTML = `
     <div class="practice-container">
@@ -6965,32 +7905,79 @@ function generatePracticeProblem() {
   const workspace = document.getElementById('practiceWorkspace');
   workspace.innerHTML = q.visualContent;
   
-  // Render options buttons
+  // Render options buttons or text input
   const optGrid = document.getElementById('practiceOptions');
   optGrid.innerHTML = '';
   
-  q.options.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    btn.innerText = opt;
+  if (false) { // Keep multiple choice everywhere
+    optGrid.innerHTML = `
+      <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto;">
+        <input type="text" id="practiceAnswerInput" class="auth-input" placeholder="Type your answer here..." style="background: #1e293b; border: 3px solid rgba(255,255,255,0.25); border-radius: 14px; padding: 16px 20px; font-size: 22px; font-weight: 850; color: #ffffff !important; text-align: center; font-family: inherit; width: 100%; outline: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: border-color 0.2s, box-shadow 0.2s; caret-color: var(--color-orange-accent);" autocomplete="off">
+        <div id="practiceSpellingHelp" style="display: none; color: #fbbf24; font-size: 15px; font-weight: 800; text-align: center; margin-top: -4px; line-height: 1.4; padding: 6px; background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.2); border-radius: 8px;"></div>
+        <button id="practiceSubmitBtn" class="auth-submit" style="margin-top: 4px; padding: 12px; font-size: 16px;">Check Answer ➔</button>
+      </div>
+    `;
+    const input = document.getElementById('practiceAnswerInput');
+    const submitBtn = document.getElementById('practiceSubmitBtn');
+    setTimeout(() => input.focus(), 100);
     
-    btn.addEventListener('click', () => {
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitBtn.click();
+    });
+
+    input.addEventListener('input', () => {
+      appState.spellingWarningShown = false;
+      const spellingHelp = document.getElementById('practiceSpellingHelp');
+      if (spellingHelp) {
+        spellingHelp.style.display = 'none';
+        spellingHelp.innerText = '';
+      }
+      input.style.borderColor = 'rgba(255,255,255,0.25)';
+      input.style.background = '#1e293b';
+    });
+    
+    submitBtn.addEventListener('click', () => {
+      const userAns = input.value.trim().toLowerCase();
+      const correctAns = q.correctAnswer.trim().toLowerCase();
+      let isCorrect = (userAns === correctAns);
       const isHighStakes = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
-      
-      if (opt === q.correctAnswer) {
+
+      const spellingHelp = document.getElementById('practiceSpellingHelp');
+      if (spellingHelp && !appState.spellingWarningShown) {
+        spellingHelp.style.display = 'none';
+        spellingHelp.innerText = '';
+      }
+
+      if (!isCorrect) {
+        const dist = getLevenshteinDistance(userAns, correctAns);
+        const isSpellingNearMiss = (isNaN(Number(correctAns)) && correctAns.length > 2 && dist <= 2);
+        if (isSpellingNearMiss) {
+          if (!appState.spellingWarningShown) {
+            appState.spellingWarningShown = true;
+            sounds.playPop();
+            input.style.borderColor = '#fbbf24';
+            input.style.background = 'rgba(251,191,36,0.1)';
+            input.style.animation = 'wrong-shake 0.3s ease';
+            if (spellingHelp) {
+              spellingHelp.innerHTML = `⚠️ Almost! Did you mean <span style="text-decoration: underline; cursor: pointer; color: #60a5fa; font-weight: 850;" onclick="document.getElementById('practiceAnswerInput').value='${q.correctAnswer.replace(/'/g, "\'")}'; document.getElementById('practiceSpellingHelp').style.display='none'; appState.spellingWarningShown=false; document.getElementById('practiceAnswerInput').focus();">"${q.correctAnswer}"</span>? (Click to fix)`;
+              spellingHelp.style.display = 'block';
+            }
+            speakText("Close! Check your spelling.");
+            setTimeout(() => {
+              input.style.animation = '';
+            }, 400);
+            return;
+          }
+          isCorrect = true;
+        }
+      }
+
+      if (isCorrect) {
         if (isHighStakes && appState.chatbotUsedForCurrentQuestion) {
           sounds.playWrong();
-          btn.classList.add('wrong');
+          input.style.borderColor = '#ef4444';
+          input.style.background = 'rgba(239,68,68,0.1)';
           speakText("AI or hint was used, so this is marked as incorrect.");
-          
-          // Highlight correct option in green
-          document.querySelectorAll('#practiceOptions .option-btn').forEach(optBtn => {
-            if (optBtn.innerText === q.correctAnswer) {
-              optBtn.classList.add('correct');
-            }
-            optBtn.disabled = true;
-          });
-          
           setTimeout(() => {
             appState.practiceIndex++;
             appState.practiceHintLevel = 0;
@@ -7002,9 +7989,10 @@ function generatePracticeProblem() {
           }, 1500);
         } else {
           sounds.playCorrect();
-          btn.classList.add('correct');
+          input.style.borderColor = '#10b981';
+          input.style.background = 'rgba(16,185,129,0.1)';
+          submitBtn.disabled = true;
           speakText("Great job!");
-          
           setTimeout(() => {
             appState.practiceIndex++;
             appState.practiceHintLevel = 0;
@@ -7017,12 +8005,12 @@ function generatePracticeProblem() {
         }
       } else {
         sounds.playWrong();
-        btn.classList.add('wrong');
-        btn.style.animation = 'wrong-shake 0.3s ease';
+        input.style.borderColor = '#ef4444';
+        input.style.background = 'rgba(239,68,68,0.1)';
+        input.style.animation = 'wrong-shake 0.3s ease';
         speakText("Try again!");
         setTimeout(() => {
-          btn.style.animation = '';
-          btn.classList.remove('wrong');
+          input.style.animation = '';
         }, 400);
 
         if (!appState.questionMistakes) appState.questionMistakes = 0;
@@ -7033,8 +8021,73 @@ function generatePracticeProblem() {
         }
       }
     });
-    optGrid.appendChild(btn);
-  });
+  } else {
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerText = opt;
+      
+      btn.addEventListener('click', () => {
+        const isHighStakes = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
+        
+        if (opt === q.correctAnswer) {
+          if (isHighStakes && appState.chatbotUsedForCurrentQuestion) {
+            sounds.playWrong();
+            btn.classList.add('wrong');
+            speakText("AI or hint was used, so this is marked as incorrect.");
+            
+            document.querySelectorAll('#practiceOptions .option-btn').forEach(optBtn => {
+              if (optBtn.innerText === q.correctAnswer) {
+                optBtn.classList.add('correct');
+              }
+              optBtn.disabled = true;
+            });
+            
+            setTimeout(() => {
+              appState.practiceIndex++;
+              appState.practiceHintLevel = 0;
+              if (appState.practiceIndex < appState.practiceProblemsCount) {
+                renderPracticeLayout();
+              } else {
+                completeStep2();
+              }
+            }, 1500);
+          } else {
+            sounds.playCorrect();
+            btn.classList.add('correct');
+            speakText("Great job!");
+            
+            setTimeout(() => {
+              appState.practiceIndex++;
+              appState.practiceHintLevel = 0;
+              if (appState.practiceIndex < appState.practiceProblemsCount) {
+                renderPracticeLayout();
+              } else {
+                completeStep2();
+              }
+            }, 1000);
+          }
+        } else {
+          sounds.playWrong();
+          btn.classList.add('wrong');
+          btn.style.animation = 'wrong-shake 0.3s ease';
+          speakText("Try again!");
+          setTimeout(() => {
+            btn.style.animation = '';
+            btn.classList.remove('wrong');
+          }, 400);
+
+          if (!appState.questionMistakes) appState.questionMistakes = 0;
+          appState.questionMistakes++;
+          if (appState.questionMistakes >= 3) {
+            showQuestionExplanation(q);
+            appState.questionMistakes = 0;
+          }
+        }
+      });
+      optGrid.appendChild(btn);
+    });
+  }
 
   speakText(q.questionText);
 
@@ -7256,14 +8309,13 @@ function updateMasteryDial() {
 }
 
 function generateMasteryProblem() {
+  appState.spellingWarningShown = false;
   appState.questionMistakes = 0;
   appState.chatbotUsedForCurrentQuestion = false;
-  // Reset lives and hints
   appState.masteryChancesLeft = 3;
   appState.masteryHintUsed = false;
   appState.masteryTrialRecorded = false;
   
-  // Reset hearts widgets in UI
   document.querySelectorAll('.strike-heart').forEach(heart => {
     heart.className = 'strike-heart';
   });
@@ -7271,30 +8323,59 @@ function generateMasteryProblem() {
   const bubble = document.getElementById('masteryHintBubble');
   if (bubble) bubble.style.display = 'none';
 
-  // Generate question using dynamic math engine
   const q = generateMathQuestion(appState.activeQuestLessonId, appState.masteryHistory.length);
   appState.currentMasteryQuestion = q;
   
   document.getElementById('masteryQuestion').innerText = q.questionText;
   
-  // Render visual cards
   const workspace = document.getElementById('masteryWorkspace');
   workspace.innerHTML = q.visualContent;
   
   const optGrid = document.getElementById('masteryOptions');
   optGrid.innerHTML = '';
   
-  q.options.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    btn.innerText = opt;
+  if (false) { // Keep multiple choice everywhere
+    optGrid.innerHTML = `
+      <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto;">
+        <input type="text" id="masteryAnswerInput" class="auth-input" placeholder="Type your answer here..." style="background: #1e293b; border: 3px solid rgba(255,255,255,0.25); border-radius: 14px; padding: 16px 20px; font-size: 22px; font-weight: 850; color: #ffffff !important; text-align: center; font-family: inherit; width: 100%; outline: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: border-color 0.2s, box-shadow 0.2s; caret-color: var(--color-orange-accent);" autocomplete="off">
+        <div id="masterySpellingHelp" style="display: none; color: #fbbf24; font-size: 15px; font-weight: 800; text-align: center; margin-top: -4px; line-height: 1.4; padding: 6px; background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.2); border-radius: 8px;"></div>
+        <button id="masterySubmitBtn" class="auth-submit" style="margin-top: 4px; padding: 12px; font-size: 16px;">Check Answer ➔</button>
+      </div>
+    `;
+    const input = document.getElementById('masteryAnswerInput');
+    const submitBtn = document.getElementById('masterySubmitBtn');
+    setTimeout(() => input.focus(), 100);
     
-    btn.addEventListener('click', () => {
-      handleMasteryChoice(opt, btn);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitBtn.click();
     });
-    optGrid.appendChild(btn);
-  });
-  
+
+    input.addEventListener('input', () => {
+      appState.spellingWarningShown = false;
+      const spellingHelp = document.getElementById('masterySpellingHelp');
+      if (spellingHelp) {
+        spellingHelp.style.display = 'none';
+        spellingHelp.innerText = '';
+      }
+      input.style.borderColor = 'rgba(255,255,255,0.25)';
+      input.style.background = '#1e293b';
+    });
+    
+    submitBtn.addEventListener('click', () => {
+      handleMasteryInput(input, submitBtn);
+    });
+  } else {
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerText = opt;
+      btn.addEventListener('click', () => {
+        handleMasteryChoice(opt, btn);
+      });
+      optGrid.appendChild(btn);
+    });
+  }
+
   speakText(q.questionText);
 
   // Bind AI Tutor Chatbot button
@@ -7429,6 +8510,111 @@ function handleMasteryChoice(selectedOpt, btnElement) {
   }
 }
 
+function handleMasteryInput(input, submitBtn) {
+  const q = appState.currentMasteryQuestion;
+  const userAns = input.value.trim().toLowerCase();
+  const correctAns = q.correctAnswer.trim().toLowerCase();
+  let isCorrect = (userAns === correctAns);
+
+  const spellingHelp = document.getElementById('masterySpellingHelp');
+  if (spellingHelp && !appState.spellingWarningShown) {
+    spellingHelp.style.display = 'none';
+    spellingHelp.innerText = '';
+  }
+
+  if (!isCorrect) {
+    const dist = getLevenshteinDistance(userAns, correctAns);
+    const isSpellingNearMiss = (isNaN(Number(correctAns)) && correctAns.length > 2 && dist <= 2);
+    if (isSpellingNearMiss) {
+      if (!appState.spellingWarningShown) {
+        appState.spellingWarningShown = true;
+        sounds.playPop();
+        input.style.borderColor = '#fbbf24';
+        input.style.background = 'rgba(251,191,36,0.1)';
+        input.style.animation = 'wrong-shake 0.3s ease';
+        if (spellingHelp) {
+          spellingHelp.innerHTML = `⚠️ Almost! Did you mean <span style="text-decoration: underline; cursor: pointer; color: #60a5fa; font-weight: 850;" onclick="document.getElementById('masteryAnswerInput').value='${q.correctAnswer.replace(/'/g, "\'")}'; document.getElementById('masterySpellingHelp').style.display='none'; appState.spellingWarningShown=false; document.getElementById('masteryAnswerInput').focus();">"${q.correctAnswer}"</span>? (Click to fix)`;
+          spellingHelp.style.display = 'block';
+        }
+        speakText("Close! Check your spelling.");
+        setTimeout(() => {
+          input.style.animation = '';
+        }, 400);
+        return;
+      }
+      isCorrect = true;
+    }
+  }
+
+  if (isCorrect) {
+    if (appState.chatbotUsedForCurrentQuestion) {
+      sounds.playWrong();
+      input.style.borderColor = '#ef4444';
+      input.style.background = 'rgba(239,68,68,0.1)';
+      speakText("AI was used, so this is marked as incorrect.");
+      if (!appState.masteryTrialRecorded) {
+        appState.masteryChancesLeft--;
+        const lostHeart = document.getElementById(`heart-${appState.masteryChancesLeft + 1}`);
+        if (lostHeart) lostHeart.classList.add('lost', 'bounce-lose');
+        recordMasteryTrial(0);
+      }
+      setTimeout(() => {
+        generateMasteryProblem();
+      }, 1500);
+      return;
+    }
+
+    sounds.playCorrect();
+    input.style.borderColor = '#10b981';
+    input.style.background = 'rgba(16,185,129,0.1)';
+    submitBtn.disabled = true;
+
+    if (appState.masteryChancesLeft === 3 && !appState.masteryHintUsed && !appState.masteryTrialRecorded) {
+      recordMasteryTrial(1);
+    } else {
+      if (!appState.masteryTrialRecorded) recordMasteryTrial(0);
+    }
+    speakText("Correct!");
+
+    setTimeout(() => {
+      const history = appState.masteryHistory;
+      let pct = 0;
+      if (history.length > 0) {
+        const correct = history.reduce((sum, val) => sum + val, 0);
+        pct = Math.round((correct / history.length) * 100);
+      }
+      if (pct >= appState.masteryTargetPercent && history.length >= 8) {
+        showMasterySuccessScreen();
+      } else {
+        generateMasteryProblem();
+      }
+    }, 1000);
+  } else {
+    sounds.playWrong();
+    input.style.borderColor = '#ef4444';
+    input.style.background = 'rgba(239,68,68,0.1)';
+    input.style.animation = 'wrong-shake 0.3s ease';
+
+    appState.masteryChancesLeft--;
+    const lostHeart = document.getElementById(`heart-${appState.masteryChancesLeft + 1}`);
+    if (lostHeart) lostHeart.classList.add('lost', 'bounce-lose');
+
+    if (!appState.masteryTrialRecorded) recordMasteryTrial(0);
+    speakText("Not quite! Try again!");
+
+    setTimeout(() => {
+      input.style.animation = '';
+    }, 500);
+
+    if (!appState.questionMistakes) appState.questionMistakes = 0;
+    appState.questionMistakes++;
+    if (appState.questionMistakes >= 3) {
+      showQuestionExplanation(q);
+      appState.questionMistakes = 0;
+    }
+  }
+}
+
 function recordMasteryTrial(success) {
   if (appState.masteryTrialRecorded) return; // Prevent logging multiple trials for one problem
   appState.masteryTrialRecorded = true;
@@ -7514,6 +8700,7 @@ function setupStep4Test() {
 }
 
 function renderTestQuestion() {
+  appState.spellingWarningShown = false;
   appState.questionMistakes = 0;
   appState.chatbotUsedForCurrentQuestion = false;
   const idx = appState.testIndex;
@@ -7542,18 +8729,93 @@ function renderTestQuestion() {
     </div>
   `;
 
-  // Draw options
   const optGrid = document.getElementById('testOptions');
-  q.options.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.className = 'option-btn';
-    btn.innerText = opt;
+  if (false) { // Keep multiple choice everywhere
+    optGrid.innerHTML = `
+      <div style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 400px; margin: 0 auto;">
+        <input type="text" id="testAnswerInput" class="auth-input" placeholder="Type your answer here..." style="background: #1e293b; border: 3px solid rgba(255,255,255,0.25); border-radius: 14px; padding: 16px 20px; font-size: 22px; font-weight: 850; color: #ffffff !important; text-align: center; font-family: inherit; width: 100%; outline: none; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: border-color 0.2s, box-shadow 0.2s; caret-color: var(--color-orange-accent);" autocomplete="off">
+        <div id="testSpellingHelp" style="display: none; color: #fbbf24; font-size: 15px; font-weight: 800; text-align: center; margin-top: -4px; line-height: 1.4; padding: 6px; background: rgba(251,191,36,0.1); border: 1.5px solid rgba(251,191,36,0.2); border-radius: 8px;"></div>
+        <button id="testSubmitBtn" class="auth-submit" style="margin-top: 4px; padding: 12px; font-size: 16px;">Submit Answer ➔</button>
+      </div>
+    `;
+    const input = document.getElementById('testAnswerInput');
+    const submitBtn = document.getElementById('testSubmitBtn');
+    setTimeout(() => input.focus(), 100);
     
-    btn.addEventListener('click', () => {
-      handleTestChoice(opt === q.correctAnswer, btn);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') submitBtn.click();
     });
-    optGrid.appendChild(btn);
-  });
+
+    input.addEventListener('input', () => {
+      appState.spellingWarningShown = false;
+      const spellingHelp = document.getElementById('testSpellingHelp');
+      if (spellingHelp) {
+        spellingHelp.style.display = 'none';
+        spellingHelp.innerText = '';
+      }
+      input.style.borderColor = 'rgba(255,255,255,0.25)';
+      input.style.background = '#1e293b';
+    });
+    
+    submitBtn.addEventListener('click', () => {
+      const userAns = input.value.trim().toLowerCase();
+      const correctAns = q.correctAnswer.trim().toLowerCase();
+      let isCorrect = (userAns === correctAns);
+
+      const spellingHelp = document.getElementById('testSpellingHelp');
+      if (spellingHelp && !appState.spellingWarningShown) {
+        spellingHelp.style.display = 'none';
+        spellingHelp.innerText = '';
+      }
+
+      // Check spelling near-miss
+      if (!isCorrect) {
+        const dist = getLevenshteinDistance(userAns, correctAns);
+        const isSpellingNearMiss = (isNaN(Number(correctAns)) && correctAns.length > 2 && dist <= 2);
+        if (isSpellingNearMiss) {
+          if (!appState.spellingWarningShown) {
+            appState.spellingWarningShown = true;
+            sounds.playPop();
+            input.style.borderColor = '#fbbf24';
+            input.style.background = 'rgba(251,191,36,0.1)';
+            input.style.animation = 'wrong-shake 0.3s ease';
+            if (spellingHelp) {
+              spellingHelp.innerHTML = `⚠️ Almost! Did you mean <span style="text-decoration: underline; cursor: pointer; color: #60a5fa; font-weight: 850;" onclick="document.getElementById('testAnswerInput').value='${q.correctAnswer.replace(/'/g, "\'")}'; document.getElementById('testSpellingHelp').style.display='none'; appState.spellingWarningShown=false; document.getElementById('testAnswerInput').focus();">"${q.correctAnswer}"</span>? (Click to fix)`;
+              spellingHelp.style.display = 'block';
+            }
+            speakText("Close! Check your spelling.");
+            setTimeout(() => {
+              input.style.animation = '';
+            }, 400);
+            return;
+          }
+          isCorrect = true;
+        }
+      }
+
+      submitBtn.disabled = true;
+      input.disabled = true;
+      if (isCorrect) {
+        input.style.borderColor = '#10b981';
+        input.style.background = 'rgba(16,185,129,0.1)';
+      } else {
+        input.style.borderColor = '#ef4444';
+        input.style.background = 'rgba(239,68,68,0.1)';
+        input.style.animation = 'wrong-shake 0.3s ease';
+      }
+      handleTestChoice(isCorrect, submitBtn);
+    });
+  } else {
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerText = opt;
+      btn.addEventListener('click', () => {
+        handleTestChoice(opt === q.correctAnswer, btn);
+      });
+      optGrid.appendChild(btn);
+    });
+  }
 
   speakText(q.questionText);
 
@@ -8644,3 +9906,157 @@ function renderTable(containerId, sortedList, valueKey, valueSuffix) {
   });
 }
 
+
+function getLessonTitleAndDesc(subject, grade, lessonId) {
+  if (grade === 1) {
+    if (subject === 'math') return LESSON_TITLES[lessonId] || [`Lesson ${lessonId}`, "Learn Grade 1 Math standard."];
+    if (subject === 'ela') return ELA_LESSON_TITLES[lessonId] || [`Lesson ${lessonId}`, "Learn Grade 1 ELA standard."];
+    if (subject === 'history') return HISTORY_LESSON_TITLES[lessonId] || [`Lesson ${lessonId}`, "Learn Grade 1 History."];
+    if (subject === 'geography') return GEOGRAPHY_LESSON_TITLES[lessonId] || [`Lesson ${lessonId}`, "Learn Grade 1 Geography."];
+    if (subject === 'science') return SCIENCE_LESSON_TITLES[lessonId] || [`Lesson ${lessonId}`, "Learn Grade 1 Science."];
+    if (subject === 'art') return ART_LESSON_TITLES[lessonId] || [`Lesson ${lessonId}`, "Learn Grade 1 Art."];
+  }
+
+  const unit = lessonId <= 20 ? 1 : lessonId <= 40 ? 2 : lessonId <= 60 ? 3 : lessonId <= 80 ? 4 : lessonId <= 95 ? 5 : 6;
+  const unit30 = lessonId <= 5 ? 1 : lessonId <= 10 ? 2 : lessonId <= 15 ? 3 : lessonId <= 20 ? 4 : lessonId <= 25 ? 5 : 6;
+
+  if (subject === 'math') {
+    if (grade === 2) {
+      if (unit === 1) return [`Addition & Subtraction within 100 (L${lessonId})`, "Solve double-digit arithmetic word problems."];
+      if (unit === 2) return [`Place Value up to 1000 (L${lessonId})`, "Understand hundreds, tens, and ones."];
+      if (unit === 3) return [`Measurement and Length (L${lessonId})`, "Estimate and measure using inches and centimeters."];
+      if (unit === 4) return [`Time & Money (L${lessonId})`, "Count coins and tell time to the nearest 5 minutes."];
+      if (unit === 5) return [`Geometry & Equal Shares (L${lessonId})`, "Partition circles and rectangles into equal halves and fourths."];
+      return [`Grade 2 Math Review (L${lessonId})`, "Comprehensive practice of all Grade 2 Math standards."];
+    }
+    if (grade === 3) {
+      if (unit === 1) return [`Multiplication & Division Concepts (L${lessonId})`, "Interpret products and quotients of whole numbers."];
+      if (unit === 2) return [`Fractions as Numbers (L${lessonId})`, "Represent fractions on a number line."];
+      if (unit === 3) return [`Time, Liquid Volumes, and Mass (L${lessonId})`, "Measure time intervals and estimate mass."];
+      if (unit === 4) return [`Area & Perimeter (L${lessonId})`, "Calculate square units and linear boundaries."];
+      if (unit === 5) return [`Geometry & Categorizing Shapes (L${lessonId})`, "Identify quadrilaterals and share attributes."];
+      return [`Grade 3 Math Review (L${lessonId})`, "Comprehensive practice of all Grade 3 Math standards."];
+    }
+    if (grade === 4) {
+      if (unit === 1) return [`Multi-Digit Operations & Factors (L${lessonId})`, "Find factors, multiples, prime, and composite numbers."];
+      if (unit === 2) return [`Multi-Digit Whole Numbers (L${lessonId})`, "Multiply four digits by one digit and compare values."];
+      if (unit === 3) return [`Fraction Equivalence & Operations (L${lessonId})`, "Compare fractions with different denominators."];
+      if (unit === 4) return [`Decimals & Metric System (L${lessonId})`, "Convert tenths/hundredths to decimals and convert units."];
+      if (unit === 5) return [`Angles & Line Symmetry (L${lessonId})`, "Measure angles with protractors and identify symmetry."];
+      return [`Grade 4 Math Review (L${lessonId})`, "Comprehensive practice of all Grade 4 Math standards."];
+    }
+    if (grade === 5) {
+      if (unit === 1) return [`Numerical Expressions & PEMDAS (L${lessonId})`, "Write and evaluate expressions using parentheses."];
+      if (unit === 2) return [`Decimals Place Value & Operations (L${lessonId})`, "Read, write, compare, and compute decimals to thousandths."];
+      if (unit === 3) return [`Fractions Multiplication & Division (L${lessonId})`, "Multiply fractions and divide unit fractions."];
+      if (unit === 4) return [`Volume Measurement (L${lessonId})`, "Measure volume using unit cubes and apply formulas."];
+      if (unit === 5) return [`Coordinate Planes & Graphing (L${lessonId})`, "Graph points on coordinate planes to solve real-world problems."];
+      return [`Grade 5 Math Review (L${lessonId})`, "Comprehensive practice of all Grade 5 Math standards."];
+    }
+  }
+
+  if (subject === 'ela') {
+    if (grade === 2) {
+      if (unit === 1) return [`Phonics & Word Recognition (L${lessonId})`, "Distinguish long and short vowels in one-syllable words."];
+      if (unit === 2) return [`Grammar & Nouns (L${lessonId})`, "Use collective nouns and irregular plural nouns."];
+      return [`Reading Comprehension & Writing (L${lessonId})`, "Identify main topics and write narratives."];
+    }
+    if (grade === 3) {
+      if (unit === 1) return [`Parts of Speech & Grammar (L${lessonId})`, "Explain functions of nouns, pronouns, verbs, and adverbs."];
+      if (unit === 2) return [`Vocabulary & Word Context (L${lessonId})`, "Determine meanings of words using prefixes and suffixes."];
+      return [`Reading & Critical Text Analysis (L${lessonId})`, "Refer to details and examples in a text to explain meanings."];
+    }
+    if (grade === 4) {
+      if (unit === 1) return [`Relative Pronouns & Adverbs (L${lessonId})`, "Use relative pronouns (who, whose, whom) and adverbs."];
+      if (unit === 2) return [`Word Choice & Figurative Language (L${lessonId})`, "Identify similes, metaphors, idioms, and adages."];
+      return [`Evidence-Based Reading (L${lessonId})`, "Draw inferences and explain characters, settings, or events."];
+    }
+    if (grade === 5) {
+      if (unit === 1) return [`Conjunctions, Prepositions, & Interjections (L${lessonId})`, "Use conjunctions, prepositions, and interjections."];
+      if (unit === 2) return [`Sentence Structure & Mechanics (L${lessonId})`, "Recognize and correct inappropriate shifts in verb tense."];
+      return [`Textual Synthesis & Evaluation (L${lessonId})`, "Integrate information from several texts to write or speak."];
+    }
+  }
+
+  if (subject === 'science') {
+    if (grade === 2) {
+      if (unit30 === 1) return [`States of Matter (L${lessonId})`, "Classify materials as solids, liquids, or gases."];
+      if (unit30 === 2) return [`Ecosystems & Habitats (L${lessonId})`, "Compare diversity of life in different environments."];
+      return [`Earth Systems & Wind/Water (L${lessonId})`, "Compare solutions designed to slow down wind or water erosion."];
+    }
+    if (grade === 3) {
+      if (unit30 === 1) return [`Forces and Motion (L${lessonId})`, "Plan and conduct an investigation on balanced and unbalanced forces."];
+      if (unit30 === 2) return [`Life Cycles & Heredity (L${lessonId})`, "Analyze traits of plants and animals inherited from parents."];
+      return [`Weather, Climate, & Natural Hazards (L${lessonId})`, "Represent data in tables and graphical displays."];
+    }
+    if (grade === 4) {
+      if (unit30 === 1) return [`Energy & Speed (L${lessonId})`, "Relate the speed of an object to the energy of that object."];
+      if (unit30 === 2) return [`Waves & Information Transfer (L${lessonId})`, "Describe patterns in terms of amplitude and wavelength."];
+      return [`Earth's Place in Universe & Rock Formations (L${lessonId})`, "Identify evidence from patterns in rock formations."];
+    }
+    if (grade === 5) {
+      if (unit30 === 1) return [`Matter Conservation & Properties (L${lessonId})`, "Measure and graph quantities to provide evidence that matter is conserved."];
+      if (unit30 === 2) return [`Matter & Energy in Ecosystems (L${lessonId})`, "Describe the movement of matter among plants, animals, and decomposers."];
+      return [`Earth Systems & Space Science (L${lessonId})`, "Graph the points to show daily changes in shadow length."];
+    }
+  }
+
+  if (subject === 'history') {
+    if (grade === 2) {
+      if (unit30 === 1) return [`Historical Figures & Foundations (L${lessonId})`, "Learn about national symbols, presidents, and historical monuments."];
+      return [`Community History & Traditions (L${lessonId})`, "Identify how communities have changed over time."];
+    }
+    if (grade === 3) {
+      if (unit30 === 1) return [`Native Americans & Early Settlers (L${lessonId})`, "Explore cultures and environments of indigenous peoples."];
+      return [`Local Government & Civic Duties (L${lessonId})`, "Understand public services, voting, and civic participation."];
+    }
+    if (grade === 4) {
+      if (unit30 === 1) return [`State History & Colonial Expansion (L${lessonId})`, "Trace exploration routes and early colonial settlements."];
+      return [`Industrial Revolution & Innovation (L${lessonId})`, "Analyze the impact of inventions and transport networks."];
+    }
+    if (grade === 5) {
+      if (unit30 === 1) return [`The American Revolution & Constitution (L${lessonId})`, "Trace the causes, major figures, and outcomes of the war."];
+      return [`The Civil War & Reconstruction (L${lessonId})`, "Examine conflict, emancipation, and rebuilding of the nation."];
+    }
+  }
+
+  if (subject === 'geography') {
+    if (grade === 2) {
+      if (unit30 === 1) return [`Maps, Globes, & Landforms (L${lessonId})`, "Identify hemispheres, the equator, and standard landforms."];
+      return [`Human-Environment Interaction (L${lessonId})`, "Analyze how human activities adapt to natural barriers."];
+    }
+    if (grade === 3) {
+      if (unit30 === 1) return [`Latitude, Longitude & Coordinate Systems (L${lessonId})`, "Locate places using coordinate grids and legends."];
+      return [`Global Regions & Climates (L${lessonId})`, "Analyze polar, temperate, and tropical climate characteristics."];
+    }
+    if (grade === 4) {
+      if (unit30 === 1) return [`Physical Geography of US Regions (L${lessonId})`, "Compare geography, vegetation, and resources of states."];
+      return [`Global Trade Routes & Resources (L${lessonId})`, "Identify how resource distribution shapes international trade."];
+    }
+    if (grade === 5) {
+      if (unit30 === 1) return [`Geopolitical Maps & Borders (L${lessonId})`, "Analyze boundaries, political regions, and capitals."];
+      return [`Ecosystems & Human Impact (L${lessonId})`, "Evaluate how urbanization affects natural water watersheds."];
+    }
+  }
+
+  if (subject === 'art') {
+    if (grade === 2) {
+      if (unit30 === 1) return [`Color Theory: Primary & Secondary (L${lessonId})`, "Mix pigments and understand warm vs cool balances."];
+      return [`Visual Textures & Forms (L${lessonId})`, "Distinguish 2D drawings from 3D relief sculptures."];
+    }
+    if (grade === 3) {
+      if (unit30 === 1) return [`Symmetry & Patterns (L${lessonId})`, "Create radial balance and geometric patterns."];
+      return [`Art History & Cultural Expressions (L${lessonId})`, "Identify historical genres and study folk art."];
+    }
+    if (grade === 4) {
+      if (unit30 === 1) return [`Perspective & 3D Illusion (L${lessonId})`, "Use one-point perspective and vanishing points."];
+      return [`Value Scale & Value Shading (L${lessonId})`, "Add shading to show depth, light sources, and highlights."];
+    }
+    if (grade === 5) {
+      if (unit30 === 1) return [`Scale, Proportion & Anatomy (L${lessonId})`, "Draw portraits and figures showing accurate proportions."];
+      return [`Contemporary Art & Modern Media (L${lessonId})`, "Explore digital design, abstract art, and installation pieces."];
+    }
+  }
+
+  return [`Grade ${grade} Topic (L${lessonId})`, "Practice core Common Core educational topics."];
+}
