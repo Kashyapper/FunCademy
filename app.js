@@ -32527,6 +32527,210 @@ const GRADE_2_5_QUESTIONS = {
 };
 
 
+// Post-process GRADE_2_5_QUESTIONS to add a 5th question to each lesson for science, history, geography, art
+if (typeof GRADE_2_5_QUESTIONS !== 'undefined') {
+  for (let subject in GRADE_2_5_QUESTIONS) {
+    if (subject === 'math' || subject === 'ela') continue;
+    for (let grade in GRADE_2_5_QUESTIONS[subject]) {
+      for (let lessonId in GRADE_2_5_QUESTIONS[subject][grade]) {
+        const qList = GRADE_2_5_QUESTIONS[subject][grade][lessonId];
+        if (qList && qList.length === 4) {
+          const firstQ = qList[0];
+          const theme = firstQ.theme;
+          const fact = firstQ.fact_stem;
+          const theme_lc = theme.toLowerCase();
+          
+          let questionText = "";
+          let correctAnswer = "";
+          let distractors = [];
+
+          if (subject === 'geography') {
+            if (theme_lc.includes("plain") || theme_lc.includes("grassland") || theme_lc.includes("prairie") || theme_lc.includes("savanna")) {
+              questionText = `Which of the following explains why winds sweep across the grasslands and plains at high speeds?`;
+              correctAnswer = `Because there are no mountain barriers to block the wind.`;
+              distractors = [
+                `Because the oceans create massive tides across the land.`,
+                `Because the trees in the forest push the air forward.`,
+                `Because the solar radiation increases gravity in the valley.`
+              ];
+            } else if (theme_lc.includes("mountain") || theme_lc.includes("appalachian") || theme_lc.includes("rocky") || theme_lc.includes("andes") || theme_lc.includes("alps") || theme_lc.includes("range") || theme_lc.includes("peaks") || theme_lc.includes("elevation")) {
+              questionText = `How do mountains influence local weather patterns on the slopes?`;
+              correctAnswer = `They force wind upwards, cooling the air to create rain or snow.`;
+              distractors = [
+                `They stop the rotation of the Earth and cause permanent day.`,
+                `They evaporate all oceans and turn them into fresh water.`,
+                `They prevent clouds from forming in the atmosphere.`
+              ];
+            } else if (theme_lc.includes("desert") || theme_lc.includes("sahara") || theme_lc.includes("arid") || theme_lc.includes("moisture")) {
+              questionText = `Which adaptation helps desert plants like cacti survive long periods of dry weather?`;
+              correctAnswer = `They have thick waxy skins to store water and prevent loss.`;
+              distractors = [
+                `They shed their leaves every day to stay cool in the sun.`,
+                `They grow tall canopy leaves to block out all light.`,
+                `They absorb nitrogen directly from the ocean currents.`
+              ];
+            } else if (theme_lc.includes("polar") || theme_lc.includes("arctic") || theme_lc.includes("tundra") || theme_lc.includes("antarctica") || theme_lc.includes("ice") || theme_lc.includes("frozen") || theme_lc.includes("glacier")) {
+              questionText = `Why are there no tall trees growing in the polar tundra regions?`;
+              correctAnswer = `Because the ground beneath the surface is permanently frozen permafrost.`;
+              distractors = [
+                `Because penguins cut down the trees to build nests.`,
+                `Because the air has too much oxygen for trees to survive.`,
+                `Because tides wash away all the seeds into the salty sea.`
+              ];
+            } else if (theme_lc.includes("forest") || theme_lc.includes("rainforest") || theme_lc.includes("canopy") || theme_lc.includes("woods") || theme_lc.includes("jungle") || theme_lc.includes("deciduous") || theme_lc.includes("coniferous") || theme_lc.includes("tree")) {
+              questionText = `What is the main difference between deciduous forests and coniferous forests?`;
+              correctAnswer = `Deciduous forests shed leaves in autumn, while coniferous are evergreen.`;
+              distractors = [
+                `Deciduous forests grow under water, while coniferous grow in space.`,
+                `Deciduous forests have no animals, while coniferous are full of camels.`,
+                `Deciduous forests have permafrost, while coniferous have sand dunes.`
+              ];
+            } else if (theme_lc.includes("river") || theme_lc.includes("lake") || theme_lc.includes("ocean") || theme_lc.includes("sea") || theme_lc.includes("water") || theme_lc.includes("erosion") || theme_lc.includes("canyon") || theme_lc.includes("stream")) {
+              questionText = `How do rushing rivers slowly shape the physical landscape over thousands of years?`;
+              correctAnswer = `By carrying rocks and soil downstream to erode deep valleys.`;
+              distractors = [
+                `By freezing the entire continent and creating permafrost.`,
+                `By heating up the air to create desert sand dunes.`,
+                `By pulling the moon closer to the Earth's surface.`
+              ];
+            } else {
+              questionText = `What tools do geographers use to study regional layouts and coordinates?`;
+              correctAnswer = `Globes, physical maps, and satellite imagery.`;
+              distractors = [
+                `Paint brushes, canvases, and color palettes.`,
+                `Timelines, ancient diaries, and letters.`,
+                `Thermometers, scales, and chemical tubes.`
+              ];
+            }
+          } else if (subject === 'science') {
+            if (theme_lc.includes("desert") || theme_lc.includes("sahara") || theme_lc.includes("arid") || theme_lc.includes("moisture")) {
+              questionText = `Which adaptation helps desert plants like cacti survive long periods of dry weather?`;
+              correctAnswer = `They have thick waxy skins to store water and prevent loss.`;
+              distractors = [
+                `They shed their leaves every day to stay cool in the sun.`,
+                `They grow tall canopy leaves to block out all light.`,
+                `They absorb nitrogen directly from the ocean currents.`
+              ];
+            } else if (theme_lc.includes("polar") || theme_lc.includes("arctic") || theme_lc.includes("tundra") || theme_lc.includes("antarctica") || theme_lc.includes("ice") || theme_lc.includes("frozen") || theme_lc.includes("glacier")) {
+              questionText = `Why are there no tall trees growing in the polar tundra regions?`;
+              correctAnswer = `Because the ground beneath the surface is permanently frozen permafrost.`;
+              distractors = [
+                `Because penguins cut down the trees to build nests.`,
+                `Because the air has too much oxygen for trees to survive.`,
+                `Because tides wash away all the seeds into the salty sea.`
+              ];
+            } else if (theme_lc.includes("forest") || theme_lc.includes("rainforest") || theme_lc.includes("canopy") || theme_lc.includes("woods") || theme_lc.includes("jungle") || theme_lc.includes("deciduous") || theme_lc.includes("coniferous") || theme_lc.includes("tree")) {
+              questionText = `What is the main difference between deciduous forests and coniferous forests?`;
+              correctAnswer = `Deciduous forests shed leaves in autumn, while coniferous are evergreen.`;
+              distractors = [
+                `Deciduous forests grow under water, while coniferous grow in space.`,
+                `Deciduous forests have no animals, while coniferous are full of camels.`,
+                `Deciduous forests have permafrost, while coniferous have sand dunes.`
+              ];
+            } else if (theme_lc.includes("river") || theme_lc.includes("lake") || theme_lc.includes("ocean") || theme_lc.includes("sea") || theme_lc.includes("water") || theme_lc.includes("erosion") || theme_lc.includes("canyon") || theme_lc.includes("stream")) {
+              questionText = `How do rushing rivers slowly shape the physical landscape over thousands of years?`;
+              correctAnswer = `By carrying rocks and soil downstream to erode deep valleys.`;
+              distractors = [
+                `By freezing the entire continent and creating permafrost.`,
+                `By heating up the air to create desert sand dunes.`,
+                `By pulling the moon closer to the Earth's surface.`
+              ];
+            } else if (theme_lc.includes("space") || theme_lc.includes("planet") || theme_lc.includes("solar") || theme_lc.includes("moon") || theme_lc.includes("sun") || theme_lc.includes("star") || theme_lc.includes("orbit") || theme_lc.includes("galaxy") || theme_lc.includes("astronomy") || theme_lc.includes("universe") || theme_lc.includes("telescope")) {
+              questionText = `Why is outer space completely silent for astronauts?`;
+              correctAnswer = `Because space is a vacuum with no air or atmosphere to carry sound waves.`;
+              distractors = [
+                `Because the gravity of the Sun absorbs all sound energy.`,
+                `Because the planets spin too fast to allow sound to travel.`,
+                `Because stars release solar flares that block all communications.`
+              ];
+            } else {
+              questionText = `How do scientists test a hypothesis about a natural phenomenon?`;
+              correctAnswer = `By running controlled experiments and analyzing data.`;
+              distractors = [
+                `By voting in local democratic elections.`,
+                `By painting a realistic picture on a canvas.`,
+                `By writing a fictional story about the past.`
+              ];
+            }
+          } else if (subject === 'history') {
+            if (theme_lc.includes("timeline") || theme_lc.includes("past") || theme_lc.includes("source") || theme_lc.includes("historian") || theme_lc.includes("evidence") || theme_lc.includes("document") || theme_lc.includes("artifact")) {
+              questionText = `Which of the following is the best example of a primary source for a historian?`;
+              correctAnswer = `An original diary entry or letter written by someone who was there.`;
+              distractors = [
+                `A modern encyclopedia article summarizing past centuries.`,
+                `A fictional story written for movie entertainment.`,
+                `A textbook printed many decades after the event occurred.`
+              ];
+            } else if (theme_lc.includes("government") || theme_lc.includes("president") || theme_lc.includes("leader") || theme_lc.includes("law") || theme_lc.includes("citizen") || theme_lc.includes("constitution") || theme_lc.includes("democracy") || theme_lc.includes("rights") || theme_lc.includes("vote") || theme_lc.includes("congress") || theme_lc.includes("court")) {
+              questionText = `Which branch of government is responsible for passing new laws in a democracy?`;
+              correctAnswer = `The legislative branch, which includes elected representatives.`;
+              distractors = [
+                `The judicial branch, which includes court judges.`,
+                `The executive branch, which includes the president.`,
+                `The military branch, which enforces security rules.`
+              ];
+            } else {
+              questionText = `What do historians look for to understand why past changes happened?`;
+              correctAnswer = `Cause and effect relationships between historical events.`;
+              distractors = [
+                `The temperature of the core of the earth.`,
+                `The primary and secondary colors of pigment.`,
+                `The mathematical formula of gravity.`
+              ];
+            }
+          } else { // art
+            if (theme_lc.includes("color") || theme_lc.includes("shade") || theme_lc.includes("primary") || theme_lc.includes("secondary") || theme_lc.includes("wheel") || theme_lc.includes("warm") || theme_lc.includes("cool") || theme_lc.includes("pigment") || theme_lc.includes("tint")) {
+              questionText = `Which of the following describes complementary colors on the color wheel?`;
+              correctAnswer = `Colors that sit opposite each other and create high contrast.`;
+              distractors = [
+                `Colors that mix to create primary red, yellow, and blue.`,
+                `Colors that are only used to paint shadows and tints.`,
+                `Colors that look exactly identical under any light source.`
+              ];
+            } else if (theme_lc.includes("line") || theme_lc.includes("shape") || theme_lc.includes("texture") || theme_lc.includes("form") || theme_lc.includes("pattern") || theme_lc.includes("element") || theme_lc.includes("composition") || theme_lc.includes("medium") || theme_lc.includes("canvas") || theme_lc.includes("sketch") || theme_lc.includes("clay")) {
+              questionText = `What is the main difference between shapes and forms in visual art?`;
+              correctAnswer = `Shapes are flat two-dimensional areas, while forms have three-dimensional volume.`;
+              distractors = [
+                `Shapes are drawn with pencils, while forms are made only of light.`,
+                `Shapes have color, while forms are always black and white.`,
+                `Shapes are used in painting, while forms are only used in music.`
+              ];
+            } else {
+              questionText = `What do artists combine to organize visual compositions on a canvas?`;
+              correctAnswer = `Elements like line, shape, color, and texture.`;
+              distractors = [
+                `Gravity, acceleration, and chemical reactions.`,
+                `Diaries, historical timelines, and textbooks.`,
+                `Latitude, longitude, and map legends.`
+              ];
+            }
+          }
+
+          const options = [
+            correctAnswer,
+            distractors[0],
+            distractors[1],
+            distractors[2]
+          ];
+
+          qList.push({
+            theme: theme,
+            fact_stem: fact,
+            concept: theme,
+            questionText: questionText,
+            correctAnswer: correctAnswer,
+            options: options,
+            visualContent: `<div style="font-size: 48px;">📖</div>`, // replaced later depending on subject
+            explanation: `This property is explained on Page 1 of the lesson.`,
+            hint: `Read Page 1 to review what ${theme} represents.`
+          });
+        }
+      }
+    }
+  }
+}
+
+
 const ELA_LESSON_TITLES = {
   1: ["Short 'a' Sound", "Identify words with short 'a' sound (e.g. cat, rat)."],
   2: ["Short 'e' Sound", "Identify words with short 'e' sound (e.g. hen, pen)."],
@@ -34902,8 +35106,20 @@ function generateElaQuestion(lessonId) {
 
 function getQuestionsForLesson(subject, lessonId) {
   const grade = (typeof appState !== 'undefined' && appState) ? (appState.currentGrade || 1) : 1;
+  
+  const isSpecial = (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art');
+  if (grade >= 2 && isSpecial) {
+    if (typeof GRADE_2_5_QUESTIONS !== 'undefined' && 
+        GRADE_2_5_QUESTIONS[subject] && 
+        GRADE_2_5_QUESTIONS[subject][grade] && 
+        GRADE_2_5_QUESTIONS[subject][grade][lessonId]) {
+      return GRADE_2_5_QUESTIONS[subject][grade][lessonId];
+    }
+  }
+
   const dynQ = getGradeSpecificDynamicQuestion(subject, grade, lessonId);
   if (dynQ) return [dynQ];
+
 
   if (subject === 'history') return HISTORY_QUESTIONS_LIST[lessonId] || [];
   if (subject === 'geography') return GEOGRAPHY_QUESTIONS_LIST[lessonId] || [];
@@ -34957,7 +35173,7 @@ function getQuestionsForLesson(subject, lessonId) {
 
 function generateMathQuestion(lessonId, index) {
   const grade = appState.currentGrade || 1;
-  const dynQ = getGradeSpecificDynamicQuestion(appState.currentSubject, grade, lessonId);
+  const dynQ = getGradeSpecificDynamicQuestion(appState.currentSubject, grade, lessonId, index);
   if (dynQ) {
     let options = [...dynQ.options];
     options = options.sort(() => Math.random() - 0.5);
@@ -37469,686 +37685,987 @@ function getGradeSpecificPages(subject, grade, unit, theme, fact_stem) {
   const theme_clean = theme.trim();
   const fact_clean = fact_stem.replace(/\.*$/, "").trim();
 
-  let p1 = [], p2 = [], p3 = [], p4 = [], p5 = [];
+  let intro = "";
+  let conceptDef = "";
+  let importance = "";
+  let preview = "";
 
-  if (subject === 'science') {
-    if (unit === 1) { // States of Matter
-      p1 = [
-        "We begin our study of science by looking at " + theme_clean + ".",
-        "The physical world is composed of matter, which is anything that occupies space.",
-        theme_clean + " is a fundamental state of matter with unique physical properties.",
-        "Scientists categorize matter to understand how different substances interact.",
-        "By learning about " + theme_clean + ", we can describe the structure of materials.",
-        "Every material has characteristics that help us identify its state.",
-        "These states include solid, liquid, and gas forms in nature.",
-        "Observing these states helps us classify the items in our daily lives.",
-        "This classification is the foundation of chemistry and physics.",
-        "Let us explore how these materials behave under different conditions."
-      ];
-      p2 = [
-        "A key rule of " + theme_clean + " is that they " + fact_clean + ".",
-        "This behavior is determined by the spacing and energy of the particles.",
-        "In this state, the particles are organized in a specific pattern.",
-        "The distance between these particles dictates whether the material is firm or fluid.",
-        "These properties remain constant under normal room temperature.",
-        "This explains why some materials keep their shape while others flow.",
-        "Scientists measure these properties to define the state of matter.",
-        "Knowing these rules helps us predict how the material will behave.",
-        "It is essential for selecting the right materials for manufacturing.",
-        "Let us examine how these properties function on a microscopic scale."
-      ];
-      p3 = [
-        "Let us examine the molecular behavior of " + theme_clean + ".",
-        "In this state of matter, the bonds between particles determine their movement.",
-        "For " + theme_clean + ", the particles are held by forces that influence movement.",
-        "This determines the overall volume and shape of the substance.",
-        "Understanding this molecular structure explains why some materials flow.",
-        "Particles in a solid are locked and can only vibrate.",
-        "Particles in a liquid can slide past one another easily.",
-        "Particles in a gas fly apart and fill the entire space.",
-        "These molecular motions are happening constantly without stopping.",
-        "They explain the physical state we see with our eyes."
-      ];
-      p4 = [
-        "Forces like temperature can cause " + theme_clean + " to change states.",
-        "When heat energy is added, the particles speed up and move apart.",
-        "This process can cause melting, evaporation, or expansion.",
-        "Conversely, cooling removes thermal energy, slowing the particles down.",
-        "This leads to freezing, condensation, or contraction.",
-        "These changes are physical transitions rather than chemical changes.",
-        "The molecules themselves remain the same during the transition.",
-        "Only the arrangement and speed of the molecules are altered.",
-        "Understanding these shifts helps us manage water resources and cooling systems.",
-        "Let us review the main takeaways from this state of matter."
-      ];
-      p5 = [
-        "In summary, we have explored the science of " + theme_clean + ".",
-        "We learned that they " + fact_clean + " under normal conditions.",
-        "This is explained by particle arrangement, molecular bonds, and thermal energy.",
-        "These physical principles are consistent throughout our universe.",
-        "You are now ready to begin the practice questions.",
-        "Remember to read each question carefully and review the pages.",
-        "Applying these scientific concepts will help you earn stars.",
-        "Science helps us understand the laws that govern our world.",
-        "We will continue to build on this knowledge in future lessons.",
-        "Good luck as you start the practice session!"
-      ];
-    } else if (unit === 2) { // Ecosystems & Habitats
-      p1 = [
-        "Ecology is the study of how living organisms interact with their environment.",
-        "In this lesson, we study " + theme_clean + " in ecosystems.",
-        "Every ecosystem consists of living things like plants and animals.",
-        "It also contains non-living things like soil, water, and sunlight.",
-        "Living organisms must adapt to their surroundings to survive and reproduce.",
-        "We will explore how " + theme_clean + " plays a major role in these systems.",
-        "Ecosystems range from tiny forest ponds to massive hot deserts.",
-        "Each environment supports a unique community of plants and animals.",
-        "Understanding these habitats helps us protect the diversity of life on Earth.",
-        "Let us examine how different elements interact inside this system."
-      ];
-      p2 = [
-        "An essential fact about " + theme_clean + " is that they " + fact_clean + ".",
-        "This interaction supports the balance of life in the habitat.",
-        "Organisms rely on each other for energy, nutrients, and shelter.",
-        "If one part of the ecosystem changes, it can affect many species.",
-        "Understanding these connections is key to preserving biodiversity in nature.",
-        "Every plant and animal has a specific niche or role to perform.",
-        "Predators control prey populations while decomposers enrich the soil.",
-        "This checks and balances system keeps the habitat healthy over time.",
-        "Scientists study these relationships to prevent species from becoming extinct.",
-        "Let us explore how energy flows through this ecological community."
-      ];
-      p3 = [
-        "Let us look at the food chain and energy flow involving " + theme_clean + ".",
-        "Producers like green plants capture sunlight to make food energy.",
-        "Consumers then eat plants or other animals to gain energy.",
-        "Decomposers break down dead matter, returning nutrients to the soil.",
-        "In this way, " + theme_clean + " contributes to the continuous cycle.",
-        "This cycle ensures that no energy or matter goes to waste in nature.",
-        "Food webs show how multiple food chains cross and connect.",
-        "They demonstrate that every species is linked to many others.",
-        "Understanding this flow is basic to studying environmental science.",
-        "Let us review how human and natural changes affect this balance."
-      ];
-      p4 = [
-        "Environmental changes can challenge the survival of " + theme_clean + ".",
-        "Natural events like droughts, wildfires, and floods can alter habitats quickly.",
-        "Human activities like farming, building, and pollution also reshape ecosystems.",
-        "Species must adapt, migrate, or face decline when their home changes.",
-        "Scientists study these impacts to help protect vulnerable wildlife.",
-        "Conservation efforts help restore damaged habitats and protect water sources.",
-        "By planting native trees, we can prevent soil erosion.",
-        "Reducing pollution keeps the air and water clean for animals.",
-        "Every small effort helps preserve the delicate balance of our planet.",
-        "Let us summarize what we have learned about this ecological topic."
-      ];
-      p5 = [
-        "In summary, we have learned about " + theme_clean + " in ecosystems.",
-        "We know that they " + fact_clean + " to maintain ecological balance.",
-        "We explored energy flow, food webs, and environmental conservation.",
-        "Protecting these natural systems ensures a healthy planet for future generations.",
-        "You can now proceed to the practice questions.",
-        "Take your time to read each question and match it to these pages.",
-        "Applying these concepts will help you earn points and stars.",
-        "Ecology is an exciting branch of science that connects us all.",
-        "We will learn more about conservation methods in our next lesson.",
-        "Good luck as you test your knowledge in the practice lab!"
-      ];
-    } else if (unit === 3) { // Earth Erosion & Weathering
-      p1 = [
-        "Earth science explores the structures and processes that shape our planet.",
-        "Today, we are learning about " + theme_clean + " and its geological impacts.",
-        "The Earth is a dynamic system composed of rocks, water, and air.",
-        "Natural forces constantly change the landscape over millions of years.",
-        "We will study how " + theme_clean + " influences these geographic systems.",
-        "Geological processes can happen slowly over centuries or instantly.",
-        "Mountains are built up by tectonic forces and worn down by erosion.",
-        "Water, wind, and ice are the primary agents of change on Earth.",
-        "Understanding these forces helps us manage natural resources and hazards.",
-        "Let us examine how erosion and weathering reshape the landscape."
-      ];
-      p2 = [
-        "A major discovery in Earth science is that " + theme_clean + " " + fact_clean + ".",
-        "This process reshapes mountains, valleys, rivers, and coastlines.",
-        "Weathering breaks down rocks into smaller particles like sand and clay.",
-        "Then, forces like wind, water, and ice transport these sediments.",
-        "This continuous cycle creates new landforms and soil layers.",
-        "Over time, canyons are carved and beaches are formed.",
-        "Erosion can wash away valuable nutrients from fertile farming fields.",
-        "Scientists design methods to slow down this movement of soil.",
-        "Protecting our coastlines helps prevent homes from sliding into the ocean.",
-        "Let us examine the materials that compose these geological features."
-      ];
-      p3 = [
-        "Let us examine the materials that make up " + theme_clean + ".",
-        "Rocks are composed of minerals, which are natural solid chemical structures.",
-        "There are three main rock groups: igneous, sedimentary, and metamorphic.",
-        "Each group forms in a different way under the Earth's surface.",
-        "Analyzing rock layers helps scientists understand the history of our planet.",
-        "Fossils found inside sedimentary rocks show us ancient life forms.",
-        "Minerals have distinct colors, hardness, and crystal structures.",
-        "We use these minerals to make tools, jewelry, and building materials.",
-        "Understanding rock structures is key to studying geology and mining.",
-        "Let us examine how natural forces and human activities affect these materials."
-      ];
-      p4 = [
-        "Human activity and natural disasters can disrupt " + theme_clean + " systems.",
-        "Volcanic eruptions, earthquakes, and landslides can change landforms instantly.",
-        "Similarly, activities like mining, building dams, and cutting down forests alter soil.",
-        "These changes can speed up erosion and cause severe flooding.",
-        "Implementing conservation methods helps protect our communities and lands.",
-        "Planting grass and trees on hillsides stabilizes the dirt with roots.",
-        "Terracing fields prevents rainwater from washing away topsoil.",
-        "Building retaining walls blocks mud and rocks from sliding down.",
-        "These engineering solutions protect lives and preserve local ecosystems.",
-        "Let us summarize what we have learned about Earth systems."
-      ];
-      p5 = [
-        "In summary, we have studied " + theme_clean + " and Earth systems.",
-        "We learned that " + theme_clean + " " + fact_clean + ".",
-        "We discussed weathering, rock formations, sediment transport, and conservation.",
-        "Understanding these geological processes helps us manage resources wisely.",
-        "You are now ready to begin the practice session.",
-        "Read the questions carefully and think about the Earth forces.",
-        "Applying these geology principles will help you answer correctly.",
-        "Geology teaches us to appreciate the ancient history of our planet.",
-        "We will explore space and planetary science in future lessons.",
-        "Good luck as you start the practice questions!"
-      ];
-    } else { // Default Science
-      p1 = [
-        "Science helps us discover how the universe works through observation.",
-        "Today, we focus on the scientific principles of " + theme_clean + ".",
-        "Scientists use careful observations to ask questions and form hypotheses.",
-        "By testing these ideas with experiments, we discover rules of nature.",
-        "This lesson explains the key definitions and properties of this topic.",
-        "Scientific discovery requires curiosity, patience, and precise measurements.",
-        "We record data in tables and graphs to analyze patterns.",
-        "These patterns help us formulate scientific laws and theories.",
-        "Understanding these methods is essential for solving scientific mysteries.",
-        "Let us explore how this scientific concept works in practice."
-      ];
-      p2 = [
-        "A fundamental principle of " + theme_clean + " is that they " + fact_clean + ".",
-        "This rule helps us predict how substances and systems behave in nature.",
-        "Whether studying gravity, electricity, magnets, or waves, we look for rules.",
-        "These rules allow us to invent new tools and medical technologies.",
-        "Understanding this concept is essential for modern engineering and research.",
-        "Physical laws are consistent and can be tested repeatedly.",
-        "Every experiment we run helps us refine our understanding of the universe.",
-        "Technology expands our ability to observe things that are very small.",
-        "By applying these laws, we can build safer buildings and vehicles.",
-        "Let us look at the mechanics behind this scientific concept."
-      ];
-      p3 = [
-        "Let us look at the mechanics behind " + theme_clean + ".",
-        "Every physical system operates according to forces and energy.",
-        "Force is a push or pull that can change the motion of an object.",
-        "Energy is the ability to do work or cause physical change.",
-        "In the case of " + theme_clean + ", these forces are always at work.",
-        "They govern how parts interact and transfer energy.",
-        "Potential energy is stored energy waiting to be released.",
-        "Kinetic energy is the energy of motion that we can see.",
-        "Understanding this balance of forces is core to studying physics.",
-        "Let us review how external factors change this scientific behavior."
-      ];
-      p4 = [
-        "External factors can influence how " + theme_clean + " behaves.",
-        "Pressure, temperature, and friction can change the speed or state.",
-        "By controlling these variables, engineers can build safe structures.",
-        "Observing these changes helps us refine our scientific models.",
-        "Scientists must isolate variables in an experiment to test them fairly.",
-        "A fair test keeps all conditions the same except for one variable.",
-        "This allows us to see the exact effect of that single change.",
-        "Analyzing these variables leads to breakthroughs in manufacturing.",
-        "It helps us improve safety rules and efficiency in machines.",
-        "Let us summarize what we have learned in this science lesson."
-      ];
-      p5 = [
-        "In summary, we have reviewed the concepts surrounding " + theme_clean + ".",
-        "We know that they " + fact_clean + " in our physical world.",
-        "We discussed forces, energy transfers, and variables in experiments.",
-        "Keeping these core scientific rules in mind will help you answer.",
-        "You are now ready to start the practice game.",
-        "Read each question carefully and match it to our pages.",
-        "Applying these scientific methods will earn you stars and points.",
-        "Science is a journey of discovery that never truly ends.",
-        "We will build on these physical rules in our upcoming lessons.",
-        "Good luck as you begin the practice questions!"
-      ];
+  let rule1 = "";
+  let rule2 = "";
+  let rule3 = "";
+  let rule4 = "";
+
+  let stepIntro = "Let's review the steps to work this out.";
+  let step1 = "";
+  let step2 = "";
+  let step3 = "";
+
+  let exampleIntro = "Let's look at a concrete example.";
+  let example1 = "";
+  let example2 = "";
+  let example3 = "";
+
+  let summary = "";
+  let takeaway = "";
+  let tip = "Take your time, read each question carefully, and double-check your answers.";
+  let ready = "Now you are ready to start the practice game and earn stars! Good luck!";
+
+  const theme_lc = theme_clean.toLowerCase();
+
+  if (subject === 'math') {
+    intro = `Today we are learning about ${theme_clean}.`;
+    if (theme_lc.includes("count") || theme_lc.includes("number")) {
+      conceptDef = "Counting is how we find out how many objects are in a group.";
+      importance = "We use counting numbers like 1, 2, 3, 4, 5, 6, 7, 8, 9, and 10 to order things.";
+      preview = "To count a group, we touch each object one by one and call out the numbers in order.";
+      
+      rule1 = "Always start counting with the number 1.";
+      rule2 = "Point to each object only once and say the next number.";
+      rule3 = "Do not skip any objects or count any object twice.";
+      rule4 = "The last number you say is the total amount of objects.";
+      
+      step1 = "First, line up or look at all the objects in front of you.";
+      step2 = "Second, point to the first object and say '1', then the next and say '2'.";
+      step3 = "Third, continue until you touch the last object; that number is your final answer.";
+      
+      example1 = "Imagine we have a row of four shiny stars.";
+      example2 = "We touch them one by one: one, two, three, four.";
+      example3 = "Since we ended on four, there are exactly 4 stars in total.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us find totals.`;
+      takeaway = "Remember to count slowly and touch each object with your finger.";
+    } else if (theme_lc.includes("addition") || theme_lc.includes("add") || theme_lc.includes("plus") || theme_lc.includes("sum")) {
+      conceptDef = "Addition is joining two or more groups of things together to find the total sum.";
+      importance = "We use the plus sign (+) for addition, and the equal sign (=) for the answer.";
+      preview = "To find the sum, we start with one number and count forward by the other number.";
+      
+      rule1 = "The numbers we add together are called addends.";
+      rule2 = "The final answer of an addition problem is called the sum.";
+      rule3 = "When adding double-digit numbers, always align the digits into ones and tens columns.";
+      rule4 = "If the ones column adds up to 10 or more, we regroup by carrying 1 ten to the tens column.";
+      
+      step1 = "First, write the numbers vertically with the ones on the right and tens on the left.";
+      step2 = "Second, add the digits in the ones column first and write the ones digit below.";
+      step3 = "Third, add the digits in the tens column, including any carried 1, to get the final sum.";
+      
+      example1 = "Let's add 15 + 12 together.";
+      example2 = "In the ones column, we add 5 + 2 to get 7 ones.";
+      example3 = "In the tens column, we add 1 + 1 to get 2 tens. The total sum is 27.";
+      
+      summary = `In summary, we learned that ${theme_clean} combines values to make a larger sum.`;
+      takeaway = "Remember to add the ones column on the very right first.";
+    } else if (theme_lc.includes("subtraction") || theme_lc.includes("subtract") || theme_lc.includes("minus") || theme_lc.includes("difference")) {
+      conceptDef = "Subtraction is taking away a number of objects from a starting group.";
+      importance = "We use the minus sign (-) for subtraction, and the equal sign (=) for the final answer.";
+      preview = "To subtract, we count backward or separate the group we are taking away.";
+      
+      rule1 = "The number we subtract from is the total, and the answer is called the difference.";
+      rule2 = "Always start subtracting from the ones column on the right first.";
+      rule3 = "If the top digit in the ones column is smaller than the bottom, we borrow 1 ten from the tens place.";
+      rule4 = "Borrowing is also called regrouping or ungrouping a ten into ten ones.";
+      
+      step1 = "First, write the equation vertically aligning the ones and tens columns.";
+      step2 = "Second, subtract the ones column digits, borrowing from the tens if necessary.";
+      step3 = "Third, subtract the tens column digits to find the final difference.";
+      
+      example1 = "Let's solve 25 - 12 step-by-step.";
+      example2 = "Subtract the ones column first: 5 minus 2 equals 3 ones.";
+      example3 = "Subtract the tens column: 2 tens minus 1 ten equals 1 ten. The difference is 13.";
+      
+      summary = `In summary, we learned that ${theme_clean} is about taking away to find the difference.`;
+      takeaway = "Remember to borrow from the tens place if the top ones number is too small.";
+    } else if (theme_lc.includes("time") || theme_lc.includes("clock")) {
+      conceptDef = "Telling time means reading the hours and minutes shown on a clock.";
+      importance = "A clock face has numbers from 1 to 12, with a short hour hand and a long minute hand.";
+      preview = "We read the hour hand first, and then count by fives to read the minute hand.";
+      
+      rule1 = "The short hand points to the hour, and the long hand points to the minutes.";
+      rule2 = "There are 60 minutes in 1 hour, and 24 hours in a whole day.";
+      rule3 = "Each number on the clock represents 5 minutes for the long minute hand.";
+      rule4 = "We use A.M. for morning time and P.M. for afternoon and night time.";
+      
+      step1 = "First, look at the short hand to see which hour number it has passed.";
+      step2 = "Second, look at the long hand and count by 5s starting from 12 at the top.";
+      step3 = "Third, write the hour, a colon, and the minutes to express the time.";
+      
+      example1 = "Imagine the short hour hand is between 2 and 3, and the long minute hand points to 4.";
+      example2 = "The hour is 2 because the short hand has passed 2 but not reached 3.";
+      example3 = "Count minutes by 5s to the number 4: 5, 10, 15, 20. The time is 2:20.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us organize our daily schedule.`;
+      takeaway = "Remember that the short hand is the hour and the long hand is the minutes.";
+    } else if (theme_lc.includes("money") || theme_lc.includes("penny") || theme_lc.includes("nickel") || theme_lc.includes("dime") || theme_lc.includes("quarter") || theme_lc.includes("coin")) {
+      conceptDef = "Counting money means adding up the values of different coins and bills.";
+      importance = "Coins have different values: pennies are 1 cent, nickels are 5, dimes are 10, and quarters are 25.";
+      preview = "To count coins, we sort them and add their values starting from the largest coin.";
+      
+      rule1 = "A penny is copper-colored and worth 1 cent.";
+      rule2 = "A nickel is worth 5 cents, and a dime is worth 10 cents.";
+      rule3 = "A quarter is the largest coin and is worth 25 cents.";
+      rule4 = "Always count from the largest coin value to the smallest coin value.";
+      
+      step1 = "First, sort your coins by type and place the largest values first.";
+      step2 = "Second, count by 25s for quarters, then add 10s for dimes, then 5s for nickels.";
+      step3 = "Third, add 1s for pennies to get the final total amount in cents.";
+      
+      example1 = "Let's count 1 quarter, 1 dime, and 2 pennies.";
+      example2 = "Start with the quarter at 25, add the dime to get 35.";
+      example3 = "Finally, add the two pennies: 36, 37. The total is 37 cents.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us purchase items at the store.`;
+      takeaway = "Remember to always start counting with the coins that have the largest value.";
+    } else if (theme_lc.includes("shape") || theme_lc.includes("geometry") || theme_lc.includes("face") || theme_lc.includes("vertices") || theme_lc.includes("partition")) {
+      conceptDef = "Geometry is the study of shapes, sizes, and their properties.";
+      importance = "Flat 2D shapes have sides and corners, while solid 3D shapes have faces, edges, and vertices.";
+      preview = "We identify shapes by counting their attributes like the number of sides or corners.";
+      
+      rule1 = "Triangles have 3 sides, quadrilaterals have 4, pentagons have 5, and hexagons have 6.";
+      rule2 = "Vertices are the corner points where two sides or edges meet.";
+      rule3 = "3D shapes like cubes and pyramids have flat surfaces called faces.";
+      rule4 = "Partitioning means splitting shapes into equal parts like halves, thirds, or fourths.";
+      
+      step1 = "First, examine the shape and count the number of straight sides or flat faces.";
+      step2 = "Second, count the number of sharp corners or vertices where lines connect.";
+      step3 = "Third, use these counts to name the shape and identify its properties.";
+      
+      example1 = "Let's look at a square box shape.";
+      example2 = "It has 4 equal straight sides and 4 corner vertices.";
+      example3 = "Therefore, it is a quadrilateral, specifically a square.";
+      
+      summary = `In summary, we learned that ${theme_clean} teaches us about shapes in our world.`;
+      takeaway = "Remember that vertices are corners and faces are the flat surfaces.";
+    } else if (theme_lc.includes("fraction") || theme_lc.includes("half") || theme_lc.includes("third") || theme_lc.includes("fourth")) {
+      conceptDef = "A fraction represents equal parts of a whole object or group.";
+      importance = "Fractions are written with a numerator on top and a denominator on the bottom.";
+      preview = "The bottom number tells us the total equal parts, and the top tells how many we have.";
+      
+      rule1 = "The denominator (bottom number) shows how many equal parts make the whole.";
+      rule2 = "The numerator (top number) shows how many of those equal parts are being counted.";
+      rule3 = "Equivalent fractions represent the exact same size or share of a whole.";
+      rule4 = "Halves mean 2 equal parts, thirds mean 3 equal parts, and fourths mean 4 equal parts.";
+      
+      step1 = "First, look at a shape and count the total number of equal pieces it is cut into.";
+      step2 = "Second, count how many pieces are shaded, colored, or eaten.";
+      step3 = "Third, write the shaded count on top and the total pieces on the bottom.";
+      
+      example1 = "Imagine a pizza cut into 4 equal slices, and we eat 1 slice.";
+      example2 = "The total equal parts is 4, which goes on the bottom.";
+      example3 = "The eaten slice is 1, which goes on top. We ate 1/4 of the pizza.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us share things equally.`;
+      takeaway = "Remember that all parts of a fraction must be exactly the same size.";
+    } else {
+      conceptDef = `Math teaches us how numbers and logic work together to solve problems.`;
+      importance = `Understanding ${theme_clean} builds your brain power and logical thinking skills.`;
+      preview = `We will use steps and rules to solve these questions correctly.`;
+      
+      rule1 = `Always read the problem carefully to find the numbers given to you.`;
+      rule2 = `Determine which operation or rule is needed to solve the question.`;
+      rule3 = `${fact_clean}.`;
+      rule4 = `Double-check your calculations to ensure your answer is correct.`;
+      
+      step1 = `First, identify the values and symbols shown in the problem.`;
+      step2 = `Second, apply the specific rule of ${theme_clean} to calculate the result.`;
+      step3 = `Third, verify your answer and write it down carefully.`;
+      
+      example1 = `Let's consider how we solve this type of math problem.`;
+      example2 = `We examine the numbers and check the required rule.`;
+      example3 = `By following the steps carefully, we find the correct solution.`;
+      
+      summary = `In summary, we learned how to apply the rules of ${theme_clean}.`;
+      takeaway = `Remember to follow the math steps in order and check your work.`;
     }
-  } else if (subject === 'history') {
-    if (unit <= 2) { // Historical Figures
-      p1 = [
-        "History is the study of past events, cultures, and individuals who shaped our world.",
-        "Today, we study the life and legacy of " + theme_clean + ".",
-        "Every historic figure or group has a story of challenge and leadership.",
-        "By studying their lives, we learn how communities and nations were founded.",
-        "This lesson will explore the background of this important history topic.",
-        "Historians seek to understand the choices people made in the past.",
-        "We look at primary sources to construct a narrative of events.",
-        "These sources include letters, diaries, photographs, and official records.",
-        "Learning about historic individuals helps us build character and civic virtues.",
-        "Let us explore the core historical facts surrounding this topic."
-      ];
-      p2 = [
-        "A key fact in our history is that " + theme_clean + " " + fact_clean + ".",
-        "This action had a lasting impact on the laws and rights of the people.",
-        "Leaders and citizens had to make difficult choices to improve their societies.",
-        "Historians study primary documents to verify these historical details.",
-        "Understanding these key actions helps us appreciate our current rights.",
-        "Historical decisions often require courage and cooperation among groups.",
-        "These events changed the course of history for the entire nation.",
-        "By examining these changes, we can understand why new laws were written.",
-        "This knowledge is essential for understanding modern citizenship.",
-        "Let us look at the challenges faced during this historic era."
-      ];
-      p3 = [
-        "Let us look at the challenges faced during the time of " + theme_clean + ".",
-        "Starting new communities or changing existing laws requires cooperation.",
-        "People often had to stand up against unfair treatment and negotiate.",
-        "Their struggles helped establish the basic freedoms we enjoy today.",
-        "Understanding these challenges teaches us the value of perseverance.",
-        "Citizens had to work together to overcome divisions and build peace.",
-        "They formed assemblies and wrote petitions to voice their concerns.",
-        "These actions laid the groundwork for modern democratic processes.",
-        "Recognizing these challenges helps us address modern civic issues.",
-        "Let us examine how this historic legacy influenced future generations."
-      ];
-      p4 = [
-        "The legacy of " + theme_clean + " influenced future generations across the nation.",
-        "The ideas, inventions, or social changes they introduced spread widely.",
-        "This helped shape democratic systems and civic values around the world.",
-        "Recognizing these historical connections helps us understand our government.",
-        "We see their influence in our modern laws, holidays, and monuments.",
-        "Their examples inspire citizens to participate actively in public life.",
-        "We celebrate their achievements to remember the progress made.",
-        "Historians compare different perspectives to get a complete view.",
-        "This balanced study teaches us the importance of mutual respect.",
-        "Let us summarize the key points of this history lesson."
-      ];
-      p5 = [
-        "In summary, we have reviewed the history of " + theme_clean + ".",
-        "We learned that " + theme_clean + " " + fact_clean + " in our past.",
-        "We discussed leadership, historic challenges, and the legacy of rights.",
-        "Knowing our past helps us participate actively in our communities today.",
-        "You are now ready to begin the practice questions.",
-        "Read each question carefully and think about the historic timeline.",
-        "Applying these history concepts will help you earn stars.",
-        "History is a collection of stories that connects us to our ancestors.",
-        "We will explore more historical events and cultures in future lessons.",
-        "Good luck as you test your knowledge in the practice game!"
-      ];
-    } else { // Civilizations / American History
-      p1 = [
-        "History helps us trace the growth of civilizations, governments, and cultures.",
-        "Today, we focus on the historical significance of " + theme_clean + ".",
-        "Civilizations grow by building cities and developing trade routes.",
-        "By examining how societies changed, we understand national cooperation.",
-        "Let us explore the origins and lifestyle of this historic era.",
-        "Every civilization develops unique traditions, languages, and technologies.",
-        "Archaeologists dig up physical artifacts to study ancient daily life.",
-        "These artifacts include pottery, tools, weapons, and architectural ruins.",
-        "Analyzing these items helps us reconstruct ancient economic systems.",
-        "Let us look at the major milestones of this historical period."
-      ];
-      p2 = [
-        "A major milestone of this era is that " + theme_clean + " " + fact_clean + ".",
-        "This development altered the balance of power and shaped local economies.",
-        "New laws were written to manage resources and resolve disputes.",
-        "Historians analyze artifacts, maps, and written records to reconstruct events.",
-        "This milestone represents a major step forward in human organization.",
-        "It allowed communities to grow larger and trade with distant lands.",
-        "Specialized jobs like scribes, builders, and metalworkers emerged.",
-        "These developments laid the foundations for modern urban societies.",
-        "Understanding these milestones helps us appreciate ancient innovations.",
-        "Let us examine the social and economic systems of this era."
-      ];
-      p3 = [
-        "Let us examine the social and economic systems of " + theme_clean + ".",
-        "Communities relied on agriculture, trade networks, and craftsmanship.",
-        "Different social groups had distinct roles in managing local government.",
-        "The decisions made by assemblies laid the groundwork for civic institutions.",
-        "Trade allowed different cultures to share ideas, languages, and beliefs.",
-        "Markets were bustling centers of social and economic activity.",
-        "Agriculture provided the food surplus needed to sustain city builders.",
-        "Governments collected taxes to fund public roads, walls, and temples.",
-        "Studying these systems teaches us the basics of economics and civics.",
-        "Let us look at the long-term consequences of these developments."
-      ];
-      p4 = [
-        "The historical consequences of " + theme_clean + " were felt for centuries.",
-        "Innovations in technology, writing, and engineering changed daily life.",
-        "Wars, treaties, and alliances redefined national borders and exchanges.",
-        "Studying these conflicts teaches us the value of diplomacy.",
-        "Many ancient laws and architectural styles still influence us today.",
-        "The spread of literature preserved their stories for future generations.",
-        "Diplomatic alliances helped maintain peace and stability during crises.",
-        "We study these events to learn how to resolve modern conflicts.",
-        "Recognizing these legacies connects our modern world to ancient history.",
-        "Let us summarize what we have studied in this lesson."
-      ];
-      p5 = [
-        "In summary, we have studied the history of " + theme_clean + ".",
-        "We know that " + theme_clean + " " + fact_clean + " during this era.",
-        "We discussed civic systems, economic trade, and the lessons of diplomacy.",
-        "Remembering these historic facts will guide you during the practice.",
-        "You are now ready to start the questions.",
-        "Read the questions carefully and review the historic facts.",
-        "Answering correctly will show your mastery and earn you points.",
-        "History teaches us that our choices today shape the future.",
-        "We will continue our exploration of history in the next lesson.",
-        "Good luck as you start the practice session!"
-      ];
+  } else if (subject === 'ela') {
+    intro = `Today we are learning about ${theme_clean}.`;
+    if (theme_lc.includes("capital") || theme_lc.includes("uppercase")) {
+      conceptDef = "Capitalization means using big capital letters for special words.";
+      importance = "Capital letters make it easy to spot where sentences start and identify names.";
+      preview = "We capitalize the first letter of sentences, names, and the pronoun 'I'.";
+      
+      rule1 = "Always capitalize the very first letter of every new sentence.";
+      rule2 = "Always capitalize the pronoun 'I' when writing about yourself.";
+      rule3 = "Capitalize proper nouns, which are names of specific people, places, days, and months.";
+      rule4 = "Do not capitalize common nouns like cat, table, or school.";
+      
+      step1 = "First, read the sentence and find where a new sentence begins.";
+      step2 = "Second, find any names of people, cities, days of the week, or the word 'I'.";
+      step3 = "Third, change the first letter of those words to a capital letter.";
+      
+      example1 = "Let's look at this sentence: 'on monday i met mary.'";
+      example2 = "We capitalize 'On' (start of sentence), 'Monday' (day), and 'I' (pronoun).";
+      example3 = "We also capitalize 'Mary' because it is a name. The correct sentence is: 'On Monday I met Mary.'";
+      
+      summary = `In summary, we learned that ${theme_clean} helps make our writing readable.`;
+      takeaway = "Remember to always capitalize names of people and places.";
+    } else if (theme_lc.includes("punctuation") || theme_lc.includes("period") || theme_lc.includes("question") || theme_lc.includes("exclamation") || theme_lc.includes("comma")) {
+      conceptDef = "Punctuation marks are special symbols we place in sentences to help readers.";
+      importance = "They show where to pause, when to stop, or how to read a sentence with feeling.";
+      preview = "The three main ending marks are periods, question marks, and exclamation points.";
+      
+      rule1 = "Use a period (.) at the end of a telling sentence or statement.";
+      rule2 = "Use a question mark (?) at the end of an asking sentence.";
+      rule3 = "Use an exclamation point (!) to show strong feelings, excitement, or surprise.";
+      rule4 = "Use a comma (,) to separate items in a list or to show a short pause.";
+      
+      step1 = "First, read the sentence and think about if it is telling, asking, or showing excitement.";
+      step2 = "Second, select the correct punctuation mark that matches the sentence type.";
+      step3 = "Third, place the mark at the very end of the sentence.";
+      
+      example1 = "Let's check the sentence: 'Where is my red hat'";
+      example2 = "This sentence is asking a question to get information.";
+      example3 = "Therefore, we place a question mark at the end: 'Where is my red hat?'";
+      
+      summary = `In summary, we learned that ${theme_clean} keeps sentences clear and organized.`;
+      takeaway = "Remember that every complete sentence must end with a punctuation mark.";
+    } else if (theme_lc.includes("verb") || theme_lc.includes("action")) {
+      conceptDef = "A verb is an action word that tells what someone or something is doing.";
+      importance = "Every complete sentence needs a verb to show the action that is happening.";
+      preview = "Verbs can show physical actions like run and jump, or mental actions like think.";
+      
+      rule1 = "Action verbs tell what the subject of the sentence is doing.";
+      rule2 = "Verbs can be in present tense (happening now) or past tense (already happened).";
+      rule3 = "Past tense verbs often end with the letters -ed, like walked or played.";
+      rule4 = "Some past tense verbs are irregular and change spelling, like run to ran.";
+      
+      step1 = "First, read the sentence and look for the person, animal, or object.";
+      step2 = "Second, ask yourself: 'What action is this person or thing doing?'";
+      step3 = "Third, identify that action word as the verb of the sentence.";
+      
+      example1 = "Let's read this sentence: 'The puppy jumped over the fence.'";
+      example2 = "The subject is the puppy. The action the puppy did is 'jumped'.";
+      example3 = "Therefore, the word 'jumped' is the past-tense verb in the sentence.";
+      
+      summary = `In summary, we learned that ${theme_clean} shows action in our writing.`;
+      takeaway = "Ask yourself 'What is happening?' to find the verb easily.";
+    } else if (theme_lc.includes("noun") || theme_lc.includes("plural")) {
+      conceptDef = "A noun is a naming word for a person, place, thing, or animal.";
+      importance = "Nouns help us name everything around us, like friends, schools, and toys.";
+      preview = "Nouns can be singular (one) or plural (more than one).";
+      
+      rule1 = "A singular noun names only one person, place, or thing.";
+      rule2 = "A plural noun names more than one person, place, or thing.";
+      rule3 = "To make most nouns plural, we simply add the letter 's' to the end.";
+      rule4 = "For nouns ending in ch, sh, x, s, or z, we add 'es' to make them plural.";
+      
+      step1 = "First, look at a word and check if it represents a person, place, or thing.";
+      step2 = "Second, check if you are talking about only one or more than one.";
+      step3 = "Third, add 's' or 'es' to the spelling if you need to make it plural.";
+      
+      example1 = "Let's make the singular nouns 'cat' and 'box' plural.";
+      example2 = "Since 'cat' is a regular noun, we add 's' to make 'cats'.";
+      example3 = "Since 'box' ends in 'x', we add 'es' to make 'boxes'.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us name singular and plural items.`;
+      takeaway = "Remember to add 'es' if the noun ends in sounds like sh, ch, or x.";
+    } else if (theme_lc.includes("vowel") || theme_lc.includes("spell") || theme_lc.includes("phonic") || theme_lc.includes("sound")) {
+      conceptDef = "Spelling is putting letters together in the correct order to make words.";
+      importance = "Vowels are a, e, i, o, and u, and they make different sounds in words.";
+      preview = "We listen to the vowel sounds to spell short and long vowel words correctly.";
+      
+      rule1 = "Short vowel sounds are quick sounds, like 'a' in bat, 'e' in net, and 'i' in pig.";
+      rule2 = "Long vowel sounds say the name of the letter, like 'a' in cake or 'i' in kite.";
+      rule3 = "A silent 'e' at the end of a word makes the middle vowel say its long sound.";
+      rule4 = "Blend the consonant and vowel sounds together from start to finish to read.";
+      
+      step1 = "First, stretch out the word slowly and listen to the beginning sound.";
+      step2 = "Second, listen to the middle vowel sound to decide if it is short or long.";
+      step3 = "Third, write down the letters in order from start to end.";
+      
+      example1 = "Let's spell the word 'lake' step-by-step.";
+      example2 = "We hear the 'l' sound, then a long 'a' sound, then a 'k' sound.";
+      example3 = "To make the 'a' sound long, we add a silent 'e' at the end: l-a-k-e.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us sound out and write words.`;
+      takeaway = "Listen closely to the middle vowel sound to know if a silent 'e' is needed.";
+    } else if (theme_lc.includes("reading") || theme_lc.includes("comprehend") || theme_lc.includes("main idea") || theme_lc.includes("story")) {
+      conceptDef = "Reading comprehension is understanding what we read in a story or passage.";
+      importance = "It helps us learn new facts, follow instructions, and enjoy reading books.";
+      preview = "We look for the main idea, which is what the story is mostly about.";
+      
+      rule1 = "The main idea is the most important point of the story or paragraph.";
+      rule2 = "Supporting details are sentences that give more information about the main idea.";
+      rule3 = "The author is the writer of the story, and the illustrator draws the pictures.";
+      rule4 = "Use text clues and what you already know to make smart guesses or inferences.";
+      
+      step1 = "First, read the title of the story and look at any pictures provided.";
+      step2 = "Second, read the paragraph and ask yourself: 'What is this mostly about?'";
+      step3 = "Third, find key sentences in the text that support your main idea.";
+      
+      example1 = "Read a paragraph about how puppies run, fetch balls, and play with toys.";
+      example2 = "The sentences all describe different ways puppies stay active.";
+      example3 = "The main idea is: 'Puppies are very active and playful animals.'";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us understand the author's message.`;
+      takeaway = "Look at the first and last sentences of a paragraph to find the main idea.";
+    } else {
+      conceptDef = "Language arts is the study of how we speak, read, and write English.";
+      importance = `Learning ${theme_clean} helps you communicate your ideas clearly to others.`;
+      preview = "We will study the rules and definitions of this topic in this lesson.";
+      
+      rule1 = "Always read spelling lists and sentences carefully before answering.";
+      rule2 = "Every word has a specific role to play in a sentence.";
+      rule3 = `${fact_clean}.`;
+      rule4 = "Double-check your spelling and sentence structure when writing.";
+      
+      step1 = "First, read the sentence and identify the key grammar or spelling elements.";
+      step2 = "Second, apply the language rule of ${theme_clean} to find the correct format.";
+      step3 = "Third, reread the sentence to make sure it sounds correct and clear.";
+      
+      example1 = "Let's check how we apply this ELA concept.";
+      example2 = "We find the word patterns and check the grammar rules.";
+      example3 = "Following this method helps us speak and write English perfectly.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us build clear sentences.`;
+      takeaway = "Remember to follow spelling and grammar rules when writing.";
+    }
+  } else if (subject === 'science') {
+    intro = `Today we are learning about ${theme_clean} in science.`;
+    conceptDef = "Science is the study of the physical and natural world through observation.";
+    if (theme_lc.includes("animal") || theme_lc.includes("plant") || theme_lc.includes("living") || theme_lc.includes("organism")) {
+      importance = "Living things like plants and animals need food, water, air, and shelter to survive.";
+      preview = "We will study how organisms grow, adapt, and interact in their habitats.";
+      
+      rule1 = "Plants make their own food using sunlight, water, and air.";
+      rule2 = "Animals must eat plants or other animals to get their energy.";
+      rule3 = "Living things go through a life cycle: they are born, grow, and reproduce.";
+      rule4 = "Adaptations are special features that help plants and animals survive in nature.";
+      
+      step1 = "First, observe an animal or plant and look at its physical features.";
+      step2 = "Second, identify what it eats, where it lives, and its life cycle stages.";
+      step3 = "Third, describe how its body parts help it survive in its specific habitat.";
+      
+      example1 = "Let's look at the life cycle of a frog.";
+      example2 = "It starts as an egg, hatches into a tadpole, and grows legs.";
+      example3 = "Finally, it becomes an adult frog that can leap and breathe air.";
+      
+      summary = `In summary, we learned that ${theme_clean} shows how living things grow.`;
+      takeaway = "Remember that all living organisms depend on their habitats to survive.";
+    } else if (theme_lc.includes("space") || theme_lc.includes("planet") || theme_lc.includes("sun") || theme_lc.includes("moon") || theme_lc.includes("earth") || theme_lc.includes("solar")) {
+      importance = "Earth is our home planet and is part of the solar system in space.";
+      preview = "We will explore the Sun, the Moon, and the planets that orbit the Sun.";
+      
+      rule1 = "The Sun is a hot, glowing star that gives light and warmth to Earth.";
+      rule2 = "Earth rotates once a day (24 hours), which creates day and night.";
+      rule3 = "Earth revolves around the Sun once a year, which causes the four seasons.";
+      rule4 = "The Moon revolves around Earth and reflects sunlight in different phases.";
+      
+      step1 = "First, locate the Sun at the center of our solar system model.";
+      step2 = "Second, identify the planets in order from closest to farthest from the Sun.";
+      step3 = "Third, describe how Earth's movement creates day, night, and seasons.";
+      
+      example1 = "Let's check why we have day and night on Earth.";
+      example2 = "As Earth spins, one side faces the Sun and gets bright daylight.";
+      example3 = "The other side faces away into space and gets dark night.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us understand our place in space.`;
+      takeaway = "Remember that the Earth rotates to make day and night, and orbits to make seasons.";
+    } else if (theme_lc.includes("weather") || theme_lc.includes("water") || theme_lc.includes("cycle") || theme_lc.includes("rain") || theme_lc.includes("season")) {
+      importance = "Weather is the daily state of the atmosphere including rain, wind, and heat.";
+      preview = "We will study the water cycle and how different seasons change our weather.";
+      
+      rule1 = "The water cycle moves water constantly between the Earth and the sky.";
+      rule2 = "Evaporation happens when the Sun heats liquid water and turns it into gas vapor.";
+      rule3 = "Condensation happens when vapor cools down and forms clouds in the sky.";
+      rule4 = "Precipitation is water falling to Earth as rain, snow, sleet, or hail.";
+      
+      step1 = "First, identify where water is stored on Earth, like oceans and lakes.";
+      step2 = "Second, follow the water as it evaporates up, condenses into clouds, and falls.";
+      step3 = "Third, explain how this cycle provides fresh water for crops and people.";
+      
+      example1 = "Let's examine how a rain cloud forms in the sky.";
+      example2 = "Sunlight heats water from a lake, turning it into invisible water vapor.";
+      example3 = "The vapor rises, cools, and sticks together to form clouds that eventually rain.";
+      
+      summary = `In summary, we learned that ${theme_clean} explains rain and weather patterns.`;
+      takeaway = "Remember the three main steps of the water cycle: evaporate, condense, precipitate.";
+    } else if (theme_lc.includes("force") || theme_lc.includes("motion") || theme_lc.includes("gravity") || theme_lc.includes("energy") || theme_lc.includes("matter") || theme_lc.includes("magnet")) {
+      importance = "Forces are pushes and pulls that make things move, stop, or change direction.";
+      preview = "We will learn about gravity, magnets, and the three states of matter.";
+      
+      rule1 = "Gravity is the force that pulls all objects down toward the center of Earth.";
+      rule2 = "Magnets have north and south poles that pull (attract) or push (repel) each other.";
+      rule3 = "Matter is anything that has mass and takes up physical space.";
+      rule4 = "The three main states of matter are solid, liquid, and gas.";
+      
+      step1 = "First, check if an object has a fixed shape (solid) or flows (liquid).";
+      step2 = "Second, test how forces like gravity or a push make the object move.";
+      step3 = "Third, write down how energy or forces change the object's speed or state.";
+      
+      example1 = "Let's look at water as it changes states of matter.";
+      example2 = "Cold ice is a solid. When it melts, it becomes liquid water.";
+      example3 = "When boiled, it becomes water vapor, which is a gas.";
+      
+      summary = `In summary, we learned that ${theme_clean} teaches us about forces and matter.`;
+      takeaway = "Remember that gravity pulls down and matter is anything that takes up space.";
+    } else {
+      importance = "Science helps us explain why things happen in the natural world.";
+      preview = "We will make observations, ask questions, and learn scientific facts.";
+      
+      rule1 = "Observe details carefully using your senses and tools like magnifying glasses.";
+      rule2 = "Form a hypothesis, which is a smart scientific guess that you can test.";
+      rule3 = `${fact_clean}.`;
+      rule4 = "Collect data and look for patterns to draw logical scientific conclusions.";
+      
+      step1 = "First, examine the scientific phenomenon or object in front of you.";
+      step2 = "Second, identify the rules and patterns that explain how it works.";
+      step3 = "Third, apply this scientific knowledge to answer the question.";
+      
+      example1 = "Let's look at how we analyze a science question.";
+      example2 = "We review our scientific facts and check the variables.";
+      example3 = "By applying scientific logic, we explain why the event happened.";
+      
+      summary = `In summary, we learned about the science rules of ${theme_clean}.`;
+      takeaway = "Remember to look at evidence and observations to solve science problems.";
     }
   } else if (subject === 'geography') {
-    if (unit <= 2) { // Maps & Directions
-      p1 = [
-        "Geography teaches us how to read maps, globes, and locate places.",
-        "Today, we are studying how " + theme_clean + " functions as a tool.",
-        "Maps represent the real physical features of the Earth on flat paper.",
-        "To read them correctly, we must understand standard geographic keys.",
-        "Let us learn how to use these tools for exploration and navigation.",
-        "Maps help us answer where places are and how to reach them.",
-        "A globe is a three-dimensional model that shows the true shape of Earth.",
-        "It represents the continents and oceans without distortion.",
-        "Geographers use both maps and globes to analyze spatial patterns.",
-        "Let us look at the primary rules cartographers use to design maps."
-      ];
-      p2 = [
-        "A primary rule of map reading is that " + theme_clean + " " + fact_clean + ".",
-        "This system allows us to determine precise directions and locations.",
-        "Cartographers use lines of latitude and longitude to create grids.",
-        "By using these grids, any place on Earth can be identified.",
-        "Understanding these coordinate systems is basic for modern travel.",
-        "Latitude lines measure distance north or south of the equator.",
-        "Longitude lines measure distance east or west of the prime meridian.",
-        "Together, these numbers form an address for every spot on the globe.",
-        "Pilots and ship captains use these numbers to navigate safely.",
-        "Let us explore other essential features found on standard maps."
-      ];
-      p3 = [
-        "Let us look at how " + theme_clean + " helps us analyze spatial relationships.",
-        "Map legends explain symbols representing roads, rivers, and cities.",
-        "A compass rose indicates the cardinal directions on the map.",
-        "Scale bars help us calculate the actual distance between two cities.",
-        "These features are consistent across different types of maps.",
-        "Physical maps show natural features like mountains and valleys.",
-        "Political maps show boundaries between different states and nations.",
-        "The map title tells us exactly what region is being shown.",
-        "Using these features together allows us to plan trips and read routes.",
-        "Let us look at the practical applications of these tools."
-      ];
-      p4 = [
-        "Using " + theme_clean + " is essential for navigation and planning.",
-        "Pilots, sailors, and hikers rely on maps and GPS coordinates.",
-        "City planners use geographic data to build roads and parks safely.",
-        "These systems prevent accidents and help protect local ecosystems.",
-        "Geographic Information Systems (GIS) compile digital maps for analysis.",
-        "This technology helps us track weather patterns and forest fires.",
-        "It allows scientists to study environmental changes over time.",
-        "Knowing how to read coordinates is a valuable life skill.",
-        "It ensures we can find our way even without active cellular service.",
-        "Let us summarize what we have learned about geography tools."
-      ];
-      p5 = [
-        "In summary, we have studied the geographic role of " + theme_clean + ".",
-        "We know that " + theme_clean + " " + fact_clean + " on standard maps.",
-        "We learned how grids, legends, compass directions, and scales help us.",
-        "Understanding these tools is essential for exploring our world.",
-        "You are now ready to start the practice questions.",
-        "Read each question carefully and look at the map concepts.",
-        "Applying these map skills will earn you stars and points.",
-        "Geography opens up our eyes to the layout of the planet.",
-        "We will study different climate zones in our upcoming lessons.",
-        "Good luck as you test your skills in the practice lab!"
-      ];
-    } else { // Climates & Regions
-      p1 = [
-        "Physical geography explores the natural features of the Earth's climate.",
-        "Today, we study the geographic conditions of " + theme_clean + ".",
-        "Earth is divided into different regions based on temperature.",
-        "Humans must adapt their lifestyle and architecture to fit their climate.",
-        "Let us explore how climate zones shape ecosystems and communities.",
-        "Climate describes the long-term weather patterns of a specific region.",
-        "Weather can change daily, but climate remains consistent over years.",
-        "The three major climate zones are tropical, temperate, and polar.",
-        "Geographers study these zones to understand agricultural patterns.",
-        "Let us look at the important facts about this region."
-      ];
-      p2 = [
-        "An important geographic fact is that " + theme_clean + " " + fact_clean + ".",
-        "This natural layout determines what plants and animals can survive.",
-        "Regions near the equator are warm and support tropical rainforests.",
-        "Regions near the poles are cold and covered in ice sheets.",
-        "These climate zones shape human settlement and farming patterns.",
-        "They influence how houses are built and what clothes people wear.",
-        "For example, houses in snowy areas have sloped roofs for runoff.",
-        "Farming requires specific temperature and rainfall ranges to grow food.",
-        "Understanding these zones explains where resources are located.",
-        "Let us examine how humans interact with these environments."
-      ];
-      p3 = [
-        "Let us examine the relationship between humans and " + theme_clean + ".",
-        "Natural resources like freshwater and fertile soil attract communities.",
-        "People build infrastructure and trade routes based on physical geography.",
-        "However, geography can also present barriers like steep mountains.",
-        "These barriers influence cultural exchange and historic migration paths.",
-        "Rivers provide transportation routes and water for drinking and crops.",
-        "Harbors allow ships to dock, boosting international trade and shipping.",
-        "Mountain ranges can isolate communities, leading to unique languages.",
-        "Understanding these physical factors is key to human geography.",
-        "Let us look at how human activity alters these environments."
-      ];
-      p4 = [
-        "Natural processes and human developments shape the geography of " + theme_clean + ".",
-        "Weathering, erosion, and tectonic forces constantly change the land.",
-        "At the same time, urbanization and global trade modify habitats.",
-        "Geographers study these changes to help plan sustainable cities.",
-        "Protecting forests and wetlands preserves biodiversity and cleans water.",
-        "Sustainable development balances economic growth with nature conservation.",
-        "Reducing carbon emissions helps stabilize global temperature patterns.",
-        "Geographic research guides policies to prevent environmental disasters.",
-        "Every community must participate in managing local natural resources.",
-        "Let us summarize what we have learned about regional geography."
-      ];
-      p5 = [
-        "In summary, we have studied the geography of " + theme_clean + ".",
-        "We know that " + theme_clean + " " + fact_clean + " across the globe.",
-        "We discussed climate zones, resources, human adaptation, and planning.",
-        "Keeping these geographic concepts in mind will help you answer.",
-        "You are now ready to begin the practice questions.",
-        "Read each question carefully and think about the geographic region.",
-        "Answering correctly will show your mastery and earn you stars.",
-        "Geography teaches us to respect and protect our shared planet.",
-        "We will study global trade and resources in future lessons.",
-        "Good luck as you start the practice session!"
-      ];
+    intro = `Today we are learning about ${theme_clean} in geography.`;
+    conceptDef = "Geography is the study of Earth's lands, features, maps, and people.";
+    if (theme_lc.includes("map") || theme_lc.includes("compass") || theme_lc.includes("direction") || theme_lc.includes("cardinal")) {
+      importance = "Maps are flat drawings that show where countries, roads, and cities are located.";
+      preview = "We will learn to read map symbols and find directions using a compass.";
+      
+      rule1 = "A compass rose shows the cardinal directions: North, South, East, and West.";
+      rule2 = "North points up, South points down, East points right, and West points left.";
+      rule3 = "A map key or legend explains what the symbols and colors on a map mean.";
+      rule4 = "A map scale shows how distances on the map compare to distances in real life.";
+      
+      step1 = "First, look at the compass rose to find which way is North.";
+      step2 = "Second, check the map key to understand what symbols like stars or trees represent.";
+      step3 = "Third, trace your path from one point to another using the directions.";
+      
+      example1 = "Let's find a park on our sample neighborhood map.";
+      example2 = "We look at the map key and see that green tree symbols mean parks.";
+      example3 = "We find a tree symbol on the right side, which is East. The park is in the East.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us read maps and travel safely.`;
+      takeaway = "Remember: Never Eat Shredded Wheat helps you remember North, East, South, West.";
+    } else if (theme_lc.includes("landform") || theme_lc.includes("mountain") || theme_lc.includes("river") || theme_lc.includes("continent") || theme_lc.includes("ocean") || theme_lc.includes("lake")) {
+      importance = "Earth has different natural shapes called landforms, and major water bodies.";
+      preview = "We will learn about mountains, rivers, the seven continents, and five oceans.";
+      
+      rule1 = "Continents are the seven largest landmasses on Earth, like North America.";
+      rule2 = "Oceans are the five largest salt-water bodies that cover most of Earth.";
+      rule3 = "Mountains are very tall, steep lands, while plains are flat, open areas.";
+      rule4 = "Islands are completely surrounded by water, and lakes are water surrounded by land.";
+      
+      step1 = "First, locate the continents and oceans on a world globe or map.";
+      step2 = "Second, identify landforms like mountains, valleys, or rivers in a region.";
+      step3 = "Third, describe how these physical features shape the climate and lifestyle there.";
+      
+      example1 = "Let's list the seven continents of the world.";
+      example2 = "They are North America, South America, Europe, Asia, Africa, Australia, and Antarctica.";
+      example3 = "The ocean between North America and Europe is the Atlantic Ocean.";
+      
+      summary = `In summary, we learned that ${theme_clean} teaches us about Earth's land and water.`;
+      takeaway = "Remember that oceans are salt water and lakes are usually fresh water.";
+    } else {
+      importance = "Geography helps us understand where places are and how people live.";
+      preview = "We will study maps, climates, and borders in this lesson.";
+      
+      rule1 = "Always locate the region or country on the map before answering.";
+      rule2 = "Physical geography is about nature, while human geography is about people.";
+      rule3 = `${fact_clean}.`;
+      rule4 = "Compare different regions to see how climate changes what people wear and build.";
+      
+      step1 = "First, find the location or country mentioned in the geography question.";
+      step2 = "Second, identify the climate, borders, or landforms of that place.";
+      step3 = "Third, use these geographical facts to find the correct answer.";
+      
+      example1 = "Let's analyze a geography question about a cold region.";
+      example2 = "We locate the polar region on the map and check its weather.";
+      example3 = "Since it is freezing cold, people there wear thick coats and live near resources.";
+      
+      summary = `In summary, we learned about the geography rules of ${theme_clean}.`;
+      takeaway = "Remember that the equator is the warm middle line of the Earth.";
+    }
+  } else if (subject === 'history') {
+    intro = `Today we are learning about ${theme_clean} in history.`;
+    conceptDef = "History is the study of people, events, and societies in the past.";
+    if (theme_lc.includes("timeline") || theme_lc.includes("past") || theme_lc.includes("source") || theme_lc.includes("historian")) {
+      importance = "Timelines and sources help us understand when and why historical events happened.";
+      preview = "We will study how to order historical events and check historical sources.";
+      
+      rule1 = "A timeline shows historical events in chronological order, from oldest to newest.";
+      rule2 = "Primary sources are direct records from the past created by people who were there.";
+      rule3 = "Examples of primary sources include diaries, photographs, letters, and artifacts.";
+      rule4 = "Secondary sources are written later by researchers, like textbooks or articles.";
+      
+      step1 = "First, look at the dates of events to place them in order from past to present.";
+      step2 = "Second, check if a document is an original diary (primary) or a textbook (secondary).";
+      step3 = "Third, combine facts from these sources to reconstruct what happened.";
+      
+      example1 = "Imagine finding an old letter written by a soldier in the American Civil War.";
+      example2 = "Since the soldier wrote it himself during the war, it is a primary source.";
+      example3 = "Reading it tells us exactly how he felt, giving us a first-hand history lesson.";
+      
+      summary = `In summary, we learned that ${theme_clean} teaches us how to research the past.`;
+      takeaway = "Remember that timelines always flow from the past on the left to the present on the right.";
+    } else if (theme_lc.includes("government") || theme_lc.includes("president") || theme_lc.includes("leader") || theme_lc.includes("law") || theme_lc.includes("citizen")) {
+      importance = "Governments make laws to keep citizens safe, organize communities, and build services.";
+      preview = "We will learn about democracy, rights, and historical government leaders.";
+      
+      rule1 = "In a democracy, citizens vote to choose their government leaders.";
+      rule2 = "The President is the elected leader of the national government in the United States.";
+      rule3 = "The Constitution is the supreme law that outlines the rules of the government.";
+      rule4 = "Citizens have rights (like freedom of speech) and responsibilities (like voting).";
+      
+      step1 = "First, identify the level of government (local, state, or national) in the question.";
+      step2 = "Second, look at the role of the leader, like a Mayor, Governor, or President.";
+      step3 = "Third, recall the laws and rights that apply to the citizen in that situation.";
+      
+      example1 = "Let's look at how laws are made in the United States.";
+      example2 = "Congress votes to write a bill, which is a new proposed law.";
+      example3 = "If the President signs the bill, it becomes a law for all citizens to follow.";
+      
+      summary = `In summary, we learned that ${theme_clean} explains laws, leadership, and citizenship.`;
+      takeaway = "Remember that voting is how citizens choose their leaders in a democracy.";
+    } else {
+      importance = "History helps us learn from the past to make better choices today.";
+      preview = "We will study famous leaders, inventions, and movements in history.";
+      
+      rule1 = "Study the historical context, which means what else was happening at that time.";
+      rule2 = "Identify cause and effect: why did an event start and what happened because of it?";
+      rule3 = `${fact_clean}.`;
+      rule4 = "Inventions like the printing press or telephone changed how humans communicate.";
+      
+      step1 = "First, read the historical question and identify the time period or year.";
+      step2 = "Second, think about the major events and leaders of that historical era.";
+      step3 = "Third, apply these historical facts to answer the question.";
+      
+      example1 = "Let's check why early settlers built cities near rivers.";
+      example2 = "Rivers provided fresh water for drinking, farming crops, and transportation.";
+      example3 = "Therefore, settlers built towns next to rivers to survive and trade.";
+      
+      summary = `In summary, we learned about the historical rules of ${theme_clean}.`;
+      takeaway = "Remember to look at historical causes to understand why societies changed.";
     }
   } else if (subject === 'art') {
-    if (unit <= 2) { // Color & Design
-      p1 = [
-        "Art is a creative way to express ideas and stories visually.",
-        "Today, we study how " + theme_clean + " is used in art design.",
-        "The basic building blocks of art are line, shape, color, and form.",
-        "Artists combine these elements to construct their visual compositions.",
-        "Let us explore these core design concepts and techniques.",
-        "Lines can be straight, wavy, zigzag, or curved to show motion.",
-        "Shapes can be geometric like circles, or organic like leaves.",
-        "Colors can be warm like red and yellow, or cool like blue.",
-        "Understanding these elements helps us analyze how art is created.",
-        "Let us look at the primary rules of color and composition."
-      ];
-      p2 = [
-        "A central principle in color theory and design is that " + theme_clean + " " + fact_clean + ".",
-        "This choice of color or line creates a specific mood or focus.",
-        "Primary colors mix to make secondary colors on the color wheel.",
-        "Understanding these rules helps artists plan their painting projects.",
-        "Visual balance can be symmetrical, asymmetrical, or radial.",
-        "Symmetrical balance exists when both sides look identical.",
-        "Asymmetrical balance uses different shapes of equal visual weight.",
-        "Contrast is created by placing opposite elements next to each other.",
-        "This makes specific parts of the artwork stand out and draw attention.",
-        "Let us examine how these elements create harmony in artwork."
-      ];
-      p3 = [
-        "Let us look at how " + theme_clean + " creates balance in a painting.",
-        "Artists arrange shapes and lines to guide the viewer's eye.",
-        "Contrast is created by placing light values next to dark values.",
-        "Using color harmony makes a drawing look unified and pleasing.",
-        "Value scale measures the transition from light to dark shadows.",
-        "Shading creates the illusion of three-dimensional form on paper.",
-        "Texture describes how a surface feels or looks like it feels.",
-        "Artists use brushstrokes or carvings to represent rough wood or soft fur.",
-        "Analyzing these design choices helps us interpret the artist's message.",
-        "Let us look at the materials used to apply these design rules."
-      ];
-      p4 = [
-        "Artists apply " + theme_clean + " across many physical media.",
-        "Each medium has its own unique texture and requires specific tools.",
-        "Whether creating a flat painting or a 3D clay sculpture, rules apply.",
-        "Experiencing different media builds creative and technical skills.",
-        "Watercolors allow for soft, blending washes of light color.",
-        "Acrylic paint dries quickly and can be layered for thick textures.",
-        "Clay can be shaped, carved, and fired in a kiln to make pottery.",
-        "Printmaking allows artists to stamp a carved design multiple times.",
-        "Each medium offers new ways to express creativity and form.",
-        "Let us summarize what we have learned about design elements."
-      ];
-      p5 = [
-        "In summary, we have learned about " + theme_clean + " in art design.",
-        "We know that " + theme_clean + " " + fact_clean + " in visual compositions.",
-        "We discussed the elements of art, contrast, and balance in design.",
-        "Remembering these concepts will help you appreciate masterpieces.",
-        "You are now ready to begin the practice questions.",
-        "Read each question carefully and think about the design principles.",
-        "Answering correctly will show your creativity and earn you stars.",
-        "Art is a universal language that allows us to share our feelings.",
-        "We will explore art history and movements in our future lessons.",
-        "Good luck as you start the practice session!"
-      ];
-    } else { // Art History
-      p1 = [
-        "Art history is the study of how styles and techniques changed.",
-        "Today, we focus on the artistic style of " + theme_clean + ".",
-        "Every historic masterpiece reflects the culture and materials of its era.",
-        "By studying art history, we learn how artists expressed beliefs.",
-        "Let us explore the origins and techniques of this artistic style.",
-        "Art movements emerge when artists want to try brand new ideas.",
-        "They often reject the old rules to experiment with light and form.",
-        "Historians study artists' brushwork and symbols to explain meaning.",
-        "Museums preserve these historical treasures for everyone to enjoy.",
-        "Let us look at the major achievements of this art style."
-      ];
-      p2 = [
-        "A major fact about this movement is that " + theme_clean + " " + fact_clean + ".",
-        "This technique redefined how artists represented light and space.",
-        "New art movements started when artists wanted to try new ideas.",
-        "Historians analyze brushwork and symbols to explain these works.",
-        "This style represents a major shift in how we view reality.",
-        "Artists moved away from realistic details to capture quick impressions.",
-        "They used bright, unblended paint strokes to show vibrating sunlight.",
-        "This breakthrough paved the way for modern abstract art.",
-        "Understanding these shifts helps us analyze the evolution of design.",
-        "Let us examine the themes and compositions of this style."
-      ];
-      p3 = [
-        "Let us examine the themes and compositions of " + theme_clean + ".",
-        "Artists often painted scenes of daily life, nature, or shapes.",
-        "They used perspective to create the illusion of 3D depth.",
-        "Shading and value scales were applied to show realistic shadows.",
-        "Composition is the arrangement of elements on the canvas surface.",
-        "Artists use focal points to draw attention to the main subject.",
-        "Atmospheric perspective makes distant hills look blurry and blue.",
-        "This technique mimics how light travels through air over distance.",
-        "Studying these compositions teaches us the rules of classical drawing.",
-        "Let us look at the historic impact of this movement."
-      ];
-      p4 = [
-        "The historic impact of " + theme_clean + " changed how society viewed art.",
-        "Famous painters and sculptors inspired new schools of architecture.",
-        "Today, their works are preserved in museums around the world.",
-        "Studying these masterpieces teaches us how human expression evolved.",
-        "Art houses host galleries to highlight modern and historic works.",
-        "Public murals bring color and stories to local city walls.",
-        "Art conservation preserves fragile paint layers from aging damage.",
-        "This ensures that future generations can learn from these treasures.",
-        "Recognizing these historical connections builds cultural appreciation.",
-        "Let us summarize what we have learned in this art history lesson."
-      ];
-      p5 = [
-        "In summary, we have studied the history and style of " + theme_clean + ".",
-        "We know that " + theme_clean + " " + fact_clean + " in art history.",
-        "We discussed artistic movements, perspective, shading, and museums.",
-        "Keeping these art history facts in mind will help you answer.",
-        "You are now ready to begin the practice questions.",
-        "Read the questions carefully and review the art history concepts.",
-        "Applying these skills will help you earn stars and top points.",
-        "Art history connects us to the creative minds of the past.",
-        "We will explore modern digital art styles in our next lesson.",
-        "Good luck as you begin the practice questions!"
-      ];
+    intro = `Today we are learning about ${theme_clean} in art class.`;
+    conceptDef = "Art is a way to express ideas, feelings, and stories visually using materials.";
+    if (theme_lc.includes("color") || theme_lc.includes("shade") || theme_lc.includes("primary") || theme_lc.includes("secondary") || theme_lc.includes("wheel")) {
+      importance = "Artists use color theory to mix colors and create different moods in artwork.";
+      preview = "We will learn about primary colors, secondary colors, and the color wheel.";
+      
+      rule1 = "The three primary colors are Red, Yellow, and Blue.";
+      rule2 = "Primary colors cannot be made by mixing other colors together.";
+      rule3 = "Secondary colors are Green, Orange, and Purple, made by mixing two primary colors.";
+      rule4 = "Red + Yellow = Orange. Yellow + Blue = Green. Blue + Red = Purple.";
+      
+      step1 = "First, identify if a color is a primary color (red, yellow, blue) or not.";
+      step2 = "Second, check the color wheel to see which colors are mixed to create new ones.";
+      step3 = "Third, describe how warm colors (red, orange) or cool colors (blue, green) make you feel.";
+      
+      example1 = "Let's mix yellow paint and blue paint together in art class.";
+      example2 = "Since yellow and blue are both primary colors, they blend to make a new color.";
+      example3 = "The mixed color we get is green, which is a secondary color.";
+      
+      summary = `In summary, we learned that ${theme_clean} teaches us how colors mix and relate.`;
+      takeaway = "Remember that primary colors are the base for all other colors on the wheel.";
+    } else if (theme_lc.includes("line") || theme_lc.includes("shape") || theme_lc.includes("texture") || theme_lc.includes("form") || theme_lc.includes("pattern") || theme_lc.includes("element")) {
+      importance = "Lines, shapes, forms, and textures are the basic building blocks of all art.";
+      preview = "We will study how artists combine these elements to draw and sculpt.";
+      
+      rule1 = "A line is a path made by a moving point, like straight, wavy, or zigzag lines.";
+      rule2 = "2D shapes are flat (circles, squares), while 3D forms have depth (cubes, spheres).";
+      rule3 = "Texture is how an object feels when touched, or how it looks like it would feel.";
+      rule4 = "Patterns are created when shapes, lines, or colors repeat in a sequence.";
+      
+      step1 = "First, trace the lines in the drawing to see if they show movement or calm.";
+      step2 = "Second, identify 2D shapes and 3D forms used to build the objects.";
+      step3 = "Third, observe the texture and pattern to describe the artwork's style.";
+      
+      example1 = "Let's draw a tree using different elements of art.";
+      example2 = "We use brown lines for the branches and green shapes for the leaves.";
+      example3 = "We draw rough scribbled lines on the trunk to create a realistic bark texture.";
+      
+      summary = `In summary, we learned that ${theme_clean} helps us analyze and create drawings.`;
+      takeaway = "Remember that forms have depth (3D) while shapes are completely flat (2D).";
+    } else {
+      importance = "Art lets us share our creativity, stories, and feelings with others.";
+      preview = "We will look at different artistic techniques, materials, and styles.";
+      
+      rule1 = "Artists use mediums like paint, clay, crayons, and charcoal to create art.";
+      rule2 = "Every artwork can tell a story or capture an important moment in history.";
+      rule3 = `${fact_clean}.`;
+      rule4 = "Use balance, variety, and contrast to make your art interesting to look at.";
+      
+      step1 = "First, examine the artwork and identify the materials and colors used.";
+      step2 = "Second, look at the patterns, focus point, and structure of the composition.";
+      step3 = "Third, interpret the story or feeling the artist wanted to share.";
+      
+      example1 = "Let's analyze a painting of a family picnic in a sunny park.";
+      example2 = "The artist uses bright colors and soft lines to show a happy mood.";
+      example3 = "By placing the family in the center, the artist makes them the focus of the painting.";
+      
+      summary = `In summary, we learned about the art rules of ${theme_clean}.`;
+      takeaway = "Remember that art is unique to every person and has no wrong answers.";
     }
-  } else {
+  }
+
+
+  // Category-specific enrichment for Science, History, Geography, and Art
+  const isSpecial = (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art');
+  if (isSpecial) {
+    let matched = false;
+    
+    // 1. Grasslands / Plains
+    if (theme_lc.includes("plain") || theme_lc.includes("grassland") || theme_lc.includes("prairie") || theme_lc.includes("savanna")) {
+      importance = "Grasslands and plains support massive agricultural production and diverse wildlife habitats.";
+      preview = "We will study the unique semi-arid climate, strong winds, native animals, and historical tribes of these flat lands.";
+      rule1 = "The plains feature vast, flat terrain covered in deep, fertile soils ideal for grasses.";
+      rule2 = "Due to the lack of mountain barriers, strong winds sweep across the plains at high speeds.";
+      rule3 = "The weather here is semi-arid, bringing hot summers, freezing winters, and sudden severe storms.";
+      rule4 = "Historically, Native American tribes like the Sioux and Cheyenne lived here, hunting migrating bison herds.";
+      step1 = "First, observe the flat horizon and identify the grass and soil types of the region.";
+      step2 = "Second, check the local weather records for extreme seasonal temperature shifts and low rainfall.";
+      step3 = "Third, analyze how wildlife like prairie dogs and pronghorns adapt to this open environment.";
+      example1 = "Think of the American Great Plains stretching across ten central states from Canada to Texas.";
+      example2 = "Massive bison herds graze on the shortgrass, while burrowing owls find shelter underground.";
+      example3 = "Today, this open grassland serves as a major agricultural belt for growing wheat and corn.";
+      summary = "In summary, the plains are flat grasslands characterized by extreme weather, bison, and rich farming soils.";
+      takeaway = "Remember that plains have rich soil but suffer from high winds, low rainfall, and dry conditions.";
+      matched = true;
+    }
+    // 2. Mountains
+    else if (theme_lc.includes("mountain") || theme_lc.includes("appalachian") || theme_lc.includes("rocky") || theme_lc.includes("andes") || theme_lc.includes("alps") || theme_lc.includes("range") || theme_lc.includes("peaks") || theme_lc.includes("elevation")) {
+      importance = "Mountains shape regional climates, store freshwater as ice, and harbor unique alpine ecosystems.";
+      preview = "We will study how elevation changes temperatures, the types of forests that grow, and mountain wildlife.";
+      rule1 = "As elevation increases, temperatures drop and the air becomes much thinner.";
+      rule2 = "Mountains force wind upwards, cooling the air and creating rain or snow on the slopes.";
+      rule3 = "Old mountains like the Appalachians are rounded and weathered, while young mountains like the Rockies are sharp and tall.";
+      rule4 = "Large mammals like black bears, bighorn sheep, and cougars live in these rocky terrains.";
+      step1 = "First, identify the elevation and slope angles of the mountain range on a topographic map.";
+      step2 = "Second, examine how the vegetation changes from deciduous forests to coniferous pine trees.";
+      step3 = "Third, trace the rivers that flow down from melting snow caps to water the valleys.";
+      example1 = "Consider the Appalachian Mountains covered in thick deciduous forests of oak and maple trees.";
+      example2 = "In winter, heavy snow blankets the slopes, providing moisture that feeds surrounding rivers in spring.";
+      example3 = "Historically, these rugged ridges acted as a natural barrier to early travel and settlement.";
+      summary = "In summary, mountains are elevated landforms with cool climates, diverse forests, and steep rocky slopes.";
+      takeaway = "Remember that higher elevations have colder weather and different plant zones than valleys.";
+      matched = true;
+    }
+    // 3. Deserts
+    else if (theme_lc.includes("desert") || theme_lc.includes("sahara") || theme_lc.includes("arid") || theme_lc.includes("moisture")) {
+      importance = "Deserts cover one-fifth of Earth's land, hosting highly specialized plants and animals.";
+      preview = "We will study the extreme temperature swings, dry weather patterns, and desert survival adaptations.";
+      rule1 = "Deserts receive less than ten inches of rain per year, making fresh water extremely scarce.";
+      rule2 = "Without cloud cover, deserts experience scorching hot days followed by freezing cold nights.";
+      rule3 = "Desert animals like camels and fennec foxes store fat and have large ears to release heat.";
+      rule4 = "Plants like cacti have thick waxy skins to store water and sharp spines to deter herbivores.";
+      step1 = "First, measure the annual rainfall and temperature range of the desert habitat.";
+      step2 = "Second, identify how sand dunes are shaped by strong desert winds over time.";
+      step3 = "Third, study how nocturnal animals search for food during the cooler night hours.";
+      example1 = "Look at the Mojave Desert where Joshua trees and sidewinder rattlesnakes make their homes.";
+      example2 = "Cacti store water in their stems, allowing them to survive for months without a single drop of rain.";
+      example3 = "Nomadic tribes have historically crossed these arid lands by tracking water oases.";
+      summary = "In summary, deserts are dry environments with extreme temperature swings and water-saving adaptations.";
+      takeaway = "Remember that desert organisms must conserve water and adapt to intense heat and cold.";
+      matched = true;
+    }
+    // 4. Polar / Cold Regions
+    else if (theme_lc.includes("polar") || theme_lc.includes("arctic") || theme_lc.includes("tundra") || theme_lc.includes("antarctica") || theme_lc.includes("ice") || theme_lc.includes("frozen") || theme_lc.includes("glacier")) {
+      importance = "Polar regions regulate global temperatures by reflecting solar heat back into space.";
+      preview = "We will study the freezing climates, permafrost soil, glaciers, and cold-adapted wildlife.";
+      rule1 = "The polar climate is freezing cold year-round, with vast sheets of ice and snow.";
+      rule2 = "The ground is permanently frozen beneath the surface, a layer known as permafrost.";
+      rule3 = "Polar animals like polar bears and seals rely on thick layers of fat and fur to stay warm.";
+      rule4 = "Vegetation is limited to low-growing mosses and lichens, as trees cannot grow in permafrost.";
+      step1 = "First, locate the Arctic and Antarctic circles on a map of the globe.";
+      step2 = "Second, analyze how ice sheets and glaciers move slowly over the landscape.";
+      step3 = "Third, observe how animals migrate or hibernate during the long, dark polar winters.";
+      example1 = "Think of Antarctica, a frozen continent where emperor penguins nest in freezing blizzards.";
+      example2 = "In summer, the top inch of tundra soil melts slightly, creating temporary marshy pools.";
+      example3 = "Indigenous groups like the Inuit developed specialized tools and sleds to travel on ice.";
+      summary = "In summary, polar regions are frozen ecosystems characterized by ice, permafrost, and thick-furred wildlife.";
+      takeaway = "Remember that polar ecosystems are highly sensitive to temperature changes and have no trees.";
+      matched = true;
+    }
+    // 5. Forests / Ecosystems
+    else if (theme_lc.includes("forest") || theme_lc.includes("rainforest") || theme_lc.includes("canopy") || theme_lc.includes("woods") || theme_lc.includes("jungle") || theme_lc.includes("deciduous") || theme_lc.includes("coniferous") || theme_lc.includes("tree")) {
+      importance = "Forests act as Earth's lungs, producing oxygen and absorbing carbon dioxide to balance the atmosphere.";
+      preview = "We will study the layers of the forest, seasonal changes, and diverse woodland habitats.";
+      rule1 = "Forests grow in areas with sufficient rainfall to support dense tree growth.";
+      rule2 = "Deciduous forests shed their leaves in autumn, while coniferous forests have evergreen needles.";
+      rule3 = "Rainforests are warm and wet year-round, containing over half of all plant and animal species.";
+      rule4 = "The forest structure includes the forest floor, understory, canopy, and emergent layer.";
+      step1 = "First, classify the forest as temperate, boreal, or tropical based on its climate.";
+      step2 = "Second, observe the canopy layer to see how it blocks sunlight from reaching the floor.";
+      step3 = "Third, trace the food web from tree sap and leaves to insects, birds, and predators.";
+      example1 = "Consider the Amazon Rainforest, where monkeys, toucans, and jaguars live among the tall trees.";
+      example2 = "In deciduous forests, leaves change to vibrant red and gold before falling to the ground in autumn.";
+      example3 = "These decaying leaves create a nutrient-rich soil that feeds new saplings in the spring.";
+      summary = "In summary, forests are complex, tree-dominated ecosystems with seasonal changes and layered habitats.";
+      takeaway = "Remember that the canopy blocks sunlight, forcing forest floor plants to adapt to shade.";
+      matched = true;
+    }
+    // 6. Water Bodies
+    else if (theme_lc.includes("river") || theme_lc.includes("lake") || theme_lc.includes("ocean") || theme_lc.includes("sea") || theme_lc.includes("water") || theme_lc.includes("erosion") || theme_lc.includes("canyon") || theme_lc.includes("stream")) {
+      importance = "Water bodies drive the water cycle, erode landscapes, and support marine life.";
+      preview = "We will study freshwater and saltwater ecosystems, currents, and how flowing water carves the Earth.";
+      rule1 = "Flowing river water carries rocks and soil, slowly eroding the riverbed over thousands of years.";
+      rule2 = "Oceans contain saltwater and cover more than seventy percent of the Earth's surface.";
+      rule3 = "Freshwater lakes and rivers provide vital drinking water, transportation, and habitats.";
+      rule4 = "Marine life ranges from tiny plankton to massive blue whales and deep-sea predators.";
+      step1 = "First, trace the path of a river from its mountain source down to the ocean.";
+      step2 = "Second, measure how water current speed affects the erosion of surrounding banks.";
+      step3 = "Third, identify the salinity levels that separate freshwater lakes from salty seas.";
+      example1 = "Think of the Colorado River carving out the Grand Canyon over millions of years.";
+      example2 = "Coastal tides rise and fall daily due to the gravitational pull of the moon.";
+      example3 = "Estuaries, where rivers meet the sea, create rich nurseries for young fish and crabs.";
+      summary = "In summary, water bodies shape the land through erosion and host diverse aquatic ecosystems.";
+      takeaway = "Remember that water is a powerful force of erosion that shapes valleys and feeds oceans.";
+      matched = true;
+    }
+    // 7. Space / Astronomy
+    else if (theme_lc.includes("space") || theme_lc.includes("planet") || theme_lc.includes("solar") || theme_lc.includes("moon") || theme_lc.includes("sun") || theme_lc.includes("star") || theme_lc.includes("orbit") || theme_lc.includes("galaxy") || theme_lc.includes("astronomy") || theme_lc.includes("universe") || theme_lc.includes("telescope")) {
+      importance = "Astronomy helps us understand the laws of physics and Earth's place in the universe.";
+      preview = "We will study gravity, the planets in our solar system, and how stars generate light.";
+      rule1 = "Space is a vacuum with no air or atmosphere, resulting in silent and extreme conditions.";
+      rule2 = "Our solar system contains eight planets that orbit the Sun due to its massive gravity.";
+      rule3 = "Stars are massive spheres of hot gas that produce light through nuclear fusion in their cores.";
+      rule4 = "Moons are natural satellites that orbit planets and reflect sunlight to shine in the night sky.";
+      step1 = "First, map the order of planets from the Sun, starting with Mercury out to Neptune.";
+      step2 = "Second, calculate how planetary rotation speeds create day and night cycles.";
+      step3 = "Third, observe the moon's phases as it revolves around the Earth every month.";
+      example1 = "Consider the planet Mars, a dusty desert world with a thin atmosphere and two small moons.";
+      example2 = "Our Sun is a medium-sized star that provides the light and heat energy necessary for life on Earth.";
+      example3 = "Astronomers use space telescopes like Hubble and Webb to photograph distant galaxies.";
+      summary = "In summary, space contains planets, moons, and stars held in motion by gravity in a vacuum.";
+      takeaway = "Remember that gravity keeps planets in orbit and the Sun provides life-supporting energy.";
+      matched = true;
+    }
+    // 8. History Timelines / Sources
+    else if (theme_lc.includes("timeline") || theme_lc.includes("past") || theme_lc.includes("source") || theme_lc.includes("historian") || theme_lc.includes("evidence") || theme_lc.includes("document") || theme_lc.includes("artifact")) {
+      importance = "Timelines and historical sources allow us to reconstruct past events and learn from human experiences.";
+      preview = "We will study chronological order, primary and secondary sources, and historical evidence.";
+      rule1 = "A timeline displays historical events in chronological order, showing cause and effect.";
+      rule2 = "Primary sources are direct, firsthand records created by people who experienced the event.";
+      rule3 = "Examples of primary sources include diaries, letters, original photographs, and physical artifacts.";
+      rule4 = "Secondary sources are written later by researchers who did not witness the events firsthand.";
+      step1 = "First, arrange historical dates in order from the oldest past to the most recent present.";
+      step2 = "Second, evaluate a source document to determine if it was created during the historical event.";
+      step3 = "Third, compare multiple accounts to verify the accuracy of the historical record.";
+      example1 = "Read a soldier's diary written during the Revolutionary War, which serves as a primary source.";
+      example2 = "A modern history textbook analyzing that war is a secondary source.";
+      example3 = "Archaeologists dig up ancient coins and pottery to find physical evidence of lost cities.";
+      summary = "In summary, history uses timelines and primary sources to build an accurate record of past events.";
+      takeaway = "Remember that primary sources are firsthand accounts, while secondary sources are written later.";
+      matched = true;
+    }
+    // 9. Government / Civics
+    else if (theme_lc.includes("government") || theme_lc.includes("president") || theme_lc.includes("leader") || theme_lc.includes("law") || theme_lc.includes("citizen") || theme_lc.includes("constitution") || theme_lc.includes("democracy") || theme_lc.includes("rights") || theme_lc.includes("vote") || theme_lc.includes("congress") || theme_lc.includes("court")) {
+      importance = "Governments establish order, protect citizen rights, and manage public services for communities.";
+      preview = "We will study democratic elections, the U.S. Constitution, and the branches of government.";
+      rule1 = "In a democracy, citizens vote to elect their leaders and make community decisions.";
+      rule2 = "The Constitution is the supreme law of the land, establishing government structure and rights.";
+      rule3 = "The government is divided into legislative (makes laws), executive (enforces laws), and judicial (interprets laws) branches.";
+      rule4 = "Citizens have rights like free speech, along with responsibilities like voting and obeying laws.";
+      step1 = "First, identify if a civic issue is handled at the local, state, or federal level of government.";
+      step2 = "Second, follow how a proposed bill is debated in Congress and signed by the President to become law.";
+      step3 = "Third, examine how courts review laws to ensure they agree with the Constitution.";
+      example1 = "Consider the President signing a new environmental law passed by the House and Senate.";
+      example2 = "Citizens gather at a town hall meeting to vote on building a new local park.";
+      example3 = "The Bill of Rights contains the first ten amendments protecting individual freedoms.";
+      summary = "In summary, government organizes society through laws, branches of power, and citizen voting.";
+      takeaway = "Remember that voting allows citizens to participate in government and select their leaders.";
+      matched = true;
+    }
+    // 10. Art Color Theory
+    else if (theme_lc.includes("color") || theme_lc.includes("shade") || theme_lc.includes("primary") || theme_lc.includes("secondary") || theme_lc.includes("wheel") || theme_lc.includes("warm") || theme_lc.includes("cool") || theme_lc.includes("pigment") || theme_lc.includes("tint")) {
+      importance = "Color theory helps artists mix colors, create contrast, and establish emotional moods.";
+      preview = "We will study primary and secondary colors, mixing rules, and color wheels.";
+      rule1 = "The primary colors of pigment are red, yellow, and blue, which cannot be mixed.";
+      rule2 = "Secondary colors are orange, green, and purple, made by mixing two primary colors.";
+      rule3 = "Warm colors like red and orange express energy, while cool colors like blue and green feel calm.";
+      rule4 = "Complementary colors sit opposite each other on the wheel and create high contrast.";
+      step1 = "First, locate a color on the wheel and identify its primary and secondary components.";
+      step2 = "Second, mix white paint to create a tint, or black paint to create a shade.";
+      step3 = "Third, place complementary colors side-by-side to make elements pop.";
+      example1 = "Mix yellow and blue acrylic paint on a palette to create vibrant green leaves.";
+      example2 = "An artist uses bright red and orange values to paint a warm, energetic sunset.";
+      example3 = "Blue and orange are placed together in a painting to create a striking contrast.";
+      summary = "In summary, color theory guides artists in mixing primary and secondary colors on the wheel.";
+      takeaway = "Remember that secondary colors are made by mixing red, yellow, or blue primary colors.";
+      matched = true;
+    }
+    // 11. Art Elements
+    else if (theme_lc.includes("line") || theme_lc.includes("shape") || theme_lc.includes("texture") || theme_lc.includes("form") || theme_lc.includes("pattern") || theme_lc.includes("element") || theme_lc.includes("composition") || theme_lc.includes("medium") || theme_lc.includes("canvas") || theme_lc.includes("sketch") || theme_lc.includes("clay")) {
+      importance = "The elements of art are the visual building blocks used to construct any creative work.";
+      preview = "We will study lines, flat shapes, 3D forms, textures, and repeating patterns.";
+      rule1 = "Lines can be thick, thin, straight, or curved, directing the viewer's gaze.";
+      rule2 = "Shapes are flat two-dimensional areas, while forms have three-dimensional volume.";
+      rule3 = "Texture represents the physical surface quality, which can be real or implied by shading.";
+      rule4 = "Repeating shapes, colors, or lines in a specific sequence creates a visual pattern.";
+      step1 = "First, trace the dominant lines in a composition to find the focal point.";
+      step2 = "Second, identify the 2D shapes that form the outlines of the subjects.";
+      step3 = "Third, apply shading techniques like hatching to give flat shapes 3D volume.";
+      example1 = "Sculpt a three-dimensional clay vase, giving it physical height, width, and depth.";
+      example2 = "Draw repeating black and white checkerboard patterns to create a sense of rhythm.";
+      example3 = "Apply rough, thick paint strokes to represent the bark texture of a forest tree.";
+      summary = "In summary, art elements like line, shape, and texture are the building blocks of visual compositions.";
+      takeaway = "Remember that forms have volume (3D) while shapes are completely flat (2D).";
+      matched = true;
+    }
+    
+    // Default subject fallbacks if no specific category matched (to ensure no repeated or filler lines)
+    if (!matched) {
+      if (subject === 'geography') {
+        importance = "Geography studies the physical features of the Earth and how human communities adapt to them.";
+        preview = `We will study how the spatial layout of ${theme_clean} shapes the surrounding region.`;
+        rule1 = "Geographers use tools like globes, maps, and satellite imagery to study geographic details.";
+        rule2 = "Physical geography focuses on natural features like landforms, climates, and ecosystems.";
+        rule3 = `${theme_clean} plays a major role in defining the local topography and borders.`;
+        rule4 = "Human geography examines how populations settle, farm, and build cities near these landforms.";
+        step1 = "First, locate the region and its coordinate grid on a reference map.";
+        step2 = "Second, analyze the climate zones and physical barriers surrounding this area.";
+        step3 = "Third, identify how natural resources are distributed and utilized by communities.";
+        example1 = `Look at how maps outline the physical boundaries and elevation levels of ${theme_clean}.`;
+        example2 = "Local populations adapt their clothes, housing, and farming to match the weather patterns.";
+        example3 = "Geographic coordinates of latitude and longitude help us pinpoint this exact location.";
+        summary = `In summary, studying ${theme_clean} helps us understand spatial relationships and regional geography.`;
+        takeaway = "Remember that geographical features shape human settlements and climate patterns.";
+      } else if (subject === 'science') {
+        importance = "Science is the systematic study of the physical world through observation, questioning, and testing.";
+        preview = `We will study the scientific principles and behaviors that govern ${theme_clean}.`;
+        rule1 = "Scientists gather data and look for repeating patterns to explain natural processes.";
+        rule2 = "Every physical system is shaped by interactions between matter, energy, and forces.";
+        rule3 = `${theme_clean} demonstrates how scientific laws operate in real-world scenarios.`;
+        rule4 = "We run controlled experiments to test hypotheses and analyze the resulting changes.";
+        step1 = "First, formulate a question and record your initial observations of the phenomenon.";
+        step2 = "Second, measure the variables and compile your data into tables or charts.";
+        step3 = "Third, draw logical conclusions based on the evidence collected.";
+        example1 = `Consider how scientists model and analyze the active properties of ${theme_clean}.`;
+        example2 = "Energy transfers from one state to another, driving changes in the system.";
+        example3 = "Using tools like microscopes and scales reveals hidden details about this process.";
+        summary = `In summary, we explored the scientific properties, variables, and models of ${theme_clean}.`;
+        takeaway = "Remember to base your scientific conclusions on clear evidence and observations.";
+      } else if (subject === 'history') {
+        importance = "History is the study of past human societies, events, decisions, and movements.";
+        preview = `We study ${theme_clean} to learn how historical actions shape our modern lives.`;
+        rule1 = "Historians analyze primary sources like diaries and artifacts to reconstruct the past.";
+        rule2 = "We look at cause and effect relationships to understand why historical changes happened.";
+        rule3 = `${theme_clean} represents a key historical event or movement with lasting impact.`;
+        rule4 = "Learning history helps us understand modern societies and make informed decisions.";
+        step1 = "First, place the historical event on a timeline to establish its chronological order.";
+        step2 = "Second, read firsthand letters and documents written by people who were there.";
+        step3 = "Third, compare different historical perspectives to build a balanced view.";
+        example1 = `Look at how primary records describe the initial causes of ${theme_clean}.`;
+        example2 = "New technology or ideas spread, changing how societies traded and governed.";
+        example3 = "Textbooks and archaeological excavations help us verify these historical timelines.";
+        summary = `In summary, we learned how ${theme_clean} fits into history and shaped modern communities.`;
+        takeaway = "Remember that historical events are connected by cause and effect across time.";
+      } else if (subject === 'art') {
+        importance = "Art is a creative human expression that uses visual forms to communicate ideas and feelings.";
+        preview = `We study ${theme_clean} to explore the design techniques and styles used by artists.`;
+        rule1 = "Artists combine elements like line, shape, color, and texture to create compositions.";
+        rule2 = "Composition is the arrangement of elements within an artwork to create balance.";
+        rule3 = `${theme_clean} is a key visual concept or medium used to express artistic intent.`;
+        rule4 = "Different media, from watercolors to clay, require specialized tools and skills.";
+        step1 = "First, select the artistic medium and prepare your workspace or canvas.";
+        step2 = "Second, sketch the basic structure and layout of your composition.";
+        step3 = "Third, apply colors, shadows, and textures to complete the visual design.";
+        example1 = `Observe how a master artist utilizes the principles of ${theme_clean} in their work.`;
+        example2 = "A painting uses specific values and color contrasts to guide the viewer's eye.";
+        example3 = "Sculptors and painters express historical stories and feelings through their choices.";
+        summary = `In summary, art appreciation teaches us to analyze techniques like ${theme_clean} and interpret meanings.`;
+        takeaway = "Remember that art is unique to every person and has no wrong answers.";
+      }
+    }
+  }
+  let p1, p2, p3, p4, p5;
+
+  if (subject === 'math' || subject === 'ela') {
     p1 = [
-      "Welcome to the lesson on " + theme_clean + ".",
-      "This lesson teaches you important rules of " + subject + ".",
-      "Learning these concepts builds a strong foundation for future topics.",
-      "Click play or next to begin reading the lessons.",
-      "Always read every sentence carefully to catch the main point.",
-      "Education helps us build skills for our future careers.",
-      "Every page teaches a specific step in solving problems.",
-      "Take notes if you need to remember key definitions.",
-      "Asking questions is a great way to expand your understanding.",
-      "Let us get started on this exciting learning adventure!"
+      intro,
+      conceptDef,
+      importance,
+      preview
     ];
     p2 = [
-      "A key rule we learn is that " + theme_clean + " " + fact_clean + ".",
-      "This rule helps us solve problems step-by-step.",
-      "Make sure to read carefully and check your understanding.",
-      "Every example demonstrates how this rule applies in practice.",
-      "Practice equations or spellings build your brain power.",
-      "Take your time to understand why the rule works.",
-      "Double check each letter or digit for accuracy.",
-      "Mistakes are a normal part of the learning process.",
-      "By correcting errors, we build stronger memory connections.",
-      "Let us look at a detailed example of this concept."
+      `The rules for ${theme_clean} are simple but important.`,
+      `Rule 1: ${rule1}`,
+      `Rule 2: ${rule2}`,
+      `Rule 3: ${rule3}`,
+      `Rule 4: ${rule4}`
     ];
     p3 = [
-      "Let us look at how this concept works in detail.",
-      "By practicing with numbers or words, we see patterns clearly.",
-      "Take your time to study this page and its examples.",
-      "Patterns reveal the underlying logic of the subject.",
-      "They make it easier to solve larger and harder problems.",
-      "Review the steps we use to break down the equation.",
-      "First, identify the values or letters given to us.",
-      "Second, apply the rule to calculate the correct outcome.",
-      "Third, compare your result to the sample solution shown.",
-      "Let us examine how this applies to real-world scenarios."
+      stepIntro,
+      step1,
+      step2,
+      step3
     ];
     p4 = [
-      "This concept is useful for real-world situations.",
-      "We can apply it when counting, reading, or writing in daily life.",
-      "Remember to ask for help if you feel stuck or confused.",
-      "Learning is easier when we cooperate and share our ideas.",
-      "For example, we use math when counting coins at a store.",
-      "We use spelling when writing emails or stories for friends.",
-      "These skills are tools that help us navigate the world daily.",
-      "The more we practice, the more confident we become.",
-      "Keep this context in mind as you prepare for the practice game.",
-      "Let us summarize the main rules we learned today."
+      exampleIntro,
+      example1,
+      example2,
+      example3
     ];
     p5 = [
-      "In summary, you have learned the core ideas of " + theme_clean + ".",
-      "Remember that " + theme_clean + " " + fact_clean + " always.",
-      "Remember these rules when answering the practice questions.",
-      "You are now ready to start the practice game and earn stars.",
-      "Read the questions carefully and do your best in every challenge.",
-      "Take your time and verify your answer before submitting it.",
-      "Every correct answer brings you closer to a new level badge.",
-      "Learning builds a brighter future for you and your community.",
-      "We will explore harder topics in our upcoming lesson.",
-      "Good luck as you start the practice session!"
+      summary,
+      takeaway,
+      tip,
+      ready
+    ];
+  } else {
+    p1 = [
+      `We begin our study of ${subject} by exploring ${theme_clean}.`,
+      `To understand this topic, we know that ${theme_clean} ${fact_clean}.`,
+      `This means we can identify its key features and role in ${subject}.`,
+      `Learning about ${theme_clean} builds a strong foundation of knowledge.`,
+      `It helps us make sense of the natural world and human achievements.`,
+      `This lesson covers the core definitions and key details of ${theme_clean}.`,
+      `We will explore why this topic is important for us to study.`,
+      `Always read every sentence carefully to catch the main point.`,
+      `Asking questions is a great way to expand your understanding.`,
+      `Let us get started on this exciting learning adventure!`
+    ];
+    p2 = [
+      `Let's explore the key facts and details of ${theme_clean}.`,
+      `When studying this topic, we observe how it fits into the broader field of ${subject}.`,
+      `We know that ${theme_clean} ${fact_clean} under various conditions.`,
+      `We also learn that ${rule1}`,
+      `Furthermore, we know that ${rule2}`,
+      `It is also important to remember that ${rule3}`,
+      `Additionally, we must keep in mind that ${rule4}`,
+      `Each of these characteristics helps us understand ${theme_clean} better.`,
+      `Understanding these details allows us to recognize patterns and make smart connections.`,
+      `Next, we will look at how this concept functions in practice.`
+    ];
+    p3 = [
+      `Let's take a closer look at the structure and functions of ${theme_clean}.`,
+      `We look at how different parts are arranged and interact with each other.`,
+      `For ${theme_clean}, these natural and conceptual structures are very important.`,
+      `By examining these elements, we can understand the underlying science and patterns.`,
+      `${step1}`,
+      `${step2}`,
+      `${step3}`,
+      `This process helps us analyze changes like growth, movement, or style.`,
+      `In elementary studies, close observation is the key to understanding systems.`,
+      `Next, let us examine a real-world scenario of this topic.`
+    ];
+    p4 = [
+      `Let's consider a concrete example or context of ${theme_clean}.`,
+      `We can look at how this applies to historical records, scientific models, or regional maps.`,
+      `This provides resources, historical significance, or artistic value to our study.`,
+      `For instance, ${example1}`,
+      `In addition, ${example2}`,
+      `Finally, ${example3}`,
+      `Observing these examples helps us connect classroom learning to the real world.`,
+      `It shows us how ${theme_clean} interacts with other natural or human systems.`,
+      `Keep this context in mind as you prepare for the practice game.`,
+      `Let us summarize what we have learned about this topic.`
+    ];
+    p5 = [
+      `In summary, you have learned the core ideas of ${theme_clean} in ${subject}.`,
+      `Remember that ${theme_clean} ${fact_clean}.`,
+      `${summary}`,
+      `${takeaway}`,
+      `Remember these key facts when answering the practice questions.`,
+      `You are now ready to start the practice game and earn stars.`,
+      `Read the questions carefully and do your best in every challenge.`,
+      `Take your time and verify your answer before submitting it.`,
+      `Learning builds a brighter future for you and your community.`,
+      `Good luck as you start the practice session!`
     ];
   }
 
@@ -38165,8 +38682,6 @@ function getGradeSpecificPages(subject, grade, unit, theme, fact_stem) {
   ];
 }
 
-
-
 function getTextLessonExplanation(subject, lessonId) {
   let lesson;
   if (subject === 'ela') lesson = GRADE_1_ELA_CURRICULUM.find(l => l.id === lessonId);
@@ -38178,13 +38693,14 @@ function getTextLessonExplanation(subject, lessonId) {
   
   const title = lesson ? lesson.title : "Lesson Explanation";
   const desc = lesson ? lesson.desc : "Let's learn!";
-  const unit = lesson ? lesson.unit : 1;
   const grade = (typeof appState !== 'undefined' && appState) ? (appState.currentGrade || 1) : 1;
 
+  let theme = title;
+  let fact_stem = desc;
+
+  // Resolve special subjects' title/desc from the database for Grade >= 2:
   const isSpecial = (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art');
   if (grade >= 2 && isSpecial) {
-    let theme = title;
-    let fact_stem = desc;
     if (typeof GRADE_2_5_QUESTIONS !== 'undefined' && GRADE_2_5_QUESTIONS[subject] && GRADE_2_5_QUESTIONS[subject][grade] && GRADE_2_5_QUESTIONS[subject][grade][lessonId]) {
       const firstQ = GRADE_2_5_QUESTIONS[subject][grade][lessonId][0];
       if (firstQ) {
@@ -38192,31 +38708,20 @@ function getTextLessonExplanation(subject, lessonId) {
         fact_stem = firstQ.fact_stem || desc;
       }
     }
-
-    const unitNum = Math.ceil(lessonId / 5);
-    const pages = getGradeSpecificPages(subject, grade, unitNum, theme, fact_stem);
-    return {
-      title: title,
-      desc: desc,
-      page1: pages[0],
-      page2: pages[1],
-      page3: pages[2],
-      page4: pages[3],
-      page5: pages[4]
-    };
   }
 
-  // Fallback for ELA, Math, and Grade 1
+  const unitNum = Math.ceil(lessonId / 5);
+  const pages = getGradeSpecificPages(subject, grade, unitNum, theme, fact_stem);
   return {
-    concept: lesson ? lesson.desc : "Let's learn about this topic!",
-    example: "Follow the steps to see how we work it out.",
-    challenge: "Try doing it yourself and see if you get it right!",
-    tip: "Practice makes perfect. Take your time and check your work!"
+    title: title,
+    desc: desc,
+    page1: pages[0],
+    page2: pages[1],
+    page3: pages[2],
+    page4: pages[3],
+    page5: pages[4]
   };
 }
-
-
-
 function showQuestionExplanation(question) {
   const cleanAns = String(question.correctAnswer).replace(/<\/?[^>]+(>|$)/g, "");
   const hintText = question.hint || "Look at the options and find the matching answer.";
@@ -38328,6 +38833,7 @@ function renderLessonSlide() {
     // Build slide content for each index
     let slideContentHtml = "";
     let slideSpeakText = "";
+    let pageText = "";
     
     if (currentIndex === 0) {
       slideSpeakText = `Welcome to the lesson! Today we are learning ${title}. ${desc}. This lesson has 5 pages. Click Next to begin!`;
@@ -38359,20 +38865,7 @@ function renderLessonSlide() {
         </div>
       `;
     } else if (currentIndex >= 1 && currentIndex <= 5) {
-      const isSpecial = (appState.currentSubject === 'science' || appState.currentSubject === 'history' || appState.currentSubject === 'geography' || appState.currentSubject === 'art');
-      const grade = appState.currentGrade || 1;
-      
-      let pageText = "";
-      if (grade >= 2 && isSpecial) {
-        pageText = textData[`page${currentIndex}`] || "";
-      } else {
-        if (currentIndex === 1) pageText = textData.concept || "";
-        else if (currentIndex === 2) pageText = textData.example || "";
-        else if (currentIndex === 3) pageText = textData.challenge || "";
-        else if (currentIndex === 4) pageText = textData.tip || "";
-        else pageText = "Review and get ready for the practice session!";
-      }
-      
+      pageText = textData[`page${currentIndex}`] || "";
       const cleanText = pageText.replace(/<\/?[^>]+(>|$)/g, " ");
       slideSpeakText = cleanText;
       
@@ -39475,6 +39968,8 @@ function completeStep1() {
 function setupStep2Practice() {
   appState.practiceIndex = 0;
   appState.practiceHintLevel = 0;
+  appState.practiceScore = 0;
+  appState.currentQuestionAttempted = false;
   renderPracticeLayout();
 }
 
@@ -39519,6 +40014,7 @@ function renderPracticeLayout() {
 function generatePracticeProblem() {
   appState.questionMistakes = 0;
   appState.chatbotUsedForCurrentQuestion = false;
+  appState.currentQuestionAttempted = false;
   const q = generateMathQuestion(appState.activeQuestLessonId, appState.practiceIndex);
   appState.currentPracticeQuestion = q;
   
@@ -39602,6 +40098,7 @@ function generatePracticeProblem() {
           input.style.borderColor = '#ef4444';
           input.style.background = 'rgba(239,68,68,0.1)';
           speakText("AI or hint was used, so this is marked as incorrect.");
+          appState.currentQuestionAttempted = true;
           setTimeout(() => {
             appState.practiceIndex++;
             appState.practiceHintLevel = 0;
@@ -39617,6 +40114,9 @@ function generatePracticeProblem() {
           input.style.background = 'rgba(16,185,129,0.1)';
           submitBtn.disabled = true;
           speakText("Great job!");
+          if (!appState.currentQuestionAttempted) {
+            appState.practiceScore = (appState.practiceScore || 0) + 1;
+          }
           setTimeout(() => {
             appState.practiceIndex++;
             appState.practiceHintLevel = 0;
@@ -39633,6 +40133,7 @@ function generatePracticeProblem() {
         input.style.background = 'rgba(239,68,68,0.1)';
         input.style.animation = 'wrong-shake 0.3s ease';
         speakText("Try again!");
+        appState.currentQuestionAttempted = true;
         setTimeout(() => {
           input.style.animation = '';
         }, 400);
@@ -39659,6 +40160,7 @@ function generatePracticeProblem() {
             sounds.playWrong();
             btn.classList.add('wrong');
             speakText("AI or hint was used, so this is marked as incorrect.");
+            appState.currentQuestionAttempted = true;
             
             document.querySelectorAll('#practiceOptions .option-btn').forEach(optBtn => {
               if (optBtn.innerText === q.correctAnswer) {
@@ -39680,6 +40182,9 @@ function generatePracticeProblem() {
             sounds.playCorrect();
             btn.classList.add('correct');
             speakText("Great job!");
+            if (!appState.currentQuestionAttempted) {
+              appState.practiceScore = (appState.practiceScore || 0) + 1;
+            }
             
             setTimeout(() => {
               appState.practiceIndex++;
@@ -39696,6 +40201,7 @@ function generatePracticeProblem() {
           btn.classList.add('wrong');
           btn.style.animation = 'wrong-shake 0.3s ease';
           speakText("Try again!");
+          appState.currentQuestionAttempted = true;
           setTimeout(() => {
             btn.style.animation = '';
             btn.classList.remove('wrong');
@@ -39719,6 +40225,7 @@ function generatePracticeProblem() {
   const chatBtn = document.getElementById('practiceChatBtn');
   if (chatBtn) {
     chatBtn.onclick = () => {
+      appState.currentQuestionAttempted = true;
       sounds.playPop();
       const container = document.getElementById('step-view-2');
       const chatArea = container.querySelector('.smarty-chat-area');
@@ -39753,6 +40260,7 @@ function showPracticeHint() {
   sounds.playPop();
   appState.practiceHintLevel++;
   appState.helpUsedInCurrentLesson = true;
+  appState.currentQuestionAttempted = true;
   
   const isHighStakes = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
   if (isHighStakes) {
@@ -39780,6 +40288,26 @@ function showPracticeHint() {
 
 function completeStep2() {
   if (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art') {
+    const isRequiredSubject = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science');
+    if (isRequiredSubject && (appState.practiceScore || 0) < 4) {
+      sounds.playWrong();
+      const container = document.getElementById('step-view-2');
+      container.innerHTML = `
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px;">
+          <div style="font-size: 80px; animation: trophy-bounce 0.5s infinite alternate;">😕</div>
+          <h2 style="font-size: 32px; font-weight: 800; color: var(--color-pink-accent); margin-bottom: 8px;">KEEP PRACTICING!</h2>
+          <p style="font-size: 18px; margin-bottom: 12px; font-weight: 700;">You scored ${(appState.practiceScore || 0)}/5 on the practice.</p>
+          <p style="font-size: 15px; color: var(--text-muted); margin-bottom: 24px; max-width: 320px;">You need to answer at least 4 out of 5 questions correctly on your first try to master this lesson.</p>
+          <button class="continue-btn" id="retryPracticeBtn" style="background: var(--color-orange-accent) !important; box-shadow: 0 6px 0 #c2410c !important;">Try Practice Again ➔</button>
+        </div>
+      `;
+      speakText("You scored " + (appState.practiceScore || 0) + " out of 5. You need at least 4 out of 5 to pass. Let's try again!");
+      document.getElementById('retryPracticeBtn').addEventListener('click', () => {
+        sounds.playPop();
+        setupStep2Practice();
+      });
+      return;
+    }
     const isNew = appState.activeQuestLessonId > appState.completedCounts.lessonsCompleted;
     if (isNew) {
       appState.completedCounts.lessonsCompleted = appState.activeQuestLessonId;
