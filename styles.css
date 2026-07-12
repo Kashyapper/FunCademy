@@ -372,6 +372,7 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  position: relative;
 }
 
 /* Welcome Dashboard Banner */
@@ -2586,3 +2587,46 @@ body {
   margin-left: 4px;
 }
 .auth-switch button:hover { color: #c4b5fd; }
+
+/* Sidebar toggle hamburger styles */
+.hamburger-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(30, 41, 59, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  outline: none;
+}
+.hamburger-btn:hover {
+  background: var(--primary);
+  border-color: rgba(255,255,255,0.3);
+  transform: scale(1.05);
+}
+.hamburger-btn:active {
+  transform: scale(0.95);
+}
+
+/* Sidebar collapse/expand animation */
+.sidebar {
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.app-container.sidebar-collapsed .sidebar {
+  width: 0px !important;
+  padding: 0px !important;
+  border-right: 0px solid transparent !important;
+  overflow: hidden !important;
+}
+
