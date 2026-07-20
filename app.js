@@ -36111,6 +36111,21 @@ function createFreshProgressMap() {
   };
 }
 
+// Deterministic Fisher-Yates shuffle: same seed always produces the same
+// order (so a given question's answer options don't visibly re-shuffle on
+// every re-render), but different seeds produce genuinely different
+// permutations (unlike a sort() with a constant-value comparator).
+function seededShuffleArray(arr, seed) {
+  const a = Array.isArray(arr) ? arr.slice() : [];
+  let s = (Math.abs(Math.floor(seed)) || 1) >>> 0;
+  for (let i = a.length - 1; i > 0; i--) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const j = s % (i + 1);
+    const tmp = a[i]; a[i] = a[j]; a[j] = tmp;
+  }
+  return a;
+}
+
 function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
   if (grade <= 1) return null;
   const idx = (index !== undefined && index !== null) ? index : 0;
@@ -36147,6 +36162,53 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
         };
       }
       return qList[idx % qList.length];
+    }
+  }
+
+  // Math and ELA for grade >= 2: prefer hand-written/topic-specific quiz content,
+  // keyed by the actual lesson title, before falling back to the old ID-bucket
+  // generators below (which don't know the real lesson topic for grades 3-5).
+  if (subject === 'math' || subject === 'ela') {
+    const [titleForOverride] = getLessonTitleAndDesc(subject, grade, lessonId);
+    const themeForOverride = String(titleForOverride || '').trim();
+    const seedForOverride = lessonId * 13 + idx * 7;
+
+    if (subject === 'math' && typeof MATH_QUIZ_TOPICS !== 'undefined' && MATH_QUIZ_TOPICS[themeForOverride]) {
+      const genFn = MATH_QUIZ_TOPICS[themeForOverride];
+      const q = genFn(seedForOverride, idx);
+      if (q && q.questionText && q.options && q.options.length) {
+        return {
+          questionText: q.questionText,
+          correctAnswer: q.correctAnswer,
+          options: q.options,
+          visualContent: q.visualContent || "<div style=\"font-size: 48px;\">🔢</div>",
+          explanation: q.explanation || q.hint || "",
+          hint: q.hint || ""
+        };
+      }
+    }
+
+    if (subject === 'ela' && typeof ELA_QUIZ_OVERRIDES !== 'undefined' && ELA_QUIZ_OVERRIDES[themeForOverride]) {
+      const overrideList = ELA_QUIZ_OVERRIDES[themeForOverride];
+      if (overrideList && overrideList.length) {
+        const oq = overrideList[idx % overrideList.length];
+        // Array.sort() comparators must vary with the two elements being
+        // compared; a comparator that always returns the same value (as the
+        // old `((seed*9+5)%10-5)/10` expression did, since it ignores its
+        // arguments) doesn't actually shuffle — depending on the engine's
+        // sort algorithm it just leaves the array as-is or fully reverses
+        // it, so answer options were never truly randomized. Using a proper
+        // seeded Fisher-Yates shuffle instead.
+        const opts = seededShuffleArray(oq.options, seedForOverride);
+        return {
+          questionText: oq.questionText,
+          correctAnswer: oq.correctAnswer,
+          options: opts,
+          visualContent: oq.visualContent || "<div style=\"font-size: 48px;\">📖</div>",
+          explanation: oq.explanation || oq.hint || "",
+          hint: oq.hint || ""
+        };
+      }
     }
   }
 
@@ -37732,8 +37794,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Exit Playground back to dashboard
   document.getElementById('exitPlaygroundBtn').addEventListener('click', () => {
     sounds.playPop();
-    pauseVideo();
-    window.speechSynthesis.cancel();
+    stopAllLessonPlayback();
     document.getElementById('playgroundOverlay').classList.remove('active');
   });
 
@@ -38381,11 +38442,7 @@ function switchStep(stepNum) {
   sounds.playPop();
 
   // Stop speech synthesis & videos from previous states
-  window.speechSynthesis.cancel();
-  pauseVideo();
-  if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) appState.currentVideoSpeech.cancel();
-  if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
-  if (typeof stopVideoScene === 'function') stopVideoScene();
+  stopAllLessonPlayback();
 
   appState.activeStep = stepNum;
   
@@ -39724,6 +39781,30 @@ function showQuestionExplanation(question) {
 // ======================================================
 // VIDEO PLAYBACK CONTROL HELPERS
 // ======================================================
+// Fully stops ALL video-lesson playback: TTS narration (both the legacy
+// speakText() utterances and the sentence-by-sentence video narration),
+// the canvas scene animation loop, and any pending auto-advance timers.
+// Must be called from every place that can leave/exit a video lesson
+// (switching tabs, exiting the playground, finishing a test/exam/review),
+// so narration/animation never keeps running in the background.
+function stopAllLessonPlayback() {
+  window.speechSynthesis.cancel();
+  pauseVideo();
+  if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) {
+    appState.currentVideoSpeech.cancel();
+    appState.currentVideoSpeech = null;
+  }
+  if (appState.videoAdvanceTimeout) {
+    clearTimeout(appState.videoAdvanceTimeout);
+    appState.videoAdvanceTimeout = null;
+  }
+  if (typeof stopVideoScene === 'function') stopVideoScene();
+  if (document.fullscreenElement || document.webkitFullscreenElement) {
+    if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+  }
+}
+
 function pauseVideo() {
   appState.videoPlaying = false;
   // Clear any pending slide timeouts
@@ -39835,7 +39916,31 @@ function renderLessonSlide() {
     };
     const theme = subjectThemes[appState.currentSubject] || subjectThemes.math;
     const slide = slideConfigs[currentIndex] || slideConfigs[0];
-    
+
+    // ---- Watch Video vs. Read Text mode ----
+    // The video (animated scene + narrated subtitles) and the text lesson are
+    // shown as two separate, switchable experiences instead of always being
+    // combined on every page.
+    if (appState.lessonViewMode !== 'video' && appState.lessonViewMode !== 'text') {
+      appState.lessonViewMode = 'text';
+    }
+    const showVideo = appState.lessonViewMode === 'video';
+    function renderVideoBlock(canvasHeight) {
+      return `
+        <div id="lessonVideoBlockWrap" style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08); background: #000;">
+          <canvas id="lessonVidCanvas" width="640" height="${canvasHeight}" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
+          <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
+          <div style="position: absolute; top: 10px; left: 10px; display: flex; gap: 8px;">
+            <button id="lessonVideoRewindBtn" title="Previous page" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⏪</button>
+            <button id="lessonVideoPauseBtn" title="Pause" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⏸</button>
+            <button id="lessonVideoFastForwardBtn" title="Fast forward / next page" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⏩</button>
+            <button id="lessonVideoReplayBtn" title="Replay this page" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">🔁</button>
+          </div>
+          <button id="lessonVideoFullscreenBtn" title="Fullscreen" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⛶</button>
+        </div>
+      `;
+    }
+
     // Build slide content for each index
     let slideContentHtml = "";
     let slideSpeakText = "";
@@ -39844,11 +39949,7 @@ function renderLessonSlide() {
     if (currentIndex === 0) {
       if (isSpecialSubject) {
         slideSpeakText = `Welcome to Part ${sub} of ${title}. ${desc}. This part has ${sub === 3 ? 1 : 2} page${sub === 3 ? '' : 's'}. Click Next to begin!`;
-        slideContentHtml = `
-          <div style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08);">
-            <canvas id="lessonVidCanvas" width="640" height="200" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
-            <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
-          </div>
+        slideContentHtml = showVideo ? renderVideoBlock(360) : `
           <div style="text-align: center; padding: 24px 16px;">
             <div style="font-size: 88px; margin-bottom: 14px; animation: float-animation 2.5s infinite ease-in-out; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">${theme.icon}</div>
             <h3 style="font-size: 26px; font-weight: 900; margin-bottom: 8px; color: #fef08a; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">${title}</h3>
@@ -39896,11 +39997,7 @@ function renderLessonSlide() {
         `;
       } else {
         slideSpeakText = `Welcome to the lesson! Today we are learning ${title}. ${desc}. This lesson has 7 pages. Click Next to begin!`;
-        slideContentHtml = `
-          <div style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08);">
-            <canvas id="lessonVidCanvas" width="640" height="200" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
-            <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
-          </div>
+        slideContentHtml = showVideo ? renderVideoBlock(360) : `
           <div style="text-align: center; padding: 24px 16px;">
             <div style="font-size: 88px; margin-bottom: 14px; animation: float-animation 2.5s infinite ease-in-out; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">${theme.icon}</div>
             <h3 style="font-size: 26px; font-weight: 900; margin-bottom: 8px; color: #fef08a; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">${title}</h3>
@@ -39933,19 +40030,15 @@ function renderLessonSlide() {
       const cleanText = pageText.replace(/<\/?[^>]+(>|$)/g, " ");
       slideSpeakText = cleanText;
       
-      slideContentHtml = `
+      slideContentHtml = showVideo ? renderVideoBlock(420) : `
         <div style="padding: 4px 0;">
-          <div style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08);">
-            <canvas id="lessonVidCanvas" width="640" height="240" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
-            <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
-          </div>
           <div style="background: rgba(59,130,246,0.07); border-radius: 18px; padding: 24px 28px; border-left: 5px solid ${slide.color}; margin-bottom: 16px; line-height: 1.85; box-shadow: inset 0 0 20px rgba(0,0,0,0.2);">
             <div style="font-size: 11px; font-weight: 850; color: ${slide.color}; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;">📘 ${slide.title}</div>
             <p style="font-size: 16px; font-weight: 700; color: #f8fafc; line-height: 1.8; margin: 0;">${pageText}</p>
           </div>
           <div style="text-align: center; margin-top: 20px;">
             <button id="speakSlideBtn" style="background: rgba(59,130,246,0.15); border: 1.5px solid rgba(59,130,246,0.4); color: #93c5fd; padding: 9px 22px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 7px;">
-              🔁 Replay Narration
+              🔊 Read Aloud
             </button>
           </div>
         </div>
@@ -40001,7 +40094,7 @@ function renderLessonSlide() {
     const muteIcon = isMuted ? '🔇' : '🔊';
 
     container.innerHTML = `
-      <div class="text-lesson-container" style="border-radius: 24px; border: 3px solid rgba(255,255,255,0.1); background: #0f172a; color: white; display: flex; flex-direction: column; width: 100%; max-width: 720px; max-height: calc(100vh - 180px); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05); text-align: left; margin: 0 auto; position: relative;">
+      <div id="lessonContainerRoot" class="text-lesson-container" style="border-radius: 24px; border: 3px solid rgba(255,255,255,0.1); background: #0f172a; color: white; display: flex; flex-direction: column; width: 100%; max-width: 720px; max-height: calc(100vh - 180px); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05); text-align: left; margin: 0 auto; position: relative;">
         
         <!-- Header -->
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 24px 12px; background: ${slide.gradient}; border-radius: 21px 21px 0 0; position: relative; overflow: hidden; flex-shrink: 0;">
@@ -40014,8 +40107,12 @@ function renderLessonSlide() {
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; position: relative; z-index: 1;">
-            <button id="slideAutoplayBtn" style="background: ${(appState.videoAutoplay !== false) ? 'rgba(52,211,153,0.25)' : 'rgba(255,255,255,0.15)'}; border: 1.5px solid ${(appState.videoAutoplay !== false) ? 'rgba(52,211,153,0.5)' : 'rgba(255,255,255,0.2)'}; color: white; width: 34px; height: 34px; border-radius: 10px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" title="${(appState.videoAutoplay !== false) ? 'Autoplay on: pages advance automatically' : 'Autoplay off: click Next to advance'}">${(appState.videoAutoplay !== false) ? '▶️' : '⏸️'}</button>
+            <div style="display: flex; align-items: center; background: rgba(0,0,0,0.25); border-radius: 10px; padding: 2px; border: 1.5px solid rgba(255,255,255,0.15);">
+              <button id="lessonModeTextBtn" style="background: ${!showVideo ? 'rgba(255,255,255,0.9)' : 'transparent'}; color: ${!showVideo ? '#0f172a' : 'white'}; border: none; padding: 6px 10px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 800; font-family: inherit; display: flex; align-items: center; gap: 4px; transition: background 0.2s;" title="Read the text lesson">📖 Text</button>
+              <button id="lessonModeVideoBtn" style="background: ${showVideo ? 'rgba(255,255,255,0.9)' : 'transparent'}; color: ${showVideo ? '#0f172a' : 'white'}; border: none; padding: 6px 10px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: 800; font-family: inherit; display: flex; align-items: center; gap: 4px; transition: background 0.2s;" title="Watch the animated video">🎬 Video</button>
+            </div>
             <button id="slideMuteBtn" style="background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.2); color: white; width: 34px; height: 34px; border-radius: 10px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" title="${isMuted ? 'Unmute narration' : 'Mute narration'}">${muteIcon}</button>
+            ${!showVideo ? `<button id="lessonFullscreenBtn" style="background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.2); color: white; width: 34px; height: 34px; border-radius: 10px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" title="Fullscreen">⛶</button>` : ''}
             <div style="font-size: 12px; font-weight: 850; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 12px; backdrop-filter: blur(4px); white-space: nowrap;">
               Page ${currentIndex + 1} / ${totalSlides}
             </div>
@@ -40034,20 +40131,22 @@ function renderLessonSlide() {
         
         <!-- Footer Actions -->
         <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 14px 24px 16px; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(0,0,0,0.25); border-radius: 0 0 21px 21px; gap: 12px; flex-shrink: 0;">
-          <button id="prevSlideBtn" style="padding: 10px 18px; font-size: 14px; font-weight: 800; font-family: inherit; margin: 0; background: #334155; border: 2px solid #475569; color: white; border-radius: 12px; cursor: pointer; display: ${currentIndex === 0 ? 'none' : 'flex'}; align-items: center; gap: 6px; transition: background 0.2s;">
-            ⬅️ Back
-          </button>
-          
+          ${(!showVideo && currentIndex > 0) ? `
+            <button id="prevSlideBtn" style="padding: 10px 18px; font-size: 14px; font-weight: 800; font-family: inherit; margin: 0; background: #334155; border: 2px solid #475569; color: white; border-radius: 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;">
+              ⬅️ Back
+            </button>
+          ` : `<div></div>`}
+
           <!-- Dot indicators -->
           <div style="display: flex; align-items: center; gap: 6px; flex: 1; justify-content: center;">
             ${dotsHtml}
           </div>
-          
-          ${currentIndex < totalSlides - 1 ? `
+
+          ${currentIndex < totalSlides - 1 ? (showVideo ? '' : `
             <button id="nextSlideBtn" style="padding: 10px 22px; font-size: 15px; font-weight: 800; font-family: inherit; margin: 0; background: ${slide.color}; border: 2px solid ${slide.color}; color: white; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 14px ${slide.color}40; display: flex; align-items: center; gap: 6px; transition: transform 0.15s, box-shadow 0.15s;">
               Next Page ➔
             </button>
-          ` : `
+          `) : `
             <button id="textFinishedBtn" style="font-size: 15px; font-weight: 800; font-family: inherit; padding: 12px 26px; margin: 0; background: linear-gradient(135deg, #10b981, #059669); border: 2px solid #34d399; color: white; cursor: pointer; border-radius: 14px; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35); display: flex; align-items: center; gap: 8px; transition: transform 0.15s;">
               Let's Practice! 🚀
             </button>
@@ -40076,6 +40175,9 @@ function renderLessonSlide() {
     }
 
     // ---- Video playback: animated scene + lively narration synced to subtitles ----
+    // Only runs in "Video" mode. In "Text" mode there is no canvas/subtitle on
+    // the page at all, so narration only plays on-demand via the Read Aloud
+    // button (plain speech, no animated scene).
     if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) {
       appState.currentVideoSpeech.cancel();
     }
@@ -40085,10 +40187,11 @@ function renderLessonSlide() {
     const subtitleEl = container.querySelector('#lessonSubtitle');
     const isLastSlide = (currentIndex === totalSlides - 1);
 
-    if (vidCanvas && typeof startVideoScene === 'function' && typeof pickSceneCategory === 'function') {
+    let currentSceneCategory = null;
+    if (showVideo && vidCanvas && typeof startVideoScene === 'function' && typeof pickSceneCategory === 'function') {
       const sceneText = (pageText || title || desc || "");
-      const category = pickSceneCategory(appState.currentSubject, `${title} ${sceneText}`);
-      startVideoScene(vidCanvas, category);
+      currentSceneCategory = pickSceneCategory(appState.currentSubject, `${title} ${sceneText}`);
+      startVideoScene(vidCanvas, currentSceneCategory);
     }
 
     function runNarration() {
@@ -40097,36 +40200,88 @@ function renderLessonSlide() {
         onSentence: (text) => { if (subtitleEl) subtitleEl.textContent = text; },
         onDone: () => {
           if (subtitleEl) subtitleEl.textContent = "";
-          const autoplay = appState.videoAutoplay !== false;
-          if (autoplay && !isLastSlide) {
+          // Video mode always auto-advances to the next page when narration
+          // finishes, like a video automatically rolling into the next part
+          // — there's no manual "Next Page" button in Video mode to click
+          // instead (Pause stops this from happening, same as pausing a video).
+          if (showVideo && !isLastSlide) {
             appState.videoAdvanceTimeout = setTimeout(() => {
-              const nextBtnNow = container.querySelector('#nextSlideBtn');
-              if (nextBtnNow) nextBtnNow.click();
+              advanceToNextPage();
             }, 900);
           }
         }
       });
     }
-    if (typeof speakSentencesWithSubtitles === 'function') {
-      runNarration();
-    } else {
-      speakText(speakContent);
+    if (showVideo) {
+      if (typeof speakSentencesWithSubtitles === 'function') {
+        runNarration();
+      } else {
+        speakText(speakContent);
+      }
     }
 
+    // Lighter-weight than stopAllLessonPlayback(): stops narration/scene/timers
+    // when moving between pages within the same lesson, but deliberately does
+    // NOT exit fullscreen, so a learner watching in fullscreen video mode
+    // isn't kicked out of fullscreen every time a page auto-advances.
     function stopPlaybackForNav() {
-      if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) appState.currentVideoSpeech.cancel();
+      window.speechSynthesis.cancel();
+      if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) {
+        appState.currentVideoSpeech.cancel();
+        appState.currentVideoSpeech = null;
+      }
       if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
       if (typeof stopVideoScene === 'function') stopVideoScene();
-      window.speechSynthesis.cancel();
+    }
+
+    // Re-rendering (renderLessonSlide) replaces container.innerHTML, which
+    // destroys and recreates the previously-fullscreened element (either
+    // #lessonContainerRoot in Text mode or #lessonVideoBlockWrap in Video
+    // mode). Browsers automatically exit fullscreen whenever the current
+    // fullscreen element is removed from the document, so every Next/Prev/
+    // mode-toggle click would silently kick the learner out of fullscreen.
+    // This re-requests fullscreen on the freshly rendered element right after
+    // a nav re-render, when called from a real click (user activation still
+    // applies at that point). Best-effort: when triggered by an autoplay
+    // timer (no user gesture), the browser may refuse the request; that
+    // failure is swallowed silently.
+    function reacquireFullscreen(wasFullscreen) {
+      if (!wasFullscreen) return;
+      const newRoot = (appState.lessonViewMode === 'video')
+        ? document.getElementById('lessonVideoBlockWrap')
+        : document.getElementById('lessonContainerRoot');
+      if (!newRoot) return;
+      if (newRoot.requestFullscreen) newRoot.requestFullscreen().catch(() => {});
+      else if (newRoot.webkitRequestFullscreen) newRoot.webkitRequestFullscreen();
+    }
+
+    // Shared page-navigation helpers. Used by the Text-mode Back/Next Page
+    // footer buttons AND by Video mode's in-video Rewind/Fast-forward
+    // controls and its automatic end-of-narration advance — Video mode has
+    // no Next Page button of its own to click, so it needs to move between
+    // pages directly instead.
+    function advanceToNextPage() {
+      if (currentIndex >= totalSlides - 1) return;
+      const wasFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
+      stopPlaybackForNav();
+      appState.lessonSlideIndex = currentIndex + 1;
+      renderLessonSlide();
+      reacquireFullscreen(wasFullscreen);
+    }
+    function goToPrevPage() {
+      if (currentIndex <= 0) return;
+      const wasFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
+      stopPlaybackForNav();
+      appState.lessonSlideIndex = currentIndex - 1;
+      renderLessonSlide();
+      reacquireFullscreen(wasFullscreen);
     }
 
     const prevBtn = container.querySelector('#prevSlideBtn');
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
         sounds.playPop();
-        stopPlaybackForNav();
-        appState.lessonSlideIndex--;
-        renderLessonSlide();
+        goToPrevPage();
       });
     }
 
@@ -40134,9 +40289,7 @@ function renderLessonSlide() {
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         sounds.playPop();
-        stopPlaybackForNav();
-        appState.lessonSlideIndex++;
-        renderLessonSlide();
+        advanceToNextPage();
       });
     }
 
@@ -40144,8 +40297,171 @@ function renderLessonSlide() {
     if (finishBtn) {
       finishBtn.addEventListener('click', () => {
         sounds.playCorrect();
-        stopPlaybackForNav();
+        stopAllLessonPlayback();
         completeStep1();
+      });
+    }
+
+    // Watch Video / Read Text mode toggle
+    const modeTextBtn = container.querySelector('#lessonModeTextBtn');
+    if (modeTextBtn) {
+      modeTextBtn.addEventListener('click', () => {
+        if (appState.lessonViewMode === 'text') return;
+        sounds.playPop();
+        const wasFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
+        stopPlaybackForNav();
+        appState.lessonViewMode = 'text';
+        appState.save && appState.save();
+        renderLessonSlide();
+        reacquireFullscreen(wasFullscreen);
+      });
+    }
+    const modeVideoBtn = container.querySelector('#lessonModeVideoBtn');
+    if (modeVideoBtn) {
+      modeVideoBtn.addEventListener('click', () => {
+        if (appState.lessonViewMode === 'video') return;
+        sounds.playPop();
+        const wasFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
+        stopPlaybackForNav();
+        appState.lessonViewMode = 'video';
+        appState.save && appState.save();
+        renderLessonSlide();
+        reacquireFullscreen(wasFullscreen);
+      });
+    }
+
+    // Fullscreen: in Text mode the header button fullscreens the whole lesson
+    // card (there's no separate video element to target). In Video mode the
+    // fullscreen control lives directly on the video block itself, and
+    // fullscreens ONLY the video (canvas + subtitles + controls) — not the
+    // header/footer nav chrome around it — since that's what "fullscreen the
+    // video" means.
+    function requestFsOn(el) {
+      if (!el) return;
+      if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    }
+    function exitFs() {
+      if (document.exitFullscreen) document.exitFullscreen().catch(() => {});
+      else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+    const fullscreenBtn = container.querySelector('#lessonFullscreenBtn');
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', () => {
+        sounds.playPop();
+        if (document.fullscreenElement || document.webkitFullscreenElement) exitFs();
+        else requestFsOn(container.querySelector('#lessonContainerRoot'));
+      });
+    }
+    const videoFullscreenBtn = container.querySelector('#lessonVideoFullscreenBtn');
+    if (videoFullscreenBtn) {
+      videoFullscreenBtn.addEventListener('click', () => {
+        sounds.playPop();
+        if (document.fullscreenElement || document.webkitFullscreenElement) exitFs();
+        else requestFsOn(container.querySelector('#lessonVideoBlockWrap'));
+      });
+    }
+    // Attach the fullscreenchange listener once globally (not per-render) to
+    // avoid stacking duplicate document-level listeners every time this
+    // function re-renders the lesson (Next/Prev/mode toggle). It looks up
+    // whichever fullscreen button is currently on the page by id each time
+    // it fires, since the actual button elements are replaced on every render.
+    if (!window.__lessonFullscreenListenerAdded) {
+      window.__lessonFullscreenListenerAdded = true;
+      const syncFullscreenIcon = () => {
+        const isFs = !!(document.fullscreenElement || document.webkitFullscreenElement);
+        const btn = document.getElementById('lessonFullscreenBtn');
+        if (btn) btn.title = isFs ? 'Exit fullscreen' : 'Fullscreen';
+        const vbtn = document.getElementById('lessonVideoFullscreenBtn');
+        if (vbtn) vbtn.title = isFs ? 'Exit fullscreen' : 'Fullscreen';
+      };
+      document.addEventListener('fullscreenchange', syncFullscreenIcon);
+      document.addEventListener('webkitfullscreenchange', syncFullscreenIcon);
+    }
+
+    // Resets the video block's UI/state after narration is (re)started from
+    // outside the pause button itself (Replay Narration, unmuting). Without
+    // this, the scene canvas could stay frozen from an earlier pause while
+    // fresh audio plays, and the Pause button would keep showing "Play".
+    function restartVideoPlaybackUI() {
+      if (showVideo && typeof startVideoScene === 'function' && vidCanvas && currentSceneCategory) {
+        startVideoScene(vidCanvas, currentSceneCategory);
+      }
+      const pb = container.querySelector('#lessonVideoPauseBtn');
+      if (pb) { pb.textContent = '⏸'; pb.title = 'Pause'; }
+    }
+
+    // Pause / Play toggle for the video block (pauses narration + freezes the
+    // animated scene; resuming restarts the scene loop and continues narration).
+    const pauseBtn = container.querySelector('#lessonVideoPauseBtn');
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', () => {
+        sounds.playPop();
+        const speech = appState.currentVideoSpeech;
+        if (!speech) return;
+        const isPaused = speech.isPaused && speech.isPaused();
+        if (isPaused) {
+          if (speech.resume) speech.resume();
+          if (typeof startVideoScene === 'function' && vidCanvas && currentSceneCategory) {
+            startVideoScene(vidCanvas, currentSceneCategory);
+          }
+          pauseBtn.textContent = '⏸';
+          pauseBtn.title = 'Pause';
+        } else {
+          if (speech.pause) speech.pause();
+          if (typeof stopVideoScene === 'function') stopVideoScene();
+          // If narration had just finished right as Pause was clicked, an
+          // auto-advance to the next page may already be queued. Clear it so
+          // "Pause" reliably halts everything instead of the page jumping
+          // forward a moment later while the learner thinks it's paused.
+          if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
+          pauseBtn.textContent = '▶';
+          pauseBtn.title = 'Play';
+        }
+      });
+    }
+
+    // Rewind: like a YouTube "previous" control — jumps straight back to the
+    // previous page (there's no mid-sentence seeking, so a full page is the
+    // smallest meaningful "rewind" step here).
+    const rewindBtn = container.querySelector('#lessonVideoRewindBtn');
+    if (rewindBtn) {
+      rewindBtn.addEventListener('click', () => {
+        sounds.playPop();
+        goToPrevPage();
+      });
+    }
+
+    // Fast-forward: skip the currently-narrated sentence and jump to the next
+    // one. If there's nothing left to skip on this page (already on the last
+    // sentence, or narration already finished), jump straight to the next
+    // page instead — matching how a video's fast-forward eventually rolls
+    // into the next clip once it hits the end.
+    const fastForwardBtn = container.querySelector('#lessonVideoFastForwardBtn');
+    if (fastForwardBtn) {
+      fastForwardBtn.addEventListener('click', () => {
+        sounds.playPop();
+        const speech = appState.currentVideoSpeech;
+        if (speech && speech.hasMore && speech.hasMore()) {
+          speech.skip();
+        } else {
+          advanceToNextPage();
+        }
+      });
+    }
+
+    // Replay: restart narration for this page from the very beginning
+    // (Video mode's equivalent of the Text mode "Replay Narration" button,
+    // now living directly on the video block instead of as separate text).
+    const replayBtn = container.querySelector('#lessonVideoReplayBtn');
+    if (replayBtn) {
+      replayBtn.addEventListener('click', () => {
+        sounds.playPop();
+        if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
+        if (typeof speakSentencesWithSubtitles === 'function') {
+          runNarration();
+          restartVideoPlaybackUI();
+        }
       });
     }
 
@@ -40155,6 +40471,7 @@ function renderLessonSlide() {
         if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
         if (typeof speakSentencesWithSubtitles === 'function') {
           runNarration();
+          restartVideoPlaybackUI();
         } else {
           window.speechSynthesis.cancel();
           speakText(slideSpeakText || speakContent);
@@ -40167,11 +40484,13 @@ function renderLessonSlide() {
       muteBtn.addEventListener('click', () => {
         appState.isSoundOn = !appState.isSoundOn;
         sounds.enabled = appState.isSoundOn;
+        if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
         if (!appState.isSoundOn) {
           window.speechSynthesis.cancel();
           if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) appState.currentVideoSpeech.cancel();
         } else {
           runNarration();
+          restartVideoPlaybackUI();
         }
         appState.save && appState.save();
         muteBtn.textContent = appState.isSoundOn ? '🔊' : '🔇';
@@ -40181,19 +40500,6 @@ function renderLessonSlide() {
       });
     }
 
-    const autoplayBtn = container.querySelector('#slideAutoplayBtn');
-    if (autoplayBtn) {
-      autoplayBtn.addEventListener('click', () => {
-        appState.videoAutoplay = !(appState.videoAutoplay !== false);
-        appState.save && appState.save();
-        const on = appState.videoAutoplay !== false;
-        autoplayBtn.textContent = on ? '▶️' : '⏸️';
-        autoplayBtn.title = on ? 'Autoplay on: pages advance automatically' : 'Autoplay off: click Next to advance';
-        autoplayBtn.style.background = on ? 'rgba(52,211,153,0.25)' : 'rgba(255,255,255,0.15)';
-        autoplayBtn.style.borderColor = on ? 'rgba(52,211,153,0.5)' : 'rgba(255,255,255,0.2)';
-        if (!on && appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
-      });
-    }
   } catch (err) {
     console.error("Error inside renderLessonSlide:", err);
   }
@@ -41521,8 +41827,7 @@ function completeStep2() {
     appState.confetti.burst(200);
     speakText(`Congratulations! You completed the ${subjectName} lesson and earned 50 stars!`);
     document.getElementById('finishGeoQuestBtn').addEventListener('click', () => {
-      pauseVideo();
-      window.speechSynthesis.cancel();
+      stopAllLessonPlayback();
       document.getElementById('playgroundOverlay').classList.remove('active');
     });
     return;
@@ -42269,6 +42574,7 @@ function processTestResults() {
     
     document.getElementById('claimRewardBtn').addEventListener('click', () => {
       sounds.playPop();
+      stopAllLessonPlayback();
       document.getElementById('playgroundOverlay').classList.remove('active');
     });
 
@@ -42838,6 +43144,7 @@ function processExamResults() {
       speakText(`Congratulations! You passed the unit exam with ${score} correct answers!`);
       
       document.getElementById('finishExamBtn').addEventListener('click', () => {
+        stopAllLessonPlayback();
         document.getElementById('playgroundOverlay').classList.remove('active');
       });
     } else {
@@ -42879,6 +43186,7 @@ function processExamResults() {
     speakText(`Excellent work! You completed the Grade 1 Review!`);
     
     document.getElementById('finishReviewBtn').addEventListener('click', () => {
+      stopAllLessonPlayback();
       document.getElementById('playgroundOverlay').classList.remove('active');
     });
   } else if (type === 'test') {
@@ -42914,6 +43222,7 @@ function processExamResults() {
       speakText(`Congratulations! You passed the Grade 1 Final Test and graduated! You got 500 stars!`);
       
       document.getElementById('finishGradBtn').addEventListener('click', () => {
+        stopAllLessonPlayback();
         document.getElementById('playgroundOverlay').classList.remove('active');
       });
     } else {

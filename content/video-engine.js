@@ -41,8 +41,11 @@ function splitIntoSentences(text) {
 
 // ---------- 3. Sentence-by-sentence narration with subtitle sync ----------
 // Speaks an array of sentences one at a time. Calls onSentence(text, index, total)
-// right as each sentence begins playing (for subtitle + animation sync), and
-// onDone() once all sentences have finished (or narration is skipped/muted).
+// right as each sentence's AUDIO actually begins playing (synced via the
+// utterance's onstart event, with a short fallback timer in case a browser's
+// speech engine doesn't fire onstart reliably), and onDone() once all
+// sentences have finished (or narration is skipped/muted).
+// Returns a controller: { cancel, pause, resume, skip, isPaused }.
 function speakSentencesWithSubtitles(sentences, opts) {
   opts = opts || {};
   const onSentence = opts.onSentence || function () {};
@@ -53,31 +56,94 @@ function speakSentencesWithSubtitles(sentences, opts) {
 
   if (!soundOn || !sentences || sentences.length === 0) {
     // Still walk through subtitles on a timer so the video "plays" even when muted.
-    if (!sentences || sentences.length === 0) { onDone(); return { cancel: function(){} }; }
+    if (!sentences || sentences.length === 0) {
+      onDone();
+      return { cancel: function(){}, pause: function(){}, resume: function(){}, skip: function(){}, isPaused: function(){ return false; }, hasMore: function(){ return false; } };
+    }
     let idx = 0;
     let cancelled = false;
+    let paused = false;
+    let pendingMs = 0;
+    let stepStarted = 0;
+    let stepTimer = null;
     const step = () => {
-      if (cancelled) return;
+      if (cancelled || paused) return;
       if (idx >= sentences.length) { onDone(); return; }
       onSentence(sentences[idx], idx, sentences.length);
       idx++;
       const words = sentences[idx - 1].split(/\s+/).length;
-      const ms = Math.max(1200, words * 260);
-      setTimeout(step, ms);
+      pendingMs = Math.max(1200, words * 260);
+      stepStarted = Date.now();
+      stepTimer = setTimeout(step, pendingMs);
     };
     step();
-    return { cancel: function () { cancelled = true; } };
+    return {
+      cancel: function () { cancelled = true; if (stepTimer) clearTimeout(stepTimer); },
+      pause: function () {
+        if (paused || cancelled) return;
+        paused = true;
+        if (stepTimer) { clearTimeout(stepTimer); stepTimer = null; }
+        pendingMs = Math.max(200, pendingMs - (Date.now() - stepStarted));
+      },
+      resume: function () {
+        if (!paused || cancelled) return;
+        paused = false;
+        stepStarted = Date.now();
+        stepTimer = setTimeout(step, pendingMs);
+      },
+      skip: function () {
+        if (cancelled) return;
+        if (stepTimer) { clearTimeout(stepTimer); stepTimer = null; }
+        paused = false;
+        step();
+      },
+      isPaused: function () { return paused; },
+      // Whether there's still narration left to play (used by the UI to
+      // decide whether "fast forward" should skip to the next sentence, or
+      // — if we're already on the last one — jump to the next page instead,
+      // like a YouTube "next" control.
+      hasMore: function () { return !cancelled && idx < sentences.length; }
+    };
   }
 
   let idx = 0;
   let cancelled = false;
+  let paused = false;
   const voice = pickLivelyVoice();
 
-  function speakNext() {
+  // Chrome's speechSynthesis can silently drop an utterance if speak() is
+  // called in the same tick as a preceding cancel() (a long-standing browser
+  // race condition). A tiny delay before the very first utterance avoids it.
+  const FIRST_SPEAK_DELAY_MS = 60;
+  // Chrome also auto-pauses the speech queue after ~15s of continuous speech;
+  // a periodic resume() nudge keeps long narration from silently stalling.
+  // (Only kicks in when NOT intentionally paused by the user.)
+  let resumeHeartbeat = null;
+  function startResumeHeartbeat() {
+    stopResumeHeartbeat();
+    resumeHeartbeat = setInterval(() => {
+      if (paused) return;
+      if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) return;
+      if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+    }, 8000);
+  }
+  function stopResumeHeartbeat() {
+    if (resumeHeartbeat) { clearInterval(resumeHeartbeat); resumeHeartbeat = null; }
+  }
+
+  // Tracks the "advance to the next sentence" step for the utterance currently
+  // in flight, so skip() can trigger it directly (bypassing whatever onend/
+  // onerror callback speechSynthesis.cancel() may or may not fire).
+  let currentAdvance = null;
+  // Set right before an explicit speechSynthesis.cancel() (e.g. by skip()) so
+  // the next speakNext() knows to wait out the cancel-then-speak race instead
+  // of calling speak() in the same tick.
+  let forceNextDelay = false;
+
+  function speakNext(isFirst) {
     if (cancelled) return;
-    if (idx >= sentences.length) { onDone(); return; }
+    if (idx >= sentences.length) { stopResumeHeartbeat(); currentAdvance = null; onDone(); return; }
     const sentence = sentences[idx];
-    onSentence(sentence, idx, sentences.length);
 
     const utt = new SpeechSynthesisUtterance(sentence);
     if (voice) utt.voice = voice;
@@ -88,17 +154,76 @@ function speakSentencesWithSubtitles(sentences, opts) {
     utt.rate = 1.0 + wobble;
     utt.pitch = 1.08 + (idx % 2 === 0 ? 0.03 : -0.02);
 
-    utt.onend = () => { idx++; speakNext(); };
-    utt.onerror = () => { idx++; speakNext(); };
-    window.speechSynthesis.speak(utt);
+    // Sync the subtitle to the moment audio actually starts, not the moment
+    // we queued it. Guard against onstart never firing (some engines omit
+    // it) with a short fallback so the subtitle never gets stuck blank.
+    let subtitleShown = false;
+    const showSubtitle = () => {
+      if (subtitleShown || cancelled) return;
+      subtitleShown = true;
+      onSentence(sentence, idx, sentences.length);
+    };
+    const fallbackTimer = setTimeout(showSubtitle, 250);
+
+    let settled = false;
+    const advance = () => {
+      if (settled || cancelled) return;
+      settled = true;
+      currentAdvance = null;
+      clearTimeout(fallbackTimer);
+      idx++;
+      speakNext(false);
+    };
+    currentAdvance = advance;
+
+    utt.onstart = () => { clearTimeout(fallbackTimer); showSubtitle(); };
+    utt.onend = advance;
+    utt.onerror = advance;
+
+    const doSpeak = () => { if (!cancelled) window.speechSynthesis.speak(utt); };
+    if (isFirst || forceNextDelay) {
+      forceNextDelay = false;
+      setTimeout(doSpeak, FIRST_SPEAK_DELAY_MS);
+    } else {
+      doSpeak();
+    }
   }
 
-  speakNext();
+  startResumeHeartbeat();
+  speakNext(true);
   return {
     cancel: function () {
       cancelled = true;
+      currentAdvance = null;
+      stopResumeHeartbeat();
       window.speechSynthesis.cancel();
-    }
+    },
+    pause: function () {
+      if (cancelled || paused) return;
+      paused = true;
+      window.speechSynthesis.pause();
+    },
+    resume: function () {
+      if (cancelled || !paused) return;
+      paused = false;
+      window.speechSynthesis.resume();
+    },
+    // Skips the sentence currently playing and jumps straight to the next one.
+    skip: function () {
+      if (cancelled || !currentAdvance) return;
+      const fn = currentAdvance;
+      currentAdvance = null;
+      paused = false;
+      forceNextDelay = true;
+      window.speechSynthesis.cancel();
+      fn();
+    },
+    isPaused: function () { return paused; },
+    // Whether there's still narration left to play (used by the UI to
+    // decide whether "fast forward" should skip to the next sentence, or
+    // — if we're already on the last one — jump to the next page instead,
+    // like a YouTube "next" control.
+    hasMore: function () { return !cancelled && idx < sentences.length; }
   };
 }
 
