@@ -231,6 +231,10 @@
               <span style="font-size: 18px;">🏆</span>
               <span>Hall of Fame</span>
             </button>
+            <button class="nav-btn" id="sidebarAdminBtn" style="grid-column: span 2; display: none;">
+              <span style="font-size: 18px;">📊</span>
+              <span>Admin Stats</span>
+            </button>
           </div>
         </div>
       </div>
@@ -757,6 +761,68 @@
         </div>
       </div>
 
+      <!-- Admin Stats View Panel -->
+      <div id="adminView" class="view-panel" style="display: none;">
+        <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 3px solid var(--border-light); border-radius: 16px; padding: 24px; margin-bottom: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; box-shadow: var(--shadow-lg);">
+          <div>
+            <h2 style="margin: 0; font-size: 26px; font-weight: 850; color: white;">📊 Administration Dashboard</h2>
+            <p style="margin: 6px 0 0 0; font-size: 14px; font-weight: 700; color: var(--text-muted);">Monitor registered accounts, active sessions, and student progress metrics.</p>
+          </div>
+          <button class="primary-btn" id="exitAdminBtn" style="padding: 12px 20px; font-size: 14px; background: #ef4444; border-color: #fca5a5; margin: 0; box-shadow: 0 4px 12px rgba(239,68,68,0.25);">Exit Admin ✕</button>
+        </div>
+
+        <!-- Telemetry Summary Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 24px;">
+          <div style="background: rgba(30, 41, 59, 0.5); border: 2px solid var(--border-light); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 36px; background: rgba(59, 130, 246, 0.1); width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center;">👥</div>
+            <div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Total Learners</div>
+              <div id="adminTotalLearners" style="font-size: 28px; font-weight: 900; color: white;">0</div>
+            </div>
+          </div>
+          <div style="background: rgba(30, 41, 59, 0.5); border: 2px solid var(--border-light); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 36px; background: rgba(16, 185, 129, 0.1); width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center;">🔑</div>
+            <div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Logged In Today</div>
+              <div id="adminActiveLogins" style="font-size: 28px; font-weight: 900; color: white;">0</div>
+            </div>
+          </div>
+          <div style="background: rgba(30, 41, 59, 0.5); border: 2px solid var(--border-light); border-radius: 16px; padding: 20px; display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 36px; background: rgba(234, 179, 8, 0.1); width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center;">⭐</div>
+            <div>
+              <div style="font-size: 13px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Average Stars</div>
+              <div id="adminAvgStars" style="font-size: 28px; font-weight: 900; color: white;">0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registered User Details Section -->
+        <div style="background: rgba(30, 41, 59, 0.5); border: 2px solid var(--border-light); border-radius: 16px; padding: 24px; overflow-x: auto;">
+          <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 18px; font-weight: 850; color: white; display: flex; align-items: center; gap: 8px;">
+            <span>📋</span> Detailed Student Stats
+          </h3>
+          <table class="admin-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+            <thead>
+              <tr style="border-bottom: 2px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 13px; font-weight: 800; text-transform: uppercase;">
+                <th style="padding: 12px 8px;">Student</th>
+                <th style="padding: 12px 8px;">Grade</th>
+                <th style="padding: 12px 8px; text-align: center;">Accuracy</th>
+                <th style="padding: 12px 8px; text-align: center;">Stars</th>
+                <th style="padding: 12px 8px; text-align: center;">Points</th>
+                <th style="padding: 12px 8px; text-align: center;">Streak</th>
+                <th style="padding: 12px 8px;">Math</th>
+                <th style="padding: 12px 8px;">ELA</th>
+                <th style="padding: 12px 8px;">Others</th>
+                <th style="padding: 12px 8px;">Last Login</th>
+              </tr>
+            </thead>
+            <tbody id="adminUserTableBody">
+              <!-- Injected dynamically by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <!-- Footer -->
       <footer class="footer">
         <p>🎓 FunCademy © 2026. Made with love for little learners.</p>
@@ -918,6 +984,28 @@
   </div>
 
   <!-- Application Logic -->
+  <script>window.DEV_UNLOCK_ALL_LESSONS = true; /* TEMP: preview flag, remove before shipping */</script>
+  <script src="content/history-content.js"></script>
+  <script src="content/science-content.js"></script>
+  <script src="content/geography-content.js"></script>
+  <script src="content/art-content.js"></script>
+  <script src="content/history-quiz-overrides.js"></script>
+  <script src="content/science-quiz-overrides.js"></script>
+  <script src="content/geography-quiz-overrides.js"></script>
+  <script src="content/art-quiz-overrides.js"></script>
+  <script src="content/grade1-history-content.js"></script>
+  <script src="content/grade1-science-content.js"></script>
+  <script src="content/grade1-geography-content.js"></script>
+  <script src="content/grade1-art-content.js"></script>
+  <script src="content/grade1-history-quiz.js"></script>
+  <script src="content/grade1-science-quiz.js"></script>
+  <script src="content/grade1-geography-quiz.js"></script>
+  <script src="content/grade1-art-quiz.js"></script>
+  <script src="content/math-content.js"></script>
+  <script src="content/ela-content.js"></script>
+  <script src="content/grade1-math-content.js"></script>
+  <script src="content/grade1-ela-content.js"></script>
+  <script src="content/video-engine.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

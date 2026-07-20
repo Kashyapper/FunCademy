@@ -517,24 +517,24 @@ const GRADE_UNITS_DB = {
       "Life Cycles & Inherited Traits",
       "Weather, Climate & Severe Events",
       "Food Chains & Decomposers",
-      "Geological & Fossil Evidence",
-      "Science Review"
+      "Genetics, Traits & Behavior",
+      "Conservation & Protecting Nature"
     ],
     "4": [
-      "Energy, Speed & Collisions",
+      "Types of Energy",
       "Waves, Amplitude & Wavelength",
       "Earth History & Rock Formations",
-      "Natural Resources & Energy Use",
-      "Science Experiments & Design",
-      "Science Review"
+      "Erosion, Earthquakes & Volcanoes",
+      "Renewable Energy Sources",
+      "The Human Body: Systems & Senses"
     ],
     "5": [
       "Matter Conservation & Properties",
       "Matter & Energy in Ecosystems",
-      "Earth Systems & Atmosphere",
-      "Space Systems, Gravity & Shadows",
-      "Environmental Protection",
-      "Science Review"
+      "Space & Astronomy Basics",
+      "Earth's Systems & Spheres",
+      "Deep Space & Observing the Sky",
+      "Environmental Protection"
     ]
   },
   "history": {
@@ -547,36 +547,36 @@ const GRADE_UNITS_DB = {
       "American Heroes & Inventions (26-30)"
     ],
     "2": [
-      "Historical Figures & Leaders",
-      "Community Foundations & Rights",
-      "US Government Basics & Laws",
-      "Ancient Civilizations Overview",
-      "Pioneers & Westward Movement",
-      "History Review"
+      "Presidents, Founders & Symbols",
+      "How People Lived Long Ago",
+      "Government & Civic Life",
+      "Pioneers & Westward Expansion",
+      "American Symbols & Monuments",
+      "Inventions That Changed Life"
     ],
     "3": [
-      "Indigenous Peoples of NA",
-      "Early Explorers & Colonies",
-      "American Revolution & Independence",
-      "Local History & Communities",
-      "Civic Rights & Heroes",
-      "History Review"
+      "Indigenous Peoples of North America",
+      "Local Government & Community",
+      "Ancient World Civilizations",
+      "Early Explorers of North America",
+      "Civic Rights & Responsibilities",
+      "Economics Basics: Trade & Money"
     ],
     "4": [
-      "US History: Early Colonies",
-      "Declaration & Constitution",
+      "Our State's History & Symbols",
+      "The Industrial Revolution",
+      "Founding the Thirteen Colonies",
       "Westward Expansion & Trails",
-      "Industrial Revolution & Travel",
-      "Civil War & Lincoln Leadership",
-      "History Review"
+      "Great Inventions of the 1800s",
+      "The US Constitution & Government"
     ],
     "5": [
-      "World History: Ancient Empires",
-      "Middle Ages & Renaissance",
-      "Age of Exploration & Trade",
-      "American Civil Rights Movement",
-      "Modern Inventions & Society",
-      "History Review"
+      "The American Revolution",
+      "The Civil War Era",
+      "Westward Expansion",
+      "The Great Depression & World War II",
+      "The Civil Rights Movement",
+      "Modern Inventors & Explorers"
     ]
   },
   "geography": {
@@ -589,36 +589,36 @@ const GRADE_UNITS_DB = {
       "My Place in the World (26-30)"
     ],
     "2": [
-      "Map Grids, Latitude & Longitude",
-      "Legends, Scales & Compass Roses",
-      "Regions: Warm vs. Cold Climates",
-      "Natural Resources & Settlements",
-      "Geographic Barriers & Trade",
-      "Geography Review"
+      "Map Basics: Compass, Legend & Latitude",
+      "Human Adaptation to the Land",
+      "Natural Resources",
+      "Landforms & Local Geography",
+      "World Climate Zones",
+      "Hemispheres & Coordinate Lines"
     ],
     "3": [
-      "World Geography & Continents",
+      "Coordinate Systems: Latitude & Longitude",
       "Climate Zones & Vegetation",
-      "Natural Disasters & Geologic Forces",
-      "Human Migration & Population",
-      "Conservation of Resources",
-      "Geography Review"
+      "Rivers of the World",
+      "US Regions, States & Cities",
+      "World Biomes & Ecosystems",
+      "Map Types & Navigation Tools"
     ],
     "4": [
       "US Geography: Five Regions",
-      "Physical Geography of NA",
-      "Map Projections & Lat/Long",
-      "Urbanization & City Planning",
-      "Climate Change & Preservation",
-      "Geography Review"
+      "Global Trade Routes & Infrastructure",
+      "Great Mountain Ranges of the World",
+      "Urbanization & Settlement Patterns",
+      "Erosion & Weathering Processes",
+      "Map Skills: Scale, Grid & Compass"
     ],
     "5": [
-      "Global Hemispheres & Time Zones",
+      "Political Geography: Nations & Borders",
+      "Environmental Issues & Restoration",
+      "Global Climate Systems",
+      "Human Migration & Population Shifts",
       "Topographic Maps & Elevation",
-      "Global Ecosystems & Biomes",
-      "Trade Routes, Imports & Exports",
-      "Cultural Geography & Traditions",
-      "Geography Review"
+      "Map Skills: Scale, Grid & Direction"
     ]
   },
   "art": {
@@ -632,35 +632,35 @@ const GRADE_UNITS_DB = {
     ],
     "2": [
       "Color Theory: Primary & Secondary",
-      "Visual Elements & Balance",
-      "Media: Paint, Clay, Paper & Wood",
-      "Masterpieces & Perspective",
-      "Art History Movements",
-      "Art Review"
+      "Texture & Depth Techniques",
+      "Perspective: Horizon, Vanishing Point & Scale",
+      "Hands-On 3D Crafting: Clay & Wood",
+      "World Cultural Art Traditions",
+      "Famous Artists & Their Masterpieces"
     ],
     "3": [
-      "Drawing: Shading, Light & Shadows",
-      "Painting: Warm vs. Cool Harmonies",
-      "Sculpture: 3D Modeling",
-      "Architecture & Monuments",
-      "Storytelling in Visual Art",
-      "Art Review"
+      "Symmetry & Pattern Design",
+      "Historical Art Styles Through Time",
+      "Color Relationships & Harmony",
+      "Textile & Pottery Crafts",
+      "Folk Crafts & Storytelling Traditions",
+      "Painting Techniques & Media"
     ],
     "4": [
-      "Advanced Color Wheel & Schemes",
-      "Landscape Painting & Vanishing Points",
+      "Perspective Drawing Techniques",
+      "Shading & Mark-Making Techniques",
       "Printmaking & Pattern Design",
-      "Art History: Impressionism & Cubism",
-      "Digital Art & Graphic Design",
-      "Art Review"
+      "Art History: Movements & Styles",
+      "Graphic Design & Typography",
+      "Portrait & Figure Drawing"
     ],
     "5": [
-      "Portrait Drawing & Proportions",
-      "Watercolors, Pigments & Glazes",
-      "Art History: Renaissance & Modern",
-      "Public Murals & Sculptures",
-      "Abstract Art & Expressionism",
-      "Art Review"
+      "Scale & Proportion in Art",
+      "Contemporary Art Forms & Media",
+      "Color Psychology & Symbolism",
+      "Architecture Through History",
+      "Digital Art Tools & Techniques",
+      "Abstract Art & Expressionism"
     ]
   }
 };
@@ -33132,14 +33132,15 @@ const blendFL = ["FLAG 🚩", "FLY 🪰", "FLAT 📏", "FLIP 🐬", "FLOW 🌊",
 const blendST = ["STAR ⭐", "STOP 🛑", "STEM 🌱", "STEP 🪜", "NEST 🪹", "VEST 🦺"];
 const blendSP = ["SPIN 🌀", "SPOT 🎯", "SPIT 💦", "SPELL 🪄", "SPOON 🥄", "SPIDER 🕷️"];
 
-function generateVowelSoundQuestion(vowelChar, targetList, otherLists) {
-  const randType = Math.floor(Math.random() * 3);
+function generateVowelSoundQuestion(vowelChar, targetList, otherLists, index) {
+  const idx = (index !== undefined && index !== null) ? index : Math.floor(Math.random() * 100);
+  const randType = idx % 3;
   let questionText = "";
   let correctAnswer = "";
   let options = [];
   let visualContent = "";
 
-  const targetWord = targetList[Math.floor(Math.random() * targetList.length)];
+  const targetWord = targetList[idx % targetList.length];
   correctAnswer = targetWord;
   const emoji = targetWord.split(' ')[1] || "📖";
 
@@ -33158,27 +33159,30 @@ function generateVowelSoundQuestion(vowelChar, targetList, otherLists) {
 
   const wrongList = otherLists.flat();
   const wrongOptions = [];
+  let offset = idx;
   while (wrongOptions.length < 3) {
-    const w = wrongList[Math.floor(Math.random() * wrongList.length)];
+    const w = wrongList[(offset + 1) % wrongList.length];
+    offset++;
     if (!wrongOptions.includes(w) && !targetList.includes(w)) {
       wrongOptions.push(w);
     }
   }
 
   options = [correctAnswer, ...wrongOptions];
-  options = options.sort(() => 0.5 - Math.random());
+  options = options.sort(() => ((idx * 7 + 3) % 10 - 5) / 10);
 
   return { questionText, correctAnswer, options, visualContent };
 }
 
-function generateDigraphQuestion(digraphStr, targetList, otherLists) {
-  const randType = Math.floor(Math.random() * 3);
+function generateDigraphQuestion(digraphStr, targetList, otherLists, index) {
+  const idx = (index !== undefined && index !== null) ? index : Math.floor(Math.random() * 100);
+  const randType = idx % 3;
   let questionText = "";
   let correctAnswer = "";
   let options = [];
   let visualContent = "";
 
-  const targetWord = targetList[Math.floor(Math.random() * targetList.length)];
+  const targetWord = targetList[idx % targetList.length];
   correctAnswer = targetWord;
   const emoji = targetWord.split(' ')[1] || "🗣️";
 
@@ -33197,15 +33201,17 @@ function generateDigraphQuestion(digraphStr, targetList, otherLists) {
 
   const wrongList = otherLists.flat();
   const wrongOptions = [];
+  let offset = idx;
   while (wrongOptions.length < 3) {
-    const w = wrongList[Math.floor(Math.random() * wrongList.length)];
+    const w = wrongList[(offset + 1) % wrongList.length];
+    offset++;
     if (!wrongOptions.includes(w) && !targetList.includes(w)) {
       wrongOptions.push(w);
     }
   }
 
   options = [correctAnswer, ...wrongOptions];
-  options = options.sort(() => 0.5 - Math.random());
+  options = options.sort(() => ((idx * 7 + 3) % 10 - 5) / 10);
 
   return { questionText, correctAnswer, options, visualContent };
 }
@@ -33806,7 +33812,7 @@ const SCIENCE_QUESTIONS_LIST = {
 };
 
 function generateScienceQuestion(lessonId, index) {
-  const qList = SCIENCE_QUESTIONS_LIST[lessonId] || [];
+  const qList = getGrade1QuizOverrideList('SCIENCE', lessonId) || SCIENCE_QUESTIONS_LIST[lessonId] || [];
   let q;
   if (index !== undefined && index !== null) {
     q = qList[index % qList.length];
@@ -34138,7 +34144,7 @@ const ART_QUESTIONS_LIST = {
 };
 
 function generateArtQuestion(lessonId, index) {
-  const qList = ART_QUESTIONS_LIST[lessonId] || [];
+  const qList = getGrade1QuizOverrideList('ART', lessonId) || ART_QUESTIONS_LIST[lessonId] || [];
   let q;
   if (index !== undefined && index !== null) {
     q = qList[index % qList.length];
@@ -34168,8 +34174,19 @@ function generateArtQuestion(lessonId, index) {
   };
 }
 
+// Generic helper: prefer a hand-written Grade-1 quiz override table when one exists for this subject/lesson.
+function getGrade1QuizOverrideList(subjectKey, lessonId) {
+  let table = null;
+  if (subjectKey === 'HISTORY' && typeof GRADE1_HISTORY_QUIZ !== 'undefined') table = GRADE1_HISTORY_QUIZ;
+  else if (subjectKey === 'SCIENCE' && typeof GRADE1_SCIENCE_QUIZ !== 'undefined') table = GRADE1_SCIENCE_QUIZ;
+  else if (subjectKey === 'GEOGRAPHY' && typeof GRADE1_GEOGRAPHY_QUIZ !== 'undefined') table = GRADE1_GEOGRAPHY_QUIZ;
+  else if (subjectKey === 'ART' && typeof GRADE1_ART_QUIZ !== 'undefined') table = GRADE1_ART_QUIZ;
+  if (table && table[lessonId] && table[lessonId].length) return table[lessonId];
+  return null;
+}
+
 function generateHistoryQuestion(lessonId, index) {
-  const qList = HISTORY_QUESTIONS_LIST[lessonId] || [];
+  const qList = getGrade1QuizOverrideList('HISTORY', lessonId) || HISTORY_QUESTIONS_LIST[lessonId] || [];
   let q;
   if (index !== undefined && index !== null) {
     q = qList[index % qList.length];
@@ -34523,7 +34540,7 @@ const GEOGRAPHY_QUESTIONS_LIST = {
 };
 
 function generateGeographyQuestion(lessonId, index) {
-  const qList = GEOGRAPHY_QUESTIONS_LIST[lessonId] || [];
+  const qList = getGrade1QuizOverrideList('GEOGRAPHY', lessonId) || GEOGRAPHY_QUESTIONS_LIST[lessonId] || [];
   let q;
   if (index !== undefined && index !== null) {
     q = qList[index % qList.length];
@@ -34553,94 +34570,146 @@ function generateGeographyQuestion(lessonId, index) {
   };
 }
 
-function generateElaQuestion(lessonId) {
+function generateElaQuestion(lessonId, index) {
   let questionText = "";
   let correctAnswer = "";
   let options = [];
   let visualContent = "";
 
+  const idx = (index !== undefined && index !== null) ? index : 0;
   const lesson = GRADE_1_ELA_CURRICULUM.find(l => l.id === lessonId);
   const unit = lesson ? lesson.unit : 1;
 
   if (unit === 1) {
     if (lessonId === 1) {
-      return generateVowelSoundQuestion("a", shortA, [shortE, shortI, shortO, shortU]);
+      return generateVowelSoundQuestion("a", shortA, [shortE, shortI, shortO, shortU], idx);
     } else if (lessonId === 2) {
-      return generateVowelSoundQuestion("e", shortE, [shortA, shortI, shortO, shortU]);
+      return generateVowelSoundQuestion("e", shortE, [shortA, shortI, shortO, shortU], idx);
     } else if (lessonId === 3) {
-      return generateVowelSoundQuestion("i", shortI, [shortA, shortE, shortO, shortU]);
+      return generateVowelSoundQuestion("i", shortI, [shortA, shortE, shortO, shortU], idx);
     } else if (lessonId === 4) {
-      return generateVowelSoundQuestion("o", shortO, [shortA, shortE, shortI, shortU]);
+      return generateVowelSoundQuestion("o", shortO, [shortA, shortE, shortI, shortU], idx);
     } else if (lessonId === 5) {
-      return generateVowelSoundQuestion("u", shortU, [shortA, shortE, shortI, shortO]);
+      return generateVowelSoundQuestion("u", shortU, [shortA, shortE, shortI, shortO], idx);
     } else if (lessonId === 6) {
       questionText = "Which word has a long 'a' sound (sounds like its name)?";
-      const choices = ["CAKE 🍰", "LAKE 🏞️", "GATE 🚪", "TAPE 📼"];
-      correctAnswer = choices[Math.floor(Math.random() * choices.length)];
-      options = [correctAnswer, "CAT 🐱", "HAT 🎩", "BAG 🎒"];
-      visualContent = `<div style="font-size: 48px;">🍰</div>`;
+      const choices = ["CAKE 🍰", "LAKE 🏞️", "GATE 🚪", "TAPE 📼", "RAKE 🍂", "WAVE 🌊", "LATE ⏰", "DATE 📅", "GAME 🎮", "CAVE 🪨"];
+      const targetChoices = ["CAT 🐱", "HAT 🎩", "BAG 🎒", "BAT 🦇", "RAT 🐀", "MAT 🧘", "PAN 🍳", "MAP 🗺️", "CAP 🧢", "TAP 🚰"];
+      correctAnswer = choices[idx % choices.length];
+      const wrong = [];
+      let wIdx = idx;
+      while (wrong.length < 3) {
+        const w = targetChoices[(wIdx + 1) % targetChoices.length];
+        wIdx++;
+        if (!wrong.includes(w)) wrong.push(w);
+      }
+      options = [correctAnswer, ...wrong];
+      visualContent = `<div style="font-size: 48px;">${correctAnswer.split(' ')[1] || '🍰'}</div>`;
     } else if (lessonId === 7) {
-      return generateDigraphQuestion("sh", digraphSH, [digraphCH, digraphTH, digraphWH]);
+      return generateDigraphQuestion("sh", digraphSH, [digraphCH, digraphTH, digraphWH], idx);
     } else if (lessonId === 8) {
-      return generateDigraphQuestion("ch", digraphCH, [digraphSH, digraphTH, digraphWH]);
+      return generateDigraphQuestion("ch", digraphCH, [digraphSH, digraphTH, digraphWH], idx);
     } else if (lessonId === 9) {
-      return generateDigraphQuestion("th", digraphTH, [digraphSH, digraphCH, digraphWH]);
+      return generateDigraphQuestion("th", digraphTH, [digraphSH, digraphCH, digraphWH], idx);
     } else if (lessonId === 10) {
-      return generateDigraphQuestion("wh", digraphWH, [digraphSH, digraphCH, digraphTH]);
+      return generateDigraphQuestion("wh", digraphWH, [digraphSH, digraphCH, digraphTH], idx);
     } else if (lessonId === 11) {
       questionText = "Which word starts with the consonant blend 'cl'?";
-      correctAnswer = blendCL[Math.floor(Math.random() * blendCL.length)];
-      const wrongs = [blendFL[0], blendST[0], blendSP[0]];
+      correctAnswer = blendCL[idx % blendCL.length];
+      const wrongs = [blendFL[idx % blendFL.length], blendST[idx % blendST.length], blendSP[idx % blendSP.length]];
       options = [correctAnswer, ...wrongs];
-      visualContent = `<div style="font-size: 48px;">⏰</div>`;
+      visualContent = `<div style="font-size: 48px;">${correctAnswer.split(' ')[1] || '⏰'}</div>`;
     } else if (lessonId === 12) {
       questionText = "Which word starts with the consonant blend 'fl'?";
-      correctAnswer = blendFL[Math.floor(Math.random() * blendFL.length)];
-      const wrongs = [blendCL[0], blendST[0], blendSP[0]];
+      correctAnswer = blendFL[idx % blendFL.length];
+      const wrongs = [blendCL[idx % blendCL.length], blendST[idx % blendST.length], blendSP[idx % blendSP.length]];
       options = [correctAnswer, ...wrongs];
-      visualContent = `<div style="font-size: 48px;">🚩</div>`;
+      visualContent = `<div style="font-size: 48px;">${correctAnswer.split(' ')[1] || '🚩'}</div>`;
     } else if (lessonId === 13) {
       questionText = "Which word starts with the consonant blend 'st'?";
-      correctAnswer = blendST[Math.floor(Math.random() * blendST.length)];
-      const wrongs = [blendCL[0], blendFL[0], blendSP[0]];
+      correctAnswer = blendST[idx % blendST.length];
+      const wrongs = [blendCL[idx % blendCL.length], blendFL[idx % blendFL.length], blendSP[idx % blendSP.length]];
       options = [correctAnswer, ...wrongs];
-      visualContent = `<div style="font-size: 48px;">⭐</div>`;
+      visualContent = `<div style="font-size: 48px;">${correctAnswer.split(' ')[1] || '⭐'}</div>`;
     } else if (lessonId === 14) {
       questionText = "Which word starts with the consonant blend 'sp'?";
-      correctAnswer = blendSP[Math.floor(Math.random() * blendSP.length)];
-      const wrongs = [blendCL[0], blendFL[0], blendST[0]];
+      correctAnswer = blendSP[idx % blendSP.length];
+      const wrongs = [blendCL[idx % blendCL.length], blendFL[idx % blendFL.length], blendST[idx % blendST.length]];
       options = [correctAnswer, ...wrongs];
-      visualContent = `<div style="font-size: 48px;">🌀</div>`;
+      visualContent = `<div style="font-size: 48px;">${correctAnswer.split(' ')[1] || '🌀'}</div>`;
     } else if (lessonId === 15) {
+      const silentEPairs = [
+        { long: "KITE 🪁", short: "KIT 🧰", w1: "KID 👦", w2: "KIN 👪", emoji: "🪁" },
+        { long: "CAKE 🍰", short: "CAN 🥫", w1: "CAT 🐱", w2: "CAP 🧢", emoji: "🍰" },
+        { long: "BITE 🦷", short: "BIT 🪙", w1: "BIN 🗑️", w2: "BIG 🐘", emoji: "🦷" },
+        { long: "LAKE 🏞️", short: "LAP 💻", w1: "LID 🫙", w2: "LOG 🪵", emoji: "🏞️" },
+        { long: "PINE 🌲", short: "PIN 📌", w1: "PIG 🐷", w2: "PEN 🖊️", emoji: "🌲" },
+        { long: "CONE 🍦", short: "COP 👮", w1: "COT 🛏️", w2: "COW 🐮", emoji: "🍦" },
+        { long: "ROBE 🥋", short: "ROB 🥷", w1: "RED 🔴", w2: "RUN 🏃", emoji: "🥋" },
+        { long: "TUBE 🧪", short: "TUB 🛁", w1: "TEN 🔟", w2: "TAG 🏷️", emoji: "🧪" },
+        { long: "CUBE 🧊", short: "CUB 🐻", w1: "CUP 🥛", w2: "CAP 🧢", emoji: "🧊" },
+        { long: "GATE 🚪", short: "GAP 🕳️", w1: "GOT 🪙", w2: "GET 🎁", emoji: "🚪" }
+      ];
+      const pair = silentEPairs[idx % silentEPairs.length];
       questionText = "Which word has a Silent 'e' that makes the vowel long?";
-      correctAnswer = "KITE 🪁";
-      options = [correctAnswer, "KIT 🧰", "KID 👦", "KIN 👪"];
-      visualContent = `<div style="font-size: 48px;">🪁</div>`;
-    } else if (lessonId === 16) {
-      questionText = "Which vowel team word matches this picture: 🌲?";
-      correctAnswer = "TREE";
-      options = ["TREE", "THREE", "TRY", "TEA"];
-      visualContent = `<div style="font-size: 48px;">🌲</div>`;
-    } else if (lessonId === 17) {
-      questionText = "Which vowel team word matches this picture: 🐐?";
-      correctAnswer = "GOAT";
-      options = ["GOAT", "GATE", "GOT", "COAT"];
-      visualContent = `<div style="font-size: 48px;">🐐</div>`;
-    } else if (lessonId === 18) {
-      questionText = "Which vowel team word matches this picture: 🌧️?";
-      correctAnswer = "RAIN";
-      options = ["RAIN", "RAN", "RUN", "PAIN"];
-      visualContent = `<div style="font-size: 48px;">🌧️</div>`;
+      correctAnswer = pair.long;
+      options = [pair.long, pair.short, pair.w1, pair.w2];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 16 || lessonId === 17 || lessonId === 18) {
+      const vtPairs = [
+        { word: "TREE", options: ["TREE", "THREE", "TRY", "TEA"], emoji: "🌲" },
+        { word: "BOAT", options: ["BOAT", "BOOT", "BAT", "BITE"], emoji: "⛵" },
+        { word: "RAIN", options: ["RAIN", "RAN", "RUN", "PAIN"], emoji: "🌧️" },
+        { word: "MEAT", options: ["MEAT", "MEET", "MET", "MAT"], emoji: "🥩" },
+        { word: "COAT", options: ["COAT", "COT", "CAT", "CUT"], emoji: "🧥" },
+        { word: "ROAD", options: ["ROAD", "RIDE", "ROD", "RED"], emoji: "🛣️" },
+        { word: "LEAF", options: ["LEAF", "LIFE", "LEFT", "LOAF"], emoji: "🍃" },
+        { word: "TOAD", options: ["TOAD", "TOD", "TODAY", "TOLD"], emoji: "🐸" },
+        { word: "GOAT", options: ["GOAT", "GOT", "GATE", "GET"], emoji: "🐐" },
+        { word: "SOAP", options: ["SOAP", "SOUP", "SIP", "STEP"], emoji: "🧼" }
+      ];
+      const offset = lessonId === 16 ? 0 : lessonId === 17 ? 3 : 7;
+      const pair = vtPairs[(idx + offset) % vtPairs.length];
+      questionText = `Which vowel team word matches this picture: ${pair.emoji}?`;
+      correctAnswer = pair.word;
+      options = pair.options;
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 19) {
-      questionText = "Which word rhyming with 'say' matches: 🎮?";
-      correctAnswer = "PLAY";
-      options = ["PLAY", "PAY", "DAY", "CLAY"];
-      visualContent = `<div style="font-size: 48px;">🎮</div>`;
+      const rhymeSay = [
+        { word: "PLAY", options: ["PLAY", "PAY", "DAY", "CLAY"], emoji: "🎮" },
+        { word: "DAY", options: ["DAY", "PLAY", "PAY", "MAY"], emoji: "☀️" },
+        { word: "WAY", options: ["WAY", "SAY", "RAY", "BAY"], emoji: "🛣️" },
+        { word: "PAY", options: ["PAY", "LAY", "MAY", "SAY"], emoji: "💵" },
+        { word: "GRAY", options: ["GRAY", "PLAY", "SPRAY", "TRAY"], emoji: "🐘" },
+        { word: "CLAY", options: ["CLAY", "PLAY", "DAY", "SAY"], emoji: "🧱" },
+        { word: "TRAY", options: ["TRAY", "PLAY", "DAY", "GRAY"], emoji: "📥" },
+        { word: "HAY", options: ["HAY", "BAY", "LAY", "SAY"], emoji: "🌾" },
+        { word: "BAY", options: ["BAY", "HAY", "WAY", "DAY"], emoji: "🌅" },
+        { word: "MAY", options: ["MAY", "SAY", "PAY", "WAY"], emoji: "📅" }
+      ];
+      const pair = rhymeSay[idx % rhymeSay.length];
+      questionText = `Which word rhyming with 'say' matches this: ${pair.emoji}?`;
+      correctAnswer = pair.word;
+      options = pair.options;
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else {
+      const arWords = [
+        { word: "STAR ⭐", wrong: ["STORE 🏪", "STIR 🥄", "STARE 👀"], emoji: "⭐" },
+        { word: "BARN 🚜", wrong: ["BORN 👶", "BURN 🔥", "BUN 🥯"], emoji: "🚜" },
+        { word: "CARD 🃏", wrong: ["CORD 🔌", "CURD 🥛", "COLD 🧊"], emoji: "🃏" },
+        { word: "PARK 🏞️", wrong: ["PORK 🥩", "PACK 🎒", "PECK 🐦"], emoji: "🏞️" },
+        { word: "YARD 🏡", wrong: ["WORD 📝", "YAWN 🥱", "YELL 🗣️"], emoji: "🏡" },
+        { word: "SHARK 🦈", wrong: ["SHOCK ⚡", "SHAKE 🤝", "SHARE 🤝"], emoji: "🦈" },
+        { word: "DARK 🌑", wrong: ["DIRT 🪱", "DECK 🚢", "DOOR 🚪"], emoji: "🌑" },
+        { word: "FARM 👩‍🌾", wrong: ["FORM 📝", "FIRM 🏢", "FOAM 🫧"], emoji: "👩‍🌾" },
+        { word: "HART 🦌", wrong: ["HURT 🤕", "HEART ❤️", "HAT 🎩"], emoji: "🦌" },
+        { word: "MARK 🎯", wrong: ["MORE ➕", "MAKE 🛠️", "MASK 😷"], emoji: "🎯" }
+      ];
+      const pair = arWords[idx % arWords.length];
       questionText = "Which word has an 'ar' sound like in 'car'?";
-      correctAnswer = "STAR ⭐";
-      options = [correctAnswer, "STORE 🏪", "STIR 🥄", "STARE 👀"];
-      visualContent = `<div style="font-size: 48px;">⭐</div>`;
+      correctAnswer = pair.word;
+      options = [correctAnswer, ...pair.wrong];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     }
   } else if (unit === 2) {
     if (lessonId <= 26) {
@@ -34653,522 +34722,1091 @@ function generateElaQuestion(lessonId) {
         26: ["at", "be", "this", "have"]
       };
       const words = sightWordGroups[lessonId];
-      const target = words[Math.floor(Math.random() * words.length)];
+      const target = words[idx % words.length];
       questionText = `Select the correct spelling of the sight word: "${target}"`;
       correctAnswer = target;
       
-      const scrambled = target.split('').sort(() => 0.5 - Math.random()).join('');
-      options = [target, scrambled + 'e', 'w' + target, target + 'y'];
+      let scrambled = target.split('').reverse().join('');
+      if (scrambled === target) scrambled = scrambled + 'e';
+      options = [target, scrambled, 'w' + target, target + 'y'];
       visualContent = `<div style="font-size: 32px; font-weight: 800; color: var(--primary);">${target.toUpperCase()}</div>`;
     } else if (lessonId === 27) {
-      questionText = "Which compound word is made from: SUN + FLOWER?";
-      correctAnswer = "SUNFLOWER 🌻";
-      options = [correctAnswer, "SUNNY ☀️", "FLOWERPOT 🪴", "STARFLOWER 🌸"];
-      visualContent = `<div style="font-size: 48px;">☀️ + 🌻</div>`;
+      const compounds = [
+        { parts: "SUN + FLOWER", word: "SUNFLOWER 🌻", wrong: ["SUNNY ☀️", "FLOWERPOT 🪴", "STARFLOWER 🌸"], emoji: "🌻" },
+        { parts: "RAIN + BOW", word: "RAINBOW 🌈", wrong: ["RAINY 🌧️", "BOWTIE 🎀", "HAIRBOW 🎀"], emoji: "🌈" },
+        { parts: "PAN + CAKE", word: "PANCAKE 🥞", wrong: ["PAN 🍳", "CUPCAKE 🧁", "BREAD 🍞"], emoji: "🥞" },
+        { parts: "JELLY + FISH", word: "JELLYFISH 🪼", wrong: ["JELLY 🍇", "GOLDFISH 🐟", "STARFISH ⭐️"], emoji: "🪼" },
+        { parts: "BUTTER + FLY", word: "BUTTERFLY 🦋", wrong: ["BUTTER 🧈", "DRAGONFLY 🪰", "HOUSEFLY 🪰"], emoji: "🦋" },
+        { parts: "SNOW + MAN", word: "SNOWMAN ⛄", wrong: ["SNOWY 🌨️", "SUPERMAN 🦸", "POSTMAN 📬"], emoji: "⛄" },
+        { parts: "STAR + FISH", word: "STARFISH ⭐", wrong: ["STAR ⭐️", "JELLYFISH 🪼", "SHELL 🐚"], emoji: "⭐" },
+        { parts: "PLAY + GROUND", word: "PLAYGROUND 🛝", wrong: ["PLAYROOM 🧸", "PLAYING 🎮", "ROUND ⭕"], emoji: "🛝" },
+        { parts: "DRAG + ON", word: "DRAGON 🐉", wrong: ["DRAGGING 🛷", "ONWARD ➡️", "LIZARD 🦎"], emoji: "🐉" },
+        { parts: "COW + BOY", word: "COWBOY 🤠", wrong: ["COWGIRL 👧", "PLAYBOY 👦", "FARMER 👨‍🌾"], emoji: "🤠" }
+      ];
+      const pair = compounds[idx % compounds.length];
+      questionText = `Which compound word is made from: ${pair.parts}?`;
+      correctAnswer = pair.word;
+      options = [correctAnswer, ...pair.wrong];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 28) {
-      questionText = "Make 'CAT 🐱' plural (more than one):";
-      correctAnswer = "CATS 🐱🐱";
-      options = [correctAnswer, "CATES", "CATING", "CATED"];
-      visualContent = `<div style="font-size: 48px;">🐱🐱</div>`;
+      const plurals = [
+        { sing: "CAT 🐱", plur: "CATS 🐱🐱", wrongs: ["CATES", "CATING", "CATED"], emoji: "🐱🐱" },
+        { sing: "DOG 🐶", plur: "DOGS 🐶🐶", wrongs: ["DOGES", "DOGING", "DOGED"], emoji: "🐶🐶" },
+        { sing: "BIRD 🐦", plur: "BIRDS 🐦🐦", wrongs: ["BIRDES", "BIRDING", "BIRDED"], emoji: "🐦🐦" },
+        { sing: "BUG 🐛", plur: "BUGS 🐛🐛", wrongs: ["BUGGES", "BUGGING", "BUGGED"], emoji: "🐛🐛" },
+        { sing: "FROG 🐸", plur: "FROGS 🐸🐸", wrongs: ["FROGES", "FROGGING", "FROGGED"], emoji: "🐸🐸" },
+        { sing: "PIG 🐷", plur: "PIGS 🐷🐷", wrongs: ["PIGES", "PIGGING", "PIGGED"], emoji: "🐷🐷" },
+        { sing: "DUCK 🦆", plur: "DUCKS 🦆🦆", wrongs: ["DUCKES", "DUCKING", "DUCKED"], emoji: "🦆🦆" },
+        { sing: "CRAB 🦀", plur: "CRABS 🦀🦀", wrongs: ["CRABBES", "CRABBING", "CRABBED"], emoji: "🦀🦀" },
+        { sing: "FISH 🐟", plur: "FISH 🐟🐟", wrongs: ["FISHES", "FISHING", "FISHY"], emoji: "🐟🐟" },
+        { sing: "FOX 🦊", plur: "FOXES 🦊🦊", wrongs: ["FOXS", "FOXING", "FOXED"], emoji: "🦊🦊" }
+      ];
+      const pair = plurals[idx % plurals.length];
+      questionText = `Make '${pair.sing}' plural (more than one):`;
+      correctAnswer = pair.plur;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 29) {
-      questionText = "Make 'PLAY 🎮' past tense (already happened):";
-      correctAnswer = "PLAYED";
-      options = ["PLAYED", "PLAYS", "PLAYING", "PLAYER"];
+      const pastTense = [
+        { verb: "PLAY 🎮", past: "PLAYED", wrongs: ["PLAYS", "PLAYING", "PLAYER"] },
+        { verb: "WALK 🚶", past: "WALKED", wrongs: ["WALKS", "WALKING", "WALKER"] },
+        { verb: "JUMP 🏃", past: "JUMPED", wrongs: ["JUMPS", "JUMPING", "JUMPER"] },
+        { verb: "TALK 🗣️", past: "TALKED", wrongs: ["TALKS", "TALKING", "TALKER"] },
+        { verb: "COOK 🍳", past: "COOKED", wrongs: ["COOKS", "COOKING", "COOKER"] },
+        { verb: "WASH 🧼", past: "WASHED", wrongs: ["WASHES", "WASHING", "WASHER"] },
+        { verb: "BRUSH 🪥", past: "BRUSHED", wrongs: ["BRUSHES", "BRUSHING", "BRUSHER"] },
+        { verb: "LOOK 👀", past: "LOOKED", wrongs: ["LOOKS", "LOOKING", "LOOKER"] },
+        { verb: "OPEN 🔓", past: "OPENED", wrongs: ["OPENS", "OPENING", "OPENER"] },
+        { verb: "HELP 🤝", past: "HELPED", wrongs: ["HELPS", "HELPING", "HELPER"] }
+      ];
+      const pair = pastTense[idx % pastTense.length];
+      questionText = `Make '${pair.verb}' past tense (already happened):`;
+      correctAnswer = pair.past;
+      options = [correctAnswer, ...pair.wrongs];
       visualContent = `<div style="font-size: 48px;">📅</div>`;
     } else if (lessonId === 30) {
-      questionText = "Make 'RUN 🏃' continuous (happening right now):";
-      correctAnswer = "RUNNING";
-      options = ["RUNNING", "RUNS", "RUNNED", "RUNNER"];
+      const continuousTense = [
+        { verb: "RUN 🏃", cont: "RUNNING", wrongs: ["RUNS", "RUNNED", "RUNNER"] },
+        { verb: "SWIM 🏊", cont: "SWIMMING", wrongs: ["SWIMS", "SWIMMED", "SWIMMER"] },
+        { verb: "JUMP 🏃", cont: "JUMPING", wrongs: ["JUMPS", "JUMPED", "JUMPER"] },
+        { verb: "PLAY 🎮", cont: "PLAYING", wrongs: ["PLAYS", "PLAYED", "PLAYER"] },
+        { verb: "WALK 🚶", cont: "WALKING", wrongs: ["WALKS", "WALKED", "WALKER"] },
+        { verb: "READ 📖", cont: "READING", wrongs: ["READS", "READED", "READER"] },
+        { verb: "SING 🎤", cont: "SINGING", wrongs: ["SINGS", "SINGED", "SINGER"] },
+        { verb: "EAT 🍎", cont: "EATING", wrongs: ["EATS", "EATED", "EATER"] },
+        { verb: "FLY 🦅", cont: "FLYING", wrongs: ["FLIES", "FLIED", "FLYER"] },
+        { verb: "DRAW 🎨", cont: "DRAWING", wrongs: ["DRAWS", "DRAWED", "DRAWER"] }
+      ];
+      const pair = continuousTense[idx % continuousTense.length];
+      questionText = `Make '${pair.verb}' continuous (happening right now):`;
+      correctAnswer = pair.cont;
+      options = [correctAnswer, ...pair.wrongs];
       visualContent = `<div style="font-size: 48px;">🏃</div>`;
-    } else if (lessonId === 31) {
-      questionText = "What contraction is made from: DO + NOT?";
-      correctAnswer = "DON'T";
-      options = ["DON'T", "DOESN'T", "CAN'T", "DIDN'T"];
-      visualContent = `<div style="font-size: 36px; font-weight: 800;">DO + NOT</div>`;
-    } else if (lessonId === 32) {
-      questionText = "What contraction is made from: I + WILL?";
-      correctAnswer = "I'LL";
-      options = ["I'LL", "I'D", "I'VE", "I'M"];
-      visualContent = `<div style="font-size: 36px; font-weight: 800;">I + WILL</div>`;
-    } else if (lessonId === 33) {
-      questionText = "What contraction is made from: HE + IS?";
-      correctAnswer = "HE'S";
-      options = ["HE'S", "HIS", "HE'LL", "HE'D"];
-      visualContent = `<div style="font-size: 36px; font-weight: 800;">HE + IS</div>`;
-    } else if (lessonId === 34) {
-      questionText = "Select the word that rhymes with: 'CAT 🐱'";
-      correctAnswer = "HAT 🎩";
-      options = [correctAnswer, "DOG 🐶", "COW 🐮", "PIG 🐷"];
-      visualContent = `<div style="font-size: 48px;">🐱</div>`;
-    } else if (lessonId === 35) {
-      questionText = "Select the word that rhymes with: 'LAKE 🏞️'";
-      correctAnswer = "BAKE 🍞";
-      options = [correctAnswer, "LIKE 👍", "LATE ⏰", "LOOK 👀"];
-      visualContent = `<div style="font-size: 48px;">🏞️</div>`;
+    } else if (lessonId === 31 || lessonId === 32 || lessonId === 33) {
+      const contractions = [
+        { left: "DO + NOT", right: "DON'T", wrongs: ["DOESN'T", "CAN'T", "DIDN'T"] },
+        { left: "I + WILL", right: "I'LL", wrongs: ["I'D", "I'VE", "I'M"] },
+        { left: "HE + IS", right: "HE'S", wrongs: ["HIS", "HE'LL", "HE'D"] },
+        { left: "SHE + IS", right: "SHE'S", wrongs: ["HER", "SHE'LL", "SHE'D"] },
+        { left: "IT + IS", right: "IT'S", wrongs: ["ITS", "IT'LL", "IT'D"] },
+        { left: "WE + ARE", right: "WE'RE", wrongs: ["OUR", "WE'LL", "WE'VE"] },
+        { left: "THEY + ARE", right: "THEY'RE", wrongs: ["THEIR", "THEY'LL", "THEY'VE"] },
+        { left: "CAN + NOT", right: "CAN'T", wrongs: ["COULDN'T", "WON'T", "DON'T"] },
+        { left: "WILL + NOT", right: "WON'T", wrongs: ["WILLN'T", "DON'T", "CAN'T"] },
+        { left: "IS + NOT", right: "ISN'T", wrongs: ["AREN'T", "DON'T", "WASNT"] }
+      ];
+      const offset = lessonId === 31 ? 0 : lessonId === 32 ? 3 : 7;
+      const pair = contractions[(idx + offset) % contractions.length];
+      questionText = `What contraction is made from: ${pair.left}?`;
+      correctAnswer = pair.right;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 36px; font-weight: 800;">${pair.left}</div>`;
+    } else if (lessonId === 34 || lessonId === 35) {
+      const rhymesCatLake = [
+        { word: "CAT 🐱", rhyme: "HAT 🎩", wrongs: ["DOG 🐶", "COW 🐮", "PIG 🐷"], emoji: "🐱" },
+        { word: "LAKE 🏞️", rhyme: "BAKE 🍞", wrongs: ["LIKE 👍", "LATE ⏰", "LOOK 👀"], emoji: "🏞️" },
+        { word: "DOG 🐶", rhyme: "LOG 🪵", wrongs: ["CAT 🐱", "PIG 🐷", "FOX 🦊"], emoji: "🐶" },
+        { word: "PIG 🐷", rhyme: "WIG 🦱", wrongs: ["COW 🐮", "DOG 🐶", "HEN 🐔"], emoji: "🐷" },
+        { word: "HEN 🐔", rhyme: "PEN 🖊️", wrongs: ["CAT 🐱", "FOX 🦊", "OWL 🦉"], emoji: "🐔" },
+        { word: "FOX 🦊", rhyme: "BOX 📦", wrongs: ["DOG 🐶", "CAT 🐱", "BUG 🐛"], emoji: "🦊" },
+        { word: "BUG 🐛", rhyme: "RUG 🪞", wrongs: ["FLY 🪰", "BEE 🐝", "BAT 🦇"], emoji: "🐛" },
+        { word: "BEE 🐝", rhyme: "TREE 🌲", wrongs: ["FLY 🪰", "ANT 🐜", "BUG 🐛"], emoji: "🐝" },
+        { word: "BAT 🦇", rhyme: "RAT 🐀", wrongs: ["CAT 🐱", "DOG 🐶", "FOX 🦊"], emoji: "🦇" },
+        { word: "COW 🐮", rhyme: "HOW ❓", wrongs: ["CAT 🐱", "DOG 🐶", "PIG 🐷"], emoji: "🐮" }
+      ];
+      const offset = lessonId === 34 ? 0 : 5;
+      const pair = rhymesCatLake[(idx + offset) % rhymesCatLake.length];
+      questionText = `Select the word that rhymes with: '${pair.word}'`;
+      correctAnswer = pair.rhyme;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 36) {
-      questionText = "How many syllables are in the word 'ROBOT 🤖'?";
-      correctAnswer = "2";
+      const syllables = [
+        { word: "ROBOT 🤖", count: "2", emoji: "🤖" },
+        { word: "CAT 🐱", count: "1", emoji: "🐱" },
+        { word: "BANANA 🍌", count: "3", emoji: "🍌" },
+        { word: "DOG 🐶", count: "1", emoji: "🐶" },
+        { word: "BUTTERFLY 🦋", count: "3", emoji: "🦋" },
+        { word: "DINOSAUR 🦖", count: "3", emoji: "🦖" },
+        { word: "APPLE 🍎", count: "2", emoji: "🍎" },
+        { word: "COMPUTER 💻", count: "3", emoji: "💻" },
+        { word: "WATERMELON 🍉", count: "4", emoji: "🍉" },
+        { word: "SUN ☀️", count: "1", emoji: "☀️" }
+      ];
+      const pair = syllables[idx % syllables.length];
+      questionText = `How many syllables are in the word '${pair.word}'?`;
+      correctAnswer = pair.count;
       options = ["1", "2", "3", "4"];
-      visualContent = `<div style="font-size: 48px;">🤖</div>`;
-    } else if (lessonId === 37) {
-      questionText = "Which word starts with the blend 'frog' sound (fr)?";
-      correctAnswer = "FRIEND 🤝";
-      options = [correctAnswer, "BEND 🪝", "SEND ✉️", "LEND 🤝"];
-      visualContent = `<div style="font-size: 48px;">🐸</div>`;
-    } else if (lessonId === 38) {
-      questionText = "Which word ends with the blend 'nd'?";
-      correctAnswer = "HAND ✋";
-      options = [correctAnswer, "HAT 🎩", "HAS 🙋", "HAD 🪙"];
-      visualContent = `<div style="font-size: 48px;">✋</div>`;
-    } else if (lessonId === 39) {
-      questionText = "Select the word in the '-at' family:";
-      correctAnswer = "FLAT 📏";
-      options = [correctAnswer, "FLY 🪰", "FLOW 🌊", "FLAP 🕊️"];
-      visualContent = `<div style="font-size: 48px;">📏</div>`;
-    } else {
-      questionText = "Select the word in the '-op' family:";
-      correctAnswer = "SHOP 🏪";
-      options = [correctAnswer, "SHIP 🚢", "SHED 🏡", "SHUT 🔒"];
-      visualContent = `<div style="font-size: 48px;">🏪</div>`;
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 37 || lessonId === 38) {
+      const frndWords = [
+        { type: "starts with the blend 'fr' sound", word: "FRIEND 🤝", wrongs: ["BEND 🪝", "SEND ✉️", "LEND 🤝"], emoji: "🤝" },
+        { type: "starts with the blend 'fr' sound", word: "FROG 🐸", wrongs: ["DOG 🐶", "LOG 🪵", "HOG 🐷"], emoji: "🐸" },
+        { type: "starts with the blend 'fr' sound", word: "FRUIT 🍎", wrongs: ["SUIT 👔", "ROOT 🌱", "BOOT 🥾"], emoji: "🍎" },
+        { type: "starts with the blend 'fr' sound", word: "FREE 🆓", wrongs: ["TREE 🌲", "BEE 🐝", "SEE 👀"], emoji: "🆓" },
+        { type: "starts with the blend 'fr' sound", word: "FLY 🪰", wrongs: ["TRY 🛹", "CRY 😢", "DRY 🏜️"], emoji: "🪰" },
+        { type: "ends with the blend 'nd'", word: "HAND ✋", wrongs: ["HAT 🎩", "HAS 🙋", "HAD 🪙"], emoji: "✋" },
+        { type: "ends with the blend 'nd'", word: "BAND 🥁", wrongs: ["BAT 🦇", "BAG 🎒", "BAD 👎"], emoji: "🥁" },
+        { type: "ends with the blend 'nd'", word: "SAND 🏖️", wrongs: ["SAD 😢", "SAT 🪑", "SAP 🪵"], emoji: "🏖️" },
+        { type: "ends with the blend 'nd'", word: "WIND 💨", wrongs: ["WIG 🦱", "WIN 🏆", "WET 🌧️"], emoji: "💨" },
+        { type: "ends with the blend 'nd'", word: "POND 🐸", wrongs: ["POT 🍲", "POD 🫛", "POP 🍿"], emoji: "🐸" }
+      ];
+      const offset = lessonId === 37 ? 0 : 5;
+      const pair = frndWords[(idx + offset) % frndWords.length];
+      questionText = `Which word ${pair.type}?`;
+      correctAnswer = pair.word;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 39 || lessonId === 40) {
+      const families = [
+        { type: "-at", word: "FLAT 📏", wrongs: ["FLY 🪰", "FLOW 🌊", "FLAP 🕊️"], emoji: "📏" },
+        { type: "-at", word: "CAT 🐱", wrongs: ["CAR 🚗", "COW 🐮", "CUP 🥛"], emoji: "🐱" },
+        { type: "-at", word: "HAT 🎩", wrongs: ["HEN 🐔", "HIT 🥊", "HOT ☀️"], emoji: "🎩" },
+        { type: "-at", word: "SAT 🪑", wrongs: ["SAD 😢", "SUN ☀️", "SOW 🐖"], emoji: "🪑" },
+        { type: "-at", word: "BAT 🦇", wrongs: ["BAG 🎒", "BED 🛏️", "BOX 📦"], emoji: "🦇" },
+        { type: "-op", word: "SHOP 🏪", wrongs: ["SHIP 🚢", "SHED 🏡", "SHUT 🔒"], emoji: "🏪" },
+        { type: "-op", word: "HOP 🐰", wrongs: ["HEN 🐔", "HAT 🎩", "HUG 🫂"], emoji: "🐰" },
+        { type: "-op", word: "MOP 🧹", wrongs: ["MAP 🗺️", "MUG 🍺", "MIX 🥣"], emoji: "🧹" },
+        { type: "-op", word: "TOP 🔝", wrongs: ["TAP 🚰", "TEN 🔟", "TUB 🛁"], emoji: "🔝" },
+        { type: "-op", word: "POP 🍿", wrongs: ["PEN 🖊️", "PIN 📌", "POT 🍲"], emoji: "🍿" }
+      ];
+      const offset = lessonId === 39 ? 0 : 5;
+      const pair = families[(idx + offset) % families.length];
+      questionText = `Select the word in the '${pair.type}' family:`;
+      correctAnswer = pair.word;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     }
   } else if (unit === 3) {
     if (lessonId === 41) {
-      questionText = "Find the NOUN (naming word) in: 'The pig runs.'";
-      correctAnswer = "pig";
-      options = ["pig", "runs", "The"];
-      visualContent = `<div style="font-size: 48px;">🐷🏃</div>`;
+      const nouns = [
+        { sentence: "The pig runs.", noun: "pig", wrongs: ["runs", "The"], emoji: "🐷🏃" },
+        { sentence: "A dog barks.", noun: "dog", wrongs: ["barks", "A"], emoji: "🐶🗣️" },
+        { sentence: "The cat sleeps.", noun: "cat", wrongs: ["sleeps", "The"], emoji: "🐱💤" },
+        { sentence: "My bird sings.", noun: "bird", wrongs: ["sings", "My"], emoji: "🐦🎵" },
+        { sentence: "A boy jumps.", noun: "boy", wrongs: ["jumps", "A"], emoji: "👦🕴️" },
+        { sentence: "The girl paints.", noun: "girl", wrongs: ["paints", "The"], emoji: "👧🎨" },
+        { sentence: "Our car drives.", noun: "car", wrongs: ["drives", "Our"], emoji: "🚗💨" },
+        { sentence: "The fish swims.", noun: "fish", wrongs: ["swims", "The"], emoji: "🐟🌊" },
+        { sentence: "A flower grows.", noun: "flower", wrongs: ["grows", "A"], emoji: "🌸🌱" },
+        { sentence: "The frog hops.", noun: "frog", wrongs: ["hops", "The"], emoji: "🐸🐰" }
+      ];
+      const pair = nouns[idx % nouns.length];
+      questionText = `Find the NOUN (naming word) in: '${pair.sentence}'`;
+      correctAnswer = pair.noun;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 42) {
+      const pluralsList = [
+        { plur: "DOGS 🐶🐶", sing: ["DOG 🐶", "PUP 🐶"], emoji: "DOGS 🐶🐶" },
+        { plur: "CATS 🐱🐱", sing: ["CAT 🐱", "KITTY 🐱"], emoji: "CATS 🐱🐱" },
+        { plur: "BIRDS 🐦🐦", sing: ["BIRD 🐦", "NEST 🪹"], emoji: "BIRDS 🐦🐦" },
+        { plur: "CARS 🚗🚗", sing: ["CAR 🚗", "ROAD 🛣️"], emoji: "CARS 🚗🚗" },
+        { plur: "BOOKS 📚", sing: ["BOOK 📖", "PAGE 📄"], emoji: "BOOKS 📚" },
+        { plur: "TOYS 🧸🏎️", sing: ["TOY 🧸", "PLAY 🎮"], emoji: "TOYS 🧸🏎️" },
+        { plur: "TREES 🌲🌲", sing: ["TREE 🌲", "LEAF 🍃"], emoji: "TREES 🌲🌲" },
+        { plur: "BOYS 👦👦", sing: ["BOY 👦", "MAN 👨"], emoji: "BOYS 👦👦" },
+        { plur: "GIRLS 👧👧", sing: ["GIRL 👧", "LADY 👩"], emoji: "GIRLS 👧👧" },
+        { plur: "BALLS ⚽🏀", sing: ["BALL ⚽", "BAT ⚾"], emoji: "BALLS ⚽🏀" }
+      ];
+      const pair = pluralsList[idx % pluralsList.length];
       questionText = "Which noun means MORE than one?";
-      correctAnswer = "DOGS 🐶🐶";
-      options = [correctAnswer, "DOG 🐶", "PUP 🐶"];
-      visualContent = `<div style="font-size: 48px;">🐶🐶</div>`;
+      correctAnswer = pair.plur;
+      options = [correctAnswer, ...pair.sing];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji.split(' ')[1] || '🐶'}</div>`;
     } else if (lessonId === 43) {
+      const properNouns = [
+        { prop: "MARY 👧", comm: ["girl 👧", "kid 👦", "baby 👶"] },
+        { prop: "BOSTON 🏙️", comm: ["city 🏙️", "town 🏘️", "place 📍"] },
+        { prop: "SUNDAY 📅", comm: ["day 📅", "week 📆", "month 🗓️"] },
+        { prop: "OCTOBER 🎃", comm: ["month 🗓️", "year 📅", "season 🍂"] },
+        { prop: "AMERICA 🇺🇸", comm: ["country 🏳️", "land 🗺️", "state 🗺️"] },
+        { prop: "TOYOTA 🚗", comm: ["car 🚗", "truck 🚚", "vehicle 🚙"] },
+        { prop: "REX 🦖", comm: ["dinosaur 🦖", "pet 🐶", "animal 🦁"] },
+        { prop: "DR. SMITH 👨‍⚕️", comm: ["doctor 👨‍⚕️", "man 👨", "person 👤"] },
+        { prop: "DISNEYLAND 🎡", comm: ["park 🎡", "place 📍", "land 🗺️"] },
+        { prop: "CHRISTMAS 🎄", comm: ["holiday 🎉", "day 📅", "season ❄️"] }
+      ];
+      const pair = properNouns[idx % properNouns.length];
       questionText = "Which word is a PROPER noun (needs a capital letter)?";
-      correctAnswer = "MARY 👧";
-      options = [correctAnswer, "girl 👧", "kid 👦", "baby 👶"];
-      visualContent = `<div style="font-size: 48px;">👧</div>`;
+      correctAnswer = pair.prop;
+      options = [correctAnswer, ...pair.comm];
+      visualContent = `<div style="font-size: 48px;">${pair.prop.split(' ')[1] || '👧'}</div>`;
     } else if (lessonId === 44) {
-      questionText = "Find the VERB (action word) in: 'The boy jumps.'";
-      correctAnswer = "jumps";
-      options = ["jumps", "boy", "The"];
-      visualContent = `<div style="font-size: 48px;">👦🕴️</div>`;
+      const verbs = [
+        { sentence: "The boy jumps.", verb: "jumps", wrongs: ["boy", "The"], emoji: "👦🕴️" },
+        { sentence: "The girl paints.", verb: "paints", wrongs: ["girl", "The"], emoji: "👧🎨" },
+        { sentence: "The cat sleeps.", verb: "sleeps", wrongs: ["cat", "The"], emoji: "🐱💤" },
+        { sentence: "The dog runs.", verb: "runs", wrongs: ["dog", "The"], emoji: "🐶🏃" },
+        { sentence: "A bird flies.", verb: "flies", wrongs: ["bird", "A"], emoji: "🐦☁️" },
+        { sentence: "The fish swims.", verb: "swims", wrongs: ["fish", "The"], emoji: "🐟🌊" },
+        { sentence: "We eat apples.", verb: "eat", wrongs: ["apples", "We"], emoji: "🍎👄" },
+        { sentence: "Tim writes words.", verb: "writes", wrongs: ["words", "Tim"], emoji: "📝✍️" },
+        { sentence: "They play games.", verb: "play", wrongs: ["games", "They"], emoji: "🎮🕹️" },
+        { sentence: "She sings songs.", verb: "sings", wrongs: ["songs", "She"], emoji: "🎤🎵" }
+      ];
+      const pair = verbs[idx % verbs.length];
+      questionText = `Find the VERB (action word) in: '${pair.sentence}'`;
+      correctAnswer = pair.verb;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 45) {
+      const pastVerbs = [
+        { past: "He walked.", present: "He walks.", future: "He will walk." },
+        { past: "She painted.", present: "She paints.", future: "She will paint." },
+        { past: "The cat slept.", present: "The cat sleeps.", future: "The cat will sleep." },
+        { past: "The dog ran.", present: "The dog runs.", future: "The dog will run." },
+        { past: "We ate food.", present: "We eat food.", future: "We will eat food." },
+        { past: "They played.", present: "They play.", future: "They will play." },
+        { past: "He wrote.", present: "He writes.", future: "He will write." },
+        { past: "She sang.", present: "She sings.", future: "She will sing." },
+        { past: "The bird flew.", present: "The bird flies.", future: "The bird will fly." },
+        { past: "They swam.", present: "They swim.", future: "They will swim." }
+      ];
+      const pair = pastVerbs[idx % pastVerbs.length];
       questionText = "Which action is happening in the PAST (yesterday)?";
-      correctAnswer = "He walked.";
-      options = ["He walked.", "He walks.", "He will walk."];
+      correctAnswer = pair.past;
+      options = [pair.past, pair.present, pair.future];
       visualContent = `<div style="font-size: 48px;">🚶🕒</div>`;
     } else if (lessonId === 46) {
-      questionText = "Find the ADJECTIVE (describing word) in: 'We see a blue balloon.'";
-      correctAnswer = "blue";
-      options = ["blue", "balloon", "see", "We"];
-      visualContent = `<div style="font-size: 48px;">🎈</div>`;
-    } else if (lessonId === 47) {
-      questionText = "Choose the correct pronoun: 'Mary loves to paint. ___ is an artist.'";
-      correctAnswer = "She";
-      options = ["She", "He", "It", "They"];
-      visualContent = `<div style="font-size: 48px;">👩🎨</div>`;
-    } else if (lessonId === 48) {
-      questionText = "Choose the pronoun for the cat: 'The cat sleeps. ___ is warm.'";
-      correctAnswer = "It";
-      options = ["It", "She", "He", "They"];
-      visualContent = `<div style="font-size: 48px;">🐱💤</div>`;
-    } else if (lessonId === 49) {
-      questionText = "Choose the pronoun for multiple people: 'Tom and Jim play. ___ run fast.'";
-      correctAnswer = "They";
-      options = ["They", "We", "He", "She"];
-      visualContent = `<div style="font-size: 48px;">👦👦🏃</div>`;
-    } else if (lessonId === 50) {
-      questionText = "Which sentence starts with correct capitalization?";
-      correctAnswer = "The sun is hot.";
-      options = ["The sun is hot.", "the sun is hot.", "The Sun Is Hot."];
-      visualContent = `<div style="font-size: 48px;">☀️</div>`;
-    } else if (lessonId === 51) {
-      questionText = "Which name is capitalized correctly?";
-      correctAnswer = "Billy";
-      options = ["Billy", "billy", "BiLLy"];
-      visualContent = `<div style="font-size: 48px;">🧒</div>`;
-    } else if (lessonId === 52) {
-      questionText = "Choose the correct form of the word 'I': 'Can ___ play too?'";
-      correctAnswer = "I";
-      options = ["I", "i"];
-      visualContent = `<div style="font-size: 48px;">🙋</div>`;
-    } else if (lessonId === 53) {
-      questionText = "Which sentence ends with the correct mark?";
-      correctAnswer = "I like apples.";
-      options = ["I like apples.", "I like apples?", "I like apples,"];
-      visualContent = `<div style="font-size: 48px;">🍎</div>`;
-    } else if (lessonId === 54) {
-      questionText = "Which question is punctuated correctly?";
-      correctAnswer = "Where is my toy?";
-      options = ["Where is my toy?", "Where is my toy.", "Where is my toy!"];
-      visualContent = `<div style="font-size: 48px;">🧸❓</div>`;
-    } else if (lessonId === 55) {
-      questionText = "Which excited exclamation is punctuated correctly?";
-      correctAnswer = "We won the game!";
-      options = ["We won the game!", "We won the game.", "We won the game?"];
-      visualContent = `<div style="font-size: 48px;">🏆</div>`;
+      const adjectives = [
+        { sentence: "We see a blue balloon.", adj: "blue", wrongs: ["balloon", "see", "We"], emoji: "🎈" },
+        { sentence: "I eat a sweet apple.", adj: "sweet", wrongs: ["apple", "eat", "I"], emoji: "🍎" },
+        { sentence: "She has a tiny bug.", adj: "tiny", wrongs: ["bug", "has", "She"], emoji: "🐜" },
+        { sentence: "He owns a fast car.", adj: "fast", wrongs: ["car", "owns", "He"], emoji: "🚗" },
+        { sentence: "We saw a giant elephant.", adj: "giant", wrongs: ["elephant", "saw", "We"], emoji: "🐘" },
+        { sentence: "They live in a tall tree.", adj: "tall", wrongs: ["tree", "live", "They"], emoji: "🌳" },
+        { sentence: "The warm sun shines.", adj: "warm", wrongs: ["sun", "shines", "The"], emoji: "☀️" },
+        { sentence: "I hear a loud dog.", adj: "loud", wrongs: ["dog", "hear", "I"], emoji: "🐶" },
+        { sentence: "She wears a soft coat.", adj: "soft", wrongs: ["coat", "wears", "She"], emoji: "🧥" },
+        { sentence: "He found a round ball.", adj: "round", wrongs: ["ball", "found", "He"], emoji: "⚽" }
+      ];
+      const pair = adjectives[idx % adjectives.length];
+      questionText = `Find the ADJECTIVE (describing word) in: '${pair.sentence}'`;
+      correctAnswer = pair.adj;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 47 || lessonId === 48 || lessonId === 49) {
+      const pronouns = [
+        { sentence: "Mary loves to paint. ___ is an artist.", ans: "She", wrongs: ["He", "It", "They"], emoji: "👩🎨" },
+        { sentence: "The cat sleeps. ___ is warm.", ans: "It", wrongs: ["She", "He", "They"], emoji: "🐱💤" },
+        { sentence: "Tom and Jim play. ___ run fast.", ans: "They", wrongs: ["We", "He", "She"], emoji: "👦👦🏃" },
+        { sentence: "Tim rides his bike. ___ goes fast.", ans: "He", wrongs: ["She", "It", "They"], emoji: "👦🚲" },
+        { sentence: "The flower grows. ___ is red.", ans: "It", wrongs: ["She", "He", "They"], emoji: "🌹" },
+        { sentence: "Mom and I bake. ___ make cookies.", ans: "We", wrongs: ["They", "He", "She"], emoji: "👩👦🍪" },
+        { sentence: "The boys swim. ___ splash water.", ans: "They", wrongs: ["We", "He", "She"], emoji: "👦👦🏊" },
+        { sentence: "The girl runs. ___ wins the race.", ans: "She", wrongs: ["He", "It", "They"], emoji: "👧🏁" },
+        { sentence: "A bird flies. ___ eats worms.", ans: "It", wrongs: ["She", "He", "They"], emoji: "🐦🐛" },
+        { sentence: "The dog barks. ___ is happy.", ans: "It", wrongs: ["She", "He", "They"], emoji: "🐶" }
+      ];
+      const offset = lessonId === 47 ? 0 : lessonId === 48 ? 3 : 6;
+      const pair = pronouns[(idx + offset) % pronouns.length];
+      questionText = `Choose the correct pronoun: '${pair.sentence}'`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 50 || lessonId === 51 || lessonId === 52) {
+      const caps = [
+        { type: "sentence starts with correct capitalization", ans: "The sun is hot.", wrongs: ["the sun is hot.", "The Sun Is Hot."], emoji: "☀️" },
+        { type: "name is capitalized correctly", ans: "Billy", wrongs: ["billy", "BiLLy", "bILLY"], emoji: "🧒" },
+        { type: "form of the word 'I'", ans: "I", wrongs: ["i"], emoji: "🙋" },
+        { type: "sentence starts with correct capitalization", ans: "Cats can run.", wrongs: ["cats can run.", "Cats Can Run."], emoji: "🐱" },
+        { type: "name is capitalized correctly", ans: "Pam", wrongs: ["pam", "PaM", "pAM"], emoji: "👧" },
+        { type: "sentence starts with correct capitalization", ans: "A dog barks.", wrongs: ["a dog barks.", "A Dog Barks."], emoji: "🐶" },
+        { type: "name is capitalized correctly", ans: "Leo", wrongs: ["leo", "LeO", "lEO"], emoji: "👦" },
+        { type: "sentence starts with correct capitalization", ans: "We eat apples.", wrongs: ["we eat apples.", "We Eat Apples."], emoji: "🍎" },
+        { type: "name is capitalized correctly", ans: "Tim", wrongs: ["tim", "TiM", "tIM"], emoji: "👦" },
+        { type: "form of the word 'I'", ans: "I", wrongs: ["i"], emoji: "🙋" }
+      ];
+      const offset = lessonId === 50 ? 0 : lessonId === 51 ? 3 : 7;
+      const pair = caps[(idx + offset) % caps.length];
+      if (pair.type.startsWith("form")) {
+        questionText = "Choose the correct form of the word 'I': 'Can ___ play too?'";
+      } else {
+        questionText = `Which ${pair.type}?`;
+      }
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 53 || lessonId === 54 || lessonId === 55) {
+      const puncs = [
+        { type: "sentence ends with the correct mark", ans: "I like apples.", wrongs: ["I like apples?", "I like apples,"], emoji: "🍎" },
+        { type: "question is punctuated correctly", ans: "Where is my toy?", wrongs: ["Where is my toy.", "Where is my toy!"], emoji: "🧸❓" },
+        { type: "excited exclamation is punctuated correctly", ans: "We won the game!", wrongs: ["We won the game.", "We won the game?"], emoji: "🏆" },
+        { type: "sentence ends with the correct mark", ans: "The cat ran.", wrongs: ["The cat ran?", "The cat ran,"], emoji: "🐱" },
+        { type: "question is punctuated correctly", ans: "Can I play?", wrongs: ["Can I play.", "Can I play!"], emoji: "🎮❓" },
+        { type: "excited exclamation is punctuated correctly", ans: "What a big tree!", wrongs: ["What a big tree.", "What a big tree?"], emoji: "🌳" },
+        { type: "sentence ends with the correct mark", ans: "A dog barks.", wrongs: ["A dog barks?", "A dog barks,"], emoji: "🐶" },
+        { type: "question is punctuated correctly", ans: "Who is there?", wrongs: ["Who is there.", "Who is there!"], emoji: "🚪❓" },
+        { type: "excited exclamation is punctuated correctly", ans: "Look at that!", wrongs: ["Look at that.", "Look at that?"], emoji: "👀" },
+        { type: "sentence ends with the correct mark", ans: "It is warm.", wrongs: ["It is warm?", "It is warm,"], emoji: "☀️" }
+      ];
+      const offset = lessonId === 53 ? 0 : lessonId === 54 ? 3 : 6;
+      const pair = puncs[(idx + offset) % puncs.length];
+      questionText = `Which ${pair.type}?`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 56) {
-      questionText = "Find the preposition in: 'The cat sits under the table.'";
-      correctAnswer = "under";
-      options = ["under", "sits", "table", "cat"];
-      visualContent = `<div style="font-size: 48px;">🐱🏷️</div>`;
+      const prepositions = [
+        { sentence: "The cat sits under the table.", prep: "under", wrongs: ["sits", "table", "cat"], emoji: "🐱🏷️" },
+        { sentence: "The bird flies in the sky.", prep: "in", wrongs: ["flies", "sky", "bird"], emoji: "🐦☁️" },
+        { sentence: "A book is on the desk.", prep: "on", wrongs: ["desk", "book", "is"], emoji: "📖🛝" },
+        { sentence: "The dog ran into the house.", prep: "into", wrongs: ["house", "dog", "ran"], emoji: "🐶🏠" },
+        { sentence: "She walked to the school.", prep: "to", wrongs: ["school", "walked", "she"], emoji: "🚶🎒" },
+        { sentence: "A ball rolled under the car.", prep: "under", wrongs: ["car", "ball", "rolled"], emoji: "⚽🚗" },
+        { sentence: "The frog jumped off the log.", prep: "off", wrongs: ["log", "frog", "jumped"], emoji: "🐸🪵" },
+        { sentence: "They sat by the fire.", prep: "by", wrongs: ["fire", "sat", "they"], emoji: "🔥🧘" },
+        { sentence: "We walked through the park.", prep: "through", wrongs: ["park", "walked", "we"], emoji: "🏞️🚶" },
+        { sentence: "The cup is on the table.", prep: "on", wrongs: ["table", "cup", "is"], emoji: "🥛🏷️" }
+      ];
+      const pair = prepositions[idx % prepositions.length];
+      questionText = `Find the preposition in: '${pair.sentence}'`;
+      correctAnswer = pair.prep;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 57) {
-      questionText = "Which verb fits: 'The two dogs ___ in the park.'";
-      correctAnswer = "run";
-      options = ["run", "runs", "running"];
-      visualContent = `<div style="font-size: 48px;">🐶🐶🏃</div>`;
+      const svAgreements = [
+        { sentence: "The two dogs ___ in the park.", ans: "run", wrongs: ["runs", "running"], emoji: "🐶🐶🏃" },
+        { sentence: "The happy boy ___ high.", ans: "jumps", wrongs: ["jump", "jumping"], emoji: "👦🕴️" },
+        { sentence: "One small bird ___ a song.", ans: "sings", wrongs: ["sing", "singing"], emoji: "🐦🎵" },
+        { sentence: "The children ___ in the pool.", ans: "swim", wrongs: ["swims", "swimming"], emoji: "🧒🧒🏊" },
+        { sentence: "A red car ___ fast.", ans: "goes", wrongs: ["go", "going"], emoji: "🚗💨" },
+        { sentence: "Many frogs ___ in the pond.", ans: "hop", wrongs: ["hops", "hopping"], emoji: "🐸🐸🐰" },
+        { sentence: "My sweet mom ___ cookies.", ans: "bakes", wrongs: ["bake", "baking"], emoji: "👩🍪" },
+        { sentence: "The cats ___ on the bed.", ans: "sleep", wrongs: ["sleeps", "sleeping"], emoji: "🐱🐱💤" },
+        { sentence: "A big elephant ___ water.", ans: "drinks", wrongs: ["drink", "drinking"], emoji: "🐘💦" },
+        { sentence: "We ___ to school together.", ans: "walk", wrongs: ["walks", "walking"], emoji: "🎒🚶" }
+      ];
+      const pair = svAgreements[idx % svAgreements.length];
+      questionText = `Which verb fits: '${pair.sentence}'`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 58) {
+      const completeSentences = [
+        { sentence: "The cat ran.", fragments: ["Running cat", "Very fast cat"], emoji: "🐱🏁" },
+        { sentence: "A dog barks.", fragments: ["Loud barking dog", "In the house dog"], emoji: "🐶🗣️" },
+        { sentence: "The sun is hot.", fragments: ["Hot hot sun", "Shining in the sky"], emoji: "☀️" },
+        { sentence: "We eat apples.", fragments: ["Eating sweet apples", "The red apples we"], emoji: "🍎" },
+        { sentence: "Tim rides a bike.", fragments: ["Riding a fast bike", "Bike under the tree"], emoji: "🚲" },
+        { sentence: "The bird flies.", fragments: ["High flying bird", "In the blue sky bird"], emoji: "🐦" },
+        { sentence: "They swim fast.", fragments: ["Swimming in the pool", "Fast swimmers they"], emoji: "🏊" },
+        { sentence: "She paints a picture.", fragments: ["Painting a nice picture", "Picture on the wall"], emoji: "🎨" },
+        { sentence: "The car stopped.", fragments: ["Red stopping car", "At the red sign car"], emoji: "🚗🛑" },
+        { sentence: "A flower grows.", fragments: ["Growing red flower", "In the soft soil flower"], emoji: "🌸" }
+      ];
+      const pair = completeSentences[idx % completeSentences.length];
       questionText = "Which is a complete sentence (not a fragment)?";
-      correctAnswer = "The cat ran.";
-      options = ["The cat ran.", "Running cat", "Very fast cat"];
-      visualContent = `<div style="font-size: 48px;">🐱🏁</div>`;
-    } else if (lessonId === 59) {
-      questionText = "Combine these with 'and': 'I want apples ___ bananas.'";
-      correctAnswer = "and";
-      options = ["and", "but", "or"];
-      visualContent = `<div style="font-size: 48px;">🍎🍌</div>`;
-    } else {
-      questionText = "Choose the correct connector: 'It is raining, ___ I have my umbrella.'";
-      correctAnswer = "but";
-      options = ["but", "and", "or"];
-      visualContent = `<div style="font-size: 48px;">🌧️☔</div>`;
+      correctAnswer = pair.sentence;
+      options = [correctAnswer, ...pair.fragments];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 59 || lessonId === 60) {
+      const connectors = [
+        { sentence: "I want apples ___ bananas.", connector: "and", wrongs: ["but", "or"], emoji: "🍎🍌" },
+        { sentence: "It is raining, ___ I have my umbrella.", connector: "but", wrongs: ["and", "or"], emoji: "🌧️☔" },
+        { sentence: "Do you want milk ___ water?", connector: "or", wrongs: ["and", "but"], emoji: "🥛💦" },
+        { sentence: "I ran fast, ___ I missed the bus.", connector: "but", wrongs: ["and", "or"], emoji: "🏃🚌" },
+        { sentence: "Tim loves dogs ___ cats.", connector: "and", wrongs: ["but", "or"], emoji: "🐶🐱" },
+        { sentence: "You can draw a star ___ a heart.", connector: "or", wrongs: ["and", "but"], emoji: "⭐️❤️" },
+        { sentence: "The sun is out, ___ it is cold.", connector: "but", wrongs: ["and", "or"], emoji: "☀️🥶" },
+        { sentence: "She bought a book ___ a pen.", connector: "and", wrongs: ["but", "or"], emoji: "📖🖊️" },
+        { sentence: "Is the animal a cat ___ a dog?", connector: "or", wrongs: ["and", "but"], emoji: "🐱🐶❓" },
+        { sentence: "I like ice cream, ___ I don't like cake.", connector: "but", wrongs: ["and", "or"], emoji: "🍦🍰" }
+      ];
+      const offset = lessonId === 59 ? 0 : 5;
+      const pair = connectors[(idx + offset) % connectors.length];
+      questionText = `Choose the correct connector: '${pair.sentence}'`;
+      correctAnswer = pair.connector;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     }
   } else if (unit === 4) {
-    if (lessonId === 61) {
-      questionText = "What is a synonym (same meaning) for 'BIG'?";
-      correctAnswer = "LARGE";
-      options = ["LARGE", "SMALL", "TINY", "COLD"];
-      visualContent = `<div style="font-size: 48px;">🐘</div>`;
-    } else if (lessonId === 62) {
-      questionText = "What is the antonym (opposite meaning) of 'HOT'?";
-      correctAnswer = "COLD";
-      options = ["COLD", "WARM", "SUNNY", "RED"];
-      visualContent = `<div style="font-size: 48px;">🔥</div>`;
-    } else if (lessonId === 63) {
-      questionText = "Choose the correct homophone: 'I have ___ hands.'";
-      correctAnswer = "two";
-      options = ["two", "to", "too"];
-      visualContent = `<div style="font-size: 48px;">🙌</div>`;
-    } else if (lessonId === 64) {
-      questionText = "Choose the correct homophone: 'Fish swim in the ___.'";
-      correctAnswer = "sea";
-      options = ["sea", "see"];
-      visualContent = `<div style="font-size: 48px;">🌊</div>`;
-    } else if (lessonId === 65) {
-      questionText = "Choose the correct homophone: 'This card is ___ you.'";
-      correctAnswer = "for";
-      options = ["for", "four"];
-      visualContent = `<div style="font-size: 48px;">🎁</div>`;
-    } else if (lessonId === 66) {
-      questionText = "Which word belongs in the category: COLORS?";
-      correctAnswer = "Yellow 💛";
-      options = ["Yellow 💛", "Cat 🐱", "Apple 🍎", "Car 🚗"];
-      visualContent = `<div style="font-size: 48px;">🎨</div>`;
-    } else if (lessonId === 67) {
-      questionText = "Which word belongs in the category: ANIMALS?";
-      correctAnswer = "Lion 🦁";
-      options = ["Lion 🦁", "Tree 🌲", "Chair 🪑", "Bus 🚌"];
-      visualContent = `<div style="font-size: 48px;">🦁</div>`;
-    } else if (lessonId === 68) {
-      questionText = "Which word belongs in the category: CLOTHING?";
-      correctAnswer = "Shirt 👕";
-      options = ["Shirt 👕", "Apple 🍎", "Dog 🐶", "Pen 🖊️"];
-      visualContent = `<div style="font-size: 48px;">👕</div>`;
-    } else if (lessonId === 69) {
-      questionText = "Which word belongs in the category: FRUITS?";
-      correctAnswer = "Banana 🍌";
-      options = ["Banana 🍌", "Carrot 🥕", "Potato 🥔", "Milk 🥛"];
-      visualContent = `<div style="font-size: 48px;">🍎</div>`;
+    if (lessonId === 61 || lessonId === 62) {
+      const synAnts = [
+        { type: "synonym (same meaning) for 'BIG'", ans: "LARGE", wrongs: ["SMALL", "TINY", "COLD"], emoji: "🐘" },
+        { type: "antonym (opposite meaning) of 'HOT'", ans: "COLD", wrongs: ["WARM", "SUNNY", "RED"], emoji: "🔥" },
+        { type: "synonym (same meaning) for 'TINY'", ans: "SMALL", wrongs: ["BIG", "LARGE", "TALL"], emoji: "🐜" },
+        { type: "antonym (opposite meaning) of 'HAPPY'", ans: "SAD", wrongs: ["GLAD", "FUN", "WARM"], emoji: "😄😢" },
+        { type: "synonym (same meaning) for 'FAST'", ans: "QUICK", wrongs: ["SLOW", "COLD", "TALL"], emoji: "🏃" },
+        { type: "antonym (opposite meaning) of 'FAST'", ans: "SLOW", wrongs: ["QUICK", "FAST", "HIGH"], emoji: "🐢" },
+        { type: "synonym (same meaning) for 'SAD'", ans: "UNHAPPY", wrongs: ["HAPPY", "GLAD", "FUN"], emoji: "😢" },
+        { type: "antonym (opposite meaning) of 'UP'", ans: "DOWN", wrongs: ["HIGH", "ABOVE", "TALL"], emoji: "⬆️⬇️" },
+        { type: "synonym (same meaning) for 'GLAD'", ans: "HAPPY", wrongs: ["SAD", "ANGRY", "COLD"], emoji: "😄" },
+        { type: "antonym (opposite meaning) of 'WET'", ans: "DRY", wrongs: ["DAMP", "RAINY", "COLD"], emoji: "🌧️☀️" }
+      ];
+      const offset = lessonId === 61 ? 0 : 5;
+      const pair = synAnts[(idx + offset) % synAnts.length];
+      questionText = `What is the ${pair.type}?`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 63 || lessonId === 64 || lessonId === 65) {
+      const homophones = [
+        { sentence: "I have ___ hands.", ans: "two", wrongs: ["to", "too"], emoji: "🙌" },
+        { sentence: "Fish swim in the ___.", ans: "sea", wrongs: ["see"], emoji: "🌊" },
+        { sentence: "This card is ___ you.", ans: "for", wrongs: ["four"], emoji: "🎁" },
+        { sentence: "I can ___ the bird singing.", ans: "hear", wrongs: ["here"], emoji: "👂🐦" },
+        { sentence: "We sat over ___ near the tree.", ans: "there", wrongs: ["their", "they're"], emoji: "📍" },
+        { sentence: "A rabbit is called a ___.", ans: "hare", wrongs: ["hair"], emoji: "🐇" },
+        { sentence: "I ___ a red apple.", ans: "ate", wrongs: ["eight"], emoji: "🍎👅" },
+        { sentence: "The sky is ___ today.", ans: "blue", wrongs: ["blew"], emoji: "☁️" },
+        { sentence: "I ___ the game!", ans: "won", wrongs: ["one"], emoji: "🏆" },
+        { sentence: "We went ___ the park yesterday.", ans: "to", wrongs: ["two", "too"], emoji: "🏞️" }
+      ];
+      const offset = lessonId === 63 ? 0 : lessonId === 64 ? 3 : 6;
+      const pair = homophones[(idx + offset) % homophones.length];
+      questionText = `Choose the correct homophone: '${pair.sentence}'`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 66 || lessonId === 67 || lessonId === 68 || lessonId === 69) {
+      const categories = [
+        { cat: "COLORS", ans: "Yellow 💛", wrongs: ["Cat 🐱", "Apple 🍎", "Car 🚗"], emoji: "🎨" },
+        { cat: "ANIMALS", ans: "Lion 🦁", wrongs: ["Tree 🌲", "Chair 🪑", "Bus 🚌"], emoji: "🦁" },
+        { cat: "CLOTHING", ans: "Shirt 👕", wrongs: ["Apple 🍎", "Dog 🐶", "Pen 🖊️"], emoji: "👕" },
+        { cat: "FRUITS", ans: "Banana 🍌", wrongs: ["Carrot 🥕", "Potato 🥔", "Milk 🥛"], emoji: "🍎" },
+        { cat: "COLORS", ans: "Blue 💙", wrongs: ["Dog 🐶", "Hat 🎩", "Book 📖"], emoji: "🎨" },
+        { cat: "ANIMALS", ans: "Elephant 🐘", wrongs: ["Car 🚗", "Spoon 🥄", "Desk 🛝"], emoji: "🐘" },
+        { cat: "CLOTHING", ans: "Pants 👖", wrongs: ["Banana 🍌", "Cat 🐱", "Paper 📄"], emoji: "👖" },
+        { cat: "FRUITS", ans: "Apple 🍎", wrongs: ["Onion 🧅", "Egg 🥚", "Water 💦"], emoji: "🍎" },
+        { cat: "VEGETABLES", ans: "Carrot 🥕", wrongs: ["Apple 🍎", "Pig 🐷", "Cup 🥛"], emoji: "🥕" },
+        { cat: "TOYS", ans: "Doll 🪆", wrongs: ["Shirt 👕", "Cow 🐮", "Pen 🖊️"], emoji: "🧸" }
+      ];
+      const offset = lessonId === 66 ? 0 : lessonId === 67 ? 2 : lessonId === 68 ? 5 : 7;
+      const pair = categories[(idx + offset) % categories.length];
+      questionText = `Which word belongs in the category: ${pair.cat}?`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 70) {
-      questionText = "Which animal word also means a wooden stick used in baseball?";
-      correctAnswer = "BAT 🦇";
-      options = ["BAT 🦇", "CAT 🐱", "FLY 🪰", "BEE 🐝"];
-      visualContent = `<div style="font-size: 48px;">⚾</div>`;
-    } else if (lessonId === 71) {
-      questionText = "What does the prefix 'un-' make the word 'happy' mean?";
-      correctAnswer = "not happy 😢";
-      options = ["not happy 😢", "very happy 😄", "happy again 😄", "never happy 😢"];
-      visualContent = `<div style="font-size: 48px;">😢</div>`;
-    } else if (lessonId === 72) {
-      questionText = "What does the prefix 're-' make the word 'read' mean?";
-      correctAnswer = "read again 📖";
-      options = ["read again 📖", "not read 🚫", "before reading 📚", "who reads 🧒"];
-      visualContent = `<div style="font-size: 48px;">📖</div>`;
-    } else if (lessonId === 73) {
-      questionText = "What does the suffix '-ful' make the word 'helpful' mean?";
-      correctAnswer = "full of help 🤝";
-      options = ["full of help 🤝", "no help 🚫", "help again 🤝", "not helpful 😢"];
-      visualContent = `<div style="font-size: 48px;">🤝</div>`;
-    } else if (lessonId === 74) {
-      questionText = "What does the suffix '-less' make the word 'fearless' mean?";
-      correctAnswer = "without fear 💪";
-      options = ["without fear 💪", "full of fear 😨", "fear again 😨", "not fear 🚫"];
-      visualContent = `<div style="font-size: 48px;">🦁💪</div>`;
-    } else if (lessonId === 75) {
-      questionText = "What is the base root word of 'PLAYFUL'?";
-      correctAnswer = "PLAY";
-      options = ["PLAY", "PLAYFUL", "FUL", "PLAYER"];
-      visualContent = `<div style="font-size: 48px;">🎮</div>`;
-    } else if (lessonId === 76) {
-      questionText = "Match the opposite of 'SMALL':";
-      correctAnswer = "BIG 🐘";
-      options = ["BIG 🐘", "TINY 🐜", "COLD 🧊", "SOFT 🧸"];
-      visualContent = `<div style="font-size: 48px;">🐜</div>`;
-    } else if (lessonId === 77) {
-      questionText = "Match the opposite of 'STAND':";
-      correctAnswer = "SIT 🪑";
-      options = ["SIT 🪑", "RUN 🏃", "JUMP 🕴️", "WALK 🚶"];
-      visualContent = `<div style="font-size: 48px;">🧍</div>`;
-    } else if (lessonId === 78) {
-      questionText = "Use context clues: 'The ___ shined bright in the sky, warming the pool.'";
-      correctAnswer = "sun";
-      options = ["sun", "rain", "moon", "star"];
-      visualContent = `<div style="font-size: 48px;">🏊</div>`;
-    } else if (lessonId === 79) {
-      questionText = "Fill in the blank: 'I brushed my ___ before going to bed.'";
-      correctAnswer = "teeth";
-      options = ["teeth", "shoes", "toys", "dog"];
-      visualContent = `<div style="font-size: 48px;">🪥</div>`;
+      const multiMeanings = [
+        { desc: "animal word also means a wooden stick used in baseball", ans: "BAT 🦇", wrongs: ["CAT 🐱", "FLY 🪰", "BEE 🐝"], emoji: "⚾" },
+        { desc: "insect word also means to travel through the air like a plane", ans: "FLY 🪰", wrongs: ["BUG 🐛", "ANT 🐜", "SPIDER 🕷️"], emoji: "✈️" },
+        { desc: "animal word also means to bend down at the front to say hello", ans: "BOW 🙇", wrongs: ["DOG 🐶", "CAT 🐱", "PIG 🐷"], emoji: "🙇" },
+        { desc: "part of a tree also means to go away or depart", ans: "LEAVE 🍃", wrongs: ["ROOT 🌱", "STEM 🌱", "FLOWER 🌸"], emoji: "🍃" },
+        { desc: "item to check time also means to look at something carefully", ans: "WATCH ⌚", wrongs: ["CLOCK ⏰", "TIMER ⏱️", "GLASS 👀"], emoji: "👀" },
+        { desc: "metal container also means the ability to do something", ans: "CAN 🥫", wrongs: ["POT 🍲", "CUP 🥛", "PAN 🍳"], emoji: "🥫" },
+        { desc: "tool for writing also means a fenced area for farm animals", ans: "PEN 🖊️", wrongs: ["PENCIL ✏️", "BARN 🚜", "COOP 🐔"], emoji: "🖊️" },
+        { desc: "flat surface to write on also means a soft piece of tree foliage", ans: "SHEET 📄", wrongs: ["BOOK 📖", "PAPER 📄", "WOOD 🪵"], emoji: "📄" },
+        { desc: "sound a dog marks also means the outer wood covering of a tree", ans: "BARK 🌳", wrongs: ["HOWL 🐺", "GROWL 🐶", "ROOT 🌱"], emoji: "🌳" },
+        { desc: "coin worth one cent also means a boy named William", ans: "BILL 🪙", wrongs: ["DIME 🪙", "PENNY 🪙", "BOY 👦"], emoji: "🪙" }
+      ];
+      const pair = multiMeanings[idx % multiMeanings.length];
+      questionText = `Which ${pair.desc}?`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 71 || lessonId === 72 || lessonId === 73 || lessonId === 74 || lessonId === 75) {
+      const morphs = [
+        { type: "prefix 'un-' make the word 'happy' mean", ans: "not happy 😢", wrongs: ["very happy 😄", "happy again 😄", "never happy 😢"], emoji: "😢" },
+        { type: "prefix 're-' make the word 'read' mean", ans: "read again 📖", wrongs: ["not read 🚫", "before reading 📚", "who reads 🧒"], emoji: "📖" },
+        { type: "suffix '-ful' make the word 'helpful' mean", ans: "full of help 🤝", wrongs: ["no help 🚫", "help again 🤝", "not helpful 😢"], emoji: "🤝" },
+        { type: "suffix '-less' make the word 'fearless' mean", ans: "without fear 💪", wrongs: ["full of fear 😨", "fear again 😨", "not fear 🚫"], emoji: "🦁💪" },
+        { type: "base root word of 'PLAYFUL'", ans: "PLAY", wrongs: ["PLAYFUL", "FUL", "PLAYER"], emoji: "🎮" },
+        { type: "prefix 'un-' make the word 'kind' mean", ans: "not kind 😢", wrongs: ["very kind 😄", "kind again 😄", "never kind 😢"], emoji: "😢" },
+        { type: "prefix 're-' make the word 'paint' mean", ans: "paint again 🎨", wrongs: ["not paint 🚫", "before painting 🎨", "one who paints 🎨"], emoji: "🎨" },
+        { type: "suffix '-ful' make the word 'joyful' mean", ans: "full of joy 😄", wrongs: ["without joy 😢", "joy again 😄", "not joyful 😢"], emoji: "😄" },
+        { type: "suffix '-less' make the word 'homeless' mean", ans: "without a home 🏠", wrongs: ["full of homes 🏠", "home again 🏠", "has a home 🏠"], emoji: "🏠" },
+        { type: "base root word of 'HELPFUL'", ans: "HELP", wrongs: ["HELPFUL", "FUL", "HELPER"], emoji: "🤝" }
+      ];
+      const offset = lessonId === 71 ? 0 : lessonId === 72 ? 1 : lessonId === 73 ? 2 : lessonId === 74 ? 3 : 4;
+      const pair = morphs[(idx + offset) % morphs.length];
+      if (pair.type.startsWith("base")) {
+        questionText = `What is the ${pair.type}?`;
+      } else {
+        questionText = `What does the ${pair.type}?`;
+      }
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
+    } else if (lessonId === 76 || lessonId === 77) {
+      const opposites = [
+        { word: "SMALL", opp: "BIG 🐘", wrongs: ["TINY 🐜", "COLD 🧊", "SOFT 🧸"], emoji: "🐜" },
+        { word: "STAND", opp: "SIT 🪑", wrongs: ["RUN 🏃", "JUMP 🕴️", "WALK 🚶"], emoji: "🧍" },
+        { word: "HOT", opp: "COLD 🧊", wrongs: ["WARM ☀️", "DRY 🏜️", "RED 🔴"], emoji: "🔥" },
+        { word: "HAPPY", opp: "SAD 😢", wrongs: ["GLAD 😄", "FUN 🎉", "MAD 😡"], emoji: "😄" },
+        { word: "UP", opp: "DOWN ⬇️", wrongs: ["HIGH ⬆️", "ABOVE ☁️", "TALL 🌲"], emoji: "⬆️" },
+        { word: "FAST", opp: "SLOW 🐢", wrongs: ["QUICK 🏃", "RAPID ⚡", "HIGH ✈️"], emoji: "🏎️" },
+        { word: "DAY", opp: "NIGHT 🌑", wrongs: ["SUN ☀️", "WARM ☀️", "LIGHT 💡"], emoji: "☀️" },
+        { word: "SOFT", opp: "HARD 🪨", wrongs: ["SMOOTH 🧼", "TINY 🐜", "EASY 🟢"], emoji: "🧸" },
+        { word: "HEAVY", opp: "LIGHT 🎈", wrongs: ["BIG 🐘", "TALL 🌲", "DARK 🌑"], emoji: "🪨" },
+        { word: "IN", opp: "OUT 🚪", wrongs: ["UNDER 👇", "ON ☝️", "BY 📍"], emoji: "📥" }
+      ];
+      const offset = lessonId === 76 ? 0 : 5;
+      const pair = opposites[(idx + offset) % opposites.length];
+      questionText = `Match the opposite of '${pair.word}':`;
+      correctAnswer = pair.opp;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else {
-      questionText = "What word is associated with 'SKY' and 'RAIN'?";
-      correctAnswer = "CLOUD ☁️";
-      options = ["CLOUD ☁️", "GRASS 🌱", "FIRE 🔥", "ROAD 🛣️"];
-      visualContent = `<div style="font-size: 48px;">🌧️</div>`;
+      const contexts = [
+        { sentence: "The ___ shined bright in the sky, warming the pool.", ans: "sun", wrongs: ["rain", "moon", "star"], emoji: "🏊" },
+        { sentence: "I brushed my ___ before going to bed.", ans: "teeth", wrongs: ["shoes", "toys", "dog"], emoji: "🪥" },
+        { sentence: "What word is associated with 'SKY' and 'RAIN'?", ans: "CLOUD ☁️", wrongs: ["GRASS 🌱", "FIRE 🔥", "ROAD 🛣️"], emoji: "🌧️" },
+        { sentence: "A bird built a ___ in the green tree.", ans: "nest", wrongs: ["house", "car", "dog"], emoji: "🌳🐦" },
+        { sentence: "We put on warm coats because it is ___ outside.", ans: "cold", wrongs: ["hot", "sunny", "dry"], emoji: "🧥❄️" },
+        { sentence: "The fish swims in the blue ___.", ans: "water", wrongs: ["sand", "tree", "grass"], emoji: "🐟🌊" },
+        { sentence: "What word is associated with 'DOG' and 'LEASH'?", ans: "PUPPY 🐶", wrongs: ["CAT 🐱", "BIRD 🐦", "FISH 🐟"], emoji: "🦮" },
+        { sentence: "I put on my ___ before tying the laces.", ans: "shoes", wrongs: ["hat", "shirt", "coat"], emoji: "👟" },
+        { sentence: "The happy boy ate a sweet ___.", ans: "apple", wrongs: ["stone", "pen", "hat"], emoji: "🍎" },
+        { sentence: "What word is associated with 'FARM' and 'TRACTOR'?", ans: "BARN 🚜", wrongs: ["SHOP 🏪", "HOUSE 🏠", "POOL 🏊"], emoji: "🚜" }
+      ];
+      const offset = lessonId === 78 ? 0 : lessonId === 79 ? 3 : 6;
+      const pair = contexts[(idx + offset) % contexts.length];
+      if (pair.sentence.startsWith("What word")) {
+        questionText = pair.sentence;
+      } else {
+        questionText = `Use context clues: '${pair.sentence}'`;
+      }
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     }
   } else if (unit === 5) {
-    const passage = "Passage: Pip is a little blue bird. He lives in a tall green tree. Pip loves to eat sweet yellow worms.";
-    visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${passage}</div>`;
-    
+    const passages = [
+      {
+        text: "Pip is a little blue bird. He lives in a tall green tree. Pip loves to eat sweet yellow worms.",
+        char: "Pip (a bird) 🐦", charW: ["A worm 🐛", "A cat 🐱", "A tree 🌳"],
+        set: "In a tall green tree 🌳", setW: ["In a dog house 🏠", "In a deep lake 🌊", "In a sandy desert 🏜️"],
+        top: "Pip the bird and where he lives 🐦", topW: ["How to catch sweet worms 🐛", "Why trees are green 🌳", "How to fly high ☁️"]
+      },
+      {
+        text: "Max is a funny dog. He lives in a cozy red doghouse. Today he found a big bone in the dirt.",
+        char: "Max (a dog) 🐶", charW: ["A bone 🦴", "A cat 🐱", "A squirrel 🐿️"],
+        set: "In a cozy red doghouse 🏠", setW: ["In a bird nest 🪹", "In the ocean 🌊", "At the school 🏫"],
+        top: "Max the dog and his bone 🐶", topW: ["How to dig holes 🕳️", "Why dogs bark 🐶", "Different kinds of bones 🦴"]
+      },
+      {
+        text: "Leo has a toy robot. The robot is silver and has red flashing eyes. It can dance in the living room!",
+        char: "Leo's robot 🤖", charW: ["Leo 👦", "A doll 🪆", "A teddy bear 🧸"],
+        set: "In the living room 🛋️", setW: ["In a tall tree 🌳", "In the ocean 🌊", "In a sandbox 🏜️"],
+        top: "Leo's silver toy robot 🤖", topW: ["How to build a robot 🤖", "Why eyes flash red 🔴", "Different styles of dancing 🕺"]
+      },
+      {
+        text: "Pam and Kim are best friends. They like to swing at the park. Today they ate sweet ice cream.",
+        char: "Pam and Kim 👧👧", charW: ["A dog and cat 🐶🐱", "Two boys 👦👦", "A teacher 👩‍🏫"],
+        set: "At the park 🛝", setW: ["At the library 📚", "In the ocean 🌊", "In a car 🚗"],
+        top: "Pam and Kim's day at the park 🛝", topW: ["How to make ice cream 🍦", "Why swings move 🛝", "Different park rules 🛝"]
+      },
+      {
+        text: "Luna is a small white cat. She sleeps on a soft yellow rug. Luna loves to chase toy mice.",
+        char: "Luna (a cat) 🐱", charW: ["A mouse 🐭", "A dog 🐶", "A rug 🪞"],
+        set: "On a soft yellow rug 🪞", setW: ["In a tall tree 🌳", "In a wet lake 🌊", "At the store 🏪"],
+        top: "Luna the cat sleeping and playing 🐱", topW: ["How to catch mice 🐭", "Why rugs are yellow 🪞", "How cats sleep 🐱"]
+      },
+      {
+        text: "Sam is a young boy. He lives in a tall apartment in the city. Sam loves to draw trains.",
+        char: "Sam (a boy) 👦", charW: ["A train 🚂", "A conductor 👨‍✈️", "A dog 🐶"],
+        set: "In a city apartment 🏢", setW: ["On a farm 🚜", "In a forest 🌲", "At the beach 🏖️"],
+        top: "Sam and his love for drawing trains 🚂", topW: ["How trains work 🚂", "Why apartments are tall 🏢", "How to paint cities 🎨"]
+      },
+      {
+        text: "Bella is a brown horse. She lives in a wide green field. Bella runs fast all day.",
+        char: "Bella (a horse) 🐴", charW: ["A cow 🐮", "A farmer 👨‍🌾", "A field 🌾"],
+        set: "In a wide green field 🌾", setW: ["In the ocean 🌊", "In a desert 🏜️", "At a store 🏪"],
+        top: "Bella the horse running in the field 🐴", topW: ["How fields grow 🌾", "Why horses run 🐴", "Different horse colors 🐴"]
+      },
+      {
+        text: "Tim is a little boy. He sits at his desk in school. Tim writes a letter to his grandma.",
+        char: "Tim (a boy) 👦", charW: ["Grandma 👵", "A letter ✉️", "The teacher 👩‍🏫"],
+        set: "At his desk in school 🏫", setW: ["In a park 🛝", "In the ocean 🌊", "At a farm 🚜"],
+        top: "Tim writing a letter at school 🏫", topW: ["How to write letters ✉️", "Why school is fun 🏫", "Grandma's house 🏠"]
+      },
+      {
+        text: "Zack is a green frog. He lives in a wet pond. Zack hops on big green lily pads.",
+        char: "Zack (a frog) 🐸", charW: ["A lily pad 🪷", "A fish 🐟", "A bug 🐛"],
+        set: "In a wet pond 🐸", setW: ["In a desert 🏜️", "In a city apartment 🏢", "At the library 📚"],
+        top: "Zack the frog hopping in the pond 🐸", topW: ["How lily pads grow 🪷", "Why frogs are green 🐸", "Different pond animals 🐟"]
+      },
+      {
+        text: "Maya is a smart girl. She visits the library every Friday. Maya loves to read space books.",
+        char: "Maya (a girl) 👧", charW: ["A librarian 👩‍💼", "A spaceship 🚀", "A book 📖"],
+        set: "At the library 📚", setW: ["At the park 🛝", "In the ocean 🌊", "At the zoo 🦁"],
+        top: "Maya visiting the library to read 📚", topW: ["How spaceships fly 🚀", "Why libraries are quiet 📚", "Different space planets 🪐"]
+      }
+    ];
+
     if (lessonId === 81) {
+      const pair = passages[idx % passages.length];
       questionText = "Who is the main character in the passage?";
-      correctAnswer = "Pip (a bird) 🐦";
-      options = [correctAnswer, "A worm 🐛", "A cat 🐱", "A tree 🌳"];
+      correctAnswer = pair.char;
+      options = [correctAnswer, ...pair.charW];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${pair.text}</div>`;
     } else if (lessonId === 82) {
+      const pair = passages[idx % passages.length];
       questionText = "Where is the setting of the story?";
-      correctAnswer = "In a tall green tree 🌳";
-      options = [correctAnswer, "In a dog house 🏠", "In a deep lake 🌊", "In a sandy desert 🏜️"];
+      correctAnswer = pair.set;
+      options = [correctAnswer, ...pair.setW];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${pair.text}</div>`;
     } else if (lessonId === 83) {
+      const pair = passages[idx % passages.length];
       questionText = "What is the main topic of this passage?";
-      correctAnswer = "Pip the bird and where he lives 🐦";
-      options = [correctAnswer, "How to catch sweet worms 🐛", "Why trees are green 🌳", "How to fly high ☁️"];
-    } else if (lessonId === 84) {
-      questionText = "In a story, where do you learn about the characters first?";
-      correctAnswer = "At the beginning 🎬";
-      options = [correctAnswer, "At the ending 🏁", "In the index 📚", "Nowhere 🚫"];
-      visualContent = `<div style="font-size: 48px;">🎬</div>`;
-    } else if (lessonId === 85) {
-      questionText = "In a story, where do we find out how the problem is solved?";
-      correctAnswer = "At the ending 🏁";
-      options = [correctAnswer, "At the beginning 🎬", "In the title 🏷️", "In the middle 📖"];
-      visualContent = `<div style="font-size: 48px;">🏁</div>`;
+      correctAnswer = pair.top;
+      options = [correctAnswer, ...pair.topW];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${pair.text}</div>`;
+    } else if (lessonId === 84 || lessonId === 85) {
+      const qp = lessonId === 84 
+        ? { q: "In a story, where do you learn about the characters first?", a: "At the beginning 🎬", o: ["At the beginning 🎬", "At the ending 🏁", "In the index 📚", "Nowhere 🚫"], emoji: "🎬" }
+        : { q: "In a story, where do we find out how the problem is solved?", a: "At the ending 🏁", o: ["At the ending 🏁", "At the beginning 🎬", "In the title 🏷️", "In the middle 📖"], emoji: "🏁" };
+      questionText = qp.q;
+      correctAnswer = qp.a;
+      options = qp.o;
+      visualContent = `<div style="font-size: 48px;">${qp.emoji}</div>`;
     } else if (lessonId === 86) {
-      questionText = "If you want to know the character's location, which question word do you use?";
-      correctAnswer = "WHERE 📍";
-      options = ["WHERE 📍", "WHO 👤", "WHAT ❓", "WHEN ⏰"];
-      visualContent = `<div style="font-size: 48px;">📍</div>`;
+      const qWords = [
+        { q: "If you want to know the character's location, which question word do you use?", ans: "WHERE 📍", wrongs: ["WHO 👤", "WHAT ❓", "WHEN ⏰"], emoji: "📍" },
+        { q: "If you want to know which person did something, which question word do you use?", ans: "WHO 👤", wrongs: ["WHERE 📍", "WHY ❓", "WHEN ⏰"], emoji: "👤" },
+        { q: "If you want to know the time an event happened, which question word do you use?", ans: "WHEN ⏰", wrongs: ["WHO 👤", "WHERE 📍", "WHAT ❓"], emoji: "⏰" },
+        { q: "If you want to know the reason something happened, which question word do you use?", ans: "WHY ❓", wrongs: ["WHO 👤", "WHERE 📍", "WHEN ⏰"], emoji: "❓" }
+      ];
+      const qp = qWords[idx % qWords.length];
+      questionText = qp.q;
+      correctAnswer = qp.ans;
+      options = [correctAnswer, ...qp.wrongs];
+      visualContent = `<div style="font-size: 48px;">${qp.emoji}</div>`;
     } else if (lessonId === 87) {
+      const facts = [
+        { fact: "Cats have whiskers.", fictions: ["Cats can talk in English.", "Cats fly to the moon.", "Cats drive blue school buses."], emoji: "🐱" },
+        { fact: "Dogs have four legs.", fictions: ["Dogs can write books.", "Dogs build rocket ships.", "Dogs live in the ocean."], emoji: "🐶" },
+        { fact: "Birds have feathers.", fictions: ["Birds build brick houses.", "Birds cook pizza.", "Birds drive cars."], emoji: "🐦" },
+        { fact: "Fish swim in water.", fictions: ["Fish walk in the park.", "Fish fly in the clouds.", "Fish climb tall trees."], emoji: "🐟" },
+        { fact: "Apples grow on trees.", fictions: ["Apples grow in lakes.", "Apples fall from the moon.", "Apples talk to children."], emoji: "🍎" }
+      ];
+      const fp = facts[idx % facts.length];
       questionText = "Which statement is FACT (real), not fiction?";
-      correctAnswer = "Cats have whiskers.";
-      options = ["Cats have whiskers.", "Cats can talk in English.", "Cats fly to the moon.", "Cats drive blue school buses."];
-      visualContent = `<div style="font-size: 48px;">🐱</div>`;
+      correctAnswer = fp.fact;
+      options = [correctAnswer, ...fp.fictions];
+      visualContent = `<div style="font-size: 48px;">${fp.emoji}</div>`;
     } else if (lessonId === 88) {
-      const animalPassage = "Passage: Max is a funny dog. He loves to dig in the dirt. Max found a bone today!";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${animalPassage}</div>`;
-      questionText = "What did Max find today?";
-      correctAnswer = "A bone 🦴";
-      options = ["A bone 🦴", "A toy ball ⚽", "A shoe 🥾", "A gold coin 🪙"];
+      const findPairs = [
+        { text: "Max is a funny dog. He loves to dig in the dirt. Max found a bone today!", q: "What did Max find today?", ans: "A bone 🦴", wrongs: ["A toy ball ⚽", "A shoe 🥾", "A gold coin 🪙"] },
+        { text: "Leo has a toy robot. The robot is silver. It found a lost key under the rug!", q: "What did the robot find?", ans: "A lost key 🔑", wrongs: ["A bone 🦴", "A penny 🪙", "A toy car 🚗"] },
+        { text: "Bella is a brown horse. She runs in the field. She found a sweet apple on the ground.", q: "What did Bella find?", ans: "A sweet apple 🍎", wrongs: ["A carrot 🥕", "A bone 🦴", "A hat 🎩"] },
+        { text: "Luna is a cat. She dug under the bed. Luna found a small grey toy mouse.", q: "What did Luna find?", ans: "A grey toy mouse 🐭", wrongs: ["A ball ⚽", "A shoe 👟", "A key 🔑"] },
+        { text: "Tim looked in his school desk. Tim found a yellow crayon today.", q: "What did Tim find today?", ans: "A yellow crayon 🖍️", wrongs: ["A pencil ✏️", "A book 📖", "A ruler 📏"] }
+      ];
+      const fp = findPairs[idx % findPairs.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${fp.text}</div>`;
+      questionText = fp.q;
+      correctAnswer = fp.ans;
+      options = [correctAnswer, ...fp.wrongs];
     } else if (lessonId === 89) {
-      const toyPassage = "Passage: Leo has a toy robot. The robot is silver and has red flashing eyes. It can dance!";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${toyPassage}</div>`;
-      questionText = "What color are the robot's flashing eyes?";
-      correctAnswer = "Red 🔴";
-      options = ["Red 🔴", "Blue 🔵", "Green 🟢", "Silver 💿"];
+      const colorPairs = [
+        { text: "Leo has a toy robot. The robot is silver and has red flashing eyes. It can dance!", q: "What color are the robot's flashing eyes?", ans: "Red 🔴", wrongs: ["Blue 🔵", "Green 🟢", "Silver 💿"] },
+        { text: "Pip is a little blue bird. He lives in a tall green tree. Pip loves yellow worms.", q: "What color is Pip the bird?", ans: "Blue 🔵", wrongs: ["Red 🔴", "Green 🟢", "Yellow 🟡"] },
+        { text: "Luna is a white cat. She sleeps on a soft yellow rug. Luna plays with a red ball.", q: "What color is Luna's rug?", ans: "Yellow 🟡", wrongs: ["White ⚪", "Red 🔴", "Blue 🔵"] },
+        { text: "Zack is a green frog. He lives in a brown pond. He hops on green lily pads.", q: "What color is Zack the frog?", ans: "Green 🟢", wrongs: ["Brown 🟤", "Blue 🔵", "Red 🔴"] },
+        { text: "Bella is a brown horse. She runs in a wide green field under the blue sky.", q: "What color is Bella the horse?", ans: "Brown 🟤", wrongs: ["Green 🟢", "Blue 🔵", "White ⚪"] }
+      ];
+      const cp = colorPairs[idx % colorPairs.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${cp.text}</div>`;
+      questionText = cp.q;
+      correctAnswer = cp.ans;
+      options = [correctAnswer, ...cp.wrongs];
     } else if (lessonId === 90) {
-      const friendPassage = "Passage: Pam and Kim are best friends. They like to swing at the park. Today they ate ice cream.";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${friendPassage}</div>`;
-      questionText = "What food did Pam and Kim eat today?";
-      correctAnswer = "Ice cream 🍦";
-      options = ["Ice cream 🍦", "Apples 🍎", "Pizza 🍕", "Cookies 🍪"];
+      const foodPairs = [
+        { text: "Pam and Kim are best friends. They like to swing at the park. Today they ate ice cream.", q: "What food did Pam and Kim eat today?", ans: "Ice cream 🍦", wrongs: ["Apples 🍎", "Pizza 🍕", "Cookies 🍪"] },
+        { text: "Pip is a little blue bird. Pip loves to eat sweet yellow worms.", q: "What food does Pip love to eat?", ans: "Worms 🐛", wrongs: ["Seeds 🌻", "Apples 🍎", "Bread 🍞"] },
+        { text: "Sam and his dad baked a cake. Today they ate hot chocolate cookies.", q: "What did Sam and his dad eat?", ans: "Cookies 🍪", wrongs: ["Cake 🎂", "Bread 🍞", "Apples 🍎"] },
+        { text: "Tim sat under the apple tree. Tim ate a sweet red apple.", q: "What food did Tim eat?", ans: "Apple 🍎", wrongs: ["Orange 🍊", "Banana 🍌", "Worm 🐛"] },
+        { text: "The brown horse runs in the field. She loves to eat fresh green grass.", q: "What food does the horse love to eat?", ans: "Grass 🌾", wrongs: ["Apples 🍎", "Carrots 🥕", "Bread 🍞"] }
+      ];
+      const fp = foodPairs[idx % foodPairs.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${fp.text}</div>`;
+      questionText = fp.q;
+      correctAnswer = fp.ans;
+      options = [correctAnswer, ...fp.wrongs];
     } else if (lessonId === 91) {
-      questionText = "If you step in a puddle of water, what will the EFFECT be?";
-      correctAnswer = "Your feet get wet 👣";
-      options = ["Your feet get wet 👣", "The sun will shine ☀️", "It will snow ❄️", "You get dry 💨"];
-      visualContent = `<div style="font-size: 48px;">👣💦</div>`;
+      const causeEffects = [
+        { q: "If you step in a puddle of water, what will the EFFECT be?", ans: "Your feet get wet 👣", wrongs: ["The sun will shine ☀️", "It will snow ❄️", "You get dry 💨"], emoji: "👣💦" },
+        { q: "If you drop a glass cup on the stone floor, what will the EFFECT be?", ans: "The cup will break 🥛", wrongs: ["The cup will float 🎈", "It will rain 🌧️", "The floor turns green 🟢"], emoji: "🥛🪨" },
+        { q: "If you do not water a small flower plant, what will the EFFECT be?", ans: "The plant will dry up 🥀", wrongs: ["The plant grows tall 🌻", "It will snow candy 🍬", "The plant starts talking 🗣️"], emoji: "🥀🌱" },
+        { q: "If you leave ice cream out in the hot sun, what will the EFFECT be?", ans: "The ice cream melts 🍦", wrongs: ["It freezes solid ❄️", "It turns into a balloon 🎈", "It stays cold 🧊"], emoji: "🍦☀️" },
+        { q: "If you blow air into a rubber balloon, what will the EFFECT be?", ans: "The balloon gets bigger 🎈", wrongs: ["The balloon shrinks 🎈", "The balloon turns into a dog 🐶", "It fills with water 💦"], emoji: "🎈💨" }
+      ];
+      const cp = causeEffects[idx % causeEffects.length];
+      questionText = cp.q;
+      correctAnswer = cp.ans;
+      options = [correctAnswer, ...cp.wrongs];
+      visualContent = `<div style="font-size: 48px;">${cp.emoji}</div>`;
     } else if (lessonId === 92) {
+      const fictions = [
+        { ans: "A talking dragon 🐉", wrongs: ["A farm vet 👩‍⚕️", "A school teacher 👩‍🏫", "A firefighter 👨‍🚒"], emoji: "🐉" },
+        { ans: "A flying unicorn 🦄", wrongs: ["A police officer 👮", "A truck driver 👨‍💻", "A mail carrier 📬"], emoji: "🦄" },
+        { ans: "A talking teapot 🫖", wrongs: ["A baker 👨‍🍳", "A doctor 👩‍⚕️", "A builder 👷"], emoji: "🫖" },
+        { ans: "A dancing tree 🌳", wrongs: ["A forest ranger 🤠", "A gardener 👨‍🌾", "A student 👦"], emoji: "🌳" },
+        { ans: "A magic flying carpet 🛞", wrongs: ["A school bus 🚌", "A red bicycle 🚲", "A big truck 🚚"], emoji: "🛞" }
+      ];
+      const fp = fictions[idx % fictions.length];
       questionText = "Which character is most likely a make-believe fiction character?";
-      correctAnswer = "A talking dragon 🐉";
-      options = ["A talking dragon 🐉", "A farm vet 👩‍⚕️", "A school teacher 👩‍🏫", "A firefighter 👨‍🚒"];
-      visualContent = `<div style="font-size: 48px;">🐉</div>`;
+      correctAnswer = fp.ans;
+      options = [correctAnswer, ...fp.wrongs];
+      visualContent = `<div style="font-size: 48px;">${fp.emoji}</div>`;
     } else if (lessonId === 93) {
-      questionText = "Why does an author write a book of funny jokes?";
-      correctAnswer = "To entertain and make you laugh 😄";
-      options = ["To entertain and make you laugh 😄", "To teach you how to bake bread 🍞", "To explain map routes 🗺️", "To show school bus rules 🚌"];
-      visualContent = `<div style="font-size: 48px;">🃏😄</div>`;
+      const ppList = [
+        { q: "Why does an author write a book of funny jokes?", ans: "To entertain and make you laugh 😄", wrongs: ["To teach you how to bake bread 🍞", "To explain map routes 🗺️", "To show school bus rules 🚌"], emoji: "🃏😄" },
+        { q: "Why does an author write a book about the solar system?", ans: "To give information about planets 🪐", wrongs: ["To make you fall asleep 😴", "To tell a funny story about cats 🐱", "To show how to tie shoes 👟"], emoji: "🪐📚" },
+        { q: "Why does a chef write a cookbook with recipes?", ans: "To teach you how to cook food 🧑‍🍳", wrongs: ["To make you laugh at jokes 😄", "To explain train maps 🚂", "To tell a story about a dragon 🐉"], emoji: "🧑‍🍳📖" },
+        { q: "Why does an author write a story about a kid's birthday party?", ans: "To tell an entertaining story 🎂", wrongs: ["To teach math addition ➕", "To show how to fix cars 🚗", "To list city tax laws 🏛️"], emoji: "🎂🎉" }
+      ];
+      const pp = ppList[idx % ppList.length];
+      questionText = pp.q;
+      correctAnswer = pp.ans;
+      options = [correctAnswer, ...pp.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pp.emoji}</div>`;
     } else if (lessonId === 94) {
-      questionText = "What does a red octagonal sign that says STOP mean?";
-      correctAnswer = "You must stop your car 🛑";
-      options = ["You must stop your car 🛑", "You must drive faster 🚗", "You must buy ice cream 🍦", "You must park here 🅿️"];
-      visualContent = `<div style="font-size: 48px;">🛑</div>`;
+      const signs = [
+        { sign: "STOP 🛑", ans: "You must stop your car 🛑", wrongs: ["You must drive faster 🚗", "You must buy ice cream 🍦", "You must park here 🅿️"], emoji: "🛑" },
+        { sign: "EXIT 🚪", ans: "Where you go out of a building 🚪", wrongs: ["Where you buy food 🍔", "Where you park your bike 🚲", "Where you sleep 🛌"], emoji: "🚪" },
+        { sign: "ONE WAY ➡️", ans: "Cars must drive in one direction ➡️", wrongs: ["Cars can park anywhere 🅿️", "You must stop here 🛑", "Bikes are not allowed 🚫"], emoji: "➡️" },
+        { sign: "SCHOOL CROSSING 🚸", ans: "Watch for children crossing 🚸", wrongs: ["Watch for wild animals 🦁", "Drive as fast as you can 🏎️", "No cars allowed 🚫"], emoji: "🚸" },
+        { sign: "NO PARKING 🚫", ans: "You cannot park your car here 🚫", wrongs: ["You must park here 🅿️", "You must stop your car 🛑", "Drive slowly 🚶"], emoji: "🚫" }
+      ];
+      const sp = signs[idx % signs.length];
+      questionText = `What does a sign that says ${sp.sign} mean?`;
+      correctAnswer = sp.ans;
+      options = [correctAnswer, ...sp.wrongs];
+      visualContent = `<div style="font-size: 48px;">${sp.emoji}</div>`;
     } else if (lessonId === 95) {
-      const probPassage = "Passage: Tim lost his yellow crayon. He looked under his bed and found it!";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${probPassage}</div>`;
-      questionText = "What was the solution to Tim's problem?";
-      correctAnswer = "He found the crayon under his bed 🖍️";
-      options = ["He found the crayon under his bed 🖍️", "He lost his crayon 🖍️", "He bought new markers 🖍️", "He drew a picture 🎨"];
+      const probSols = [
+        { text: "Tim lost his yellow crayon. He looked under his bed and found it!", q: "What was the solution to Tim's problem?", ans: "He found the crayon under his bed 🖍️", wrongs: ["He lost his crayon 🖍️", "He bought new markers 🖍️", "He drew a picture 🎨"] },
+        { text: "Leo's toy car got stuck in the mud. Leo used a wooden stick to push it out.", q: "What was the solution to Leo's problem?", ans: "He pushed the car out with a stick 🪵", wrongs: ["His car got stuck in mud 🚗", "He bought a new toy car 🚗", "He went inside to watch TV 📺"] },
+        { text: "Sam could not reach the book on the high shelf. Sam asked his tall dad to get it down.", q: "What was the solution to Sam's problem?", ans: "He asked his tall dad to get it 👨", wrongs: ["He could not reach the shelf 📚", "He read a different book 📖", "He climbed up the shelf 🧗"] },
+        { text: "The cat wanted to go outside. She stood by the back door and meowed until Mom opened it.", q: "What was the solution to the cat's problem?", ans: "Mom opened the back door for her 🚪", wrongs: ["The cat wanted to go outside 🐱", "The cat slept on the rug 🪞", "The cat chased a mouse 🐭"] },
+        { text: "Tim had a flat tire on his bicycle. His dad used a pump to fill it with air.", q: "What was the solution to Tim's problem?", ans: "His dad filled it with air using a pump 🚲", wrongs: ["Tim had a flat tire 🚲", "Tim walked to school 🚶", "Tim bought a new bicycle 🚲"] }
+      ];
+      const psp = probSols[idx % probSols.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${psp.text}</div>`;
+      questionText = psp.q;
+      correctAnswer = psp.ans;
+      options = [correctAnswer, ...psp.wrongs];
     } else if (lessonId === 96) {
-      questionText = "Order these events: (1) Put on shoes, (2) Wake up, (3) Tie laces. Which is first?";
-      correctAnswer = "Wake up ⏰";
-      options = ["Wake up ⏰", "Put on shoes 👟", "Tie laces 🎀"];
+      const sequences = [
+        { desc: "(1) Put on shoes, (2) Wake up, (3) Tie laces. Which is first?", ans: "Wake up ⏰", wrongs: ["Put on shoes 👟", "Tie laces 🎀"] },
+        { desc: "(1) Bake the cake, (2) Mix the batter, (3) Eat a slice. Which is first?", ans: "Mix the batter 🥣", wrongs: ["Bake the cake 🎂", "Eat a slice 🍰"] },
+        { desc: "(1) Plant the seed, (2) Water the soil, (3) Pick the flower. Which is last?", ans: "Pick the flower 🌸", wrongs: ["Plant the seed 🌱", "Water the soil 💦"] },
+        { desc: "(1) Eat lunch, (2) Wash hands, (3) Set the table. Which is first?", ans: "Wash hands 🧼", wrongs: ["Eat lunch 🥪", "Set the table 🍽️"] },
+        { desc: "(1) Brush teeth, (2) Get into bed, (3) Fall asleep. Which is last?", ans: "Fall asleep 😴", wrongs: ["Brush teeth 🪥", "Get into bed 🛏️"] }
+      ];
+      const sq = sequences[idx % sequences.length];
+      questionText = `Order these events: ${sq.desc}`;
+      correctAnswer = sq.ans;
+      options = [correctAnswer, ...sq.wrongs];
       visualContent = `<div style="font-size: 48px;">⏰👟🎀</div>`;
     } else if (lessonId === 97) {
-      const predPassage = "Passage: Dark black clouds filled the sky. Thunder boomed loudly.";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${predPassage}</div>`;
-      questionText = "Predict what will happen next:";
-      correctAnswer = "It will rain 🌧️";
-      options = ["It will rain 🌧️", "The sun will rise ☀️", "It will snow candy 🍬", "A rainbow will appear immediately 🌈"];
+      const predictions = [
+        { text: "Dark black clouds filled the sky. Thunder boomed loudly.", q: "Predict what will happen next:", ans: "It will rain 🌧️", wrongs: ["The sun will rise ☀️", "It will snow candy 🍬", "A rainbow will appear immediately 🌈"] },
+        { text: "Tim left the ice cream cup on the picnic table in the hot summer sun.", q: "Predict what will happen next:", ans: "The ice cream will melt 🍦", wrongs: ["It will freeze solid ❄️", "It will turn into milk 🥛", "A bird will carry the cup away 🐦"] },
+        { text: "Leo dropped his glass cup from the high counter onto the concrete floor.", q: "Predict what will happen next:", ans: "The glass will shatter 🥛", wrongs: ["It will bounce high 🏀", "It will turn into water 💦", "It will float in the air 🎈"] },
+        { text: "The small bird spotted a juicy yellow worm wriggling in the soft dirt.", q: "Predict what will happen next:", ans: "The bird will eat the worm 🐦", wrongs: ["The worm will fly away 🐛", "The bird will sing to the worm 🎵", "The worm will climb the tree 🌳"] }
+      ];
+      const pd = predictions[idx % predictions.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${pd.text}</div>`;
+      questionText = pd.q;
+      correctAnswer = pd.ans;
+      options = [correctAnswer, ...pd.wrongs];
     } else if (lessonId === 98) {
-      const feelPassage = "Passage: Lily dropped her ice cream cone on the sidewalk. Tears ran down her face.";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${feelPassage}</div>`;
-      questionText = "How did Lily feel?";
-      correctAnswer = "Sad 😢";
-      options = ["Sad 😢", "Happy 😄", "Angry 😡", "Scared 😨"];
+      const feelings = [
+        { text: "Lily dropped her ice cream cone on the sidewalk. Tears ran down her face.", ans: "Sad 😢", wrongs: ["Happy 😄", "Angry 😡", "Scared 😨"] },
+        { text: "Sam opened his birthday gift and saw the toy robot he wanted. He jumped up and yelled yay!", ans: "Excited 🤩", wrongs: ["Sad 😢", "Tired 🥱", "Mad 😡"] },
+        { text: "The loud thunder shook the windows. Tim ran to Mom and hid behind her chair.", ans: "Scared 😨", wrongs: ["Happy 😄", "Proud 😎", "Silly 🤪"] },
+        { text: "Leo spent all afternoon building a tall block tower. He looked at it and smiled proudly.", ans: "Proud 😎", wrongs: ["Sad 😢", "Angry 😡", "Scared 😨"] },
+        { text: "Someone took Pam's new crayon without asking. She stomped her feet and crossed arms.", ans: "Angry 😡", wrongs: ["Happy 😄", "Scared 😨", "Tired 🥱"] }
+      ];
+      const fl = feelings[idx % feelings.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${fl.text}</div>`;
+      questionText = "How did the character feel?";
+      correctAnswer = fl.ans;
+      options = [correctAnswer, ...fl.wrongs];
     } else if (lessonId === 99) {
-      const concPassage = "Passage: The children put on warm coats, hats, and mittens. They grabbed sleds and headed outside.";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${concPassage}</div>`;
+      const seasons = [
+        { text: "The children put on warm coats, hats, and mittens. They grabbed sleds and headed outside.", ans: "Winter ❄️", wrongs: ["Summer ☀️", "Spring 🌸", "Fall 🍂"] },
+        { text: "The family packed swimsuits, beach balls, and sunscreen. They drove down to the sandy shore.", ans: "Summer ☀️", wrongs: ["Winter ❄️", "Spring 🌸", "Fall 🍂"] },
+        { text: "Red, orange, and yellow leaves fell from the trees. Tim raked them into a big pile to jump in.", ans: "Fall 🍂", wrongs: ["Summer ☀️", "Winter ❄️", "Spring 🌸"] },
+        { text: "Tiny green buds appeared on the branches. Pink flowers bloomed in the warm garden soil.", ans: "Spring 🌸", wrongs: ["Winter ❄️", "Summer ☀️", "Fall 🍂"] }
+      ];
+      const ss = seasons[idx % seasons.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${ss.text}</div>`;
       questionText = "What season is it?";
-      correctAnswer = "Winter ❄️";
-      options = ["Winter ❄️", "Summer ☀️", "Spring 🌸", "Fall 🍂"];
+      correctAnswer = ss.ans;
+      options = [correctAnswer, ...ss.wrongs];
     } else {
-      const infoPassage = "Passage: Bees fly to flowers to collect sweet nectar. They use it to make honey inside their hives.";
-      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">${infoPassage}</div>`;
+      const infos = [
+        { text: "Bees fly to flowers to collect sweet nectar. They use it to make honey inside their hives.", ans: "How bees make honey 🐝", wrongs: ["Why flowers are pretty 🌸", "How bees fly 🐝", "Why bears eat honey 🐻"] },
+        { text: "Frogs start as tiny eggs in the water. They hatch into tadpoles and slowly grow legs to hop.", ans: "How frogs grow and change 🐸", wrongs: ["Why frogs are green 🐸", "What tadpoles eat 🐛", "How frogs swim in lakes 🌊"] },
+        { text: "The sun is a giant hot star. It gives light and warmth to help plants and trees grow on Earth.", ans: "What the sun does for Earth ☀️", wrongs: ["How moon craters formed 🌙", "Why stars shine at night ⭐️", "How to grow plants in gardens 🪴"] },
+        { text: "Ants live in large families under the ground. They build long tunnels and work together to find food.", ans: "How ants live and work together 🐜", wrongs: ["Why ants are black 🐜", "How to build ant hills 🐜", "What spiders eat 🕷️"] }
+      ];
+      const inf = infos[idx % infos.length];
+      visualContent = `<div style="padding: 10px; background: #f3f4f6; border-radius: 8px; font-size: 14px; font-style: italic; line-height: 1.5; text-align: left; max-width: 320px; margin: 0 auto 12px auto;">Passage: ${inf.text}</div>`;
       questionText = "What is the topic of this informational paragraph?";
-      correctAnswer = "How bees make honey 🐝";
-      options = ["How bees make honey 🐝", "Why flowers are pretty 🌸", "How bees fly 🐝", "Why bears eat honey 🐻"];
+      correctAnswer = inf.ans;
+      options = [correctAnswer, ...inf.wrongs];
     }
   } else {
     if (lessonId === 101) {
+      const months = ["January ❄️", "February ❄️", "March 🌸", "April 🌸", "May 🌸", "June ☀️", "July ☀️", "August ☀️", "September 🍂", "October 🎃", "November 🍂", "December 🎄"];
+      const m = months[idx % months.length];
+      const m_lc = m.toLowerCase();
       questionText = "Which month name is capitalized correctly?";
-      correctAnswer = "October 🎃";
-      options = ["October 🎃", "october 🎃", "OctObeR", "OcTober"];
+      correctAnswer = m;
+      options = [m, m_lc, m_lc.replace(/^[a-z]/, (c) => c.toUpperCase() + 'o'), m_lc.replace(/^[a-z]/, (c) => c.toUpperCase().repeat(2))];
       visualContent = `<div style="font-size: 48px;">📅</div>`;
     } else if (lessonId === 102) {
+      const lists = [
+        { ans: "I want a toy, a book, and a crayon.", wrongs: ["I want a toy a book and a crayon.", "I want a toy, a book and, a crayon."], emoji: "🧸📖🖍️" },
+        { ans: "We saw a cat, a dog, and a pig.", wrongs: ["We saw a cat a dog and a pig.", "We saw a cat, a dog and, a pig."], emoji: "🐱🐶🐷" },
+        { ans: "She has an apple, a banana, and a grape.", wrongs: ["She has an apple a banana and a grape.", "She has an apple, a banana and, a grape."], emoji: "🍎🍌🍇" },
+        { ans: "They play baseball, soccer, and tennis.", wrongs: ["They play baseball soccer and tennis.", "They play baseball, soccer and, tennis."], emoji: "⚾⚽🎾" },
+        { ans: "He bought a pen, a pencil, and a ruler.", wrongs: ["He bought a pen a pencil and a ruler.", "He bought a pen, a pencil and, a ruler."], emoji: "🖊️✏️📏" }
+      ];
+      const pair = lists[idx % lists.length];
       questionText = "Which sentence uses commas correctly in a list?";
-      correctAnswer = "I want a toy, a book, and a crayon.";
-      options = [correctAnswer, "I want a toy a book and a crayon.", "I want a toy, a book and, a crayon."];
-      visualContent = `<div style="font-size: 48px;">🧸📖🖍️</div>`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 103) {
-      questionText = "Find the correct spelling of this animal: 🐶";
-      correctAnswer = "DOG";
-      options = ["DOG", "DOGG", "DAG", "DOGE"];
-      visualContent = `<div style="font-size: 48px;">🐶</div>`;
+      const spellings = [
+        { word: "DOG", wrongs: ["DOGG", "DAG", "DOGE"], emoji: "🐶" },
+        { word: "CAT", wrongs: ["CATT", "CET", "CATE"], emoji: "🐱" },
+        { word: "RED", wrongs: ["REDE", "RAD", "REDD"], emoji: "🔴" },
+        { word: "SUN", wrongs: ["SUNN", "SAN", "SUNE"], emoji: "☀️" },
+        { word: "BED", wrongs: ["BEDD", "BAD", "BEDE"], emoji: "🛏️" }
+      ];
+      const pair = spellings[idx % spellings.length];
+      questionText = `Find the correct spelling of this: ${pair.emoji}`;
+      correctAnswer = pair.word;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 104) {
-      questionText = "Find the correct spelling for this action: 🏊";
-      correctAnswer = "SWIM";
-      options = ["SWIM", "SWEM", "SWIMM", "SWUM"];
-      visualContent = `<div style="font-size: 48px;">🏊</div>`;
+      const spellings2 = [
+        { word: "SWIM", wrongs: ["SWEM", "SWIMM", "SWUM"], emoji: "🏊" },
+        { word: "JUMP", wrongs: ["JAMP", "JUMPP", "JOMP"], emoji: "🏃" },
+        { word: "RUN", wrongs: ["RUNN", "RAN", "RUNE"], emoji: "🏃" },
+        { word: "WALK", wrongs: ["WALKK", "WOK", "WELK"], emoji: "🚶" },
+        { word: "SING", wrongs: ["SINGG", "SENG", "SONG"], emoji: "🎤" }
+      ];
+      const pair = spellings2[idx % spellings2.length];
+      questionText = `Find the correct spelling for this action: ${pair.emoji}`;
+      correctAnswer = pair.word;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 105) {
-      questionText = "Choose the most expressive adjective: 'The ___ cat won the show.'";
-      correctAnswer = "beautiful ✨";
-      options = ["beautiful ✨", "nice 👍", "good 👌", "okay 🆗"];
-      visualContent = `<div style="font-size: 48px;">🐈✨</div>`;
+      const adjChoices = [
+        { sentence: "The ___ cat won the show.", ans: "beautiful ✨", wrongs: ["nice 👍", "good 👌", "okay 🆗"], emoji: "🐈" },
+        { sentence: "We ate a ___ apple.", ans: "delicious 🍎", wrongs: ["nice 👍", "good 👌", "fine 👌"], emoji: "🍎" },
+        { sentence: "He drives a ___ car.", ans: "speedy 🏎️", wrongs: ["fine 👌", "good 👌", "nice 👍"], emoji: "🚗" },
+        { sentence: "She has a ___ toy.", ans: "wonderful 🧸", wrongs: ["nice 👍", "good 👌", "fine 👌"], emoji: "🧸" },
+        { sentence: "They live in a ___ house.", ans: "magnificent 🏰", wrongs: ["nice 👍", "good 👌", "fine 👌"], emoji: "🏠" }
+      ];
+      const pair = adjChoices[idx % adjChoices.length];
+      questionText = `Choose the most expressive adjective: '${pair.sentence}'`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 106) {
-      questionText = "Choose the most active verb: 'The happy frog ___ into the lake.'";
-      correctAnswer = "splashed 💦";
-      options = ["splashed 💦", "went 🚶", "was 💨", "got 🪙"];
-      visualContent = `<div style="font-size: 48px;">🐸💦</div>`;
+      const verbChoices = [
+        { sentence: "The happy frog ___ into the lake.", ans: "splashed 💦", wrongs: ["went 🚶", "was 💨", "got 🪙"], emoji: "🐸" },
+        { sentence: "A fast car ___ down the road.", ans: "zoomed 🏎️", wrongs: ["went 🚶", "was 💨", "got 🪙"], emoji: "🚗" },
+        { sentence: "The little bird ___ into the sky.", ans: "soared 🦅", wrongs: ["went 🚶", "was 💨", "got 🪙"], emoji: "🐦" },
+        { sentence: "The hungry child ___ the apple.", ans: "devoured 🍎", wrongs: ["ate 👄", "took 🤲", "got 🪙"], emoji: "🧒" },
+        { sentence: "A loud dog ___ at the stranger.", ans: "barked 🗣️", wrongs: ["went 🚶", "was 💨", "got 🪙"], emoji: "🐶" }
+      ];
+      const pair = verbChoices[idx % verbChoices.length];
+      questionText = `Choose the most active verb: '${pair.sentence}'`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 107) {
+      const completeSentences = [
+        { sentence: "The sun is hot.", fragments: ["Hot hot sun", "Shining in the sky"], emoji: "☀️" },
+        { sentence: "The cat ran.", fragments: ["Running cat", "Very fast cat"], emoji: "🐱" },
+        { sentence: "A dog barks.", fragments: ["Loud barking dog", "In the yard dog"], emoji: "🐶" },
+        { sentence: "We eat apples.", fragments: ["Eating sweet apples", "Sweet apples we"], emoji: "🍎" },
+        { sentence: "The car stopped.", fragments: ["Red stopping car", "At the sign car"], emoji: "🚗" }
+      ];
+      const pair = completeSentences[idx % completeSentences.length];
       questionText = "Which is a complete sentence?";
-      correctAnswer = "The sun is hot.";
-      options = ["The sun is hot.", "Hot hot sun", "Shining in the sky"];
-      visualContent = `<div style="font-size: 48px;">☀️</div>`;
+      correctAnswer = pair.sentence;
+      options = [correctAnswer, ...pair.fragments];
+      visualContent = `<div style="font-size: 48px;">${pair.emoji}</div>`;
     } else if (lessonId === 108) {
-      questionText = "Find the error in: 'the boy plays.'";
-      correctAnswer = "Needs a capital T 🔠";
-      options = ["Needs a capital T 🔠", "Needs a question mark ❓", "Needs a comma 🪙", "Spelled wrong ❌"];
-      visualContent = `<div style="font-size: 32px; font-weight: 800;">the boy plays.</div>`;
+      const capErrors = [
+        { sentence: "the boy plays.", ans: "Needs a capital T 🔠", wrongs: ["Needs a question mark ❓", "Needs a comma 🪙", "Spelled wrong ❌"] },
+        { sentence: "we see a dog.", ans: "Needs a capital W 🔠", wrongs: ["Needs a exclamation mark ‼️", "Needs a comma 🪙", "Spelled wrong ❌"] },
+        { sentence: "she likes cats.", ans: "Needs a capital S 🔠", wrongs: ["Needs a question mark ❓", "Needs a comma 🪙", "Spelled wrong ❌"] },
+        { sentence: "he runs fast.", ans: "Needs a capital H 🔠", wrongs: ["Needs an exclamation mark ‼️", "Needs a comma 🪙", "Spelled wrong ❌"] },
+        { sentence: "they swim well.", ans: "Needs a capital T 🔠", wrongs: ["Needs a question mark ❓", "Needs a comma 🪙", "Spelled wrong ❌"] }
+      ];
+      const pair = capErrors[idx % capErrors.length];
+      questionText = `Find the error in: '${pair.sentence}'`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 32px; font-weight: 800;">${pair.sentence}</div>`;
     } else if (lessonId === 109) {
-      questionText = "Find the spelling error in: 'I saw a big rede balloon.'";
-      correctAnswer = "rede -> red 🔴";
-      options = ["rede -> red 🔴", "saw -> sow 🐷", "big -> bigg 🐘", "balloon -> baloon 🎈"];
-      visualContent = `<div style="font-size: 32px; font-weight: 800;">I saw a big rede balloon.</div>`;
+      const spellErrors = [
+        { sentence: "I saw a big rede balloon.", ans: "rede -> red 🔴", wrongs: ["saw -> sow 🐷", "big -> bigg 🐘", "balloon -> baloon 🎈"] },
+        { sentence: "The cat has a long tayl.", ans: "tayl -> tail 🐈", wrongs: ["cat -> cet 🐱", "has -> haz 💨", "long -> longe 📏"] },
+        { sentence: "We walked to the skool.", ans: "skool -> school 🏫", wrongs: ["walked -> walkt 🚶", "to -> two 🪙", "the -> thee 🔠"] },
+        { sentence: "The sun is so brite.", ans: "brite -> bright ☀️", wrongs: ["sun -> sune ☀️", "is -> iz 💨", "so -> soo 🔠"] },
+        { sentence: "He ate a sweet apl.", ans: "apl -> apple 🍎", wrongs: ["ate -> eat 👄", "sweet -> swete 🍬", "He -> Him 👤"] }
+      ];
+      const pair = spellErrors[idx % spellErrors.length];
+      questionText = `Find the spelling error in: '${pair.sentence}'`;
+      correctAnswer = pair.ans;
+      options = [correctAnswer, ...pair.wrongs];
+      visualContent = `<div style="font-size: 32px; font-weight: 800;">${pair.sentence}</div>`;
     } else {
+      const opinions = [
+        { ans: "I believe... 💭", wrongs: ["Once upon a time... 📖", "In the month of... 📅", "The passage states... 📝"] },
+        { ans: "In my opinion... 💭", wrongs: ["According to the chart... 📊", "The date was... 📅", "The word means... 📝"] },
+        { ans: "I think... 💭", wrongs: ["Scientists found that... 🔬", "The text says... 📝", "Yesterday I went... 📅"] }
+      ];
+      const pair = opinions[idx % opinions.length];
       questionText = "Which phrase starts a good opinion statement?";
-      correctAnswer = "I believe... 💭";
-      options = ["I believe... 💭", "Once upon a time... 📖", "In the month of... 📅", "The passage states... 📝"];
+      correctAnswer = pair.ans;
+      options = [pair.ans, ...pair.wrongs];
       visualContent = `<div style="font-size: 48px;">💭</div>`;
     }
   }
 
-  options = options.sort(() => 0.5 - Math.random());
+  options = options.sort(() => ((idx * 13 + 7) % 10 - 5) / 10);
 
   return { questionText, correctAnswer, options, visualContent };
 }
 
+// Look up hand-written, topic-specific quiz questions for a special-subject lesson.
+// Grade 1 tables are keyed by lesson number; grade 2-5 tables are keyed by the theme name
+// (with the same "The X" / "X" alias handling used for reading-lesson content).
+function getCuratedQuizOverrideList(subject, grade, lessonId) {
+  if (grade === 1) {
+    const key = subject.toUpperCase();
+    let table = null;
+    if (key === 'HISTORY' && typeof GRADE1_HISTORY_QUIZ !== 'undefined') table = GRADE1_HISTORY_QUIZ;
+    else if (key === 'SCIENCE' && typeof GRADE1_SCIENCE_QUIZ !== 'undefined') table = GRADE1_SCIENCE_QUIZ;
+    else if (key === 'GEOGRAPHY' && typeof GRADE1_GEOGRAPHY_QUIZ !== 'undefined') table = GRADE1_GEOGRAPHY_QUIZ;
+    else if (key === 'ART' && typeof GRADE1_ART_QUIZ !== 'undefined') table = GRADE1_ART_QUIZ;
+    if (table && table[lessonId] && table[lessonId].length) return table[lessonId];
+    return null;
+  }
+
+  let table = null;
+  if (subject === 'history' && typeof HISTORY_QUIZ_OVERRIDES !== 'undefined') table = HISTORY_QUIZ_OVERRIDES;
+  else if (subject === 'science' && typeof SCIENCE_QUIZ_OVERRIDES !== 'undefined') table = SCIENCE_QUIZ_OVERRIDES;
+  else if (subject === 'geography' && typeof GEOGRAPHY_QUIZ_OVERRIDES !== 'undefined') table = GEOGRAPHY_QUIZ_OVERRIDES;
+  else if (subject === 'art' && typeof ART_QUIZ_OVERRIDES !== 'undefined') table = ART_QUIZ_OVERRIDES;
+  if (!table) return null;
+
+  const [title] = getLessonTitleAndDesc(subject, grade, lessonId);
+  const theme = String(title || '').trim();
+  const stripThe = (s) => s.replace(/^The\s+/i, '').trim();
+  const addThe = (s) => `The ${s}`;
+  return table[theme] || table[stripThe(theme)] || table[addThe(theme)] || null;
+}
+
 function getQuestionsForLesson(subject, lessonId) {
   const grade = (typeof appState !== 'undefined' && appState) ? (appState.currentGrade || 1) : 1;
-  
   const isSpecial = (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art');
-  if (grade >= 2 && isSpecial) {
-    if (typeof GRADE_2_5_QUESTIONS !== 'undefined' && 
-        GRADE_2_5_QUESTIONS[subject] && 
-        GRADE_2_5_QUESTIONS[subject][grade] && 
-        GRADE_2_5_QUESTIONS[subject][grade][lessonId]) {
-      return GRADE_2_5_QUESTIONS[subject][grade][lessonId];
+
+  if (isSpecial) {
+    // Prefer hand-written, topic-specific quiz overrides over the generic keyword-bucketed
+    // SPECIAL_TEMPLATES system, which is not aware of the actual specific lesson topic.
+    const overrideList = getCuratedQuizOverrideList(subject, grade, lessonId);
+    if (overrideList && overrideList.length) {
+      // Practice expects 15 questions (5 per sub-lesson x 3). Cycle through the curated
+      // set (varying option order per slot) rather than repeating the exact same object.
+      const list = [];
+      for (let i = 0; i < 15; i++) {
+        const base = overrideList[i % overrideList.length];
+        let opts = [...base.options];
+        const seed = lessonId * 13 + i * 7;
+        opts = opts.sort(() => ((seed * 7 + 3) % 10 - 5) / 10);
+        list.push({
+          questionText: base.questionText,
+          correctAnswer: base.correctAnswer,
+          options: opts,
+          visualContent: base.visualContent || "<div style=\"font-size: 48px;\">📖</div>",
+          hint: base.hint || base.explanation || ""
+        });
+      }
+      return list;
+    }
+
+    const lessonData = getSpecialLessonData(subject, grade, lessonId);
+    if (lessonData) {
+      const list = [];
+      lessonData.sublessons.forEach(sub => {
+        list.push(...sub.questions);
+      });
+      return list;
     }
   }
 
   const dynQ = getGradeSpecificDynamicQuestion(subject, grade, lessonId);
-  if (dynQ) return [dynQ];
-
-
-  if (subject === 'history') return HISTORY_QUESTIONS_LIST[lessonId] || [];
-  if (subject === 'geography') return GEOGRAPHY_QUESTIONS_LIST[lessonId] || [];
-  if (subject === 'science') return SCIENCE_QUESTIONS_LIST[lessonId] || [];
-  if (subject === 'art') return ART_QUESTIONS_LIST[lessonId] || [];
-  
-  if (subject === 'ela') {
-    if (lessonId === 6) {
-      return [
-        {
-          questionText: "Which word has a short 'a' sound?",
-          correctAnswer: "CAT 🐱",
-          options: ["CAT 🐱", "CAKE 🍰", "LAKE 🏞️", "TAPE 📼"],
-          visualContent: `<div style="font-size: 48px;">🐱</div>`,
-          hint: "Short 'a' sound is like 'ah' in cat!"
-        },
-        {
-          questionText: "Which word has a long 'a' sound (sounds like its name)?",
-          correctAnswer: "CAKE 🍰",
-          options: ["CAKE 🍰", "CAT 🐱", "HAT 🎩", "BAG 🎒"],
-          visualContent: `<div style="font-size: 48px;">🍰</div>`,
-          hint: "Long 'a' sound says its own name, like 'ay' in cake!"
-        }
-      ];
+  if (dynQ) {
+    const list = [];
+    for (let i = 0; i < 10; i++) {
+      const q = getGradeSpecificDynamicQuestion(subject, grade, lessonId, i);
+      if (q) list.push(q);
     }
-    return [generateElaQuestion(lessonId)];
+    if (list.length > 0) return list;
+  }
+
+  if (subject === 'ela') {
+    const list = [];
+    for (let i = 0; i < 10; i++) {
+      list.push(generateElaQuestion(lessonId, i));
+    }
+    return list;
   }
   
   if (subject === 'math') {
     if (lessonId === 5) {
-      return [
-        {
-          questionText: "Which number is greater (bigger)?",
-          correctAnswer: "8",
-          options: ["8", "3", "5", "2"],
-          visualContent: `<div style="font-size: 48px;">🍎</div><div style="font-size: 16px; margin-top: 8px;">8 vs 3</div>`,
-          hint: "8 is more than 3!"
-        },
-        {
-          questionText: "Which number is lesser (smaller)?",
-          correctAnswer: "2",
-          options: ["2", "7", "6", "9"],
-          visualContent: `<div style="font-size: 48px;">🍌</div><div style="font-size: 16px; margin-top: 8px;">2 vs 7</div>`,
-          hint: "2 is less than 7!"
-        }
-      ];
+      const list = [];
+      for (let i = 0; i < 10; i++) {
+        list.push(generateMathLesson5Question(i));
+      }
+      return list;
     }
   }
   return [];
+}
+
+function getQuestionsForSublesson(subject, lessonId, sublesson) {
+  const qList = getQuestionsForLesson(subject, lessonId);
+  const isSpecial = (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art');
+  if (!isSpecial) {
+    return qList;
+  }
+  let sub = sublesson || 1;
+  if (sub === 1) {
+    return qList.slice(0, 5);
+  } else if (sub === 2) {
+    return qList.slice(5, 10);
+  } else {
+    return qList.slice(10, 15);
+  }
 }
 
 function generateMathQuestion(lessonId, index) {
@@ -35187,7 +35825,8 @@ function generateMathQuestion(lessonId, index) {
   }
 
   if (appState.currentSubject === 'ela' || appState.currentSubject === 'history' || appState.currentSubject === 'geography' || appState.currentSubject === 'science' || appState.currentSubject === 'art' || (appState.currentSubject === 'math' && lessonId === 5)) {
-    const qList = getQuestionsForLesson(appState.currentSubject, lessonId);
+    const isSpecial = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
+    const qList = isSpecial ? getQuestionsForSublesson(appState.currentSubject, lessonId, appState.activeSublesson) : getQuestionsForLesson(appState.currentSubject, lessonId);
     const idx = (index !== undefined && index !== null) ? index : 0;
     let q = qList[idx % qList.length];
     if (!q) q = qList[0];
@@ -35478,11 +36117,35 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
 
   // Science, History, Geography, Art use the static 5-question database!
   if (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art') {
-    if (typeof GRADE_2_5_QUESTIONS !== 'undefined' && 
-        GRADE_2_5_QUESTIONS[subject] && 
-        GRADE_2_5_QUESTIONS[subject][grade] && 
+    if (typeof GRADE_2_5_QUESTIONS !== 'undefined' &&
+        GRADE_2_5_QUESTIONS[subject] &&
+        GRADE_2_5_QUESTIONS[subject][grade] &&
         GRADE_2_5_QUESTIONS[subject][grade][lessonId]) {
       const qList = GRADE_2_5_QUESTIONS[subject][grade][lessonId];
+      // Prefer hand-written, topic-specific quiz questions when we have them for this theme.
+      const OVERRIDE_TABLES = {
+        history: (typeof HISTORY_QUIZ_OVERRIDES !== 'undefined') ? HISTORY_QUIZ_OVERRIDES : null,
+        science: (typeof SCIENCE_QUIZ_OVERRIDES !== 'undefined') ? SCIENCE_QUIZ_OVERRIDES : null,
+        geography: (typeof GEOGRAPHY_QUIZ_OVERRIDES !== 'undefined') ? GEOGRAPHY_QUIZ_OVERRIDES : null,
+        art: (typeof ART_QUIZ_OVERRIDES !== 'undefined') ? ART_QUIZ_OVERRIDES : null
+      };
+      const overrideTable = OVERRIDE_TABLES[subject];
+      const theme = qList[0] && qList[0].theme;
+      const overrideList = overrideTable && theme ? overrideTable[theme] : null;
+      if (overrideList && overrideList.length) {
+        const oq = overrideList[idx % overrideList.length];
+        return {
+          theme: theme,
+          fact_stem: qList[0].fact_stem,
+          concept: theme,
+          questionText: oq.questionText,
+          correctAnswer: oq.correctAnswer,
+          options: oq.options,
+          visualContent: oq.visualContent || "<div style=\"font-size: 48px;\">📖</div>",
+          explanation: oq.explanation || oq.hint || "",
+          hint: oq.hint || ""
+        };
+      }
       return qList[idx % qList.length];
     }
   }
@@ -35748,6 +36411,13 @@ class AppState {
     this.dailyCompletedSubjects = [];
     this.dailyCrossSubjectBonusAwardedToday = false;
 
+    // Accuracy and Sublessons Tracking
+    this.totalQuestionsAnswered = 0;
+    this.correctQuestionsAnswered = 0;
+    this.activeSublesson = 1;
+    this.lessonPracticeScore = 0;
+    this.lessonTotalQuestions = 0;
+
     this.loadState();
   }
 
@@ -35876,6 +36546,12 @@ class AppState {
         this.dailyCompletedSubjects = state.dailyCompletedSubjects ?? [];
         this.dailyCrossSubjectBonusAwardedToday = state.dailyCrossSubjectBonusAwardedToday ?? false;
 
+        this.totalQuestionsAnswered = state.totalQuestionsAnswered ?? 0;
+        this.correctQuestionsAnswered = state.correctQuestionsAnswered ?? 0;
+        this.activeSublesson = state.activeSublesson ?? 1;
+        this.lessonPracticeScore = state.lessonPracticeScore ?? 0;
+        this.lessonTotalQuestions = state.lessonTotalQuestions ?? 0;
+
         this.checkDateResets();
         buildCurriculum(this.currentGrade);
       }
@@ -35927,7 +36603,12 @@ class AppState {
         activeTheme: this.activeTheme,
         monthlyLessonsCount: this.monthlyLessonsCount,
         monthlyLessonsMonth: this.monthlyLessonsMonth,
-        currentGrade: this.currentGrade
+        currentGrade: this.currentGrade,
+        totalQuestionsAnswered: this.totalQuestionsAnswered,
+        correctQuestionsAnswered: this.correctQuestionsAnswered,
+        activeSublesson: this.activeSublesson,
+        lessonPracticeScore: this.lessonPracticeScore,
+        lessonTotalQuestions: this.lessonTotalQuestions
       };
       localStorage.setItem('math_academy_state', JSON.stringify(state));
       // Also save to per-user registry if someone is currently logged in
@@ -36375,8 +37056,93 @@ window.AuthSystem = {
 
   // ── Storage helpers ──────────────────────────────────────
   getUsers() {
-    try { return JSON.parse(localStorage.getItem('funcademy_users') || '{}'); }
-    catch { return {}; }
+    try {
+      let data = localStorage.getItem('funcademy_users');
+      let users = data ? JSON.parse(data) : {};
+      
+      const defaultPassHash = "1586410a56c910e9485e75fe152b13f058bd3f9893b6e203016c411b0f1a2832";
+      
+      let changed = false;
+      
+      const createMockState = (grade, stars, points, streak, accuracy, mathC, elaC, otherC) => {
+        const freshCounts = (c) => ({
+          1: { lessonsCompleted: c, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
+          2: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
+          3: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
+          4: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
+          5: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false }
+        });
+        const mathCounts = freshCounts(mathC);
+        const elaCounts = freshCounts(elaC);
+        const geoCounts = freshCounts(Math.floor(otherC / 4));
+        const histCounts = freshCounts(Math.floor(otherC / 4));
+        const sciCounts = freshCounts(Math.floor(otherC / 4));
+        const artCounts = freshCounts(otherC - 3 * Math.floor(otherC / 4));
+        
+        return {
+          stars,
+          level: Math.floor(stars / 30) + 1,
+          streak,
+          avatarIndex: 0,
+          currentGrade: grade,
+          totalQuestionsAnswered: mathC * 5 + elaC * 5 + otherC * 5,
+          correctQuestionsAnswered: Math.round((mathC * 5 + elaC * 5 + otherC * 5) * (accuracy / 100)),
+          completedCountsMath: mathCounts,
+          completedCountsEla: elaCounts,
+          completedCountsGeography: geoCounts,
+          completedCountsHistory: histCounts,
+          completedCountsScience: sciCounts,
+          completedCountsArt: artCounts,
+          points,
+          isSoundOn: false
+        };
+      };
+
+      if (!users["akshara"]) {
+        users["akshara"] = {
+          passwordHash: defaultPassHash,
+          displayName: "Akshara",
+          avatarEmoji: "🐼",
+          createdAt: Date.now() - 86400000 * 5,
+          lastLoginAt: Date.now() - 3600000,
+          loginCount: 15,
+          state: createMockState(5, 350, 1200, 5, 94, 15, 12, 10)
+        };
+        changed = true;
+      }
+      
+      const mockUsers = {
+        "kashyap": { name: "Kashyap", avatar: "🦁", grade: 4, stars: 280, points: 950, streak: 3, accuracy: 88, mathC: 12, elaC: 9, otherC: 7, timeOffset: 7200000 },
+        "ananya": { name: "Ananya", avatar: "🦊", grade: 3, stars: 310, points: 1050, streak: 4, accuracy: 91, mathC: 14, elaC: 11, otherC: 9, timeOffset: 14400000 },
+        "rohan": { name: "Rohan", avatar: "🐸", grade: 2, stars: 220, points: 720, streak: 2, accuracy: 82, mathC: 10, elaC: 7, otherC: 5, timeOffset: 28800000 },
+        "aditya": { name: "Aditya", avatar: "🦄", grade: 5, stars: 190, points: 640, streak: 1, accuracy: 80, mathC: 8, elaC: 6, otherC: 4, timeOffset: 43200000 }
+      };
+      
+      for (const [uname, info] of Object.entries(mockUsers)) {
+        if (!users[uname]) {
+          users[uname] = {
+            passwordHash: defaultPassHash,
+            displayName: info.name,
+            avatarEmoji: info.avatar,
+            createdAt: Date.now() - 86400000 * 3,
+            lastLoginAt: Date.now() - info.timeOffset,
+            loginCount: 8,
+            state: createMockState(info.grade, info.stars, info.points, info.streak, info.accuracy, info.mathC, info.elaC, info.otherC)
+          };
+          changed = true;
+        }
+      }
+      
+      if (changed) {
+        localStorage.setItem('funcademy_users', JSON.stringify(users));
+      }
+      
+      return users;
+    }
+    catch (e) {
+      console.error("Error in getUsers pre-population:", e);
+      return {};
+    }
   },
   saveUsers(users) {
     localStorage.setItem('funcademy_users', JSON.stringify(users));
@@ -36451,6 +37217,8 @@ window.AuthSystem = {
       displayName,
       avatarEmoji,
       createdAt: Date.now(),
+      lastLoginAt: Date.now(),
+      loginCount: 1,
       state: null  // no saved progress yet
     };
     this.saveUsers(users);
@@ -36465,6 +37233,12 @@ window.AuthSystem = {
     if (!user) return { ok: false, error: "Account not found. Check your username or sign up!" };
     const hash = await this.hashPassword(password);
     if (hash !== user.passwordHash) return { ok: false, error: "Incorrect password. Try again!" };
+    
+    // Update login telemetry
+    user.lastLoginAt = Date.now();
+    user.loginCount = (user.loginCount || 0) + 1;
+    this.saveUsers(users);
+    
     return { ok: true, username: key, displayName: user.displayName, avatarEmoji: user.avatarEmoji, state: user.state };
   },
 
@@ -36520,6 +37294,11 @@ window.AuthSystem = {
       appState.completedCountsGeography = createFreshProgressMap();
       appState.completedCountsScience = createFreshProgressMap();
       appState.completedCountsArt = createFreshProgressMap();
+      appState.totalQuestionsAnswered = 0;
+      appState.correctQuestionsAnswered = 0;
+      appState.activeSublesson = 1;
+      appState.lessonPracticeScore = 0;
+      appState.lessonTotalQuestions = 0;
       document.documentElement.classList.remove('arcade-theme');
       buildCurriculum(1);
     }
@@ -37005,6 +37784,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const exitLeaderboardBtn = document.getElementById('exitLeaderboardBtn');
   if (exitLeaderboardBtn) exitLeaderboardBtn.addEventListener('click', () => switchView('dashboard'));
 
+  const adminBtn = document.getElementById('sidebarAdminBtn');
+  if (adminBtn) adminBtn.addEventListener('click', () => switchView('admin'));
+  const exitAdminBtn = document.getElementById('exitAdminBtn');
+  if (exitAdminBtn) exitAdminBtn.addEventListener('click', () => switchView('dashboard'));
+
   // Shop item purchases
   const buySkipAssignmentBtn = document.getElementById('buySkipAssignmentBtn');
   if (buySkipAssignmentBtn) {
@@ -37243,14 +38027,19 @@ function switchView(viewName) {
   const lBoardView = document.getElementById('leaderboardView');
   if (lBoardView) lBoardView.style.display = viewName === 'leaderboard' ? 'block' : 'none';
 
+  const adminView = document.getElementById('adminView');
+  if (adminView) adminView.style.display = viewName === 'admin' ? 'block' : 'none';
+
   const dBtn = document.getElementById('sidebarDashboardBtn');
   const sBtn = document.getElementById('sidebarShopBtn');
   const gBtn = document.getElementById('sidebarGamesBtn');
   const lBtn = document.getElementById('sidebarLeaderboardBtn');
+  const aBtn = document.getElementById('sidebarAdminBtn');
   if (dBtn) dBtn.classList.toggle('active', viewName === 'dashboard');
   if (sBtn) sBtn.classList.toggle('active', viewName === 'shop');
   if (gBtn) gBtn.classList.toggle('active', viewName === 'games');
   if (lBtn) lBtn.classList.toggle('active', viewName === 'leaderboard');
+  if (aBtn) aBtn.classList.toggle('active', viewName === 'admin');
 
   const mdBtn = document.getElementById('mobileDashboardBtn');
   const msBtn = document.getElementById('mobileShopBtn');
@@ -37265,8 +38054,154 @@ function switchView(viewName) {
     appState.renderShop();
   } else if (viewName === 'leaderboard') {
     renderLeaderboardData();
+  } else if (viewName === 'admin') {
+    renderAdminStatsData();
   }
 }
+
+function renderAdminStatsData() {
+  if (typeof appState !== 'undefined' && appState.saveState) {
+    appState.saveState();
+  }
+
+  const users = window.AuthSystem ? window.AuthSystem.getUsers() : {};
+  const userKeys = Object.keys(users);
+  
+  const totalLearners = userKeys.length;
+  let activeLoginsToday = 0;
+  let totalStars = 0;
+  const oneDayMs = 24 * 60 * 60 * 1000;
+  const now = Date.now();
+
+  userKeys.forEach(k => {
+    const user = users[k];
+    if (user.lastLoginAt && (now - user.lastLoginAt < oneDayMs)) {
+      activeLoginsToday++;
+    }
+    const uState = user.state || {};
+    totalStars += (uState.stars || 0);
+  });
+
+  const avgStars = totalLearners > 0 ? Math.round(totalStars / totalLearners) : 0;
+
+  const totalLearnersEl = document.getElementById('adminTotalLearners');
+  const activeLoginsEl = document.getElementById('adminActiveLogins');
+  const avgStarsEl = document.getElementById('adminAvgStars');
+
+  if (totalLearnersEl) totalLearnersEl.innerText = totalLearners;
+  if (activeLoginsEl) activeLoginsEl.innerText = activeLoginsToday;
+  if (avgStarsEl) avgStarsEl.innerText = avgStars;
+
+  const tableBody = document.getElementById('adminUserTableBody');
+  if (!tableBody) return;
+
+  tableBody.innerHTML = '';
+
+  if (totalLearners === 0) {
+    tableBody.innerHTML = `<tr><td colspan="10" style="text-align: center; color: var(--text-muted); padding: 24px;">No registered accounts found.</td></tr>`;
+    return;
+  }
+
+  const sortedKeys = userKeys.sort((a, b) => {
+    const timeA = users[a].lastLoginAt || 0;
+    const timeB = users[b].lastLoginAt || 0;
+    return timeB - timeA;
+  });
+
+  sortedKeys.forEach(k => {
+    const user = users[k];
+    const uState = user.state || {};
+    
+    const grade = uState.currentGrade || 1;
+    const totalQ = uState.totalQuestionsAnswered || 0;
+    const correctQ = uState.correctQuestionsAnswered || 0;
+    let accuracyStr = '0%';
+    let accuracyVal = 0;
+    if (totalQ > 0) {
+      accuracyVal = (correctQ / totalQ) * 100;
+      accuracyStr = `${accuracyVal.toFixed(1)}%`;
+    }
+
+    let accuracyColor = '#ef4444';
+    if (accuracyVal >= 80) {
+      accuracyColor = '#10b981';
+    } else if (accuracyVal >= 50) {
+      accuracyColor = '#eab308';
+    } else if (totalQ === 0) {
+      accuracyColor = '#64748b';
+      accuracyStr = '—';
+    }
+
+    const stars = uState.stars || 0;
+    const points = uState.points || 0;
+    const streak = uState.streak || 0;
+
+    const mathCount = sumLessonsCompleted(uState.completedCountsMath);
+    const elaCount = sumLessonsCompleted(uState.completedCountsEla);
+    
+    const geoCount = sumLessonsCompleted(uState.completedCountsGeography);
+    const histCount = sumLessonsCompleted(uState.completedCountsHistory);
+    const sciCount = sumLessonsCompleted(uState.completedCountsScience);
+    const artCount = sumLessonsCompleted(uState.completedCountsArt);
+    const othersCount = geoCount + histCount + sciCount + artCount;
+
+    let lastLoginStr = 'Never';
+    if (user.lastLoginAt) {
+      lastLoginStr = formatRelativeTime(user.lastLoginAt);
+    }
+
+    const tr = document.createElement('tr');
+    tr.style.borderBottom = '1px solid rgba(255, 255, 255, 0.05)';
+    tr.innerHTML = `
+      <td style="padding: 12px 8px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 20px;">${user.avatarEmoji || '🐼'}</span>
+        <div>
+          <div style="font-weight: 850; color: white;">${user.displayName || k}</div>
+          <div style="font-size: 11px; color: var(--text-muted);">Joined ${user.createdAt ? new Date(user.createdAt).toLocaleDateString() : 'Unknown'}</div>
+        </div>
+      </td>
+      <td style="padding: 12px 8px;">
+        <span style="background: rgba(59, 130, 246, 0.15); color: #93c5fd; padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 800;">Grade ${grade}</span>
+      </td>
+      <td style="padding: 12px 8px; text-align: center;">
+        <span style="color: ${accuracyColor}; font-weight: 850;">${accuracyStr}</span>
+        ${totalQ > 0 ? `<div style="font-size: 10px; color: var(--text-muted);">${correctQ}/${totalQ}</div>` : ''}
+      </td>
+      <td style="padding: 12px 8px; text-align: center; color: #eab308;">⭐ ${stars}</td>
+      <td style="padding: 12px 8px; text-align: center; color: #10b981;">🪙 ${points}</td>
+      <td style="padding: 12px 8px; text-align: center; color: #ef4444;">🔥 ${streak}</td>
+      <td style="padding: 12px 8px; text-align: center; color: #cbd5e1;">${mathCount}</td>
+      <td style="padding: 12px 8px; text-align: center; color: #cbd5e1;">${elaCount}</td>
+      <td style="padding: 12px 8px; text-align: center; color: #cbd5e1;">${othersCount}</td>
+      <td style="padding: 12px 8px; font-size: 12px; color: var(--text-muted);">${lastLoginStr}</td>
+    `;
+    tableBody.appendChild(tr);
+  });
+}
+
+function sumLessonsCompleted(completedCounts) {
+  if (!completedCounts) return 0;
+  let total = 0;
+  for (let grade in completedCounts) {
+    if (completedCounts[grade] && typeof completedCounts[grade].lessonsCompleted === 'number') {
+      total += completedCounts[grade].lessonsCompleted;
+    }
+  }
+  return total;
+}
+
+function formatRelativeTime(timestamp) {
+  const diff = Date.now() - timestamp;
+  if (diff < 60000) return 'Just now';
+  const mins = Math.floor(diff / 60000);
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  if (days === 1) return 'Yesterday';
+  return `${days}d ago`;
+}
+
 
 function startGameTimer() {
   if (window.gameTimerInterval) return;
@@ -37444,11 +38379,14 @@ function lockTab(stepNum) {
 
 function switchStep(stepNum) {
   sounds.playPop();
-  
+
   // Stop speech synthesis & videos from previous states
   window.speechSynthesis.cancel();
   pauseVideo();
-  
+  if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) appState.currentVideoSpeech.cancel();
+  if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
+  if (typeof stopVideoScene === 'function') stopVideoScene();
+
   appState.activeStep = stepNum;
   
   // Update Tab buttons styling
@@ -38572,7 +39510,59 @@ function getGradeSpecificPages(subject, grade, unit, theme, fact_stem) {
       }
     }
   }
-  let p1, p2, p3, p4, p5;
+  // Prefer hand-curated, subject-matter-accurate content when we have it for this exact theme.
+  const CURATED_TABLES = {
+    history: (typeof HISTORY_LESSON_CONTENT !== 'undefined') ? HISTORY_LESSON_CONTENT : null,
+    science: (typeof SCIENCE_LESSON_CONTENT !== 'undefined') ? SCIENCE_LESSON_CONTENT : null,
+    geography: (typeof GEOGRAPHY_LESSON_CONTENT !== 'undefined') ? GEOGRAPHY_LESSON_CONTENT : null,
+    art: (typeof ART_LESSON_CONTENT !== 'undefined') ? ART_LESSON_CONTENT : null,
+    math: (typeof MATH_LESSON_CONTENT !== 'undefined') ? MATH_LESSON_CONTENT : null,
+    ela: (typeof ELA_LESSON_CONTENT !== 'undefined') ? ELA_LESSON_CONTENT : null
+  };
+  // Grade-1-specific curated tables (simpler topics unique to Grade 1, e.g. "My Family Tree").
+  let grade1Table = null;
+  if (grade === 1) {
+    if (subject === 'history' && typeof GRADE1_HISTORY_LESSON_CONTENT !== 'undefined') grade1Table = GRADE1_HISTORY_LESSON_CONTENT;
+    else if (subject === 'science' && typeof GRADE1_SCIENCE_LESSON_CONTENT !== 'undefined') grade1Table = GRADE1_SCIENCE_LESSON_CONTENT;
+    else if (subject === 'geography' && typeof GRADE1_GEOGRAPHY_LESSON_CONTENT !== 'undefined') grade1Table = GRADE1_GEOGRAPHY_LESSON_CONTENT;
+    else if (subject === 'art' && typeof GRADE1_ART_LESSON_CONTENT !== 'undefined') grade1Table = GRADE1_ART_LESSON_CONTENT;
+    else if (subject === 'math' && typeof GRADE1_MATH_LESSON_CONTENT !== 'undefined') grade1Table = GRADE1_MATH_LESSON_CONTENT;
+    else if (subject === 'ela' && typeof GRADE1_ELA_LESSON_CONTENT !== 'undefined') grade1Table = GRADE1_ELA_LESSON_CONTENT;
+  }
+
+  const stripThe = (s) => String(s || '').replace(/^The\s+/i, '').trim();
+  const addThe = (s) => `The ${s}`;
+  const lookupIn = (table, key) => {
+    if (!table || !key) return null;
+    return table[key] || table[stripThe(key)] || table[addThe(key)] || null;
+  };
+  const curatedTable = CURATED_TABLES[subject];
+  const curatedEntry = lookupIn(grade1Table, theme_clean) || lookupIn(grade1Table, theme) ||
+    lookupIn(curatedTable, theme_clean) || lookupIn(curatedTable, theme);
+
+  const toLines = (paragraph) => {
+    // Curated content is plain prose; split into sentences so it paginates like the rest of the app.
+    return String(paragraph || "")
+      .split(/(?<=[.!?])\s+(?=[A-Z0-9"“])/)
+      .map(s => s.trim())
+      .filter(Boolean);
+  };
+
+  const formatLines = (linesArray) => linesArray.map(s => String(s).trim()).filter(Boolean).join("<br>");
+
+  if (curatedEntry) {
+    return [
+      formatLines(toLines(curatedEntry.page1)),
+      formatLines(toLines(curatedEntry.page2)),
+      formatLines(toLines(curatedEntry.page3)),
+      formatLines(toLines(curatedEntry.page4)),
+      formatLines(toLines(curatedEntry.page5)),
+      formatLines(toLines(curatedEntry.page6)),
+      formatLines(toLines(curatedEntry.page7))
+    ];
+  }
+
+  let p1, p2, p3, p4, p5, p6, p7;
 
   if (subject === 'math' || subject === 'ela') {
     p1 = [
@@ -38582,103 +39572,84 @@ function getGradeSpecificPages(subject, grade, unit, theme, fact_stem) {
       preview
     ];
     p2 = [
-      `The rules for ${theme_clean} are simple but important.`,
+      `The rules for ${theme_clean} are:`,
       `Rule 1: ${rule1}`,
-      `Rule 2: ${rule2}`,
-      `Rule 3: ${rule3}`,
-      `Rule 4: ${rule4}`
+      `Rule 2: ${rule2}`
     ];
     p3 = [
+      `Rule 3: ${rule3}`,
+      `Rule 4: ${rule4}`,
+      `${fact_clean}.`
+    ];
+    p4 = [
       stepIntro,
       step1,
       step2,
       step3
     ];
-    p4 = [
+    p5 = [
       exampleIntro,
       example1,
       example2,
       example3
     ];
-    p5 = [
+    p6 = [
+      `A common mistake with ${theme_clean} is forgetting Rule ${rule3 ? '3' : '1'}: ${rule3 || rule1}`,
+      `Another common mistake is skipping steps, so always work through them in order: ${step1}`,
+      tip
+    ];
+    p7 = [
       summary,
       takeaway,
-      tip,
+      `Remember: ${fact_clean}.`,
       ready
     ];
   } else {
+    // Generic (non-curated) fallback for special subjects: still uses the real fact_stem and
+    // category-specific rule/step/example content built above, no filler lines.
     p1 = [
-      `We begin our study of ${subject} by exploring ${theme_clean}.`,
-      `To understand this topic, we know that ${theme_clean} ${fact_clean}.`,
-      `This means we can identify its key features and role in ${subject}.`,
-      `Learning about ${theme_clean} builds a strong foundation of knowledge.`,
-      `It helps us make sense of the natural world and human achievements.`,
-      `This lesson covers the core definitions and key details of ${theme_clean}.`,
-      `We will explore why this topic is important for us to study.`,
-      `Always read every sentence carefully to catch the main point.`,
-      `Asking questions is a great way to expand your understanding.`,
-      `Let us get started on this exciting learning adventure!`
+      `${theme_clean} is a topic in ${subject} that ${fact_clean}.`,
+      importance,
+      preview
     ];
     p2 = [
-      `Let's explore the key facts and details of ${theme_clean}.`,
-      `When studying this topic, we observe how it fits into the broader field of ${subject}.`,
-      `We know that ${theme_clean} ${fact_clean} under various conditions.`,
-      `We also learn that ${rule1}`,
-      `Furthermore, we know that ${rule2}`,
-      `It is also important to remember that ${rule3}`,
-      `Additionally, we must keep in mind that ${rule4}`,
-      `Each of these characteristics helps us understand ${theme_clean} better.`,
-      `Understanding these details allows us to recognize patterns and make smart connections.`,
-      `Next, we will look at how this concept functions in practice.`
+      `Here is the background you need: ${rule1}`,
+      rule2
     ];
     p3 = [
-      `Let's take a closer look at the structure and functions of ${theme_clean}.`,
-      `We look at how different parts are arranged and interact with each other.`,
-      `For ${theme_clean}, these natural and conceptual structures are very important.`,
-      `By examining these elements, we can understand the underlying science and patterns.`,
-      `${step1}`,
-      `${step2}`,
-      `${step3}`,
-      `This process helps us analyze changes like growth, movement, or style.`,
-      `In elementary studies, close observation is the key to understanding systems.`,
-      `Next, let us examine a real-world scenario of this topic.`
+      `Key fact: ${theme_clean} ${fact_clean}.`,
+      rule3,
+      rule4
     ];
     p4 = [
-      `Let's consider a concrete example or context of ${theme_clean}.`,
-      `We can look at how this applies to historical records, scientific models, or regional maps.`,
-      `This provides resources, historical significance, or artistic value to our study.`,
-      `For instance, ${example1}`,
-      `In addition, ${example2}`,
-      `Finally, ${example3}`,
-      `Observing these examples helps us connect classroom learning to the real world.`,
-      `It shows us how ${theme_clean} interacts with other natural or human systems.`,
-      `Keep this context in mind as you prepare for the practice game.`,
-      `Let us summarize what we have learned about this topic.`
+      step1,
+      step2,
+      step3
     ];
     p5 = [
-      `In summary, you have learned the core ideas of ${theme_clean} in ${subject}.`,
-      `Remember that ${theme_clean} ${fact_clean}.`,
-      `${summary}`,
-      `${takeaway}`,
-      `Remember these key facts when answering the practice questions.`,
-      `You are now ready to start the practice game and earn stars.`,
-      `Read the questions carefully and do your best in every challenge.`,
-      `Take your time and verify your answer before submitting it.`,
-      `Learning builds a brighter future for you and your community.`,
-      `Good luck as you start the practice session!`
+      example1,
+      example2,
+      example3
+    ];
+    p6 = [
+      `A common mix-up is not fully understanding why ${fact_clean}, so review that connection carefully.`,
+      takeaway
+    ];
+    p7 = [
+      summary,
+      `Remember: ${theme_clean} ${fact_clean}.`,
+      "You are ready to start the practice game."
     ];
   }
-
-  const formatLines = (linesArray) => {
-    return linesArray.map(s => s.trim()).join("<br>");
-  };
 
   return [
     formatLines(p1),
     formatLines(p2),
     formatLines(p3),
     formatLines(p4),
-    formatLines(p5)
+    formatLines(p5),
+    formatLines(p6),
+    formatLines(p7)
   ];
 }
 
@@ -38719,7 +39690,9 @@ function getTextLessonExplanation(subject, lessonId) {
     page2: pages[1],
     page3: pages[2],
     page4: pages[3],
-    page5: pages[4]
+    page5: pages[4],
+    page6: pages[5],
+    page7: pages[6]
   };
 }
 function showQuestionExplanation(question) {
@@ -38805,7 +39778,50 @@ function renderLessonSlide() {
     const desc = lesson ? lesson.desc : "Let's learn!";
     const standard = lesson ? lesson.standard : "";
     
-    const totalSlides = 7; // Welcome + 5 Pages + Wrap Up
+    const isSpecialSubject = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
+    let sub = appState.activeSublesson || 1;
+    if (sub < 1) sub = 1;
+    if (sub > 3) sub = 3;
+
+    let slideConfigs;
+    if (isSpecialSubject) {
+      if (sub === 1) {
+        slideConfigs = [
+          { title: "Welcome!", color: "#8b5cf6", emoji: "👋", gradient: "linear-gradient(135deg, #7c3aed, #4c1d95)", pageKey: null },
+          { title: "Page 1: Introduction", color: "#3b82f6", emoji: "📖", gradient: "linear-gradient(135deg, #2563eb, #1e3a8a)", pageKey: "page1" },
+          { title: "Page 2: Background & Context", color: "#06b6d4", emoji: "📄", gradient: "linear-gradient(135deg, #0891b2, #164e63)", pageKey: "page2" },
+          { title: "Page 3: Key Facts & Details", color: "#0ea5e9", emoji: "🔎", gradient: "linear-gradient(135deg, #0369a1, #0c4a6e)", pageKey: "page3" },
+          { title: "Part 1 Complete!", color: "#f59e0b", emoji: "🏆", gradient: "linear-gradient(135deg, #d97706, #78350f)", pageKey: null }
+        ];
+      } else if (sub === 2) {
+        slideConfigs = [
+          { title: "Welcome!", color: "#8b5cf6", emoji: "👋", gradient: "linear-gradient(135deg, #7c3aed, #4c1d95)", pageKey: null },
+          { title: "Page 4: How It Happened / Works", color: "#f97316", emoji: "⚙️", gradient: "linear-gradient(135deg, #ea580c, #7c2d12)", pageKey: "page4" },
+          { title: "Page 5: People & Perspectives", color: "#ec4899", emoji: "💡", gradient: "linear-gradient(135deg, #db2777, #831843)", pageKey: "page5" },
+          { title: "Part 2 Complete!", color: "#f59e0b", emoji: "🏆", gradient: "linear-gradient(135deg, #d97706, #78350f)", pageKey: null }
+        ];
+      } else {
+        slideConfigs = [
+          { title: "Welcome!", color: "#8b5cf6", emoji: "👋", gradient: "linear-gradient(135deg, #7c3aed, #4c1d95)", pageKey: null },
+          { title: "Page 6: Impact & Legacy", color: "#22c55e", emoji: "🌍", gradient: "linear-gradient(135deg, #16a34a, #14532d)", pageKey: "page6" },
+          { title: "Page 7: Summary", color: "#10b981", emoji: "📝", gradient: "linear-gradient(135deg, #059669, #064e3b)", pageKey: "page7" },
+          { title: "Part 3 Complete!", color: "#f59e0b", emoji: "🏆", gradient: "linear-gradient(135deg, #d97706, #78350f)", pageKey: null }
+        ];
+      }
+    } else {
+      slideConfigs = [
+        { title: "Welcome!", color: "#8b5cf6", emoji: "👋", gradient: "linear-gradient(135deg, #7c3aed, #4c1d95)", pageKey: null },
+        { title: "Page 1: Introduction", color: "#3b82f6", emoji: "📖", gradient: "linear-gradient(135deg, #2563eb, #1e3a8a)", pageKey: "page1" },
+        { title: "Page 2: Core Properties", color: "#06b6d4", emoji: "📄", gradient: "linear-gradient(135deg, #0891b2, #164e63)", pageKey: "page2" },
+        { title: "Page 3: How It Works", color: "#f97316", emoji: "⚙️", gradient: "linear-gradient(135deg, #ea580c, #7c2d12)", pageKey: "page3" },
+        { title: "Page 4: Detailed Rules", color: "#ec4899", emoji: "💡", gradient: "linear-gradient(135deg, #db2777, #831843)", pageKey: "page4" },
+        { title: "Page 5: Worked Examples", color: "#10b981", emoji: "📝", gradient: "linear-gradient(135deg, #059669, #064e3b)", pageKey: "page5" },
+        { title: "Page 6: Common Mistakes", color: "#a855f7", emoji: "⚠️", gradient: "linear-gradient(135deg, #7e22ce, #4c1d95)", pageKey: "page6" },
+        { title: "Page 7: Summary", color: "#22c55e", emoji: "✅", gradient: "linear-gradient(135deg, #16a34a, #14532d)", pageKey: "page7" },
+        { title: "Wrap Up & Review", color: "#f59e0b", emoji: "🏆", gradient: "linear-gradient(135deg, #d97706, #78350f)", pageKey: null }
+      ];
+    }
+    const totalSlides = slideConfigs.length;
     const currentIndex = appState.lessonSlideIndex || 0;
     
     // Subject-themed colors and icons
@@ -38818,16 +39834,6 @@ function renderLessonSlide() {
       art: { icon: "🎨", bg: "linear-gradient(135deg, #701a75, #3b0764)", accent: "#e879f9" }
     };
     const theme = subjectThemes[appState.currentSubject] || subjectThemes.math;
-    
-    const slideConfigs = [
-      { title: "Welcome!", color: "#8b5cf6", emoji: "👋", gradient: "linear-gradient(135deg, #7c3aed, #4c1d95)" },
-      { title: "Page 1: Introduction", color: "#3b82f6", emoji: "📖", gradient: "linear-gradient(135deg, #2563eb, #1e3a8a)" },
-      { title: "Page 2: Core Properties", color: "#06b6d4", emoji: "📄", gradient: "linear-gradient(135deg, #0891b2, #164e63)" },
-      { title: "Page 3: How It Works", color: "#f97316", emoji: "⚙️", gradient: "linear-gradient(135deg, #ea580c, #7c2d12)" },
-      { title: "Page 4: Detailed Rules", color: "#ec4899", emoji: "💡", gradient: "linear-gradient(135deg, #db2777, #831843)" },
-      { title: "Page 5: Summary", color: "#10b981", emoji: "📝", gradient: "linear-gradient(135deg, #059669, #064e3b)" },
-      { title: "Wrap Up & Review", color: "#f59e0b", emoji: "🏆", gradient: "linear-gradient(135deg, #d97706, #78350f)" }
-    ];
     const slide = slideConfigs[currentIndex] || slideConfigs[0];
     
     // Build slide content for each index
@@ -38836,69 +39842,150 @@ function renderLessonSlide() {
     let pageText = "";
     
     if (currentIndex === 0) {
-      slideSpeakText = `Welcome to the lesson! Today we are learning ${title}. ${desc}. This lesson has 5 pages. Click Next to begin!`;
-      slideContentHtml = `
-        <div style="text-align: center; padding: 24px 16px;">
-          <div style="font-size: 88px; margin-bottom: 14px; animation: float-animation 2.5s infinite ease-in-out; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">${theme.icon}</div>
-          <h3 style="font-size: 26px; font-weight: 900; margin-bottom: 8px; color: #fef08a; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">${title}</h3>
-          <div style="display: inline-block; background: rgba(255,255,255,0.1); padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.1);">
-            ${standard} • ${appState.currentSubject.charAt(0).toUpperCase() + appState.currentSubject.slice(1)}
+      if (isSpecialSubject) {
+        slideSpeakText = `Welcome to Part ${sub} of ${title}. ${desc}. This part has ${sub === 3 ? 1 : 2} page${sub === 3 ? '' : 's'}. Click Next to begin!`;
+        slideContentHtml = `
+          <div style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08);">
+            <canvas id="lessonVidCanvas" width="640" height="200" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
+            <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
           </div>
-          <p style="font-size: 16px; font-weight: 700; color: #cbd5e1; max-width: 500px; margin: 0 auto 20px; line-height: 1.65;">${desc}</p>
-          <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 18px 20px; max-width: 420px; margin: 0 auto 16px; border: 1.5px dashed rgba(255,255,255,0.15); text-align: left;">
-            <div style="font-size: 13px; font-weight: 800; color: ${slide.color}; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">📋 What You'll Learn</div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              ${['Read the main definition on Page 1', 'Explore key properties and internal parts on Pages 2-3', 'Review rules and a summary on Pages 4-5'].map((item, i) =>
-                `<div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; font-weight: 600;">
-                  <span style="background: ${slide.color}; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0;">${i+1}</span>
-                  ${item}
-                </div>`
-              ).join('')}
+          <div style="text-align: center; padding: 24px 16px;">
+            <div style="font-size: 88px; margin-bottom: 14px; animation: float-animation 2.5s infinite ease-in-out; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">${theme.icon}</div>
+            <h3 style="font-size: 26px; font-weight: 900; margin-bottom: 8px; color: #fef08a; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">${title}</h3>
+            <h4 style="font-size: 18px; font-weight: 800; color: #60a5fa; margin-bottom: 12px;">Part ${sub} of 3</h4>
+            <div style="display: inline-block; background: rgba(255,255,255,0.1); padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.1);">
+              ${standard} • ${appState.currentSubject.charAt(0).toUpperCase() + appState.currentSubject.slice(1)}
             </div>
+            <p style="font-size: 16px; font-weight: 700; color: #cbd5e1; max-width: 500px; margin: 0 auto 20px; line-height: 1.65;">${desc}</p>
+            <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 18px 20px; max-width: 420px; margin: 0 auto 16px; border: 1.5px dashed rgba(255,255,255,0.15); text-align: left;">
+              <div style="font-size: 13px; font-weight: 800; color: ${slide.color}; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">📋 What You'll Learn in Part ${sub}</div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                ${sub === 1 ? `
+                  <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; font-weight: 600;">
+                    <span style="background: ${slide.color}; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0;">1</span>
+                    Read the main definition on Page 1
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; font-weight: 600;">
+                    <span style="background: ${slide.color}; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0;">2</span>
+                    Explore core properties and features on Page 2
+                  </div>
+                ` : sub === 2 ? `
+                  <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; font-weight: 600;">
+                    <span style="background: ${slide.color}; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0;">1</span>
+                    Explore how it works and animals/habitat on Page 3
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; font-weight: 600;">
+                    <span style="background: ${slide.color}; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0;">2</span>
+                    Review detailed examples and rules on Page 4
+                  </div>
+                ` : `
+                  <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; font-weight: 600;">
+                    <span style="background: ${slide.color}; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0;">1</span>
+                    Review the summary and applications on Page 5
+                  </div>
+                `}
+              </div>
+            </div>
+            <p style="font-size: 12px; color: #475569; font-weight: 700; margin: 0;">⏱️ About 1 minute • ${sub === 3 ? 1 : 2} page${sub === 3 ? '' : 's'}</p>
           </div>
-          <p style="font-size: 12px; color: #475569; font-weight: 700; margin: 0;">⏱️ About 3 minutes • 5 pages</p>
-        </div>
-        <div style="text-align: center; padding: 8px 0 4px;">
-          <button id="speakSlideBtn" style="background: rgba(139,92,246,0.15); border: 1.5px solid rgba(139,92,246,0.4); color: #c4b5fd; padding: 9px 22px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 7px;">
-            🔊 Read Welcome Aloud
-          </button>
-        </div>
-      `;
-    } else if (currentIndex >= 1 && currentIndex <= 5) {
-      pageText = textData[`page${currentIndex}`] || "";
+          <div style="text-align: center; padding: 8px 0 4px;">
+            <button id="speakSlideBtn" style="background: rgba(139,92,246,0.15); border: 1.5px solid rgba(139,92,246,0.4); color: #c4b5fd; padding: 9px 22px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 7px;">
+              🔊 Read Welcome Aloud
+            </button>
+          </div>
+        `;
+      } else {
+        slideSpeakText = `Welcome to the lesson! Today we are learning ${title}. ${desc}. This lesson has 7 pages. Click Next to begin!`;
+        slideContentHtml = `
+          <div style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 18px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08);">
+            <canvas id="lessonVidCanvas" width="640" height="200" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
+            <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
+          </div>
+          <div style="text-align: center; padding: 24px 16px;">
+            <div style="font-size: 88px; margin-bottom: 14px; animation: float-animation 2.5s infinite ease-in-out; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">${theme.icon}</div>
+            <h3 style="font-size: 26px; font-weight: 900; margin-bottom: 8px; color: #fef08a; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">${title}</h3>
+            <div style="display: inline-block; background: rgba(255,255,255,0.1); padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; color: #94a3b8; margin-bottom: 18px; border: 1px solid rgba(255,255,255,0.1);">
+              ${standard} • ${appState.currentSubject.charAt(0).toUpperCase() + appState.currentSubject.slice(1)}
+            </div>
+            <p style="font-size: 16px; font-weight: 700; color: #cbd5e1; max-width: 500px; margin: 0 auto 20px; line-height: 1.65;">${desc}</p>
+            <div style="background: rgba(255,255,255,0.06); border-radius: 16px; padding: 18px 20px; max-width: 420px; margin: 0 auto 16px; border: 1.5px dashed rgba(255,255,255,0.15); text-align: left;">
+              <div style="font-size: 13px; font-weight: 800; color: ${slide.color}; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">📋 What You'll Learn</div>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                ${['Introduction & background on Pages 1-2', 'Key facts and how it works on Pages 3-4', 'People, impact, and summary on Pages 5-7'].map((item, i) =>
+                  `<div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #e2e8f0; font-weight: 600;">
+                    <span style="background: ${slide.color}; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0;">${i+1}</span>
+                    ${item}
+                  </div>`
+                ).join('')}
+              </div>
+            </div>
+            <p style="font-size: 12px; color: #475569; font-weight: 700; margin: 0;">⏱️ About 4 minutes • 7 pages</p>
+          </div>
+          <div style="text-align: center; padding: 8px 0 4px;">
+            <button id="speakSlideBtn" style="background: rgba(139,92,246,0.15); border: 1.5px solid rgba(139,92,246,0.4); color: #c4b5fd; padding: 9px 22px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 7px;">
+              🔊 Read Welcome Aloud
+            </button>
+          </div>
+        `;
+      }
+    } else if (currentIndex >= 1 && currentIndex < totalSlides - 1) {
+      pageText = textData[slide.pageKey] || "";
       const cleanText = pageText.replace(/<\/?[^>]+(>|$)/g, " ");
       slideSpeakText = cleanText;
       
       slideContentHtml = `
         <div style="padding: 4px 0;">
+          <div style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08);">
+            <canvas id="lessonVidCanvas" width="640" height="240" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
+            <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
+          </div>
           <div style="background: rgba(59,130,246,0.07); border-radius: 18px; padding: 24px 28px; border-left: 5px solid ${slide.color}; margin-bottom: 16px; line-height: 1.85; box-shadow: inset 0 0 20px rgba(0,0,0,0.2);">
             <div style="font-size: 11px; font-weight: 850; color: ${slide.color}; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;">📘 ${slide.title}</div>
             <p style="font-size: 16px; font-weight: 700; color: #f8fafc; line-height: 1.8; margin: 0;">${pageText}</p>
           </div>
           <div style="text-align: center; margin-top: 20px;">
             <button id="speakSlideBtn" style="background: rgba(59,130,246,0.15); border: 1.5px solid rgba(59,130,246,0.4); color: #93c5fd; padding: 9px 22px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 7px;">
-              🔊 Read This Page Aloud
+              🔁 Replay Narration
             </button>
           </div>
         </div>
       `;
-    } else if (currentIndex === 6) {
-      slideSpeakText = `Lesson complete! Amazing work! You have finished all the pages for ${title}. Now click the button below to start practicing and earn stars!`;
-      slideContentHtml = `
-        <div style="text-align: center; padding: 14px 6px;">
-          <div style="font-size: 68px; margin-bottom: 10px; animation: bounce 2s infinite;">🏆</div>
-          <h3 style="font-size: 22px; font-weight: 900; color: #fef08a; margin-bottom: 6px;">Lesson Complete!</h3>
-          <p style="font-size: 14px; font-weight: 700; color: #cbd5e1; max-width: 400px; margin: 0 auto 18px; line-height: 1.5;">
-            You've gone through all the pages for <b style="color: #fbbf24;">"${title}"</b>.
-          </p>
-          <div style="background: rgba(16,185,129,0.1); border-radius: 13px; padding: 16px 20px; border: 1.5px solid rgba(16,185,129,0.25); max-width: 360px; margin: 0 auto;">
-            <div style="font-size: 15px; font-weight: 800; color: #34d399; margin-bottom: 6px;">🎯 Ready for Practice?</div>
-            <div style="font-size: 13px; font-weight: 700; color: #a7f3d0; line-height: 1.45;">
-              Click <b>Let's Practice!</b> below to answer questions and earn stars. You've got this!
+    } else if (currentIndex === totalSlides - 1) {
+      if (isSpecialSubject) {
+        slideSpeakText = `Part ${sub} complete! Excellent! Now click the button below to start practicing!`;
+        slideContentHtml = `
+          <div style="text-align: center; padding: 14px 6px;">
+            <div style="font-size: 68px; margin-bottom: 10px; animation: bounce 2s infinite;">🏆</div>
+            <h3 style="font-size: 22px; font-weight: 900; color: #fef08a; margin-bottom: 6px;">Part ${sub} Complete!</h3>
+            <p style="font-size: 14px; font-weight: 700; color: #cbd5e1; max-width: 400px; margin: 0 auto 18px; line-height: 1.5;">
+              You've gone through all the pages for <b style="color: #fbbf24;">Part ${sub} of ${title}</b>.
+            </p>
+            <div style="background: rgba(16,185,129,0.1); border-radius: 13px; padding: 16px 20px; border: 1.5px solid rgba(16,185,129,0.25); max-width: 360px; margin: 0 auto;">
+              <div style="font-size: 15px; font-weight: 800; color: #34d399; margin-bottom: 6px;">🎯 Ready for Practice?</div>
+              <div style="font-size: 13px; font-weight: 700; color: #a7f3d0; line-height: 1.45;">
+                Click <b>Let's Practice!</b> below to answer questions and earn stars. You've got this!
+              </div>
             </div>
           </div>
-        </div>
-      `;
+        `;
+      } else {
+        slideSpeakText = `Lesson complete! Amazing work! You have finished all the pages for ${title}. Now click the button below to start practicing and earn stars!`;
+        slideContentHtml = `
+          <div style="text-align: center; padding: 14px 6px;">
+            <div style="font-size: 68px; margin-bottom: 10px; animation: bounce 2s infinite;">🏆</div>
+            <h3 style="font-size: 22px; font-weight: 900; color: #fef08a; margin-bottom: 6px;">Lesson Complete!</h3>
+            <p style="font-size: 14px; font-weight: 700; color: #cbd5e1; max-width: 400px; margin: 0 auto 18px; line-height: 1.5;">
+              You've gone through all the pages for <b style="color: #fbbf24;">"${title}"</b>.
+            </p>
+            <div style="background: rgba(16,185,129,0.1); border-radius: 13px; padding: 16px 20px; border: 1.5px solid rgba(16,185,129,0.25); max-width: 360px; margin: 0 auto;">
+              <div style="font-size: 15px; font-weight: 800; color: #34d399; margin-bottom: 6px;">🎯 Ready for Practice?</div>
+              <div style="font-size: 13px; font-weight: 700; color: #a7f3d0; line-height: 1.45;">
+                Click <b>Let's Practice!</b> below to answer questions and earn stars. You've got this!
+              </div>
+            </div>
+          </div>
+        `;
+      }
     }
 
     let dotsHtml = '';
@@ -38927,6 +40014,7 @@ function renderLessonSlide() {
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 8px; position: relative; z-index: 1;">
+            <button id="slideAutoplayBtn" style="background: ${(appState.videoAutoplay !== false) ? 'rgba(52,211,153,0.25)' : 'rgba(255,255,255,0.15)'}; border: 1.5px solid ${(appState.videoAutoplay !== false) ? 'rgba(52,211,153,0.5)' : 'rgba(255,255,255,0.2)'}; color: white; width: 34px; height: 34px; border-radius: 10px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" title="${(appState.videoAutoplay !== false) ? 'Autoplay on: pages advance automatically' : 'Autoplay off: click Next to advance'}">${(appState.videoAutoplay !== false) ? '▶️' : '⏸️'}</button>
             <button id="slideMuteBtn" style="background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.2); color: white; width: 34px; height: 34px; border-radius: 10px; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.2s;" title="${isMuted ? 'Unmute narration' : 'Mute narration'}">${muteIcon}</button>
             <div style="font-size: 12px; font-weight: 850; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 12px; backdrop-filter: blur(4px); white-space: nowrap;">
               Page ${currentIndex + 1} / ${totalSlides}
@@ -38972,18 +40060,71 @@ function renderLessonSlide() {
 
     let speakContent = "";
     if (currentIndex === 0) {
-      speakContent = `Welcome to the lesson! Today we are learning: ${title}. ${desc}. Click next page to start reading!`;
-    } else if (currentIndex >= 1 && currentIndex <= 5) {
+      if (isSpecialSubject) {
+        speakContent = `Welcome to Part ${sub} of ${title}. ${desc}. Click next page to start reading!`;
+      } else {
+        speakContent = `Welcome to the lesson! Today we are learning: ${title}. ${desc}. Click next page to start reading!`;
+      }
+    } else if (currentIndex >= 1 && currentIndex < totalSlides - 1) {
       speakContent = `Page ${currentIndex}. ` + (String(pageText).replace(/<\/?[^>]+(>|$)/g, " "));
-    } else if (currentIndex === 6) {
-      speakContent = `Amazing work! You've completed all the pages for ${title}. Click the button below to start practicing!`;
+    } else if (currentIndex === totalSlides - 1) {
+      if (isSpecialSubject) {
+        speakContent = `Part ${sub} complete! Excellent! Click the button below to start practicing!`;
+      } else {
+        speakContent = `Amazing work! You've completed all the pages for ${title}. Click the button below to start practicing!`;
+      }
     }
-    speakText(speakContent);
+
+    // ---- Video playback: animated scene + lively narration synced to subtitles ----
+    if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) {
+      appState.currentVideoSpeech.cancel();
+    }
+    if (typeof stopVideoScene === 'function') stopVideoScene();
+
+    const vidCanvas = container.querySelector('#lessonVidCanvas');
+    const subtitleEl = container.querySelector('#lessonSubtitle');
+    const isLastSlide = (currentIndex === totalSlides - 1);
+
+    if (vidCanvas && typeof startVideoScene === 'function' && typeof pickSceneCategory === 'function') {
+      const sceneText = (pageText || title || desc || "");
+      const category = pickSceneCategory(appState.currentSubject, `${title} ${sceneText}`);
+      startVideoScene(vidCanvas, category);
+    }
+
+    function runNarration() {
+      const sentences = (typeof splitIntoSentences === 'function') ? splitIntoSentences(speakContent) : [speakContent];
+      appState.currentVideoSpeech = speakSentencesWithSubtitles(sentences, {
+        onSentence: (text) => { if (subtitleEl) subtitleEl.textContent = text; },
+        onDone: () => {
+          if (subtitleEl) subtitleEl.textContent = "";
+          const autoplay = appState.videoAutoplay !== false;
+          if (autoplay && !isLastSlide) {
+            appState.videoAdvanceTimeout = setTimeout(() => {
+              const nextBtnNow = container.querySelector('#nextSlideBtn');
+              if (nextBtnNow) nextBtnNow.click();
+            }, 900);
+          }
+        }
+      });
+    }
+    if (typeof speakSentencesWithSubtitles === 'function') {
+      runNarration();
+    } else {
+      speakText(speakContent);
+    }
+
+    function stopPlaybackForNav() {
+      if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) appState.currentVideoSpeech.cancel();
+      if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
+      if (typeof stopVideoScene === 'function') stopVideoScene();
+      window.speechSynthesis.cancel();
+    }
 
     const prevBtn = container.querySelector('#prevSlideBtn');
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
         sounds.playPop();
+        stopPlaybackForNav();
         appState.lessonSlideIndex--;
         renderLessonSlide();
       });
@@ -38993,6 +40134,7 @@ function renderLessonSlide() {
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
         sounds.playPop();
+        stopPlaybackForNav();
         appState.lessonSlideIndex++;
         renderLessonSlide();
       });
@@ -39002,6 +40144,7 @@ function renderLessonSlide() {
     if (finishBtn) {
       finishBtn.addEventListener('click', () => {
         sounds.playCorrect();
+        stopPlaybackForNav();
         completeStep1();
       });
     }
@@ -39009,25 +40152,13 @@ function renderLessonSlide() {
     const speakBtn = container.querySelector('#speakSlideBtn');
     if (speakBtn) {
       speakBtn.addEventListener('click', () => {
-        const textToSpeak = slideSpeakText || speakContent;
-        window.speechSynthesis.cancel();
-        const utt = new SpeechSynthesisUtterance(textToSpeak);
-        utt.rate = 0.88;
-        utt.pitch = 1.05;
-        const voices = window.speechSynthesis.getVoices();
-        const preferred = voices.find(v => v.name.includes('Samantha') || v.name.includes('Karen') || v.name.includes('Google') || v.lang === 'en-US');
-        if (preferred) utt.voice = preferred;
-        speakBtn.textContent = '⏸️ Speaking...';
-        speakBtn.style.opacity = '0.7';
-        utt.onend = () => {
-          speakBtn.textContent = '🔊 Read This Page Aloud';
-          speakBtn.style.opacity = '1';
-        };
-        utt.onerror = () => {
-          speakBtn.textContent = '🔊 Read This Page Aloud';
-          speakBtn.style.opacity = '1';
-        };
-        window.speechSynthesis.speak(utt);
+        if (appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
+        if (typeof speakSentencesWithSubtitles === 'function') {
+          runNarration();
+        } else {
+          window.speechSynthesis.cancel();
+          speakText(slideSpeakText || speakContent);
+        }
       });
     }
 
@@ -39038,12 +40169,29 @@ function renderLessonSlide() {
         sounds.enabled = appState.isSoundOn;
         if (!appState.isSoundOn) {
           window.speechSynthesis.cancel();
+          if (appState.currentVideoSpeech && appState.currentVideoSpeech.cancel) appState.currentVideoSpeech.cancel();
+        } else {
+          runNarration();
         }
         appState.save && appState.save();
         muteBtn.textContent = appState.isSoundOn ? '🔊' : '🔇';
         muteBtn.title = appState.isSoundOn ? 'Mute narration' : 'Unmute narration';
         muteBtn.style.background = appState.isSoundOn ? 'rgba(255,255,255,0.15)' : 'rgba(239,68,68,0.35)';
         muteBtn.style.borderColor = appState.isSoundOn ? 'rgba(255,255,255,0.2)' : 'rgba(239,68,68,0.5)';
+      });
+    }
+
+    const autoplayBtn = container.querySelector('#slideAutoplayBtn');
+    if (autoplayBtn) {
+      autoplayBtn.addEventListener('click', () => {
+        appState.videoAutoplay = !(appState.videoAutoplay !== false);
+        appState.save && appState.save();
+        const on = appState.videoAutoplay !== false;
+        autoplayBtn.textContent = on ? '▶️' : '⏸️';
+        autoplayBtn.title = on ? 'Autoplay on: pages advance automatically' : 'Autoplay off: click Next to advance';
+        autoplayBtn.style.background = on ? 'rgba(52,211,153,0.25)' : 'rgba(255,255,255,0.15)';
+        autoplayBtn.style.borderColor = on ? 'rgba(52,211,153,0.5)' : 'rgba(255,255,255,0.2)';
+        if (!on && appState.videoAdvanceTimeout) { clearTimeout(appState.videoAdvanceTimeout); appState.videoAdvanceTimeout = null; }
       });
     }
   } catch (err) {
@@ -39217,15 +40365,15 @@ function getLessonVideoData(subject, lessonId) {
     // Slide 0: Intro
     slides.push({
       title: `${subject.toUpperCase()}: ${theme}`,
-      text: `Welcome to the lesson on ${theme}. This lesson has 5 pages. Click Play or Next to begin.`,
+      text: `Welcome to the lesson on ${theme}. This lesson has 7 pages. Click Play or Next to begin.`,
       emoji: "📖",
       visualType: "intro"
     });
 
     const textData = getTextLessonExplanation(subject, lessonId);
-    
-    // Slide 1 to 5
-    for (let i = 1; i <= 5; i++) {
+
+    // Slide 1 to 7
+    for (let i = 1; i <= 7; i++) {
       slides.push({
         title: `Page ${i}`,
         text: textData[`page${i}`],
@@ -39871,6 +41019,7 @@ function renderVideoSlide() {
 
 function renderVideoCheckpointQuestion() {
   appState.videoCheckpointActive = true;
+  appState.checkpointFirstAttempt = true;
   const playBtn = document.getElementById('vidPlayBtn');
   if (playBtn) playBtn.style.opacity = '0.3';
 
@@ -39902,6 +41051,14 @@ function renderVideoCheckpointQuestion() {
     btn.innerText = opt;
     
     btn.addEventListener('click', () => {
+      if (appState.checkpointFirstAttempt) {
+        appState.totalQuestionsAnswered++;
+        if (opt === q.correctAnswer) {
+          appState.correctQuestionsAnswered++;
+        }
+        appState.checkpointFirstAttempt = false;
+        appState.saveState();
+      }
       if (opt === q.correctAnswer) {
         appState.videoCheckpointActive = false;
         if (playBtn) playBtn.style.opacity = '1';
@@ -39968,8 +41125,17 @@ function completeStep1() {
 function setupStep2Practice() {
   appState.practiceIndex = 0;
   appState.practiceHintLevel = 0;
-  appState.practiceScore = 0;
+  const isSpecial = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
+  if (!isSpecial || !appState.activeSublesson || appState.activeSublesson === 1) {
+    appState.practiceScore = 0;
+  }
   appState.currentQuestionAttempted = false;
+  if (isSpecial) {
+    const qList = getQuestionsForSublesson(appState.currentSubject, appState.activeQuestLessonId, appState.activeSublesson || 1);
+    appState.practiceProblemsCount = qList.length;
+  } else {
+    appState.practiceProblemsCount = 5;
+  }
   renderPracticeLayout();
 }
 
@@ -40092,6 +41258,14 @@ function generatePracticeProblem() {
         }
       }
 
+      if (!appState.currentQuestionAttempted) {
+        appState.totalQuestionsAnswered++;
+        if (isCorrect && !(isHighStakes && appState.chatbotUsedForCurrentQuestion)) {
+          appState.correctQuestionsAnswered++;
+        }
+        appState.saveState();
+      }
+
       if (isCorrect) {
         if (isHighStakes && appState.chatbotUsedForCurrentQuestion) {
           sounds.playWrong();
@@ -40155,6 +41329,14 @@ function generatePracticeProblem() {
       btn.addEventListener('click', () => {
         const isHighStakes = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
         
+        if (!appState.currentQuestionAttempted) {
+          appState.totalQuestionsAnswered++;
+          if (opt === q.correctAnswer && !(isHighStakes && appState.chatbotUsedForCurrentQuestion)) {
+            appState.correctQuestionsAnswered++;
+          }
+          appState.saveState();
+        }
+
         if (opt === q.correctAnswer) {
           if (isHighStakes && appState.chatbotUsedForCurrentQuestion) {
             sounds.playWrong();
@@ -40771,6 +41953,11 @@ function recordMasteryTrial(success) {
   if (appState.masteryTrialRecorded) return; // Prevent logging multiple trials for one problem
   appState.masteryTrialRecorded = true;
 
+  appState.totalQuestionsAnswered = (appState.totalQuestionsAnswered || 0) + 1;
+  if (success === 1) {
+    appState.correctQuestionsAnswered = (appState.correctQuestionsAnswered || 0) + 1;
+  }
+
   appState.masteryHistory.push(success);
   // Keep only the last 10 trials
   if (appState.masteryHistory.length > 10) {
@@ -40846,7 +42033,7 @@ function setupStep4Test() {
   appState.testScore = 0;
   
   // Generate 10 dynamic math questions for active lesson
-  appState.testProblems = Array.from({length: 10}, () => generateMathQuestion(appState.activeQuestLessonId));
+  appState.testProblems = Array.from({length: 10}, (_, i) => generateMathQuestion(appState.activeQuestLessonId, i));
   
   renderTestQuestion();
 }
@@ -41172,12 +42359,13 @@ function renderCurriculumRoadmap() {
     unitLessons.forEach(lesson => {
       const isCompleted = lesson.id <= appState.completedCounts.lessonsCompleted;
       const isLocked = lesson.id > appState.completedCounts.lessonsCompleted + 1;
-      
+
       let actuallyLocked = isLocked;
       if (unit.id > 1) {
         const prevExamPassed = appState.completedCounts.examsPassed[unit.id - 2];
         if (!prevExamPassed) actuallyLocked = true;
       }
+      if (window.DEV_UNLOCK_ALL_LESSONS) actuallyLocked = false; // TEMP preview flag, remove before shipping
       
       const row = document.createElement('div');
       row.className = `lesson-row-card ${isCompleted ? 'completed' : ''} ${actuallyLocked ? 'locked' : ''}`;
@@ -41206,7 +42394,7 @@ function renderCurriculumRoadmap() {
     });
     
     const examUnlocked = completedInUnit === totalInUnit;
-    const isExamLocked = !examUnlocked;
+    const isExamLocked = window.DEV_UNLOCK_ALL_LESSONS ? false : !examUnlocked;
     
     const examRow = document.createElement('div');
     examRow.className = `exam-row-card ${isExamLocked ? 'locked' : ''}`;
@@ -41246,7 +42434,7 @@ function renderCurriculumRoadmap() {
 }
 
 function updateGradeReviewTestCards() {
-  const allExamsPassed = appState.completedCounts.examsPassed.every(p => p === true);
+  const allExamsPassed = window.DEV_UNLOCK_ALL_LESSONS ? true : appState.completedCounts.examsPassed.every(p => p === true);
   const reviewPassed = appState.completedCounts.reviewCompleted === true;
   const gradePassed = appState.completedCounts.gradeTestPassed === true;
   
@@ -41285,7 +42473,7 @@ function updateGradeReviewTestCards() {
       testDesc.innerText = `${numQuestions} questions! Need ${goalQuestions}/${numQuestions} to pass.`;
     }
     
-    if (reviewPassed) {
+    if (reviewPassed || window.DEV_UNLOCK_ALL_LESSONS) {
       testCard.classList.remove('locked');
       testBtn.removeAttribute('disabled');
       testBtn.innerText = gradePassed ? 'Grade Passed! 🎉' : 'Take Grade Test ➔';
@@ -43081,5 +44269,1365 @@ function getLessonTitleAndDesc(subject, grade, lessonId) {
   }
 
   return [`Lesson ${lessonId}`, `Learn Grade ${grade} ${subject} standard.`];
+}
+
+
+
+// ============================================================================
+// NEW ENHANCEMENTS: QUESTION UNIQUENESS & SUBLESSONS DYNAMIC CURRICULUM
+// ============================================================================
+
+// 1. Math Lesson 5 Dynamic Generator
+function generateMathLesson5Question(index) {
+  const idx = (index !== undefined && index !== null) ? index : 0;
+  const isGreater = idx % 2 === 0;
+  const num1 = (idx * 3 + 4) % 10 + 1;
+  let num2 = (idx * 7 + 2) % 10 + 1;
+  if (num1 === num2) num2 = (num1 + 3) % 10 + 1;
+  
+  let questionText, correctAnswer, options, visualContent;
+  if (isGreater) {
+    questionText = "Which number is greater (bigger)?";
+    correctAnswer = String(Math.max(num1, num2));
+    options = [correctAnswer, String(Math.min(num1, num2))];
+    visualContent = `<div style="font-size: 48px;">🍎</div><div style="font-size: 16px; margin-top: 8px;">${num1} vs ${num2}</div>`;
+  } else {
+    questionText = "Which number is lesser (smaller)?";
+    correctAnswer = String(Math.min(num1, num2));
+    options = [correctAnswer, String(Math.max(num1, num2))];
+    visualContent = `<div style="font-size: 48px;">🍌</div><div style="font-size: 16px; margin-top: 8px;">${num1} vs ${num2}</div>`;
+  }
+  let oIdx = idx;
+  while (options.length < 4) {
+    const r = String((oIdx * 11 + 7) % 10 + 1);
+    oIdx++;
+    if (!options.includes(r)) options.push(r);
+  }
+  options = options.sort(() => ((idx * 9 + 5) % 10 - 5) / 10);
+  return {
+    questionText,
+    correctAnswer,
+    options,
+    visualContent,
+    hint: isGreater ? `${correctAnswer} is more than ${Math.min(num1, num2)}!` : `${correctAnswer} is less than ${Math.max(num1, num2)}!`
+  };
+}
+
+// 2. Special Subjects Sublessons Database and Generator
+const SPECIAL_TEMPLATES = {
+  "grasslands": {
+    "sub1": {
+      "title": "Introduction & Grassland Geography",
+      "pages": [
+        "We begin our study of grasslands by exploring the geographic layout of {THEME}. Grasslands are wide, open regions where grasses are the main type of plant life rather than tall trees.",
+        "The climate in {THEME} is semi-arid, meaning it is dry but receives enough rain to support grass growth but not large forests.",
+        "Winds blow across these flat plains at high speeds because there are no mountain barriers or tall forests to act as physical barriers.",
+        "Geographers study maps of {THEME} to understand how the topography shapes local weather patterns and regional borders.",
+        "Always remember that grasslands are critical for the global climate, playing a major role in carbon storage and soil preservation."
+      ],
+      "questions": [
+        {"q": "What is the main type of vegetation found in {THEME}?", "a": "Grasses and small shrubs", "o": ["Grasses and small shrubs", "Tall pine trees", "Cactus plants", "Water lilies"]},
+        {"q": "Why do winds blow at very high speeds across {THEME}?", "a": "There are no mountain barriers to block the wind", "o": ["There are no mountain barriers to block the wind", "Ocean tides push the air", "Volcanic heat creates wind", "Trees push the wind"]},
+        {"q": "What climate zone best describes the weather of {THEME}?", "a": "Semi-arid (dry with seasonal rain)", "o": ["Semi-arid (dry with seasonal rain)", "Tropical rainforest climate", "Polar ice cap climate", "Extremely humid and rainy"]},
+        {"q": "How do grasslands like {THEME} help the global environment?", "a": "By storing carbon and preserving soil", "o": ["By storing carbon and preserving soil", "By producing ocean currents", "By blocking all solar radiation", "By raising mountain heights"]},
+        {"q": "What is the topography of {THEME}?", "a": "Flat, open plains", "o": ["Flat, open plains", "Steep, rocky peaks", "Deep underwater trenches", "Glacial ice sheets"]}
+      ]
+    },
+    "sub2": {
+      "title": "Grassland Wildlife & Adaptation",
+      "pages": [
+        "Let's explore the diverse animal life and habitats of {THEME}. Animals in this habitat have developed unique ways to survive in the open plains.",
+        "Mammals like wild bison, pronghorn antelope, and prairie dogs find food and shelter in the tall grasses.",
+        "Prairie dogs adapt by digging deep underground burrows to escape predators like eagles and coyotes.",
+        "Bison grow very thick fur coats to protect themselves against freezing winter blizzards and wind chills.",
+        "Fires are a natural part of the grassland lifecycle, clearing dead plants so fresh green grass can grow from deep roots."
+      ],
+      "questions": [
+        {"q": "Which large mammal is famous for grazing on {THEME} grasses?", "a": "Bison", "o": ["Bison", "Polar bear", "Penguin", "Dolphin"]},
+        {"q": "How do prairie dogs adapt to the open environment of {THEME}?", "a": "By digging underground burrows to hide from predators", "o": ["By digging underground burrows to hide from predators", "By flying high into trees", "By swimming in lakes", "By running faster than horses"]},
+        {"q": "How do bison survive the freezing winters in {THEME}?", "a": "They grow thick fur coats", "o": ["They grow thick fur coats", "They migrate to the ocean", "They hibernate underground", "They build wooden shelter cabins"]},
+        {"q": "Why are seasonal fires beneficial to the ecology of {THEME}?", "a": "They clear dead brush to let new grass grow", "o": ["They clear dead brush to let new grass grow", "They melt the winter glaciers", "They heat up the rivers", "They help trees grow taller"]},
+        {"q": "Where do grassland plants store energy to survive fires and grazing?", "a": "In deep roots underground", "o": ["In deep roots underground", "In thick woody bark", "In bright red flowers", "In tall canopy leaves"]}
+      ]
+    },
+    "sub3": {
+      "title": "Human Connections & Culture",
+      "pages": [
+        "Let's learn about the human and cultural history of the {THEME} region, spanning thousands of years.",
+        "Native American tribes like the Sioux and Cheyenne historically lived in {THEME}, adapting to a nomadic hunting lifestyle.",
+        "These tribes followed the bison herds, using portable animal skin tipis that were quick to pack up and move.",
+        "Pioneers and homesteaders later moved to the dry plains of {THEME}, building sod houses out of dirt bricks due to a lack of trees.",
+        "Today, farming grain and ranching cattle are the main human activities shaping the modern landscape of {THEME}."
+      ],
+      "questions": [
+        {"q": "Which Native American tribe historically lived in {THEME}?", "a": "Sioux", "o": ["Sioux", "Inuit", "Maya", "Aztec"]},
+        {"q": "Why did Native tribes in {THEME} live in portable skin tipis?", "a": "To easily follow migrating bison herds", "o": ["To easily follow migrating bison herds", "To protect themselves from floods", "To stay close to forest wood", "To trade with coastal towns"]},
+        {"q": "What did homesteaders use to build houses in {THEME} due to a lack of trees?", "a": "Blocks of sod soil and grass roots", "o": ["Blocks of sod soil and grass roots", "Oak wood logs", "Pine tree bark", "Bricks and concrete"]},
+        {"q": "What was the main resource for food and shelter for the nomadic tribes of {THEME}?", "a": "Wild bison", "o": ["Wild bison", "Forest timber", "Lake fish", "Wheat crops"]},
+        {"q": "What is the primary human use of the {THEME} region today?", "a": "Farming crops and ranching cattle", "o": ["Farming crops and ranching cattle", "Deep-sea fishing", "Mountain rock climbing", "Heavy factory manufacturing"]}
+      ]
+    }
+  },
+  "mountains": {
+    "sub1": {
+      "title": "Mountain Geography & Elevation",
+      "pages": [
+        "We begin our study of mountains by exploring {THEME}. Mountains are steep, rocky landforms that rise high above the surrounding land.",
+        "The highest point of a mountain is called the summit or peak. Due to high elevation, the air at the summit is much thinner and colder.",
+        "Mountains influence local weather by forcing moving air upwards, where it cools down and forms rain or snow on the slopes.",
+        "Geographers use topographic maps with contour lines to study mountain height, slope steepness, and elevation levels.",
+        "Always remember that mountains cover about one-quarter of Earth's land surface and provide freshwater to half of humanity."
+      ],
+      "questions": [
+        {"q": "What is the highest point of a mountain called?", "a": "Summit or peak", "o": ["Summit or peak", "Basin or valley", "Slope or cliff", "Riverbed"]},
+        {"q": "Why is the temperature colder at the top of {THEME}?", "a": "High elevation makes the air thinner and colder", "o": ["High elevation makes the air thinner and colder", "The sun does not shine on peaks", "Wind only blows downwards", "There is more salt in the air"]},
+        {"q": "How do mountains like {THEME} affect local weather patterns?", "a": "They force air upwards, cooling it to form rain or snow", "o": ["They force air upwards, cooling it to form rain or snow", "They stop the rotation of the Earth", "They absorb all clouds in the area", "They make the sun rise earlier"]},
+        {"q": "What map feature is used to show mountain height and slopes?", "a": "Contour lines on topographic maps", "o": ["Contour lines on topographic maps", "Flat color fills", "Alphabetical index lists", "Compass rose symbols"]},
+        {"q": "Approximately how much of Earth's land surface is covered by mountains?", "a": "One-quarter", "o": ["One-quarter", "One-half", "Three-quarters", "Ten percent"]}
+      ]
+    },
+    "sub2": {
+      "title": "Mountain Habitats & Adaptations",
+      "pages": [
+        "Let's explore the unique habitats and wildlife found on {THEME}. Weather conditions change rapidly as you climb higher.",
+        "We divide mountains into distinct plant zones: forests at the base, grasslands in the alpine zone, and snow on the peak.",
+        "Animals like mountain goats and snow leopards have adapted thick, warm fur and specialized hooves to climb steep cliffs.",
+        "Alpine plants grow very low to the ground and have small, thick leaves to protect themselves from freezing winds.",
+        "Because of the steep terrain, mountain slopes are prone to landslides and avalanches, which shape the habitat."
+      ],
+      "questions": [
+        {"q": "What change occurs in vegetation zones as you climb {THEME}?", "a": "Plants change from forests to low grasses and snow", "o": ["Plants change from forests to low grasses and snow", "Trees grow taller and fruitier", "Only desert cacti can survive near the top", "All plants turn into water plants"]},
+        {"q": "Which animal is specialized for climbing steep cliffs on {THEME}?", "a": "Mountain goat", "o": ["Mountain goat", "Kangaroo", "Penguin", "Sea turtle"]},
+        {"q": "Why do alpine plants on {THEME} grow low to the ground?", "a": "To protect themselves from freezing winds", "o": ["To protect themselves from freezing winds", "To absorb water from underground lakes", "Because they have no green leaves", "To hide from flying eagles"]},
+        {"q": "What natural hazard is common on steep slopes like {THEME}?", "a": "Landslides and avalanches", "o": ["Landslides and avalanches", "Ocean hurricanes", "Tornadoes", "Forest fires only"]},
+        {"q": "What feature helps snow leopards stay warm on {THEME}?", "a": "Thick, dense fur and long tails", "o": ["Thick, dense fur and long tails", "A hard shell", "Large wings to fly", "Scales that reflect heat"]}
+      ]
+    },
+    "sub3": {
+      "title": "Human Uses & Mountain History",
+      "pages": [
+        "Let's learn how humans interact with {THEME}. Historically, mountains were barriers to travel, trade, and communication.",
+        "Over time, communities adapted by building winding mountain passes and tunnels to travel through steep ranges.",
+        "Mountains are rich in mineral resources, leading to mining history, and they provide timber and fresh water.",
+        "Many people visit mountains like {THEME} for sports like hiking, rock climbing, and skiing, boosting tourism.",
+        "Protecting these fragile environments is crucial, as they host unique cultures and maintain the global water supply."
+      ],
+      "questions": [
+        {"q": "Why were mountains like {THEME} difficult for early human travel?", "a": "They acted as physical barriers to trade and movement", "o": ["They acted as physical barriers to trade and movement", "They were too hot to climb", "They had no water resources", "They were covered in cities"]},
+        {"q": "How did people adapt to travel through steep ranges like {THEME}?", "a": "By building mountain passes and tunnels", "o": ["By building mountain passes and tunnels", "By using hot air balloons only", "By swimming around them", "By moving mountains aside"]},
+        {"q": "What vital resource do mountains like {THEME} provide to populations below?", "a": "Fresh drinking water from snowmelt", "o": ["Fresh drinking water from snowmelt", "Salty sea water", "Fossilized fuel oil", "Sand for construction"]},
+        {"q": "What is a popular recreational activity in mountain areas?", "a": "Hiking and skiing", "o": ["Hiking and skiing", "Deep-sea diving", "Desert sandboarding", "Sailing"]},
+        {"q": "Why is conservation of {THEME} environments important?", "a": "To protect freshwater supplies and unique ecosystems", "o": ["To protect freshwater supplies and unique ecosystems", "To build more high-rise factories", "To flat-level the summits", "To increase volcanic activity"]}
+      ]
+    }
+  },
+  "deserts": {
+    "sub1": {
+      "title": "Desert Geography & Arid Climate",
+      "pages": [
+        "We begin our study of deserts by exploring {THEME}. Deserts are extremely dry landforms that receive very little rainfall.",
+        "To be classified as a desert, a region must receive less than 10 inches of rain or precipitation per year.",
+        "While we think of deserts as hot, they can be cold too. What they all have in common is a lack of available moisture.",
+        "The landscape features dry soil, rocky plains, and wind-blown sand dunes that shift and change shape over time.",
+        "Geographers study how the dry climate limits vegetation and shapes the physical layout of these vast areas."
+      ],
+      "questions": [
+        {"q": "What is the defining characteristic of a desert like {THEME}?", "a": "Receiving less than 10 inches of rain per year", "o": ["Receiving less than 10 inches of rain per year", "Having only hot weather", "Being covered in thick forests", "Having large fresh lakes"]},
+        {"q": "Which feature shapes the sandy landscapes of {THEME}?", "a": "Wind-blown sand dunes", "o": ["Wind-blown sand dunes", "Flowing river valleys", "Glacial ice sheets", "Dense pine woods"]},
+        {"q": "Are all deserts hot?", "a": "No, some deserts are cold but they are all extremely dry", "o": ["No, some deserts are cold but they are all extremely dry", "Yes, all deserts are hot and sandy", "Yes, deserts are only found at the Equator", "No, deserts are always frozen"]},
+        {"q": "What is the main geographic challenge of {THEME}?", "a": "A lack of available water and moisture", "o": ["A lack of available water and moisture", "Too many tall trees blocking views", "Extreme daily rainstorms", "Frequent ocean floods"]},
+        {"q": "How does desert soil compare to forest soil?", "a": "It is dry, sandy, and contains less organic matter", "o": ["It is dry, sandy, and contains less organic matter", "It is muddy and wet all year", "It is covered in thick moss", "It is rich in volcanic ash and clay"]}
+      ]
+    },
+    "sub2": {
+      "title": "Desert Plants & Wildlife Adaptations",
+      "pages": [
+        "Let's look at how life survives in the dry desert of {THEME}. Desert plants and animals have developed amazing adaptations.",
+        "Cactus plants have thick, waxy skins to store water inside their stems and sharp spines to protect themselves from thirsty animals.",
+        "Many desert animals, like fennec foxes and kangaroo rats, are nocturnal, meaning they sleep in burrows during the day and hunt at night.",
+        "Animals also have physical traits like large ears to release body heat, or the ability to go long periods without drinking.",
+        "Seeds of desert wildflowers can lie dormant in the dry soil for years, blooming rapidly after a single rainstorm."
+      ],
+      "questions": [
+        {"q": "How do cacti adapt to store water in {THEME}?", "a": "They have thick, waxy skins and fleshy stems", "o": ["They have thick, waxy skins and fleshy stems", "They grow large, thin leaves", "They absorb water from the air", "They shed their branches daily"]},
+        {"q": "Why are many desert animals like the fennec fox nocturnal?", "a": "To avoid the extreme heat of the daytime sun", "o": ["To avoid the extreme heat of the daytime sun", "Because they cannot see in daylight", "To catch flying birds", "To climb desert trees"]},
+        {"q": "What physical adaptation helps some desert animals release body heat?", "a": "Large ears containing blood vessels", "o": ["Large ears containing blood vessels", "Thick layers of fat", "Bright red scales", "Feathers on their feet"]},
+        {"q": "What do cactus spines do besides protect the plant?", "a": "They reduce water loss by providing shade and blocking wind", "o": ["They reduce water loss by providing shade and blocking wind", "They attract insect pollinators", "They absorb sunlight directly", "They collect nitrogen from soil"]},
+        {"q": "How do desert wildflower seeds survive long droughts?", "a": "They lie dormant in the soil until it rains", "o": ["They lie dormant in the soil until it rains", "They grow roots instantly without water", "They fly away to other regions", "They turn into rocky pebbles"]}
+      ]
+    },
+    "sub3": {
+      "title": "Human Settlement & Desert History",
+      "pages": [
+        "Let's learn about human history in {THEME}. Humans have adapted to living in hot, dry deserts for thousands of years.",
+        "Traditional desert communities settled near an oasis, which is a wet area in a desert fed by underground springs.",
+        "Nomadic groups, such as the Bedouin, moved from place to place, trading goods and raising camels that could travel far.",
+        "Camels, often called 'ships of the desert,' are essential because they store fat in their humps and can walk on sand.",
+        "Today, modern irrigation and deep water wells allow cities to grow, but conserving desert resources remains vital."
+      ],
+      "questions": [
+        {"q": "What is an oasis in {THEME}?", "a": "A wet area fed by underground fresh water", "o": ["A wet area fed by underground fresh water", "A dry mountain range", "A city built on sand dunes", "A dried-up lakebed"]},
+        {"q": "Why were camels historically important in {THEME}?", "a": "They store fat in humps and can travel far without water", "o": ["They store fat in humps and can travel far without water", "They fly across desert storms", "They hunt wild desert wolves", "They build stone houses"]},
+        {"q": "How did nomadic desert tribes survive the harsh climate?", "a": "By traveling between water sources with herds", "o": ["By traveling between water sources with herds", "By staying inside brick castles", "By farming wheat on sand dunes", "By import-exporting ice blocks"]},
+        {"q": "What is a major human challenge in developing desert cities today?", "a": "Securing sustainable water resources", "o": ["Securing sustainable water resources", "Clearing away dense forests", "Preventing daily blizzards", "Controlling high tides"]},
+        {"q": "What allows modern cities to exist in deserts like {THEME}?", "a": "Deep water wells and piping systems", "o": ["Deep water wells and piping systems", "Artificial cloud seeding only", "Living entirely in underground caves", "Importing all water in bottles"]}
+      ]
+    }
+  },
+  "polar": {
+    "sub1": {
+      "title": "Polar Geography & Frozen Climates",
+      "pages": [
+        "We begin our study of polar regions by exploring {THEME}. Polar zones are located at the cold tops and bottoms of Earth.",
+        "These zones include the Arctic in the North and Antarctica in the South, featuring freezing temperatures year-round.",
+        "Polar deserts receive very little snowfall, but the snow that does fall never melts, forming thick sheets of ice.",
+        "A key feature of the polar tundra is permafrost, which is soil beneath the surface that remains permanently frozen.",
+        "Always remember that polar ice caps play a major role in regulating Earth's climate by reflecting solar energy back to space."
+      ],
+      "questions": [
+        {"q": "Where are the polar zones located on Earth?", "a": "At the North Pole (Arctic) and South Pole (Antarctica)", "o": ["At the North Pole (Arctic) and South Pole (Antarctica)", "Along the Equator line", "In the center of hot continents", "Only in North America"]},
+        {"q": "What is permafrost in the polar tundra?", "a": "Soil beneath the surface that stays permanently frozen", "o": ["Soil beneath the surface that stays permanently frozen", "A type of polar evergreen tree", "An ocean current made of fresh water", "The layer of snow on glaciers"]},
+        {"q": "Why do polar glaciers and ice caps help regulate Earth's climate?", "a": "They reflect solar energy back into space", "o": ["They reflect solar energy back into space", "They absorb carbon from the sea", "They generate warm wind currents", "They stop the ocean tides"]},
+        {"q": "What is a defining climate feature of polar deserts like {THEME}?", "a": "Extremely low precipitation and freezing cold", "o": ["Extremely low precipitation and freezing cold", "High rainfall and dense humidity", "Hot summers with sandy dust storms", "Warm ocean breezes all year"]},
+        {"q": "Why are there no tall trees growing in the polar tundra?", "a": "Because the frozen permafrost prevents deep root growth", "o": ["Because the frozen permafrost prevents deep root growth", "Because wild animals eat all tree seeds", "Because there is too much oxygen", "Because the wind carries trees away"]}
+      ]
+    },
+    "sub2": {
+      "title": "Polar Wildlife & Survival Adaptations",
+      "pages": [
+        "Let's look at how animals survive in the freezing habitat of {THEME}. Polar wildlife has developed specialized physical traits.",
+        "Mammals like polar bears and seals have a thick layer of fat called blubber beneath their skin to trap body heat.",
+        "Polar animals also grow dense white fur or feathers that act as camouflage against the white snow and ice.",
+        "In the ocean, fish have developed natural antifreeze proteins in their blood to prevent freezing in icy waters.",
+        "Penguins in Antarctica huddle together in large groups to share warmth and protect their eggs from freezing winds."
+      ],
+      "questions": [
+        {"q": "What is blubber and how does it help polar animals?", "a": "A thick layer of body fat that traps heat", "o": ["A thick layer of body fat that traps heat", "A type of white camouflage fur", "A food source found on sea glaciers", "An air sack that helps them fly"]},
+        {"q": "Why do many polar animals have white fur or feathers?", "a": "To act as camouflage against the white snow and ice", "o": ["To act as camouflage against the white snow and ice", "To absorb more solar heat", "To help them swim faster in water", "To scare away ocean predators"]},
+        {"q": "What adaptation helps polar fish survive in water below freezing?", "a": "Antifreeze proteins in their blood", "o": ["Antifreeze proteins in their blood", "A thick outer shell of bone", "Breathing air directly", "Scales made of warm fat"]},
+        {"q": "How do penguins adapt to survive cold winds in Antarctica?", "a": "They huddle together in large groups for warmth", "o": ["They huddle together in large groups for warmth", "They fly to warmer islands daily", "They dig deep burrows in the soil", "They build nests from tree branches"]},
+        {"q": "Which polar animal is found in the Arctic but NOT in Antarctica?", "a": "Polar bear", "o": ["Polar bear", "Penguin", "Whale", "Seal"]}
+      ]
+    },
+    "sub3": {
+      "title": "Polar Exploration & Science legacy",
+      "pages": [
+        "Let's learn about the history of human exploration and scientific work in {THEME}, one of Earth's final frontiers.",
+        "Historically, polar zones were unexplored due to freezing winds, shifting ice, and months of complete darkness.",
+        "In the early 1900s, brave explorers like Roald Amundsen and Robert Scott raced to reach the South Pole.",
+        "Today, Antarctica is protected by an international treaty, declaring it a place for peaceful scientific research only.",
+        "Scientists in polar stations study deep ice cores, which contain bubbles of ancient air that reveal Earth's climate history."
+      ],
+      "questions": [
+        {"q": "Why was early polar exploration extremely difficult?", "a": "Freezing cold, shifting ice, and winter darkness", "o": ["Freezing cold, shifting ice, and winter darkness", "A lack of local fresh water glaciers", "Native volcanic eruptions", "High taxes on exploration equipment"]},
+        {"q": "Who was the first explorer to reach the South Pole in 1911?", "a": "Roald Amundsen", "o": ["Roald Amundsen", "Robert Scott", "Neil Armstrong", "Christopher Columbus"]},
+        {"q": "What does the international treaty declare about Antarctica?", "a": "It is reserved for peaceful scientific research only", "o": ["It is reserved for peaceful scientific research only", "It is divided into new countries", "It is open for mining and oil drilling", "It belongs to the first explorer who arrived"]},
+        {"q": "How do scientists use deep ice cores from {THEME}?", "a": "They analyze trapped air bubbles to study climate history", "o": ["They analyze trapped air bubbles to study climate history", "They melt them for drinking water in cities", "They carve them into building bricks", "They test them for electrical current"]},
+        {"q": "Which indigenous population has lived in the Arctic for thousands of years?", "a": "Inuit", "o": ["Inuit", "Maya", "Sioux", "Bedouin"]}
+      ]
+    }
+  },
+  "forests": {
+    "sub1": {
+      "title": "Forest Geography & Tree Ecosystems",
+      "pages": [
+        "We begin our study of forests by exploring {THEME}. Forests are dense habitats covered in trees and vegetation.",
+        "The world has different types of forests, including deciduous forests (trees shed leaves) and coniferous forests (evergreens).",
+        "Tropical rainforests grow near the Equator and receive high rainfall, creating a warm, damp environment year-round.",
+        "Geographers study the layout of forests, mapping how they cover different climate zones from cold regions to the tropics.",
+        "Always remember that forests produce oxygen, clean the air, and serve as habitats for over half of Earth's land species."
+      ],
+      "questions": [
+        {"q": "What defines a deciduous forest compared to a coniferous one?", "a": "Deciduous trees shed their leaves in autumn", "o": ["Deciduous trees shed their leaves in autumn", "Coniferous forests have no pine cones", "Deciduous forests only grow in deserts", "Deciduous forests are always frozen"]},
+        {"q": "Where are tropical rainforests like {THEME} located on Earth?", "a": "Near the Equator in warm, rainy regions", "o": ["Near the Equator in warm, rainy regions", "At the North and South Poles", "In dry, sandy desert plains", "High on freezing mountain peaks"]},
+        {"q": "What critical resource do forest ecosystems produce for our planet?", "a": "Oxygen and clean air", "o": ["Oxygen and clean air", "Salt water currents", "Volcanic minerals", "Solar radiation"]},
+        {"q": "What is the primary plant type defining a forest ecosystem?", "a": "Trees and dense wood plants", "o": ["Trees and dense wood plants", "Grass lawns only", "Cactus plants", "Ocean seaweed"]},
+        {"q": "Why are forests important for soil health?", "a": "Tree roots hold soil in place and prevent erosion", "o": ["Tree roots hold soil in place and prevent erosion", "They turn soil into sand", "They absorb all minerals permanently", "They cause frequent landslides"]}
+      ]
+    },
+    "sub2": {
+      "title": "Forest Layers & Wildlife Adaptation",
+      "pages": [
+        "Let's explore the complex habitat layers of the forest in {THEME}. Forest life is distributed across distinct levels.",
+        "The top layer is the canopy, formed by the overlapping leaves of tall trees, which blocks most of the sunlight.",
+        "Under the canopy is the understory, where smaller shrubs, ferns, and young trees grow in the shade.",
+        "Animals have adapted: flying birds and monkeys live in the canopy, while deer and insects dwell on the forest floor.",
+        "Camouflage is essential for forest animals, allowing predators like jaguars and prey like deer to hide in the leaves."
+      ],
+      "questions": [
+        {"q": "What is the forest canopy layer in {THEME}?", "a": "The top layer of overlapping leaves that blocks sunlight", "o": ["The top layer of overlapping leaves that blocks sunlight", "The forest floor covered in dirt", "The root system underground", "The open sky above the forest"]},
+        {"q": "Which layer is directly below the canopy in {THEME}?", "a": "Understory layer", "o": ["Understory layer", "Forest floor layer", "Contour line layer", "Volcanic bedrock"]},
+        {"q": "How do forest floor animals adapt to the low light conditions?", "a": "They use keen hearing, smell, and camouflage", "o": ["They use keen hearing, smell, and camouflage", "They grow wings to fly to the sun", "They photosynthesize like plants", "They stay blind all their lives"]},
+        {"q": "Which animal is most likely to live in the high canopy layer?", "a": "Monkeys and parrots", "o": ["Monkeys and parrots", "Deer and wolves", "Earthworms and moles", "Crabs and fish"]},
+        {"q": "What covers the forest floor, recycling nutrients back into the soil?", "a": "Decomposing leaves, twigs, and fungi", "o": ["Decomposing leaves, twigs, and fungi", "Dry desert sand dunes", "Frozen ice sheets", "Volcanic lava rocks"]}
+      ]
+    },
+    "sub3": {
+      "title": "Forest Conservation & Human Uses",
+      "pages": [
+        "Let's learn how humans interact with {THEME}. Forests have historically supplied humans with wood for building and fuel.",
+        "We also get fruits, nuts, medicine, and paper from forest plants, making them economically valuable.",
+        "A major threat is deforestation, which is the clearing of forests for farming, ranching, and building cities.",
+        "Deforestation destroys animal habitats, causes soil erosion, and releases stored carbon into the atmosphere.",
+        "Conserving forests through replanting trees and establishing national parks helps protect these vital resources."
+      ],
+      "questions": [
+        {"q": "What is deforestation in the context of {THEME}?", "a": "The clearing and cutting down of forest trees", "o": ["The clearing and cutting down of forest trees", "Replanting trees in a barren field", "Mapping forest borders with a compass", "The natural cycle of leaf shedding"]},
+        {"q": "Why does deforestation harm local wildlife?", "a": "It destroys their natural habitats and food sources", "o": ["It destroys their natural habitats and food sources", "It gives them too much room to run", "It increases their water supply", "It cools down the local climate"]},
+        {"q": "What product is historically made from wood fibers?", "a": "Paper and construction timber", "o": ["Paper and construction timber", "Plastic bottles", "Glass windows", "Metal tools"]},
+        {"q": "How do national parks help conserve forests like {THEME}?", "a": "By protecting the land and trees from logging and clearing", "o": ["By protecting the land and trees from logging and clearing", "By converting the forest into crop farms", "By building heavy highways through them", "By removing all animals"]},
+        {"q": "What can individuals do to help save forests?", "a": "Recycle paper products and plant trees", "o": ["Recycle paper products and plant trees", "Use more disposable paper plates", "Clear backyard trees", "Avoid visiting parks"]}
+      ]
+    }
+  },
+  "water": {
+    "sub1": {
+      "title": "Water Geography & Water Bodies",
+      "pages": [
+        "We begin our study of water by exploring {THEME}. Water covers about 70 percent of the Earth's surface.",
+        "The world's water is divided into salt water in oceans and seas, and fresh water in rivers, lakes, and glaciers.",
+        "A river is flowing fresh water that travels downhill to join the ocean, while lakes are still pools surrounded by land.",
+        "The water cycle describes how water evaporates from oceans, forms clouds, and falls back to Earth as rain or snow.",
+        "Always remember that fresh water is a scarce and precious resource, as only 3 percent of Earth's water is fresh."
+      ],
+      "questions": [
+        {"q": "Approximately how much of Earth's surface is covered by water?", "a": "70 percent", "o": ["70 percent", "50 percent", "90 percent", "25 percent"]},
+        {"q": "What is the difference between a river and a lake in {THEME}?", "a": "Rivers are flowing fresh water; lakes are still pools", "o": ["Rivers are flowing fresh water; lakes are still pools", "Lakes flow to the ocean; rivers do not", "Rivers are salty; lakes are fresh", "Rivers are underground; lakes are in the air"]},
+        {"q": "What percentage of Earth's water is fresh water?", "a": "3 percent", "o": ["3 percent", "97 percent", "50 percent", "10 percent"]},
+        {"q": "What phase of the water cycle turns liquid water into vapor?", "a": "Evaporation", "o": ["Evaporation", "Precipitation", "Condensation", "Collection"]},
+        {"q": "Where is the majority of Earth's fresh water stored?", "a": "In frozen glaciers and ice caps", "o": ["In frozen glaciers and ice caps", "In flowing rivers", "In deep backyard wells", "In clouds and fog"]}
+      ]
+    },
+    "sub2": {
+      "title": "Aquatic Ecosystems & Adaptations",
+      "pages": [
+        "Let's look at the rich life in the waters of {THEME}. Aquatic ecosystems are home to diverse plants and animals.",
+        "Ocean life is divided into sunlit shallow zones, where coral reefs thrive, and the dark, cold deep ocean trenches.",
+        "Aquatic animals have gills to extract oxygen from water and fins or streamlined bodies to swim efficiently.",
+        "Plants like seaweed and algae grow in the sunlit zone, producing food and oxygen through photosynthesis.",
+        "In fresh water, wetlands act as natural filters, cleaning the water and providing a nursery for young fish and birds."
+      ],
+      "questions": [
+        {"q": "Which organ helps fish breathe underwater in {THEME}?", "a": "Gills", "o": ["Gills", "Lungs", "Fins", "Scales"]},
+        {"q": "Why do marine plants like seaweed grow only in shallow ocean zones?", "a": "They need sunlight to perform photosynthesis", "o": ["They need sunlight to perform photosynthesis", "The deep ocean is too hot", "The soil in deep water is too dry", "They are eaten by deep-sea sharks"]},
+        {"q": "What role do wetlands play in fresh water geography?", "a": "They filter and clean water while nesting wildlife", "o": ["They filter and clean water while nesting wildlife", "They evaporate all fresh water streams", "They turn fresh water into salt water", "They block flowing rivers"]},
+        {"q": "Where do coral reefs thrive in the ocean?", "a": "In shallow, warm, sunlit waters", "o": ["In shallow, warm, sunlit waters", "In the deep, freezing ocean trenches", "Near polar glaciers", "At the bottom of rivers"]},
+        {"q": "How does deep-sea wildlife adapt to complete darkness?", "a": "By using bioluminescence (producing their own light)", "o": ["By using bioluminescence (producing their own light)", "By growing large solar panels", "By sleeping permanently", "By swimming to the surface daily"]}
+      ]
+    },
+    "sub3": {
+      "title": "Human Uses & Water Conservation",
+      "pages": [
+        "Let's learn how humans depend on {THEME}. Water is essential for drinking, sanitation, farming, and industry.",
+        "Historically, the first human civilizations grew along major rivers, which provided water and fertile soil for farming.",
+        "Dams are built across rivers to generate clean hydroelectric power and control seasonal flooding.",
+        "Water pollution, caused by trash, chemicals, and sewage, is a major threat to human health and wildlife.",
+        "Conserving water by fixing leaks, reducing waste, and cleaning wastewater is vital to ensure our future supply."
+      ],
+      "questions": [
+        {"q": "Why did early civilizations settle near major rivers?", "a": "Rivers provided fresh water and fertile farming soil", "o": ["Rivers provided fresh water and fertile farming soil", "Rivers kept them safe from volcanoes", "Rivers were easy to build bridges over", "Rivers had no wild animals"]},
+        {"q": "What is the purpose of a river dam in {THEME}?", "a": "To generate electricity and control floods", "o": ["To generate electricity and control floods", "To stop the water cycle entirely", "To dry up the riverbed", "To help boats travel faster uphill"]},
+        {"q": "What is a major threat to global fresh water systems?", "a": "Pollution from chemicals, sewage, and plastics", "o": ["Pollution from chemicals, sewage, and plastics", "Evaporation of all oceans", "The growth of too many fish", "The cooling of glaciers"]},
+        {"q": "What is hydroelectric power?", "a": "Electricity generated by moving water", "o": ["Electricity generated by moving water", "Power from solar panels in lakes", "Energy from coal under rivers", "Wind power over oceans"]},
+        {"q": "What is a simple way you can conserve water daily?", "a": "Turning off the tap while brushing your teeth", "o": ["Turning off the tap while brushing your teeth", "Taking longer showers", "Pouring fresh water outside", "Washing clean clothes again"]}
+      ]
+    }
+  },
+  "maps": {
+    "sub1": {
+      "title": "Map Basics & Key Symbols",
+      "pages": [
+        "We begin our study of maps by exploring {THEME}. A map is a flat drawing that shows where places are from a bird's eye view.",
+        "Every map has a title that tells what region it shows, and a key or legend that explains what the symbols mean.",
+        "Map symbols are simple pictures, like a green tree for a park, a blue line for a river, or a star for a capital city.",
+        "We also use color codes: blue represents water, green represents forests, and brown represents mountains.",
+        "Always read the map key carefully before trying to locate places or navigate a path."
+      ],
+      "questions": [
+        {"q": "What is a map?", "a": "A flat drawing of a space seen from straight above", "o": ["A flat drawing of a space seen from straight above", "A round globe you can spin", "A photograph of the night sky", "A list of city name spellings"]},
+        {"q": "What does a map key or legend do in {THEME}?", "a": "Explains what the symbols and colors represent", "o": ["Explains what the symbols and colors represent", "Unlocks locked city gates", "Tells you the distance in miles", "Shows the year the map was drawn"]},
+        {"q": "Which symbol commonly represents a capital city on a map?", "a": "A star symbol", "o": ["A star symbol", "A blue line", "A green tree icon", "A red circle"]},
+        {"q": "What color is standard for showing water bodies on maps?", "a": "Blue", "o": ["Blue", "Green", "Brown", "Yellow"]},
+        {"q": "What view does a map show?", "a": "Bird's eye view (looking straight down)", "o": ["Bird's eye view (looking straight down)", "Side profile view", "Underground cross-section", "Panoramic horizon view"]}
+      ]
+    },
+    "sub2": {
+      "title": "The Compass Rose & Directions",
+      "pages": [
+        "Let's explore how we find directions on maps like {THEME}. Maps use a symbol called a compass rose.",
+        "The compass rose shows the four cardinal directions: North (points up), South (down), East (right), and West (left).",
+        "We can remember these directions in clockwise order using the phrase: Never Eat Shredded Wheat.",
+        "To travel to a destination, you must align the map so you know which way is North in the real world.",
+        "A compass is a tool with a magnetic needle that always points to Earth's magnetic North Pole."
+      ],
+      "questions": [
+        {"q": "What is the compass rose on a map?", "a": "A symbol showing North, South, East, and West", "o": ["A symbol showing North, South, East, and West", "A scale to measure distances", "A key explaining map icons", "A list of coordinates"]},
+        {"q": "If you look at a map, which direction is typically straight up?", "a": "North", "o": ["North", "South", "East", "West"]},
+        {"q": "What mnemonic helps you remember the directions clockwise?", "a": "Never Eat Shredded Wheat", "o": ["Never Eat Shredded Wheat", "North East South West", "Nobody Ever Stays Wet", "Now Everyone Sings Well"]},
+        {"q": "Which direction is opposite of East on a compass rose?", "a": "West", "o": ["West", "North", "South", "East"]},
+        {"q": "How does a real compass guide travelers?", "a": "Its magnetic needle points to the magnetic North Pole", "o": ["Its magnetic needle points to the magnetic North Pole", "It lights up in the dark", "It shows the distance to the next city", "It speaks directions aloud"]}
+      ]
+    },
+    "sub3": {
+      "title": "Grid Maps & Coordinates",
+      "pages": [
+        "Let's learn how we pinpoint exact locations on maps like {THEME}. Maps use a grid system with rows and columns.",
+        "Columns are marked with letters (A, B, C), and rows are marked with numbers (1, 2, 3) to form coordinates.",
+        "A coordinate like B3 tells you to find the column B and row 3, where their lines cross in the grid.",
+        "A map scale shows how distances on the map (like one inch) compare to distances in the real world (like one mile).",
+        "On global maps, we use imaginary lines of latitude (east-west) and longitude (north-south) to locate any city on Earth."
+      ],
+      "questions": [
+        {"q": "How does a grid system help you on a map?", "a": "It lets you find exact locations using letters and numbers", "o": ["It lets you find exact locations using letters and numbers", "It shows you the height of mountains", "It tells you the population of a town", "It changes the map's colors"]},
+        {"q": "What is coordinate B3 on a grid map?", "a": "The point where column B and row 3 cross", "o": ["The point where column B and row 3 cross", "The distance of 3 miles from point B", "The compass direction between North and East", "The map key label for mountains"]},
+        {"q": "What does a map scale do in {THEME}?", "a": "Compares map distances to real-world distances", "o": ["Compares map distances to real-world distances", "Measures the height of cliffs", "Decides the colors of forests", "Points you towards North"]},
+        {"q": "What are global latitude lines?", "a": "Imaginary lines that run east-west around the globe", "o": ["Imaginary lines that run east-west around the globe", "Lines that connect the North and South Poles", "The border lines of countries", "The grid markings on local city maps"]},
+        {"q": "What imaginary line divides the Earth into Northern and Southern hemispheres?", "a": "The Equator", "o": ["The Equator", "The Prime Meridian", "The Tropic of Cancer", "The Arctic Circle"]}
+      ]
+    }
+  },
+  // Add 12 more specific categories to cover history, science, art, and fallbacks
+
+  "native_americans": {
+    "sub1": {
+      "title": "Tribes and Regions",
+      "pages": [
+        "We begin our study of history by exploring {THEME}. Native American tribes lived across North America long before European settlers arrived.",
+        "Different tribes adapted to their specific regional geography, climates, and natural resources.",
+        "In the Southwest desert, the Pueblo built multi-story stone and clay apartment houses called pueblos to stay cool.",
+        "In the Eastern Woodlands, tribes like the Iroquois built large wooden longhouses from forest timber.",
+        "Always remember that Native American culture is deeply rooted in regional landforms and climates."
+      ],
+      "questions": [
+        {"q": "Who lived in North America first?", "a": "Native Americans", "o": ["Native Americans", "European explorers", "Pilgrims", "Gold miners"]},
+        {"q": "What did the Pueblo people build their houses from in the desert?", "a": "Stone and clay (adobe)", "o": ["Stone and clay (adobe)", "Pine wood logs", "Animal skins", "Sod blocks"]},
+        {"q": "Where did the Iroquois build longhouses?", "a": "Eastern Woodlands", "o": ["Eastern Woodlands", "Great Plains", "Southwest deserts", "Polar Arctic"]},
+        {"q": "What is a pueblo?", "a": "A multi-story stone and clay house", "o": ["A multi-story stone and clay house", "A portable skin tipi", "A wooden fishing boat", "A storytelling drum"]},
+        {"q": "Why did Native American houses differ across regions?", "a": "They used local materials suited for their climates", "o": ["They used local materials suited for their climates", "They all traded with the same factory", "They copied European designs", "They had no choice but to use ice"]}
+      ]
+    },
+    "sub2": {
+      "title": "Food, Hunting & Traditions",
+      "pages": [
+        "Let's explore the food and farming traditions of {THEME}. Native Americans had deep respect for nature and wildlife.",
+        "Many agricultural tribes grew corn, beans, and squash together, calling them the 'Three Sisters' because they helped each other grow.",
+        "On the Great Plains, tribes hunted bison, using every part of the animal for food, clothing, tools, and tipi covers.",
+        "In the Pacific Northwest, coastal tribes relied on salmon fishing and built large cedar canoes to travel the ocean.",
+        "Native Americans always made sure not to waste resources, taking only what was needed from the land."
+      ],
+      "questions": [
+        {"q": "What are the 'Three Sisters' crops grown by Native Americans?", "a": "Corn, beans, and squash", "o": ["Corn, beans, and squash", "Wheat, rice, and barley", "Apples, oranges, and berries", "Potatoes, carrots, and onions"]},
+        {"q": "What animal did Plains tribes hunt for survival?", "a": "Bison", "o": ["Bison", "Deer only", "Salmon", "Turkeys"]},
+        {"q": "Where did coastal tribes rely on salmon fishing and cedar wood?", "a": "Pacific Northwest", "o": ["Pacific Northwest", "Southwest desert", "Great Plains", "Appalachian peaks"]},
+        {"q": "How did Native Americans treat natural resources?", "a": "With deep respect, taking only what was needed and avoiding waste", "o": ["With deep respect, taking only what was needed and avoiding waste", "By clearing all forests for cities", "By building heavy industrial factories", "By trading all land immediately"]},
+        {"q": "What did Pacific Northwest tribes carve from cedar trees to show family history?", "a": "Totem poles", "o": ["Totem poles", "Tipis", "Pueblos", "Sod bricks"]}
+      ]
+    },
+    "sub3": {
+      "title": "Storytelling, Music & Legacy",
+      "pages": [
+        "Let's learn about the cultural legacy and oral traditions of {THEME}.",
+        "Because they did not write books, Native Americans passed down history through oral storytelling and legends.",
+        "Elders used drums, songs, and ceremonial dances to teach young children lessons about nature and ancestors.",
+        "Instruments like flutes and rattles accompanied dances that celebrated the harvest or prepared for hunting.",
+        "Today, Native American traditions continue to shape American culture, food, music, and conservation efforts."
+      ],
+      "questions": [
+        {"q": "How did Native Americans preserve their history without books?", "a": "Through oral storytelling and legends passed down", "o": ["Through oral storytelling and legends passed down", "By printing daily newspapers", "By writing letters on computers", "By drawing coordinate maps only"]},
+        {"q": "What instrument was widely used in Native American ceremonies?", "a": "Drums and flutes", "o": ["Drums and flutes", "Pianos", "Guitars", "Trumpets"]},
+        {"q": "Who was responsible for teaching legends to children?", "a": "Tribal elders", "o": ["Tribal elders", "European schools", "Mayors", "Pioneers"]},
+        {"q": "What did ceremonial dances celebrate?", "a": "Harvest, nature, and ancestral history", "o": ["Harvest, nature, and ancestral history", "New electronic inventions", "The start of space travel", "Federal tax collections"]},
+        {"q": "Do Native American traditions influence modern society today?", "a": "Yes, in conservation, food, and music culture", "o": ["Yes, in conservation, food, and music culture", "No, they disappeared entirely", "Only in the state of Texas", "Only in space travel"]}
+      ]
+    }
+  },
+  "leaders_civics": {
+    "sub1": {
+      "title": "Presidents & Historic Leaders",
+      "pages": [
+        "We begin our study of civics by exploring {THEME}. Leaders make important decisions that guide our communities and country.",
+        "George Washington was our first president and led the army to win America's independence.",
+        "Abraham Lincoln was our 16th president, known for leading the country during the Civil War and freeing slaves.",
+        "Martin Luther King Jr. was a civil rights leader who fought for equality and gave his famous 'I Have a Dream' speech.",
+        "Always remember that good leaders listen to citizens and work to protect human rights and justice."
+      ],
+      "questions": [
+        {"q": "Who was the first president of the United States?", "a": "George Washington", "o": ["George Washington", "Abraham Lincoln", "Thomas Jefferson", "Franklin Roosevelt"]},
+        {"q": "Which president led the country during the Civil War and freed slaves?", "a": "Abraham Lincoln", "o": ["Abraham Lincoln", "George Washington", "Benjamin Franklin", "Thomas Edison"]},
+        {"q": "Who gave the famous 'I Have a Dream' speech for civil rights?", "a": "Martin Luther King Jr.", "o": ["Martin Luther King Jr.", "Rosa Parks", "Harriet Tubman", "Amelia Earhart"]},
+        {"q": "What is the primary role of a president?", "a": "To make important decisions and guide the nation", "o": ["To make important decisions and guide the nation", "To print money and coins", "To build schools and libraries", "To fight in every battle directly"]},
+        {"q": "How do historic leaders shape our modern lives?", "a": "By establishing laws, rights, and principles of equality", "o": ["By establishing laws, rights, and principles of equality", "By building all national highways", "By inventing the lightbulb", "By traveling to the Moon"]}
+      ]
+    },
+    "sub2": {
+      "title": "Government, Rules & Laws",
+      "pages": [
+        "Let's explore how rules and laws protect our community in {THEME}. Rules tell us what is allowed and keep us safe.",
+        "In a democracy, citizens choose their leaders by voting in elections using secret ballots.",
+        "Laws are rules made by the government that everyone in the country must follow.",
+        "The Constitution is the highest law of America, outlining the structure of the government and citizens' rights.",
+        "Citizens also have duties, like obeying laws, respecting others, and voting to improve the community."
+      ],
+      "questions": [
+        {"q": "What is the purpose of rules and laws?", "a": "To keep people safe and maintain order", "o": ["To keep people safe and maintain order", "To collect money for shopkeepers", "To make school harder", "To prevent citizens from traveling"]},
+        {"q": "How do citizens choose their leaders in a democracy?", "a": "By voting in elections", "o": ["By voting in elections", "By playing a guessing game", "The oldest citizen becomes leader", "The leader chooses their own children"]},
+        {"q": "What is the Constitution of the United States?", "a": "The highest law of the country", "o": ["The highest law of the country", "A book of history legends", "A map of the fifty states", "A list of national symbols"]},
+        {"q": "What is a duty of a citizen?", "a": "Obeying laws and respecting others", "o": ["Obeying laws and respecting others", "Buying toys weekly", "Traveling to other countries", "Building sod houses"]},
+        {"q": "What is a right of a citizen in a democracy?", "a": "Freedom of speech and the right to vote", "o": ["Freedom of speech and the right to vote", "Free toys at the shop", "Not having to follow any laws", "Selecting the state mayor directly without elections"]}
+      ]
+    },
+    "sub3": {
+      "title": "National Symbols & Promises",
+      "pages": [
+        "Let's learn about the symbols and promises that represent {THEME}. National symbols stand for our values of freedom and unity.",
+        "The American flag has 50 stars for the 50 states, and 13 stripes for the original 13 colonies.",
+        "The Pledge of Allegiance is a promise of loyalty to the flag and the United States.",
+        "The bald eagle is a symbol of strength and freedom, chosen by the Founding Fathers to represent America.",
+        "Monuments like the Statue of Liberty welcome visitors and stand for liberty and hope for a better life."
+      ],
+      "questions": [
+        {"q": "What do the 50 stars on the American flag represent?", "a": "The 50 states", "o": ["The 50 states", "The 13 colonies", "The Founding Fathers", "The presidents"]},
+        {"q": "What is the Pledge of Allegiance?", "a": "A promise of loyalty to the flag and country", "o": ["A promise of loyalty to the flag and country", "A law made by Congress", "A national song sung in sports", "A map reading guide"]},
+        {"q": "Which bird is the national symbol of strength and freedom?", "a": "The Bald Eagle", "o": ["The Bald Eagle", "The Blue Jay", "The Wild Turkey", "The Hawk"]},
+        {"q": "What does the Statue of Liberty represent?", "a": "Liberty and hope for visitors", "o": ["Liberty and hope for visitors", "The first President", "The end of the Civil War", "The discovery of space"]},
+        {"q": "How many stripes are on the American flag?", "a": "13 stripes for the original colonies", "o": ["13 stripes for the original colonies", "50 stripes for the states", "3 stripes for the branches of government", "10 stripes for the units"]}
+      ]
+    }
+  },
+  "space": {
+    "sub1": {
+      "title": "The Solar System & Planets",
+      "pages": [
+        "We begin our study of astronomy by exploring {THEME}. Our Solar System is made of the Sun and objects orbiting it.",
+        "The Sun is a hot, glowing star at the center, providing light and warmth that makes life on Earth possible.",
+        "Eight planets orbit the Sun, including rocky planets like Mars and gas giants like Jupiter.",
+        "Earth is the third planet from the Sun and the only known planet that supports water and life.",
+        "Always remember that gravity is the invisible pulling force that keeps the planets orbiting around the Sun."
+      ],
+      "questions": [
+        {"q": "What is at the center of our Solar System?", "a": "The Sun", "o": ["The Sun", "The Earth", "The Moon", "A black hole"]},
+        {"q": "How many planets orbit the Sun in our Solar System?", "a": "Eight", "o": ["Eight", "Nine", "Seven", "Ten"]},
+        {"q": "What force keeps the planets orbiting the Sun?", "a": "Gravity", "o": ["Gravity", "Wind current", "Friction", "Magnetism"]},
+        {"q": "Why is Earth unique among the planets?", "a": "It is the only planet known to have liquid water and life", "o": ["It is the only planet known to have liquid water and life", "It is the closest planet to the Sun", "It is the largest gas giant", "It does not rotate"]},
+        {"q": "What is the Sun?", "a": "A hot, glowing star", "o": ["A hot, glowing star", "A solid rocky planet", "A cold gas giant", "A large moon"]}
+      ]
+    },
+    "sub2": {
+      "title": "The Moon & Day-Night Cycles",
+      "pages": [
+        "Let's explore the cycles of the Moon and Earth in {THEME}. Earth rotates like a spinning top once every 24 hours.",
+        "As Earth rotates, the side facing the Sun has day, while the side facing away has cold night.",
+        "The Moon is a rocky satellite that orbits Earth, reflecting the Sun's light to shine in the night sky.",
+        "The Moon appears to change shape in cycles called phases because we see different amounts of its lit side.",
+        "The Moon's gravity pulls on Earth's oceans, creating the rise and fall of ocean tides twice a day."
+      ],
+      "questions": [
+        {"q": "What causes day and night on Earth?", "a": "Earth's rotation on its axis", "o": ["Earth's rotation on its axis", "The Sun turning off at night", "Clouds blocking the Sun", "The Moon moving in front of the Sun"]},
+        {"q": "How long does it take for Earth to complete one full spin?", "a": "24 hours", "o": ["24 hours", "365 days", "12 hours", "30 days"]},
+        {"q": "Why does the Moon appear to change shape in the sky?", "a": "We see different amounts of its sunlit side as it orbits", "o": ["We see different amounts of its sunlit side as it orbits", "The Moon actually grows and shrinks", "Clouds cover different parts of it", "The Earth's shadow blocks it daily"]},
+        {"q": "What are Moon phases?", "a": "The changing appearance of the Moon's lit side", "o": ["The changing appearance of the Moon's lit side", "The craters on the Moon's surface", "The gravity pulls on oceans", "The heat levels on the Moon"]},
+        {"q": "What causes ocean tides on Earth?", "a": "The gravitational pull of the Moon", "o": ["The gravitational pull of the Moon", "Earth's high-speed wind currents", "Heat from the Sun's rays", "Ocean fish swimming together"]}
+      ]
+    },
+    "sub3": {
+      "title": "Space Exploration & Stars",
+      "pages": [
+        "Let's learn about human space exploration in {THEME}. Humans have dreamed of visiting space for generations.",
+        "In 1969, Neil Armstrong became the first human to walk on the Moon during the Apollo 11 mission.",
+        "Astronauts travel in rocket ships, wearing space suits to carry oxygen and protect against freezing cold.",
+        "Stars are distant suns that form patterns in the sky called constellations, used by early travelers for navigation.",
+        "Today, space telescopes and robots explore Mars and outer planets, looking for signs of ancient water."
+      ],
+      "questions": [
+        {"q": "Who was the first person to walk on the Moon in 1969?", "a": "Neil Armstrong", "o": ["Neil Armstrong", "Roald Amundsen", "George Washington", "Thomas Edison"]},
+        {"q": "Why do astronauts need to wear spacesuits in space?", "a": "To provide oxygen and protect from freezing cold", "o": ["To provide oxygen and protect from freezing cold", "To help them float in gravity", "To reflect camera flashes", "To walk faster on soil"]},
+        {"q": "What is a constellation in the night sky?", "a": "A pattern of stars forming a picture", "o": ["A pattern of stars forming a picture", "A group of orbiting planets", "A dust storm on Mars", "A phase of the Moon"]},
+        {"q": "What tool do scientists use to observe distant stars and planets?", "a": "Telescope", "o": ["Telescope", "Microscope", "Compass", "Scale"]},
+        {"q": "Which planet is currently being explored by robotic rovers?", "a": "Mars", "o": ["Mars", "Jupiter", "Venus", "Neptune"]}
+      ]
+    }
+  },
+  "inventions": {
+    "sub1": {
+      "title": "Lighting & Electricity",
+      "pages": [
+        "We begin our study of technology by exploring {THEME}. Inventions are new tools or ideas that solve everyday problems.",
+        "Before electricity, people lit homes using wax candles, oil lamps, or by burning logs in fireplaces.",
+        "Benjamin Franklin experimented with lightning using a kite, proving that lightning is actually electricity.",
+        "Thomas Edison invented the practical electric lightbulb in 1879, changing how people work and live at night.",
+        "Always remember that electric current travels in closed paths called circuits to power lightbulbs and appliances."
+      ],
+      "questions": [
+        {"q": "What is an invention?", "a": "A new tool or idea that solves a problem", "o": ["A new tool or idea that solves a problem", "A map of historical borders", "A type of rock layer", "A primary source diary"]},
+        {"q": "How did people light their homes before electricity?", "a": "Candles and oil lamps", "o": ["Candles and oil lamps", "Electric lightbulbs", "Flashlights", "Solar panels"]},
+        {"q": "Who proved that lightning is electricity using a kite experiment?", "a": "Benjamin Franklin", "o": ["Benjamin Franklin", "Thomas Edison", "Wright Brothers", "Alexander Bell"]},
+        {"q": "What did Thomas Edison invent in 1879?", "a": "The electric lightbulb", "o": ["The electric lightbulb", "The telephone", "The airplane", "The printing press"]},
+        {"q": "What path must electricity follow to light a bulb?", "a": "A closed circuit", "o": ["A closed circuit", "An open line", "A compass rose", "A geographic grid"]}
+      ]
+    },
+    "sub2": {
+      "title": "Travel & Transportation",
+      "pages": [
+        "Let's explore travel inventions in {THEME}. Long ago, transportation relied on animal power, like horses and carriages.",
+        "The invention of the steam engine in the 1700s led to steam locomotives, carrying goods quickly across railroad tracks.",
+        "In 1903, Orville and Wilbur Wright invented and flew the first successful motor-powered airplane at Kitty Hawk.",
+        "Automobiles replaced horses, using gasoline engines to carry families on paved roads across the country.",
+        "These transportation inventions connected distant cities, allowing trade and travel to grow at speeds never seen before."
+      ],
+      "questions": [
+        {"q": "How did people travel long distances before steam engines?", "a": "Horses, carriages, and sailing ships", "o": ["Horses, carriages, and sailing ships", "Trains and cars", "Airplanes", "Subways"]},
+        {"q": "Who invented and flew the first successful airplane in 1903?", "a": "The Wright Brothers", "o": ["The Wright Brothers", "Benjamin Franklin", "Thomas Edison", "Neil Armstrong"]},
+        {"q": "What invention powered the first locomotives and trains?", "a": "The steam engine", "o": ["The steam engine", "The electric battery", "The gasoline motor", "Solar energy panels"]},
+        {"q": "Where did the Wright brothers make their historic first flight?", "a": "Kitty Hawk, North Carolina", "o": ["Kitty Hawk, North Carolina", "Washington, D.C.", "New York City", "Houston, Texas"]},
+        {"q": "How did transportation inventions impact society?", "a": "They allowed faster trade and connected distant cities", "o": ["They allowed faster trade and connected distant cities", "They stopped all migration", "They reduced the need for maps", "They cooled down global climates"]}
+      ]
+    },
+    "sub3": {
+      "title": "Communication & Messages",
+      "pages": [
+        "Let's learn about communication inventions in {THEME}. Communication is how we share information across distances.",
+        "Johannes Gutenberg invented the printing press in the 1400s, making it possible to print books quickly instead of copying by hand.",
+        "Samuel Morse invented the telegraph, which used clicks representing letters (Morse code) to send messages over wires.",
+        "Alexander Graham Bell invented the telephone in 1876, allowing people to speak their voices directly over copper lines.",
+        "Today, the internet and computers connect people globally through instant email and video calls."
+      ],
+      "questions": [
+        {"q": "What did the printing press make possible in the 1400s?", "a": "Printing books quickly instead of copying by hand", "o": ["Printing books quickly instead of copying by hand", "Sending emails instantly", "Recording sound on wax", "Lighting cities with electricity"]},
+        {"q": "Who invented the telegraph and a code of clicks for communication?", "a": "Samuel Morse", "o": ["Samuel Morse", "Alexander Graham Bell", "Thomas Edison", "Benjamin Franklin"]},
+        {"q": "What did Alexander Graham Bell invent in 1876?", "a": "The telephone", "o": ["The telephone", "The telegraph", "The phonograph", "The printing press"]},
+        {"q": "How does Morse code represent letters?", "a": "Using combinations of dots and dashes (short and long clicks)", "o": ["Using combinations of dots and dashes (short and long clicks)", "Using different colors on a map", "Using letters from the alphabet directly", "Using numbers from 1 to 10"]},
+        {"q": "What modern invention connects people instantly worldwide today?", "a": "The internet and computers", "o": ["The internet and computers", "The steam locomotive", "The printing press", "The electric battery"]}
+      ]
+    }
+  },
+  "culture_traditions": {
+    "sub1": {
+      "title": "Family & Traditions",
+      "pages": [
+        "We begin our study of culture by exploring {THEME}. Culture is the shared way of life of a group of people.",
+        "Family traditions are special activities, celebrations, or recipes that families repeat year after year.",
+        "Traditions connect generations, passed down from grandparents to parents and down to children.",
+        "A family tree is a diagram that shows how relatives, ancestors, and descendants are connected.",
+        "Always remember that sharing stories helps preserve our history and strengthens family bonds."
+      ],
+      "questions": [
+        {"q": "What is culture?", "a": "The shared way of life, beliefs, and habits of a group", "o": ["The shared way of life, beliefs, and habits of a group", "A map of country borders", "A scientific experiment", "A list of spelling rules"]},
+        {"q": "What is a family tradition?", "a": "A special activity that a family repeats regularly", "o": ["A special activity that a family repeats regularly", "Brushing your teeth", "Going to sleep at night", "Buying shoes weekly"]},
+        {"q": "What diagram shows family connections across generations?", "a": "Family tree", "o": ["Family tree", "Compass rose", "Number line", "Coordinate grid"]},
+        {"q": "How are traditions passed down?", "a": "From grandparents to parents and then to children", "o": ["From grandparents to parents and then to children", "By buying them at the shop", "Through computer emails only", "By voting in elections"]},
+        {"q": "Why is oral history from grandparents valuable?", "a": "It teaches us about family history and the past first-hand", "o": ["It teaches us about family history and the past first-hand", "It tells us the future weather", "It gives us points in the game", "It changes the rules of the app"]}
+      ]
+    },
+    "sub2": {
+      "title": "Holidays & Celebrations",
+      "pages": [
+        "Let's explore holidays and celebrations in {THEME}. Holidays are special days set aside to remember historic events.",
+        "Independence Day, celebrated on the 4th of July, marks the birthday of America's freedom.",
+        "Thanksgiving is a harvest holiday, recalling when Pilgrims and Wampanoag Native Americans shared a meal.",
+        "Different cultures celebrate holidays with specific customs, foods, decorations, parades, and music.",
+        "Holidays provide a time for communities to come together, reflect on history, and express gratitude."
+      ],
+      "questions": [
+        {"q": "What is Independence Day?", "a": "A holiday on the 4th of July celebrating America's birthday", "o": ["A holiday on the 4th of July celebrating America's birthday", "A winter harvest celebration", "The day school ends", "George Washington's birthday"]},
+        {"q": "What does Thanksgiving recall in American history?", "a": "Pilgrims and Wampanoag sharing a harvest harvest meal", "o": ["Pilgrims and Wampanoag sharing a harvest harvest meal", "The signing of the Constitution", "The landing on the Moon", "The invention of the lightbulb"]},
+        {"q": "What do community celebrations include?", "a": "Customs, parades, food, and music", "o": ["Customs, parades, food, and music", "Taking exams and tests only", "Obeying laws in silence", "Traveling to space"]},
+        {"q": "Why do communities celebrate holidays?", "a": "To remember important historical events and share customs", "o": ["To remember important historical events and share customs", "To earn stars in local shops", "To elect new city mayors", "To draw maps of countries"]},
+        {"q": "Which holiday celebrates the legacy of civil rights leaders?", "a": "Martin Luther King Jr. Day", "o": ["Martin Luther King Jr. Day", "Thanksgiving", "Independence Day", "Flag Day"]}
+      ]
+    },
+    "sub3": {
+      "title": "Clothing, Food & Customs",
+      "pages": [
+        "Let's learn how culture affects daily customs in {THEME}. Customs are the common ways of doing things in a community.",
+        "What people eat, how they greet each other, and what they wear are shaped by their cultural heritage.",
+        "Historically, clothes were made by hand using local fibers, like cotton, wool, or animal skins.",
+        "As cultures mix, we share foods (like pizza or tacos) and customs, making our society rich and diverse.",
+        "Learning about other cultures helps us build respect, cooperation, and friendship in our schools and cities."
+      ],
+      "questions": [
+        {"q": "What is a custom in a community?", "a": "A common way of doing things shared by people", "o": ["A common way of doing things shared by people", "A law you must follow or go to jail", "A map symbol for water", "An scientific conclusion"]},
+        {"q": "How were clothes historically made long ago?", "a": "By hand using local fibers like cotton and wool", "o": ["By hand using local fibers like cotton and wool", "In automated high-speed factories", "Imported from other planets", "Made entirely from blocks of sod"]},
+        {"q": "What happens when different cultures interact and share foods?", "a": "Our society becomes rich, diverse, and connected", "o": ["Our society becomes rich, diverse, and connected", "All traditions are lost immediately", "People stop celebrating holidays", "Map keys become useless"]},
+        {"q": "What is an example of cultural sharing in food?", "a": "Sharing global foods like pizza and tacos", "o": ["Sharing global foods like pizza and tacos", "Eating only wheat crops from one farm", "Drinking only salt water", "Not sharing any recipes"]},
+        {"q": "Why should we study other cultures?", "a": "To build respect, cooperation, and friendship", "o": ["To build respect, cooperation, and friendship", "To get the highest exam score", "To change the state mayor", "To build faster rocket ships"]}
+      ]
+    }
+  },
+  "matter": {
+    "sub1": {
+      "title": "Properties of Solids",
+      "pages": [
+        "We begin our study of matter by exploring the properties of solids in {THEME}.",
+        "Matter is anything that has mass and takes up physical space. The three main states are solids, liquids, and gases.",
+        "Solids hold a fixed shape and volume because their molecules are packed tightly in place, vibrating slightly.",
+        "We measure solid properties like mass (using scales), volume (using rulers), and texture (rough or smooth).",
+        "Always remember that solid particles cannot slide past each other, giving the solid its rigid structure."
+      ],
+      "questions": [
+        {"q": "What is matter?", "a": "Anything that has mass and takes up physical space", "o": ["Anything that has mass and takes up physical space", "Only light and sound waves", "The temperature of a room", "A magnetic force"]},
+        {"q": "Why do solids maintain a fixed shape?", "a": "Their molecules are packed tightly in place and cannot slide", "o": ["Their molecules are packed tightly in place and cannot slide", "They have magnetic fields around them", "They are kept under high pressure", "They contain no molecules"]},
+        {"q": "What tool do scientists use to measure a solid's mass?", "a": "A scale or balance", "o": ["A scale or balance", "A ruler or tape", "A compass rose", "A thermometer"]},
+        {"q": "Which state of matter has a rigid, fixed structure?", "a": "Solid", "o": ["Solid", "Liquid", "Gas", "Plasma"]},
+        {"q": "What do particles in a solid do?", "a": "Vibrate slightly in fixed positions", "o": ["Vibrate slightly in fixed positions", "Fly around at high speeds", "Slide past each other easily", "Dissolve into light waves"]}
+      ]
+    },
+    "sub2": {
+      "title": "Liquids & Flowing Molecules",
+      "pages": [
+        "Let's look at liquids in {THEME}. Unlike solids, liquids do not have a fixed shape.",
+        "A liquid takes the shape of whatever container it is poured into, but it maintains a fixed volume.",
+        "Liquids flow because their molecules are close together but can slide and roll past one another easily.",
+        "We measure liquid volume using graduated cylinders or measuring cups in milliliters or liters.",
+        "Viscosity is a property of liquids that describes how thick they are; honey has high viscosity, while water has low viscosity."
+      ],
+      "questions": [
+        {"q": "What happens to a liquid's shape when poured into a jar?", "a": "It takes the shape of the jar", "o": ["It takes the shape of the jar", "It maintains its original shape", "It expands to fill the entire room", "It turns into solid blocks"]},
+        {"q": "Why can liquids flow and pour?", "a": "Their molecules can slide and roll past each other", "o": ["Their molecules can slide and roll past each other", "Their molecules are locked in place", "They have no gravity pulling them", "They are made of wind"]},
+        {"q": "What tool is used to measure the volume of a liquid?", "a": "Graduated cylinder or measuring cup", "o": ["Graduated cylinder or measuring cup", "A weighing scale", "A ruler", "A compass"]},
+        {"q": "Does a liquid have a fixed volume?", "a": "Yes, its volume stays the same even if its shape changes", "o": ["Yes, its volume stays the same even if its shape changes", "No, its volume changes when poured", "No, it has no volume", "Only if it is frozen"]},
+        {"q": "What property describes a liquid's thickness and resistance to flowing?", "a": "Viscosity", "o": ["Viscosity", "Mass", "Gravity", "Elasticity"]}
+      ]
+    },
+    "sub3": {
+      "title": "Gases & State Transitions",
+      "pages": [
+        "Let's learn about gases and state transitions in {THEME}. Gases have no fixed shape and no fixed volume.",
+        "A gas expands to completely fill any container it is placed in, and its molecules are far apart and move quickly.",
+        "Matter can change states when we add or remove heat energy, causing particles to speed up or slow down.",
+        "Melting changes a solid to a liquid, while boiling or evaporation changes a liquid to a gas.",
+        "Freezing removes heat, turning a liquid back into a solid by locking molecules back into fixed positions."
+      ],
+      "questions": [
+        {"q": "What are the shape and volume of a gas?", "a": "No fixed shape and no fixed volume", "o": ["No fixed shape and no fixed volume", "Fixed shape and fixed volume", "Fixed shape but no fixed volume", "Fixed volume but no fixed shape"]},
+        {"q": "How do gas molecules behave?", "a": "They are far apart and move very quickly", "o": ["They are far apart and move very quickly", "They are locked in a tight grid", "They slide slowly past each other", "They only vibrate in place"]},
+        {"q": "What causes matter to change its state?", "a": "Adding or removing heat energy", "o": ["Adding or removing heat energy", "Changing the container's color", "Moving it to another room", "The pull of magnetic poles"]},
+        {"q": "What phase change turns liquid water into gas?", "a": "Boiling or evaporation", "o": ["Boiling or evaporation", "Melting", "Freezing", "Condensation"]},
+        {"q": "What happens to molecules when a liquid freezes into a solid?", "a": "They lose heat and lock into fixed positions", "o": ["They lose heat and lock into fixed positions", "They speed up and fly away", "They dissolve completely", "They double in size"]}
+      ]
+    }
+  },
+  "forces_energy": {
+    "sub1": {
+      "title": "Forces, Pushes & Pulls",
+      "pages": [
+        "We begin our study of motion by exploring forces in {THEME}. A force is a push or a pull that acts on an object.",
+        "Forces can cause objects to start moving, speed up, slow down, stop, or change direction.",
+        "When you kick a ball, you apply a pushing force. When you drag a toy wagon, you apply a pulling force.",
+        "We measure forces in units called Newtons, using a tool called a spring scale.",
+        "Always remember that multiple forces can act on an object at once, shaping its overall motion."
+      ],
+      "questions": [
+        {"q": "What is a force?", "a": "A push or a pull acting on an object", "o": ["A push or a pull acting on an object", "The speed of a moving car", "The energy stored in food", "The weight of a scale"]},
+        {"q": "What can a force do to an object?", "a": "Change its speed, direction, or stop its motion", "o": ["Change its speed, direction, or stop its motion", "Change its color", "Make it disappear", "Turn it into a gas instantly"]},
+        {"q": "What unit do scientists use to measure force?", "a": "Newtons", "o": ["Newtons", "Grams", "Liters", "Inches"]},
+        {"q": "What type of force is applied when you kick a soccer ball?", "a": "A pushing force", "o": ["A pushing force", "A pulling force", "A magnetic force", "Gravity"]},
+        {"q": "What tool measures the strength of a force?", "a": "A spring scale", "o": ["A spring scale", "A ruler", "A thermometer", "A compass rose"]}
+      ]
+    },
+    "sub2": {
+      "title": "Gravity & Friction",
+      "pages": [
+        "Let's explore two major forces in {THEME}: gravity and friction.",
+        "Gravity is the invisible pulling force that pulls all objects down towards the center of the Earth.",
+        "Gravity gives objects their weight and keeps us from floating away into the sky.",
+        "Friction is a rubbing force that acts in the opposite direction of motion, slowing down moving objects.",
+        "Rough surfaces, like grass or sandpaper, create high friction, while smooth surfaces, like ice, create low friction."
+      ],
+      "questions": [
+        {"q": "What is gravity?", "a": "The invisible pulling force of Earth drawing objects downward", "o": ["The invisible pulling force of Earth drawing objects downward", "A rubbing force that slows motion", "An electrical energy current", "A magnetic push"]},
+        {"q": "What is friction?", "a": "A rubbing force that resists and slows down motion", "o": ["A rubbing force that resists and slows down motion", "The force that pulls things to Earth", "Energy stored in batteries", "The push of a magnet"]},
+        {"q": "Which surface would create the highest friction for a toy car?", "a": "Rough sandpaper", "o": ["Rough sandpaper", "Smooth glass", "Wet ice", "Polished wood"]},
+        {"q": "Why do items drop to the floor when you release them?", "a": "Gravity pulls them downward", "o": ["Gravity pulls them downward", "Friction pushes them down", "Air currents blow them down", "They contain magnetic iron"]},
+        {"q": "How does friction help us when walking?", "a": "It prevents our shoes from slipping on the ground", "o": ["It prevents our shoes from slipping on the ground", "It pulls us down to Earth", "It makes us run faster", "It heats up our body"]}
+      ]
+    },
+    "sub3": {
+      "title": "Magnets & Magnetic Forces",
+      "pages": [
+        "Let's learn about magnetic forces in {THEME}. Magnetism is a force that can push or pull without touching.",
+        "Magnets have two poles: a North Pole (N) and a South Pole (S), which locate the strongest force.",
+        "Opposite poles attract (pull together: N pulls S), while like poles repel (push apart: N pushes N).",
+        "Magnets can pull magnetic metals like iron, nickel, and cobalt, but do not attract wood, plastic, or copper.",
+        "Earth acts like a giant magnet, generating a magnetic field that aligns compass needles towards the North Pole."
+      ],
+      "questions": [
+        {"q": "What are the two poles of a magnet?", "a": "North Pole and South Pole", "o": ["North Pole and South Pole", "East Pole and West Pole", "Positive Pole and Negative Pole", "Up Pole and Down Pole"]},
+        {"q": "What happens when you bring two North poles of magnets close together?", "a": "They repel (push each other apart)", "o": ["They repel (push each other apart)", "They attract (pull together)", "They heat up and melt", "Nothing happens"]},
+        {"q": "Which material is attracted to a magnet?", "a": "An iron nail", "o": ["An iron nail", "A plastic cup", "A wooden block", "A copper coin"]},
+        {"q": "What does attract mean in magnetism?", "a": "To pull together with magnetic force", "o": ["To pull together with magnetic force", "To push apart", "To spin around", "To lose strength"]},
+        {"q": "Why does a compass needle point North?", "a": "It aligns with Earth's magnetic field", "o": ["It aligns with Earth's magnetic field", "The wind blows it North", "It is pulled by gravitational waves", "The sun draws the compass needle"]}
+      ]
+    }
+  },
+  "plants": {
+    "sub1": {
+      "title": "Plant Structures & Roots",
+      "pages": [
+        "We begin our study of botany by exploring plant structures in {THEME}. Plants are living producers that make their own food.",
+        "The main parts of a plant are roots, stems, leaves, and flowers, each doing a vital job.",
+        "Roots anchor the plant firmly in the soil and absorb water and essential minerals from the ground.",
+        "Stems act like support columns and straws, holding up leaves and carrying water up to the rest of the plant.",
+        "Always remember that roots and stems form the structural foundation that keeps the plant healthy and upright."
+      ],
+      "questions": [
+        {"q": "What is the primary function of plant roots?", "a": "To anchor the plant and absorb water/minerals", "o": ["To anchor the plant and absorb water/minerals", "To make seeds and fruit", "To catch sunlight for food", "To attract insect pollinators"]},
+        {"q": "How does the stem help the plant survive?", "a": "It supports leaves and carries water up from roots", "o": ["It supports leaves and carries water up from roots", "It anchors the plant in the soil", "It produces oxygen during the night", "It absorbs minerals directly from air"]},
+        {"q": "Which plant part holds the flower and leaves upright?", "a": "Stem", "o": ["Stem", "Root", "Petal", "Seed"]},
+        {"q": "What do plants absorb from the soil through roots?", "a": "Water and minerals", "o": ["Water and minerals", "Sunlight and carbon", "Oxygen and sugars", "Sandy clay blocks"]},
+        {"q": "Why are plants called producers in ecosystems?", "a": "They produce their own food using energy", "o": ["They produce their own food using energy", "They eat other plants", "They decompose soil roots", "They consume animal waste"]}
+      ]
+    },
+    "sub2": {
+      "title": "Leaves & Photosynthesis",
+      "pages": [
+        "Let's look at how leaves make food in {THEME}. Leaves are the plant's food factories.",
+        "Leaves absorb sunlight, carbon dioxide gas from the air, and water carried up from the roots.",
+        "Through photosynthesis, plants use solar energy to convert water and carbon dioxide into sugars (food) and oxygen.",
+        "Chlorophyll is the green pigment in leaves that absorbs solar energy, giving plants their green color.",
+        "During photosynthesis, leaves release oxygen gas back into the air, which animals and humans breathe to live."
+      ],
+      "questions": [
+        {"q": "What is photosynthesis?", "a": "The process where plants use sunlight to make food and oxygen", "o": ["The process where plants use sunlight to make food and oxygen", "The growth of roots in soil", "The movement of water through stems", "The shedding of dry leaves in fall"]},
+        {"q": "What green pigment in leaves traps solar energy?", "a": "Chlorophyll", "o": ["Chlorophyll", "Oxygen", "Sugar", "Cellulose"]},
+        {"q": "What gas do plant leaves absorb from the air for photosynthesis?", "a": "Carbon dioxide", "o": ["Carbon dioxide", "Oxygen", "Nitrogen", "Helium"]},
+        {"q": "What gas do plants release into the air as a product of photosynthesis?", "a": "Oxygen", "o": ["Oxygen", "Carbon dioxide", "Nitrogen", "Water vapor"]},
+        {"q": "What do plants produce as food during photosynthesis?", "a": "Sugars (glucose)", "o": ["Sugars (glucose)", "Water", "Soil minerals", "Pollen grains"]}
+      ]
+    },
+    "sub3": {
+      "title": "Flowers, Seeds & Lifecycles",
+      "pages": [
+        "Let's learn about plant reproduction in {THEME}. Flowers are the reproductive structures of flowering plants.",
+        "Flowers have colorful petals and sweet nectar to attract insects like bees and butterflies.",
+        "Insects transfer pollen from flower to flower in a process called pollination, which allows seeds to form.",
+        "Once pollinated, the flower develops seeds, which are often protected inside sweet fruits.",
+        "Seeds travel by wind, water, or animals, landing in soil where they germinate and grow into new plants."
+      ],
+      "questions": [
+        {"q": "What is the main role of flowers in plant biology?", "a": "Reproduction and seed formation", "o": ["Reproduction and seed formation", "Absorbing water from soil", "Supporting the plant's weight", "Making sugar from sunlight"]},
+        {"q": "What is pollination in {THEME}?", "a": "The transfer of pollen between flowers to create seeds", "o": ["The transfer of pollen between flowers to create seeds", "The absorption of solar energy by chlorophyll", "The sprouting of seeds in soil", "The shedding of dead petals"]},
+        {"q": "Why are flower petals brightly colored?", "a": "To attract insect pollinators like bees", "o": ["To attract insect pollinators like bees", "To absorb more carbon dioxide", "To protect the roots from frost", "To store extra water"]},
+        {"q": "What is seed germination?", "a": "The sprouting and starting growth of a seed into a seedling", "o": ["The sprouting and starting growth of a seed into a seedling", "The transfer of pollen by wind", "The decay of dead leaves", "The fruit ripening process"]},
+        {"q": "How do seeds travel to new soil?", "a": "Carried by wind, water, or animals", "o": ["Carried by wind, water, or animals", "They crawl using tiny roots", "They fly in rocket ships", "They stay in the flower permanently"]}
+      ]
+    }
+  },
+  "animals": {
+    "sub1": {
+      "title": "Animal Groups & Mammals",
+      "pages": [
+        "We begin our study of zoology by exploring animal groups in {THEME}. Animals are consumers that eat other organisms.",
+        "Scientists divide animals into vertebrates (with backbones) and invertebrates (without backbones).",
+        "Mammals are warm-blooded vertebrates that have fur or hair and feed their babies milk.",
+        "Birds are warm-blooded vertebrates that have feathers, wings, and hatch from hard-shelled eggs.",
+        "Always remember that reptiles, amphibians, and fish are cold-blooded, meaning their body heat matches the environment."
+      ],
+      "questions": [
+        {"q": "What is the difference between vertebrates and invertebrates?", "a": "Vertebrates have backbones; invertebrates do not", "o": ["Vertebrates have backbones; invertebrates do not", "Vertebrates eat plants; invertebrates eat meat", "Vertebrates live on land; invertebrates live in water", "Vertebrates have warm blood; invertebrates are cold-blooded"]},
+        {"q": "What defines a mammal in {THEME}?", "a": "Having hair or fur and feeding babies milk", "o": ["Having hair or fur and feeding babies milk", "Laying hard eggs in nests", "Having gills to breathe water", "Being cold-blooded with scales"]},
+        {"q": "Which animal group has feathers and wings?", "a": "Birds", "o": ["Birds", "Mammals", "Reptiles", "Insects"]},
+        {"q": "What does cold-blooded mean?", "a": "The animal's body temperature changes with the environment", "o": ["The animal's body temperature changes with the environment", "The animal only lives in polar zones", "The animal has frozen blood", "The animal has no heart"]},
+        {"q": "Which animal is an invertebrate?", "a": "Earthworm or insect", "o": ["Earthworm or insect", "Dog", "Eagle", "Frog"]}
+      ]
+    },
+    "sub2": {
+      "title": "Ecosystem Food Chains",
+      "pages": [
+        "Let's look at how energy flows in the habitats of {THEME}. All animals need energy to live and grow.",
+        "A food chain shows how energy passes from the Sun to producers (plants) and then to consumers (animals).",
+        "Herbivores are consumers that eat only plants, like deer. Carnivores eat only other animals, like wolves.",
+        "Omnivores eat both plants and meat, like bears. Decomposers, like worms, break down dead matter into soil nutrients.",
+        "An ecosystem has many overlapping food chains, which form a complex network called a food web."
+      ],
+      "questions": [
+        {"q": "What does a food chain show in {THEME}?", "a": "How energy flows from the Sun and plants to animals", "o": ["How energy flows from the Sun and plants to animals", "How to track animals on maps", "The life cycle of an insect", "The weight of different mammals"]},
+        {"q": "What is a herbivore?", "a": "An animal that eats only plants", "o": ["An animal that eats only plants", "An animal that eats only meat", "A plant that makes its own food", "A decomposer in soil"]},
+        {"q": "Which consumer is a carnivore?", "a": "Wolf or eagle", "o": ["Wolf or eagle", "Deer or rabbit", "Bear or human", "Earthworm"]},
+        {"q": "What role do decomposers play in food chains?", "a": "They break down dead matter to return nutrients to soil", "o": ["They break down dead matter to return nutrients to soil", "They hunt live prey at night", "They make food from sunlight", "They carry pollen between flowers"]},
+        {"q": "What is a food web?", "a": "A network of overlapping food chains in an ecosystem", "o": ["A network of overlapping food chains in an ecosystem", "A nest built by a forest spider", "The lifecycle of a water frog", "A list of animal speeds"]}
+      ]
+    },
+    "sub3": {
+      "title": "Animal Adaptations & Camouflage",
+      "pages": [
+        "Let's learn how animals adapt to survive in {THEME}. Adaptations are physical traits or behaviors that help survival.",
+        "Camouflage is a physical adaptation that helps animals blend into their surroundings to hide from predators or prey.",
+        "For example, snowshoe hares turn white in winter to match snow, and green tree frogs blend with forest leaves.",
+        "Behavioral adaptations include migration (traveling to warm places in winter) and hibernation (sleeping through winter).",
+        "Keen senses, like the sharp eyesight of eagles or the smell of wolves, are also vital survival adaptations."
+      ],
+      "questions": [
+        {"q": "What is camouflage in animal biology?", "a": "A physical trait that helps an animal blend with its surroundings", "o": ["A physical trait that helps an animal blend with its surroundings", "A behavior of sleeping through winter", "Traveling long distances for food", "Feeding milk to babies"]},
+        {"q": "Which is an example of camouflage in {THEME}?", "a": "A green frog hiding on a green forest leaf", "o": ["A green frog hiding on a green forest leaf", "A bear sleeping in a deep cave", "A bird flying south for winter", "A wolf howling at the moon"]},
+        {"q": "What is migration?", "a": "A behavioral adaptation of traveling to warm areas in winter", "o": ["A behavioral adaptation of traveling to warm areas in winter", "Sleeping in a burrow all winter", "Blending in with snow and ice", "Breaking down dead leaves in soil"]},
+        {"q": "What adaptation helps bears survive cold winters without food?", "a": "Hibernation (deep winter sleep)", "o": ["Hibernation (deep winter sleep)", "Growing white feathers", "Migrating to the ocean", "Flying high in the sky"]},
+        {"q": "Why do eagles have sharp eyesight?", "a": "To locate prey from high in the sky", "o": ["To locate prey from high in the sky", "To see in complete deep-sea darkness", "To attract insect pollinators", "To protect their nests from wind"]}
+      ]
+    }
+  },
+  "art_elements": {
+    "sub1": {
+      "title": "Lines, Shapes & Forms",
+      "pages": [
+        "We begin our study of art by exploring design elements in {THEME}. Art elements are the building blocks of all drawings.",
+        "Lines can be straight, wavy, zigzag, or curved, guiding the viewer's eye across the composition.",
+        "Shapes are flat, two-dimensional (2D) areas, like squares, circles, and triangles, defined by outlines.",
+        "Forms are three-dimensional (3D) objects with height, width, and depth, like cubes, spheres, and clay vases.",
+        "Always remember that artists use shading and lines to give flat 2D shapes the illusion of 3D volume."
+      ],
+      "questions": [
+        {"q": "What is the difference between a shape and a form in art?", "a": "Shapes are flat (2D); forms have 3D volume", "o": ["Shapes are flat (2D); forms have 3D volume", "Forms are flat (2D); shapes have 3D volume", "Shapes are colorful; forms are black and white", "Shapes are made of wood; forms of clay"]},
+        {"q": "Which is a 2D shape?", "a": "Triangle", "o": ["Triangle", "Cube", "Sphere", "Cylinder"]},
+        {"q": "What element is a continuous mark made on a surface?", "a": "Line", "o": ["Line", "Texture", "Value", "Space"]},
+        {"q": "Which is a 3D form?", "a": "Sphere", "o": ["Sphere", "Square", "Circle", "Rectangle"]},
+        {"q": "How can an artist make a flat circle look like a 3D sphere?", "a": "By applying light and dark shading", "o": ["By applying light and dark shading", "By drawing a compass grid", "By painting it bright yellow", "By erasing the outline"]}
+      ]
+    },
+    "sub2": {
+      "title": "Primary & Secondary Colors",
+      "pages": [
+        "Let's explore color theory in {THEME}. Color is created when light reflects off a surface into our eyes.",
+        "The primary colors are red, yellow, and blue. They are special because they cannot be made by mixing other colors.",
+        "By mixing two primary colors together, we create secondary colors: orange, green, and purple.",
+        "Warm colors, like red, orange, and yellow, feel energetic, while cool colors, like blue and green, feel calm.",
+        "Colors can also express feelings in art, like blue for sadness or bright yellow for happiness."
+      ],
+      "questions": [
+        {"q": "What are the three primary colors in art?", "a": "Red, yellow, and blue", "o": ["Red, yellow, and blue", "Orange, green, and purple", "Black, white, and grey", "Pink, brown, and green"]},
+        {"q": "How do you make the secondary color green?", "a": "By mixing yellow and blue", "o": ["By mixing yellow and blue", "By mixing red and yellow", "By mixing red and blue", "By painting blue over white"]},
+        {"q": "Which secondary color is made by mixing red and yellow?", "a": "Orange", "o": ["Orange", "Green", "Purple", "Pink"]},
+        {"q": "Which colors are classified as cool colors?", "a": "Blue, green, and purple", "o": ["Blue, green, and purple", "Red, orange, and yellow", "Black, white, and brown", "Pink and yellow"]},
+        {"q": "Why do artists use warm colors like red and yellow?", "a": "To create a sense of energy, heat, or excitement", "o": ["To create a sense of energy, heat, or excitement", "To make the composition look cold", "To draw thin lines only", "To show shadows in drawings"]}
+      ]
+    },
+    "sub3": {
+      "title": "Texture & Values",
+      "pages": [
+        "Let's learn about texture and value in {THEME}. Texture represents the surface quality of an artwork.",
+        "Real texture can be felt, like rough clay or thick paint. Implied texture is drawn to look rough or soft.",
+        "Value describes the lightness or darkness of a color, ranging from bright highlights to deep shadows.",
+        "By repeating shapes, colors, or lines in a specific sequence, artists create a visual pattern.",
+        "Patterns and texture elements create rhythm, guiding the eye and adding interest to the canvas."
+      ],
+      "questions": [
+        {"q": "What is texture in visual art?", "a": "The real or implied surface quality (rough, soft, smooth)", "o": ["The real or implied surface quality (rough, soft, smooth)", "The lightness or darkness of a color", "The shape of a clay vase", "The primary colors mixed together"]},
+        {"q": "What does value describe in art?", "a": "The lightness or darkness of a color", "o": ["The lightness or darkness of a color", "The price of the painting", "The thickness of paint strokes", "The direction of line curves"]},
+        {"q": "How does an artist create a visual pattern?", "a": "By repeating shapes, colors, or lines in a sequence", "o": ["By repeating shapes, colors, or lines in a sequence", "By mixing all primary colors together", "By shading the entire background black", "By carving a clay block"]},
+        {"q": "What is implied texture?", "a": "Texture that is drawn to look real but is actually flat", "o": ["Texture that is drawn to look real but is actually flat", "The physical texture of thick paint", "The value scale of a color", "The boundary line of a shape"]},
+        {"q": "Which technique helps create deep value and shadow in pencil drawings?", "a": "Hatching and shading", "o": ["Hatching and shading", "Mixing red and yellow", "Erasing the guidelines", "Using a compass rose"]}
+      ]
+    }
+  },
+  "art_techniques": {
+    "sub1": {
+      "title": "Drawing & Shading",
+      "pages": [
+        "We begin our study of art techniques by exploring drawing and shading in {THEME}.",
+        "Sketching with light pencil lines allows artists to plan their layout before committing to dark lines.",
+        "Shading is used to represent light sources, adding highlights where light hits and shadows where it is blocked.",
+        "Hatching (parallel lines) and cross-hatching (crossing lines) are classical drawing techniques to build value.",
+        "A sketchbook is an artist's personal journal, used to practice shading, try out ideas, and refine skills."
+      ],
+      "questions": [
+        {"q": "Why do artists start with light pencil sketches?", "a": "To plan the composition before making permanent dark lines", "o": ["To plan the composition before making permanent dark lines", "To make the drawing look finished", "To create color value directly", "To make the paper rough"]},
+        {"q": "What does shading represent in a drawing?", "a": "The effect of light and shadows on forms", "o": ["The effect of light and shadows on forms", "The primary color wheel", "The texture of wet canvas", "The borders of countries"]},
+        {"q": "What is cross-hatching in drawing?", "a": "Drawing crossing lines to build up dark values and shadow", "o": ["Drawing crossing lines to build up dark values and shadow", "Painting with thick watercolor layers", "Carving clay with sharp tools", "Mixing red and blue together"]},
+        {"q": "Where do you place shadows on a shaded object?", "a": "On the side facing away from the light source", "o": ["On the side facing away from the light source", "Directly under the highlight spot", "In the center of the light path", "Only on the outline borders"]},
+        {"q": "What is an artist's sketchbook used for?", "a": "Practicing techniques, sketching ideas, and journaling", "o": ["Practicing techniques, sketching ideas, and journaling", "Painting finished large watercolors", "Selling artworks to museums", "Printing block text books"]}
+      ]
+    },
+    "sub2": {
+      "title": "Painting & Watercolors",
+      "pages": [
+        "Let's explore painting mediums in {THEME}. Painting uses liquid color pigments applied to canvas or paper.",
+        "Watercolors are transparent paints mixed with water, allowing light to shine through the color washes.",
+        "Acrylic and oil paints are thick and opaque, meaning they cover layers underneath and create real texture.",
+        "Artists use different brushes: flat brushes for large color washes and round detail brushes for thin lines.",
+        "Preparing the surface, mixing color palettes, and washing brushes are essential skills for every painter."
+      ],
+      "questions": [
+        {"q": "What is the defining trait of watercolor paint?", "a": "It is transparent and mixed with water", "o": ["It is transparent and mixed with water", "It is thick and creates high textures", "It cannot be mixed with other colors", "It never dries on paper"]},
+        {"q": "What does opaque mean in painting?", "a": "The paint is solid and covers layers beneath it", "o": ["The paint is solid and covers layers beneath it", "The paint is see-through and clear", "The paint is mixed with oil only", "The paint has low viscosity"]},
+        {"q": "Which brush is best for drawing very thin detail lines?", "a": "A small round brush", "o": ["A small round brush", "A large flat brush", "A sponge brush", "A clay carving knife"]},
+        {"q": "Which painting medium is famous for slow drying times, allowing blending for days?", "a": "Oil paint", "o": ["Oil paint", "Watercolor", "Acrylic", "Tempera"]},
+        {"q": "What is a color palette?", "a": "The board or selection of colors mixed by the artist", "o": ["The board or selection of colors mixed by the artist", "The canvas backing stand", "The sketchbook paper thickness", "The flat brush shape"]}
+      ]
+    },
+    "sub3": {
+      "title": "Sculpture & Pottery",
+      "pages": [
+        "Let's learn about three-dimensional art in {THEME}. Sculpture is the art of creating 3D forms.",
+        "Pottery involves shaping clay into functional forms like bowls, pots, and vases, which are fired in a kiln.",
+        "A kiln is a specialized, high-heat oven that bakes wet clay, turning it into hard, permanent ceramic.",
+        "Sculptors use addition (adding clay or wire) and subtraction (carving away stone or wood) to shape forms.",
+        "Clay sculptures can be painted with glazes, which melt in the kiln to create shiny, colorful waterproof coatings."
+      ],
+      "questions": [
+        {"q": "What is pottery in the context of {THEME}?", "a": "Shaping clay into functional bowls, pots, or vases", "o": ["Shaping clay into functional bowls, pots, or vases", "Painting landscapes with watercolors", "Sketching forms with pencil values", "Writing legends about ancestors"]},
+        {"q": "What is a kiln?", "a": "A high-heat oven used to bake wet clay into hard ceramic", "o": ["A high-heat oven used to bake wet clay into hard ceramic", "A tool for blending pencil shading", "A palette for mixing paint colors", "A frame that holds canvases"]},
+        {"q": "What is the subtraction method in sculpting?", "a": "Carving away material from a block of stone or wood", "o": ["Carving away material from a block of stone or wood", "Adding extra clay pieces to build volume", "Mixing water into wet clay", "Painting glazes over fired pottery"]},
+        {"q": "What is glaze used for in clay art?", "a": "It melts in the kiln to form a shiny, colorful waterproof coating", "o": ["It melts in the kiln to form a shiny, colorful waterproof coating", "It softens the dry clay for carving", "It highlights pencil shading borders", "It connects canvas fibers"]},
+        {"q": "Which material is historically the base for pottery?", "a": "Clay dug from the soil", "o": ["Clay dug from the soil", "Timber wood", "Sod grass", "Molten iron"]}
+      ]
+    }
+  },
+  "art_history": {
+    "sub1": {
+      "title": "Famous Painters & Styles",
+      "pages": [
+        "We begin our study of art history by exploring famous painters in {THEME}. Art style is the unique way an artist creates.",
+        "Vincent van Gogh was a famous Dutch painter known for his expressive, thick brushstrokes and bright colors in Starry Night.",
+        "Claude Monet was a leader of Impressionism, painting outdoors to capture the shifting effects of light and weather.",
+        "Pablo Picasso co-founded Cubism, breaking down real-world subjects into flat geometric shapes from multiple views.",
+        "Always remember that studying famous artists helps us understand how art styles changed over different historical eras."
+      ],
+      "questions": [
+        {"q": "Which painter is famous for thick, expressive brushstrokes in Starry Night?", "a": "Vincent van Gogh", "o": ["Vincent van Gogh", "Claude Monet", "Pablo Picasso", "Leonardo da Vinci"]},
+        {"q": "What style did Claude Monet co-found, focused on light and weather?", "a": "Impressionism", "o": ["Impressionism", "Cubism", "Abstract Art", "Realism"]},
+        {"q": "What style is Pablo Picasso famous for co-founding?", "a": "Cubism", "o": ["Cubism", "Impressionism", "Watercolor wash", "Cave painting"]},
+        {"q": "How does Cubism represent subjects in art?", "a": "Broken into flat geometric shapes seen from multiple views", "o": ["Broken into flat geometric shapes seen from multiple views", "Using only primary colors blended smoothly", "Drawn with perfect 3D pencil perspective", "Carved out of hard marble stone"]},
+        {"q": "What does a painter's style represent?", "a": "Their unique way of painting, using color, line, and composition", "o": ["Their unique way of painting, using color, line, and composition", "The price of their canvas brush", "The coordinate grid they use on maps", "The history of their family tree"]}
+      ]
+    },
+    "sub2": {
+      "title": "Composition & Visual Balance",
+      "pages": [
+        "Let's explore composition in {THEME}. Composition is the arrangement of visual elements within an artwork.",
+        "A focal point is the area of a painting that first attracts the viewer's eye, often created with high color contrast.",
+        "Visual balance can be symmetrical (sides look identical) or asymmetrical (different but visually balanced).",
+        "Overlapping shapes are used to represent depth, placing closer items in the foreground over distant items.",
+        "By organizing elements thoughtfully, artists guide the viewer's gaze and communicate clear feelings."
+      ],
+      "questions": [
+        {"q": "What is composition in visual art?", "a": "The arrangement of visual elements on the canvas", "o": ["The arrangement of visual elements on the canvas", "The chemical formula of paint pigments", "The history of famous museums", "The process of baking clay in a kiln"]},
+        {"q": "What is the focal point of an artwork?", "a": "The area that first attracts the viewer's eye", "o": ["The area that first attracts the viewer's eye", "The bottom border of the canvas", "The signature of the master artist", "The mixing board for watercolor paints"]},
+        {"q": "What does symmetrical balance mean in design?", "a": "Both sides of the artwork look identical or balanced", "o": ["Both sides of the artwork look identical or balanced", "One side is completely black and one side is white", "The painting uses only primary colors", "The sculpture is carved using subtraction"]},
+        {"q": "How does overlapping shapes help represent depth?", "a": "Closer shapes cover parts of more distant shapes", "o": ["Closer shapes cover parts of more distant shapes", "Shapes are mixed together to create secondary colors", "Flat shapes are turned into 3D forms using clay", "It makes all outlines disappear"]},
+        {"q": "What is the foreground of a painting?", "a": "The part of the scene that appears closest to the viewer", "o": ["The part of the scene that appears closest to the viewer", "The distant sky and horizon", "The back of the canvas frame", "The table where brushes are washed"]}
+      ]
+    },
+    "sub3": {
+      "title": "Art Interpretation & Museums",
+      "pages": [
+        "Let's learn how we appreciate and analyze art in {THEME}. Art appreciation is the study and interpretation of artworks.",
+        "We interpret meanings by looking at the artist's choices of colors, lines, subject matter, and symbols.",
+        "Museums are special public buildings where historical and modern artworks are collected, preserved, and displayed.",
+        "Art critics analyze visual details to understand the historical context and emotional impact of an artwork.",
+        "Sharing your opinion about art is a great way to learn, as there are no wrong answers in creative expression."
+      ],
+      "questions": [
+        {"q": "What is the purpose of art museums?", "a": "To collect, preserve, and display historical and modern artworks", "o": ["To collect, preserve, and display historical and modern artworks", "To sell canvases and watercolor brushes", "To hold elections for local mayors", "To test students on science variables"]},
+        {"q": "How do we interpret meaning in a painting?", "a": "By analyzing the artist's choices of colors, lines, and symbols", "o": ["By analyzing the artist's choices of colors, lines, and symbols", "By weighing the canvas on a spring scale", "By checking the coordinate grid rows", "By asking friends for their spelling rules"]},
+        {"q": "What does an art critic do?", "a": "Analyzes visual details to understand context and emotional impact", "o": ["Analyzes visual details to understand context and emotional impact", "Decides the laws of the national government", "Fires clay bowls in high-heat kilns", "Carves totem poles from cedar trees"]},
+        {"q": "Is there a single correct way to interpret an artwork?", "a": "No, interpretation is personal and can differ for everyone", "o": ["No, interpretation is personal and can differ for everyone", "Yes, only the museum guide knows the correct meaning", "Yes, it is written on the back of the canvas", "Only if it is a primary source"]},
+        {"q": "What is the study of visual art styles and history called?", "a": "Art history", "o": ["Art history", "Physical geography", "Botany science", "Political civics"]}
+      ]
+    }
+  },
+  "generic_geography": {
+    "sub1": {
+      "title": "Geographic Features",
+      "pages": [
+        "We begin our study of geography by exploring the physical features of {THEME}.",
+        "Geography is the study of Earth's lands, features, climates, and natural resources.",
+        "Every region on Earth is shaped by unique physical structures, like flat plains, tall mountains, or flowing rivers.",
+        "Geographers use maps, satellite images, and compasses to study and trace these features.",
+        "Always remember that physical features define the borders, transportation routes, and climates of regions."
+      ],
+      "questions": [
+        {"q": "What is geography the study of?", "a": "Earth's lands, features, climates, and resources", "o": ["Earth's lands, features, climates, and resources", "Historical events in the past", "How molecules behave in solids", "Painting techniques on canvas"]},
+        {"q": "What tools do geographers use to study Earth?", "a": "Maps, globes, and compasses", "o": ["Maps, globes, and compasses", "Scales and microscopes", "Kilns and sketchbooks", "Drums and story legends"]},
+        {"q": "What is a physical feature on Earth?", "a": "A natural landform or water body", "o": ["A natural landform or water body", "A law made by the government", "A historic president's diary", "A secondary source textbook"]},
+        {"q": "How do geographical features shape borders?", "a": "Natural landforms like rivers and mountains often form physical borders", "o": ["Natural landforms like rivers and mountains often form physical borders", "They change the state of matter of the land", "They are drawn dynamically by computer screens", "They prevent wind from blowing"]},
+        {"q": "Why do geographers map elevation levels?", "a": "To see the height and slopes of landforms", "o": ["To see the height and slopes of landforms", "To count the number of trees", "To track animal migration routes", "To calculate correct answer accuracy"]}
+      ]
+    },
+    "sub2": {
+      "title": "Climates & Environments",
+      "pages": [
+        "Let's explore the climate zones and weather patterns surrounding {THEME}.",
+        "Climate is the average weather of a region over a long period, which dictates what plants and animals can survive.",
+        "Ecosystems range from dry deserts to humid rainforests and freezing tundra zones.",
+        "Physical geography studies how wind, solar heat, and water interact to create these distinct zones.",
+        "Environmental adaptations allow animals to find shelter and food in their native climates."
+      ],
+      "questions": [
+        {"q": "What is climate?", "a": "The average weather of a region over a long period of time", "o": ["The average weather of a region over a long period of time", "The daily rainfall in a city", "The temperature of deep-sea trenches", "The rotation speed of the Earth"]},
+        {"q": "What determines which plants can grow in a region?", "a": "The local climate and soil quality", "o": ["The local climate and soil quality", "The coordinates on a grid map", "The national laws of the state", "The style of art shown in museums"]},
+        {"q": "Which is an example of an environmental zone?", "a": "Rainforests, deserts, and tundra", "o": ["Rainforests, deserts, and tundra", "Primary and secondary sources", "Solids, liquids, and gases", "Lines, shapes, and forms"]},
+        {"q": "How does wind interact with physical landforms?", "a": "Wind is redirected by mountain ranges and flows over plains", "o": ["Wind is redirected by mountain ranges and flows over plains", "Wind turns flat land into oceans", "Wind melts all frozen glaciers immediately", "Wind stops gravity from pulling"]},
+        {"q": "Why is protecting regional environments important?", "a": "To preserve biodiversity and maintain natural balance", "o": ["To preserve biodiversity and maintain natural balance", "To increase deforested farm land", "To build more concrete sod houses", "To raise local tax collections"]}
+      ]
+    },
+    "sub3": {
+      "title": "Human Adaptations & Communities",
+      "pages": [
+        "Let's learn how human communities adapt to geography in {THEME}.",
+        "Human geography studies how populations settle, farm, build cities, and travel.",
+        "People adapt their housing materials, clothes, and jobs to match local climates and landforms.",
+        "Natural resources like fresh water, timber, and minerals dictate where cities are founded.",
+        "Today, human communities must balance resource use with conservation to protect the Earth for the future."
+      ],
+      "questions": [
+        {"q": "What does human geography study?", "a": "How populations settle, work, and build communities", "o": ["How populations settle, work, and build communities", "The physical rock layers of mountains", "The lifecycle of polar penguins", "The painting techniques of Monet"]},
+        {"q": "How do humans adapt to cold climates?", "a": "By wearing thick clothing and building heated shelters", "o": ["By wearing thick clothing and building heated shelters", "By migrating to space daily", "By farming desert cacti", "By building portables tipis only in summer"]},
+        {"q": "What determines the founding location of major cities?", "a": "Proximity to water, trading routes, and fertile land", "o": ["Proximity to water, trading routes, and fertile land", "The coordinate grid center on a map", "The selection of the state flag color", "The location of clay kiln ovens"]},
+        {"q": "What is a natural resource?", "a": "A useful material found in nature, like water or minerals", "o": ["A useful material found in nature, like water or minerals", "An electric lightbulb invention", "A primary source diary document", "A secondary textbook source"]},
+        {"q": "Why is resource conservation vital for communities?", "a": "To ensure future generations have water and resources", "o": ["To ensure future generations have water and resources", "To increase factory manufacturing speeds", "To level off mountain ranges", "To change the state mayor"]}
+      ]
+    }
+  },
+  "generic_history": {
+    "sub1": {
+      "title": "Origins & Historical Records",
+      "pages": [
+        "We begin our study of history by exploring the records of {THEME}.",
+        "History is the study of past human societies, events, decisions, and movements.",
+        "Historians reconstruct the past by analyzing primary sources, which are direct records from the time.",
+        "Primary sources include diaries, letters, photographs, and artifacts created by people who were there.",
+        "Secondary sources, like textbooks and articles, are written later by researchers who compile these facts."
+      ],
+      "questions": [
+        {"q": "What is history?", "a": "The study of past human societies, events, and decisions", "o": ["The study of past human societies, events, and decisions", "The study of rocks and soil layers", "The study of lines and shapes in art", "The study of magnets and gravity"]},
+        {"q": "What is a primary source in history?", "a": "An original record or artifact created during the event", "o": ["An original record or artifact created during the event", "A modern textbook written by researchers", "An online spelling quiz", "A map key explaining symbols"]},
+        {"q": "Which is an example of a primary source?", "a": "A diary written by a pioneer", "o": ["A diary written by a pioneer", "A school library textbook", "A modern encyclopedia article", "A list of state capitals"]},
+        {"q": "What is a secondary source?", "a": "A document written later analyzing primary records", "o": ["A document written later analyzing primary records", "An original letter written by a president", "A photograph taken at a battle", "An artifact dug up by scientists"]},
+        {"q": "Why do historians compare different sources?", "a": "To get a balanced, accurate view of what happened", "o": ["To get a balanced, accurate view of what happened", "To find the spelling errors in old diaries", "To change the dates on a timeline", "To score points in the app"]}
+      ]
+    },
+    "sub2": {
+      "title": "Timelines & Chronology",
+      "pages": [
+        "Let's explore how we organize historical events in {THEME}.",
+        "A timeline is a visual tool that displays events in chronological order, from oldest to newest.",
+        "Chronological order helps us understand the sequence of events and see how things change over time.",
+        "We study history to identify cause and effect relationships: why an event happened and what it led to.",
+        "Timelines trace the development of communities, inventions, and major historical movements."
+      ],
+      "questions": [
+        {"q": "What is a timeline?", "a": "A visual tool showing events in chronological order", "o": ["A visual tool showing events in chronological order", "A compass rose pointing to North", "A list of spelling rules", "A clay vase model"]},
+        {"q": "What does chronological order mean?", "a": "Arranging events in the order they happened in time", "o": ["Arranging events in the order they happened in time", "Listing names alphabetically", "Grouping items by their color", "Sorting things by their height"]},
+        {"q": "Why is understanding cause and effect important in history?", "a": "It explains why events happened and their consequences", "o": ["It explains why events happened and their consequences", "It helps us print books faster", "It tells us the location of an oasis", "It is required to pass the final test"]},
+        {"q": "What is an example of 'cause and effect' in history?", "a": "An invention (cause) leading to changes in travel (effect)", "o": ["An invention (cause) leading to changes in travel (effect)", "A timeline showing dates in order", "A primary source diary document", "A map key explaining blue water"]},
+        {"q": "How do timelines help us study history?", "a": "They make it easy to trace changes and sequence over time", "o": ["They make it easy to trace changes and sequence over time", "They calculate accuracy scores", "They point towards the North Pole", "They show molecular structures"]}
+      ]
+    },
+    "sub3": {
+      "title": "Impact & Historical Legacy",
+      "pages": [
+        "Let's learn about the lasting impact and historical legacy of {THEME}.",
+        "A historical legacy represents the ideas, systems, or inventions passed down to modern times.",
+        "Events in the past shape the laws, borders, languages, and cultures we have today.",
+        "By studying history, we learn lessons from past successes and mistakes to make better choices.",
+        "Connecting the past to the present helps us understand our role as active members of society."
+      ],
+      "questions": [
+        {"q": "What is a historical legacy?", "a": "The ideas, systems, or tools passed down to modern times", "o": ["The ideas, systems, or tools passed down to modern times", "The timeline of future space events", "A map scale showing real distance", "A scientific experiment hypothesis"]},
+        {"q": "How does history impact our modern world?", "a": "It shapes modern laws, borders, cultures, and languages", "o": ["It shapes modern laws, borders, cultures, and languages", "It changes the molecular states of matter", "It stops wind blowing over plains", "It is only a list of names"]},
+        {"q": "Why is studying past mistakes helpful?", "a": "It helps us learn lessons and make smarter decisions today", "o": ["It helps us learn lessons and make smarter decisions today", "It deletes old accounts from the database", "It increases our daily streak points", "It changes the map scale"]},
+        {"q": "How can learning history help citizens in a democracy?", "a": "It helps them make informed choices when voting", "o": ["It helps them make informed choices when voting", "It gives them free points at the shop", "It allows them to skip tests", "It teaches them how to sculpt clay"]},
+        {"q": "Who writes history textbooks?", "a": "Researchers and historians who study records", "o": ["Researchers and historians who study records", "The original presidents who were there", "The state mayors in elections", "The users of this app"]}
+      ]
+    }
+  },
+  "generic_science": {
+    "sub1": {
+      "title": "Properties & Definitions",
+      "pages": [
+        "We begin our study of science by exploring the core properties of {THEME}.",
+        "Science is the systematic study of the physical world through observation and testing.",
+        "Scientists start by asking questions and formulating a hypothesis, which is a testable guess.",
+        "We record observations using our senses and tools like scales, rulers, and thermometers.",
+        "Always remember that collecting accurate data is the foundation of every scientific discovery."
+      ],
+      "questions": [
+        {"q": "What is science?", "a": "The study of the physical world through observation and testing", "o": ["The study of the physical world through observation and testing", "The history of family traditions", "Obeying laws in a democracy", "Painting pictures with watercolors"]},
+        {"q": "What is a hypothesis?", "a": "A testable guess that explains an observation", "o": ["A testable guess that explains an observation", "A completed experiment result", "A tool for measuring temperature", "A primary source document"]},
+        {"q": "What tool do scientists use to measure temperature?", "a": "Thermometer", "o": ["Thermometer", "Spring scale", "Ruler", "Compass"]},
+        {"q": "How do scientists record observations?", "a": "Using their senses and specialized measuring tools", "o": ["Using their senses and specialized measuring tools", "By guessing what will happen later", "By writing fictional stories", "Only by voting in elections"]},
+        {"q": "Why is accurate data collection important in science?", "a": "It ensures that conclusions are based on correct evidence", "o": ["It ensures that conclusions are based on correct evidence", "It changes the states of matter", "It makes experiments run faster", "It increases the user's stars"]}
+      ]
+    },
+    "sub2": {
+      "title": "Mechanisms & How It Works",
+      "pages": [
+        "Let's explore the scientific mechanisms and processes of {THEME}.",
+        "Every scientific system is governed by cause-and-effect relationships and natural laws.",
+        "We run controlled experiments where we change one variable and keep others the same.",
+        "The variable we change is the independent variable, and the one we measure is the dependent variable.",
+        "Analyzing how these variables interact reveals the hidden patterns and formulas of nature."
+      ],
+      "questions": [
+        {"q": "What is a variable in a scientific experiment?", "a": "A factor that can change or be measured", "o": ["A factor that can change or be measured", "The final conclusion of a test", "The spring scale tool", "A map grid line"]},
+        {"q": "Why do we change only one variable in a controlled experiment?", "a": "To ensure we know exactly what caused the result", "o": ["To ensure we know exactly what caused the result", "To make the experiment easier to draw", "To save water and resources", "Because the local laws require it"]},
+        {"q": "What is the variable that we measure in an experiment called?", "a": "The dependent variable", "o": ["The dependent variable", "The independent variable", "The control variable", "The constant"]},
+        {"q": "How do scientific laws differ from government laws?", "a": "Scientific laws describe how nature behaves; government laws guide humans", "o": ["Scientific laws describe how nature behaves; government laws guide humans", "Scientific laws can be changed by voting", "Government laws are studied using telescopes", "There is no difference"]},
+        {"q": "What do scientists do after collecting experiment data?", "a": "They compile it into charts and look for patterns", "o": ["They compile it into charts and look for patterns", "They delete it and guess the answer", "They publish it in local newspapers", "They store it in clay vases"]}
+      ]
+    },
+    "sub3": {
+      "title": "Applications & Experiments",
+      "pages": [
+        "Let's learn how we apply scientific knowledge of {THEME} in the real world.",
+        "Scientific discoveries lead to new technologies, medicines, and conservation efforts.",
+        "We draw logical conclusions based on the evidence collected from our experiments.",
+        "If our data does not support the hypothesis, we refine the hypothesis and run new tests.",
+        "Sharing results allows other scientists to verify our findings and build on our work."
+      ],
+      "questions": [
+        {"q": "What is a scientific conclusion?", "a": "A logical statement based on the evidence collected", "o": ["A logical statement based on the evidence collected", "A guess made before the experiment starts", "The tools used in the test", "A primary source diary entry"]},
+        {"q": "What should a scientist do if the data does not support their hypothesis?", "a": "Refine the hypothesis and test it again", "o": ["Refine the hypothesis and test it again", "Change the data to match the hypothesis", "Stop doing experiments entirely", "Obey the independent variable"]},
+        {"q": "How do scientific discoveries help society?", "a": "By leading to new medicine, technology, and conservation", "o": ["By leading to new medicine, technology, and conservation", "By drawing better coordinates on maps", "By establishing new family traditions", "By raising the price of products"]},
+        {"q": "Why do scientists share and publish their results?", "a": "To let other scientists verify and build on their work", "o": ["To let other scientists verify and build on their work", "To keep their findings secret", "To sell more science tools", "To win state elections"]},
+        {"q": "What is the final step in the scientific method?", "a": "Drawing conclusions and sharing results", "o": ["Drawing conclusions and sharing results", "Formulating a test hypothesis", "Measuring independent variables", "Fixing the spring scale"]}
+      ]
+    }
+  },
+  "generic_art": {
+    "sub1": {
+      "title": "Art Appreciation",
+      "pages": [
+        "We begin our study of art by exploring visual appreciation in {THEME}.",
+        "Art is a creative human expression that uses visual mediums to share ideas and feelings.",
+        "The building blocks of art are the elements: line, shape, color, value, form, texture, and space.",
+        "We study how artists arrange these elements to create contrast, balance, and unity.",
+        "Always remember that art has no single correct answer; every person can interpret it uniquely."
+      ],
+      "questions": [
+        {"q": "What is art?", "a": "A creative visual expression of ideas and feelings", "o": ["A creative visual expression of ideas and feelings", "A list of historic state laws", "A scientific measurement of variables", "A map of local topography"]},
+        {"q": "What are the building blocks of visual art called?", "a": "Art elements", "o": ["Art elements", "Primary sources", "States of matter", "Ecosystem producers"]},
+        {"q": "Why is there no single correct way to interpret art?", "a": "Creative expression is personal and unique to everyone", "o": ["Creative expression is personal and unique to everyone", "Art has no rules or elements", "Artists do not want people to understand them", "Only history has correct answers"]},
+        {"q": "Which is an art element?", "a": "Line, color, and texture", "o": ["Line, color, and texture", "Gravity, force, and pull", "Timeline, past, and record", "Bison, salmon, and eagle"]},
+        {"q": "What does contrast mean in art?", "a": "Using opposite elements next to each other, like light and dark", "o": ["Using opposite elements next to each other, like light and dark", "Repeating the same shape in a row", "Carving a solid block of stone", "Obeying the local museum rules"]}
+      ]
+    },
+    "sub2": {
+      "title": "Creative Mediums & Tools",
+      "pages": [
+        "Let's explore the creative mediums and tools used to express {THEME}.",
+        "A medium is the physical material an artist uses, such as pencils, paint, clay, or paper.",
+        "Different mediums require specialized techniques, like blending watercolors or carving clay.",
+        "Artists keep sketchbooks to practice their skills, plan designs, and play with new ideas.",
+        "Using the correct tools and keeping your workspace clean are essential skills for every artist."
+      ],
+      "questions": [
+        {"q": "What is an artistic medium?", "a": "The physical material used to make art, like paint or clay", "o": ["The physical material used to make art, like paint or clay", "The size of the canvas frame", "The style of a famous painter", "A map showing coordinates"]},
+        {"q": "Which material is a medium used for three-dimensional art?", "a": "Clay", "o": ["Clay", "Watercolor paint wash", "Graphite pencil", "Recycled paper"]},
+        {"q": "What do artists use a sketchbook for?", "a": "To practice drawing, test values, and plan compositions", "o": ["To practice drawing, test values, and plan compositions", "To fire wet clay pots", "To paint large oil portraits", "To study maps of regions"]},
+        {"q": "Why are different brushes used in painting?", "a": "To create different textures, washes, and line widths", "o": ["To create different textures, washes, and line widths", "To mix primary colors in the jar", "To anchor the canvas to the stand", "To wipe away pencil lines"]},
+        {"q": "What is paper collage?", "a": "An artwork made by gluing paper pieces together", "o": ["An artwork made by gluing paper pieces together", "A sculpture carved from wood blocks", "A drawing made with charcoal pencils", "A pottery bowl baked in a kiln"]}
+      ]
+    },
+    "sub3": {
+      "title": "Visual Analysis & History",
+      "pages": [
+        "Let's learn how we analyze and interpret the history of {THEME}.",
+        "Art history is the study of how art styles changed over time across different cultures.",
+        "We analyze artworks by looking at the composition, subject matter, and historic context.",
+        "Museums preserve and display these artworks, allowing us to learn from past master artists.",
+        "Expressing your own thoughts and feelings about art builds creative confidence and analytical skills."
+      ],
+      "questions": [
+        {"q": "What does art history study?", "a": "How art styles and techniques changed over different eras", "o": ["How art styles and techniques changed over different eras", "The timelines of presidential elections", "The water cycle interactions", "The locations of desert oases"]},
+        {"q": "How do you perform a visual analysis of a painting?", "a": "By looking closely at composition, lines, colors, and textures", "o": ["By looking closely at composition, lines, colors, and textures", "By measuring its mass on a balance", "By checking its state of matter", "By translating it into Morse code"]},
+        {"q": "What is the role of art museums in society?", "a": "To preserve and display cultural and historical artworks", "o": ["To preserve and display cultural and historical artworks", "To manufacture canvases and paints", "To hold school classes on civics", "To sell tickets to theater plays"]},
+        {"q": "How can colors in a painting express emotions?", "a": "Warm colors feel happy/energetic; cool colors feel sad/calm", "o": ["Warm colors feel happy/energetic; cool colors feel sad/calm", "They show the direction of North", "They change the physical weight of canvas", "They have no effect on feelings"]},
+        {"q": "What is the key to appreciating a new piece of art?", "a": "Keeping an open mind and observing the details closely", "o": ["Keeping an open mind and observing the details closely", "Knowing the exact price of the painting", "Passing a written history test first", "Comparing it only to van Gogh"]}
+      ]
+    }
+  }
+};
+
+// 3. getSpecialLessonData Implementation
+function getSpecialLessonData(subject, grade, lessonId) {
+  const isSpecial = (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art');
+  if (!isSpecial) return null;
+  
+  const [title, desc] = getLessonTitleAndDesc(subject, grade, lessonId);
+  const theme = title.trim();
+  const theme_lc = theme.toLowerCase();
+  
+  let catKey = "generic_" + subject;
+  if (theme_lc.includes("plain") || theme_lc.includes("grassland") || theme_lc.includes("prairie") || theme_lc.includes("savanna")) {
+    catKey = "grasslands";
+  } else if (theme_lc.includes("mountain") || theme_lc.includes("appalachian") || theme_lc.includes("rocky") || theme_lc.includes("range") || theme_lc.includes("peaks") || theme_lc.includes("elevation") || theme_lc.includes("volcano") || theme_lc.includes("hill") || theme_lc.includes("continent") || theme_lc.includes("shelter")) {
+    catKey = "mountains";
+  } else if (theme_lc.includes("desert") || theme_lc.includes("sahara") || theme_lc.includes("arid")) {
+    catKey = "deserts";
+  } else if (theme_lc.includes("polar") || theme_lc.includes("arctic") || theme_lc.includes("tundra") || theme_lc.includes("antarctica") || theme_lc.includes("ice") || theme_lc.includes("frozen") || theme_lc.includes("glacier") || theme_lc.includes("snow") || theme_lc.includes("winter")) {
+    catKey = "polar";
+  } else if (theme_lc.includes("forest") || theme_lc.includes("rainforest") || theme_lc.includes("canopy") || theme_lc.includes("woods") || theme_lc.includes("jungle") || theme_lc.includes("deciduous") || theme_lc.includes("coniferous") || theme_lc.includes("woodland") || theme_lc.includes("tree")) {
+    catKey = "forests";
+  } else if (theme_lc.includes("water") || theme_lc.includes("ocean") || theme_lc.includes("sea") || theme_lc.includes("river") || theme_lc.includes("lake") || theme_lc.includes("coast") || theme_lc.includes("delta") || theme_lc.includes("wetland") || theme_lc.includes("puddle") || theme_lc.includes("rain") || theme_lc.includes("weather")) {
+    catKey = "water";
+  } else if (theme_lc.includes("map") || theme_lc.includes("globe") || theme_lc.includes("compass") || theme_lc.includes("grid") || theme_lc.includes("direction") || theme_lc.includes("key") || theme_lc.includes("legend") || theme_lc.includes("scale") || theme_lc.includes("latitude") || theme_lc.includes("longitude") || theme_lc.includes("address") || theme_lc.includes("neighborhood")) {
+    catKey = "maps";
+  } else if (theme_lc.includes("native") || theme_lc.includes("tribe") || theme_lc.includes("indigenous") || theme_lc.includes("indian") || theme_lc.includes("aztec") || theme_lc.includes("maya") || theme_lc.includes("inca")) {
+    catKey = "native_americans";
+  } else if (theme_lc.includes("president") || theme_lc.includes("leader") || theme_lc.includes("king") || theme_lc.includes("washington") || theme_lc.includes("lincoln") || theme_lc.includes("mlk") || theme_lc.includes("parks") || theme_lc.includes("tubman") || theme_lc.includes("government") || theme_lc.includes("law") || theme_lc.includes("pledge") || theme_lc.includes("flag") || theme_lc.includes("constitution") || theme_lc.includes("mayor") || theme_lc.includes("elect") || theme_lc.includes("ballot") || theme_lc.includes("bill") || theme_lc.includes("court") || theme_lc.includes("tax") || theme_lc.includes("safety") || theme_lc.includes("duties") || theme_lc.includes("rights")) {
+    catKey = "leaders_civics";
+  } else if (theme_lc.includes("space") || theme_lc.includes("astronomy") || theme_lc.includes("moon") || theme_lc.includes("sun") || theme_lc.includes("star") || theme_lc.includes("planet") || theme_lc.includes("orbit") || theme_lc.includes("galaxy") || theme_lc.includes("universe") || theme_lc.includes("sky")) {
+    catKey = "space";
+  } else if (theme_lc.includes("inventor") || theme_lc.includes("invention") || theme_lc.includes("edison") || theme_lc.includes("franklin") || theme_lc.includes("wright") || theme_lc.includes("discovery") || theme_lc.includes("invent") || theme_lc.includes("technology") || theme_lc.includes("lightbulb") || theme_lc.includes("phone") || theme_lc.includes("telegraph") || theme_lc.includes("steam") || theme_lc.includes("machine")) {
+    catKey = "inventions";
+  } else if (theme_lc.includes("tradition") || theme_lc.includes("celebration") || theme_lc.includes("culture") || theme_lc.includes("holiday") || theme_lc.includes("custom") || theme_lc.includes("thanksgiving") || theme_lc.includes("independence") || theme_lc.includes("family") || theme_lc.includes("grandparent") || theme_lc.includes("cotton") || theme_lc.includes("wagons") || theme_lc.includes("currency") || theme_lc.includes("business") || theme_lc.includes("goods")  || theme_lc.includes("supply")  || theme_lc.includes("demand")) {
+    catKey = "culture_traditions";
+  } else if (theme_lc.includes("matter") || theme_lc.includes("solid") || theme_lc.includes("liquid") || theme_lc.includes("gas") || theme_lc.includes("state") || theme_lc.includes("molecule") || theme_lc.includes("atom") || theme_lc.includes("particle") || theme_lc.includes("melt") || theme_lc.includes("freeze")) {
+    catKey = "matter";
+  } else if (theme_lc.includes("force") || theme_lc.includes("motion") || theme_lc.includes("gravity") || theme_lc.includes("magnet") || theme_lc.includes("energy") || theme_lc.includes("electricity") || theme_lc.includes("friction") || theme_lc.includes("pull") || theme_lc.includes("push") || theme_lc.includes("wave") || theme_lc.includes("light") || theme_lc.includes("shadow") || theme_lc.includes("opaque") || theme_lc.includes("sound") || theme_lc.includes("pitch") || theme_lc.includes("volume") || theme_lc.includes("reflect") || theme_lc.includes("refract")) {
+    catKey = "forces_energy";
+  } else if (theme_lc.includes("plant") || theme_lc.includes("photosynthesis") || theme_lc.includes("seed") || theme_lc.includes("soil") || theme_lc.includes("root") || theme_lc.includes("leaf") || theme_lc.includes("flower")) {
+    catKey = "plants";
+  } else if (theme_lc.includes("animal") || theme_lc.includes("insect") || theme_lc.includes("bird") || theme_lc.includes("fish") || theme_lc.includes("reptile") || theme_lc.includes("habitat") || theme_lc.includes("food web") || theme_lc.includes("food chain") || theme_lc.includes("mammal") || theme_lc.includes("bug") || theme_lc.includes("metamorphosis") || theme_lc.includes("fossil") || theme_lc.includes("traits") || theme_lc.includes("adaptation") || theme_lc.includes("instinct") || theme_lc.includes("learned")) {
+    catKey = "animals";
+  } else if (theme_lc.includes("element") || theme_lc.includes("line") || theme_lc.includes("color") || theme_lc.includes("shape") || theme_lc.includes("texture") || theme_lc.includes("value") || theme_lc.includes("form") || theme_lc.includes("space") || theme_lc.includes("pattern")) {
+    catKey = "art_elements";
+  } else if (theme_lc.includes("shading") || theme_lc.includes("perspective") || theme_lc.includes("sculpture") || theme_lc.includes("painting") || theme_lc.includes("draw") || theme_lc.includes("sketch") || theme_lc.includes("medium") || theme_lc.includes("clay") || theme_lc.includes("collage") || theme_lc.includes("pottery") || theme_lc.includes("still life") || theme_lc.includes("portrait") || theme_lc.includes("landscape")) {
+    catKey = "art_techniques";
+  } else if (theme_lc.includes("history") || theme_lc.includes("style") || theme_lc.includes("movement") || theme_lc.includes("famous") || theme_lc.includes("museum") || theme_lc.includes("artist") || theme_lc.includes("paintings") || theme_lc.includes("sculptor") || theme_lc.includes("gogh") || theme_lc.includes("monet") || theme_lc.includes("picasso") || theme_lc.includes("matisse")) {
+    catKey = "art_history";
+  }
+  
+  const template = SPECIAL_TEMPLATES[catKey] || SPECIAL_TEMPLATES["generic_" + subject] || SPECIAL_TEMPLATES.generic_geography;
+  
+  // Format the helper function to build the final sublessons list
+  const formatText = (txt) => {
+    return txt.replace(/{THEME}/g, theme)
+              .replace(/{SUBJECT}/g, subject)
+              .replace(/{GRADE}/g, String(grade));
+  };
+  
+  const sublessons = ["sub1", "sub2", "sub3"].map((subKey, subIdx) => {
+    const sTemp = template[subKey];
+    const subTitle = formatText(sTemp.title);
+    const pages = sTemp.pages.map(p => formatText(p));
+    const questions = sTemp.questions.map((q, qIdx) => {
+      const qText = formatText(q.q);
+      const cAns = formatText(q.a);
+      let opts = q.o.map(o => formatText(o));
+      // Shuffle options deterministically using index and seed
+      const seed = lessonId * 13 + subIdx * 7 + qIdx;
+      opts = opts.sort(() => ((seed * 7 + 3) % 10 - 5) / 10);
+      
+      return {
+        questionText: qText,
+        correctAnswer: cAns,
+        options: opts,
+        visualContent: `<div style="font-size: 48px; margin-bottom: 8px;">📖</div>`,
+        hint: `Read the sublesson page content carefully to find the answer: "${cAns}"`
+      };
+    });
+    
+    return {
+      title: subTitle,
+      pages: pages,
+      questions: questions
+    };
+  });
+  
+  return {
+    theme: theme,
+    sublessons: sublessons
+  };
 }
 
