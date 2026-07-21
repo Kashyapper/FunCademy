@@ -689,6 +689,29 @@ body {
   box-shadow: 0 4px 10px rgba(75, 107, 251, 0.15);
 }
 
+/* Avatars that haven't been purchased in the Shop yet — dimmed with a lock
+   badge so it's clear they can be looked at but not equipped for free. */
+.avatar-select-btn.locked {
+  position: relative;
+  cursor: not-allowed;
+}
+.avatar-select-btn.locked img,
+.avatar-select-btn.locked svg {
+  opacity: 0.35;
+  filter: grayscale(70%);
+}
+.avatar-select-btn.locked:hover {
+  transform: none;
+  border-color: #e2e8f0;
+}
+.avatar-lock-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 16px;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.4));
+}
+
 /* Interactive Playground Screen (Modal View) */
 .playground-overlay {
   position: fixed;
@@ -710,6 +733,17 @@ body {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+/* Practice/Mastery/Test steps and Grade Review/Test/Unit Exam all fullscreen
+   this whole overlay (see requestPlaygroundFullscreen() in app.js) — pin it
+   to the actual fullscreen viewport explicitly rather than relying on the
+   100%/100% above, which is sized against the normal page viewport. */
+.playground-overlay:fullscreen,
+.playground-overlay:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #f0f7ff !important;
 }
 
 /* Playground Header */
@@ -773,6 +807,12 @@ body {
 /* Playground Board (Content Area) */
 .playground-body {
   flex-grow: 1;
+  /* Without this, a flex item won't shrink below its content's natural
+     height, so overflow-y: auto never actually engages — tall content
+     (like a 50-question Grade Test) just gets clipped with no way to
+     scroll to it. min-height: 0 lets the flex item size to the
+     available space instead, so its own scrollbar takes over. */
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2536,6 +2576,19 @@ body {
   80%       { transform: translateX(5px); }
 }
 
+/* Used all over app.js (locked lessons, locked tabs, locked avatars, wrong
+   quiz answers) as `btn.style.animation = 'wrong-shake 0.3s ease'` — this
+   name was never actually defined anywhere, so every one of those "shake to
+   say no" cues was silently a no-op. Same motion as shakeX, just under the
+   name the JS already expects. */
+@keyframes wrong-shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-8px); }
+  40%       { transform: translateX(8px); }
+  60%       { transform: translateX(-5px); }
+  80%       { transform: translateX(5px); }
+}
+
 /* Submit button */
 .auth-submit {
   padding: 14px;
@@ -2654,21 +2707,30 @@ body {
    no separate video element to target when reading text), overriding the
    normal card sizing so it fills the whole screen instead of staying capped
    at max-width/max-height and leaving dead space around it. */
-#lessonContainerRoot:fullscreen {
+/* Lesson fullscreen — Text mode. The fullscreen target is #step-view-1, a
+   STABLE wrapper that persists across every Next/Prev page-turn re-render
+   (renderLessonSlide only swaps its innerHTML) — unlike #lessonContainerRoot,
+   which gets destroyed and rebuilt on every render and would otherwise race
+   the browser's automatic "element removed -> exit fullscreen" behavior.
+   #step-view-1 has no background/sizing of its own outside fullscreen, so
+   both need to be supplied here; the inner lesson card is then centered and
+   capped so it doesn't stretch edge-to-edge. */
+#step-view-1:fullscreen,
+#step-view-1:-webkit-full-screen {
   width: 100vw !important;
   height: 100vh !important;
   max-width: 100vw !important;
   max-height: 100vh !important;
-  border-radius: 0 !important;
-  border: none !important;
+  background: #0f172a !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  overflow-y: auto !important;
 }
-#lessonContainerRoot:-webkit-full-screen {
-  width: 100vw !important;
-  height: 100vh !important;
-  max-width: 100vw !important;
-  max-height: 100vh !important;
-  border-radius: 0 !important;
-  border: none !important;
+#step-view-1:fullscreen #lessonContainerRoot,
+#step-view-1:-webkit-full-screen #lessonContainerRoot {
+  max-width: 900px !important;
+  max-height: calc(100vh - 48px) !important;
+  width: 100% !important;
 }
 
 /* Lesson fullscreen — Video mode. Fullscreens ONLY the video block itself

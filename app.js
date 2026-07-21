@@ -35827,7 +35827,13 @@ function generateMathQuestion(lessonId, index) {
   if (appState.currentSubject === 'ela' || appState.currentSubject === 'history' || appState.currentSubject === 'geography' || appState.currentSubject === 'science' || appState.currentSubject === 'art' || (appState.currentSubject === 'math' && lessonId === 5)) {
     const isSpecial = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
     const qList = isSpecial ? getQuestionsForSublesson(appState.currentSubject, lessonId, appState.activeSublesson) : getQuestionsForLesson(appState.currentSubject, lessonId);
-    const idx = (index !== undefined && index !== null) ? index : 0;
+    // When no specific index is requested, pick a RANDOM question from this
+    // lesson's bank rather than always the first one. Callers that want a
+    // deterministic pick (unit exams, sequential practice) pass an explicit
+    // index, so this only affects call sites that omit it — notably Grade
+    // Review and Grade Test, which previously both defaulted to index 0 for
+    // every lesson and therefore produced identical question sets.
+    const idx = (index !== undefined && index !== null) ? index : Math.floor(Math.random() * (qList.length || 1));
     let q = qList[idx % qList.length];
     if (!q) q = qList[0];
     if (q) {
@@ -37105,6 +37111,11 @@ class AppState {
 }
 
 
+// Accounts allowed to see the Admin Stats dashboard (registration counts,
+// everyone's grade, per-user progress). Usernames are always stored/compared
+// lowercase (see AuthSystem.register/login below), so list them lowercase here.
+const ADMIN_USERNAMES = ['akshara', 'kashyapper'];
+
 // ══════════════════════════════════════════════════════════
 //  AuthSystem — Multi-user login, signup & session management
 //  Users are stored in localStorage under 'funcademy_users'
@@ -37367,6 +37378,14 @@ window.AuthSystem = {
     // Set display name and avatar to match the account
     appState.username = userRecord.displayName;
     appState.renderUI();
+
+    // The Admin Stats dashboard (registration counts, everyone's grade, etc.)
+    // is for Akshara's eyes only — reveal the sidebar entry point just for
+    // that account; every other login keeps it hidden.
+    const adminNavBtn = document.getElementById('sidebarAdminBtn');
+    if (adminNavBtn) {
+      adminNavBtn.style.display = ADMIN_USERNAMES.includes(this.currentUsername) ? 'flex' : 'none';
+    }
   },
 
   // ── Logout ───────────────────────────────────────────────
@@ -37376,6 +37395,8 @@ window.AuthSystem = {
       appState.saveState();
     }
     this.clearSession();
+    const adminNavBtn = document.getElementById('sidebarAdminBtn');
+    if (adminNavBtn) adminNavBtn.style.display = 'none';
     showLoginScreen();
   },
 
@@ -37735,31 +37756,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 800);
   });
   
-  // Avatar Selection Modal
+  // Avatar Selection Modal — only avatars actually purchased in the Shop can
+  // be equipped here. Rebuilt every time the modal opens (not just once at
+  // startup) so a fresh purchase shows up as unlocked immediately.
   const profileWidget = document.getElementById('profileWidget');
   const avatarModal = document.getElementById('avatarModal');
   const closeAvatarModal = document.getElementById('closeAvatarModal');
   const avatarGrid = document.getElementById('avatarGrid');
-  
-  AVATARS.forEach((svgContent, index) => {
-    const btn = document.createElement('button');
-    btn.className = `avatar-select-btn ${index === appState.avatarIndex ? 'selected' : ''}`;
-    btn.innerHTML = svgContent;
-    btn.addEventListener('click', () => {
-      sounds.playPop();
-      document.querySelectorAll('.avatar-select-btn').forEach((b, i) => {
-        b.classList.toggle('selected', i === index);
+
+  function renderAvatarModalGrid() {
+    avatarGrid.innerHTML = '';
+    AVATARS.forEach((svgContent, index) => {
+      const isPurchased = appState.purchasedAvatars.includes(index);
+      const btn = document.createElement('button');
+      btn.className = `avatar-select-btn ${index === appState.avatarIndex ? 'selected' : ''} ${isPurchased ? '' : 'locked'}`;
+      btn.innerHTML = isPurchased ? svgContent : `${svgContent}<span class="avatar-lock-badge">🔒</span>`;
+      btn.title = isPurchased ? '' : 'Buy this avatar in the Shop first!';
+      btn.addEventListener('click', () => {
+        if (!isPurchased) {
+          // Not owned yet — nudge toward the Shop instead of silently
+          // equipping something that was never actually purchased.
+          sounds.playWrong();
+          btn.style.animation = 'wrong-shake 0.3s ease';
+          setTimeout(() => { btn.style.animation = ''; }, 300);
+          return;
+        }
+        sounds.playPop();
+        document.querySelectorAll('.avatar-select-btn').forEach((b, i) => {
+          b.classList.toggle('selected', i === index);
+        });
+        appState.avatarIndex = index;
+        appState.saveState();
+        appState.renderUI();
+        avatarModal.classList.remove('active');
       });
-      appState.avatarIndex = index;
-      appState.saveState();
-      appState.renderUI();
-      avatarModal.classList.remove('active');
+      avatarGrid.appendChild(btn);
     });
-    avatarGrid.appendChild(btn);
-  });
-  
+  }
+  renderAvatarModalGrid();
+
   profileWidget.addEventListener('click', () => {
     sounds.playPop();
+    renderAvatarModalGrid();
     avatarModal.classList.add('active');
   });
   
@@ -38015,6 +38053,13 @@ document.addEventListener('DOMContentLoaded', () => {
     goToShopBtn.addEventListener('click', () => switchView('shop'));
   }
 
+  // "Exit to Dashboard" on the Games Room's locked overlay had no click
+  // handler wired up at all, so it did nothing when clicked.
+  const exitGamesFromLockedBtn = document.getElementById('exitGamesFromLockedBtn');
+  if (exitGamesFromLockedBtn) {
+    exitGamesFromLockedBtn.addEventListener('click', () => switchView('dashboard'));
+  }
+
   const gameCards = document.querySelectorAll('.game-card');
   const gamesGridPanel = document.getElementById('gamesGridPanel');
   const playScreen = document.getElementById('gameActivePlayScreen');
@@ -38071,7 +38116,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // View and Points Notifications Globals
 function switchView(viewName) {
   sounds.playPop();
-  
+
+  // Admin Stats dashboard (registration counts, grades, per-user progress)
+  // is restricted to specific accounts (ADMIN_USERNAMES) — block the view
+  // for anyone else, even if they somehow trigger it directly (not just via
+  // the hidden button).
+  if (viewName === 'admin' && (!window.AuthSystem || !ADMIN_USERNAMES.includes(window.AuthSystem.currentUsername))) {
+    viewName = 'dashboard';
+  }
+
   if (viewName !== 'games') {
     if (window.gameTimerInterval) {
       clearInterval(window.gameTimerInterval);
@@ -38466,6 +38519,23 @@ function switchStep(stepNum) {
   } else if (stepNum === 4) {
     setupStep4Test();
   }
+}
+
+// Fullscreens the whole lesson playground (header, tabs, and all) for the
+// Practice/Mastery/Test steps and the Grade Review/Test/Unit Exam screens —
+// all of which render inside #playgroundOverlay, a STABLE element that's
+// never destroyed by a re-render (only the inner #step-view-N panels get
+// their innerHTML swapped as questions change), so once it's fullscreen it
+// just stays that way with no risk of the browser auto-exiting mid-quiz.
+// (Step 1's "Watch & Learn" video/text has its own narrower fullscreen
+// target so the video can fill the screen without the header/tabs showing;
+// this covers everything after it.)
+function requestPlaygroundFullscreen() {
+  const el = document.getElementById('playgroundOverlay');
+  if (!el) return;
+  if (document.fullscreenElement === el || document.webkitFullscreenElement === el) return;
+  if (el.requestFullscreen) el.requestFullscreen().catch(() => {});
+  else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
 }
 
 // 8. Text-to-Speech Aloud Narration
@@ -39838,6 +39908,31 @@ function playVideo() {
 function setupStep1Video() {
   appState.lessonSlideIndex = 0;
   renderLessonSlide();
+  // Automatically enter fullscreen the moment a lesson opens (both the video
+  // and the text lesson), instead of making the learner click a fullscreen
+  // button first. This only works because setupStep1Video() runs
+  // synchronously inside the "Start"/"Review" lesson button's click handler
+  // (via startLessonQuest -> switchStep(1) -> here) — browsers require an
+  // active user gesture to grant fullscreen, and calling it here, still
+  // within that same click's call stack, satisfies that requirement. If
+  // Step 1 is ever reached without a real click behind it, the request is
+  // simply refused by the browser and silently ignored.
+  //
+  // Text mode fullscreens #step-view-1 — a STABLE element that's never
+  // destroyed/recreated (renderLessonSlide only replaces its innerHTML on
+  // every Next/Prev page turn). Anchoring fullscreen there means page turns
+  // can never accidentally drop out of fullscreen, unlike the old target
+  // (#lessonContainerRoot), which got torn down and rebuilt on every render
+  // and raced the browser's automatic "element removed -> exit fullscreen"
+  // behavior. Video mode still targets the video block itself so fullscreen
+  // shows only the video, not the surrounding lesson chrome.
+  const fsRoot = (appState.lessonViewMode === 'video')
+    ? document.getElementById('lessonVideoBlockWrap')
+    : document.getElementById('step-view-1');
+  if (fsRoot) {
+    if (fsRoot.requestFullscreen) fsRoot.requestFullscreen().catch(() => {});
+    else if (fsRoot.webkitRequestFullscreen) fsRoot.webkitRequestFullscreen();
+  }
 }
 
 function renderLessonSlide() {
@@ -39926,17 +40021,29 @@ function renderLessonSlide() {
     }
     const showVideo = appState.lessonViewMode === 'video';
     function renderVideoBlock(canvasHeight) {
+      const barBtnStyle = "background: transparent; border: none; color: white; width: 34px; height: 34px; border-radius: 6px; cursor: pointer; font-size: 17px; display: flex; align-items: center; justify-content: center; transition: background 0.15s;";
+      const progressPct = totalSlides > 0 ? ((currentIndex + 1) / totalSlides) * 100 : 0;
       return `
         <div id="lessonVideoBlockWrap" style="position: relative; border-radius: 16px; overflow: hidden; margin-bottom: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.35); border: 1.5px solid rgba(255,255,255,0.08); background: #000;">
           <canvas id="lessonVidCanvas" width="640" height="${canvasHeight}" style="display: block; width: 100%; height: auto; background: #000;"></canvas>
-          <div id="lessonSubtitle" style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.6); min-height: 20px;"></div>
-          <div style="position: absolute; top: 10px; left: 10px; display: flex; gap: 8px;">
-            <button id="lessonVideoRewindBtn" title="Previous page" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⏪</button>
-            <button id="lessonVideoPauseBtn" title="Pause" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⏸</button>
-            <button id="lessonVideoFastForwardBtn" title="Fast forward / next page" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⏩</button>
-            <button id="lessonVideoReplayBtn" title="Replay this page" style="background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">🔁</button>
+          <div id="lessonSubtitle" style="position: absolute; left: 0; right: 60px; bottom: 52px; padding: 10px 16px 4px; color: #fef9c3; font-size: 14px; font-weight: 800; text-align: center; text-shadow: 0 1px 4px rgba(0,0,0,0.85); min-height: 20px; pointer-events: none;"></div>
+
+          <!-- YouTube-style bottom control bar -->
+          <div id="lessonVideoControlBar" style="position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,0.88) 40%); padding-top: 18px;">
+            <!-- Seekable progress track: click anywhere to jump to that page -->
+            <div id="lessonVideoProgressTrack" title="Jump to page" style="position: relative; margin: 0 12px 6px; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.28); cursor: pointer;">
+              <div id="lessonVideoProgressFill" style="position: absolute; left: 0; top: 0; bottom: 0; width: ${progressPct}%; border-radius: 3px; background: #ef4444; transition: width 0.3s ease;"></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 2px; padding: 0 8px 8px;">
+              <button id="lessonVideoRewindBtn" title="Previous page" style="${barBtnStyle}">⏪</button>
+              <button id="lessonVideoPauseBtn" title="Pause" style="${barBtnStyle}">⏸</button>
+              <button id="lessonVideoFastForwardBtn" title="Fast forward / next page" style="${barBtnStyle}">⏩</button>
+              <button id="lessonVideoReplayBtn" title="Replay this page" style="${barBtnStyle}">🔁</button>
+              <div style="flex: 1;"></div>
+              <div style="color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 800; padding: 0 6px; white-space: nowrap;">Page ${currentIndex + 1} / ${totalSlides}</div>
+              <button id="lessonVideoFullscreenBtn" title="Fullscreen" style="${barBtnStyle}">⛶</button>
+            </div>
           </div>
-          <button id="lessonVideoFullscreenBtn" title="Fullscreen" style="position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.5); border: 1.5px solid rgba(255,255,255,0.3); color: white; width: 32px; height: 32px; border-radius: 8px; cursor: pointer; font-size: 15px; display: flex; align-items: center; justify-content: center;">⛶</button>
         </div>
       `;
     }
@@ -39989,9 +40096,12 @@ function renderLessonSlide() {
             </div>
             <p style="font-size: 12px; color: #475569; font-weight: 700; margin: 0;">⏱️ About 1 minute • ${sub === 3 ? 1 : 2} page${sub === 3 ? '' : 's'}</p>
           </div>
-          <div style="text-align: center; padding: 8px 0 4px;">
+          <div style="text-align: center; padding: 8px 0 4px; display: flex; align-items: center; justify-content: center; gap: 10px;">
             <button id="speakSlideBtn" style="background: rgba(139,92,246,0.15); border: 1.5px solid rgba(139,92,246,0.4); color: #c4b5fd; padding: 9px 22px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 7px;">
               🔊 Read Welcome Aloud
+            </button>
+            <button id="pauseSlideBtn" title="Pause narration" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2); color: #e2e8f0; padding: 9px 16px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 6px;">
+              ⏸ Pause
             </button>
           </div>
         `;
@@ -40036,9 +40146,12 @@ function renderLessonSlide() {
             <div style="font-size: 11px; font-weight: 850; color: ${slide.color}; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;">📘 ${slide.title}</div>
             <p style="font-size: 16px; font-weight: 700; color: #f8fafc; line-height: 1.8; margin: 0;">${pageText}</p>
           </div>
-          <div style="text-align: center; margin-top: 20px;">
+          <div style="text-align: center; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
             <button id="speakSlideBtn" style="background: rgba(59,130,246,0.15); border: 1.5px solid rgba(59,130,246,0.4); color: #93c5fd; padding: 9px 22px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 7px;">
               🔊 Read Aloud
+            </button>
+            <button id="pauseSlideBtn" title="Pause narration" style="background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.2); color: #e2e8f0; padding: 9px 16px; border-radius: 24px; cursor: pointer; font-size: 13px; font-weight: 800; font-family: inherit; display: inline-flex; align-items: center; gap: 6px;">
+              ⏸ Pause
             </button>
           </div>
         </div>
@@ -40137,9 +40250,9 @@ function renderLessonSlide() {
             </button>
           ` : `<div></div>`}
 
-          <!-- Dot indicators -->
+          <!-- Dot indicators (Text mode only — Video mode has its own progress bar) -->
           <div style="display: flex; align-items: center; gap: 6px; flex: 1; justify-content: center;">
-            ${dotsHtml}
+            ${showVideo ? '' : dotsHtml}
           </div>
 
           ${currentIndex < totalSlides - 1 ? (showVideo ? '' : `
@@ -40188,10 +40301,15 @@ function renderLessonSlide() {
     const isLastSlide = (currentIndex === totalSlides - 1);
 
     let currentSceneCategory = null;
+    let currentSceneHints = null;
+    let currentSceneSeed = 1;
     if (showVideo && vidCanvas && typeof startVideoScene === 'function' && typeof pickSceneCategory === 'function') {
       const sceneText = (pageText || title || desc || "");
-      currentSceneCategory = pickSceneCategory(appState.currentSubject, `${title} ${sceneText}`);
-      startVideoScene(vidCanvas, currentSceneCategory);
+      const combinedText = `${title} ${sceneText}`;
+      currentSceneCategory = pickSceneCategory(appState.currentSubject, combinedText);
+      currentSceneHints = (typeof extractSceneHints === 'function') ? extractSceneHints(appState.currentSubject, combinedText) : null;
+      currentSceneSeed = (typeof hashStringToSeed === 'function') ? hashStringToSeed(`${appState.activeQuestLessonId || ''}-${currentIndex}-${combinedText}`) : 1;
+      startVideoScene(vidCanvas, currentSceneCategory, currentSceneHints, currentSceneSeed);
     }
 
     function runNarration() {
@@ -40234,12 +40352,13 @@ function renderLessonSlide() {
       if (typeof stopVideoScene === 'function') stopVideoScene();
     }
 
-    // Re-rendering (renderLessonSlide) replaces container.innerHTML, which
-    // destroys and recreates the previously-fullscreened element (either
-    // #lessonContainerRoot in Text mode or #lessonVideoBlockWrap in Video
-    // mode). Browsers automatically exit fullscreen whenever the current
-    // fullscreen element is removed from the document, so every Next/Prev/
-    // mode-toggle click would silently kick the learner out of fullscreen.
+    // Re-rendering (renderLessonSlide) replaces container.innerHTML. In Video
+    // mode that destroys and recreates the previously-fullscreened element
+    // (#lessonVideoBlockWrap); browsers automatically exit fullscreen
+    // whenever the current fullscreen element is removed from the document,
+    // so every seek/rewind/fast-forward would otherwise silently kick the
+    // learner out. Text mode avoids this entirely by fullscreening the
+    // stable #step-view-1 wrapper instead, which is never itself destroyed.
     // This re-requests fullscreen on the freshly rendered element right after
     // a nav re-render, when called from a real click (user activation still
     // applies at that point). Best-effort: when triggered by an autoplay
@@ -40247,35 +40366,40 @@ function renderLessonSlide() {
     // failure is swallowed silently.
     function reacquireFullscreen(wasFullscreen) {
       if (!wasFullscreen) return;
-      const newRoot = (appState.lessonViewMode === 'video')
+      // Text mode fullscreens #step-view-1 — a STABLE element that's never
+      // destroyed/recreated by a re-render (only its innerHTML changes on
+      // every Next/Prev page turn), so once it's the fullscreen element it
+      // just stays that way with zero risk of the browser auto-exiting.
+      // Video mode fullscreens #lessonVideoBlockWrap, which IS torn down and
+      // rebuilt on every render, so that one genuinely needs a fresh
+      // request each time.
+      const targetEl = (appState.lessonViewMode === 'video')
         ? document.getElementById('lessonVideoBlockWrap')
-        : document.getElementById('lessonContainerRoot');
-      if (!newRoot) return;
-      if (newRoot.requestFullscreen) newRoot.requestFullscreen().catch(() => {});
-      else if (newRoot.webkitRequestFullscreen) newRoot.webkitRequestFullscreen();
+        : document.getElementById('step-view-1');
+      if (!targetEl) return;
+      // Already the fullscreen element (the common case for text-mode page
+      // turns now) — nothing to do.
+      if (document.fullscreenElement === targetEl || document.webkitFullscreenElement === targetEl) return;
+      if (targetEl.requestFullscreen) targetEl.requestFullscreen().catch(() => {});
+      else if (targetEl.webkitRequestFullscreen) targetEl.webkitRequestFullscreen();
     }
 
     // Shared page-navigation helpers. Used by the Text-mode Back/Next Page
-    // footer buttons AND by Video mode's in-video Rewind/Fast-forward
+    // footer buttons AND by Video mode's in-video Rewind/Fast-forward/seek
     // controls and its automatic end-of-narration advance — Video mode has
     // no Next Page button of its own to click, so it needs to move between
     // pages directly instead.
-    function advanceToNextPage() {
-      if (currentIndex >= totalSlides - 1) return;
+    function seekToPage(targetIndex) {
+      const clamped = Math.max(0, Math.min(totalSlides - 1, targetIndex));
+      if (clamped === currentIndex) return;
       const wasFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
       stopPlaybackForNav();
-      appState.lessonSlideIndex = currentIndex + 1;
+      appState.lessonSlideIndex = clamped;
       renderLessonSlide();
       reacquireFullscreen(wasFullscreen);
     }
-    function goToPrevPage() {
-      if (currentIndex <= 0) return;
-      const wasFullscreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
-      stopPlaybackForNav();
-      appState.lessonSlideIndex = currentIndex - 1;
-      renderLessonSlide();
-      reacquireFullscreen(wasFullscreen);
-    }
+    function advanceToNextPage() { seekToPage(currentIndex + 1); }
+    function goToPrevPage() { seekToPage(currentIndex - 1); }
 
     const prevBtn = container.querySelector('#prevSlideBtn');
     if (prevBtn) {
@@ -40350,7 +40474,10 @@ function renderLessonSlide() {
       fullscreenBtn.addEventListener('click', () => {
         sounds.playPop();
         if (document.fullscreenElement || document.webkitFullscreenElement) exitFs();
-        else requestFsOn(container.querySelector('#lessonContainerRoot'));
+        // Fullscreen the stable #step-view-1 wrapper, not the inner
+        // #lessonContainerRoot card that gets rebuilt on every page turn —
+        // see reacquireFullscreen() for why that matters.
+        else requestFsOn(document.getElementById('step-view-1'));
       });
     }
     const videoFullscreenBtn = container.querySelector('#lessonVideoFullscreenBtn');
@@ -40385,7 +40512,7 @@ function renderLessonSlide() {
     // fresh audio plays, and the Pause button would keep showing "Play".
     function restartVideoPlaybackUI() {
       if (showVideo && typeof startVideoScene === 'function' && vidCanvas && currentSceneCategory) {
-        startVideoScene(vidCanvas, currentSceneCategory);
+        startVideoScene(vidCanvas, currentSceneCategory, currentSceneHints, currentSceneSeed);
       }
       const pb = container.querySelector('#lessonVideoPauseBtn');
       if (pb) { pb.textContent = '⏸'; pb.title = 'Pause'; }
@@ -40403,7 +40530,7 @@ function renderLessonSlide() {
         if (isPaused) {
           if (speech.resume) speech.resume();
           if (typeof startVideoScene === 'function' && vidCanvas && currentSceneCategory) {
-            startVideoScene(vidCanvas, currentSceneCategory);
+            startVideoScene(vidCanvas, currentSceneCategory, currentSceneHints, currentSceneSeed);
           }
           pauseBtn.textContent = '⏸';
           pauseBtn.title = 'Pause';
@@ -40465,6 +40592,19 @@ function renderLessonSlide() {
       });
     }
 
+    // Seekable progress bar: click anywhere along the track to jump straight
+    // to that page, like scrubbing a YouTube video's timeline.
+    const progressTrack = container.querySelector('#lessonVideoProgressTrack');
+    if (progressTrack) {
+      progressTrack.addEventListener('click', (e) => {
+        const rect = progressTrack.getBoundingClientRect();
+        const frac = rect.width > 0 ? Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width)) : 0;
+        const targetIndex = Math.min(totalSlides - 1, Math.floor(frac * totalSlides));
+        sounds.playPop();
+        seekToPage(targetIndex);
+      });
+    }
+
     const speakBtn = container.querySelector('#speakSlideBtn');
     if (speakBtn) {
       speakBtn.addEventListener('click', () => {
@@ -40475,6 +40615,32 @@ function renderLessonSlide() {
         } else {
           window.speechSynthesis.cancel();
           speakText(slideSpeakText || speakContent);
+        }
+        const pb = container.querySelector('#pauseSlideBtn');
+        if (pb) { pb.textContent = '⏸ Pause'; pb.title = 'Pause narration'; }
+      });
+    }
+
+    // Text mode's Pause/Resume control. Unlike Video mode (which has its own
+    // dedicated pause button that also freezes the animated scene), Text
+    // mode has no canvas to freeze — this just pauses/resumes the narration
+    // audio itself, using the same pausable controller (speech.pause() /
+    // speech.resume()) that Video mode's pause button relies on.
+    const pauseSlideBtn = container.querySelector('#pauseSlideBtn');
+    if (pauseSlideBtn) {
+      pauseSlideBtn.addEventListener('click', () => {
+        const speech = appState.currentVideoSpeech;
+        if (!speech) return; // Nothing has been read aloud yet on this page.
+        sounds.playPop();
+        const isPaused = speech.isPaused && speech.isPaused();
+        if (isPaused) {
+          if (speech.resume) speech.resume();
+          pauseSlideBtn.textContent = '⏸ Pause';
+          pauseSlideBtn.title = 'Pause narration';
+        } else {
+          if (speech.pause) speech.pause();
+          pauseSlideBtn.textContent = '▶ Resume';
+          pauseSlideBtn.title = 'Resume narration';
         }
       });
     }
@@ -41389,12 +41555,12 @@ function renderVideoCheckpointQuestion() {
         setTimeout(() => {
           btn.style.animation = '';
           btn.classList.remove('wrong');
-        }, 400);
+        }, 700);
       }
     });
     optGrid.appendChild(btn);
   });
-  
+
   speakText(`Checkpoint! ${q.questionText}`);
 }
 
@@ -41429,6 +41595,7 @@ function completeStep1() {
 // STEP 2: Practice Lab (5 exercises, unlimited hints, optional)
 // ======================================================
 function setupStep2Practice() {
+  requestPlaygroundFullscreen();
   appState.practiceIndex = 0;
   appState.practiceHintLevel = 0;
   const isSpecial = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art');
@@ -41687,13 +41854,15 @@ function generatePracticeProblem() {
         } else {
           sounds.playWrong();
           btn.classList.add('wrong');
+          btn.disabled = true; // briefly lock the wrong pick out so a fast second tap can't cut the feedback short
           btn.style.animation = 'wrong-shake 0.3s ease';
           speakText("Try again!");
           appState.currentQuestionAttempted = true;
           setTimeout(() => {
             btn.style.animation = '';
             btn.classList.remove('wrong');
-          }, 400);
+            btn.disabled = false;
+          }, 700);
 
           if (!appState.questionMistakes) appState.questionMistakes = 0;
           appState.questionMistakes++;
@@ -41855,6 +42024,7 @@ function completeStep2() {
 // STEP 3: Mastery Arena (Score 85%, hints penalize, video popups)
 // ======================================================
 function setupStep3Mastery() {
+  requestPlaygroundFullscreen();
   appState.masteryChancesLeft = 3;
   appState.masteryHintUsed = false;
   appState.masteryConsecutiveFails = 0;
@@ -42133,12 +42303,12 @@ function handleMasteryChoice(selectedOpt, btnElement) {
     }
     
     speakText("Not quite! Try again!");
-    
+
     setTimeout(() => {
       btnElement.style.animation = '';
       btnElement.classList.remove('wrong');
       btnElement.disabled = true; // disable incorrect option
-    }, 500);
+    }, 700);
 
     if (!appState.questionMistakes) appState.questionMistakes = 0;
     appState.questionMistakes++;
@@ -42334,6 +42504,11 @@ function showMasterySuccessScreen() {
 // STEP 4: Final Challenge (Test) (10 questions, no help)
 // ======================================================
 function setupStep4Test() {
+  // Also covers Grade Review, Grade Test, and Unit Exam — startGradeReview(),
+  // startGradeTest(), and startUnitExam() all call switchStep(4) too, which
+  // routes through here before they overwrite #step-view-4 with their own
+  // question UI.
+  requestPlaygroundFullscreen();
   appState.testIndex = 0;
   appState.testScore = 0;
   
@@ -42744,15 +42919,19 @@ function updateGradeReviewTestCards() {
   const reviewPassed = appState.completedCounts.reviewCompleted === true;
   const gradePassed = appState.completedCounts.gradeTestPassed === true;
   
+  const currentGradeNum = (typeof appState !== 'undefined' && appState) ? (appState.currentGrade || 1) : 1;
+
   const reviewCard = document.getElementById('gradeReviewCard');
   const reviewBtn = document.getElementById('startReviewBtn');
   if (reviewCard && reviewBtn) {
+    const reviewTitle = reviewCard.querySelector('.topic-title');
+    if (reviewTitle) reviewTitle.innerText = `Grade ${currentGradeNum} Review`;
     const reviewDesc = reviewCard.querySelector('.topic-desc');
     if (reviewDesc) {
       const maxLessons = GRADE_1_CURRICULUM.length;
       reviewDesc.innerText = `1 question per lesson! ${maxLessons} questions total.`;
     }
-    
+
     if (allExamsPassed) {
       reviewCard.classList.remove('locked');
       reviewBtn.removeAttribute('disabled');
@@ -42771,6 +42950,8 @@ function updateGradeReviewTestCards() {
   const testCard = document.getElementById('gradeTestCard');
   const testBtn = document.getElementById('startGradeTestBtn');
   if (testCard && testBtn) {
+    const testTitle = testCard.querySelector('.topic-title');
+    if (testTitle) testTitle.innerText = `Grade ${currentGradeNum} Final Test`;
     const testDesc = testCard.querySelector('.topic-desc');
     if (testDesc) {
       const maxLessons = GRADE_1_CURRICULUM.length;
@@ -42818,7 +42999,9 @@ function startUnitExam(unitId) {
   const totalQs = appState.examQuestions.length;
   const targetScore = (appState.currentSubject === 'geography' || appState.currentSubject === 'history' || appState.currentSubject === 'science' || appState.currentSubject === 'art') ? Math.ceil(totalQs * 0.8) : 25;
   
-  document.querySelector('.playground-header').style.display = 'none';
+  // Keep the header visible (it holds the "◀ Dashboard" exit button) — only
+  // the step tabs are irrelevant during an exam and get hidden.
+  document.querySelector('.playground-header').style.display = 'flex';
   document.querySelector('.playground-tabs').style.display = 'none';
   document.getElementById('playgroundTitle').innerText = `🏆 Unit ${unitId} Exam (Goal: ${targetScore}/${totalQs})`;
   document.getElementById('playgroundOverlay').classList.add('active');
@@ -42840,11 +43023,13 @@ function startGradeReview() {
   }
   
   const totalQs = appState.examQuestions.length;
-  document.querySelector('.playground-header').style.display = 'none';
+  // Keep the header visible (it holds the "◀ Dashboard" exit button) — only
+  // the step tabs are irrelevant during a review and get hidden.
+  document.querySelector('.playground-header').style.display = 'flex';
   document.querySelector('.playground-tabs').style.display = 'none';
-  document.getElementById('playgroundTitle').innerText = `🧠 Grade 1 Review (${totalQs} Lessons)`;
+  document.getElementById('playgroundTitle').innerText = `🧠 Grade ${appState.currentGrade || 1} Review (${totalQs} Lessons)`;
   document.getElementById('playgroundOverlay').classList.add('active');
-  
+
   switchStep(4);
   renderExamQuestion();
 }
@@ -42872,9 +43057,11 @@ function startGradeTest() {
   const totalQuestions = appState.examQuestions.length;
   const passingScore = Math.floor(totalQuestions * 0.9);
   
-  document.querySelector('.playground-header').style.display = 'none';
+  // Keep the header visible (it holds the "◀ Dashboard" exit button) — only
+  // the step tabs are irrelevant during the grade test and get hidden.
+  document.querySelector('.playground-header').style.display = 'flex';
   document.querySelector('.playground-tabs').style.display = 'none';
-  document.getElementById('playgroundTitle').innerText = `🏆 Grade 1 Final Test (Goal: ${passingScore}/${totalQuestions})`;
+  document.getElementById('playgroundTitle').innerText = `🏆 Grade ${appState.currentGrade || 1} Final Test (Goal: ${passingScore}/${totalQuestions})`;
   document.getElementById('playgroundOverlay').classList.add('active');
   
   switchStep(4);

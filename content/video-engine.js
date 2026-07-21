@@ -9,21 +9,34 @@
 function pickLivelyVoice() {
   const voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
   if (!voices || voices.length === 0) return null;
+  // Prefer expressive, natural-sounding voices over flat robotic ones — kids
+  // stay with a story a lot longer when the narrator actually sounds like a
+  // person telling it, not a text-to-speech engine reading a manual. The
+  // "Online (Natural)" voices (Edge/Windows) and platform voices like
+  // Samantha are genuinely the most human-sounding options browsers expose.
   const preferredVoiceNames = [
+    "Microsoft Aria Online (Natural)",
+    "Microsoft Jenny Online (Natural)",
+    "Microsoft Ana Online (Natural)",
+    "Microsoft Guy Online (Natural)",
     "Google US English",
+    "Google UK English Female",
     "Samantha",
     "Tessa",
     "Aria",
-    "Microsoft Aria Online (Natural)",
-    "Microsoft Jenny Online (Natural)",
-    "Daniel",
-    "Microsoft Guy Online (Natural)"
+    "Karen",
+    "Moira",
+    "Daniel"
   ];
   for (const name of preferredVoiceNames) {
     const v = voices.find(v => v.name.includes(name));
     if (v) return v;
   }
-  const enVoice = voices.find(v => v.lang && v.lang.startsWith('en') && /female|male/i.test(v.name) === false ? true : false);
+  // Next best: any voice whose name advertises itself as "Natural"/"Neural"
+  // — modern browsers expose these under all sorts of names we can't fully
+  // enumerate ahead of time, so a keyword match catches the rest of them.
+  const naturalVoice = voices.find(v => v.lang && v.lang.startsWith('en') && /natural|neural/i.test(v.name));
+  if (naturalVoice) return naturalVoice;
   return voices.find(v => v.lang && v.lang.startsWith('en')) || voices[0] || null;
 }
 
@@ -148,11 +161,29 @@ function speakSentencesWithSubtitles(sentences, opts) {
     const utt = new SpeechSynthesisUtterance(sentence);
     if (voice) utt.voice = voice;
     utt.volume = 1.0;
-    // Lively but clear: slightly brisk rate, a touch of pitch lift, with gentle
-    // per-sentence variation so it doesn't sound flat/monotonous.
-    const wobble = (idx % 3 === 0) ? 0.03 : (idx % 3 === 1) ? -0.02 : 0.0;
-    utt.rate = 1.0 + wobble;
-    utt.pitch = 1.08 + (idx % 2 === 0 ? 0.03 : -0.02);
+    // Read the sentence's own punctuation/energy to shape delivery, like a
+    // real storyteller would, instead of a flat monotone drone:
+    //  - Exclamations get a faster, brighter, more excited delivery.
+    //  - Questions get a gentle upward pitch lift, like someone genuinely
+    //    curious what the answer is.
+    //  - Every sentence still gets a small rotating wobble so consecutive
+    //    lines never sound like an identical loop.
+    //  - Long, information-dense sentences read a touch slower so they stay
+    //    clear instead of racing past a listener.
+    const isExcited = /!\s*$/.test(sentence);
+    const isQuestion = /\?\s*$/.test(sentence);
+    const wobblePhase = idx % 4;
+    const wobble = wobblePhase === 0 ? 0.035 : wobblePhase === 1 ? -0.03 : wobblePhase === 2 ? 0.015 : -0.02;
+
+    let rate = 1.0 + wobble;
+    let pitch = 1.08 + (idx % 2 === 0 ? 0.04 : -0.03);
+    if (isExcited) { rate += 0.08; pitch += 0.1; }
+    else if (isQuestion) { pitch += 0.06; rate -= 0.02; }
+    const wordCount = sentence.split(/\s+/).length;
+    if (wordCount > 22) rate -= 0.05;
+
+    utt.rate = Math.max(0.82, Math.min(1.22, rate));
+    utt.pitch = Math.max(0.85, Math.min(1.35, pitch));
 
     // Sync the subtitle to the moment audio actually starts, not the moment
     // we queued it. Guard against onstart never firing (some engines omit
@@ -236,31 +267,35 @@ function speakSentencesWithSubtitles(sentences, opts) {
 const VIDEO_SCENE_KEYWORDS = {
   // history
   ship: ["sail", "ship", "voyage", "explor", "colon", "boat", "river crossing", "delaware", "columbus", "mayflower"],
-  flag_civics: ["president", "vote", "election", "government", "constitution", "law", "congress", "civics", "independence", "flag", "revolution", "war", "battle", "army", "soldier"],
+  flag_civics: ["president", "vote", "election", "government", "constitution", "law", "congress", "civics", "independence", "flag", "revolution", "war", "battle", "army", "soldier", "amendment", "rights", "citizen", "branch of government", "leader"],
   landmark: ["monument", "building", "capitol", "statue", "landmark", "city", "settlement", "colony"],
-  timeline: ["ancient", "history", "past", "timeline", "era", "century", "civilization", "empire"],
+  timeline: ["ancient", "history", "past", "timeline", "era", "century", "civilization", "empire", "invention", "discovery", "culture", "tradition", "artifact"],
   // science
-  atom: ["atom", "molecule", "matter", "chemical", "element", "energy", "force", "electricity", "magnet"],
-  space: ["space", "planet", "star", "moon", "sun", "solar", "galaxy", "astronaut", "orbit"],
-  plant: ["plant", "seed", "leaf", "photosynthesis", "grow", "tree", "flower"],
-  animal: ["animal", "habitat", "mammal", "insect", "bird", "fish", "ecosystem", "ocean life"],
-  water: ["water", "cloud", "rain", "weather", "cycle", "climate", "ocean", "river", "evaporat"],
+  atom: ["atom", "molecule", "matter", "chemical", "element", "energy", "force", "electricity", "magnet", "state of matter", "solid", "liquid", "gas", "energy transfer", "simple machine", "motion"],
+  space: ["space", "planet", "star", "moon", "sun", "solar", "galaxy", "astronaut", "orbit", "rotation", "revolution", "gravity", "eclipse"],
+  plant: ["plant", "seed", "leaf", "photosynthesis", "grow", "tree", "flower", "life cycle", "germinate", "root", "stem", "pollinate"],
+  animal: ["animal", "habitat", "mammal", "insect", "bird", "fish", "ecosystem", "ocean life", "adaptation", "food chain", "predator", "prey", "vertebrate", "invertebrate"],
+  water: ["water", "cloud", "rain", "weather", "cycle", "climate", "ocean", "river", "evaporat", "erosion", "precipitation", "temperature", "season"],
   // geography
-  globe: ["map", "globe", "continent", "country", "compass", "coordinate", "hemisphere", "equator"],
-  landform: ["mountain", "desert", "forest", "grassland", "valley", "canyon", "volcano", "landform"],
-  // math
-  numberline: ["number line", "counting", "add", "subtract", "skip count"],
-  counters: ["count", "group", "objects", "ten frame"],
-  clock: ["time", "clock", "hour", "minute", "a.m.", "p.m."],
+  globe: ["map", "globe", "continent", "country", "compass", "coordinate", "hemisphere", "equator", "region", "border", "latitude", "longitude", "population"],
+  landform: ["mountain", "desert", "forest", "grassland", "valley", "canyon", "volcano", "landform", "plain", "plateau", "island", "peninsula", "coast"],
+  // math (numberline/counters/fraction/place_value scenes are content-aware:
+  // they read the actual numbers out of the page text via extractSceneHints,
+  // so routing more pages toward them makes the video reflect that page's
+  // real problem instead of a generic loop)
+  numberline: ["number line", "counting", "add", "subtract", "skip count", "plus", "minus", "sum", "difference", "hop"],
+  counters: ["count", "group", "objects", "ten frame", "how many", "total", "match", "sets"],
+  clock: ["time", "clock", "hour", "minute", "a.m.", "p.m.", "elapsed time", "o'clock", "half past", "quarter past"],
   coins: ["money", "coin", "penny", "nickel", "dime", "quarter", "dollar"],
-  shapes: ["shape", "triangle", "square", "rectangle", "circle", "polygon", "hexagon", "geometry", "angle", "symmetry", "3d", "cube", "sphere", "cone", "cylinder"],
-  fraction: ["fraction", "half", "third", "fourth", "quarter of", "equal share"],
-  graph: ["graph", "chart", "tally", "data", "plot"],
-  place_value: ["place value", "tens", "ones", "hundred", "digit", "decimal", "round"],
-  // ela
-  book: ["read", "story", "passage", "character", "plot", "theme", "author"],
-  letters: ["letter", "sound", "phonics", "vowel", "consonant", "spelling", "word"],
-  grammar: ["noun", "verb", "adjective", "pronoun", "sentence", "grammar", "punctuation", "comma"],
+  shapes: ["shape", "triangle", "square", "rectangle", "circle", "polygon", "hexagon", "geometry", "angle", "symmetry", "3d", "cube", "sphere", "cone", "cylinder", "vertices", "vertex", "edges", "sides", "perimeter", "area"],
+  fraction: ["fraction", "half", "third", "fourth", "quarter of", "equal share", "numerator", "denominator", "parts of a whole", "shaded"],
+  graph: ["graph", "chart", "tally", "data", "plot", "bar graph", "line plot", "survey", "pictograph"],
+  place_value: ["place value", "tens", "ones", "hundred", "digit", "decimal", "round", "expanded form", "greater than", "less than", "even", "odd", "compare numbers"],
+  // ela (letters/book scenes are content-aware: they spell out the actual
+  // featured vocabulary word pulled from the page text via extractSceneHints)
+  book: ["read", "story", "passage", "character", "plot", "theme", "author", "main idea", "summary", "sequence", "context clue", "inference", "fiction", "nonfiction", "poem"],
+  letters: ["letter", "sound", "phonics", "vowel", "consonant", "spelling", "word", "sight word", "blend", "digraph", "syllable"],
+  grammar: ["noun", "verb", "adjective", "pronoun", "sentence", "grammar", "punctuation", "comma", "subject", "predicate", "plural", "possessive", "capital letter", "adverb", "conjunction"],
   // art
   palette: ["color", "paint", "palette", "hue"],
   brush: ["draw", "sketch", "art", "sculpt", "texture", "pattern", "design"]
@@ -283,11 +318,262 @@ function pickSceneCategory(subject, themeText) {
   return 'numberline';
 }
 
+// Deterministic string -> integer hash (same page text always produces the
+// same seed), used to vary each page's camera drift/particle layout so
+// pages that land in the same scene category still don't look identical.
+function hashStringToSeed(str) {
+  let h = 2166136261;
+  const s = String(str || "");
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return Math.abs(h) % 100000;
+}
+
+// Pulls concrete details out of the actual page text so a handful of scenes
+// (numberline, counters, fraction, place_value for math; letters, book for
+// ela) can animate THIS page's real numbers/word instead of an arbitrary
+// looping placeholder — e.g. a page about "7 + 5" hops from 7 to 12 on the
+// number line rather than just counting 0 to 10 forever.
+function extractSceneHints(subject, text) {
+  const t = String(text || "");
+  // Full lowercased text, kept on every hint object so a scene can do its
+  // own targeted keyword search — e.g. the "ship" scene checks this for
+  // "washington"/"delaware" vs. "columbus" vs. "mayflower" to decide which
+  // specific historical moment to actually depict, rather than always
+  // drawing the same generic sailing ship no matter what the page is about.
+  const hints = { numbers: [], word: null, op: null, rawText: t.toLowerCase() };
+  if (subject === 'math') {
+    const matches = t.match(/\d+(?:\.\d+)?(?:\/\d+)?/g);
+    if (matches) hints.numbers = matches.slice(0, 4);
+    if (/plus|\badd(?:ing|ed|s)?\b|\bsum\b/i.test(t)) hints.op = 'add';
+    else if (/minus|subtract|difference|take away/i.test(t)) hints.op = 'subtract';
+    else if (/times|multiply|product/i.test(t)) hints.op = 'multiply';
+    else if (/divide|quotient/i.test(t)) hints.op = 'divide';
+  } else if (subject === 'ela') {
+    const quoted = t.match(/"([A-Za-z']{2,14})"/) || t.match(/'([A-Za-z']{2,14})'/);
+    if (quoted) {
+      hints.word = quoted[1];
+    } else {
+      const skipWords = ['The','This','That','Today','When','What','Why','How','Read','Write','Learn','Words','Word','Let','Now','Look','Try'];
+      const capWords = t.match(/\b[A-Z][a-z]{2,10}\b/g);
+      if (capWords) {
+        const filtered = capWords.filter(w => skipWords.indexOf(w) === -1);
+        if (filtered.length) hints.word = filtered[0];
+      }
+    }
+  } else {
+    const capWords = t.match(/\b[A-Z][a-z]{3,12}\b/g);
+    if (capWords && capWords.length) hints.word = capWords[0];
+  }
+  return hints;
+}
+
 // Each scene function draws one animation frame at time t (ms) into ctx sized w x h.
 // Scenes are intentionally simple, readable shapes with smooth motion rather than
 // static clip-art, so they read as genuinely animated on a phone-sized canvas.
+// Functions optionally receive (hints, seed) as a 5th/6th argument — most
+// scenes ignore them, but the math/ela ones listed above use them to reflect
+// the specific page's actual content.
 const VIDEO_SCENES = {
-  ship: function (ctx, w, h, t) {
+  // Routes to whichever specific historical moment the page is actually
+  // about, instead of always drawing the same generic sailboat. A page
+  // about Washington crossing the icy Delaware should look like THAT, not
+  // like Columbus sailing to the New World — this is the difference between
+  // a "topic icon" and an actual story.
+  ship: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/washington|delaware/.test(rt)) {
+      VIDEO_SCENES._washingtonCrossing(ctx, w, h, t);
+    } else if (/columbus|niña|pinta|santa mar/.test(rt)) {
+      VIDEO_SCENES._columbusVoyage(ctx, w, h, t);
+    } else if (/mayflower|pilgrim|plymouth/.test(rt)) {
+      VIDEO_SCENES._mayflowerVoyage(ctx, w, h, t);
+    } else {
+      VIDEO_SCENES._genericShip(ctx, w, h, t);
+    }
+  },
+
+  // "Washington Crossing the Delaware" — a rowboat of soldiers ferries a
+  // standing general across an ice-choked river at night, snow falling,
+  // a flag held at the bow. The boat visibly travels bank to bank on a
+  // slow loop rather than sitting still, so it actually reads as a
+  // crossing in progress, not a static painting.
+  _washingtonCrossing: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#0b1220"); sky.addColorStop(1, "#1e293b");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    // Far bank silhouette (where they're headed)
+    ctx.fillStyle = "#111827";
+    ctx.fillRect(0, h * 0.28, w, h * 0.08);
+    // River
+    const water = ctx.createLinearGradient(0, h * 0.36, 0, h);
+    water.addColorStop(0, "#1e3a5f"); water.addColorStop(1, "#0c1e33");
+    ctx.fillStyle = water; ctx.fillRect(0, h * 0.36, w, h * 0.64);
+    // Choppy ice-river texture
+    ctx.strokeStyle = "rgba(191,219,254,0.18)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 5; i++) {
+      const yy = h * 0.42 + i * 16;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 10) {
+        const y = yy + Math.sin((x + t / 160 + i * 50) / 26) * 3;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // Drifting ice floes
+    ctx.fillStyle = "rgba(226,232,240,0.65)";
+    for (let i = 0; i < 6; i++) {
+      const driftX = ((t / 45 + i * 130) % (w + 80)) - 40;
+      const fy = h * (0.5 + (i % 3) * 0.13);
+      ctx.beginPath();
+      ctx.ellipse(driftX, fy, 20 + (i % 3) * 6, 7 + (i % 2) * 3, 0, 0, 7);
+      ctx.fill();
+    }
+    // Falling snow
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    for (let i = 0; i < 26; i++) {
+      const sx = (i * 47 + t / 12) % w;
+      const sy = (i * 31 + t / 9) % h;
+      ctx.beginPath(); ctx.arc(sx, sy, 1.6, 0, 7); ctx.fill();
+    }
+    // The boat crosses bank-to-bank and back on a slow loop, so it always
+    // reads as "in transit" no matter when the page is viewed.
+    const cross = (Math.sin(t / 7000) + 1) / 2; // 0..1..0
+    const bx = w * (0.18 + cross * 0.64);
+    const bob = Math.sin(t / 480) * 4;
+    const by = h * 0.72 + bob;
+    ctx.save(); ctx.translate(bx, by);
+    // Rowboat hull
+    ctx.fillStyle = "#5b3a21";
+    ctx.beginPath(); ctx.moveTo(-58, 8); ctx.lineTo(58, 8); ctx.lineTo(42, 26); ctx.lineTo(-42, 26); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#3a2414"; ctx.lineWidth = 2; ctx.stroke();
+    // Rowing soldiers with animated oars
+    for (let i = 0; i < 4; i++) {
+      const px = -34 + i * 22;
+      const oarSwing = Math.sin(t / 380 + i * 1.1) * 0.6;
+      ctx.fillStyle = "#1e293b";
+      ctx.beginPath(); ctx.arc(px, -4, 5, 0, 7); ctx.fill(); // head
+      ctx.fillRect(px - 3, 0, 6, 12); // body
+      ctx.strokeStyle = "#78716c"; ctx.lineWidth = 2;
+      ctx.save(); ctx.translate(px, 2); ctx.rotate(oarSwing);
+      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, 22); ctx.stroke();
+      ctx.restore();
+    }
+    // Washington standing tall at the bow, cape catching the wind
+    ctx.save(); ctx.translate(44, -2);
+    const capeSway = Math.sin(t / 500) * 4;
+    ctx.fillStyle = "#1e3a8a";
+    ctx.beginPath(); ctx.moveTo(-6, -4); ctx.quadraticCurveTo(-14 + capeSway, 10, -8, 20); ctx.lineTo(4, 18); ctx.quadraticCurveTo(2, 4, 6, -4); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#e2c9a0"; ctx.beginPath(); ctx.arc(0, -14, 5, 0, 7); ctx.fill(); // head
+    ctx.fillStyle = "#0f172a"; ctx.beginPath(); ctx.moveTo(-7, -17); ctx.lineTo(7, -17); ctx.lineTo(4, -22); ctx.lineTo(-4, -22); ctx.closePath(); ctx.fill(); // tricorn hat
+    ctx.fillStyle = "#1e40af"; ctx.fillRect(-4, -9, 8, 16); // uniform torso
+    ctx.restore();
+    // Flag at the stern, waving
+    const flagWave = Math.sin(t / 260) * 5;
+    ctx.strokeStyle = "#8b8378"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(-52, 6); ctx.lineTo(-52, -30); ctx.stroke();
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath(); ctx.moveTo(-52, -30); ctx.lineTo(-52 - 20 - flagWave, -25); ctx.lineTo(-52, -18); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // Columbus's three ships crossing open ocean toward land on the horizon.
+  _columbusVoyage: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fb923c"); sky.addColorStop(0.5, "#1e3a5f"); sky.addColorStop(1, "#0c4a6e");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.65);
+    const water = ctx.createLinearGradient(0, h * 0.6, 0, h);
+    water.addColorStop(0, "#0369a1"); water.addColorStop(1, "#082f49");
+    ctx.fillStyle = water; ctx.fillRect(0, h * 0.6, w, h * 0.4);
+    ctx.strokeStyle = "rgba(255,255,255,0.22)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 4; i++) {
+      const yy = h * 0.68 + i * 14;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 8) {
+        const y = yy + Math.sin((x + t / 200 + i * 40) / 30) * 4;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // Land on the horizon — the destination they're sailing toward
+    ctx.fillStyle = "rgba(74,222,128,0.5)";
+    ctx.beginPath(); ctx.ellipse(w * 0.88, h * 0.6, 60, 14, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "rgba(251,191,36,0.9)"; ctx.beginPath(); ctx.arc(w * 0.18, h * 0.16, 24, 0, 7); ctx.fill();
+    // Three ships, each bobbing on its own rhythm, sailing rightward toward land
+    const ships = [
+      { laneY: 0.5, speed: 1, scale: 1, phase: 0 },
+      { laneY: 0.58, speed: 0.85, scale: 0.8, phase: 1.4 },
+      { laneY: 0.66, speed: 0.7, scale: 0.65, phase: 2.6 }
+    ];
+    ships.forEach(s => {
+      const progress = ((t / 9000) * s.speed + s.phase / 6) % 1;
+      const sx = w * (0.12 + progress * 0.68);
+      const sy = h * s.laneY + Math.sin(t / 480 + s.phase) * 4;
+      ctx.save(); ctx.translate(sx, sy); ctx.scale(s.scale, s.scale);
+      ctx.fillStyle = "#7c3f1d";
+      ctx.beginPath(); ctx.moveTo(-40, 12); ctx.lineTo(40, 12); ctx.lineTo(30, 24); ctx.lineTo(-30, 24); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = "#e2c9a0"; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(0, 12); ctx.lineTo(0, -34); ctx.stroke();
+      ctx.fillStyle = "#fef3c7";
+      const sail = Math.sin(t / 600 + s.phase) * 3;
+      ctx.beginPath(); ctx.moveTo(0, -30); ctx.quadraticCurveTo(24 + sail, -14, 0, 2); ctx.closePath(); ctx.fill();
+      ctx.restore();
+    });
+  },
+
+  // The Mayflower riding rough Atlantic swells with Plymouth's rocky shore
+  // waiting on the horizon.
+  _mayflowerVoyage: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#64748b"); sky.addColorStop(1, "#334155");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.6);
+    const water = ctx.createLinearGradient(0, h * 0.55, 0, h);
+    water.addColorStop(0, "#1e3a5f"); water.addColorStop(1, "#0f2438");
+    ctx.fillStyle = water; ctx.fillRect(0, h * 0.55, w, h * 0.45);
+    // Rough, choppy swells
+    ctx.strokeStyle = "rgba(226,232,240,0.3)"; ctx.lineWidth = 2.5;
+    for (let i = 0; i < 5; i++) {
+      const yy = h * 0.6 + i * 15;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 8) {
+        const y = yy + Math.sin((x + t / 130 + i * 60) / 22) * 6;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // Rocky shore on the horizon (Plymouth)
+    ctx.fillStyle = "#334155";
+    ctx.beginPath(); ctx.moveTo(w * 0.78, h * 0.62); ctx.lineTo(w * 0.86, h * 0.46); ctx.lineTo(w * 0.94, h * 0.62); ctx.closePath(); ctx.fill();
+    // Gulls
+    ctx.strokeStyle = "#e2e8f0"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 3; i++) {
+      const gx = ((t / 25 + i * 90) % (w + 40)) - 20;
+      const gy = h * (0.15 + i * 0.05);
+      const flap = Math.sin(t / 150 + i) * 4;
+      ctx.beginPath(); ctx.moveTo(gx - 6, gy - flap); ctx.lineTo(gx, gy); ctx.lineTo(gx + 6, gy - flap); ctx.stroke();
+    }
+    // The ship pitches and rolls on the rough water
+    const pitch = Math.sin(t / 700) * 0.06;
+    const bob = Math.sin(t / 480) * 8;
+    ctx.save(); ctx.translate(w * 0.42, h * 0.56 + bob); ctx.rotate(pitch);
+    ctx.fillStyle = "#5b3a21";
+    ctx.beginPath(); ctx.moveTo(-64, 14); ctx.lineTo(64, 14); ctx.lineTo(48, 32); ctx.lineTo(-48, 32); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#3a2414"; ctx.lineWidth = 2; ctx.stroke();
+    [-24, 4, 30].forEach((mastX, i) => {
+      ctx.strokeStyle = "#c4a374"; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(mastX, 14); ctx.lineTo(mastX, -48 + i * 4); ctx.stroke();
+      ctx.fillStyle = "#f1f5f9";
+      const sailSway = Math.sin(t / 550 + i) * 4;
+      ctx.beginPath(); ctx.moveTo(mastX, -44 + i * 4); ctx.quadraticCurveTo(mastX + 20 + sailSway, -20 + i * 4, mastX, 6); ctx.closePath(); ctx.fill();
+    });
+    ctx.restore();
+  },
+
+  // The original generic sailing-ship fallback for any "ship"-category page
+  // that isn't specifically about Washington/Columbus/the Mayflower.
+  _genericShip: function (ctx, w, h, t) {
     // Sky + water gradient
     const sky = ctx.createLinearGradient(0, 0, 0, h);
     sky.addColorStop(0, "#1e3a5f"); sky.addColorStop(1, "#0c4a6e");
@@ -627,38 +913,79 @@ const VIDEO_SCENES = {
     ctx.setLineDash([]);
   },
 
-  numberline: function (ctx, w, h, t) {
+  numberline: function (ctx, w, h, t, hints) {
     ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const nums = ((hints && hints.numbers) || []).map(x => parseFloat(x)).filter(x => !isNaN(x) && x >= 0 && x <= 30);
+    const a = nums[0], b = nums[1];
+    let n = 10;
+    if (a !== undefined) n = Math.max(10, Math.min(20, Math.ceil(a) + (b !== undefined ? Math.ceil(b) : 2) + 2));
     const y = h / 2, margin = 40;
     ctx.strokeStyle = "#818cf8"; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(w - margin, y); ctx.stroke();
-    const n = 10;
     for (let i = 0; i <= n; i++) {
       const x = margin + ((w - margin * 2) / n) * i;
       ctx.beginPath(); ctx.moveTo(x, y - 8); ctx.lineTo(x, y + 8); ctx.stroke();
       ctx.fillStyle = "#c7d2fe"; ctx.font = "12px sans-serif"; ctx.textAlign = "center";
       ctx.fillText(String(i), x, y + 24);
     }
-    // Hopping marker
-    const pos = (t / 500) % n;
-    const hopIdx = Math.floor(pos);
-    const frac = pos - hopIdx;
-    const x1 = margin + ((w - margin * 2) / n) * hopIdx;
-    const x2 = margin + ((w - margin * 2) / n) * (hopIdx + 1);
-    const x = x1 + (x2 - x1) * frac;
-    const arc = Math.sin(frac * Math.PI) * 26;
+
+    // When the actual page mentions specific numbers, hop between THEM
+    // (e.g. a "7 + 5" page hops from 7 to 12) instead of an arbitrary loop.
+    let startVal = 0, endVal = n, label = null;
+    const opSign = hints && hints.op === 'add' ? '+' : (hints && hints.op === 'subtract' ? '−' : null);
+    if (a !== undefined && b !== undefined && opSign) {
+      startVal = a;
+      endVal = hints.op === 'add' ? a + b : Math.max(0, a - b);
+      label = `${Math.round(a)} ${opSign} ${Math.round(b)} = ${Math.round(endVal)}`;
+    } else if (a !== undefined) {
+      startVal = 0; endVal = a;
+      label = `Counting to ${Math.round(a)}`;
+    }
+    endVal = Math.max(0, Math.min(n, endVal));
+    startVal = Math.max(0, Math.min(n, startVal));
+
+    if (label) {
+      ctx.fillStyle = "#fef08a"; ctx.font = "bold 16px sans-serif"; ctx.textAlign = "center";
+      ctx.fillText(label, w / 2, 28);
+    }
+
+    const xForVal = (v) => margin + ((w - margin * 2) / n) * v;
+    if (startVal !== endVal) {
+      ctx.fillStyle = "rgba(74,222,128,0.9)";
+      ctx.beginPath(); ctx.arc(xForVal(startVal), y, 6, 0, 7); ctx.fill();
+      ctx.fillStyle = "rgba(251,191,36,0.9)";
+      ctx.beginPath(); ctx.arc(xForVal(endVal), y, 6, 0, 7); ctx.fill();
+    }
+
+    // Hopping marker animates back and forth between startVal and endVal.
+    const span = Math.max(1, Math.abs(endVal - startVal));
+    const cyclePos = (t / 700) % span;
+    const dir = endVal >= startVal ? 1 : -1;
+    const hopIdx = Math.floor(cyclePos);
+    const hopFrac = cyclePos - hopIdx;
+    const curVal = startVal + dir * hopIdx;
+    const nextVal = startVal + dir * (hopIdx + 1);
+    const xA = xForVal(curVal), xB = xForVal(nextVal);
+    const x = xA + (xB - xA) * hopFrac;
+    const arc = Math.sin(hopFrac * Math.PI) * 26;
     ctx.fillStyle = "#fbbf24";
     ctx.beginPath(); ctx.arc(x, y - 14 - arc, 9, 0, 7); ctx.fill();
   },
 
-  counters: function (ctx, w, h, t) {
+  counters: function (ctx, w, h, t, hints, seed) {
     ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
-    const cols = 5, rows = 2, count = 1 + Math.floor((t / 600) % (cols * rows));
+    const nums = ((hints && hints.numbers) || []).map(x => parseInt(x, 10)).filter(x => !isNaN(x) && x >= 1 && x <= 20);
+    const target = nums.length ? nums[0] : (5 + ((seed || 0) % 5));
+    const cols = Math.min(5, target) || 5;
+    const rows = Math.max(1, Math.ceil(target / cols));
+    const cycleLen = target + 3;
+    const count = 1 + Math.floor((t / 600) % cycleLen);
     const cellW = w / (cols + 1), cellH = h / (rows + 2);
     let n = 0;
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
         n++;
+        if (n > target) continue;
         const cx = cellW * (c + 1), cy = cellH * (r + 1.4);
         const active = n <= count;
         const pop = active ? Math.min(1, ((t % 600) / 250)) : 0;
@@ -729,11 +1056,20 @@ const VIDEO_SCENES = {
     ctx.restore();
   },
 
-  fraction: function (ctx, w, h, t) {
+  fraction: function (ctx, w, h, t, hints) {
     ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
     const cx = w / 2, cy = h / 2, r = Math.min(w, h) * 0.3;
-    const slices = 4;
-    const fillCount = 1 + Math.floor((t / 700) % slices);
+    // If the page text contains an actual fraction like "3/4", use it.
+    const nums = (hints && hints.numbers) || [];
+    const fracStr = nums.find(x => x.indexOf('/') !== -1);
+    let slices = 4, fixedFill = null;
+    if (fracStr) {
+      const parts = fracStr.split('/').map(v => parseInt(v, 10));
+      if (parts.length === 2 && parts[1] >= 2 && parts[1] <= 8 && parts[0] >= 0 && parts[0] <= parts[1]) {
+        slices = parts[1]; fixedFill = parts[0];
+      }
+    }
+    const fillCount = fixedFill !== null ? fixedFill : (1 + Math.floor((t / 700) % slices));
     for (let i = 0; i < slices; i++) {
       const a0 = (i / slices) * Math.PI * 2 - Math.PI / 2;
       const a1 = ((i + 1) / slices) * Math.PI * 2 - Math.PI / 2;
@@ -761,10 +1097,18 @@ const VIDEO_SCENES = {
     ctx.beginPath(); ctx.moveTo(20, h * 0.8); ctx.lineTo(w - 10, h * 0.8); ctx.stroke();
   },
 
-  place_value: function (ctx, w, h, t) {
+  place_value: function (ctx, w, h, t, hints) {
     ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
-    const tens = 1 + Math.floor((t / 900) % 5);
-    const ones = Math.floor((t / 300) % 10);
+    const nums = ((hints && hints.numbers) || []).map(x => parseInt(x, 10)).filter(x => !isNaN(x) && x >= 10 && x <= 99);
+    let tens, ones;
+    if (nums.length) {
+      const val = nums[0];
+      tens = Math.floor(val / 10);
+      ones = val % 10;
+    } else {
+      tens = 1 + Math.floor((t / 900) % 5);
+      ones = Math.floor((t / 300) % 10);
+    }
     ctx.fillStyle = "#a5b4fc"; ctx.font = "bold 14px sans-serif"; ctx.textAlign = "center";
     ctx.fillText("TENS", w * 0.28, 24);
     ctx.fillText("ONES", w * 0.72, 24);
@@ -780,7 +1124,7 @@ const VIDEO_SCENES = {
     }
   },
 
-  book: function (ctx, w, h, t) {
+  book: function (ctx, w, h, t, hints) {
     ctx.fillStyle = "#451a03"; ctx.fillRect(0, 0, w, h);
     const cx = w / 2, cy = h / 2;
     const flip = (t / 900) % 1;
@@ -795,22 +1139,26 @@ const VIDEO_SCENES = {
     ctx.strokeStyle = "#92400e";
     for (let i = 0; i < 5; i++) { ctx.beginPath(); ctx.moveTo(8, 16 + i * 18); ctx.lineTo(70, 16 + i * 18); ctx.stroke(); }
     ctx.restore();
-    // floating letters
-    const letters = ["A", "B", "C"];
+    // floating letters — spell the page's featured word when we have one
+    const word = (hints && hints.word) ? hints.word.toUpperCase().slice(0, 6).split('') : ["A", "B", "C"];
+    const letters = word;
+    const letterGap = Math.min(60, (w - 60) / Math.max(1, letters.length - 1 || 1));
     letters.forEach((l, i) => {
       const fy = cy - 90 - Math.sin(t / 400 + i) * 8;
-      const fx = cx - 90 + i * 90;
+      const fx = cx - (letters.length - 1) * letterGap / 2 + i * letterGap;
       ctx.fillStyle = "#fbbf24"; ctx.font = "bold 22px sans-serif"; ctx.textAlign = "center";
       ctx.fillText(l, fx, fy);
     });
   },
 
-  letters: function (ctx, w, h, t) {
+  letters: function (ctx, w, h, t, hints) {
     ctx.fillStyle = "#7c2d12"; ctx.fillRect(0, 0, w, h);
-    const word = ["C", "A", "T"];
+    const wordStr = (hints && hints.word) ? hints.word.toUpperCase().slice(0, 8) : "CAT";
+    const word = wordStr.split('');
+    const gap = Math.min(60, (w - 60) / Math.max(1, word.length - 1 || 1));
     word.forEach((l, i) => {
       const bounce = Math.abs(Math.sin(t / 350 + i * 0.8)) * 16;
-      const x = w / 2 - (word.length - 1) * 30 + i * 60;
+      const x = w / 2 - (word.length - 1) * gap / 2 + i * gap;
       const y = h / 2 - bounce;
       ctx.fillStyle = "#fed7aa";
       ctx.fillRect(x - 24, y - 24, 48, 48);
@@ -879,26 +1227,66 @@ const VIDEO_SCENES = {
   }
 };
 
+// ---------- Ambient particle overlay ----------
+// A light dusting of drifting sparkle particles layered on top of every
+// scene for a bit of cinematic polish, independent of the scene's own art.
+function drawAmbientParticles(ctx, w, h, t, seed) {
+  const count = 14;
+  const s = Math.abs(seed || 1);
+  ctx.save();
+  for (let i = 0; i < count; i++) {
+    const rnd = Math.sin((i + 1) * 12.9898 + s * 0.001) * 43758.5453;
+    const frac = rnd - Math.floor(rnd);
+    const baseX = frac * w;
+    const speed = 6000 + (i % 5) * 1400;
+    const driftY = ((t + i * 900) / speed) % 1.2;
+    const y = h * 1.05 - driftY * h * 1.15;
+    const x = baseX + Math.sin((t / 1800) + i) * 14;
+    const twinkle = 0.15 + Math.abs(Math.sin(t / 500 + i * 2)) * 0.35;
+    const size = 1.2 + (i % 3) * 0.9;
+    ctx.globalAlpha = twinkle * (1 - Math.min(1, driftY));
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath(); ctx.arc(x, y, size, 0, 7); ctx.fill();
+  }
+  ctx.restore();
+}
+
 // ---------- Scene loop management ----------
 let __videoSceneRAF = null;
 function stopVideoScene() {
   if (__videoSceneRAF) { cancelAnimationFrame(__videoSceneRAF); __videoSceneRAF = null; }
 }
-function startVideoScene(canvas, category) {
+function startVideoScene(canvas, category, hints, seed) {
   stopVideoScene();
   if (!canvas || !canvas.getContext) return;
   const ctx = canvas.getContext('2d');
   const drawFn = VIDEO_SCENES[category] || VIDEO_SCENES.numberline;
   const startT = performance.now();
+  const sceneSeed = seed || 1;
+  // Ken Burns: slow, gentle pan + zoom drift, unique per page via sceneSeed.
+  const kbDur = 16000 + (sceneSeed % 5000);
+  const kbMaxZoom = 1.05 + ((sceneSeed % 7) / 100);
+  const kbAngle = ((sceneSeed % 360) * Math.PI) / 180;
   function frame(now) {
     const w = canvas.width, h = canvas.height;
+    const elapsed = now - startT;
+    ctx.save();
     ctx.clearRect(0, 0, w, h);
-    try { drawFn(ctx, w, h, now - startT); } catch (e) { /* fail quietly, keep video usable */ }
+    const kbPhase = (Math.sin((elapsed / kbDur) * Math.PI * 2 + kbAngle) + 1) / 2; // 0..1..0
+    const zoom = 1 + (kbMaxZoom - 1) * kbPhase;
+    const panX = Math.cos(kbAngle) * (w * 0.02) * kbPhase;
+    const panY = Math.sin(kbAngle) * (h * 0.02) * kbPhase;
+    ctx.translate(w / 2 + panX, h / 2 + panY);
+    ctx.scale(zoom, zoom);
+    ctx.translate(-w / 2, -h / 2);
+    try { drawFn(ctx, w, h, elapsed, hints, sceneSeed); } catch (e) { /* fail quietly, keep video usable */ }
+    ctx.restore();
+    try { drawAmbientParticles(ctx, w, h, elapsed, sceneSeed); } catch (e) { /* ignore */ }
     __videoSceneRAF = requestAnimationFrame(frame);
   }
   __videoSceneRAF = requestAnimationFrame(frame);
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { pickLivelyVoice, splitIntoSentences, speakSentencesWithSubtitles, pickSceneCategory, startVideoScene, stopVideoScene };
+  module.exports = { pickLivelyVoice, splitIntoSentences, speakSentencesWithSubtitles, pickSceneCategory, hashStringToSeed, extractSceneHints, startVideoScene, stopVideoScene };
 }
