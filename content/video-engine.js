@@ -700,7 +700,18 @@ const VIDEO_SCENES = {
     ctx.beginPath(); ctx.moveTo(bx, by - 160); ctx.lineTo(bx + 26 + wave, by - 153); ctx.lineTo(bx, by - 146); ctx.closePath(); ctx.fill();
   },
 
-  timeline: function (ctx, w, h, t) {
+  // Routes to a specific ancient-history moment (Egyptian pyramids, a
+  // Native American village, an inventor's workshop) instead of the same
+  // generic "ancient timeline" markers for every history page.
+  timeline: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/pyramid|egypt|pharaoh|sphinx|\bnile\b|hieroglyph/.test(rt)) { VIDEO_SCENES._pyramid(ctx, w, h, t); return; }
+    if (/native american|indigenous|tribe|teepee|tipi|longhouse/.test(rt)) { VIDEO_SCENES._nativeVillage(ctx, w, h, t); return; }
+    if (/invent|wright brothers|airplane|lightbulb|telephone|edison|printing press/.test(rt)) { VIDEO_SCENES._invention(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericTimeline(ctx, w, h, t);
+  },
+
+  _genericTimeline: function (ctx, w, h, t) {
     ctx.fillStyle = "#292524"; ctx.fillRect(0, 0, w, h);
     // Parchment texture strip
     ctx.fillStyle = "#44403c"; ctx.fillRect(0, h * 0.45, w, 8);
@@ -722,6 +733,108 @@ const VIDEO_SCENES = {
       const py = (i * 53 + h - (t / 15) % h) % h;
       ctx.beginPath(); ctx.arc(px, py, 1.5, 0, 7); ctx.fill();
     }
+  },
+
+  // Great Pyramids and the Sphinx under a desert sun, with a camel
+  // caravan crossing the sand in the foreground.
+  _pyramid: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fb923c"); sky.addColorStop(1, "#fde68a");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(253,224,71,0.95)"; ctx.beginPath(); ctx.arc(w * 0.78, h * 0.2, 24, 0, 7); ctx.fill();
+    ctx.fillStyle = "#d97706"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    // Two pyramids
+    ctx.fillStyle = "#b45309";
+    ctx.beginPath(); ctx.moveTo(w * 0.42, h * 0.78); ctx.lineTo(w * 0.58, h * 0.4); ctx.lineTo(w * 0.74, h * 0.78); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.moveTo(w * 0.66, h * 0.78); ctx.lineTo(w * 0.8, h * 0.5); ctx.lineTo(w * 0.94, h * 0.78); ctx.closePath(); ctx.fill();
+    // Sunlit pyramid edge
+    ctx.strokeStyle = "rgba(254,240,138,0.6)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(w * 0.58, h * 0.4); ctx.lineTo(w * 0.58, h * 0.78); ctx.stroke();
+    // Sphinx
+    ctx.fillStyle = "#a16207";
+    ctx.fillRect(w * 0.12, h * 0.68, 44, 12);
+    ctx.beginPath(); ctx.arc(w * 0.14, h * 0.66, 8, 0, 7); ctx.fill();
+    // Camel caravan crossing
+    for (let i = 0; i < 3; i++) {
+      const cx2 = ((t / 42 + i * 90) % (w + 80)) - 40;
+      const legSwing = Math.sin(t / 210 + i) * 6;
+      ctx.save(); ctx.translate(cx2, h * 0.9);
+      ctx.fillStyle = "#92400e";
+      ctx.beginPath(); ctx.ellipse(0, 0, 16, 8, 0, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(-4, -9, 6, 6, 0, 0, 7); ctx.fill();
+      ctx.strokeStyle = "#92400e"; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(-8, 6); ctx.lineTo(-8 + legSwing, 16); ctx.moveTo(8, 6); ctx.lineTo(8 - legSwing, 16); ctx.stroke();
+      ctx.restore();
+    }
+  },
+
+  // A Native American village: teepees around a glowing campfire with
+  // rising smoke, an eagle circling overhead at dusk.
+  _nativeVillage: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#7c3aed"); sky.addColorStop(0.5, "#f97316"); sky.addColorStop(1, "#fde68a");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.65);
+    ctx.fillStyle = "#4d7c0f"; ctx.fillRect(0, h * 0.65, w, h * 0.35);
+    // Teepees
+    [0.22, 0.42, 0.68].forEach((tx, i) => {
+      const scale = 1 - i * 0.12;
+      ctx.save(); ctx.translate(w * tx, h * 0.65); ctx.scale(scale, scale);
+      ctx.fillStyle = "#a16207";
+      ctx.beginPath(); ctx.moveTo(-30, 0); ctx.lineTo(0, -70); ctx.lineTo(30, 0); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = "#78350f"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(0, -70); ctx.lineTo(-4, 6); ctx.moveTo(0, -70); ctx.lineTo(6, 6); ctx.stroke();
+      ctx.restore();
+    });
+    // Campfire, glowing and flickering
+    const flicker = 0.6 + Math.sin(t / 140) * 0.3;
+    ctx.fillStyle = `rgba(251,146,60,${flicker})`;
+    ctx.beginPath(); ctx.moveTo(w * 0.53, h * 0.65); ctx.quadraticCurveTo(w * 0.55, h * 0.58, w * 0.53, h * 0.5); ctx.quadraticCurveTo(w * 0.51, h * 0.58, w * 0.53, h * 0.65); ctx.fill();
+    // Rising smoke
+    ctx.fillStyle = "rgba(148,163,184,0.4)";
+    for (let i = 0; i < 5; i++) {
+      const sy = h * 0.5 - ((t / 20 + i * 20) % (h * 0.35));
+      ctx.beginPath(); ctx.arc(w * 0.53 + Math.sin(i + t / 800) * 6, sy, 5 + i, 0, 7); ctx.fill();
+    }
+    // Eagle circling overhead
+    const angle = t / 2200;
+    const ex = w * 0.5 + Math.cos(angle) * w * 0.32, ey = h * 0.18 + Math.sin(angle) * h * 0.08;
+    const flap = Math.sin(t / 160) * 6;
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(ex - 10, ey - flap); ctx.lineTo(ex, ey); ctx.lineTo(ex + 10, ey - flap); ctx.stroke();
+  },
+
+  // An inventor's workshop: a lightbulb flickering to life over a desk of
+  // spinning gears — for pages about inventions and inventors.
+  _invention: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1c1917"; ctx.fillRect(0, 0, w, h);
+    // Workbench
+    ctx.fillStyle = "#57534e"; ctx.fillRect(0, h * 0.72, w, h * 0.1);
+    ctx.fillStyle = "#44403c"; ctx.fillRect(0, h * 0.82, w, h * 0.18);
+    // Spinning gears on the bench
+    [{ x: 0.28, r: 22, speed: 1 }, { x: 0.42, r: 15, speed: -1.5 }].forEach(g => {
+      ctx.save(); ctx.translate(w * g.x, h * 0.72); ctx.rotate((t / 700) * g.speed);
+      ctx.strokeStyle = "#a8a29e"; ctx.lineWidth = 4;
+      ctx.beginPath(); ctx.arc(0, 0, g.r, 0, 7); ctx.stroke();
+      for (let i = 0; i < 8; i++) {
+        const a = (i / 8) * Math.PI * 2;
+        ctx.beginPath(); ctx.moveTo(Math.cos(a) * g.r, Math.sin(a) * g.r); ctx.lineTo(Math.cos(a) * (g.r + 6), Math.sin(a) * (g.r + 6)); ctx.stroke();
+      }
+      ctx.restore();
+    });
+    // Glowing lightbulb "idea" moment, flickering on
+    const glow = 0.5 + Math.abs(Math.sin(t / 500)) * 0.5;
+    const bx = w * 0.66, by = h * 0.38;
+    ctx.fillStyle = `rgba(253,224,71,${glow})`;
+    ctx.shadowColor = "#fde68a"; ctx.shadowBlur = 30 * glow;
+    ctx.beginPath(); ctx.arc(bx, by, 26, 0, 7); ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = "#78716c"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(bx, by, 26, 0.2, Math.PI - 0.2); ctx.stroke();
+    ctx.fillStyle = "#78716c"; ctx.fillRect(bx - 8, by + 22, 16, 10);
+    // Filament glow lines inside the bulb
+    ctx.strokeStyle = "rgba(120,53,15,0.6)"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(bx - 8, by + 6); ctx.lineTo(bx, by - 8); ctx.lineTo(bx + 8, by + 6); ctx.stroke();
   },
 
   atom: function (ctx, w, h, t) {
@@ -751,7 +864,16 @@ const VIDEO_SCENES = {
     });
   },
 
-  space: function (ctx, w, h, t) {
+  // Routes to a specific space moment — the moon landing, or a full solar
+  // system — instead of one generic orbiting-planet loop for every page.
+  space: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/moon landing|apollo|astronaut|footprint|lunar/.test(rt)) { VIDEO_SCENES._moonLanding(ctx, w, h, t); return; }
+    if (/solar system|mercury|venus|\bmars\b|jupiter|saturn|uranus|neptune|planets? (orbit|of)/.test(rt)) { VIDEO_SCENES._solarSystem(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericSpace(ctx, w, h, t);
+  },
+
+  _genericSpace: function (ctx, w, h, t) {
     ctx.fillStyle = "#0b1026"; ctx.fillRect(0, 0, w, h);
     // Stars twinkle
     for (let i = 0; i < 40; i++) {
@@ -772,6 +894,87 @@ const VIDEO_SCENES = {
     ctx.beginPath(); ctx.arc(mx, my, 9, 0, 7); ctx.fill();
     ctx.strokeStyle = "rgba(148,163,184,0.3)";
     ctx.beginPath(); ctx.ellipse(cx, cy, 70, 24, 0, 0, 7); ctx.stroke();
+  },
+
+  // Apollo-style moon landing: an astronaut plants a flag on the gray
+  // lunar surface next to the landing module, with Earth hanging in the
+  // black sky and the flag "waving" stiffly (no atmosphere, just a light
+  // sway from the pole) exactly like the famous footage.
+  _moonLanding: function (ctx, w, h, t) {
+    ctx.fillStyle = "#050510"; ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 50; i++) {
+      const sx = (i * 61) % w, sy = (i * 83) % (h * 0.7);
+      ctx.fillStyle = `rgba(255,255,255,${0.3 + 0.5 * Math.abs(Math.sin(t / 500 + i))})`;
+      ctx.fillRect(sx, sy, 1.5, 1.5);
+    }
+    // Earth rising in the black sky
+    ctx.fillStyle = "#1d4ed8";
+    ctx.beginPath(); ctx.arc(w * 0.8, h * 0.2, 22, 0, 7); ctx.fill();
+    ctx.fillStyle = "rgba(34,197,94,0.7)";
+    ctx.beginPath(); ctx.arc(w * 0.8 - 6, h * 0.2 - 4, 8, 0, 7); ctx.arc(w * 0.8 + 8, h * 0.2 + 6, 6, 0, 7); ctx.fill();
+    // Gray cratered moon surface
+    ctx.fillStyle = "#94a3b8"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    ctx.fillStyle = "rgba(100,116,139,0.5)";
+    for (let i = 0; i < 6; i++) {
+      const cx2 = (i * 71) % w, cy2 = h * 0.8 + (i * 13) % (h * 0.16);
+      ctx.beginPath(); ctx.ellipse(cx2, cy2, 10, 4, 0, 0, 7); ctx.fill();
+    }
+    // Lunar module in background
+    ctx.save(); ctx.translate(w * 0.72, h * 0.72);
+    ctx.fillStyle = "#e2e8f0"; ctx.fillRect(-18, -14, 36, 20);
+    ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.moveTo(-18, 6); ctx.lineTo(-28, 20); ctx.lineTo(-10, 20); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(18, 6); ctx.lineTo(28, 20); ctx.lineTo(10, 20); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    // Astronaut planting the flag
+    ctx.save(); ctx.translate(w * 0.34, h * 0.78);
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.arc(0, -30, 8, 0, 7); ctx.fill(); // helmet
+    ctx.fillRect(-8, -22, 16, 22); // suit torso/legs
+    ctx.fillStyle = "#cbd5e1"; ctx.beginPath(); ctx.arc(0, -30, 5, 0, 7); ctx.fill(); // visor glass
+    // Flagpole + stiffly waving flag
+    ctx.strokeStyle = "#e2e8f0"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(14, 0); ctx.lineTo(14, -46); ctx.stroke();
+    const sway = Math.sin(t / 1400) * 2;
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath(); ctx.moveTo(14, -46); ctx.lineTo(38 + sway, -44); ctx.lineTo(36 + sway, -36); ctx.lineTo(14, -36); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // The sun at center with the planets orbiting at their own distinct
+  // speeds and distances — a real solar-system model rather than one
+  // arbitrary planet+moon pair.
+  _solarSystem: function (ctx, w, h, t) {
+    ctx.fillStyle = "#05060f"; ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 45; i++) {
+      const sx = (i * 59) % w, sy = (i * 89) % h;
+      ctx.fillStyle = `rgba(255,255,255,${0.3 + 0.5 * Math.abs(Math.sin(t / 450 + i))})`;
+      ctx.fillRect(sx, sy, 1.5, 1.5);
+    }
+    const cx = w / 2, cy = h / 2;
+    ctx.fillStyle = "#facc15";
+    ctx.shadowColor = "#facc15"; ctx.shadowBlur = 24;
+    ctx.beginPath(); ctx.arc(cx, cy, 18, 0, 7); ctx.fill();
+    ctx.shadowBlur = 0;
+    const planets = [
+      { r: 40, size: 3.5, speed: 4.1, color: "#94a3b8" },   // Mercury
+      { r: 56, size: 5, speed: 3, color: "#fbbf24" },       // Venus
+      { r: 74, size: 5.5, speed: 2.4, color: "#3b82f6" },   // Earth
+      { r: 92, size: 4.5, speed: 1.9, color: "#f97316" },   // Mars
+      { r: 116, size: 10, speed: 1.1, color: "#d97706" },   // Jupiter
+      { r: 142, size: 8, speed: 0.8, color: "#eab308" }     // Saturn
+    ];
+    planets.forEach((p, i) => {
+      ctx.strokeStyle = "rgba(148,163,184,0.2)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(cx, cy, p.r, 0, 7); ctx.stroke();
+      const angle = (t / 3000) * p.speed + i;
+      const px = cx + Math.cos(angle) * p.r, py = cy + Math.sin(angle) * p.r * 0.94;
+      ctx.fillStyle = p.color;
+      ctx.beginPath(); ctx.arc(px, py, p.size, 0, 7); ctx.fill();
+      if (p.color === "#eab308") {
+        ctx.strokeStyle = "rgba(234,179,8,0.6)"; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.ellipse(px, py, p.size + 6, p.size * 0.4, 0.4, 0, 7); ctx.stroke();
+      }
+    });
   },
 
   plant: function (ctx, w, h, t) {
@@ -837,7 +1040,16 @@ const VIDEO_SCENES = {
     }
   },
 
-  water: function (ctx, w, h, t) {
+  // Routes to the full water-cycle diagram when the page is specifically
+  // about evaporation/condensation/precipitation; otherwise the generic
+  // rain-cloud-over-ocean loop for weather/water pages in general.
+  water: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/water cycle|evaporat|condens|precipitat/.test(rt)) { VIDEO_SCENES._waterCycle(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericWater(ctx, w, h, t);
+  },
+
+  _genericWater: function (ctx, w, h, t) {
     const sky = ctx.createLinearGradient(0, 0, 0, h);
     sky.addColorStop(0, "#7dd3fc"); sky.addColorStop(1, "#e0f2fe");
     ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.7);
@@ -856,6 +1068,54 @@ const VIDEO_SCENES = {
     const rise = (t / 20) % 60;
     ctx.strokeStyle = "rgba(255,255,255,0.6)"; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(w * 0.7, h * 0.7 - rise); ctx.lineTo(w * 0.7, h * 0.4 - rise); ctx.stroke();
+  },
+
+  // The full water cycle as a single looping diagram: sun warms the ocean,
+  // droplets rise (evaporation), gather into a cloud (condensation), then
+  // fall back down as rain (precipitation) — all drawn as one continuous
+  // circular journey so the stages visibly connect instead of being three
+  // separate unrelated icons.
+  _waterCycle: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#bae6fd"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.72);
+    ctx.fillStyle = "#0369a1"; ctx.fillRect(0, h * 0.72, w, h * 0.28);
+    // Sun warming the ocean
+    ctx.fillStyle = "rgba(250,204,21,0.9)";
+    ctx.beginPath(); ctx.arc(w * 0.16, h * 0.18, 24, 0, 7); ctx.fill();
+    ctx.strokeStyle = "rgba(250,204,21,0.5)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 6; i++) {
+      const a = (i / 6) * Math.PI * 2 + t / 1200;
+      ctx.beginPath(); ctx.moveTo(w * 0.16 + Math.cos(a) * 28, h * 0.18 + Math.sin(a) * 28); ctx.lineTo(w * 0.16 + Math.cos(a) * 36, h * 0.18 + Math.sin(a) * 36); ctx.stroke();
+    }
+    // Cloud that "fills up" as droplets arrive (condensation)
+    ctx.fillStyle = "rgba(255,255,255,0.95)";
+    ctx.beginPath(); ctx.arc(w * 0.6, h * 0.28, 26, 0, 7); ctx.arc(w * 0.7, h * 0.24, 19, 0, 7); ctx.arc(w * 0.5, h * 0.24, 19, 0, 7); ctx.fill();
+    // Evaporation: droplets rise from the ocean toward the cloud
+    const cyc1 = (t / 1800) % 1;
+    if (cyc1 < 0.55) {
+      const p1 = cyc1 / 0.55;
+      const ex = w * 0.3 + (w * 0.3) * p1, ey = h * 0.7 - (h * 0.42) * p1;
+      ctx.fillStyle = "rgba(56,189,248,0.85)";
+      ctx.beginPath(); ctx.arc(ex, ey, 4, 0, 7); ctx.fill();
+    }
+    // Precipitation: rain falls from the cloud back to the ocean
+    ctx.strokeStyle = "rgba(56,189,248,0.8)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 6; i++) {
+      const dCyc = ((t / 500) + i * 0.3) % 1;
+      const dx = w * 0.58 + i * 6;
+      const dy = h * 0.34 + dCyc * (h * 0.36);
+      ctx.beginPath(); ctx.moveTo(dx, dy); ctx.lineTo(dx - 2, dy + 8); ctx.stroke();
+    }
+    // Curved arrow tracing the full cycle path, animated dash to show flow direction
+    ctx.strokeStyle = "rgba(3,105,161,0.5)"; ctx.lineWidth = 2.5;
+    ctx.setLineDash([6, 8]); ctx.lineDashOffset = -(t / 22) % 14;
+    ctx.beginPath();
+    ctx.moveTo(w * 0.3, h * 0.7);
+    ctx.quadraticCurveTo(w * 0.35, h * 0.32, w * 0.6, h * 0.28);
+    ctx.quadraticCurveTo(w * 0.72, h * 0.5, w * 0.62, h * 0.7);
+    ctx.stroke();
+    ctx.setLineDash([]);
   },
 
   globe: function (ctx, w, h, t) {
@@ -888,7 +1148,21 @@ const VIDEO_SCENES = {
     ctx.restore();
   },
 
-  landform: function (ctx, w, h, t) {
+  // Routes to the specific terrain the page is actually about (volcano,
+  // desert, mountain, polar, grassland, forest) instead of always showing
+  // the same generic river-valley scene — mirrors the `ship` pattern above.
+  landform: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/volcano|erupt|lava|magma/.test(rt)) { VIDEO_SCENES._volcano(ctx, w, h, t); return; }
+    if (/desert|sahara|cactus|camel|sand dune|dune/.test(rt)) { VIDEO_SCENES._desert(ctx, w, h, t); return; }
+    if (/mountain|peak|summit|climb|andes|himalay|rocky mountains/.test(rt)) { VIDEO_SCENES._mountain(ctx, w, h, t); return; }
+    if (/polar|arctic|antarctic|glacier|ice cap|tundra|penguin|igloo/.test(rt)) { VIDEO_SCENES._polar(ctx, w, h, t); return; }
+    if (/grassland|prairie|savanna|plains\b/.test(rt)) { VIDEO_SCENES._grassland(ctx, w, h, t); return; }
+    if (/rainforest|jungle|forest|woodland/.test(rt)) { VIDEO_SCENES._forestBiome(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericLandform(ctx, w, h, t);
+  },
+
+  _genericLandform: function (ctx, w, h, t) {
     const sky = ctx.createLinearGradient(0, 0, 0, h);
     sky.addColorStop(0, "#fdba74"); sky.addColorStop(1, "#fef3c7");
     ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
@@ -911,6 +1185,217 @@ const VIDEO_SCENES = {
     ctx.strokeStyle = "rgba(255,255,255,0.5)"; ctx.lineWidth = 2;
     ctx.stroke();
     ctx.setLineDash([]);
+  },
+
+  // Erupting volcano: glowing lava spits from the crater, a molten river
+  // flows down the slope, and ash/smoke billows into an orange sky.
+  _volcano: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#7c2d12"); sky.addColorStop(1, "#292524");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    const baseY = h * 0.82, peakX = w * 0.5, peakY = h * 0.28;
+    ctx.fillStyle = "#44403c";
+    ctx.beginPath(); ctx.moveTo(w * 0.12, baseY); ctx.lineTo(peakX, peakY); ctx.lineTo(w * 0.88, baseY); ctx.closePath(); ctx.fill();
+    // Glowing crater mouth, pulsing
+    const glow = 0.55 + Math.sin(t / 260) * 0.35;
+    ctx.fillStyle = `rgba(251,146,60,${glow})`;
+    ctx.beginPath(); ctx.ellipse(peakX, peakY + 4, 16, 7, 0, 0, 7); ctx.fill();
+    // Lava river flowing down the slope
+    const flow = (t / 25) % 20;
+    ctx.strokeStyle = "#f97316"; ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.moveTo(peakX, peakY + 6); ctx.quadraticCurveTo(peakX - 20, h * 0.55, peakX - 10, baseY);
+    ctx.stroke();
+    ctx.setLineDash([5, 9]); ctx.lineDashOffset = -flow;
+    ctx.strokeStyle = "rgba(254,240,138,0.8)"; ctx.lineWidth = 2.5; ctx.stroke(); ctx.setLineDash([]);
+    // Erupting lava chunks arcing out
+    for (let i = 0; i < 4; i++) {
+      const cyc = (t / 700 + i * 0.27) % 1;
+      const ex = peakX + Math.sin(i * 2) * 30;
+      const ey = peakY - Math.sin(cyc * Math.PI) * 60;
+      const spread = (cyc - 0.5) * 60 * (i % 2 === 0 ? 1 : -1);
+      ctx.fillStyle = "rgba(251,191,36,0.9)";
+      ctx.beginPath(); ctx.arc(ex + spread, ey, 3.5, 0, 7); ctx.fill();
+    }
+    // Rising ash/smoke
+    ctx.fillStyle = "rgba(87,83,78,0.5)";
+    for (let i = 0; i < 10; i++) {
+      const sx = peakX + Math.sin(i * 1.7 + t / 900) * 24;
+      const sy = peakY - 10 - ((t / 18 + i * 22) % (h * 0.5));
+      ctx.beginPath(); ctx.arc(sx, sy, 10 + i * 0.8, 0, 7); ctx.fill();
+    }
+  },
+
+  // Sandy dunes under a blazing sun, a cactus in the foreground, and a
+  // camel plodding across the horizon.
+  _desert: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fb923c"); sky.addColorStop(1, "#fde68a");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(253,224,71,0.95)";
+    ctx.beginPath(); ctx.arc(w * 0.78, h * 0.2, 26, 0, 7); ctx.fill();
+    ctx.fillStyle = "#d97706";
+    ctx.beginPath(); ctx.moveTo(0, h * 0.62); ctx.quadraticCurveTo(w * 0.3, h * 0.5, w * 0.6, h * 0.64); ctx.quadraticCurveTo(w * 0.85, h * 0.72, w, h * 0.6); ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#b45309";
+    ctx.beginPath(); ctx.moveTo(0, h * 0.75); ctx.quadraticCurveTo(w * 0.4, h * 0.66, w, h * 0.8); ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath(); ctx.fill();
+    // Cactus
+    ctx.fillStyle = "#166534";
+    ctx.fillRect(w * 0.16 - 6, h * 0.55, 12, h * 0.22);
+    ctx.fillRect(w * 0.16 - 20, h * 0.6, 12, h * 0.1);
+    ctx.fillRect(w * 0.16 + 8, h * 0.63, 12, h * 0.09);
+    // Camel walking across
+    const cx = ((t / 45) % (w + 100)) - 50;
+    const legSwing = Math.sin(t / 220) * 8;
+    ctx.save(); ctx.translate(cx, h * 0.72);
+    ctx.fillStyle = "#c2703d";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 14, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(-6, -14, 10, 10, 0, 0, 7); ctx.fill(); // hump
+    ctx.beginPath(); ctx.ellipse(24, -6, 7, 9, 0, 0, 7); ctx.fill(); // neck/head
+    ctx.strokeStyle = "#c2703d"; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(-14, 10); ctx.lineTo(-14 + legSwing, 26); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(10, 10); ctx.lineTo(10 - legSwing, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Snow-capped triple peaks with drifting clouds and a tiny climber
+  // ascending a zigzag trail toward the summit.
+  _mountain: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#7dd3fc"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(255,255,255,0.9)";
+    for (let i = 0; i < 3; i++) {
+      const cx = ((t / 35 + i * 200) % (w + 120)) - 60;
+      const cy = h * (0.14 + i * 0.06);
+      ctx.beginPath(); ctx.arc(cx, cy, 16, 0, 7); ctx.arc(cx + 18, cy + 4, 12, 0, 7); ctx.arc(cx - 16, cy + 4, 12, 0, 7); ctx.fill();
+    }
+    const peaks = [
+      { x: 0.18, top: 0.32, color: "#78716c" },
+      { x: 0.5, top: 0.18, color: "#57534e" },
+      { x: 0.82, top: 0.38, color: "#78716c" }
+    ];
+    peaks.forEach(p => {
+      ctx.fillStyle = p.color;
+      ctx.beginPath(); ctx.moveTo(w * (p.x - 0.22), h * 0.85); ctx.lineTo(w * p.x, h * p.top); ctx.lineTo(w * (p.x + 0.22), h * 0.85); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = "#f8fafc";
+      ctx.beginPath(); ctx.moveTo(w * (p.x - 0.07), h * (p.top + 0.1)); ctx.lineTo(w * p.x, h * p.top); ctx.lineTo(w * (p.x + 0.07), h * (p.top + 0.1)); ctx.closePath(); ctx.fill();
+    });
+    ctx.fillStyle = "#166534"; ctx.fillRect(0, h * 0.85, w, h * 0.15);
+    // Climber ascending the middle peak on a zigzag trail
+    const climb = (Math.sin(t / 5000) + 1) / 2;
+    const climbY = h * 0.85 - climb * h * 0.4;
+    const climbX = w * 0.5 + Math.sin(climb * 10) * 14;
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath(); ctx.arc(climbX, climbY, 4, 0, 7); ctx.fill();
+    ctx.fillRect(climbX - 2, climbY + 4, 4, 8);
+  },
+
+  // Icy tundra with a shimmering aurora overhead, snowfall, and a penguin
+  // waddling across the foreground.
+  _polar: function (ctx, w, h, t) {
+    ctx.fillStyle = "#0c1929"; ctx.fillRect(0, 0, w, h);
+    // Aurora bands
+    for (let i = 0; i < 3; i++) {
+      const hue = ["rgba(74,222,128,0.28)", "rgba(56,189,248,0.22)", "rgba(167,139,250,0.22)"][i];
+      ctx.strokeStyle = hue; ctx.lineWidth = 22;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 10) {
+        const y = h * (0.16 + i * 0.07) + Math.sin((x + t / 200 + i * 80) / 40) * 18;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    ctx.fillStyle = "#e2e8f0"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    // Iceberg
+    ctx.fillStyle = "#f1f5f9";
+    ctx.beginPath(); ctx.moveTo(w * 0.62, h * 0.78); ctx.lineTo(w * 0.72, h * 0.58); ctx.lineTo(w * 0.84, h * 0.78); ctx.closePath(); ctx.fill();
+    // Falling snow
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    for (let i = 0; i < 22; i++) {
+      const sx = (i * 43 + t / 14) % w, sy = (i * 29 + t / 10) % h;
+      ctx.beginPath(); ctx.arc(sx, sy, 1.5, 0, 7); ctx.fill();
+    }
+    // Waddling penguin
+    const px = ((t / 30) % (w + 60)) - 30;
+    const waddle = Math.sin(t / 130) * 0.18;
+    ctx.save(); ctx.translate(px, h * 0.86); ctx.rotate(waddle);
+    ctx.fillStyle = "#1e293b";
+    ctx.beginPath(); ctx.ellipse(0, 0, 12, 20, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(0, 4, 7, 13, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f59e0b";
+    ctx.beginPath(); ctx.moveTo(0, -16); ctx.lineTo(6, -12); ctx.lineTo(0, -10); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // Golden tall grass swaying in the wind under an open sky, with a gazelle
+  // galloping across the savanna.
+  _grassland: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fde68a"); sky.addColorStop(1, "#fef3c7");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.6);
+    ctx.fillStyle = "rgba(253,224,71,0.95)"; ctx.beginPath(); ctx.arc(w * 0.8, h * 0.16, 24, 0, 7); ctx.fill();
+    ctx.fillStyle = "#ca8a04"; ctx.fillRect(0, h * 0.55, w, h * 0.45);
+    // Swaying grass blades
+    ctx.strokeStyle = "#a16207"; ctx.lineWidth = 3;
+    for (let i = 0; i < 26; i++) {
+      const bx = (i * 31) % w;
+      const sway = Math.sin(t / 260 + i) * 8;
+      ctx.beginPath(); ctx.moveTo(bx, h * 0.85); ctx.quadraticCurveTo(bx + sway, h * 0.72, bx + sway * 1.5, h * 0.6); ctx.stroke();
+    }
+    // Galloping gazelle silhouette
+    const gx = ((t / 40) % (w + 80)) - 40;
+    const bound = Math.abs(Math.sin(t / 180)) * 10;
+    ctx.save(); ctx.translate(gx, h * 0.72 - bound);
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.ellipse(0, 0, 18, 9, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(16, -8, 6, 7, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(-10, 8); ctx.lineTo(-14, 20); ctx.moveTo(10, 8); ctx.lineTo(16, 20); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Dense forest canopy with diagonal sunbeams filtering through the
+  // treetops, falling leaves, and a fox trotting between the trunks.
+  _forestBiome: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#166534"); sky.addColorStop(1, "#052e16");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    // Tree trunks
+    ctx.fillStyle = "#3f2d1c";
+    for (let i = 0; i < 5; i++) {
+      const tx = (w / 5) * i + 20;
+      ctx.fillRect(tx, h * 0.35, 14, h * 0.6);
+    }
+    // Canopy blobs
+    ctx.fillStyle = "#14532d";
+    for (let i = 0; i < 5; i++) {
+      const tx = (w / 5) * i + 27;
+      ctx.beginPath(); ctx.arc(tx, h * 0.3, 46, 0, 7); ctx.fill();
+    }
+    // Sunbeams
+    ctx.save(); ctx.globalAlpha = 0.16 + Math.sin(t / 900) * 0.06;
+    ctx.fillStyle = "#fef08a";
+    for (let i = 0; i < 3; i++) {
+      ctx.save(); ctx.translate(w * (0.25 + i * 0.25), 0); ctx.rotate(0.3);
+      ctx.fillRect(-14, 0, 28, h);
+      ctx.restore();
+    }
+    ctx.restore();
+    // Falling leaves
+    ctx.fillStyle = "#facc15";
+    for (let i = 0; i < 10; i++) {
+      const lx = (i * 53 + Math.sin(t / 500 + i) * 20) % w;
+      const ly = (i * 47 + t / 20) % h;
+      ctx.beginPath(); ctx.ellipse(lx, ly, 4, 6, t / 300 + i, 0, 7); ctx.fill();
+    }
+    // Trotting fox
+    const fx = ((t / 35) % (w + 60)) - 30;
+    ctx.save(); ctx.translate(fx, h * 0.86);
+    ctx.fillStyle = "#ea580c";
+    ctx.beginPath(); ctx.ellipse(0, 0, 16, 9, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(14, -6); ctx.lineTo(24, -4); ctx.lineTo(14, 2); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.arc(18, -3, 3, 0, 7); ctx.fill();
+    ctx.restore();
   },
 
   numberline: function (ctx, w, h, t, hints) {

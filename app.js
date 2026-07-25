@@ -33116,21 +33116,21 @@ Object.defineProperty(window, 'GRADE_1_CURRICULUM', {
   }
 });
 
-const shortA = ["CAT 🐱", "BAT 🦇", "RAT 🐀", "HAT 🎩", "BAG 🎒", "MAP 🗺️", "PAN 🍳", "FAN 🌀", "CAP 🧢", "VAN 🚐"];
-const shortE = ["HEN 🐔", "PEN 🖊️", "BED 🛏️", "NET 🕸️", "RED 🔴", "TEN 🔟", "LEG 🦵", "PET 🐶", "WET 💦", "MEN 👨👨"];
-const shortI = ["PIG 🐷", "WIG 🦱", "ZIP 🤐", "PIN 📌", "FIN 🐟", "BIN 🗑️", "LIP 👄", "SIT 🪑", "DIG 🕳️", "WIN 🏆"];
-const shortO = ["DOG 🐶", "LOG 🪵", "FOX 🦊", "BOX 📦", "POT 🍲", "HOT 🥵", "MOP 🧹", "TOP 🔝", "COP 👮", "HOP 🐇"];
-const shortU = ["BUG 🪱", "SUN ☀️", "CUP 🥛", "TUB 🛁", "MUG 🍺", "RUN 🏃", "NUT 🥜", "RUG 🪵", "GUM 🍬", "MUD 💩"];
+const shortA = ["CAT 🐱", "BAT 🦇", "RAT 🐀", "HAT 🎩", "BAG 🎒", "MAP 🗺️", "PAN 🍳", "FAN 🌀", "CAP 🧢", "VAN 🚐", "JAM 🍯", "MAN 👨", "CAN 🥫", "DAD 👨", "HAM 🍖", "LAP 🧎", "MAT 🧘", "NAP 😴", "RAG 🧻", "TAG 🏷️"];
+const shortE = ["HEN 🐔", "PEN 🖊️", "BED 🛏️", "NET 🥅", "RED 🔴", "TEN 🔟", "LEG 🦵", "PET 🐶", "WET 💦", "MEN 👨‍👨‍👦", "WEB 🕸️", "JET ✈️", "VET 👩‍⚕️", "GEM 💎", "PEG 📌", "BEG 🙏", "LED 💡", "BELL 🔔", "SELL 💰", "HELP 🆘"];
+const shortI = ["PIG 🐷", "WIG 🦱", "ZIP 🤐", "PIN 📌", "FIN 🐟", "BIN 🗑️", "LIP 👄", "SIT 🪑", "DIG 🕳️", "WIN 🏆", "KID 🧒", "LID 🫙", "RIB 🍖", "RIM ⭕", "HIM 👦", "KIT 🧰", "MIX 🎛️", "FIX 🔧", "HIT 🏏", "TIP 💡"];
+const shortO = ["DOG 🐶", "LOG 🪵", "FOX 🦊", "BOX 📦", "POT 🍲", "HOT 🥵", "MOP 🧹", "TOP 🔝", "COP 👮", "HOP 🐇", "JOG 🏃", "ROT 🍂", "COT 🛏️", "DOT 🔴", "NOT ❌", "POD 🌱", "ROB 🥷", "SOB 😢", "JOB 💼", "MOB 👥"];
+const shortU = ["BUG 🪱", "SUN ☀️", "CUP 🥛", "TUB 🛁", "MUG 🍺", "RUN 🏃", "NUT 🥜", "RUG 🪵", "GUM 🍬", "MUD 💩", "BUS 🚌", "BUN 🥯", "FUN 🎉", "HUG 🤗", "JUG 🍶", "CUT ✂️", "HUT 🛖", "PUP 🐶", "SUB 🥪", "TUG 🪢"];
 
-const digraphSH = ["SHIP 🚢", "FISH 🐟", "DISH 🍽️", "SHOE 👟", "SHELL 🐚", "SHARK 🦈", "BUSH 🌳", "SHOP 🏪"];
-const digraphCH = ["CHICK 🐥", "CHIP 🍟", "CHIN 🦲", "CHAIR 🪑", "CHEST 📦", "CHOP 🪓", "RICH 💰", "MUCH ➕"];
-const digraphTH = ["THIN 🪡", "PATH 🛣️", "BATH 🛁", "MOTH 🦋", "THREE 3️⃣", "THANK 🙏", "THUMB 👍", "WITH 🤝"];
-const digraphWH = ["WHALE 🐋", "WHIP 🌀", "WHEEL 🎡", "WHITE ⚪", "WHEAT 🌾", "WHISPER 🤫"];
+const digraphSH = ["SHIP 🚢", "FISH 🐟", "DISH 🍽️", "SHOE 👟", "SHELL 🐚", "SHARK 🦈", "BUSH 🌳", "SHOP 🏪", "WISH ⭐", "CASH 💵", "DASH 🏃", "MASH 🥔", "TRASH 🗑️", "SPLASH 💦", "FLASH ⚡", "CRASH 💥", "BRUSH 🖌️", "BLUSH 😊", "SHUT 🚪", "SHIRT 👕"];
+const digraphCH = ["CHICK 🐥", "CHIP 🍟", "CHIN 🦲", "CHAIR 🪑", "CHEST 📦", "CHOP 🪓", "RICH 💰", "MUCH ➕", "CHEESE 🧀", "CHERRY 🍒", "CHURCH ⛪", "BENCH 🪑", "LUNCH 🍱", "PUNCH 🥊", "BRANCH 🌿", "MARCH 📅", "TORCH 🔦", "PORCH 🏡", "CHEEK 😊", "CHEF 👨‍🍳"];
+const digraphTH = ["THIN 🪡", "PATH 🛣️", "BATH 🛁", "MOTH 🦋", "THREE 3️⃣", "THANK 🙏", "THUMB 👍", "WITH 🤝", "THIS 👉", "THAT 👉", "THEM 👥", "THEN ⏰", "TOOTH 🦷", "CLOTH 🧵", "BROTH 🍲", "EARTH 🌍", "MOUTH 👄", "NORTH 🧭", "SOUTH 🧭", "TEETH 🦷"];
+const digraphWH = ["WHALE 🐋", "WHIP 🌀", "WHEEL 🎡", "WHITE ⚪", "WHEAT 🌾", "WHISPER 🤫", "WHY ❓", "WHAT ❔", "WHEN ⏰", "WHERE 📍", "WHICH 🤔", "WHIRL 🌀", "WHISK 🥄", "WHISKER 🐱", "WHISTLE 📯", "WHIZ 💨", "WHACK 🔨", "WHIFF 👃", "WHINE 😢", "WHILE ⏳"];
 
-const blendCL = ["CLOCK ⏰", "CLIP 📎", "CLAY 🧱", "CLAP 👏", "CLOUD ☁️", "CLAW 🐈"];
-const blendFL = ["FLAG 🚩", "FLY 🪰", "FLAT 📏", "FLIP 🐬", "FLOW 🌊", "FLAP 🕊️"];
-const blendST = ["STAR ⭐", "STOP 🛑", "STEM 🌱", "STEP 🪜", "NEST 🪹", "VEST 🦺"];
-const blendSP = ["SPIN 🌀", "SPOT 🎯", "SPIT 💦", "SPELL 🪄", "SPOON 🥄", "SPIDER 🕷️"];
+const blendCL = ["CLOCK ⏰", "CLIP 📎", "CLAY 🧱", "CLAP 👏", "CLOUD ☁️", "CLAW 🐈", "CLASS 🏫", "CLEAN 🧼", "CLIMB 🧗", "CLOSE 🚪", "CLUB 🏏", "CLUE 🔍", "CLAMP 🔧", "CLASP 📿", "CLASH 💥", "CLING 🤝", "CLINK 🥂", "CLOG 👞", "CLUMP 🌳", "CLOWN 🤡"];
+const blendFL = ["FLAG 🚩", "FLY 🪰", "FLAT 📏", "FLIP 🐬", "FLOW 🌊", "FLAP 🕊️", "FLAME 🔥", "FLASH ⚡", "FLOOR 🏠", "FLOUR 🌾", "FLOWER 🌸", "FLUTE 🎶", "FLOAT 🛟", "FLOCK 🐑", "FLOSS 🧵", "FLUFF ☁️", "FLICK 👆", "FLING 🎯", "FLINT 🔥", "FLASK 🧪"];
+const blendST = ["STAR ⭐", "STOP 🛑", "STEM 🌱", "STEP 🪜", "NEST 🪹", "VEST 🦺", "STICK 🥢", "STING 🐝", "STORE 🏪", "STORM ⛈️", "STORY 📖", "STOVE 🔥", "STRAW 🥤", "STREAM 🏞️", "STREET 🛣️", "STRONG 💪", "STUMP 🪵", "STYLE 💇", "STAMP 📮", "STAND 🧍"];
+const blendSP = ["SPIN 🌀", "SPOT 🎯", "SPIT 💦", "SPELL 🪄", "SPOON 🥄", "SPIDER 🕷️", "SPARK ✨", "SPACE 🚀", "SPADE ♠️", "SPARE 🔧", "SPARROW 🐦", "SPEAK 🗣️", "SPEED 💨", "SPEND 💵", "SPICE 🌶️", "SPIKE 📈", "SPLIT ➗", "SPOKE 🚲", "SPONGE 🧽", "SPORT ⚽"];
 
 function generateVowelSoundQuestion(vowelChar, targetList, otherLists, index) {
   const idx = (index !== undefined && index !== null) ? index : Math.floor(Math.random() * 100);
@@ -34648,7 +34648,17 @@ function generateElaQuestion(lessonId, index) {
         { long: "ROBE 🥋", short: "ROB 🥷", w1: "RED 🔴", w2: "RUN 🏃", emoji: "🥋" },
         { long: "TUBE 🧪", short: "TUB 🛁", w1: "TEN 🔟", w2: "TAG 🏷️", emoji: "🧪" },
         { long: "CUBE 🧊", short: "CUB 🐻", w1: "CUP 🥛", w2: "CAP 🧢", emoji: "🧊" },
-        { long: "GATE 🚪", short: "GAP 🕳️", w1: "GOT 🪙", w2: "GET 🎁", emoji: "🚪" }
+        { long: "GATE 🚪", short: "GAP 🕳️", w1: "GOT 🪙", w2: "GET 🎁", emoji: "🚪" },
+        { long: "RIDE 🚲", short: "RID 🧹", w1: "SIT 🪑", w2: "SIP 🥤", emoji: "🚲" },
+        { long: "DIVE 🤿", short: "DIG 🕳️", w1: "DIM 💡", w2: "DIP 🍟", emoji: "🤿" },
+        { long: "HOPE 🙏", short: "HOP 🐇", w1: "HOT 🥵", w2: "HOG 🐖", emoji: "🙏" },
+        { long: "RIPE 🍑", short: "RIB 🍖", w1: "RIM ⭕", w2: "RIG 🚛", emoji: "🍑" },
+        { long: "LIME 🍋", short: "LIP 👄", w1: "LID 🫙", w2: "LIT 💡", emoji: "🍋" },
+        { long: "TIME ⏰", short: "TIN 🥫", w1: "TIP 💡", w2: "TICK ⏱️", emoji: "⏰" },
+        { long: "NOTE 🎵", short: "NOT ❌", w1: "NOD 😴", w2: "NUT 🥜", emoji: "🎵" },
+        { long: "MADE 🎁", short: "MAD 😠", w1: "MAP 🗺️", w2: "MAT 🧘", emoji: "🎁" },
+        { long: "LATE ⏰", short: "LAP 🧎", w1: "LAB 🧪", w2: "LAD 👦", emoji: "⏰" },
+        { long: "WAVE 🌊", short: "WAG 🐕", w1: "WAX 🕯️", w2: "VAN 🚐", emoji: "🌊" }
       ];
       const pair = silentEPairs[idx % silentEPairs.length];
       questionText = "Which word has a Silent 'e' that makes the vowel long?";
@@ -34666,7 +34676,17 @@ function generateElaQuestion(lessonId, index) {
         { word: "LEAF", options: ["LEAF", "LIFE", "LEFT", "LOAF"], emoji: "🍃" },
         { word: "TOAD", options: ["TOAD", "TOD", "TODAY", "TOLD"], emoji: "🐸" },
         { word: "GOAT", options: ["GOAT", "GOT", "GATE", "GET"], emoji: "🐐" },
-        { word: "SOAP", options: ["SOAP", "SOUP", "SIP", "STEP"], emoji: "🧼" }
+        { word: "SOAP", options: ["SOAP", "SOUP", "SIP", "STEP"], emoji: "🧼" },
+        { word: "PIE", options: ["PIE", "PIN", "PAY", "PEA"], emoji: "🥧" },
+        { word: "SEED", options: ["SEED", "SEND", "SAID", "SEAT"], emoji: "🌱" },
+        { word: "FEET", options: ["FEET", "FELT", "FIT", "FAT"], emoji: "🦶" },
+        { word: "TEAM", options: ["TEAM", "TEN", "TAME", "TIME"], emoji: "👥" },
+        { word: "BEAK", options: ["BEAK", "BACK", "BIKE", "BEEP"], emoji: "🦅" },
+        { word: "MAIL", options: ["MAIL", "MALL", "MEAL", "MILL"], emoji: "📧" },
+        { word: "NAIL", options: ["NAIL", "NET", "NUT", "NOT"], emoji: "💅" },
+        { word: "SAIL", options: ["SAIL", "SELL", "SOIL", "SILL"], emoji: "⛵" },
+        { word: "TAIL", options: ["TAIL", "TALL", "TELL", "TILL"], emoji: "🐕" },
+        { word: "PEAK", options: ["PEAK", "PICK", "PACK", "PECK"], emoji: "🏔️" }
       ];
       const offset = lessonId === 16 ? 0 : lessonId === 17 ? 3 : 7;
       const pair = vtPairs[(idx + offset) % vtPairs.length];
@@ -34685,7 +34705,17 @@ function generateElaQuestion(lessonId, index) {
         { word: "TRAY", options: ["TRAY", "PLAY", "DAY", "GRAY"], emoji: "📥" },
         { word: "HAY", options: ["HAY", "BAY", "LAY", "SAY"], emoji: "🌾" },
         { word: "BAY", options: ["BAY", "HAY", "WAY", "DAY"], emoji: "🌅" },
-        { word: "MAY", options: ["MAY", "SAY", "PAY", "WAY"], emoji: "📅" }
+        { word: "MAY", options: ["MAY", "SAY", "PAY", "WAY"], emoji: "📅" },
+        { word: "SAY", options: ["SAY", "SAD", "SIT", "SO"], emoji: "🗣️" },
+        { word: "STAY", options: ["STAY", "STY", "STEP", "STOP"], emoji: "🛑" },
+        { word: "RAY", options: ["RAY", "ROW", "RAW", "RYE"], emoji: "☀️" },
+        { word: "JAY", options: ["JAY", "JOY", "JOG", "JAB"], emoji: "🐦" },
+        { word: "LAY", options: ["LAY", "LOW", "LIE", "LAP"], emoji: "🥚" },
+        { word: "SWAY", options: ["SWAY", "SWIM", "SWAP", "SWAN"], emoji: "🌳" },
+        { word: "AWAY", options: ["AWAY", "AWAKE", "ALWAYS", "ABOUT"], emoji: "🚗" },
+        { word: "SPRAY", options: ["SPRAY", "SPRING", "SPRINT", "SPROUT"], emoji: "💦" },
+        { word: "FRAY", options: ["FRAY", "FREE", "FROG", "FRY"], emoji: "🧵" },
+        { word: "YAY", options: ["YAY", "YES", "YAK", "YARD"], emoji: "🎉" }
       ];
       const pair = rhymeSay[idx % rhymeSay.length];
       questionText = `Which word rhyming with 'say' matches this: ${pair.emoji}?`;
@@ -34703,7 +34733,17 @@ function generateElaQuestion(lessonId, index) {
         { word: "DARK 🌑", wrong: ["DIRT 🪱", "DECK 🚢", "DOOR 🚪"], emoji: "🌑" },
         { word: "FARM 👩‍🌾", wrong: ["FORM 📝", "FIRM 🏢", "FOAM 🫧"], emoji: "👩‍🌾" },
         { word: "HART 🦌", wrong: ["HURT 🤕", "HEART ❤️", "HAT 🎩"], emoji: "🦌" },
-        { word: "MARK 🎯", wrong: ["MORE ➕", "MAKE 🛠️", "MASK 😷"], emoji: "🎯" }
+        { word: "MARK 🎯", wrong: ["MORE ➕", "MAKE 🛠️", "MASK 😷"], emoji: "🎯" },
+        { word: "CAR 🚗", wrong: ["CORE 🎯", "CURL 🌀", "COO 🐦"], emoji: "🚗" },
+        { word: "JAR 🫙", wrong: ["JOG 🏃", "JAW 😮", "JOB 💼"], emoji: "🫙" },
+        { word: "SCARF 🧣", wrong: ["SCORE 🥅", "SCARE 👻", "SCOOP 🍨"], emoji: "🧣" },
+        { word: "CHART 📊", wrong: ["CHIRP 🐦", "CHORE 🧹", "CHAT 💬"], emoji: "📊" },
+        { word: "START 🏁", wrong: ["STORE 🏪", "STIR 🥄", "STORM ⛈️"], emoji: "🏁" },
+        { word: "SMART 🧠", wrong: ["SMOKE 💨", "SMELL 👃", "SMILE 😊"], emoji: "🧠" },
+        { word: "ARM 💪", wrong: ["AIM 🎯", "ARC 🌈", "EAR 👂"], emoji: "💪" },
+        { word: "ART 🎨", wrong: ["EAT 🍽️", "ANT 🐜", "AIR 💨"], emoji: "🎨" },
+        { word: "BARK 🐕", wrong: ["BIRD 🐦", "BORE 😴", "BACK 🔙"], emoji: "🐕" },
+        { word: "YARN 🧶", wrong: ["YELL 🗣️", "YEAR 📅", "YAWN 🥱"], emoji: "🧶" }
       ];
       const pair = arWords[idx % arWords.length];
       questionText = "Which word has an 'ar' sound like in 'car'?";
@@ -34714,12 +34754,12 @@ function generateElaQuestion(lessonId, index) {
   } else if (unit === 2) {
     if (lessonId <= 26) {
       const sightWordGroups = {
-        21: ["the", "of", "and", "a"],
-        22: ["to", "in", "is", "you"],
-        23: ["that", "it", "he", "was"],
-        24: ["for", "on", "are", "as"],
-        25: ["with", "his", "they", "I"],
-        26: ["at", "be", "this", "have"]
+        21: ["the", "a", "an", "I", "you", "he", "she", "it", "we", "they", "is", "am", "are", "was", "were", "be", "to", "of", "in", "on"],
+        22: ["go", "come", "run", "jump", "play", "look", "see", "said", "make", "help", "want", "like", "have", "do", "did", "get", "put", "ride", "walk", "ask"],
+        23: ["where", "what", "who", "why", "how", "here", "there", "up", "down", "out", "into", "over", "under", "away", "back", "off", "around", "near", "far", "about"],
+        24: ["one", "two", "three", "four", "five", "red", "blue", "yellow", "green", "black", "brown", "white", "big", "little", "funny", "pretty", "good", "new", "old", "all"],
+        25: ["and", "but", "or", "so", "then", "when", "now", "soon", "too", "very", "just", "not", "no", "yes", "please", "thank", "well", "must", "may", "could"],
+        26: ["for", "at", "as", "by", "with", "from", "my", "me", "us", "our", "your", "this", "that", "these", "those", "some", "any", "every", "each", "both"]
       };
       const words = sightWordGroups[lessonId];
       const target = words[idx % words.length];
@@ -35734,23 +35774,70 @@ function getQuestionsForLesson(subject, lessonId) {
     // SPECIAL_TEMPLATES system, which is not aware of the actual specific lesson topic.
     const overrideList = getCuratedQuizOverrideList(subject, grade, lessonId);
     if (overrideList && overrideList.length) {
-      // Practice expects 15 questions (5 per sub-lesson x 3). Cycle through the curated
-      // set (varying option order per slot) rather than repeating the exact same object.
-      const list = [];
-      for (let i = 0; i < 15; i++) {
-        const base = overrideList[i % overrideList.length];
+      // Return only the real, unique hand-written questions for this topic
+      // (typically 4). This used to be padded out to a fake list of 15 by
+      // cycling through the same few questions with reshuffled answer order,
+      // which meant students saw literal repeat questions (and the lesson
+      // video/text repeated the same explanation 3-4x) within a single
+      // sitting. Better to show fewer, all-unique questions than to disguise
+      // duplicates as new ones.
+      const combined = overrideList.map((base, i) => {
         let opts = [...base.options];
         const seed = lessonId * 13 + i * 7;
         opts = opts.sort(() => ((seed * 7 + 3) % 10 - 5) / 10);
-        list.push({
+        return {
           questionText: base.questionText,
           correctAnswer: base.correctAnswer,
           options: opts,
           visualContent: base.visualContent || "<div style=\"font-size: 48px;\">📖</div>",
           hint: base.hint || base.explanation || ""
+        };
+      });
+      // Grades 2-5 also have an extra hand-generated, page-referencing
+      // question sitting in GRADE_2_5_QUESTIONS (added by an earlier content
+      // pass) that this lookup was bypassing entirely. Fold in any of those
+      // whose question text isn't already covered, so lessons that have this
+      // bonus content get 5 unique questions instead of just 4.
+      const usedTexts = new Set(combined.map(q => q.questionText));
+      if (grade > 1 && typeof GRADE_2_5_QUESTIONS !== 'undefined' &&
+          GRADE_2_5_QUESTIONS[subject] && GRADE_2_5_QUESTIONS[subject][grade] &&
+          GRADE_2_5_QUESTIONS[subject][grade][lessonId]) {
+        const bonusList = GRADE_2_5_QUESTIONS[subject][grade][lessonId];
+        bonusList.forEach(bq => {
+          if (bq && bq.questionText && !usedTexts.has(bq.questionText)) {
+            combined.push({
+              questionText: bq.questionText,
+              correctAnswer: bq.correctAnswer,
+              options: bq.options,
+              visualContent: bq.visualContent || "<div style=\"font-size: 48px;\">📖</div>",
+              hint: bq.hint || bq.explanation || ""
+            });
+            usedTexts.add(bq.questionText);
+          }
         });
       }
-      return list;
+      // The curated override table only has ~4 hand-written questions per
+      // topic, well short of the 10-question minimum. Rather than inventing
+      // new trivia (risking factual accuracy), fold in the 15 already-written,
+      // topic-appropriate questions from SPECIAL_TEMPLATES — the same
+      // keyword-bucketed content system used for lessons that have no curated
+      // override at all (see getSpecialLessonData below). This content was
+      // already written and reviewed as part of this project; it just wasn't
+      // being surfaced because the curated override was always preferred and
+      // returned early. Deduping against what's already in the list avoids
+      // showing the same question twice.
+      const templateData = getSpecialLessonData(subject, grade, lessonId);
+      if (templateData) {
+        templateData.sublessons.forEach(sub => {
+          sub.questions.forEach(q => {
+            if (q && q.questionText && !usedTexts.has(q.questionText)) {
+              combined.push(q);
+              usedTexts.add(q.questionText);
+            }
+          });
+        });
+      }
+      return combined;
     }
 
     const lessonData = getSpecialLessonData(subject, grade, lessonId);
@@ -35766,26 +35853,44 @@ function getQuestionsForLesson(subject, lessonId) {
   const dynQ = getGradeSpecificDynamicQuestion(subject, grade, lessonId);
   if (dynQ) {
     const list = [];
-    for (let i = 0; i < 10; i++) {
+    const seenTexts = new Set();
+    for (let i = 0; i < 20; i++) {
       const q = getGradeSpecificDynamicQuestion(subject, grade, lessonId, i);
-      if (q) list.push(q);
+      if (q && q.questionText && !seenTexts.has(q.questionText)) {
+        list.push(q);
+        seenTexts.add(q.questionText);
+      }
     }
     if (list.length > 0) return list;
   }
 
   if (subject === 'ela') {
     const list = [];
-    for (let i = 0; i < 10; i++) {
-      list.push(generateElaQuestion(lessonId, i));
+    const seenTexts = new Set();
+    for (let i = 0; i < 20; i++) {
+      const q = generateElaQuestion(lessonId, i);
+      if (q && q.questionText && !seenTexts.has(q.questionText)) {
+        list.push(q);
+        seenTexts.add(q.questionText);
+      } else if (!q || !q.questionText) {
+        list.push(q);
+      }
     }
     return list;
   }
-  
+
   if (subject === 'math') {
     if (lessonId === 5) {
       const list = [];
-      for (let i = 0; i < 10; i++) {
-        list.push(generateMathLesson5Question(i));
+      const seenTexts = new Set();
+      for (let i = 0; i < 20; i++) {
+        const q = generateMathLesson5Question(i);
+        if (q && q.questionText && !seenTexts.has(q.questionText)) {
+          list.push(q);
+          seenTexts.add(q.questionText);
+        } else if (!q || !q.questionText) {
+          list.push(q);
+        }
       }
       return list;
     }
@@ -35795,19 +35900,400 @@ function getQuestionsForLesson(subject, lessonId) {
 
 function getQuestionsForSublesson(subject, lessonId, sublesson) {
   const qList = getQuestionsForLesson(subject, lessonId);
-  const isSpecial = (subject === 'science' || subject === 'history' || subject === 'geography' || subject === 'art');
-  if (!isSpecial) {
-    return qList;
-  }
-  let sub = sublesson || 1;
-  if (sub === 1) {
-    return qList.slice(0, 5);
-  } else if (sub === 2) {
-    return qList.slice(5, 10);
-  } else {
-    return qList.slice(10, 15);
-  }
+  // getQuestionsForLesson now merges curated + bonus + SPECIAL_TEMPLATES
+  // content, so most lessons have a real 15-20 question bank (previously
+  // this used to slice a padded, mostly-duplicate 15-item list, or later
+  // just hand back the same small list for every sub-lesson). Split the
+  // real bank evenly across the lesson's 3 sub-lessons so each one shows
+  // fresh, non-overlapping questions instead of repeating the same set
+  // three times over.
+  const sub = sublesson || 1;
+  const per = Math.ceil(qList.length / 3) || 1;
+  const startIdx = (sub - 1) * per;
+  const slice = qList.slice(startIdx, startIdx + per);
+  return slice.length ? slice : qList;
 }
+
+// ── Grade 1 Math phrasing-template pools ──────────────────────────────────
+// Each lesson's underlying skill (addition, comparing numbers, telling time,
+// etc.) previously always rendered as the exact same sentence shape, just
+// with different random numbers plugged in — which reads as "the same
+// question over and over" even though the numbers differ. Each pool below
+// has at least 20 genuinely different phrasings/word-problem framings;
+// generateMathQuestion() below picks among them using the practice index so
+// a 20-question session shows 20 differently-worded questions, not one
+// sentence repeated 20 times.
+const MQ_NAMES = ["Sam", "Maya", "Leo", "Ana", "Ben", "Zoe", "Jack", "Mia", "Omar", "Ruby", "Eli", "Nora", "Kai", "Ivy", "Theo", "Lily", "Max", "Ella", "Finn", "Sofia"];
+const MQ_OBJECTS = ["apples", "stickers", "stars", "blocks", "marbles", "balloons", "cookies", "crayons", "seashells", "toy cars", "pencils", "grapes", "buttons", "beads", "leaves", "coins", "stamps", "cupcakes", "flowers", "fish"];
+function mqPick(arr, idx, offset) { return arr[(idx + (offset || 0)) % arr.length]; }
+
+const MQ_ADD_TEMPLATES = [
+  (a, b, i) => `What is ${a} + ${b}?`,
+  (a, b, i) => `Add ${a} and ${b}. What is the sum?`,
+  (a, b, i) => `${a} plus ${b} equals what number?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i)} has ${a} ${mqPick(MQ_OBJECTS, i)}. A friend gives ${mqPick(MQ_NAMES, i, 5)} ${b} more. How many ${mqPick(MQ_OBJECTS, i)} are there now?`,
+  (a, b, i) => `Combine ${a} and ${b}. What do you get?`,
+  (a, b, i) => `Find the total: ${a} + ${b}`,
+  (a, b, i) => `${a} + ${b} = ?`,
+  (a, b, i) => `There are ${a} ${mqPick(MQ_OBJECTS, i, 3)} on the table. ${b} more get added. How many are there now?`,
+  (a, b, i) => `What is the sum of ${a} and ${b}?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i, 2)} counted ${a} ${mqPick(MQ_OBJECTS, i, 6)}, then found ${b} more. How many in total?`,
+  (a, b, i) => `Add these two numbers together: ${a} and ${b}.`,
+  (a, b, i) => `A basket has ${a} ${mqPick(MQ_OBJECTS, i, 9)}. You put in ${b} more. How many are in the basket now?`,
+  (a, b, i) => `${a} ${mqPick(MQ_OBJECTS, i, 1)} plus ${b} more ${mqPick(MQ_OBJECTS, i, 1)} equals how many?`,
+  (a, b, i) => `What do you get when you put ${a} and ${b} together?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i, 4)} had ${a} ${mqPick(MQ_OBJECTS, i, 7)}. They got ${b} more as a gift. How many do they have now?`,
+  (a, b, i) => `Solve: ${a} + ${b}`,
+  (a, b, i) => `How many is ${a} plus ${b}?`,
+  (a, b, i) => `If you start with ${a} and add ${b} more, what number do you land on?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i, 8)} sees ${a} ${mqPick(MQ_OBJECTS, i, 12)}, then ${b} more join them. How many are there altogether?`,
+  (a, b, i) => `What number comes from adding ${a} and ${b}?`
+];
+
+const MQ_SUB_TEMPLATES = [
+  (a, b, i) => `What is ${a} - ${b}?`,
+  (a, b, i) => `Subtract ${b} from ${a}. What is left?`,
+  (a, b, i) => `${a} minus ${b} equals what number?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i)} has ${a} ${mqPick(MQ_OBJECTS, i)}. They give away ${b}. How many ${mqPick(MQ_OBJECTS, i)} are left?`,
+  (a, b, i) => `Take ${b} away from ${a}. What do you get?`,
+  (a, b, i) => `Find the difference: ${a} - ${b}`,
+  (a, b, i) => `${a} - ${b} = ?`,
+  (a, b, i) => `There are ${a} ${mqPick(MQ_OBJECTS, i, 3)} in a bowl. ${b} get eaten. How many are left?`,
+  (a, b, i) => `What is the difference between ${a} and ${b}?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i, 2)} had ${a} ${mqPick(MQ_OBJECTS, i, 6)} and gave ${b} to a friend. How many are left?`,
+  (a, b, i) => `Subtract these two numbers: ${a} take away ${b}.`,
+  (a, b, i) => `A jar has ${a} ${mqPick(MQ_OBJECTS, i, 9)}. You remove ${b}. How many remain in the jar?`,
+  (a, b, i) => `${a} ${mqPick(MQ_OBJECTS, i, 1)} minus ${b} ${mqPick(MQ_OBJECTS, i, 1)} leaves how many?`,
+  (a, b, i) => `What do you get when you take ${b} away from ${a}?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i, 4)} had ${a} ${mqPick(MQ_OBJECTS, i, 7)} but lost ${b}. How many do they have now?`,
+  (a, b, i) => `Solve: ${a} - ${b}`,
+  (a, b, i) => `How many is ${a} minus ${b}?`,
+  (a, b, i) => `If you start with ${a} and take away ${b}, what number is left?`,
+  (a, b, i) => `${mqPick(MQ_NAMES, i, 8)} sees ${a} ${mqPick(MQ_OBJECTS, i, 12)}, then ${b} fly away. How many are left?`,
+  (a, b, i) => `What number is left after subtracting ${b} from ${a}?`
+];
+
+const MQ_SPELL_TEMPLATES = [
+  (n, i) => `Select the word spelling for "${n}"`,
+  (n, i) => `Which word correctly spells the number ${n}?`,
+  (n, i) => `Find the spelling that matches the number ${n}.`,
+  (n, i) => `How do you spell the number ${n}?`,
+  (n, i) => `Choose the correct word for ${n}.`,
+  (n, i) => `Which of these words means the number ${n}?`,
+  (n, i) => `Pick the word that spells out ${n}.`,
+  (n, i) => `What is the word form of ${n}?`,
+  (n, i) => `Which spelling matches ${n} objects?`,
+  (n, i) => `Tap the word that spells "${n}".`,
+  (n, i) => `Which word says the number ${n} out loud?`,
+  (n, i) => `Find the written word for the number ${n}.`,
+  (n, i) => `Select the correct number word for ${n}.`,
+  (n, i) => `Which choice spells the number ${n} correctly?`,
+  (n, i) => `Match the number ${n} to its word.`,
+  (n, i) => `What word do we use to write ${n}?`,
+  (n, i) => `Choose the word that names the number ${n}.`,
+  (n, i) => `Which word would you read as "${n}"?`,
+  (n, i) => `Identify the correct spelling for ${n}.`,
+  (n, i) => `Pick the word form that matches ${n}.`
+];
+
+const MQ_COUNT_TEMPLATES = [
+  (i) => `How many icons are shown below?`,
+  (i) => `Count the icons. How many are there?`,
+  (i) => `Look at the picture. How many objects do you see?`,
+  (i) => `Count them up! What is the total?`,
+  (i) => `How many items are in the group below?`,
+  (i) => `Take a look and count. How many total?`,
+  (i) => `What number matches how many you see?`,
+  (i) => `Count carefully. How many are shown?`,
+  (i) => `How many are there altogether?`,
+  (i) => `Tally up the icons. What is the count?`,
+  (i) => `How many objects can you count below?`,
+  (i) => `Count one by one. What number do you reach?`,
+  (i) => `What is the total number shown?`,
+  (i) => `How many pictures are in this set?`,
+  (i) => `Count the group. How many in total?`,
+  (i) => `How many do you count in the picture?`,
+  (i) => `What number of items is shown here?`,
+  (i) => `Count and choose the matching number.`,
+  (i) => `How many total objects appear below?`,
+  (i) => `Look closely and count. What's the number?`
+];
+
+const MQ_NUMWORD_TEMPLATES = [
+  (w, i) => `Which number spells "${w}"?`,
+  (w, i) => `What number does the word "${w}" represent?`,
+  (w, i) => `Find the numeral that matches "${w}".`,
+  (w, i) => `Which digit means "${w}"?`,
+  (w, i) => `Select the number for the word "${w}".`,
+  (w, i) => `"${w}" is another way to say which number?`,
+  (w, i) => `Match the word "${w}" to its number.`,
+  (w, i) => `Which number is written as "${w}"?`,
+  (w, i) => `Choose the numeral for "${w}".`,
+  (w, i) => `Pick the number that "${w}" spells out.`,
+  (w, i) => `Which number would you write for "${w}"?`,
+  (w, i) => `Identify the number that matches "${w}".`,
+  (w, i) => `What digit stands for "${w}"?`,
+  (w, i) => `Find the correct number for "${w}".`,
+  (w, i) => `Which choice is the numeral form of "${w}"?`,
+  (w, i) => `Select the number that means "${w}".`,
+  (w, i) => `"${w}" written as a numeral is which number?`,
+  (w, i) => `Tap the number that matches the word "${w}".`,
+  (w, i) => `Which number is the same as "${w}"?`,
+  (w, i) => `Choose the digit that spells "${w}".`
+];
+
+const MQ_COMPARE_TEMPLATES = [
+  (i) => `Which comparison is true?`,
+  (i) => `Choose the correct comparison.`,
+  (i) => `Which statement compares the two numbers correctly?`,
+  (i) => `Pick the true comparison below.`,
+  (i) => `Which symbol correctly compares these numbers?`,
+  (i) => `Select the comparison that is correct.`,
+  (i) => `Which of these comparisons makes sense?`,
+  (i) => `Find the true number comparison.`,
+  (i) => `Which comparison correctly shows the relationship?`,
+  (i) => `Which one is the right way to compare them?`,
+  (i) => `Choose the accurate comparison.`,
+  (i) => `Which comparison statement is correct?`,
+  (i) => `Pick the option that compares them correctly.`,
+  (i) => `Which is the correct greater/less/equal statement?`,
+  (i) => `Select the true relationship between the numbers.`,
+  (i) => `Which comparison matches the two numbers?`,
+  (i) => `Find the correct way to compare these numbers.`,
+  (i) => `Which statement is accurate?`,
+  (i) => `Choose the comparison that is true.`,
+  (i) => `Which of these correctly compares the numbers?`
+];
+
+const MQ_SEQUENCE_TEMPLATES = [
+  (n1, n3, i) => `Fill in the missing number: ${n1}, [ ? ], ${n3}`,
+  (n1, n3, i) => `What number goes between ${n1} and ${n3}?`,
+  (n1, n3, i) => `Complete the sequence: ${n1}, ___, ${n3}`,
+  (n1, n3, i) => `Which number is missing in this pattern: ${n1}, ?, ${n3}?`,
+  (n1, n3, i) => `Find the number that comes after ${n1} and before ${n3}.`,
+  (n1, n3, i) => `What belongs in the blank? ${n1}, ___, ${n3}`,
+  (n1, n3, i) => `Continue the counting pattern: ${n1}, ?, ${n3}`,
+  (n1, n3, i) => `Which number fits between ${n1} and ${n3}?`,
+  (n1, n3, i) => `Fill in the blank to complete the count: ${n1}, ___, ${n3}`,
+  (n1, n3, i) => `What is the missing number here: ${n1}, [ ? ], ${n3}?`,
+  (n1, n3, i) => `Solve the pattern: ${n1}, ?, ${n3}`,
+  (n1, n3, i) => `Which number keeps this sequence counting in order: ${n1}, ___, ${n3}?`,
+  (n1, n3, i) => `What number should replace the question mark? ${n1}, ?, ${n3}`,
+  (n1, n3, i) => `Count in order and find the missing number: ${n1}, ___, ${n3}`,
+  (n1, n3, i) => `Which number makes this sequence correct: ${n1}, ?, ${n3}?`,
+  (n1, n3, i) => `Fill in the gap: ${n1}, [ ? ], ${n3}`,
+  (n1, n3, i) => `What comes right after ${n1} and right before ${n3}?`,
+  (n1, n3, i) => `Complete the number pattern: ${n1} → ? → ${n3}`,
+  (n1, n3, i) => `Which number is missing from this count: ${n1}, ___, ${n3}?`,
+  (n1, n3, i) => `Find the number between ${n1} and ${n3} in the counting order.`
+];
+
+const MQ_PLACEVALUE_TEMPLATES = [
+  (t, o, i) => `What number is represented by ${t} tens and ${o} ones?`,
+  (t, o, i) => `${t} tens and ${o} ones make which number?`,
+  (t, o, i) => `Which number has ${t} tens and ${o} ones?`,
+  (t, o, i) => `Combine ${t} tens and ${o} ones. What number do you get?`,
+  (t, o, i) => `Find the number made of ${t} tens and ${o} ones.`,
+  (t, o, i) => `What is ${t} groups of ten plus ${o} ones?`,
+  (t, o, i) => `Which number equals ${t} tens and ${o} ones altogether?`,
+  (t, o, i) => `Add ${t} tens and ${o} ones together. What number results?`,
+  (t, o, i) => `Select the number built from ${t} tens and ${o} ones.`,
+  (t, o, i) => `${t} tens plus ${o} ones equals what number?`,
+  (t, o, i) => `Which number is shown by ${t} ten-blocks and ${o} single blocks?`,
+  (t, o, i) => `Read the place value: ${t} tens, ${o} ones. What number is this?`,
+  (t, o, i) => `What is the value of ${t} tens and ${o} ones combined?`,
+  (t, o, i) => `Find the total for ${t} tens and ${o} ones.`,
+  (t, o, i) => `Which number matches ${t} tens and ${o} ones?`,
+  (t, o, i) => `Put together ${t} tens and ${o} ones. What number do you make?`,
+  (t, o, i) => `${t} tens and ${o} extra ones make which number?`,
+  (t, o, i) => `What number has a tens digit of ${t} and a ones digit of ${o}?`,
+  (t, o, i) => `Work out the number: ${t} tens and ${o} ones.`,
+  (t, o, i) => `Which number is ${t} tens grouped with ${o} ones?`
+];
+
+const MQ_TENMORE_TEMPLATES = [
+  (n, i) => `What is 10 more than ${n}?`,
+  (n, i) => `Add 10 to ${n}. What number do you get?`,
+  (n, i) => `${n} plus 10 equals what number?`,
+  (n, i) => `Find the number that is 10 more than ${n}.`,
+  (n, i) => `If you count 10 more from ${n}, where do you land?`,
+  (n, i) => `What comes when you add ten to ${n}?`,
+  (n, i) => `Ten more than ${n} is what number?`,
+  (n, i) => `Start at ${n} and add 10. What is the result?`,
+  (n, i) => `Which number is exactly 10 greater than ${n}?`,
+  (n, i) => `${n} + 10 = ?`,
+  (n, i) => `What number is one ten more than ${n}?`,
+  (n, i) => `Increase ${n} by 10. What do you get?`,
+  (n, i) => `Find 10 more than the number ${n}.`,
+  (n, i) => `If ${n} grows by 10, what number is it now?`,
+  (n, i) => `What is ${n} with 10 added on?`,
+  (n, i) => `Count up 10 from ${n}. What number do you reach?`,
+  (n, i) => `Which number equals ${n} plus one more ten?`,
+  (n, i) => `Add a group of ten to ${n}. What is the total?`,
+  (n, i) => `What number is 10 higher than ${n}?`,
+  (n, i) => `Ten more than ${n} lands on which number?`
+];
+
+const MQ_TENLESS_TEMPLATES = [
+  (n, i) => `What is 10 less than ${n}?`,
+  (n, i) => `Subtract 10 from ${n}. What number do you get?`,
+  (n, i) => `${n} minus 10 equals what number?`,
+  (n, i) => `Find the number that is 10 less than ${n}.`,
+  (n, i) => `If you count back 10 from ${n}, where do you land?`,
+  (n, i) => `What comes when you take ten away from ${n}?`,
+  (n, i) => `Ten less than ${n} is what number?`,
+  (n, i) => `Start at ${n} and subtract 10. What is the result?`,
+  (n, i) => `Which number is exactly 10 smaller than ${n}?`,
+  (n, i) => `${n} - 10 = ?`,
+  (n, i) => `What number is one ten less than ${n}?`,
+  (n, i) => `Decrease ${n} by 10. What do you get?`,
+  (n, i) => `Find 10 less than the number ${n}.`,
+  (n, i) => `If ${n} shrinks by 10, what number is it now?`,
+  (n, i) => `What is ${n} with 10 taken away?`,
+  (n, i) => `Count back 10 from ${n}. What number do you reach?`,
+  (n, i) => `Which number equals ${n} minus one ten?`,
+  (n, i) => `Remove a group of ten from ${n}. What is left?`,
+  (n, i) => `What number is 10 lower than ${n}?`,
+  (n, i) => `Ten less than ${n} lands on which number?`
+];
+
+const MQ_GREATER_TEMPLATES = [
+  (i) => `Which number is greater?`,
+  (i) => `Choose the bigger number.`,
+  (i) => `Which of these two numbers is larger?`,
+  (i) => `Pick the greater of the two numbers.`,
+  (i) => `Which number has more value?`,
+  (i) => `Select the larger number.`,
+  (i) => `Which one wins in a size comparison?`,
+  (i) => `Find the bigger number.`,
+  (i) => `Which number is more?`,
+  (i) => `Choose whichever number is larger.`,
+  (i) => `Which number would you count higher to?`,
+  (i) => `Pick the number that is greater in value.`,
+  (i) => `Which of the two numbers is the largest?`,
+  (i) => `Select the number that is more.`,
+  (i) => `Which number stands taller on a number line?`,
+  (i) => `Find which number is bigger.`,
+  (i) => `Choose the greater value.`,
+  (i) => `Which number comes later when counting up?`,
+  (i) => `Pick the number with the greater amount.`,
+  (i) => `Which number is the larger one here?`
+];
+
+const MQ_TIME_TEMPLATES = [
+  (i) => `Tell the time shown:`,
+  (i) => `What time does the clock show?`,
+  (i) => `Read the clock. What time is it?`,
+  (i) => `Look at the clock hands. What time is it?`,
+  (i) => `Which time matches the clock below?`,
+  (i) => `What time is displayed on this clock?`,
+  (i) => `Check the clock and choose the correct time.`,
+  (i) => `Find the time shown on the clock face.`,
+  (i) => `What hour and minute does the clock point to?`,
+  (i) => `Read the hands on the clock. What time is it?`,
+  (i) => `Select the time that matches the clock.`,
+  (i) => `What time does this analog clock show?`,
+  (i) => `Look carefully — what time is it?`,
+  (i) => `Which answer shows the correct time?`,
+  (i) => `Tell me the time on the clock.`,
+  (i) => `What time do the clock hands point to?`,
+  (i) => `Choose the time shown by the clock.`,
+  (i) => `Figure out the time from the clock hands.`,
+  (i) => `What time is it according to this clock?`,
+  (i) => `Identify the time shown on the clock.`
+];
+
+const MQ_CHART_TEMPLATES = [
+  (i) => `How many Apples are there in the chart?`,
+  (i) => `Look at the chart. How many apples are shown?`,
+  (i) => `Count the apples in the picture graph. How many are there?`,
+  (i) => `According to the chart, how many apples are there?`,
+  (i) => `How many apples does the chart show?`,
+  (i) => `Read the chart and count the apples.`,
+  (i) => `What number of apples is shown in the chart?`,
+  (i) => `Check the chart. How many apples do you count?`,
+  (i) => `How many apples appear in this picture graph?`,
+  (i) => `Use the chart to count the apples. What's the total?`,
+  (i) => `Which number matches the apples in the chart?`,
+  (i) => `Count the apple row. How many are there?`,
+  (i) => `How many apples are recorded in the chart?`,
+  (i) => `Look at the tally. How many apples in total?`,
+  (i) => `What is the apple count shown in the chart?`,
+  (i) => `Study the chart — how many apples do you see?`,
+  (i) => `How many apples are marked on the chart?`,
+  (i) => `Find the apple total from the chart.`,
+  (i) => `Read the picture graph. How many apples?`,
+  (i) => `How many apples does the data show?`
+];
+
+const MQ_SHAPE_SIDES_TEMPLATES = [
+  (s, i) => `How many sides does a ${s} have?`,
+  (s, i) => `Count the sides of a ${s}. How many are there?`,
+  (s, i) => `A ${s} has how many sides?`,
+  (s, i) => `Which number of sides belongs to a ${s}?`,
+  (s, i) => `Find the number of sides on a ${s}.`,
+  (s, i) => `How many straight edges does a ${s} have?`,
+  (s, i) => `What is the side count for a ${s}?`,
+  (s, i) => `Select the number of sides a ${s} has.`,
+  (s, i) => `Look at a ${s}. How many sides can you count?`,
+  (s, i) => `A ${s} shape has how many sides in total?`,
+  (s, i) => `How many flat edges make up a ${s}?`,
+  (s, i) => `Choose the correct number of sides for a ${s}.`,
+  (s, i) => `If you trace a ${s}, how many sides do you cross?`,
+  (s, i) => `What number of sides does the shape ${s} have?`,
+  (s, i) => `Count around a ${s}. How many sides total?`,
+  (s, i) => `Which answer shows how many sides a ${s} has?`,
+  (s, i) => `How many sides border a ${s}?`,
+  (s, i) => `Identify the number of sides on a ${s}.`,
+  (s, i) => `A ${s} is made up of how many sides?`,
+  (s, i) => `Tell how many sides a ${s} has.`
+];
+
+const MQ_SHAPE_VERTICES_TEMPLATES = [
+  (s, i) => `How many corners (vertices) does a ${s} have?`,
+  (s, i) => `Count the corners of a ${s}. How many are there?`,
+  (s, i) => `A ${s} has how many corners?`,
+  (s, i) => `Which number of corners belongs to a ${s}?`,
+  (s, i) => `Find the number of vertices on a ${s}.`,
+  (s, i) => `How many pointy corners does a ${s} have?`,
+  (s, i) => `What is the corner count for a ${s}?`,
+  (s, i) => `Select the number of vertices a ${s} has.`,
+  (s, i) => `Look at a ${s}. How many corners can you count?`,
+  (s, i) => `A ${s} shape has how many corners in total?`,
+  (s, i) => `How many corner points make up a ${s}?`,
+  (s, i) => `Choose the correct number of vertices for a ${s}.`,
+  (s, i) => `If you trace a ${s}, how many corners do you pass?`,
+  (s, i) => `What number of vertices does the shape ${s} have?`,
+  (s, i) => `Count around a ${s}. How many corners total?`,
+  (s, i) => `Which answer shows how many corners a ${s} has?`,
+  (s, i) => `How many corners border a ${s}?`,
+  (s, i) => `Identify the number of vertices on a ${s}.`,
+  (s, i) => `A ${s} is made up of how many corners?`,
+  (s, i) => `Tell how many corners a ${s} has.`
+];
+
+const MQ_FRACTION_TEMPLATES = [
+  (i) => `If we share a pizza equally between 2 friends, each gets a...`,
+  (i) => `A cookie is split evenly between 2 kids. Each piece is a...`,
+  (i) => `If you cut an apple into 2 equal parts, each part is a...`,
+  (i) => `Split a sandwich equally between 2 people. Each person gets a...`,
+  (i) => `A candy bar is broken into 2 even pieces. Each piece is a...`,
+  (i) => `If 2 friends share one cake fairly, each friend gets a...`,
+  (i) => `Cut a pie into 2 equal slices. Each slice is a...`,
+  (i) => `Divide one orange evenly between 2 people. Each share is a...`,
+  (i) => `If a pancake is split into 2 equal parts, each part is a...`,
+  (i) => `Share a bar of chocolate between 2 friends equally. Each gets a...`,
+  (i) => `A whole sub sandwich is cut into 2 equal pieces. Each piece is a...`,
+  (i) => `If 2 kids split a bagel evenly, each kid gets a...`,
+  (i) => `Cut a watermelon into 2 equal parts. Each part is a...`,
+  (i) => `If a brownie is shared fairly between 2 people, each gets a...`,
+  (i) => `Divide one banana into 2 equal parts. Each part is a...`,
+  (i) => `A pizza is cut in half to share between 2 friends. Each gets a...`,
+  (i) => `If a granola bar is split evenly for 2 people, each gets a...`,
+  (i) => `Share one muffin equally between 2 kids. Each piece is a...`,
+  (i) => `Cut a tortilla into 2 even pieces. Each piece is a...`,
+  (i) => `If 2 friends split a waffle fairly, each friend gets a...`
+];
 
 function generateMathQuestion(lessonId, index) {
   const grade = appState.currentGrade || 1;
@@ -35850,7 +36336,11 @@ function generateMathQuestion(lessonId, index) {
   }
   const lesson = GRADE_1_CURRICULUM.find(l => l.id === lessonId);
   const unit = lesson ? lesson.unit : 1;
-  
+  // Drives which phrasing template is picked from the pools above, so a
+  // multi-question practice/test session shows differently-worded questions
+  // instead of the exact same sentence with only the numbers swapped.
+  const tIdx = ((index !== undefined && index !== null) ? index : Math.floor(Math.random() * 100)) + (appState.mqTemplateSeed || 0);
+
   let questionText = "";
   let correctAnswer = "";
   let options = [];
@@ -35864,10 +36354,10 @@ function generateMathQuestion(lessonId, index) {
     const num = Math.floor(Math.random() * (max - min + 1)) + min;
     const word = is10 ? NUMBER_WORDS[num] : ELEVEN_TWENTY_WORDS[num];
     const emoji = is10 ? NUMBER_EMOJIS[num] : "🍭";
-    
+
     const subType = (lessonId - 1) % 5;
     if (subType === 0) {
-      questionText = `Select the word spelling for "${num}"`;
+      questionText = mqPick(MQ_SPELL_TEMPLATES, tIdx)(num, tIdx);
       correctAnswer = word.toUpperCase();
       options = [correctAnswer];
       while (options.length < 4) {
@@ -35876,7 +36366,7 @@ function generateMathQuestion(lessonId, index) {
       }
       visualContent = `<div style="font-size: 32px; letter-spacing: 4px;">${emoji.repeat(num)}</div>`;
     } else if (subType === 1) {
-      questionText = `How many icons are shown below?`;
+      questionText = mqPick(MQ_COUNT_TEMPLATES, tIdx)(tIdx);
       correctAnswer = String(num);
       options = [correctAnswer];
       while (options.length < 4) {
@@ -35885,7 +36375,7 @@ function generateMathQuestion(lessonId, index) {
       }
       visualContent = `<div style="font-size: 32px; letter-spacing: 4px;">${emoji.repeat(num)}</div>`;
     } else if (subType === 2) {
-      questionText = `Which number spells "${word.toUpperCase()}"?`;
+      questionText = mqPick(MQ_NUMWORD_TEMPLATES, tIdx)(word.toUpperCase(), tIdx);
       correctAnswer = String(num);
       options = [correctAnswer];
       while (options.length < 4) {
@@ -35895,7 +36385,7 @@ function generateMathQuestion(lessonId, index) {
       visualContent = `<div style="font-size: 40px; font-weight:800; color: var(--color-blue-accent);">${word.toUpperCase()}</div>`;
     } else if (subType === 3) {
       const otherNum = Math.floor(Math.random() * (max - min + 1)) + min;
-      questionText = `Which comparison is true?`;
+      questionText = mqPick(MQ_COMPARE_TEMPLATES, tIdx)(tIdx);
       if (num > otherNum) {
         correctAnswer = `${num} > ${otherNum}`;
         options = [correctAnswer, `${num} < ${otherNum}`, `${num} = ${otherNum}`, `${otherNum} > ${num}`];
@@ -35911,7 +36401,7 @@ function generateMathQuestion(lessonId, index) {
       const n1 = num;
       const n2 = num + 1;
       const n3 = num + 2;
-      questionText = `Fill in the missing number: ${n1}, [ ? ], ${n3}`;
+      questionText = mqPick(MQ_SEQUENCE_TEMPLATES, tIdx)(n1, n3, tIdx);
       correctAnswer = String(n2);
       options = [correctAnswer, String(n2 + 1), String(n2 - 2), String(n2 + 2)];
       visualContent = `<div style="font-size: 28px; font-weight:800; color: var(--color-yellow-accent);">${n1}, ___, ${n3}</div>`;
@@ -35923,9 +36413,9 @@ function generateMathQuestion(lessonId, index) {
     else if (lessonId === 22) valB = 1;
     else if (lessonId === 23) valB = 2;
     else if (lessonId === 29) valB = valA;
-    
+
     const sum = valA + valB;
-    questionText = `What is ${valA} + ${valB}?`;
+    questionText = mqPick(MQ_ADD_TEMPLATES, tIdx)(valA, valB, tIdx);
     correctAnswer = String(sum);
     options = [correctAnswer, String(sum + 1), String(sum - 1), String(sum + 2)];
     visualContent = `
@@ -35942,9 +36432,9 @@ function generateMathQuestion(lessonId, index) {
     else if (lessonId === 42) valB = 1;
     else if (lessonId === 43) valB = 2;
     else if (lessonId === 49) valB = valA;
-    
+
     const diff = valA - valB;
-    questionText = `What is ${valA} - ${valB}?`;
+    questionText = mqPick(MQ_SUB_TEMPLATES, tIdx)(valA, valB, tIdx);
     correctAnswer = String(diff);
     options = [correctAnswer, String(diff + 1), String(diff - 1), String(diff + 2)];
     visualContent = `
@@ -35958,25 +36448,25 @@ function generateMathQuestion(lessonId, index) {
     const num = Math.floor(Math.random() * 80) + 11;
     const tens = Math.floor(num / 10);
     const ones = num % 10;
-    
+
     const subType = (lessonId - 61) % 5;
     if (subType === 0) {
-      questionText = `What number is represented by ${tens} tens and ${ones} ones?`;
+      questionText = mqPick(MQ_PLACEVALUE_TEMPLATES, tIdx)(tens, ones, tIdx);
       correctAnswer = String(num);
       options = [correctAnswer, String(tens * 10 + ones + 5), String(ones * 10 + tens), String(tens + ones)];
       visualContent = `<div style="font-weight: 800; font-size:24px;">[ ${tens} Tens ] [ ${ones} Ones ]</div>`;
     } else if (subType === 1) {
-      questionText = `What is 10 more than ${num}?`;
+      questionText = mqPick(MQ_TENMORE_TEMPLATES, tIdx)(num, tIdx);
       correctAnswer = String(num + 10);
       options = [correctAnswer, String(num - 10), String(num + 1), String(num + 20)];
       visualContent = `<div style="font-size: 28px; font-weight:800; color: var(--color-blue-accent);">${num} + 10 = ?</div>`;
     } else if (subType === 2) {
-      questionText = `What is 10 less than ${num}?`;
+      questionText = mqPick(MQ_TENLESS_TEMPLATES, tIdx)(num, tIdx);
       correctAnswer = String(num - 10);
       options = [correctAnswer, String(num + 10), String(num - 1), String(num - 20)];
       visualContent = `<div style="font-size: 28px; font-weight:800; color: var(--color-pink-accent);">${num} - 10 = ?</div>`;
     } else {
-      questionText = `Which number is greater?`;
+      questionText = mqPick(MQ_GREATER_TEMPLATES, tIdx)(tIdx);
       const otherNum = num + (Math.random() > 0.5 ? 5 : -5);
       correctAnswer = String(Math.max(num, otherNum));
       options = [String(num), String(otherNum)];
@@ -35986,10 +36476,10 @@ function generateMathQuestion(lessonId, index) {
     const hour = Math.floor(Math.random() * 12) + 1;
     const isHalf = lessonId === 86 || lessonId === 88;
     const timeStr = isHalf ? `${hour}:30` : `${hour}:00`;
-    
+
     const subType = (lessonId - 81) % 4;
     if (subType === 0) {
-      questionText = `Tell the time shown:`;
+      questionText = mqPick(MQ_TIME_TEMPLATES, tIdx)(tIdx);
       correctAnswer = timeStr;
       options = [timeStr, `${hour === 12 ? 1 : hour + 1}:00`, `${hour === 1 ? 12 : hour - 1}:30`, `${hour}:15`].filter((v, i, a) => a.indexOf(v) === i);
       while (options.length < 4) {
@@ -36005,7 +36495,7 @@ function generateMathQuestion(lessonId, index) {
     } else {
       const bananas = Math.floor(Math.random() * 5) + 1;
       const apples = Math.floor(Math.random() * 5) + 1;
-      questionText = `How many Apples are there in the chart?`;
+      questionText = mqPick(MQ_CHART_TEMPLATES, tIdx)(tIdx);
       correctAnswer = String(apples);
       options = [correctAnswer, String(bananas), String(apples + bananas), String(Math.max(1, apples - 1))].filter((v, i, a) => a.indexOf(v) === i);
       while (options.length < 4) {
@@ -36027,28 +36517,28 @@ function generateMathQuestion(lessonId, index) {
       { name: "HEXAGON", sides: 6, vertices: 6 }
     ];
     const s = shapes[Math.floor(Math.random() * shapes.length)];
-    
+
     const subType = (lessonId - 96) % 3;
     if (subType === 0) {
-      questionText = `How many sides does a ${s.name} have?`;
+      questionText = mqPick(MQ_SHAPE_SIDES_TEMPLATES, tIdx)(s.name, tIdx);
       correctAnswer = String(s.sides);
       options = ["0", "3", "4", "6"];
       visualContent = `<div style="font-weight: 800; font-size:24px; color: var(--color-yellow-accent);">${s.name}</div>`;
     } else if (subType === 1) {
-      questionText = `How many corners (vertices) does a ${s.name} have?`;
+      questionText = mqPick(MQ_SHAPE_VERTICES_TEMPLATES, tIdx)(s.name, tIdx);
       correctAnswer = String(s.vertices);
       options = ["0", "3", "4", "6"];
       visualContent = `<div style="font-weight: 800; font-size:24px; color: var(--color-orange-accent);">${s.name}</div>`;
     } else {
-      questionText = `If we share a pizza equally between 2 friends, each gets a...`;
+      questionText = mqPick(MQ_FRACTION_TEMPLATES, tIdx)(tIdx);
       correctAnswer = "HALF";
       options = ["HALF", "FOURTH", "WHOLE", "THIRD"];
       visualContent = `<div style="font-size: 40px;">🍕</div>`;
     }
   }
-  
+
   options = options.sort(() => 0.5 - Math.random());
-  
+
   return {
     questionText,
     correctAnswer,
@@ -36132,6 +36622,52 @@ function seededShuffleArray(arr, seed) {
   return a;
 }
 
+// Grades 2-5 Math (MATH_QUIZ_TOPICS in content/math-quiz-topics.js) has ~70
+// procedural generators, one per lesson topic, each producing genuinely
+// randomized numbers per call — but almost all of them render through a
+// single fixed sentence shape like "Solve: 34 + 58 = ?" or "23/4 + 1/4 = ?",
+// so a multi-question practice session reads as the same sentence repeated
+// with different numbers. Rewriting all ~70 generators individually with
+// their own 20-phrasing pools (like Grade 1 Math got) would be a huge,
+// error-prone undertaking, so instead this rewrites the common "EXPRESSION
+// = ?" ending — which covers the large majority of these generators
+// (arithmetic, fractions, decimals, expressions) — into one of 20 real
+// synonymous instructions, selected by the practice index. Generators whose
+// wording doesn't match this shape (narrative word problems, etc.) are left
+// untouched; they still benefit from the randomized numbers themselves.
+const MQ2_PHRASING_POOL = [
+  (e) => `Solve: ${e} = ?`,
+  (e) => `What is ${e}?`,
+  (e) => `Find the value of ${e}.`,
+  (e) => `Calculate ${e}.`,
+  (e) => `Work out ${e}.`,
+  (e) => `${e} equals what number?`,
+  (e) => `What do you get when you solve ${e}?`,
+  (e) => `Figure out: ${e}`,
+  (e) => `Compute ${e}.`,
+  (e) => `What does ${e} equal?`,
+  (e) => `Solve this: ${e}`,
+  (e) => `Find the answer to ${e}.`,
+  (e) => `${e} = what number?`,
+  (e) => `Determine the value of ${e}.`,
+  (e) => `What is the result of ${e}?`,
+  (e) => `Work this out: ${e}`,
+  (e) => `What number completes this: ${e}?`,
+  (e) => `Evaluate ${e}.`,
+  (e) => `What's the answer to ${e}?`,
+  (e) => `Crunch the numbers: ${e}`
+];
+function varyMathQuestionPhrasing(text, idx) {
+  if (!text) return text;
+  let m = text.match(/^Solve:\s*(.+?)\s*=\s*\?$/i);
+  if (!m) m = text.match(/^(.+?)\s*=\s*\?$/);
+  if (m && /[0-9]/.test(m[1])) {
+    const expr = m[1].trim();
+    return MQ2_PHRASING_POOL[((idx % MQ2_PHRASING_POOL.length) + MQ2_PHRASING_POOL.length) % MQ2_PHRASING_POOL.length](expr);
+  }
+  return text;
+}
+
 function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
   if (grade <= 1) return null;
   const idx = (index !== undefined && index !== null) ? index : 0;
@@ -36177,14 +36713,20 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
   if (subject === 'math' || subject === 'ela') {
     const [titleForOverride] = getLessonTitleAndDesc(subject, grade, lessonId);
     const themeForOverride = String(titleForOverride || '').trim();
-    const seedForOverride = lessonId * 13 + idx * 7;
+    // Same fix as Grade 1 Math's mqTemplateSeed: practice/mastery/test all
+    // reset their internal index counter back to 0 every time a lesson is
+    // reopened, so without this offset a student would always see the exact
+    // same first few generated numbers and overrideList entries no matter
+    // how many times they replayed the lesson on different days.
+    const idxWithSeed = idx + (appState.mqTemplateSeed || 0);
+    const seedForOverride = lessonId * 13 + idxWithSeed * 7;
 
     if (subject === 'math' && typeof MATH_QUIZ_TOPICS !== 'undefined' && MATH_QUIZ_TOPICS[themeForOverride]) {
       const genFn = MATH_QUIZ_TOPICS[themeForOverride];
-      const q = genFn(seedForOverride, idx);
+      const q = genFn(seedForOverride, idxWithSeed);
       if (q && q.questionText && q.options && q.options.length) {
         return {
-          questionText: q.questionText,
+          questionText: varyMathQuestionPhrasing(q.questionText, idxWithSeed),
           correctAnswer: q.correctAnswer,
           options: q.options,
           visualContent: q.visualContent || "<div style=\"font-size: 48px;\">🔢</div>",
@@ -36196,8 +36738,14 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
 
     if (subject === 'ela' && typeof ELA_QUIZ_OVERRIDES !== 'undefined' && ELA_QUIZ_OVERRIDES[themeForOverride]) {
       const overrideList = ELA_QUIZ_OVERRIDES[themeForOverride];
-      if (overrideList && overrideList.length) {
-        const oq = overrideList[idx % overrideList.length];
+      // Only serve curated questions for the first pass through the list
+      // (idx 0 .. length-1). Beyond that, deliberately fall through to the
+      // procedural unit-based generators below instead of wrapping back
+      // around via modulo — a curated bank of ~4 questions used to get
+      // padded out to 10 by literally repeating those same 4 questions.
+      // Falling through gives real bonus questions instead.
+      if (overrideList && overrideList.length && idx < overrideList.length) {
+        const oq = overrideList[idxWithSeed % overrideList.length];
         // Array.sort() comparators must vary with the two elements being
         // compared; a comparator that always returns the same value (as the
         // old `((seed*9+5)%10-5)/10` expression did, since it ignores its
@@ -36220,10 +36768,19 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
 
   // Math and ELA use programmatic generators
   const unit = Math.ceil(lessonId / 5);
-  const seed = lessonId * 7 + idx;
+  const seed = lessonId * 7 + idx + (appState.mqTemplateSeed || 0);
 
   if (subject === 'ela') {
-    if (grade === 2) {
+    // This vocabulary/grammar/reading/spelling content was written for Grade
+    // 2 and originally only fired for grade === 2. Grades 3-5 had no
+    // equivalent generators at all, so any grade 3-5 ELA lesson without an
+    // ELA_QUIZ_OVERRIDES entry fell all the way through to the generic
+    // multiplication fallback at the bottom of this function — an English
+    // lesson showing "Solve: 4 x 7 = ?" is a real content bug, not just a
+    // variety problem. Applying this bank to any grade >= 2 (instead of
+    // only grade 2) means grades 3-5 always get genuinely ELA-appropriate
+    // content as their fallback, even though it isn't grade-specific.
+    if (grade >= 2) {
       if (unit === 1) {
         // Phonics & Word Recognition
         const list = [
@@ -36238,7 +36795,15 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
           { letter: "e", correct: "TREE 🌳", options: ["TREE 🌳", "PEN 🖊️", "BED 🛏️", "NET 🕸️"] },
           { letter: "e", correct: "JEEP 🚗", options: ["JEEP 🚗", "RED 🔴", "HEN 🐔", "LEG 🍗"] },
           { letter: "o", correct: "ROAD 🛣️", options: ["ROAD 🛣️", "ROCK 🪨", "STOP 🛑", "POT 🍲"] },
-          { letter: "a", correct: "GATE 🚪", options: ["GATE 🚪", "HAT 🎩", "MAP 🗺️", "TAP 🚰"] }
+          { letter: "a", correct: "GATE 🚪", options: ["GATE 🚪", "HAT 🎩", "MAP 🗺️", "TAP 🚰"] },
+          { letter: "i", correct: "PIE 🥧", options: ["PIE 🥧", "PIG 🐷", "DIP 🥣", "RIP 🧻"] },
+          { letter: "u", correct: "MULE 🐴", options: ["MULE 🐴", "MUD 🟤", "RUG 🧶", "CUP ☕"] },
+          { letter: "e", correct: "BEE 🐝", options: ["BEE 🐝", "BED 🛏️", "PEN 🖊️", "LEG 🍗"] },
+          { letter: "o", correct: "ROPE 🪢", options: ["ROPE 🪢", "ROCK 🪨", "POT 🍲", "FOX 🦊"] },
+          { letter: "a", correct: "WAVE 🌊", options: ["WAVE 🌊", "CAT 🐱", "BAG 🎒", "MAP 🗺️"] },
+          { letter: "i", correct: "DIME 🪙", options: ["DIME 🪙", "DISH 🍽️", "FISH 🐟", "PIN 📌"] },
+          { letter: "u", correct: "FLUTE 🎶", options: ["FLUTE 🎶", "TUB 🛁", "BUG 🐛", "MUG ☕"] },
+          { letter: "e", correct: "SEED 🌱", options: ["SEED 🌱", "BED 🛏️", "NET 🕸️", "HEN 🐔"] }
         ];
         const v = list[seed % list.length];
         return {
@@ -36260,7 +36825,17 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
           { name: "ants 🐜", correct: "A colony 🐜", options: ["A colony 🐜", "A swarm 🐝", "A pack 🐺", "A flock 🐦"] },
           { name: "whales 🐋", correct: "A pod 🐋", options: ["A pod 🐋", "A herd 🐄", "A school 🐟", "A pride 🦁"] },
           { name: "puppies 🐶", correct: "A litter 🐶", options: ["A litter 🐶", "A pack 🐺", "A flock 🐦", "A swarm 🐝"] },
-          { name: "sheep 🐑", correct: "A flock 🐑", options: ["A flock 🐑", "A pack 🐺", "A school 🐟", "A colony 🐜"] }
+          { name: "sheep 🐑", correct: "A flock 🐑", options: ["A flock 🐑", "A pack 🐺", "A school 🐟", "A colony 🐜"] },
+          { name: "owls 🦉", correct: "A parliament 🦉", options: ["A parliament 🦉", "A murder 🐦‍⬛", "A gaggle 🦢", "A mob 🦘"] },
+          { name: "crows 🐦‍⬛", correct: "A murder 🐦‍⬛", options: ["A murder 🐦‍⬛", "A parliament 🦉", "A troop 🐒", "A bask 🐊"] },
+          { name: "geese 🦢", correct: "A gaggle 🦢", options: ["A gaggle 🦢", "A flock 🐦", "A herd 🐄", "A pod 🐋"] },
+          { name: "kangaroos 🦘", correct: "A mob 🦘", options: ["A mob 🦘", "A troop 🐒", "A pack 🐺", "A litter 🐶"] },
+          { name: "elephants 🐘", correct: "A herd 🐘", options: ["A herd 🐘", "A pride 🦁", "A colony 🐜", "A swarm 🐝"] },
+          { name: "monkeys 🐒", correct: "A troop 🐒", options: ["A troop 🐒", "A mob 🦘", "A bask 🐊", "A gaggle 🦢"] },
+          { name: "crocodiles 🐊", correct: "A bask 🐊", options: ["A bask 🐊", "A murder 🐦‍⬛", "A pod 🐋", "A herd 🐄"] },
+          { name: "jellyfish 🎐", correct: "A bloom 🎐", options: ["A bloom 🎐", "A school 🐟", "A swarm 🐝", "A colony 🐜"] },
+          { name: "flamingos 🦩", correct: "A flamboyance 🦩", options: ["A flamboyance 🦩", "A flock 🐦", "A pride 🦁", "A gaggle 🦢"] },
+          { name: "turtles 🐢", correct: "A bale 🐢", options: ["A bale 🐢", "A litter 🐶", "A pack 🐺", "A pod 🐋"] }
         ];
         const c = list[seed % list.length];
         return {
@@ -36274,17 +36849,33 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
         // Reading Comprehension & Writing
         const list = [
           { text: "The red fox jumped over the lazy dog.", correct: "Fox 🦊", options: ["Fox 🦊", "Dog 🐶", "Lazy 😴", "Jumped 🏃"] },
-          { text: "Sally ate a sweet yellow banana for breakfast.", correct: "Banana 🍌", options: ["Banana 🍌", "Sally 👧", "Sweet 🍬", "Yellow 🟡"] },
+          { text: "Sally ate a sweet yellow banana for breakfast.", correct: "Sally 👧", options: ["Sally 👧", "Banana 🍌", "Sweet 🍬", "Yellow 🟡"] },
           { text: "A shiny spaceship landed in the green field.", correct: "Spaceship 🚀", options: ["Spaceship 🚀", "Field 🌾", "Shiny ✨", "Green 🟢"] },
-          { text: "Tim built a tall sandcastle near the ocean.", correct: "Sandcastle 🏰", options: ["Sandcastle 🏰", "Ocean 🌊", "Tall 🧱", "Near 📍"] }
+          { text: "Tim built a tall sandcastle near the ocean.", correct: "Tim 👦", options: ["Tim 👦", "Sandcastle 🏰", "Ocean 🌊", "Tall 🧱"] },
+          { text: "The brave knight rescued the frightened princess.", correct: "Knight 🛡️", options: ["Knight 🛡️", "Princess 👸", "Brave 💪", "Frightened 😨"] },
+          { text: "Maria painted a colorful rainbow on the wall.", correct: "Maria 👧", options: ["Maria 👧", "Rainbow 🌈", "Colorful 🎨", "Wall 🧱"] },
+          { text: "The hungry bear caught a big fish in the river.", correct: "Bear 🐻", options: ["Bear 🐻", "Fish 🐟", "River 🌊", "Hungry 🍽️"] },
+          { text: "Jake flew his new kite high in the sky.", correct: "Jake 👦", options: ["Jake 👦", "Kite 🪁", "Sky ☁️", "New ✨"] },
+          { text: "The little mouse hid inside a cozy hole.", correct: "Mouse 🐭", options: ["Mouse 🐭", "Hole 🕳️", "Cozy 🛏️", "Little 🤏"] },
+          { text: "Emma planted bright flowers in the garden.", correct: "Emma 👧", options: ["Emma 👧", "Flowers 🌸", "Garden 🌷", "Bright ☀️"] },
+          { text: "The clever fox tricked the sleepy wolf.", correct: "Fox 🦊", options: ["Fox 🦊", "Wolf 🐺", "Clever 🧠", "Sleepy 😴"] },
+          { text: "The pilot flew the airplane over the tall mountains.", correct: "Pilot ✈️", options: ["Pilot ✈️", "Airplane 🛩️", "Mountains ⛰️", "Tall 🏔️"] },
+          { text: "Grandma baked a warm apple pie for the family.", correct: "Grandma 👵", options: ["Grandma 👵", "Pie 🥧", "Family 👨‍👩‍👧", "Warm ♨️"] },
+          { text: "The puppy chased a bouncy ball across the yard.", correct: "Puppy 🐶", options: ["Puppy 🐶", "Ball ⚾", "Yard 🌳", "Bouncy 🔄"] },
+          { text: "The astronaut explored a strange purple planet.", correct: "Astronaut 👩‍🚀", options: ["Astronaut 👩‍🚀", "Planet 🪐", "Purple 🟣", "Strange 👽"] },
+          { text: "Liam built a robot out of shiny metal parts.", correct: "Liam 👦", options: ["Liam 👦", "Robot 🤖", "Parts 🔩", "Shiny ✨"] },
+          { text: "The firefighter rescued a scared kitten from the tree.", correct: "Firefighter 🚒", options: ["Firefighter 🚒", "Kitten 🐱", "Tree 🌳", "Scared 😿"] },
+          { text: "Sophia wrote a funny story about a talking dog.", correct: "Sophia 👧", options: ["Sophia 👧", "Story 📖", "Dog 🐶", "Funny 😄"] },
+          { text: "The wizard cast a magic spell on the old castle.", correct: "Wizard 🧙", options: ["Wizard 🧙", "Castle 🏰", "Spell ✨", "Old 🕰️"] },
+          { text: "The team scored a goal in the final soccer match.", correct: "Team ⚽", options: ["Team ⚽", "Goal 🥅", "Match 🏆", "Final ⏱️"] }
         ];
         const item = list[seed % list.length];
         return {
-          questionText: `In the sentence: "${item.text}", what did the character jump/eat/build/land?`,
+          questionText: `In the sentence: "${item.text}", who or what is the main subject?`,
           correctAnswer: item.correct,
           options: item.options,
           visualContent: `<div style="font-size: 48px;">📖✏️</div>`,
-          hint: "Identify the main object or noun being acted upon in the sentence!"
+          hint: "The main subject is who or what the sentence is mostly about!"
         };
       } else if (unit === 4) {
         // Vocabulary & Context Clues
@@ -36292,7 +36883,23 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
           { word: "joyful 🌟", mean: "Happy and cheerful 😊", options: ["Happy and cheerful 😊", "Sad and crying 😢", "Angry 😡", "Tired 😴"] },
           { word: "tiny 🐜", mean: "Very small 🤏", options: ["Very small 🤏", "Huge and tall 🦕", "Heavy 🏋️", "Fast ⚡"] },
           { word: "gigantic 🦕", mean: "Very large 🦕", options: ["Very large 🦕", "Microscopic 🔬", "Lightweight 🪶", "Quiet 🤫"] },
-          { word: "swift 🦅", mean: "Fast-moving ⚡", options: ["Fast-moving ⚡", "Very slow 🐢", "Heavy 🏋️", "Sleepy 😴"] }
+          { word: "swift 🦅", mean: "Fast-moving ⚡", options: ["Fast-moving ⚡", "Very slow 🐢", "Heavy 🏋️", "Sleepy 😴"] },
+          { word: "brave 🦸", mean: "Showing courage 💪", options: ["Showing courage 💪", "Feeling scared 😨", "Very quiet 🤫", "Extremely tired 😴"] },
+          { word: "ancient 🏛️", mean: "Very old 👴", options: ["Very old 👴", "Brand new ✨", "Colorful 🌈", "Loud 📢"] },
+          { word: "enormous 🐘", mean: "Extremely big 🐘", options: ["Extremely big 🐘", "Very tiny 🐜", "Somewhat cold ❄️", "Quite soft 🧸"] },
+          { word: "furious 😡", mean: "Extremely angry 😡", options: ["Extremely angry 😡", "Very happy 😄", "Feeling sleepy 😴", "Slightly hungry 🍽️"] },
+          { word: "gloomy ☁️", mean: "Dark and sad 😔", options: ["Dark and sad 😔", "Bright and cheerful ☀️", "Loud and noisy 📢", "Fast and quick ⚡"] },
+          { word: "curious 🔍", mean: "Eager to learn 🧠", options: ["Eager to learn 🧠", "Not interested 😐", "Feeling scared 😨", "Very sleepy 😴"] },
+          { word: "generous 🎁", mean: "Willing to share 🤲", options: ["Willing to share 🤲", "Keeping everything 🙅", "Feeling shy 😳", "Very messy 🌀"] },
+          { word: "fragile 🥚", mean: "Easily broken 💔", options: ["Easily broken 💔", "Extremely strong 💪", "Very colorful 🎨", "Super fast ⚡"] },
+          { word: "vivid 🌈", mean: "Bright and clear 🎨", options: ["Bright and clear 🎨", "Dull and gray ☁️", "Very quiet 🤫", "Extremely old 👴"] },
+          { word: "clumsy 🤕", mean: "Awkward and careless 🤦", options: ["Awkward and careless 🤦", "Graceful and smooth 🩰", "Very smart 🧠", "Super strong 💪"] },
+          { word: "eager 🤩", mean: "Very excited and ready 🙌", options: ["Very excited and ready 🙌", "Feeling tired 😴", "Extremely bored 😑", "Somewhat angry 😠"] },
+          { word: "humble 🙏", mean: "Not boastful 😊", options: ["Not boastful 😊", "Very proud 😤", "Extremely loud 📢", "Feeling jealous 😒"] },
+          { word: "stubborn 🐐", mean: "Refusing to change 🙅", options: ["Refusing to change 🙅", "Easily convinced 🤝", "Very friendly 😊", "Super relaxed 😌"] },
+          { word: "cautious 🚧", mean: "Being careful 🧐", options: ["Being careful 🧐", "Acting recklessly 🏃", "Feeling joyful 😄", "Very lazy 🛌"] },
+          { word: "brilliant 💡", mean: "Extremely smart or bright 🧠", options: ["Extremely smart or bright 🧠", "Very dull ☁️", "Somewhat clumsy 🤕", "Feeling nervous 😰"] },
+          { word: "reluctant 🙁", mean: "Unwilling to do something 🚫", options: ["Unwilling to do something 🚫", "Eager to help 🙌", "Extremely happy 😄", "Very confident 💪"] }
         ];
         const item = list[seed % list.length];
         return {
@@ -36304,7 +36911,7 @@ function getGradeSpecificDynamicQuestion(subject, grade, lessonId, index) {
         };
       } else {
         // unit 5: spelling
-        const list = ["beautiful", "because", "different", "friend", "favorite", "important", "special", "through", "people", "would"];
+        const list = ["beautiful", "because", "different", "friend", "favorite", "important", "special", "through", "people", "would", "necessary", "separate", "definitely", "together", "remember", "probably", "actually", "business", "calendar", "february"];
         const word = list[seed % list.length];
         return {
           questionText: `Spell the word: "${word}"`,
@@ -37581,21 +38188,21 @@ var appState = new AppState();
 document.addEventListener('DOMContentLoaded', () => {
   appState.confetti = new ConfettiEngine('celebrationCanvas');
   
-  // Sidebar Hamburger Toggle logic
+  // Hamburger button (3 bars, top-left): opens the guided Grade -> Subject
+  // navigation wizard (see openNavWizard() below) instead of the old
+  // collapse/expand sidebar toggle.
   const toggleBtn = document.getElementById('sidebarToggleBtn');
   const appContainer = document.getElementById('appContainer');
-  if (toggleBtn && appContainer) {
+  if (toggleBtn) {
     toggleBtn.addEventListener('click', () => {
       sounds.playPop();
-      appContainer.classList.toggle('sidebar-collapsed');
-      appState.sidebarCollapsed = appContainer.classList.contains('sidebar-collapsed');
-      appState.saveState && appState.saveState();
+      openNavWizard();
     });
-    
-    // Restore collapsed state on startup
-    if (appState.sidebarCollapsed) {
-      appContainer.classList.add('sidebar-collapsed');
-    }
+  }
+  // Keep the sidebar itself in its normal expanded state — the hamburger no
+  // longer collapses/expands it, it opens the wizard modal instead.
+  if (appContainer) {
+    appContainer.classList.remove('sidebar-collapsed');
   }
 
 
@@ -37710,6 +38317,140 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSubjectTabs();
       appState.saveState();
       appState.renderUI();
+    });
+  }
+
+  // ── Navigation Wizard Modal (☰ hamburger) ─────────────────────────────
+  // A guided Grade -> Subject picker, plus quick links to Hall of Fame,
+  // Shop, and the Game Room — opened by the 3-bar button in the top-left
+  // instead of the old collapse/expand sidebar toggle.
+  const navWizardModal = document.getElementById('navWizardModal');
+  const navWizardGradeStep = document.getElementById('navWizardGradeStep');
+  const navWizardSubjectStep = document.getElementById('navWizardSubjectStep');
+  const navWizardGradeGrid = document.getElementById('navWizardGradeGrid');
+  const navWizardSubjectGrid = document.getElementById('navWizardSubjectGrid');
+  const navWizardSubjectTitle = document.getElementById('navWizardSubjectTitle');
+  const navWizardBackBtn = document.getElementById('navWizardBackBtn');
+  const closeNavWizardBtn = document.getElementById('closeNavWizardModal');
+
+  const NAV_WIZARD_SUBJECTS = [
+    { key: 'math', label: 'Math', icon: '➕' },
+    { key: 'ela', label: 'English', icon: '📚' },
+    { key: 'history', label: 'History', icon: '📜' },
+    { key: 'geography', label: 'Geography', icon: '🌍' },
+    { key: 'science', label: 'Science', icon: '🧪' },
+    { key: 'art', label: 'Art', icon: '🎨' }
+  ];
+
+  function shakeWrong(btn) {
+    sounds.playWrong();
+    btn.style.animation = 'wrong-shake 0.3s ease';
+    setTimeout(() => { btn.style.animation = ''; }, 300);
+  }
+
+  function renderNavWizardGrades() {
+    if (!navWizardGradeGrid) return;
+    navWizardGradeGrid.innerHTML = '';
+    for (let g = 1; g <= 12; g++) {
+      const locked = g > 5;
+      const btn = document.createElement('button');
+      btn.className = `nav-btn ${locked ? 'locked' : ''} ${!locked && appState.currentGrade === g ? 'active' : ''}`;
+      btn.innerHTML = `<span>Grade ${g}</span>${locked ? '<span class="lock-badge">🔒</span>' : ''}`;
+      btn.addEventListener('click', () => {
+        if (locked) { shakeWrong(btn); return; }
+        sounds.playPop();
+        appState.currentGrade = g;
+        buildCurriculum(g);
+        appState.saveState();
+        showNavWizardSubjectStep(g);
+      });
+      navWizardGradeGrid.appendChild(btn);
+    }
+  }
+
+  function renderNavWizardSubjects() {
+    if (!navWizardSubjectGrid) return;
+    navWizardSubjectGrid.innerHTML = '';
+    NAV_WIZARD_SUBJECTS.forEach(s => {
+      const btn = document.createElement('button');
+      btn.className = `nav-btn ${appState.currentSubject === s.key ? 'active' : ''}`;
+      btn.innerHTML = `<span style="font-size: 18px;">${s.icon}</span><span>${s.label}</span>`;
+      btn.addEventListener('click', () => {
+        sounds.playPop();
+        appState.currentSubject = s.key;
+        appState.activeUnitCollapse = null;
+        updateSubjectTabs();
+        switchView('dashboard');
+        appState.saveState();
+        appState.renderUI();
+        closeNavWizard();
+      });
+      navWizardSubjectGrid.appendChild(btn);
+    });
+  }
+
+  function showNavWizardGradeStep() {
+    if (navWizardGradeStep) navWizardGradeStep.style.display = 'block';
+    if (navWizardSubjectStep) navWizardSubjectStep.style.display = 'none';
+    renderNavWizardGrades();
+  }
+
+  function showNavWizardSubjectStep(grade) {
+    if (navWizardGradeStep) navWizardGradeStep.style.display = 'none';
+    if (navWizardSubjectStep) navWizardSubjectStep.style.display = 'block';
+    if (navWizardSubjectTitle) navWizardSubjectTitle.textContent = `Grade ${grade} — Choose a Subject`;
+    renderNavWizardSubjects();
+  }
+
+  function openNavWizard() {
+    showNavWizardGradeStep();
+    if (navWizardModal) navWizardModal.classList.add('active');
+  }
+
+  function closeNavWizard() {
+    if (navWizardModal) navWizardModal.classList.remove('active');
+  }
+
+  if (navWizardBackBtn) {
+    navWizardBackBtn.addEventListener('click', () => {
+      sounds.playPop();
+      showNavWizardGradeStep();
+    });
+  }
+  if (closeNavWizardBtn) {
+    closeNavWizardBtn.addEventListener('click', () => {
+      sounds.playPop();
+      closeNavWizard();
+    });
+  }
+  if (navWizardModal) {
+    navWizardModal.addEventListener('click', (e) => {
+      if (e.target === navWizardModal) closeNavWizard();
+    });
+  }
+
+  const navWizardHallOfFameBtn = document.getElementById('navWizardHallOfFameBtn');
+  if (navWizardHallOfFameBtn) {
+    navWizardHallOfFameBtn.addEventListener('click', () => {
+      sounds.playPop();
+      switchView('leaderboard');
+      closeNavWizard();
+    });
+  }
+  const navWizardShopBtn = document.getElementById('navWizardShopBtn');
+  if (navWizardShopBtn) {
+    navWizardShopBtn.addEventListener('click', () => {
+      sounds.playPop();
+      switchView('shop');
+      closeNavWizard();
+    });
+  }
+  const navWizardGamesBtn = document.getElementById('navWizardGamesBtn');
+  if (navWizardGamesBtn) {
+    navWizardGamesBtn.addEventListener('click', () => {
+      sounds.playPop();
+      switchView('games');
+      closeNavWizard();
     });
   }
 
@@ -37938,7 +38679,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateGameTimeCost() {
     if (timeInput && calcText) {
       const val = parseInt(timeInput.value) || 0;
-      calcText.innerText = `${val * 3} Points`;
+      calcText.innerText = `${val * 2} Points`;
     }
   }
   
@@ -37955,7 +38696,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Please enter a valid amount of minutes!");
         return;
       }
-      const requiredPoints = mins * 3;
+      const requiredPoints = mins * 2;
       if (requiredPoints > appState.points) {
         alert(`Not enough points! You only have ${appState.points} points, but you need ${requiredPoints} points.`);
         return;
@@ -38406,7 +39147,13 @@ function startLessonQuest(lessonId) {
   const lesson = GRADE_1_CURRICULUM.find(l => l.id === lessonId);
   appState.activeQuestLessonId = lessonId;
   appState.activeTopic = "numbersense"; // compat
-  
+  // Randomize which slice of each question-format template pool this
+  // session starts from, so replaying a lesson on a different day surfaces
+  // different phrasings instead of always the same first few templates
+  // (practice/mastery/test always start their internal index counters back
+  // at 0, which would otherwise always hit the same handful of templates).
+  appState.mqTemplateSeed = Math.floor(Math.random() * 20);
+
   document.getElementById('playgroundTitle').innerText = `L${lesson.id}: ${lesson.title}`;
   document.getElementById('playgroundStars').innerText = appState.stars;
   
@@ -38498,12 +39245,29 @@ function switchStep(stepNum) {
   stopAllLessonPlayback();
 
   appState.activeStep = stepNum;
-  
+
+  // Steps 2-4 fullscreen the whole #playgroundOverlay, but Step 1 fullscreens
+  // a narrower child of it (#step-view-1 or #lessonVideoBlockWrap, so the
+  // video/text can fill the screen without the header/tabs showing). Moving
+  // from Step 1 into Step 2+ therefore hands fullscreen off from that child
+  // to its own ancestor — and browsers exit fullscreen automatically the
+  // instant the current fullscreen element gets hidden. The code below used
+  // to hide #step-view-1 (display:none in the loop) BEFORE requesting
+  // fullscreen on #playgroundOverlay, so the hide-triggered auto-exit could
+  // race with (and cancel out) the new request, leaving Practice/Mastery/
+  // Test not actually fullscreen. Requesting #playgroundOverlay's fullscreen
+  // first — while #step-view-1 is still visible and still holds fullscreen —
+  // lets the browser cleanly transfer fullscreen to the ancestor in one
+  // step, so hiding the old child afterward has no effect on it.
+  if (stepNum === 2 || stepNum === 3 || stepNum === 4) {
+    requestPlaygroundFullscreen();
+  }
+
   // Update Tab buttons styling
   document.querySelectorAll('.tab-btn').forEach((tab, index) => {
     tab.classList.toggle('active', index + 1 === stepNum);
   });
-  
+
   // Toggle displays
   document.querySelectorAll('.step-view').forEach((view, index) => {
     view.style.display = (index + 1 === stepNum) ? 'flex' : 'none';
