@@ -37319,6 +37319,8 @@ class AppState {
     document.getElementById('streakCount').innerText = this.streak;
     document.getElementById('profileLevel').innerText = `Level ${this.level}`;
     document.getElementById('profileName').innerText = this.username;
+    const welcomeNameEl = document.getElementById('welcomeProfileName');
+    if (welcomeNameEl) welcomeNameEl.innerText = this.username;
 
     // Display points balance
     const pointsSpan = document.getElementById('pointsCount');
@@ -37733,47 +37735,31 @@ class AppState {
 // Accounts allowed to see the Admin Stats dashboard (registration counts,
 // everyone's grade, per-user progress). Usernames are always stored/compared
 // lowercase (see AuthSystem.register/login below), so list them lowercase here.
-const ADMIN_USERNAMES = ['akshara', 'kashyapper'];
+const ADMIN_USERNAMES = ['akshara', 'kashyapper', 'kash'];
 
 // ══════════════════════════════════════════════════════════
 //  Feedback Inbox — any logged-in user can submit a message via the
-//  floating 💬 button; only ADMIN_USERNAMES can read them, via the
-//  Feedback section of the Admin Dashboard. Stored locally (this whole
-//  app has no backend — see funcademy_users/funcademy_session above),
-//  so submissions are only visible to an admin using the same browser
-//  the feedback was submitted from.
+//  floating 💬 button (or the "Send Feedback" Quick Link in the ☰
+//  menu); only ADMIN_USERNAMES can read them, via the Feedback section
+//  of the Admin Dashboard. Lives on the FunCademy server now (see
+//  server/server.js), so submissions are visible to an admin from any
+//  computer, not just the one the feedback was submitted from.
 // ══════════════════════════════════════════════════════════
-const FEEDBACK_STORAGE_KEY = 'funcademy_feedback';
-
-function getFeedbackList() {
-  try {
-    const raw = localStorage.getItem(FEEDBACK_STORAGE_KEY);
-    const list = raw ? JSON.parse(raw) : [];
-    return Array.isArray(list) ? list : [];
-  } catch (e) {
-    return [];
-  }
+async function getFeedbackList() {
+  const result = await window.AuthSystem.apiRequest('/api/feedback');
+  return result.ok ? result.feedback : [];
 }
 
-function saveFeedbackList(list) {
-  try {
-    localStorage.setItem(FEEDBACK_STORAGE_KEY, JSON.stringify(list));
-  } catch (e) { /* storage full or unavailable — fail quietly */ }
-}
-
-function submitFeedback(message) {
+async function submitFeedback(message) {
   const trimmed = String(message || '').trim();
   if (!trimmed) return false;
-  const list = getFeedbackList();
-  const username = (window.AuthSystem && window.AuthSystem.currentUsername) || 'unknown';
-  list.unshift({
-    id: Date.now() + '-' + Math.floor(Math.random() * 100000),
-    username,
-    message: trimmed.slice(0, 1000),
-    timestamp: Date.now()
-  });
-  saveFeedbackList(list);
-  return true;
+  const result = await window.AuthSystem.apiRequest('/api/feedback', { method: 'POST', body: { message: trimmed.slice(0, 1000) } });
+  return !!result.ok;
+}
+
+async function clearAllFeedback() {
+  const result = await window.AuthSystem.apiRequest('/api/feedback', { method: 'DELETE' });
+  return !!result.ok;
 }
 
 // ══════════════════════════════════════════════════════════
@@ -37784,120 +37770,66 @@ function submitFeedback(message) {
 // ══════════════════════════════════════════════════════════
 const AVATAR_EMOJIS = ['🐼', '🦁', '🐸', '🦊', '🐯', '🐧', '🐢', '🦄', '🐬', '🦋', '🐨', '🦖'];
 
+// Where the self-hosted backend (server/server.js) lives. Defaults to
+// localhost:3001 for local testing. If you deploy the server somewhere
+// else (a LAN IP so other devices on the same network can reach it, or
+// a real hosting provider), change this one line to match — everything
+// else in the app talks to the backend through this constant.
+const API_BASE_URL = (window.FUNCADEMY_API_BASE_URL) || 'http://localhost:3001';
+
 window.AuthSystem = {
   currentUsername: null,
+  currentToken: null,
 
-  // ── Storage helpers ──────────────────────────────────────
-  getUsers() {
+  // ── Low-level request helper ─────────────────────────────
+  // Every AuthSystem method that talks to the server funnels through
+  // here so error handling (network down, server down, bad response)
+  // is handled in exactly one place instead of copy-pasted everywhere.
+  async apiRequest(path, options) {
+    options = options || {};
+    const headers = Object.assign({ 'Content-Type': 'application/json' }, options.headers || {});
+    if (this.currentToken) headers['Authorization'] = 'Bearer ' + this.currentToken;
+    let res;
     try {
-      let data = localStorage.getItem('funcademy_users');
-      let users = data ? JSON.parse(data) : {};
-      
-      const defaultPassHash = "1586410a56c910e9485e75fe152b13f058bd3f9893b6e203016c411b0f1a2832";
-      
-      let changed = false;
-      
-      const createMockState = (grade, stars, points, streak, accuracy, mathC, elaC, otherC) => {
-        const freshCounts = (c) => ({
-          1: { lessonsCompleted: c, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
-          2: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
-          3: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
-          4: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false },
-          5: { lessonsCompleted: 0, examsPassed: [false, false, false, false, false, false], reviewCompleted: false, gradeTestPassed: false }
-        });
-        const mathCounts = freshCounts(mathC);
-        const elaCounts = freshCounts(elaC);
-        const geoCounts = freshCounts(Math.floor(otherC / 4));
-        const histCounts = freshCounts(Math.floor(otherC / 4));
-        const sciCounts = freshCounts(Math.floor(otherC / 4));
-        const artCounts = freshCounts(otherC - 3 * Math.floor(otherC / 4));
-        
-        return {
-          stars,
-          level: Math.floor(stars / 30) + 1,
-          streak,
-          avatarIndex: 0,
-          currentGrade: grade,
-          totalQuestionsAnswered: mathC * 5 + elaC * 5 + otherC * 5,
-          correctQuestionsAnswered: Math.round((mathC * 5 + elaC * 5 + otherC * 5) * (accuracy / 100)),
-          completedCountsMath: mathCounts,
-          completedCountsEla: elaCounts,
-          completedCountsGeography: geoCounts,
-          completedCountsHistory: histCounts,
-          completedCountsScience: sciCounts,
-          completedCountsArt: artCounts,
-          points,
-          isSoundOn: false
-        };
-      };
+      res = await fetch(API_BASE_URL + path, {
+        method: options.method || 'GET',
+        headers,
+        body: options.body ? JSON.stringify(options.body) : undefined
+      });
+    } catch (e) {
+      // Most common cause: the server isn't running, or API_BASE_URL
+      // points somewhere unreachable. Surface a clear, actionable
+      // message instead of a raw "Failed to fetch" network error.
+      return { ok: false, error: `Can't reach the FunCademy server at ${API_BASE_URL}. Make sure it's running (see server/README).`, networkError: true };
+    }
+    let data;
+    try { data = await res.json(); }
+    catch (e) { data = { ok: false, error: 'The server sent back something unexpected.' }; }
+    return data;
+  },
 
-      if (!users["akshara"]) {
-        users["akshara"] = {
-          passwordHash: defaultPassHash,
-          displayName: "Akshara",
-          avatarEmoji: "🐼",
-          createdAt: Date.now() - 86400000 * 5,
-          lastLoginAt: Date.now() - 3600000,
-          loginCount: 15,
-          state: createMockState(5, 350, 1200, 5, 94, 15, 12, 10)
-        };
-        changed = true;
-      }
-      
-      const mockUsers = {
-        "kashyap": { name: "Kashyap", avatar: "🦁", grade: 4, stars: 280, points: 950, streak: 3, accuracy: 88, mathC: 12, elaC: 9, otherC: 7, timeOffset: 7200000 },
-        "ananya": { name: "Ananya", avatar: "🦊", grade: 3, stars: 310, points: 1050, streak: 4, accuracy: 91, mathC: 14, elaC: 11, otherC: 9, timeOffset: 14400000 },
-        "rohan": { name: "Rohan", avatar: "🐸", grade: 2, stars: 220, points: 720, streak: 2, accuracy: 82, mathC: 10, elaC: 7, otherC: 5, timeOffset: 28800000 },
-        "aditya": { name: "Aditya", avatar: "🦄", grade: 5, stars: 190, points: 640, streak: 1, accuracy: 80, mathC: 8, elaC: 6, otherC: 4, timeOffset: 43200000 }
-      };
-      
-      for (const [uname, info] of Object.entries(mockUsers)) {
-        if (!users[uname]) {
-          users[uname] = {
-            passwordHash: defaultPassHash,
-            displayName: info.name,
-            avatarEmoji: info.avatar,
-            createdAt: Date.now() - 86400000 * 3,
-            lastLoginAt: Date.now() - info.timeOffset,
-            loginCount: 8,
-            state: createMockState(info.grade, info.stars, info.points, info.streak, info.accuracy, info.mathC, info.elaC, info.otherC)
-          };
-          changed = true;
-        }
-      }
-      
-      if (changed) {
-        localStorage.setItem('funcademy_users', JSON.stringify(users));
-      }
-      
-      return users;
-    }
-    catch (e) {
-      console.error("Error in getUsers pre-population:", e);
-      return {};
-    }
-  },
-  saveUsers(users) {
-    localStorage.setItem('funcademy_users', JSON.stringify(users));
-  },
+  // ── Session (token) persistence ──────────────────────────
   getSession() {
     try { return JSON.parse(localStorage.getItem('funcademy_session') || 'null'); }
     catch { return null; }
   },
-  saveSession(username, rememberMe) {
+  saveSession(username, rememberMe, token) {
+    const payload = { username, rememberMe: !!rememberMe, token };
     if (rememberMe) {
-      localStorage.setItem('funcademy_session', JSON.stringify({ username, rememberMe: true }));
+      localStorage.setItem('funcademy_session', JSON.stringify(payload));
     } else {
       // Session only: use sessionStorage so it clears when browser closes
       localStorage.removeItem('funcademy_session');
-      sessionStorage.setItem('funcademy_session', JSON.stringify({ username, rememberMe: false }));
+      sessionStorage.setItem('funcademy_session', JSON.stringify(payload));
     }
     this.currentUsername = username;
+    this.currentToken = token;
   },
   clearSession() {
     localStorage.removeItem('funcademy_session');
     sessionStorage.removeItem('funcademy_session');
     this.currentUsername = null;
+    this.currentToken = null;
   },
   getActiveSession() {
     // Check localStorage (remember me) first, then sessionStorage
@@ -37910,78 +37842,59 @@ window.AuthSystem = {
     return null;
   },
 
-  // ── Password hashing (SHA-256 via SubtleCrypto) ──────────
-  async hashPassword(password) {
-    const salted = password + 'funcademy_salt_v1';
-    if (window.crypto && window.crypto.subtle) {
-      try {
-        const encoder = new TextEncoder();
-        const data = encoder.encode(salted);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-      } catch (e) {
-        console.warn("SubtleCrypto failed, falling back to simple hash", e);
-      }
-    }
-    let hash = 0;
-    for (let i = 0; i < salted.length; i++) {
-      const chr = salted.charCodeAt(i);
-      hash = ((hash << 5) - hash) + chr;
-      hash |= 0;
-    }
-    return 'fb_' + Math.abs(hash).toString(16);
+  // ── Fetch every account's public info (leaderboard + admin stats) ──
+  // Replaces the old local-only getUsers(): now genuinely shared across
+  // every computer that points at the same server.
+  async fetchAllUsers() {
+    const result = await this.apiRequest('/api/users');
+    if (!result.ok) return {};
+    // Reshape the array response back into the {username: record} map
+    // shape the rest of the app (admin table, leaderboard) already
+    // expects, so those call sites don't need to change their logic.
+    const map = {};
+    result.users.forEach(u => {
+      map[u.username] = {
+        displayName: u.displayName,
+        avatarEmoji: u.avatarEmoji,
+        createdAt: u.createdAt,
+        lastLoginAt: u.lastLoginAt,
+        state: u.state,
+        weeklyData: u.weeklyData
+      };
+    });
+    return map;
   },
 
   // ── Register a new user ──────────────────────────────────
   async register(username, password) {
-    const users = this.getUsers();
-    const key = username.toLowerCase().trim();
-    const displayName = username.trim(); // username IS the display name
-    if (!key) return { ok: false, error: 'Username cannot be empty.' };
-    if (key.length < 3) return { ok: false, error: 'Username must be at least 3 characters.' };
-    if (users[key]) return { ok: false, error: 'That username is already taken. Try another!' };
-    if (password.length < 4) return { ok: false, error: 'Password must be at least 4 characters.' };
-
-    const hash = await this.hashPassword(password);
-    const avatarEmoji = AVATAR_EMOJIS[Object.keys(users).length % AVATAR_EMOJIS.length];
-    users[key] = {
-      passwordHash: hash,
-      displayName,
-      avatarEmoji,
-      createdAt: Date.now(),
-      lastLoginAt: Date.now(),
-      loginCount: 1,
-      state: null  // no saved progress yet
-    };
-    this.saveUsers(users);
-    return { ok: true, username: key, displayName, avatarEmoji };
+    const result = await this.apiRequest('/api/signup', { method: 'POST', body: { username, password } });
+    if (!result.ok) return result;
+    return { ok: true, username: result.username, displayName: result.displayName, avatarEmoji: result.avatarEmoji, token: result.token };
   },
 
   // ── Login (validate credentials) ────────────────────────
   async login(username, password) {
-    const users = this.getUsers();
-    const key = username.toLowerCase().trim();
-    const user = users[key];
-    if (!user) return { ok: false, error: "Account not found. Check your username or sign up!" };
-    const hash = await this.hashPassword(password);
-    if (hash !== user.passwordHash) return { ok: false, error: "Incorrect password. Try again!" };
-    
-    // Update login telemetry
-    user.lastLoginAt = Date.now();
-    user.loginCount = (user.loginCount || 0) + 1;
-    this.saveUsers(users);
-    
-    return { ok: true, username: key, displayName: user.displayName, avatarEmoji: user.avatarEmoji, state: user.state };
+    const result = await this.apiRequest('/api/login', { method: 'POST', body: { username, password } });
+    if (!result.ok) return result;
+    return { ok: true, username: result.username, displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: result.state, token: result.token };
   },
 
   // ── Save current user's AppState into their registry entry ─
+  // Fire-and-forget by design: appState.saveState() (which calls this)
+  // runs synchronously very often (after nearly every point/star
+  // change), so this quietly syncs to the server in the background
+  // rather than making every single save() call await a network
+  // round-trip.
   saveCurrentUserState(state) {
-    if (!this.currentUsername) return;
-    const users = this.getUsers();
-    if (!users[this.currentUsername]) return;
-    users[this.currentUsername].state = state;
-    this.saveUsers(users);
+    if (!this.currentUsername || !this.currentToken) return;
+    this.apiRequest('/api/save-state', { method: 'POST', body: { state } }).catch(() => {});
+  },
+
+  // ── Save this week's lesson-count tracker (used by the leaderboard's
+  // weekly reset) ───────────────────────────────────────────
+  saveCurrentUserWeekly(weeklyData) {
+    if (!this.currentUsername || !this.currentToken) return;
+    this.apiRequest('/api/save-weekly', { method: 'POST', body: { weeklyData } }).catch(() => {});
   },
 
   // ── Load a user's saved state into appState ──────────────
@@ -38058,6 +37971,12 @@ window.AuthSystem = {
     if (this.currentUsername) {
       appState.saveState();
     }
+    // Best-effort: tell the server this token is done, but don't block
+    // the actual logout on it (the user wants out now, not after a
+    // network round-trip).
+    if (this.currentToken) {
+      this.apiRequest('/api/logout', { method: 'POST' }).catch(() => {});
+    }
     this.clearSession();
     const adminNavBtn = document.getElementById('sidebarAdminBtn');
     if (adminNavBtn) adminNavBtn.style.display = 'none';
@@ -38069,16 +37988,18 @@ window.AuthSystem = {
   // ── Check for an existing session on page load ───────────
   async checkAutoLogin() {
     const session = this.getActiveSession();
-    if (!session) return false;
-    const users = this.getUsers();
-    const user = users[session.username];
-    if (!user) {
+    if (!session || !session.token) return false;
+    this.currentUsername = session.username;
+    this.currentToken = session.token;
+    const result = await this.apiRequest('/api/me');
+    if (!result.ok) {
+      // Token expired/invalid, or the server isn't reachable right now —
+      // either way, don't pretend we're logged in with stale data.
       this.clearSession();
       return false;
     }
     // Valid session found → log in automatically
-    this.currentUsername = session.username;
-    this.loadUserIntoApp(user);
+    this.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: result.state });
     return true;
   }
 };
@@ -38090,7 +38011,6 @@ function showLoginScreen() {
   const appContainer = document.getElementById('appContainer');
   if (loginScreen) loginScreen.style.display = 'flex';
   if (appContainer) appContainer.style.display = 'none';
-  renderQuickSwitcher();
 }
 
 function hideLoginScreen() {
@@ -38131,38 +38051,6 @@ function togglePw(inputId, btnId) {
   }
 }
 
-function renderQuickSwitcher() {
-  const users = window.AuthSystem.getUsers();
-  const keys = Object.keys(users);
-  const switcher = document.getElementById('quickSwitcher');
-  const container = document.getElementById('quickSwitcherUsers');
-  if (!switcher || !container) return;
-  if (keys.length === 0) { switcher.style.display = 'none'; return; }
-  switcher.style.display = 'block';
-  container.innerHTML = keys.map(k => {
-    const u = users[k];
-    return `<button class="quick-user-btn" onclick="quickLogin('${k}')" title="Log in as ${u.displayName}">
-      <span class="quick-user-avatar">${u.avatarEmoji || '🐼'}</span>
-      <span class="quick-user-name">${u.displayName}</span>
-    </button>`;
-  }).join('');
-}
-
-async function quickLogin(username) {
-  // Quick-switch: prompt for password
-  const pw = prompt(`Enter password for ${username}:`);
-  if (pw === null) return;
-  const result = await window.AuthSystem.login(username, pw);
-  if (!result.ok) {
-    alert(result.error);
-    return;
-  }
-  const rememberMe = document.getElementById('rememberMe');
-  window.AuthSystem.saveSession(username, rememberMe ? rememberMe.checked : false);
-  window.AuthSystem.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: result.state });
-  hideLoginScreen();
-}
-
 async function handleSignIn(event) {
   event.preventDefault();
   const btn = document.getElementById('signInBtn');
@@ -38186,7 +38074,7 @@ async function handleSignIn(event) {
       return;
     }
 
-    window.AuthSystem.saveSession(result.username, rememberMe);
+    window.AuthSystem.saveSession(result.username, rememberMe, result.token);
     window.AuthSystem.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: result.state });
     hideLoginScreen();
   } catch (err) {
@@ -38229,7 +38117,7 @@ async function handleSignUp(event) {
     }
 
     // Auto-login after sign-up
-    window.AuthSystem.saveSession(result.username, true);
+    window.AuthSystem.saveSession(result.username, true, result.token);
     window.AuthSystem.loadUserIntoApp({ displayName: result.displayName, avatarEmoji: result.avatarEmoji, state: null });
     hideLoginScreen();
   } catch (err) {
@@ -38697,8 +38585,8 @@ document.addEventListener('DOMContentLoaded', () => {
       feedbackModal.classList.remove('active');
     });
 
-    submitFeedbackBtn.addEventListener('click', () => {
-      const ok = submitFeedback(feedbackTextarea.value);
+    submitFeedbackBtn.addEventListener('click', async () => {
+      const ok = await submitFeedback(feedbackTextarea.value);
       if (!ok) {
         submitFeedbackBtn.style.animation = 'wrong-shake 0.3s ease';
         setTimeout(() => { submitFeedbackBtn.style.animation = ''; }, 300);
@@ -38796,10 +38684,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const clearFeedbackBtn = document.getElementById('clearFeedbackBtn');
   if (clearFeedbackBtn) {
-    clearFeedbackBtn.addEventListener('click', () => {
-      if (getFeedbackList().length === 0) return;
+    clearFeedbackBtn.addEventListener('click', async () => {
+      const list = await getFeedbackList();
+      if (list.length === 0) return;
       if (!confirm('Clear all submitted feedback? This cannot be undone.')) return;
-      saveFeedbackList([]);
+      await clearAllFeedback();
       renderAdminFeedbackData();
     });
   }
@@ -39090,12 +38979,12 @@ function switchView(viewName) {
   }
 }
 
-function renderAdminStatsData() {
+async function renderAdminStatsData() {
   if (typeof appState !== 'undefined' && appState.saveState) {
     appState.saveState();
   }
 
-  const users = window.AuthSystem ? window.AuthSystem.getUsers() : {};
+  const users = window.AuthSystem ? await window.AuthSystem.fetchAllUsers() : {};
   const userKeys = Object.keys(users);
   
   const totalLearners = userKeys.length;
@@ -39236,13 +39125,13 @@ function formatRelativeTime(timestamp) {
 // Renders the Feedback Inbox inside the Admin Dashboard. Reachable only
 // through the admin view, which is itself gated to ADMIN_USERNAMES —
 // see the viewName === 'admin' guard earlier in this file.
-function renderAdminFeedbackData() {
+async function renderAdminFeedbackData() {
   const listEl = document.getElementById('adminFeedbackList');
   const countEl = document.getElementById('adminFeedbackCount');
   if (!listEl) return;
 
-  const users = window.AuthSystem ? window.AuthSystem.getUsers() : {};
-  const feedback = getFeedbackList();
+  const users = window.AuthSystem ? await window.AuthSystem.fetchAllUsers() : {};
+  const feedback = await getFeedbackList();
 
   if (countEl) countEl.textContent = String(feedback.length);
   listEl.innerHTML = '';
@@ -44546,23 +44435,24 @@ function getISOWeekKey(date) {
 }
 
 // ── Record a lesson completion for the current user in weekly tracking ──
-function recordWeeklyLesson() {
+// Reads the current weeklyData from the server (via fetchAllUsers, which
+// already returns every account's public record including our own), bumps
+// the count, and pushes it back — so the weekly leaderboard reflects real
+// activity from any computer this account has been used on.
+async function recordWeeklyLesson() {
   if (!window.AuthSystem || !window.AuthSystem.currentUsername) return;
-  const users = window.AuthSystem.getUsers();
-  const key = window.AuthSystem.currentUsername;
-  if (!users[key]) return;
   const weekKey = getISOWeekKey(new Date());
-  if (!users[key].weeklyData) users[key].weeklyData = {};
-  if (users[key].weeklyData.week !== weekKey) {
-    // New week — reset count
-    users[key].weeklyData = { week: weekKey, lessons: 0 };
-  }
-  users[key].weeklyData.lessons += 1;
-  window.AuthSystem.saveUsers(users);
+  const users = await window.AuthSystem.fetchAllUsers();
+  const key = window.AuthSystem.currentUsername;
+  const existing = (users[key] && users[key].weeklyData) || {};
+  const weeklyData = existing.week === weekKey
+    ? { week: weekKey, lessons: (existing.lessons || 0) + 1 }
+    : { week: weekKey, lessons: 1 };
+  window.AuthSystem.saveCurrentUserWeekly(weeklyData);
 }
 
-function renderLeaderboardData() {
-  const users = window.AuthSystem ? window.AuthSystem.getUsers() : {};
+async function renderLeaderboardData() {
+  const users = window.AuthSystem ? await window.AuthSystem.fetchAllUsers() : {};
   const currentKey = window.AuthSystem ? window.AuthSystem.currentUsername : null;
   const weekKey = getISOWeekKey(new Date());
 
