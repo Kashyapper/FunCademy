@@ -120,12 +120,17 @@ body {
   position: relative;
 }
 
-/* Sidebar Navigation */
+/* Sidebar Navigation — hidden in favor of the ☰ hamburger button
+   (#sidebarToggleBtn) which opens the Grade -> Subject navigation wizard
+   modal plus its Quick Links (Dashboard, Buddy, Sound, Admin, Log Out).
+   Left in the DOM (not deleted) since app.js still references its child
+   element IDs (profileWidget, sidebarDashboardBtn, soundToggle, etc.) for
+   state bookkeeping even though it's never shown. */
 .sidebar {
+  display: none;
   width: 320px;
   background: var(--sidebar-bg);
   border-right: 4px solid #e2e8f0;
-  display: flex;
   flex-direction: column;
   padding: 24px;
   flex-shrink: 0;
@@ -651,6 +656,34 @@ body {
   font-weight: 800;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.feedback-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, #6366f1 100%);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-bounce);
+}
+
+.feedback-fab:hover {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.feedback-fab:active {
+  transform: scale(0.94);
 }
 
 .avatar-grid {

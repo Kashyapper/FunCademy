@@ -37319,16 +37319,16 @@ class AppState {
     document.getElementById('streakCount').innerText = this.streak;
     document.getElementById('profileLevel').innerText = `Level ${this.level}`;
     document.getElementById('profileName').innerText = this.username;
-    
+
     // Display points balance
     const pointsSpan = document.getElementById('pointsCount');
     if (pointsSpan) {
       pointsSpan.innerText = `${this.points} Points`;
     }
-    
+
     const currentAvatarWrapper = document.getElementById('currentAvatar');
     currentAvatarWrapper.src = `data:image/svg+xml;utf8,${encodeURIComponent(AVATARS[this.avatarIndex])}`;
-    
+
     const soundToggle = document.getElementById('soundToggle');
     if (this.isSoundOn) {
       soundToggle.innerText = "🔊";
@@ -37337,6 +37337,18 @@ class AppState {
       soundToggle.innerText = "🔇";
       sounds.enabled = false;
     }
+
+    // Mirror the same stats/sound-icon state into the Nav Wizard's Quick
+    // Links footer, since that's the only place these are visible now that
+    // the sidebar itself is hidden (see .sidebar in styles.css).
+    const nwStar = document.getElementById('navWizardStarCount');
+    const nwStreak = document.getElementById('navWizardStreakCount');
+    const nwPoints = document.getElementById('navWizardPointsCount');
+    const nwSound = document.getElementById('navWizardSoundToggle');
+    if (nwStar) nwStar.innerText = this.stars;
+    if (nwStreak) nwStreak.innerText = this.streak;
+    if (nwPoints) nwPoints.innerText = this.points;
+    if (nwSound) nwSound.innerText = this.isSoundOn ? "🔊" : "🔇";
 
     const bannerMascots = ["🐼", "🦊", "🐸", "🐧", "🐰", "🦁", "🐒", "🐨", "🐱", "🐲"];
     const bannerMascotElement = document.querySelector('.welcome-mascot');
@@ -37724,6 +37736,47 @@ class AppState {
 const ADMIN_USERNAMES = ['akshara', 'kashyapper'];
 
 // ══════════════════════════════════════════════════════════
+//  Feedback Inbox — any logged-in user can submit a message via the
+//  floating 💬 button; only ADMIN_USERNAMES can read them, via the
+//  Feedback section of the Admin Dashboard. Stored locally (this whole
+//  app has no backend — see funcademy_users/funcademy_session above),
+//  so submissions are only visible to an admin using the same browser
+//  the feedback was submitted from.
+// ══════════════════════════════════════════════════════════
+const FEEDBACK_STORAGE_KEY = 'funcademy_feedback';
+
+function getFeedbackList() {
+  try {
+    const raw = localStorage.getItem(FEEDBACK_STORAGE_KEY);
+    const list = raw ? JSON.parse(raw) : [];
+    return Array.isArray(list) ? list : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveFeedbackList(list) {
+  try {
+    localStorage.setItem(FEEDBACK_STORAGE_KEY, JSON.stringify(list));
+  } catch (e) { /* storage full or unavailable — fail quietly */ }
+}
+
+function submitFeedback(message) {
+  const trimmed = String(message || '').trim();
+  if (!trimmed) return false;
+  const list = getFeedbackList();
+  const username = (window.AuthSystem && window.AuthSystem.currentUsername) || 'unknown';
+  list.unshift({
+    id: Date.now() + '-' + Math.floor(Math.random() * 100000),
+    username,
+    message: trimmed.slice(0, 1000),
+    timestamp: Date.now()
+  });
+  saveFeedbackList(list);
+  return true;
+}
+
+// ══════════════════════════════════════════════════════════
 //  AuthSystem — Multi-user login, signup & session management
 //  Users are stored in localStorage under 'funcademy_users'
 //  as { [username]: { passwordHash, displayName, avatarEmoji, state } }
@@ -37987,12 +38040,16 @@ window.AuthSystem = {
     appState.renderUI();
 
     // The Admin Stats dashboard (registration counts, everyone's grade, etc.)
-    // is for Akshara's eyes only — reveal the sidebar entry point just for
-    // that account; every other login keeps it hidden.
+    // is for the admin accounts' eyes only — reveal the Quick Links entry
+    // point just for those accounts; every other login keeps it hidden.
+    // (sidebarAdminBtn lives in the now-hidden sidebar but its ID is kept
+    // around since other code still reads it; navWizardAdminBtn is the
+    // actual visible entry point in the hamburger menu.)
     const adminNavBtn = document.getElementById('sidebarAdminBtn');
-    if (adminNavBtn) {
-      adminNavBtn.style.display = ADMIN_USERNAMES.includes(this.currentUsername) ? 'flex' : 'none';
-    }
+    const isAdmin = ADMIN_USERNAMES.includes(this.currentUsername);
+    if (adminNavBtn) adminNavBtn.style.display = isAdmin ? 'flex' : 'none';
+    const navWizardAdminBtn = document.getElementById('navWizardAdminBtn');
+    if (navWizardAdminBtn) navWizardAdminBtn.style.display = isAdmin ? 'flex' : 'none';
   },
 
   // ── Logout ───────────────────────────────────────────────
@@ -38004,6 +38061,8 @@ window.AuthSystem = {
     this.clearSession();
     const adminNavBtn = document.getElementById('sidebarAdminBtn');
     if (adminNavBtn) adminNavBtn.style.display = 'none';
+    const navWizardAdminBtn = document.getElementById('navWizardAdminBtn');
+    if (navWizardAdminBtn) navWizardAdminBtn.style.display = 'none';
     showLoginScreen();
   },
 
@@ -38454,6 +38513,73 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // The rest of the old sidebar's functionality (Dashboard shortcut, avatar
+  // picker, sound toggle, admin entry, log out), relocated here now that
+  // the sidebar itself is hidden — see the Quick Links footer added to
+  // #navWizardModal in index.html.
+  const navWizardDashboardBtn = document.getElementById('navWizardDashboardBtn');
+  if (navWizardDashboardBtn) {
+    navWizardDashboardBtn.addEventListener('click', () => {
+      sounds.playPop();
+      switchView('dashboard');
+      closeNavWizard();
+    });
+  }
+
+  const navWizardAdminBtnInit = document.getElementById('navWizardAdminBtn');
+  if (navWizardAdminBtnInit) {
+    navWizardAdminBtnInit.style.display = ADMIN_USERNAMES.includes(window.AuthSystem.currentUsername) ? 'flex' : 'none';
+    navWizardAdminBtnInit.addEventListener('click', () => {
+      sounds.playPop();
+      switchView('admin');
+      closeNavWizard();
+    });
+  }
+
+  const navWizardBuddyBtn = document.getElementById('navWizardBuddyBtn');
+  if (navWizardBuddyBtn) {
+    navWizardBuddyBtn.addEventListener('click', () => {
+      sounds.playPop();
+      closeNavWizard();
+      renderAvatarModalGrid();
+      avatarModal.classList.add('active');
+    });
+  }
+
+  const navWizardSoundToggle = document.getElementById('navWizardSoundToggle');
+  if (navWizardSoundToggle) {
+    navWizardSoundToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      appState.isSoundOn = !appState.isSoundOn;
+      sounds.enabled = appState.isSoundOn;
+      sounds.playPop();
+      appState.saveState();
+      appState.renderUI();
+    });
+  }
+
+  const navWizardLogoutBtn = document.getElementById('navWizardLogoutBtn');
+  if (navWizardLogoutBtn) {
+    navWizardLogoutBtn.addEventListener('click', () => {
+      sounds.playPop();
+      window.AuthSystem.logout();
+    });
+  }
+
+  const navWizardFeedbackBtn = document.getElementById('navWizardFeedbackBtn');
+  if (navWizardFeedbackBtn) {
+    navWizardFeedbackBtn.addEventListener('click', () => {
+      sounds.playPop();
+      closeNavWizard();
+      feedbackThanksMsg.style.display = 'none';
+      submitFeedbackBtn.style.display = '';
+      feedbackTextarea.style.display = '';
+      feedbackTextarea.value = '';
+      feedbackModal.classList.add('active');
+      setTimeout(() => feedbackTextarea.focus(), 150);
+    });
+  }
+
   // Check auth session on startup
   window.AuthSystem.checkAutoLogin().then(loggedIn => {
     if (loggedIn) {
@@ -38547,6 +38673,45 @@ document.addEventListener('DOMContentLoaded', () => {
     avatarModal.classList.remove('active');
   });
 
+  // Feedback Modal — floating 💬 button, visible to any logged-in user.
+  const feedbackFab = document.getElementById('feedbackFab');
+  const feedbackModal = document.getElementById('feedbackModal');
+  const closeFeedbackModal = document.getElementById('closeFeedbackModal');
+  const feedbackTextarea = document.getElementById('feedbackTextarea');
+  const submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+  const feedbackThanksMsg = document.getElementById('feedbackThanksMsg');
+
+  if (feedbackFab && feedbackModal) {
+    feedbackFab.addEventListener('click', () => {
+      sounds.playPop();
+      feedbackThanksMsg.style.display = 'none';
+      submitFeedbackBtn.style.display = '';
+      feedbackTextarea.style.display = '';
+      feedbackTextarea.value = '';
+      feedbackModal.classList.add('active');
+      setTimeout(() => feedbackTextarea.focus(), 150);
+    });
+
+    closeFeedbackModal.addEventListener('click', () => {
+      sounds.playPop();
+      feedbackModal.classList.remove('active');
+    });
+
+    submitFeedbackBtn.addEventListener('click', () => {
+      const ok = submitFeedback(feedbackTextarea.value);
+      if (!ok) {
+        submitFeedbackBtn.style.animation = 'wrong-shake 0.3s ease';
+        setTimeout(() => { submitFeedbackBtn.style.animation = ''; }, 300);
+        return;
+      }
+      sounds.playCorrect ? sounds.playCorrect() : sounds.playPop();
+      feedbackTextarea.style.display = 'none';
+      submitFeedbackBtn.style.display = 'none';
+      feedbackThanksMsg.style.display = 'block';
+      setTimeout(() => { feedbackModal.classList.remove('active'); }, 1400);
+    });
+  }
+
   // Legend Selection Modal
   const openLegendBtn = document.getElementById('openLegendBtn');
   const legendModal = document.getElementById('legendModal');
@@ -38628,6 +38793,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (adminBtn) adminBtn.addEventListener('click', () => switchView('admin'));
   const exitAdminBtn = document.getElementById('exitAdminBtn');
   if (exitAdminBtn) exitAdminBtn.addEventListener('click', () => switchView('dashboard'));
+
+  const clearFeedbackBtn = document.getElementById('clearFeedbackBtn');
+  if (clearFeedbackBtn) {
+    clearFeedbackBtn.addEventListener('click', () => {
+      if (getFeedbackList().length === 0) return;
+      if (!confirm('Clear all submitted feedback? This cannot be undone.')) return;
+      saveFeedbackList([]);
+      renderAdminFeedbackData();
+    });
+  }
 
   // Shop item purchases
   const buySkipAssignmentBtn = document.getElementById('buySkipAssignmentBtn');
@@ -38911,6 +39086,7 @@ function switchView(viewName) {
     renderLeaderboardData();
   } else if (viewName === 'admin') {
     renderAdminStatsData();
+    renderAdminFeedbackData();
   }
 }
 
@@ -39055,6 +39231,49 @@ function formatRelativeTime(timestamp) {
   const days = Math.floor(hours / 24);
   if (days === 1) return 'Yesterday';
   return `${days}d ago`;
+}
+
+// Renders the Feedback Inbox inside the Admin Dashboard. Reachable only
+// through the admin view, which is itself gated to ADMIN_USERNAMES —
+// see the viewName === 'admin' guard earlier in this file.
+function renderAdminFeedbackData() {
+  const listEl = document.getElementById('adminFeedbackList');
+  const countEl = document.getElementById('adminFeedbackCount');
+  if (!listEl) return;
+
+  const users = window.AuthSystem ? window.AuthSystem.getUsers() : {};
+  const feedback = getFeedbackList();
+
+  if (countEl) countEl.textContent = String(feedback.length);
+  listEl.innerHTML = '';
+
+  if (feedback.length === 0) {
+    listEl.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 24px; font-weight: 700;">No feedback submitted yet.</div>`;
+    return;
+  }
+
+  feedback.forEach(item => {
+    const user = users[item.username];
+    const displayName = (user && user.displayName) || item.username || 'Unknown';
+    const avatarEmoji = (user && user.avatarEmoji) || '🐼';
+
+    const card = document.createElement('div');
+    card.style.cssText = 'background: rgba(0,0,0,0.2); border: 2px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 16px;';
+    card.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 18px;">${avatarEmoji}</span>
+          <span style="font-weight: 850; color: white; font-size: 13px;">${displayName}</span>
+        </div>
+        <span style="font-size: 11px; color: var(--text-muted); white-space: nowrap;">${formatRelativeTime(item.timestamp)}</span>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #e2e8f0; white-space: pre-wrap; word-break: break-word;"></p>
+    `;
+    // Set via textContent (not innerHTML) so a feedback message containing
+    // HTML-like text can't inject markup into the admin dashboard.
+    card.querySelector('p').textContent = item.message;
+    listEl.appendChild(card);
+  });
 }
 
 

@@ -821,6 +821,20 @@
             </tbody>
           </table>
         </div>
+
+        <!-- User Feedback Inbox — only rendered/visible for ADMIN_USERNAMES,
+             same gate as the rest of this view. -->
+        <div style="background: rgba(30, 41, 59, 0.5); border: 2px solid var(--border-light); border-radius: 16px; padding: 24px; margin-top: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+            <h3 style="margin: 0; font-size: 18px; font-weight: 850; color: white; display: flex; align-items: center; gap: 8px;">
+              <span>💬</span> User Feedback <span id="adminFeedbackCount" style="font-size: 12px; font-weight: 800; color: var(--text-muted); background: rgba(255,255,255,0.08); padding: 2px 10px; border-radius: 10px;">0</span>
+            </h3>
+            <button class="primary-btn" id="clearFeedbackBtn" style="padding: 8px 16px; font-size: 13px; background: #475569; border-color: #64748b; margin: 0;">Clear All</button>
+          </div>
+          <div id="adminFeedbackList" style="display: flex; flex-direction: column; gap: 12px; max-height: 480px; overflow-y: auto;">
+            <!-- Injected dynamically by app.js -->
+          </div>
+        </div>
       </div>
 
       <!-- Footer -->
@@ -854,6 +868,23 @@
       </button>
     </nav>
 
+    <!-- Feedback Button — visible to any logged-in user on every screen. -->
+    <button id="feedbackFab" class="feedback-fab" title="Send Feedback">💬</button>
+
+  </div>
+
+  <!-- Feedback Modal — anyone can submit a message here; only the admin
+       accounts (ADMIN_USERNAMES in app.js) can read submissions, via the
+       Feedback section of the Admin Dashboard. -->
+  <div class="modal-overlay" id="feedbackModal">
+    <div class="modal-card" style="max-width: 440px;">
+      <button class="modal-close" id="closeFeedbackModal">✕</button>
+      <h3 class="modal-title">💬 Send Feedback</h3>
+      <p style="text-align: center; font-size: 13px; font-weight: 700; color: var(--text-muted); margin-top: -12px; margin-bottom: 16px;">Found a bug, or have an idea? Let us know!</p>
+      <textarea id="feedbackTextarea" placeholder="Type your feedback here..." maxlength="1000" style="width: 100%; min-height: 120px; padding: 12px; border-radius: 12px; border: 2px solid var(--border-light); font-family: inherit; font-size: 14px; resize: vertical; box-sizing: border-box;"></textarea>
+      <button class="primary-btn" id="submitFeedbackBtn" style="width: 100%; margin-top: 14px;">Submit Feedback</button>
+      <div id="feedbackThanksMsg" style="display: none; text-align: center; font-weight: 800; color: #16a34a; margin-top: 12px;">✅ Thanks! Your feedback was sent.</div>
+    </div>
   </div>
 
   <!-- Avatar Selector Modal -->
@@ -888,7 +919,11 @@
 
       <div class="menu-section-title" style="margin-top: 24px;">Quick Links</div>
       <div class="menu-grid">
-        <button class="nav-btn" id="navWizardHallOfFameBtn" style="grid-column: span 2;">
+        <button class="nav-btn" id="navWizardDashboardBtn" style="grid-column: span 2;">
+          <span style="font-size: 18px;">🏠</span>
+          <span>Dashboard</span>
+        </button>
+        <button class="nav-btn" id="navWizardHallOfFameBtn">
           <span style="font-size: 18px;">🏆</span>
           <span>Hall of Fame</span>
         </button>
@@ -900,6 +935,32 @@
           <span style="font-size: 18px;">🎮</span>
           <span>Game Room</span>
         </button>
+        <button class="nav-btn" id="navWizardBuddyBtn">
+          <span style="font-size: 18px;">🐱</span>
+          <span>My Buddy</span>
+        </button>
+        <button class="nav-btn" id="navWizardAdminBtn" style="display: none;">
+          <span style="font-size: 18px;">📊</span>
+          <span>Admin</span>
+        </button>
+        <button class="nav-btn" id="navWizardFeedbackBtn" style="grid-column: span 2;">
+          <span style="font-size: 18px;">💬</span>
+          <span>Send Feedback</span>
+        </button>
+      </div>
+
+      <!-- Stats + Sound + Log Out footer, so nothing from the old sidebar
+           is actually lost, just relocated in here. -->
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 20px; padding-top: 16px; border-top: 2px dashed var(--border-light, #e2e8f0);">
+        <div style="display: flex; gap: 10px; font-size: 13px; font-weight: 800; color: var(--text-muted);">
+          <span title="Total Stars">⭐ <span id="navWizardStarCount">0</span></span>
+          <span title="Daily Streak">🔥 <span id="navWizardStreakCount">1</span></span>
+          <span title="Total Points">🪙 <span id="navWizardPointsCount">0</span></span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <button class="sound-toggle-btn" id="navWizardSoundToggle" title="Toggle Sound">🔊</button>
+          <button id="navWizardLogoutBtn" style="display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(239,68,68,0.1); border:1.5px solid rgba(239,68,68,0.25); color:#f87171; padding:8px 12px; border-radius:12px; font-size:12px; font-weight:800; cursor:pointer;" title="Log Out">🚪 Log Out</button>
+        </div>
       </div>
     </div>
   </div>

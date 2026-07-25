@@ -274,7 +274,9 @@ const VIDEO_SCENE_KEYWORDS = {
   atom: ["atom", "molecule", "matter", "chemical", "element", "energy", "force", "electricity", "magnet", "state of matter", "solid", "liquid", "gas", "energy transfer", "simple machine", "motion"],
   space: ["space", "planet", "star", "moon", "sun", "solar", "galaxy", "astronaut", "orbit", "rotation", "revolution", "gravity", "eclipse"],
   plant: ["plant", "seed", "leaf", "photosynthesis", "grow", "tree", "flower", "life cycle", "germinate", "root", "stem", "pollinate"],
-  animal: ["animal", "habitat", "mammal", "insect", "bird", "fish", "ecosystem", "ocean life", "adaptation", "food chain", "predator", "prey", "vertebrate", "invertebrate"],
+  animal: ["animal", "habitat", "mammal", "insect", "bird", "fish", "ecosystem", "ocean life", "adaptation", "food chain", "predator", "prey", "vertebrate", "invertebrate",
+    "lion", "elephant", "tiger", "bear", "frog", "toad", "butterfly", "caterpillar", "bee", "salmon", "goldfish", "eagle", "hawk", "falcon", "owl",
+    "snake", "serpent", "turtle", "tortoise", "rabbit", "bunny", "whale", "spider", "giraffe", "wolf", "fox", "deer", "zebra", "monkey", "penguin", "shark", "dolphin"],
   water: ["water", "cloud", "rain", "weather", "cycle", "climate", "ocean", "river", "evaporat", "erosion", "precipitation", "temperature", "season"],
   // geography
   globe: ["map", "globe", "continent", "country", "compass", "coordinate", "hemisphere", "equator", "region", "border", "latitude", "longitude", "population"],
@@ -622,7 +624,17 @@ const VIDEO_SCENES = {
     ctx.restore();
   },
 
-  flag_civics: function (ctx, w, h, t) {
+  // Routes civics/government pages to the specific moment they describe —
+  // casting a vote, reading the Constitution, or marching to war — instead
+  // of the same waving-flag backdrop for every civics topic.
+  flag_civics: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/\bvote\b|voting|election|ballot/.test(rt)) { VIDEO_SCENES._civicsVote(ctx, w, h, t); return; }
+    if (/constitution|amendment|\blaw\b|bill of rights|congress/.test(rt)) { VIDEO_SCENES._civicsLaw(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericCivics(ctx, w, h, t);
+  },
+
+  _genericCivics: function (ctx, w, h, t) {
     ctx.fillStyle = "#1e293b"; ctx.fillRect(0, 0, w, h);
     // Waving flag
     const fx = w * 0.28, fy = h * 0.25, fw = w * 0.42, fh = h * 0.32;
@@ -665,6 +677,74 @@ const VIDEO_SCENES = {
       ctx.fillRect(px - 3, h - 40, 6, 12);
       ctx.beginPath(); ctx.moveTo(px, h - 28); ctx.lineTo(px + legSwing, h - 16); ctx.stroke();
     }
+  },
+
+  // A voter drops a ballot into a box under a "VOTE" banner, with a queue
+  // of citizens waiting their turn.
+  _civicsVote: function (ctx, w, h, t) {
+    ctx.fillStyle = "#eff6ff"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#1e3a8a"; ctx.fillRect(0, h * 0.8, w, h * 0.2);
+    // Ballot box
+    ctx.fillStyle = "#1e293b"; ctx.fillRect(w * 0.42, h * 0.55, w * 0.16, h * 0.24);
+    ctx.fillStyle = "#dc2626"; ctx.fillRect(w * 0.42, h * 0.53, w * 0.16, h * 0.04);
+    ctx.fillStyle = "#0f172a"; ctx.fillRect(w * 0.47, h * 0.53, w * 0.06, 0.01 * h + 3);
+    // Ballot slip dropping in, looping
+    const drop = (t / 6) % (h * 0.35);
+    ctx.fillStyle = "#f8fafc";
+    ctx.save(); ctx.translate(w * 0.5, h * 0.35 + drop);
+    ctx.fillRect(-14, -9, 28, 18);
+    ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(-8, -3); ctx.lineTo(8, -3); ctx.moveTo(-8, 2); ctx.lineTo(4, 2); ctx.stroke();
+    ctx.fillStyle = "#16a34a"; ctx.beginPath(); ctx.arc(9, 3, 2, 0, 7); ctx.fill(); // checkmark dot
+    ctx.restore();
+    // Voter figure
+    ctx.fillStyle = "#334155";
+    ctx.beginPath(); ctx.arc(w * 0.5, h * 0.42, 8, 0, 7); ctx.fill();
+    ctx.fillRect(w * 0.5 - 8, h * 0.46, 16, 20);
+    // Waiting queue
+    for (let i = 0; i < 3; i++) {
+      const qx = w * 0.75 + i * 22;
+      ctx.fillStyle = "#64748b";
+      ctx.beginPath(); ctx.arc(qx, h * 0.7, 6, 0, 7); ctx.fill();
+      ctx.fillRect(qx - 6, h * 0.73, 12, 14);
+    }
+    // "VOTE" banner
+    ctx.fillStyle = "#1e3a8a"; ctx.font = "bold 22px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("VOTE", w * 0.5, h * 0.18);
+    ctx.fillStyle = "#dc2626";
+    for (let i = 0; i < 5; i++) { ctx.beginPath(); ctx.arc(w * 0.5 - 60 + i * 30, h * 0.18 - 26, 3, 0, 7); ctx.fill(); }
+  },
+
+  // The Constitution scroll unrolling on a wooden desk beside a quill and
+  // an inkwell, a gavel resting nearby.
+  _civicsLaw: function (ctx, w, h, t) {
+    ctx.fillStyle = "#451a03"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#78350f"; ctx.fillRect(0, h * 0.7, w, h * 0.3);
+    // Unrolling scroll
+    const unroll = Math.min(1, 0.3 + Math.sin(t / 2600) * 0.5 + 0.5);
+    const sw = w * 0.5 * unroll;
+    ctx.fillStyle = "#fef3c7";
+    ctx.fillRect(w * 0.5 - sw / 2, h * 0.28, sw, h * 0.34);
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.ellipse(w * 0.5 - sw / 2, h * 0.28 + h * 0.17, 8, h * 0.17, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(w * 0.5 + sw / 2, h * 0.28 + h * 0.17, 8, h * 0.17, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "rgba(120,53,15,0.5)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 5; i++) {
+      const ly = h * 0.34 + i * (h * 0.05);
+      if (sw > 30) { ctx.beginPath(); ctx.moveTo(w * 0.5 - sw / 2 + 12, ly); ctx.lineTo(w * 0.5 + sw / 2 - 12, ly); ctx.stroke(); }
+    }
+    // Quill writing, bobbing
+    const bob = Math.sin(t / 300) * 4;
+    ctx.save(); ctx.translate(w * 0.5 + sw / 2 - 16, h * 0.5 + bob);
+    ctx.strokeStyle = "#f8fafc"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-18, -30); ctx.stroke();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.moveTo(-18, -30); ctx.lineTo(-10, -22); ctx.lineTo(-22, -22); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    // Gavel
+    ctx.save(); ctx.translate(w * 0.22, h * 0.62); ctx.rotate(-0.5);
+    ctx.fillStyle = "#78350f"; ctx.fillRect(-4, -30, 8, 40);
+    ctx.fillStyle = "#92400e"; ctx.fillRect(-16, -34, 32, 14);
+    ctx.restore();
   },
 
   landmark: function (ctx, w, h, t) {
@@ -837,7 +917,18 @@ const VIDEO_SCENES = {
     ctx.beginPath(); ctx.moveTo(bx - 8, by + 6); ctx.lineTo(bx, by - 8); ctx.lineTo(bx + 8, by + 6); ctx.stroke();
   },
 
-  atom: function (ctx, w, h, t) {
+  // Routes matter/energy pages to the specific concept they're teaching
+  // (states of matter, magnetism, simple machines) instead of the same
+  // orbiting-electron atom diagram for every physical-science topic.
+  atom: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/state(s)? of matter|\bsolid\b|\bliquid\b|\bgas\b|melt|freeze|boil/.test(rt)) { VIDEO_SCENES._statesOfMatter(ctx, w, h, t); return; }
+    if (/magnet/.test(rt)) { VIDEO_SCENES._magnetScene(ctx, w, h, t); return; }
+    if (/simple machine|lever|pulley|inclined plane|\bwheel\b|\bramp\b/.test(rt)) { VIDEO_SCENES._simpleMachine(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericAtom(ctx, w, h, t);
+  },
+
+  _genericAtom: function (ctx, w, h, t) {
     ctx.fillStyle = "#0c1929"; ctx.fillRect(0, 0, w, h);
     const cx = w / 2, cy = h / 2;
     // Nucleus
@@ -862,6 +953,109 @@ const VIDEO_SCENES = {
       ctx.beginPath(); ctx.arc(ex, ey, 6, 0, 7); ctx.fill();
       ctx.restore();
     });
+  },
+
+  // The same block of particles shown as a tight solid, a sloshing
+  // liquid, and a spread-out gas, cycling through all three states so the
+  // page visibly demonstrates the concept instead of naming it.
+  _statesOfMatter: function (ctx, w, h, t) {
+    ctx.fillStyle = "#0c1929"; ctx.fillRect(0, 0, w, h);
+    const cyc = (t / 5000) % 3;
+    const phase = Math.floor(cyc);
+    const labels = ["SOLID", "LIQUID", "GAS"];
+    ctx.fillStyle = "#e0e7ff"; ctx.font = "bold 20px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText(labels[phase], w / 2, h * 0.16);
+    const container = { x: w * 0.3, y: h * 0.28, w: w * 0.4, h: h * 0.5 };
+    ctx.strokeStyle = "rgba(148,163,184,0.5)"; ctx.lineWidth = 2;
+    ctx.strokeRect(container.x, container.y, container.w, container.h);
+    const n = 12;
+    for (let i = 0; i < n; i++) {
+      let px, py;
+      if (phase === 0) {
+        // Solid: tight, vibrating grid
+        const col = i % 4, row = Math.floor(i / 4);
+        px = container.x + 20 + col * 26 + Math.sin(t / 90 + i) * 1.5;
+        py = container.y + container.h - 20 - row * 26 + Math.cos(t / 90 + i) * 1.5;
+      } else if (phase === 1) {
+        // Liquid: sloshing near the bottom, free to move sideways
+        const col = i % 4, row = Math.floor(i / 3);
+        px = container.x + 20 + col * 26 + Math.sin(t / 260 + i) * 10;
+        py = container.y + container.h - 16 - row * 22 + Math.sin(t / 400 + i * 2) * 3;
+      } else {
+        // Gas: bouncing freely around the whole container
+        const a = t / 700 + i * 1.3;
+        px = container.x + container.w / 2 + Math.sin(a) * (container.w / 2 - 12) * Math.sin(i);
+        py = container.y + container.h / 2 + Math.cos(a * 1.3) * (container.h / 2 - 12) * Math.cos(i);
+      }
+      ctx.fillStyle = "#38bdf8";
+      ctx.beginPath(); ctx.arc(px, py, 7, 0, 7); ctx.fill();
+    }
+  },
+
+  // A horseshoe magnet attracting iron filings that snap into visible
+  // field lines curving between its two poles.
+  _magnetScene: function (ctx, w, h, t) {
+    ctx.fillStyle = "#111827"; ctx.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h * 0.55;
+    ctx.save(); ctx.translate(cx, cy);
+    ctx.lineWidth = 26; ctx.lineCap = "round";
+    ctx.strokeStyle = "#dc2626";
+    ctx.beginPath(); ctx.arc(0, 0, 50, Math.PI * 0.55, Math.PI * 1.45, true); ctx.stroke();
+    ctx.strokeStyle = "#2563eb";
+    ctx.beginPath(); ctx.moveTo(-38, 38); ctx.lineTo(-38, 70); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(38, 38); ctx.lineTo(38, 70); ctx.stroke();
+    ctx.fillStyle = "#f8fafc"; ctx.font = "bold 13px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("N", -38, 58); ctx.fillText("S", 38, 58);
+    ctx.restore();
+    // Curving field lines between the poles
+    ctx.strokeStyle = "rgba(148,163,184,0.4)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 4; i++) {
+      const spread = 20 + i * 16;
+      ctx.beginPath();
+      ctx.moveTo(cx - 38, cy + 62);
+      ctx.quadraticCurveTo(cx, cy + 62 + spread, cx + 38, cy + 62);
+      ctx.stroke();
+    }
+    // Iron filings drawn in toward the poles, looping
+    for (let i = 0; i < 16; i++) {
+      const cyc = (t / 900 + i * 0.13) % 1;
+      const startX = w * 0.15 + (i % 8) * (w * 0.7 / 8);
+      const startY = h * 0.85;
+      const targetX = cx + (i % 2 === 0 ? -38 : 38);
+      const targetY = cy + 62;
+      const px = startX + (targetX - startX) * cyc;
+      const py = startY + (targetY - startY) * cyc;
+      ctx.fillStyle = "#94a3b8";
+      ctx.save(); ctx.translate(px, py); ctx.rotate(cyc * 2);
+      ctx.fillRect(-1.5, -6, 3, 12);
+      ctx.restore();
+    }
+  },
+
+  // A lever tipping a weight up and over, and a pulley hauling a crate,
+  // shown side by side as two working simple machines.
+  _simpleMachine: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e293b"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#334155"; ctx.fillRect(0, h * 0.82, w, h * 0.18);
+    // Lever (seesaw) on the left
+    const tilt = Math.sin(t / 1400) * 0.22;
+    ctx.save(); ctx.translate(w * 0.28, h * 0.72);
+    ctx.fillStyle = "#78716c"; ctx.beginPath(); ctx.moveTo(-14, 0); ctx.lineTo(14, 0); ctx.lineTo(0, -22); ctx.closePath(); ctx.fill();
+    ctx.rotate(tilt);
+    ctx.fillStyle = "#a8a29e"; ctx.fillRect(-70, -8, 140, 8);
+    ctx.fillStyle = "#dc2626"; ctx.beginPath(); ctx.arc(-60, -8 - 10 * Math.max(0, -Math.sin(t / 1400)), 10, 0, 7); ctx.fill();
+    ctx.fillStyle = "#3b82f6"; ctx.beginPath(); ctx.arc(60, -8 - 10 * Math.max(0, Math.sin(t / 1400)), 10, 0, 7); ctx.fill();
+    ctx.restore();
+    // Pulley hauling a crate on the right
+    const pulleyCx = w * 0.7, pulleyCy = h * 0.22;
+    ctx.strokeStyle = "#a8a29e"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(pulleyCx, h * 0.1); ctx.lineTo(pulleyCx, h * 0.82); ctx.stroke();
+    ctx.beginPath(); ctx.arc(pulleyCx, pulleyCy, 14, 0, 7); ctx.stroke();
+    const hoist = (Math.sin(t / 1600) + 1) / 2;
+    const crateY = h * 0.75 - hoist * h * 0.35;
+    ctx.strokeStyle = "#78716c"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(pulleyCx - 12, pulleyCy); ctx.lineTo(pulleyCx - 12, crateY); ctx.stroke();
+    ctx.fillStyle = "#92400e"; ctx.fillRect(pulleyCx - 26, crateY, 28, 22);
   },
 
   // Routes to a specific space moment — the moon landing, or a full solar
@@ -1015,7 +1209,39 @@ const VIDEO_SCENES = {
     ctx.fillStyle = "rgba(250,204,21,0.9)"; ctx.beginPath(); ctx.arc(w * 0.82, h * 0.18, 22, 0, 7); ctx.fill();
   },
 
-  animal: function (ctx, w, h, t) {
+  // Routes to whichever specific animal the page names — a lesson about
+  // lions should show a lion, not the same generic orange critter every
+  // other animal/habitat/food-chain lesson at every grade level uses.
+  animal: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/\blion\b|lioness/.test(rt)) { VIDEO_SCENES._animalLion(ctx, w, h, t); return; }
+    if (/elephant/.test(rt)) { VIDEO_SCENES._animalElephant(ctx, w, h, t); return; }
+    if (/\btiger\b/.test(rt)) { VIDEO_SCENES._animalTiger(ctx, w, h, t); return; }
+    if (/\bbear\b|grizzly|polar bear/.test(rt)) { VIDEO_SCENES._animalBear(ctx, w, h, t); return; }
+    if (/\bfrog\b|toad/.test(rt)) { VIDEO_SCENES._animalFrog(ctx, w, h, t); return; }
+    if (/butterfly|caterpillar|chrysalis/.test(rt)) { VIDEO_SCENES._animalButterfly(ctx, w, h, t); return; }
+    if (/\bbee\b|honeybee|beehive/.test(rt)) { VIDEO_SCENES._animalBee(ctx, w, h, t); return; }
+    if (/\bfish\b|salmon|goldfish|guppy/.test(rt)) { VIDEO_SCENES._animalFish(ctx, w, h, t); return; }
+    if (/eagle|hawk|falcon/.test(rt)) { VIDEO_SCENES._animalEagle(ctx, w, h, t); return; }
+    if (/\bowl\b/.test(rt)) { VIDEO_SCENES._animalOwl(ctx, w, h, t); return; }
+    if (/snake|serpent/.test(rt)) { VIDEO_SCENES._animalSnake(ctx, w, h, t); return; }
+    if (/turtle|tortoise/.test(rt)) { VIDEO_SCENES._animalTurtle(ctx, w, h, t); return; }
+    if (/rabbit|bunny/.test(rt)) { VIDEO_SCENES._animalRabbit(ctx, w, h, t); return; }
+    if (/whale/.test(rt)) { VIDEO_SCENES._animalWhale(ctx, w, h, t); return; }
+    if (/spider|tarantula|arachnid/.test(rt)) { VIDEO_SCENES._animalSpider(ctx, w, h, t); return; }
+    if (/giraffe/.test(rt)) { VIDEO_SCENES._animalGiraffe(ctx, w, h, t); return; }
+    if (/\bwolf\b|wolves/.test(rt)) { VIDEO_SCENES._animalWolf(ctx, w, h, t); return; }
+    if (/\bfox\b/.test(rt)) { VIDEO_SCENES._animalFox(ctx, w, h, t); return; }
+    if (/\bdeer\b/.test(rt)) { VIDEO_SCENES._animalDeer(ctx, w, h, t); return; }
+    if (/zebra/.test(rt)) { VIDEO_SCENES._animalZebra(ctx, w, h, t); return; }
+    if (/monkey/.test(rt)) { VIDEO_SCENES._animalMonkey(ctx, w, h, t); return; }
+    if (/penguin/.test(rt)) { VIDEO_SCENES._animalPenguin(ctx, w, h, t); return; }
+    if (/shark/.test(rt)) { VIDEO_SCENES._animalShark(ctx, w, h, t); return; }
+    if (/dolphin/.test(rt)) { VIDEO_SCENES._animalDolphin(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericAnimal(ctx, w, h, t);
+  },
+
+  _genericAnimal: function (ctx, w, h, t) {
     const sky = ctx.createLinearGradient(0, 0, 0, h);
     sky.addColorStop(0, "#93c5fd"); sky.addColorStop(1, "#bbf7d0");
     ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
@@ -1038,6 +1264,438 @@ const VIDEO_SCENES = {
       ctx.strokeStyle = "#334155"; ctx.lineWidth = 2;
       ctx.beginPath(); ctx.moveTo(bx - 8, by - flap); ctx.lineTo(bx, by); ctx.lineTo(bx + 8, by - flap); ctx.stroke();
     }
+  },
+
+  // Shared savanna backdrop used by the big-cat/safari animals so each one
+  // only needs to draw itself, not re-derive the ground and sky.
+  _savannaBG: function (ctx, w, h) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fde68a"); sky.addColorStop(1, "#fef3c7");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.7);
+    ctx.fillStyle = "rgba(253,224,71,0.9)"; ctx.beginPath(); ctx.arc(w * 0.85, h * 0.16, 22, 0, 7); ctx.fill();
+    ctx.fillStyle = "#ca8a04"; ctx.fillRect(0, h * 0.7, w, h * 0.3);
+  },
+
+  _animalLion: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const walk = Math.sin(t / 260) * 6;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78);
+    ctx.fillStyle = "#b45309";
+    for (let i = 0; i < 14; i++) {
+      const a = (i / 14) * Math.PI * 2;
+      ctx.beginPath(); ctx.arc(-22 + Math.cos(a) * 20, Math.sin(a) * 20, 8, 0, 7); ctx.fill();
+    }
+    ctx.fillStyle = "#d97706";
+    ctx.beginPath(); ctx.ellipse(0, 0, 30, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-24, -8, 15, 0, 7); ctx.fill();
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.arc(-32, -6, 2.5, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#d97706"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-14, 14); ctx.lineTo(-14 + walk, 26); ctx.moveTo(16, 14); ctx.lineTo(16 - walk, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalElephant: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const sway = Math.sin(t / 500) * 8;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78);
+    ctx.fillStyle = "#94a3b8";
+    ctx.beginPath(); ctx.ellipse(0, 0, 40, 24, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-34, -14, 18, 0, 7); ctx.fill();
+    ctx.fillStyle = "#cbd5e1"; ctx.beginPath(); ctx.ellipse(-46, -4, 12, 16, -0.3, 0, 7); ctx.fill(); // ear
+    ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.moveTo(-46, -10); ctx.quadraticCurveTo(-56 + sway, 4, -50 + sway, 18); ctx.stroke(); // trunk
+    ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 8;
+    ctx.beginPath(); ctx.moveTo(-20, 18); ctx.lineTo(-20, 32); ctx.moveTo(20, 18); ctx.lineTo(20, 32); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalTiger: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const stalk = Math.sin(t / 300) * 5;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.8);
+    ctx.fillStyle = "#f97316";
+    ctx.beginPath(); ctx.ellipse(0, 0, 30, 16, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-26, -6, 13, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 3;
+    for (let i = 0; i < 4; i++) { ctx.beginPath(); ctx.moveTo(-10 + i * 8, -10); ctx.lineTo(-14 + i * 8, 10); ctx.stroke(); }
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-30, -8, 2, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#f97316"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-12, 12); ctx.lineTo(-12 + stalk, 24); ctx.moveTo(14, 12); ctx.lineTo(14 - stalk, 24); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalBear: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const lumber = Math.sin(t / 380) * 6;
+    ctx.save(); ctx.translate(w * 0.5 + lumber, h * 0.8);
+    ctx.fillStyle = "#5c4326";
+    ctx.beginPath(); ctx.ellipse(0, 0, 28, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-24, -12, 14, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-32, -22, 5, 0, 7); ctx.arc(-16, -24, 5, 0, 7); ctx.fill(); // ears
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-30, -12, 2, 0, 7); ctx.fill();
+    ctx.restore();
+  },
+
+  // Shared pond/wetland backdrop for amphibians and reptiles.
+  _pondBG: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#a7f3d0"); sky.addColorStop(1, "#d9f99d");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.65);
+    ctx.fillStyle = "#0e7490"; ctx.fillRect(0, h * 0.65, w, h * 0.35);
+    ctx.fillStyle = "#22c55e";
+    for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.ellipse(w * (0.2 + i * 0.3), h * 0.68, 30, 8, 0, 0, 7); ctx.fill(); }
+  },
+
+  _animalFrog: function (ctx, w, h, t) {
+    VIDEO_SCENES._pondBG(ctx, w, h, t);
+    const hop = Math.abs(Math.sin(t / 500)) * 26;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.62 - hop);
+    ctx.fillStyle = "#22c55e";
+    ctx.beginPath(); ctx.ellipse(0, 0, 24, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-10, -14, 7, 0, 7); ctx.arc(10, -14, 7, 0, 7); ctx.fill();
+    ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.arc(-10, -16, 3, 0, 7); ctx.arc(10, -16, 3, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#22c55e"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-18, 12); ctx.lineTo(-28, 20 + hop / 3); ctx.moveTo(18, 12); ctx.lineTo(28, 20 + hop / 3); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalSnake: function (ctx, w, h, t) {
+    VIDEO_SCENES._pondBG(ctx, w, h, t);
+    ctx.strokeStyle = "#16a34a"; ctx.lineWidth = 14; ctx.lineCap = "round";
+    ctx.beginPath();
+    const slither = t / 40;
+    for (let x = 0; x <= w; x += 6) {
+      const y = h * 0.55 + Math.sin((x + slither) / 30) * 30;
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.fillStyle = "#facc15";
+    ctx.beginPath(); ctx.arc(w * 0.06, h * 0.55 + Math.sin(slither / 30) * 30, 3, 0, 7); ctx.fill();
+  },
+
+  _animalTurtle: function (ctx, w, h, t) {
+    VIDEO_SCENES._pondBG(ctx, w, h, t);
+    const crawl = ((t / 60) % (w + 60)) - 30;
+    const legShuffle = Math.sin(t / 260) * 4;
+    ctx.save(); ctx.translate(crawl, h * 0.62);
+    ctx.fillStyle = "#166534";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 18, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#14532d"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(-12, -12); ctx.lineTo(12, 12); ctx.moveTo(12, -12); ctx.lineTo(-12, 12); ctx.stroke();
+    ctx.fillStyle = "#65a30d"; ctx.beginPath(); ctx.arc(24, 2, 8, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#65a30d"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-14, 12); ctx.lineTo(-14 + legShuffle, 20); ctx.moveTo(10, 12); ctx.lineTo(10 - legShuffle, 20); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Shared open-meadow backdrop for small pollinators and garden animals.
+  _meadowBG: function (ctx, w, h) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#bae6fd"); sky.addColorStop(1, "#ecfccb");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#84cc16"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    ctx.fillStyle = "rgba(250,204,21,0.9)"; ctx.beginPath(); ctx.arc(w * 0.85, h * 0.18, 20, 0, 7); ctx.fill();
+    ["#f472b6", "#fb923c", "#a78bfa"].forEach((c, i) => {
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.arc(w * (0.2 + i * 0.28), h * 0.82, 6, 0, 7); ctx.fill();
+    });
+  },
+
+  _animalButterfly: function (ctx, w, h, t) {
+    VIDEO_SCENES._meadowBG(ctx, w, h);
+    const bx = w * 0.5 + Math.sin(t / 600) * w * 0.28;
+    const by = h * 0.45 + Math.sin(t / 260) * 20;
+    const flap = Math.sin(t / 90);
+    ctx.save(); ctx.translate(bx, by);
+    ctx.fillStyle = "#f472b6";
+    ctx.save(); ctx.scale(1, 0.6 + Math.abs(flap) * 0.4);
+    ctx.beginPath(); ctx.ellipse(-12, 0, 14, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(12, 0, 14, 18, 0, 0, 7); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#1c1917"; ctx.fillRect(-1.5, -12, 3, 24);
+    ctx.restore();
+  },
+
+  _animalBee: function (ctx, w, h, t) {
+    VIDEO_SCENES._meadowBG(ctx, w, h);
+    const bx = w * 0.5 + Math.sin(t / 420) * w * 0.24;
+    const by = h * 0.4 + Math.sin(t / 180) * 14;
+    const buzz = Math.sin(t / 60) * 3;
+    ctx.save(); ctx.translate(bx, by + buzz);
+    ctx.fillStyle = "#facc15";
+    ctx.beginPath(); ctx.ellipse(0, 0, 14, 10, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#1c1917";
+    for (let i = 0; i < 3; i++) { ctx.fillRect(-6 + i * 5, -6, 3, 12); }
+    ctx.fillStyle = "rgba(224,242,254,0.7)";
+    ctx.beginPath(); ctx.ellipse(-4, -10, 9, 5, -0.3, 0, 7); ctx.ellipse(4, -10, 9, 5, 0.3, 0, 7); ctx.fill();
+    ctx.restore();
+  },
+
+  _animalRabbit: function (ctx, w, h, t) {
+    VIDEO_SCENES._meadowBG(ctx, w, h);
+    const hop = Math.abs(Math.sin(t / 340)) * 20;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.72 - hop);
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(0, 0, 20, 16, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(16, -10, 10, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(20, -26, 4, 14, 0.2, 0, 7); ctx.ellipse(28, -24, 4, 14, 0.4, 0, 7); ctx.fill();
+    ctx.fillStyle = "#fda4af";
+    ctx.beginPath(); ctx.ellipse(21, -26, 2, 9, 0.2, 0, 7); ctx.fill();
+    ctx.restore();
+  },
+
+  // Shared open-ocean backdrop for sea life.
+  _oceanBG: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#0369a1"); sky.addColorStop(1, "#082f49");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 4; i++) {
+      const ry = h * (0.2 + i * 0.2);
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 10) {
+        const y = ry + Math.sin((x + t / 150 + i * 30) / 24) * 5;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  },
+
+  _animalFish: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    for (let i = 0; i < 3; i++) {
+      const progress = ((t / 3000) + i * 0.33) % 1;
+      const fx = w * progress, fy = h * (0.3 + i * 0.2) + Math.sin(t / 300 + i) * 8;
+      const wag = Math.sin(t / 120 + i) * 6;
+      ctx.save(); ctx.translate(fx, fy);
+      ctx.fillStyle = ["#fb923c", "#38bdf8", "#facc15"][i];
+      ctx.beginPath(); ctx.ellipse(0, 0, 16, 9, 0, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(-14, 0); ctx.lineTo(-24, -8 + wag); ctx.lineTo(-24, 8 + wag); ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+  },
+
+  _animalWhale: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    const bob = Math.sin(t / 700) * 10;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.5 + bob);
+    ctx.fillStyle = "#334155";
+    ctx.beginPath(); ctx.ellipse(0, 0, 60, 26, 0, 0, 7); ctx.fill();
+    const tailFlap = Math.sin(t / 500) * 0.3;
+    ctx.save(); ctx.translate(-58, 0); ctx.rotate(tailFlap);
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-20, -16); ctx.lineTo(-8, 0); ctx.lineTo(-20, 16); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#f1f5f9"; ctx.beginPath(); ctx.ellipse(10, 10, 30, 10, 0, 0, 7); ctx.fill();
+    // Spout
+    const spout = (t / 30) % 40;
+    ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(40, -26); ctx.lineTo(40, -26 - spout); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalSpider: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1c1917"; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "rgba(226,232,240,0.5)"; ctx.lineWidth = 1;
+    const wx = w * 0.5, wy = h * 0.35;
+    for (let i = 0; i < 8; i++) {
+      const a = (i / 8) * Math.PI * 2;
+      ctx.beginPath(); ctx.moveTo(wx, wy); ctx.lineTo(wx + Math.cos(a) * 90, wy + Math.sin(a) * 90); ctx.stroke();
+    }
+    for (let r = 20; r <= 80; r += 20) {
+      ctx.beginPath();
+      for (let i = 0; i <= 8; i++) {
+        const a = (i / 8) * Math.PI * 2;
+        const x = wx + Math.cos(a) * r, y = wy + Math.sin(a) * r;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    const drop = Math.sin(t / 800);
+    const sy = wy + Math.max(0, drop) * 40;
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.ellipse(wx, sy, 10, 8, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 2;
+    for (let i = 0; i < 4; i++) {
+      const legA = (i / 4) * Math.PI - Math.PI / 2;
+      ctx.beginPath(); ctx.moveTo(wx, sy); ctx.lineTo(wx + Math.cos(legA) * 18, sy + Math.sin(legA) * 10 + 10); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(wx, sy); ctx.lineTo(wx - Math.cos(legA) * 18, sy + Math.sin(legA) * 10 + 10); ctx.stroke();
+    }
+  },
+
+  _animalGiraffe: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const sway = Math.sin(t / 500) * 5;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78);
+    ctx.fillStyle = "#eab308";
+    ctx.beginPath(); ctx.ellipse(0, 20, 24, 14, 0, 0, 7); ctx.fill();
+    ctx.save(); ctx.translate(10, 20); ctx.rotate(sway * 0.02);
+    ctx.fillRect(-6, -70, 12, 70);
+    ctx.beginPath(); ctx.arc(0, -74, 10, 0, 7); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#92400e";
+    for (let i = 0; i < 5; i++) {
+      ctx.beginPath(); ctx.arc(-14 + (i % 3) * 12, 10 + Math.floor(i / 3) * 10, 4, 0, 7); ctx.fill();
+    }
+    ctx.strokeStyle = "#eab308"; ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.moveTo(-10, 32); ctx.lineTo(-10, 50); ctx.moveTo(14, 32); ctx.lineTo(14, 50); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Shared sky backdrop with drifting clouds for birds of prey.
+  _skyBG: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#38bdf8"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    for (let i = 0; i < 3; i++) {
+      const cx = ((t / 35 + i * 200) % (w + 120)) - 60;
+      const cy = h * (0.2 + i * 0.1);
+      ctx.beginPath(); ctx.arc(cx, cy, 16, 0, 7); ctx.arc(cx + 18, cy + 4, 12, 0, 7); ctx.arc(cx - 16, cy + 4, 12, 0, 7); ctx.fill();
+    }
+  },
+
+  _animalEagle: function (ctx, w, h, t) {
+    VIDEO_SCENES._skyBG(ctx, w, h, t);
+    const angle = t / 2000;
+    const ex = w * 0.5 + Math.cos(angle) * w * 0.3, ey = h * 0.4 + Math.sin(angle) * h * 0.18;
+    const flap = Math.sin(t / 200) * 10;
+    ctx.save(); ctx.translate(ex, ey);
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.ellipse(0, 0, 12, 8, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.arc(10, -2, 5, 0, 7); ctx.fill(); // white head
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-4, 0); ctx.quadraticCurveTo(-20, -8 - flap, -34, -4 - flap); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-4, 0); ctx.quadraticCurveTo(-20, 8 + flap, -34, 4 + flap); ctx.stroke();
+    ctx.restore();
+    // Ground far below
+    ctx.fillStyle = "#4ade80"; ctx.fillRect(0, h * 0.88, w, h * 0.12);
+  },
+
+  _animalOwl: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(255,255,255,0.8)";
+    for (let i = 0; i < 20; i++) {
+      const sx = (i * 53) % w, sy = (i * 91) % (h * 0.5);
+      ctx.beginPath(); ctx.arc(sx, sy, 1.4, 0, 7); ctx.fill();
+    }
+    // Tree branch
+    ctx.strokeStyle = "#3f2d1c"; ctx.lineWidth = 12; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(0, h * 0.82); ctx.lineTo(w, h * 0.78); ctx.stroke();
+    const blink = (Math.sin(t / 1600) + 1) / 2 > 0.9 ? 0.2 : 1;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.68);
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.ellipse(0, 0, 24, 28, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.arc(-10, -8, 10, 0, 7); ctx.arc(10, -8, 10, 0, 7); ctx.fill();
+    ctx.fillStyle = "#facc15";
+    ctx.save(); ctx.scale(1, blink);
+    ctx.beginPath(); ctx.arc(-10, -8, 5, 0, 7); ctx.arc(10, -8, 5, 0, 7); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-10, -8, 2.2, 0, 7); ctx.arc(10, -8, 2.2, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f97316"; ctx.beginPath(); ctx.moveTo(-4, 0); ctx.lineTo(4, 0); ctx.lineTo(0, 8); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  _animalWolf: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const trot = Math.sin(t / 260) * 6;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.8);
+    ctx.fillStyle = "#64748b";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 14, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(-20, -10); ctx.lineTo(-34, -6); ctx.lineTo(-20, 2); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f1f5f9"; ctx.beginPath(); ctx.arc(-30, -8, 2, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#64748b"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-10, 10); ctx.lineTo(-10 + trot, 22); ctx.moveTo(14, 10); ctx.lineTo(14 - trot, 22); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalFox: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const trot = ((t / 40) % (w + 60)) - 30;
+    ctx.save(); ctx.translate(trot, h * 0.86);
+    ctx.fillStyle = "#ea580c";
+    ctx.beginPath(); ctx.ellipse(0, 0, 18, 10, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(15, -7); ctx.lineTo(26, -4); ctx.lineTo(15, 3); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.arc(20, -3, 3, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.ellipse(-20, 2, 12, 5, 0.3, 0, 7); ctx.fill(); // bushy tail
+    ctx.restore();
+  },
+
+  _animalDeer: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const graze = Math.sin(t / 900) * 3;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.8 + graze);
+    ctx.fillStyle = "#a16207";
+    ctx.beginPath(); ctx.ellipse(0, 0, 24, 15, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-22, -14, 10, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(-26, -22); ctx.lineTo(-32, -34); ctx.lineTo(-28, -30); ctx.moveTo(-32, -34); ctx.lineTo(-34, -28);
+    ctx.moveTo(-18, -22); ctx.lineTo(-14, -34); ctx.lineTo(-18, -30); ctx.moveTo(-14, -34); ctx.lineTo(-12, -28); ctx.stroke();
+    ctx.strokeStyle = "#a16207"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-10, 12); ctx.lineTo(-10, 26); ctx.moveTo(12, 12); ctx.lineTo(12, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalZebra: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const gallop = Math.abs(Math.sin(t / 220)) * 10;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78 - gallop);
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 15, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(22, -8, 10, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 3;
+    for (let i = -20; i < 20; i += 8) { ctx.beginPath(); ctx.moveTo(i, -14); ctx.lineTo(i - 4, 14); ctx.stroke(); }
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-14, 12); ctx.lineTo(-18, 26); ctx.moveTo(14, 12); ctx.lineTo(18, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalMonkey: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const swing = Math.sin(t / 500) * 30;
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(w * 0.5, h * 0.35); ctx.lineTo(w * 0.5 + swing * 0.3, h * 0.5); ctx.stroke();
+    ctx.save(); ctx.translate(w * 0.5 + swing * 0.3, h * 0.55);
+    ctx.rotate(swing / 200);
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.ellipse(0, 0, 16, 20, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#fcd34d"; ctx.beginPath(); ctx.arc(0, -16, 9, 0, 7); ctx.fill();
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-3, -17, 1.5, 0, 7); ctx.arc(3, -17, 1.5, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#92400e"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(0, 18); ctx.quadraticCurveTo(16, 28, 10, 40); ctx.stroke(); // tail
+    ctx.restore();
+  },
+
+  _animalPenguin: function (ctx, w, h, t) {
+    VIDEO_SCENES._polar(ctx, w, h, t);
+  },
+
+  _animalShark: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    const progress = ((t / 3500) % 1);
+    const sx = w * progress, sy = h * 0.45 + Math.sin(t / 400) * 10;
+    const wag = Math.sin(t / 160) * 8;
+    ctx.save(); ctx.translate(sx, sy);
+    ctx.fillStyle = "#64748b";
+    ctx.beginPath(); ctx.moveTo(-40, 0); ctx.quadraticCurveTo(0, -18, 40, 0); ctx.quadraticCurveTo(0, 14, -40, 0); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(0, -14); ctx.lineTo(6, -30); ctx.lineTo(14, -12); ctx.closePath(); ctx.fill(); // dorsal fin
+    ctx.beginPath(); ctx.moveTo(-40, 0); ctx.lineTo(-56, -14 + wag); ctx.lineTo(-56, 14 + wag); ctx.closePath(); ctx.fill(); // tail
+    ctx.restore();
+  },
+
+  _animalDolphin: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    const arc = Math.sin(t / 900);
+    const dx = w * 0.5 + Math.cos(t / 900) * w * 0.25;
+    const dy = h * 0.5 - Math.max(0, arc) * h * 0.2;
+    ctx.save(); ctx.translate(dx, dy); ctx.rotate(arc * 0.4);
+    ctx.fillStyle = "#38bdf8";
+    ctx.beginPath(); ctx.ellipse(0, 0, 34, 12, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(28, -4); ctx.quadraticCurveTo(40, -10, 42, 0); ctx.quadraticCurveTo(40, 6, 28, 4); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(0, -10); ctx.lineTo(6, -22); ctx.lineTo(10, -8); ctx.closePath(); ctx.fill();
+    ctx.restore();
   },
 
   // Routes to the full water-cycle diagram when the page is specifically
