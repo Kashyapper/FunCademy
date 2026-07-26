@@ -37735,7 +37735,7 @@ class AppState {
 // Accounts allowed to see the Admin Stats dashboard (registration counts,
 // everyone's grade, per-user progress). Usernames are always stored/compared
 // lowercase (see AuthSystem.register/login below), so list them lowercase here.
-const ADMIN_USERNAMES = ['akshara', 'kashyapper', 'kash'];
+const ADMIN_USERNAMES = ['akshara', 'kashyapper', 'kash', 'kashyap'];
 
 // ══════════════════════════════════════════════════════════
 //  Feedback Inbox — any logged-in user can submit a message via the
