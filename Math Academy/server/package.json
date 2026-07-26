@@ -1,0 +1,12 @@
+{
+  "name": "funcademy-server",
+  "version": "1.0.0",
+  "description": "FunCademy backend — real accounts, progress, and feedback shared across every computer that talks to this server, instead of trapped in one browser's local storage. Zero dependencies — just Node's built-in modules, so there's nothing to npm install.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
