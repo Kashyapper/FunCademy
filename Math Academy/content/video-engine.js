@@ -1,0 +1,2435 @@
+// ============================================================
+// VIDEO LESSON ENGINE
+// Provides: lively narrated speech synced to on-screen subtitles,
+// and topic-matched animated Canvas2D scenes, used by Step 1
+// ("Watch & Learn") to turn the reading lesson into a video.
+// ============================================================
+
+// ---------- 1. Voice selection ----------
+function pickLivelyVoice() {
+  const voices = window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+  if (!voices || voices.length === 0) return null;
+  // Prefer expressive, natural-sounding voices over flat robotic ones — kids
+  // stay with a story a lot longer when the narrator actually sounds like a
+  // person telling it, not a text-to-speech engine reading a manual. The
+  // "Online (Natural)" voices (Edge/Windows) and platform voices like
+  // Samantha are genuinely the most human-sounding options browsers expose.
+  const preferredVoiceNames = [
+    "Microsoft Aria Online (Natural)",
+    "Microsoft Jenny Online (Natural)",
+    "Microsoft Ana Online (Natural)",
+    "Microsoft Guy Online (Natural)",
+    "Google US English",
+    "Google UK English Female",
+    "Samantha",
+    "Tessa",
+    "Aria",
+    "Karen",
+    "Moira",
+    "Daniel"
+  ];
+  for (const name of preferredVoiceNames) {
+    const v = voices.find(v => v.name.includes(name));
+    if (v) return v;
+  }
+  // Next best: any voice whose name advertises itself as "Natural"/"Neural"
+  // — modern browsers expose these under all sorts of names we can't fully
+  // enumerate ahead of time, so a keyword match catches the rest of them.
+  const naturalVoice = voices.find(v => v.lang && v.lang.startsWith('en') && /natural|neural/i.test(v.name));
+  if (naturalVoice) return naturalVoice;
+  return voices.find(v => v.lang && v.lang.startsWith('en')) || voices[0] || null;
+}
+
+// ---------- 2. Sentence splitting ----------
+function splitIntoSentences(text) {
+  const clean = String(text || "")
+    .replace(/<\/?[^>]+(>|$)/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!clean) return [];
+  // Split on sentence-ending punctuation while keeping it attached.
+  const parts = clean.split(/(?<=[.!?])\s+(?=[A-Z0-9"'“])/);
+  return parts.map(s => s.trim()).filter(Boolean);
+}
+
+// ---------- 3. Sentence-by-sentence narration with subtitle sync ----------
+// Speaks an array of sentences one at a time. Calls onSentence(text, index, total)
+// right as each sentence's AUDIO actually begins playing (synced via the
+// utterance's onstart event, with a short fallback timer in case a browser's
+// speech engine doesn't fire onstart reliably), and onDone() once all
+// sentences have finished (or narration is skipped/muted).
+// Returns a controller: { cancel, pause, resume, skip, isPaused }.
+function speakSentencesWithSubtitles(sentences, opts) {
+  opts = opts || {};
+  const onSentence = opts.onSentence || function () {};
+  const onDone = opts.onDone || function () {};
+  const soundOn = (typeof appState !== 'undefined' && appState) ? appState.isSoundOn : true;
+
+  window.speechSynthesis.cancel();
+
+  if (!soundOn || !sentences || sentences.length === 0) {
+    // Still walk through subtitles on a timer so the video "plays" even when muted.
+    if (!sentences || sentences.length === 0) {
+      onDone();
+      return { cancel: function(){}, pause: function(){}, resume: function(){}, skip: function(){}, isPaused: function(){ return false; }, hasMore: function(){ return false; } };
+    }
+    let idx = 0;
+    let cancelled = false;
+    let paused = false;
+    let pendingMs = 0;
+    let stepStarted = 0;
+    let stepTimer = null;
+    const step = () => {
+      if (cancelled || paused) return;
+      if (idx >= sentences.length) { onDone(); return; }
+      onSentence(sentences[idx], idx, sentences.length);
+      idx++;
+      const words = sentences[idx - 1].split(/\s+/).length;
+      pendingMs = Math.max(1200, words * 260);
+      stepStarted = Date.now();
+      stepTimer = setTimeout(step, pendingMs);
+    };
+    step();
+    return {
+      cancel: function () { cancelled = true; if (stepTimer) clearTimeout(stepTimer); },
+      pause: function () {
+        if (paused || cancelled) return;
+        paused = true;
+        if (stepTimer) { clearTimeout(stepTimer); stepTimer = null; }
+        pendingMs = Math.max(200, pendingMs - (Date.now() - stepStarted));
+      },
+      resume: function () {
+        if (!paused || cancelled) return;
+        paused = false;
+        stepStarted = Date.now();
+        stepTimer = setTimeout(step, pendingMs);
+      },
+      skip: function () {
+        if (cancelled) return;
+        if (stepTimer) { clearTimeout(stepTimer); stepTimer = null; }
+        paused = false;
+        step();
+      },
+      isPaused: function () { return paused; },
+      // Whether there's still narration left to play (used by the UI to
+      // decide whether "fast forward" should skip to the next sentence, or
+      // — if we're already on the last one — jump to the next page instead,
+      // like a YouTube "next" control.
+      hasMore: function () { return !cancelled && idx < sentences.length; }
+    };
+  }
+
+  let idx = 0;
+  let cancelled = false;
+  let paused = false;
+  const voice = pickLivelyVoice();
+
+  // Chrome's speechSynthesis can silently drop an utterance if speak() is
+  // called in the same tick as a preceding cancel() (a long-standing browser
+  // race condition). A tiny delay before the very first utterance avoids it.
+  const FIRST_SPEAK_DELAY_MS = 60;
+  // Chrome also auto-pauses the speech queue after ~15s of continuous speech;
+  // a periodic resume() nudge keeps long narration from silently stalling.
+  // (Only kicks in when NOT intentionally paused by the user.)
+  let resumeHeartbeat = null;
+  function startResumeHeartbeat() {
+    stopResumeHeartbeat();
+    resumeHeartbeat = setInterval(() => {
+      if (paused) return;
+      if (window.speechSynthesis.speaking && !window.speechSynthesis.paused) return;
+      if (window.speechSynthesis.paused) window.speechSynthesis.resume();
+    }, 8000);
+  }
+  function stopResumeHeartbeat() {
+    if (resumeHeartbeat) { clearInterval(resumeHeartbeat); resumeHeartbeat = null; }
+  }
+
+  // Tracks the "advance to the next sentence" step for the utterance currently
+  // in flight, so skip() can trigger it directly (bypassing whatever onend/
+  // onerror callback speechSynthesis.cancel() may or may not fire).
+  let currentAdvance = null;
+  // Set right before an explicit speechSynthesis.cancel() (e.g. by skip()) so
+  // the next speakNext() knows to wait out the cancel-then-speak race instead
+  // of calling speak() in the same tick.
+  let forceNextDelay = false;
+
+  function speakNext(isFirst) {
+    if (cancelled) return;
+    if (idx >= sentences.length) { stopResumeHeartbeat(); currentAdvance = null; onDone(); return; }
+    const sentence = sentences[idx];
+
+    const utt = new SpeechSynthesisUtterance(sentence);
+    if (voice) utt.voice = voice;
+    utt.volume = 1.0;
+    // Read the sentence's own punctuation/energy to shape delivery, like a
+    // real storyteller would, instead of a flat monotone drone:
+    //  - Exclamations get a faster, brighter, more excited delivery.
+    //  - Questions get a gentle upward pitch lift, like someone genuinely
+    //    curious what the answer is.
+    //  - Every sentence still gets a small rotating wobble so consecutive
+    //    lines never sound like an identical loop.
+    //  - Long, information-dense sentences read a touch slower so they stay
+    //    clear instead of racing past a listener.
+    const isExcited = /!\s*$/.test(sentence);
+    const isQuestion = /\?\s*$/.test(sentence);
+    const wobblePhase = idx % 4;
+    const wobble = wobblePhase === 0 ? 0.035 : wobblePhase === 1 ? -0.03 : wobblePhase === 2 ? 0.015 : -0.02;
+
+    let rate = 1.0 + wobble;
+    let pitch = 1.08 + (idx % 2 === 0 ? 0.04 : -0.03);
+    if (isExcited) { rate += 0.08; pitch += 0.1; }
+    else if (isQuestion) { pitch += 0.06; rate -= 0.02; }
+    const wordCount = sentence.split(/\s+/).length;
+    if (wordCount > 22) rate -= 0.05;
+
+    utt.rate = Math.max(0.82, Math.min(1.22, rate));
+    utt.pitch = Math.max(0.85, Math.min(1.35, pitch));
+
+    // Sync the subtitle to the moment audio actually starts, not the moment
+    // we queued it. Guard against onstart never firing (some engines omit
+    // it) with a short fallback so the subtitle never gets stuck blank.
+    let subtitleShown = false;
+    const showSubtitle = () => {
+      if (subtitleShown || cancelled) return;
+      subtitleShown = true;
+      onSentence(sentence, idx, sentences.length);
+    };
+    const fallbackTimer = setTimeout(showSubtitle, 250);
+
+    let settled = false;
+    const advance = () => {
+      if (settled || cancelled) return;
+      settled = true;
+      currentAdvance = null;
+      clearTimeout(fallbackTimer);
+      idx++;
+      speakNext(false);
+    };
+    currentAdvance = advance;
+
+    utt.onstart = () => { clearTimeout(fallbackTimer); showSubtitle(); };
+    utt.onend = advance;
+    utt.onerror = advance;
+
+    const doSpeak = () => { if (!cancelled) window.speechSynthesis.speak(utt); };
+    if (isFirst || forceNextDelay) {
+      forceNextDelay = false;
+      setTimeout(doSpeak, FIRST_SPEAK_DELAY_MS);
+    } else {
+      doSpeak();
+    }
+  }
+
+  startResumeHeartbeat();
+  speakNext(true);
+  return {
+    cancel: function () {
+      cancelled = true;
+      currentAdvance = null;
+      stopResumeHeartbeat();
+      window.speechSynthesis.cancel();
+    },
+    pause: function () {
+      if (cancelled || paused) return;
+      paused = true;
+      window.speechSynthesis.pause();
+    },
+    resume: function () {
+      if (cancelled || !paused) return;
+      paused = false;
+      window.speechSynthesis.resume();
+    },
+    // Skips the sentence currently playing and jumps straight to the next one.
+    skip: function () {
+      if (cancelled || !currentAdvance) return;
+      const fn = currentAdvance;
+      currentAdvance = null;
+      paused = false;
+      forceNextDelay = true;
+      window.speechSynthesis.cancel();
+      fn();
+    },
+    isPaused: function () { return paused; },
+    // Whether there's still narration left to play (used by the UI to
+    // decide whether "fast forward" should skip to the next sentence, or
+    // — if we're already on the last one — jump to the next page instead,
+    // like a YouTube "next" control.
+    hasMore: function () { return !cancelled && idx < sentences.length; }
+  };
+}
+
+// ============================================================
+// 4. ANIMATED SCENE SYSTEM
+// Picks a category based on subject + lesson title/theme keywords,
+// then runs a looping Canvas2D animation appropriate to that category.
+// ============================================================
+
+const VIDEO_SCENE_KEYWORDS = {
+  // history
+  ship: ["sail", "ship", "voyage", "explor", "colon", "boat", "river crossing", "delaware", "columbus", "mayflower"],
+  flag_civics: ["president", "vote", "election", "government", "constitution", "law", "congress", "civics", "independence", "flag", "revolution", "war", "battle", "army", "soldier", "amendment", "rights", "citizen", "branch of government", "leader"],
+  landmark: ["monument", "building", "capitol", "statue", "landmark", "city", "settlement", "colony"],
+  timeline: ["ancient", "history", "past", "timeline", "era", "century", "civilization", "empire", "invention", "discovery", "culture", "tradition", "artifact"],
+  // science
+  atom: ["atom", "molecule", "matter", "chemical", "element", "energy", "force", "electricity", "magnet", "state of matter", "solid", "liquid", "gas", "energy transfer", "simple machine", "motion"],
+  space: ["space", "planet", "star", "moon", "sun", "solar", "galaxy", "astronaut", "orbit", "rotation", "revolution", "gravity", "eclipse"],
+  plant: ["plant", "seed", "leaf", "photosynthesis", "grow", "tree", "flower", "life cycle", "germinate", "root", "stem", "pollinate"],
+  animal: ["animal", "habitat", "mammal", "insect", "bird", "fish", "ecosystem", "ocean life", "adaptation", "food chain", "predator", "prey", "vertebrate", "invertebrate",
+    "lion", "elephant", "tiger", "bear", "frog", "toad", "butterfly", "caterpillar", "bee", "salmon", "goldfish", "eagle", "hawk", "falcon", "owl",
+    "snake", "serpent", "turtle", "tortoise", "rabbit", "bunny", "whale", "spider", "giraffe", "wolf", "fox", "deer", "zebra", "monkey", "penguin", "shark", "dolphin"],
+  water: ["water", "cloud", "rain", "weather", "cycle", "climate", "ocean", "river", "evaporat", "erosion", "precipitation", "temperature", "season"],
+  // geography
+  globe: ["map", "globe", "continent", "country", "compass", "coordinate", "hemisphere", "equator", "region", "border", "latitude", "longitude", "population"],
+  landform: ["mountain", "desert", "forest", "grassland", "valley", "canyon", "volcano", "landform", "plain", "plateau", "island", "peninsula", "coast"],
+  // math (numberline/counters/fraction/place_value scenes are content-aware:
+  // they read the actual numbers out of the page text via extractSceneHints,
+  // so routing more pages toward them makes the video reflect that page's
+  // real problem instead of a generic loop)
+  numberline: ["number line", "counting", "add", "subtract", "skip count", "plus", "minus", "sum", "difference", "hop"],
+  counters: ["count", "group", "objects", "ten frame", "how many", "total", "match", "sets"],
+  clock: ["time", "clock", "hour", "minute", "a.m.", "p.m.", "elapsed time", "o'clock", "half past", "quarter past"],
+  coins: ["money", "coin", "penny", "nickel", "dime", "quarter", "dollar"],
+  shapes: ["shape", "triangle", "square", "rectangle", "circle", "polygon", "hexagon", "geometry", "angle", "symmetry", "3d", "cube", "sphere", "cone", "cylinder", "vertices", "vertex", "edges", "sides", "perimeter", "area"],
+  fraction: ["fraction", "half", "third", "fourth", "quarter of", "equal share", "numerator", "denominator", "parts of a whole", "shaded"],
+  graph: ["graph", "chart", "tally", "data", "plot", "bar graph", "line plot", "survey", "pictograph"],
+  place_value: ["place value", "tens", "ones", "hundred", "digit", "decimal", "round", "expanded form", "greater than", "less than", "even", "odd", "compare numbers"],
+  // ela (letters/book scenes are content-aware: they spell out the actual
+  // featured vocabulary word pulled from the page text via extractSceneHints)
+  book: ["read", "story", "passage", "character", "plot", "theme", "author", "main idea", "summary", "sequence", "context clue", "inference", "fiction", "nonfiction", "poem"],
+  letters: ["letter", "sound", "phonics", "vowel", "consonant", "spelling", "word", "sight word", "blend", "digraph", "syllable"],
+  grammar: ["noun", "verb", "adjective", "pronoun", "sentence", "grammar", "punctuation", "comma", "subject", "predicate", "plural", "possessive", "capital letter", "adverb", "conjunction"],
+  // art
+  palette: ["color", "paint", "palette", "hue"],
+  brush: ["draw", "sketch", "art", "sculpt", "texture", "pattern", "design"]
+};
+
+function pickSceneCategory(subject, themeText) {
+  const text = String(themeText || "").toLowerCase();
+  for (const cat in VIDEO_SCENE_KEYWORDS) {
+    const words = VIDEO_SCENE_KEYWORDS[cat];
+    for (let i = 0; i < words.length; i++) {
+      if (text.indexOf(words[i]) !== -1) return cat;
+    }
+  }
+  // Subject fallback defaults
+  if (subject === 'history') return 'timeline';
+  if (subject === 'science') return 'atom';
+  if (subject === 'geography') return 'globe';
+  if (subject === 'art') return 'palette';
+  if (subject === 'ela') return 'book';
+  return 'numberline';
+}
+
+// Deterministic string -> integer hash (same page text always produces the
+// same seed), used to vary each page's camera drift/particle layout so
+// pages that land in the same scene category still don't look identical.
+function hashStringToSeed(str) {
+  let h = 2166136261;
+  const s = String(str || "");
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return Math.abs(h) % 100000;
+}
+
+// Pulls concrete details out of the actual page text so a handful of scenes
+// (numberline, counters, fraction, place_value for math; letters, book for
+// ela) can animate THIS page's real numbers/word instead of an arbitrary
+// looping placeholder — e.g. a page about "7 + 5" hops from 7 to 12 on the
+// number line rather than just counting 0 to 10 forever.
+function extractSceneHints(subject, text) {
+  const t = String(text || "");
+  // Full lowercased text, kept on every hint object so a scene can do its
+  // own targeted keyword search — e.g. the "ship" scene checks this for
+  // "washington"/"delaware" vs. "columbus" vs. "mayflower" to decide which
+  // specific historical moment to actually depict, rather than always
+  // drawing the same generic sailing ship no matter what the page is about.
+  const hints = { numbers: [], word: null, op: null, rawText: t.toLowerCase() };
+  if (subject === 'math') {
+    const matches = t.match(/\d+(?:\.\d+)?(?:\/\d+)?/g);
+    if (matches) hints.numbers = matches.slice(0, 4);
+    if (/plus|\badd(?:ing|ed|s)?\b|\bsum\b/i.test(t)) hints.op = 'add';
+    else if (/minus|subtract|difference|take away/i.test(t)) hints.op = 'subtract';
+    else if (/times|multiply|product/i.test(t)) hints.op = 'multiply';
+    else if (/divide|quotient/i.test(t)) hints.op = 'divide';
+  } else if (subject === 'ela') {
+    const quoted = t.match(/"([A-Za-z']{2,14})"/) || t.match(/'([A-Za-z']{2,14})'/);
+    if (quoted) {
+      hints.word = quoted[1];
+    } else {
+      const skipWords = ['The','This','That','Today','When','What','Why','How','Read','Write','Learn','Words','Word','Let','Now','Look','Try'];
+      const capWords = t.match(/\b[A-Z][a-z]{2,10}\b/g);
+      if (capWords) {
+        const filtered = capWords.filter(w => skipWords.indexOf(w) === -1);
+        if (filtered.length) hints.word = filtered[0];
+      }
+    }
+  } else {
+    const capWords = t.match(/\b[A-Z][a-z]{3,12}\b/g);
+    if (capWords && capWords.length) hints.word = capWords[0];
+  }
+  return hints;
+}
+
+// Each scene function draws one animation frame at time t (ms) into ctx sized w x h.
+// Scenes are intentionally simple, readable shapes with smooth motion rather than
+// static clip-art, so they read as genuinely animated on a phone-sized canvas.
+// Functions optionally receive (hints, seed) as a 5th/6th argument — most
+// scenes ignore them, but the math/ela ones listed above use them to reflect
+// the specific page's actual content.
+const VIDEO_SCENES = {
+  // Routes to whichever specific historical moment the page is actually
+  // about, instead of always drawing the same generic sailboat. A page
+  // about Washington crossing the icy Delaware should look like THAT, not
+  // like Columbus sailing to the New World — this is the difference between
+  // a "topic icon" and an actual story.
+  ship: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/washington|delaware/.test(rt)) {
+      VIDEO_SCENES._washingtonCrossing(ctx, w, h, t);
+    } else if (/columbus|niña|pinta|santa mar/.test(rt)) {
+      VIDEO_SCENES._columbusVoyage(ctx, w, h, t);
+    } else if (/mayflower|pilgrim|plymouth/.test(rt)) {
+      VIDEO_SCENES._mayflowerVoyage(ctx, w, h, t);
+    } else {
+      VIDEO_SCENES._genericShip(ctx, w, h, t);
+    }
+  },
+
+  // "Washington Crossing the Delaware" — a rowboat of soldiers ferries a
+  // standing general across an ice-choked river at night, snow falling,
+  // a flag held at the bow. The boat visibly travels bank to bank on a
+  // slow loop rather than sitting still, so it actually reads as a
+  // crossing in progress, not a static painting.
+  _washingtonCrossing: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#0b1220"); sky.addColorStop(1, "#1e293b");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    // Far bank silhouette (where they're headed)
+    ctx.fillStyle = "#111827";
+    ctx.fillRect(0, h * 0.28, w, h * 0.08);
+    // River
+    const water = ctx.createLinearGradient(0, h * 0.36, 0, h);
+    water.addColorStop(0, "#1e3a5f"); water.addColorStop(1, "#0c1e33");
+    ctx.fillStyle = water; ctx.fillRect(0, h * 0.36, w, h * 0.64);
+    // Choppy ice-river texture
+    ctx.strokeStyle = "rgba(191,219,254,0.18)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 5; i++) {
+      const yy = h * 0.42 + i * 16;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 10) {
+        const y = yy + Math.sin((x + t / 160 + i * 50) / 26) * 3;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // Drifting ice floes
+    ctx.fillStyle = "rgba(226,232,240,0.65)";
+    for (let i = 0; i < 6; i++) {
+      const driftX = ((t / 45 + i * 130) % (w + 80)) - 40;
+      const fy = h * (0.5 + (i % 3) * 0.13);
+      ctx.beginPath();
+      ctx.ellipse(driftX, fy, 20 + (i % 3) * 6, 7 + (i % 2) * 3, 0, 0, 7);
+      ctx.fill();
+    }
+    // Falling snow
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    for (let i = 0; i < 26; i++) {
+      const sx = (i * 47 + t / 12) % w;
+      const sy = (i * 31 + t / 9) % h;
+      ctx.beginPath(); ctx.arc(sx, sy, 1.6, 0, 7); ctx.fill();
+    }
+    // The boat crosses bank-to-bank and back on a slow loop, so it always
+    // reads as "in transit" no matter when the page is viewed.
+    const cross = (Math.sin(t / 7000) + 1) / 2; // 0..1..0
+    const bx = w * (0.18 + cross * 0.64);
+    const bob = Math.sin(t / 480) * 4;
+    const by = h * 0.72 + bob;
+    ctx.save(); ctx.translate(bx, by);
+    // Rowboat hull
+    ctx.fillStyle = "#5b3a21";
+    ctx.beginPath(); ctx.moveTo(-58, 8); ctx.lineTo(58, 8); ctx.lineTo(42, 26); ctx.lineTo(-42, 26); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#3a2414"; ctx.lineWidth = 2; ctx.stroke();
+    // Rowing soldiers with animated oars
+    for (let i = 0; i < 4; i++) {
+      const px = -34 + i * 22;
+      const oarSwing = Math.sin(t / 380 + i * 1.1) * 0.6;
+      ctx.fillStyle = "#1e293b";
+      ctx.beginPath(); ctx.arc(px, -4, 5, 0, 7); ctx.fill(); // head
+      ctx.fillRect(px - 3, 0, 6, 12); // body
+      ctx.strokeStyle = "#78716c"; ctx.lineWidth = 2;
+      ctx.save(); ctx.translate(px, 2); ctx.rotate(oarSwing);
+      ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(0, 22); ctx.stroke();
+      ctx.restore();
+    }
+    // Washington standing tall at the bow, cape catching the wind
+    ctx.save(); ctx.translate(44, -2);
+    const capeSway = Math.sin(t / 500) * 4;
+    ctx.fillStyle = "#1e3a8a";
+    ctx.beginPath(); ctx.moveTo(-6, -4); ctx.quadraticCurveTo(-14 + capeSway, 10, -8, 20); ctx.lineTo(4, 18); ctx.quadraticCurveTo(2, 4, 6, -4); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#e2c9a0"; ctx.beginPath(); ctx.arc(0, -14, 5, 0, 7); ctx.fill(); // head
+    ctx.fillStyle = "#0f172a"; ctx.beginPath(); ctx.moveTo(-7, -17); ctx.lineTo(7, -17); ctx.lineTo(4, -22); ctx.lineTo(-4, -22); ctx.closePath(); ctx.fill(); // tricorn hat
+    ctx.fillStyle = "#1e40af"; ctx.fillRect(-4, -9, 8, 16); // uniform torso
+    ctx.restore();
+    // Flag at the stern, waving
+    const flagWave = Math.sin(t / 260) * 5;
+    ctx.strokeStyle = "#8b8378"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(-52, 6); ctx.lineTo(-52, -30); ctx.stroke();
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath(); ctx.moveTo(-52, -30); ctx.lineTo(-52 - 20 - flagWave, -25); ctx.lineTo(-52, -18); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // Columbus's three ships crossing open ocean toward land on the horizon.
+  _columbusVoyage: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fb923c"); sky.addColorStop(0.5, "#1e3a5f"); sky.addColorStop(1, "#0c4a6e");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.65);
+    const water = ctx.createLinearGradient(0, h * 0.6, 0, h);
+    water.addColorStop(0, "#0369a1"); water.addColorStop(1, "#082f49");
+    ctx.fillStyle = water; ctx.fillRect(0, h * 0.6, w, h * 0.4);
+    ctx.strokeStyle = "rgba(255,255,255,0.22)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 4; i++) {
+      const yy = h * 0.68 + i * 14;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 8) {
+        const y = yy + Math.sin((x + t / 200 + i * 40) / 30) * 4;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // Land on the horizon — the destination they're sailing toward
+    ctx.fillStyle = "rgba(74,222,128,0.5)";
+    ctx.beginPath(); ctx.ellipse(w * 0.88, h * 0.6, 60, 14, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "rgba(251,191,36,0.9)"; ctx.beginPath(); ctx.arc(w * 0.18, h * 0.16, 24, 0, 7); ctx.fill();
+    // Three ships, each bobbing on its own rhythm, sailing rightward toward land
+    const ships = [
+      { laneY: 0.5, speed: 1, scale: 1, phase: 0 },
+      { laneY: 0.58, speed: 0.85, scale: 0.8, phase: 1.4 },
+      { laneY: 0.66, speed: 0.7, scale: 0.65, phase: 2.6 }
+    ];
+    ships.forEach(s => {
+      const progress = ((t / 9000) * s.speed + s.phase / 6) % 1;
+      const sx = w * (0.12 + progress * 0.68);
+      const sy = h * s.laneY + Math.sin(t / 480 + s.phase) * 4;
+      ctx.save(); ctx.translate(sx, sy); ctx.scale(s.scale, s.scale);
+      ctx.fillStyle = "#7c3f1d";
+      ctx.beginPath(); ctx.moveTo(-40, 12); ctx.lineTo(40, 12); ctx.lineTo(30, 24); ctx.lineTo(-30, 24); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = "#e2c9a0"; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(0, 12); ctx.lineTo(0, -34); ctx.stroke();
+      ctx.fillStyle = "#fef3c7";
+      const sail = Math.sin(t / 600 + s.phase) * 3;
+      ctx.beginPath(); ctx.moveTo(0, -30); ctx.quadraticCurveTo(24 + sail, -14, 0, 2); ctx.closePath(); ctx.fill();
+      ctx.restore();
+    });
+  },
+
+  // The Mayflower riding rough Atlantic swells with Plymouth's rocky shore
+  // waiting on the horizon.
+  _mayflowerVoyage: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#64748b"); sky.addColorStop(1, "#334155");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.6);
+    const water = ctx.createLinearGradient(0, h * 0.55, 0, h);
+    water.addColorStop(0, "#1e3a5f"); water.addColorStop(1, "#0f2438");
+    ctx.fillStyle = water; ctx.fillRect(0, h * 0.55, w, h * 0.45);
+    // Rough, choppy swells
+    ctx.strokeStyle = "rgba(226,232,240,0.3)"; ctx.lineWidth = 2.5;
+    for (let i = 0; i < 5; i++) {
+      const yy = h * 0.6 + i * 15;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 8) {
+        const y = yy + Math.sin((x + t / 130 + i * 60) / 22) * 6;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    // Rocky shore on the horizon (Plymouth)
+    ctx.fillStyle = "#334155";
+    ctx.beginPath(); ctx.moveTo(w * 0.78, h * 0.62); ctx.lineTo(w * 0.86, h * 0.46); ctx.lineTo(w * 0.94, h * 0.62); ctx.closePath(); ctx.fill();
+    // Gulls
+    ctx.strokeStyle = "#e2e8f0"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 3; i++) {
+      const gx = ((t / 25 + i * 90) % (w + 40)) - 20;
+      const gy = h * (0.15 + i * 0.05);
+      const flap = Math.sin(t / 150 + i) * 4;
+      ctx.beginPath(); ctx.moveTo(gx - 6, gy - flap); ctx.lineTo(gx, gy); ctx.lineTo(gx + 6, gy - flap); ctx.stroke();
+    }
+    // The ship pitches and rolls on the rough water
+    const pitch = Math.sin(t / 700) * 0.06;
+    const bob = Math.sin(t / 480) * 8;
+    ctx.save(); ctx.translate(w * 0.42, h * 0.56 + bob); ctx.rotate(pitch);
+    ctx.fillStyle = "#5b3a21";
+    ctx.beginPath(); ctx.moveTo(-64, 14); ctx.lineTo(64, 14); ctx.lineTo(48, 32); ctx.lineTo(-48, 32); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#3a2414"; ctx.lineWidth = 2; ctx.stroke();
+    [-24, 4, 30].forEach((mastX, i) => {
+      ctx.strokeStyle = "#c4a374"; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(mastX, 14); ctx.lineTo(mastX, -48 + i * 4); ctx.stroke();
+      ctx.fillStyle = "#f1f5f9";
+      const sailSway = Math.sin(t / 550 + i) * 4;
+      ctx.beginPath(); ctx.moveTo(mastX, -44 + i * 4); ctx.quadraticCurveTo(mastX + 20 + sailSway, -20 + i * 4, mastX, 6); ctx.closePath(); ctx.fill();
+    });
+    ctx.restore();
+  },
+
+  // The original generic sailing-ship fallback for any "ship"-category page
+  // that isn't specifically about Washington/Columbus/the Mayflower.
+  _genericShip: function (ctx, w, h, t) {
+    // Sky + water gradient
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#1e3a5f"); sky.addColorStop(1, "#0c4a6e");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.65);
+    const water = ctx.createLinearGradient(0, h * 0.6, 0, h);
+    water.addColorStop(0, "#0369a1"); water.addColorStop(1, "#082f49");
+    ctx.fillStyle = water; ctx.fillRect(0, h * 0.6, w, h * 0.4);
+
+    // Waves
+    ctx.strokeStyle = "rgba(255,255,255,0.25)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 4; i++) {
+      const yy = h * 0.68 + i * 14;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 8) {
+        const y = yy + Math.sin((x + t / 200 + i * 40) / 30) * 4;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+
+    // Moon/sun glow
+    ctx.fillStyle = "rgba(251,191,36,0.85)";
+    ctx.beginPath(); ctx.arc(w * 0.82, h * 0.18, 22, 0, 7); ctx.fill();
+
+    // Ship bobbing
+    const bob = Math.sin(t / 500) * 6;
+    const sx = w * 0.42, sy = h * 0.58 + bob;
+    ctx.save(); ctx.translate(sx, sy);
+    ctx.fillStyle = "#7c3f1d";
+    ctx.beginPath(); ctx.moveTo(-70, 20); ctx.lineTo(70, 20); ctx.lineTo(50, 40); ctx.lineTo(-50, 40); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#4b2410"; ctx.lineWidth = 2; ctx.stroke();
+    ctx.strokeStyle = "#e2c9a0"; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(0, 20); ctx.lineTo(0, -55); ctx.stroke();
+    const sail = Math.sin(t / 700) * 5;
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath();
+    ctx.moveTo(0, -50); ctx.quadraticCurveTo(38 + sail, -25, 0, 0); ctx.closePath(); ctx.fill();
+    ctx.strokeStyle = "#cbd5e1"; ctx.lineWidth = 1.5; ctx.stroke();
+    // Tiny crew figures
+    ctx.fillStyle = "#1f2937";
+    for (let i = 0; i < 3; i++) {
+      const px = -30 + i * 28;
+      ctx.beginPath(); ctx.arc(px, 14, 4, 0, 7); ctx.fill();
+      ctx.fillRect(px - 2, 16, 4, 8);
+    }
+    ctx.restore();
+  },
+
+  // Routes civics/government pages to the specific moment they describe —
+  // casting a vote, reading the Constitution, or marching to war — instead
+  // of the same waving-flag backdrop for every civics topic.
+  flag_civics: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/\bvote\b|voting|election|ballot/.test(rt)) { VIDEO_SCENES._civicsVote(ctx, w, h, t); return; }
+    if (/constitution|amendment|\blaw\b|bill of rights|congress/.test(rt)) { VIDEO_SCENES._civicsLaw(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericCivics(ctx, w, h, t);
+  },
+
+  _genericCivics: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e293b"; ctx.fillRect(0, 0, w, h);
+    // Waving flag
+    const fx = w * 0.28, fy = h * 0.25, fw = w * 0.42, fh = h * 0.32;
+    ctx.save();
+    ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(fx, fy - 10); ctx.lineTo(fx, fy + fh + 30); ctx.stroke();
+    const stripes = 7;
+    for (let i = 0; i < stripes; i++) {
+      ctx.fillStyle = i % 2 === 0 ? "#dc2626" : "#f8fafc";
+      ctx.beginPath();
+      const sh = fh / stripes;
+      for (let x = 0; x <= fw; x += 6) {
+        const wave = Math.sin((x + t / 150) / 22) * 6;
+        const yTop = fy + i * sh + wave;
+        ctx.lineTo(fx + x, yTop);
+      }
+      for (let x = fw; x >= 0; x -= 6) {
+        const wave = Math.sin((x + t / 150) / 22) * 6;
+        const yBot = fy + (i + 1) * sh + wave;
+        ctx.lineTo(fx + x, yBot);
+      }
+      ctx.closePath(); ctx.fill();
+    }
+    ctx.fillStyle = "#1e3a8a";
+    ctx.fillRect(fx, fy, fw * 0.4, fh * 0.45);
+    ctx.fillStyle = "#facc15";
+    for (let r = 0; r < 3; r++) for (let c = 0; c < 4; c++) {
+      ctx.beginPath(); ctx.arc(fx + 10 + c * (fw * 0.4 - 20) / 3, fy + 10 + r * (fh * 0.45 - 20) / 2, 2.5, 0, 7); ctx.fill();
+    }
+    ctx.restore();
+
+    // Marching silhouettes at bottom
+    ctx.fillStyle = "#0f172a";
+    ctx.fillRect(0, h - 30, w, 30);
+    for (let i = 0; i < 6; i++) {
+      const legSwing = Math.sin(t / 200 + i) * 6;
+      const px = ((t / 15 + i * 60) % (w + 60)) - 30;
+      ctx.fillStyle = "#334155";
+      ctx.beginPath(); ctx.arc(px, h - 44, 5, 0, 7); ctx.fill();
+      ctx.fillRect(px - 3, h - 40, 6, 12);
+      ctx.beginPath(); ctx.moveTo(px, h - 28); ctx.lineTo(px + legSwing, h - 16); ctx.stroke();
+    }
+  },
+
+  // A voter drops a ballot into a box under a "VOTE" banner, with a queue
+  // of citizens waiting their turn.
+  _civicsVote: function (ctx, w, h, t) {
+    ctx.fillStyle = "#eff6ff"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#1e3a8a"; ctx.fillRect(0, h * 0.8, w, h * 0.2);
+    // Ballot box
+    ctx.fillStyle = "#1e293b"; ctx.fillRect(w * 0.42, h * 0.55, w * 0.16, h * 0.24);
+    ctx.fillStyle = "#dc2626"; ctx.fillRect(w * 0.42, h * 0.53, w * 0.16, h * 0.04);
+    ctx.fillStyle = "#0f172a"; ctx.fillRect(w * 0.47, h * 0.53, w * 0.06, 0.01 * h + 3);
+    // Ballot slip dropping in, looping
+    const drop = (t / 6) % (h * 0.35);
+    ctx.fillStyle = "#f8fafc";
+    ctx.save(); ctx.translate(w * 0.5, h * 0.35 + drop);
+    ctx.fillRect(-14, -9, 28, 18);
+    ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(-8, -3); ctx.lineTo(8, -3); ctx.moveTo(-8, 2); ctx.lineTo(4, 2); ctx.stroke();
+    ctx.fillStyle = "#16a34a"; ctx.beginPath(); ctx.arc(9, 3, 2, 0, 7); ctx.fill(); // checkmark dot
+    ctx.restore();
+    // Voter figure
+    ctx.fillStyle = "#334155";
+    ctx.beginPath(); ctx.arc(w * 0.5, h * 0.42, 8, 0, 7); ctx.fill();
+    ctx.fillRect(w * 0.5 - 8, h * 0.46, 16, 20);
+    // Waiting queue
+    for (let i = 0; i < 3; i++) {
+      const qx = w * 0.75 + i * 22;
+      ctx.fillStyle = "#64748b";
+      ctx.beginPath(); ctx.arc(qx, h * 0.7, 6, 0, 7); ctx.fill();
+      ctx.fillRect(qx - 6, h * 0.73, 12, 14);
+    }
+    // "VOTE" banner
+    ctx.fillStyle = "#1e3a8a"; ctx.font = "bold 22px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("VOTE", w * 0.5, h * 0.18);
+    ctx.fillStyle = "#dc2626";
+    for (let i = 0; i < 5; i++) { ctx.beginPath(); ctx.arc(w * 0.5 - 60 + i * 30, h * 0.18 - 26, 3, 0, 7); ctx.fill(); }
+  },
+
+  // The Constitution scroll unrolling on a wooden desk beside a quill and
+  // an inkwell, a gavel resting nearby.
+  _civicsLaw: function (ctx, w, h, t) {
+    ctx.fillStyle = "#451a03"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#78350f"; ctx.fillRect(0, h * 0.7, w, h * 0.3);
+    // Unrolling scroll
+    const unroll = Math.min(1, 0.3 + Math.sin(t / 2600) * 0.5 + 0.5);
+    const sw = w * 0.5 * unroll;
+    ctx.fillStyle = "#fef3c7";
+    ctx.fillRect(w * 0.5 - sw / 2, h * 0.28, sw, h * 0.34);
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.ellipse(w * 0.5 - sw / 2, h * 0.28 + h * 0.17, 8, h * 0.17, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(w * 0.5 + sw / 2, h * 0.28 + h * 0.17, 8, h * 0.17, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "rgba(120,53,15,0.5)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 5; i++) {
+      const ly = h * 0.34 + i * (h * 0.05);
+      if (sw > 30) { ctx.beginPath(); ctx.moveTo(w * 0.5 - sw / 2 + 12, ly); ctx.lineTo(w * 0.5 + sw / 2 - 12, ly); ctx.stroke(); }
+    }
+    // Quill writing, bobbing
+    const bob = Math.sin(t / 300) * 4;
+    ctx.save(); ctx.translate(w * 0.5 + sw / 2 - 16, h * 0.5 + bob);
+    ctx.strokeStyle = "#f8fafc"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-18, -30); ctx.stroke();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.moveTo(-18, -30); ctx.lineTo(-10, -22); ctx.lineTo(-22, -22); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    // Gavel
+    ctx.save(); ctx.translate(w * 0.22, h * 0.62); ctx.rotate(-0.5);
+    ctx.fillStyle = "#78350f"; ctx.fillRect(-4, -30, 8, 40);
+    ctx.fillStyle = "#92400e"; ctx.fillRect(-16, -34, 32, 14);
+    ctx.restore();
+  },
+
+  landmark: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#0ea5e9"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    // Sun
+    ctx.fillStyle = "rgba(253,224,71,0.9)"; ctx.beginPath(); ctx.arc(w * 0.85, h * 0.2, 26, 0, 7); ctx.fill();
+    // Clouds drifting
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    for (let i = 0; i < 3; i++) {
+      const cx = ((t / 40 + i * 220) % (w + 120)) - 60;
+      const cy = h * (0.15 + i * 0.08);
+      ctx.beginPath(); ctx.arc(cx, cy, 16, 0, 7); ctx.arc(cx + 18, cy + 4, 12, 0, 7); ctx.arc(cx - 16, cy + 4, 12, 0, 7); ctx.fill();
+    }
+    // Ground
+    ctx.fillStyle = "#a3a3a3"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    // Building (columned monument)
+    const bx = w * 0.5, by = h * 0.78;
+    ctx.fillStyle = "#f1f5f9";
+    ctx.fillRect(bx - 90, by - 90, 180, 90);
+    ctx.fillStyle = "#e2e8f0";
+    ctx.beginPath(); ctx.moveTo(bx - 100, by - 90); ctx.lineTo(bx, by - 130); ctx.lineTo(bx + 100, by - 90); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#cbd5e1";
+    for (let i = 0; i < 6; i++) {
+      ctx.fillRect(bx - 80 + i * 30, by - 85, 14, 85);
+    }
+    // flag on top, gently waving
+    const wave = Math.sin(t / 300) * 4;
+    ctx.strokeStyle = "#64748b"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(bx, by - 130); ctx.lineTo(bx, by - 160); ctx.stroke();
+    ctx.fillStyle = "#ef4444";
+    ctx.beginPath(); ctx.moveTo(bx, by - 160); ctx.lineTo(bx + 26 + wave, by - 153); ctx.lineTo(bx, by - 146); ctx.closePath(); ctx.fill();
+  },
+
+  // Routes to a specific ancient-history moment (Egyptian pyramids, a
+  // Native American village, an inventor's workshop) instead of the same
+  // generic "ancient timeline" markers for every history page.
+  timeline: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/pyramid|egypt|pharaoh|sphinx|\bnile\b|hieroglyph/.test(rt)) { VIDEO_SCENES._pyramid(ctx, w, h, t); return; }
+    if (/native american|indigenous|tribe|teepee|tipi|longhouse/.test(rt)) { VIDEO_SCENES._nativeVillage(ctx, w, h, t); return; }
+    if (/invent|wright brothers|airplane|lightbulb|telephone|edison|printing press/.test(rt)) { VIDEO_SCENES._invention(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericTimeline(ctx, w, h, t);
+  },
+
+  _genericTimeline: function (ctx, w, h, t) {
+    ctx.fillStyle = "#292524"; ctx.fillRect(0, 0, w, h);
+    // Parchment texture strip
+    ctx.fillStyle = "#44403c"; ctx.fillRect(0, h * 0.45, w, 8);
+    const n = 5;
+    for (let i = 0; i < n; i++) {
+      const cx = (w / (n + 1)) * (i + 1);
+      const pulse = 1 + Math.sin(t / 400 + i) * 0.15;
+      ctx.fillStyle = i === Math.floor((t / 900) % n) ? "#fbbf24" : "#a8a29e";
+      ctx.beginPath(); ctx.arc(cx, h * 0.49, 8 * pulse, 0, 7); ctx.fill();
+      ctx.fillStyle = "#78716c"; ctx.fillRect(cx - 1, h * 0.49, 2, h * 0.15);
+      ctx.fillStyle = "#d6d3d1";
+      ctx.fillRect(cx - 24, h * 0.66, 48, 26);
+      ctx.strokeStyle = "#57534e"; ctx.strokeRect(cx - 24, h * 0.66, 48, 26);
+    }
+    // Sparkle particles for "ancient dust"
+    ctx.fillStyle = "rgba(251,191,36,0.5)";
+    for (let i = 0; i < 12; i++) {
+      const px = (i * 71 + t / 20) % w;
+      const py = (i * 53 + h - (t / 15) % h) % h;
+      ctx.beginPath(); ctx.arc(px, py, 1.5, 0, 7); ctx.fill();
+    }
+  },
+
+  // Great Pyramids and the Sphinx under a desert sun, with a camel
+  // caravan crossing the sand in the foreground.
+  _pyramid: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fb923c"); sky.addColorStop(1, "#fde68a");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(253,224,71,0.95)"; ctx.beginPath(); ctx.arc(w * 0.78, h * 0.2, 24, 0, 7); ctx.fill();
+    ctx.fillStyle = "#d97706"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    // Two pyramids
+    ctx.fillStyle = "#b45309";
+    ctx.beginPath(); ctx.moveTo(w * 0.42, h * 0.78); ctx.lineTo(w * 0.58, h * 0.4); ctx.lineTo(w * 0.74, h * 0.78); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.moveTo(w * 0.66, h * 0.78); ctx.lineTo(w * 0.8, h * 0.5); ctx.lineTo(w * 0.94, h * 0.78); ctx.closePath(); ctx.fill();
+    // Sunlit pyramid edge
+    ctx.strokeStyle = "rgba(254,240,138,0.6)"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(w * 0.58, h * 0.4); ctx.lineTo(w * 0.58, h * 0.78); ctx.stroke();
+    // Sphinx
+    ctx.fillStyle = "#a16207";
+    ctx.fillRect(w * 0.12, h * 0.68, 44, 12);
+    ctx.beginPath(); ctx.arc(w * 0.14, h * 0.66, 8, 0, 7); ctx.fill();
+    // Camel caravan crossing
+    for (let i = 0; i < 3; i++) {
+      const cx2 = ((t / 42 + i * 90) % (w + 80)) - 40;
+      const legSwing = Math.sin(t / 210 + i) * 6;
+      ctx.save(); ctx.translate(cx2, h * 0.9);
+      ctx.fillStyle = "#92400e";
+      ctx.beginPath(); ctx.ellipse(0, 0, 16, 8, 0, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.ellipse(-4, -9, 6, 6, 0, 0, 7); ctx.fill();
+      ctx.strokeStyle = "#92400e"; ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(-8, 6); ctx.lineTo(-8 + legSwing, 16); ctx.moveTo(8, 6); ctx.lineTo(8 - legSwing, 16); ctx.stroke();
+      ctx.restore();
+    }
+  },
+
+  // A Native American village: teepees around a glowing campfire with
+  // rising smoke, an eagle circling overhead at dusk.
+  _nativeVillage: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#7c3aed"); sky.addColorStop(0.5, "#f97316"); sky.addColorStop(1, "#fde68a");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.65);
+    ctx.fillStyle = "#4d7c0f"; ctx.fillRect(0, h * 0.65, w, h * 0.35);
+    // Teepees
+    [0.22, 0.42, 0.68].forEach((tx, i) => {
+      const scale = 1 - i * 0.12;
+      ctx.save(); ctx.translate(w * tx, h * 0.65); ctx.scale(scale, scale);
+      ctx.fillStyle = "#a16207";
+      ctx.beginPath(); ctx.moveTo(-30, 0); ctx.lineTo(0, -70); ctx.lineTo(30, 0); ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = "#78350f"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(0, -70); ctx.lineTo(-4, 6); ctx.moveTo(0, -70); ctx.lineTo(6, 6); ctx.stroke();
+      ctx.restore();
+    });
+    // Campfire, glowing and flickering
+    const flicker = 0.6 + Math.sin(t / 140) * 0.3;
+    ctx.fillStyle = `rgba(251,146,60,${flicker})`;
+    ctx.beginPath(); ctx.moveTo(w * 0.53, h * 0.65); ctx.quadraticCurveTo(w * 0.55, h * 0.58, w * 0.53, h * 0.5); ctx.quadraticCurveTo(w * 0.51, h * 0.58, w * 0.53, h * 0.65); ctx.fill();
+    // Rising smoke
+    ctx.fillStyle = "rgba(148,163,184,0.4)";
+    for (let i = 0; i < 5; i++) {
+      const sy = h * 0.5 - ((t / 20 + i * 20) % (h * 0.35));
+      ctx.beginPath(); ctx.arc(w * 0.53 + Math.sin(i + t / 800) * 6, sy, 5 + i, 0, 7); ctx.fill();
+    }
+    // Eagle circling overhead
+    const angle = t / 2200;
+    const ex = w * 0.5 + Math.cos(angle) * w * 0.32, ey = h * 0.18 + Math.sin(angle) * h * 0.08;
+    const flap = Math.sin(t / 160) * 6;
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(ex - 10, ey - flap); ctx.lineTo(ex, ey); ctx.lineTo(ex + 10, ey - flap); ctx.stroke();
+  },
+
+  // An inventor's workshop: a lightbulb flickering to life over a desk of
+  // spinning gears — for pages about inventions and inventors.
+  _invention: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1c1917"; ctx.fillRect(0, 0, w, h);
+    // Workbench
+    ctx.fillStyle = "#57534e"; ctx.fillRect(0, h * 0.72, w, h * 0.1);
+    ctx.fillStyle = "#44403c"; ctx.fillRect(0, h * 0.82, w, h * 0.18);
+    // Spinning gears on the bench
+    [{ x: 0.28, r: 22, speed: 1 }, { x: 0.42, r: 15, speed: -1.5 }].forEach(g => {
+      ctx.save(); ctx.translate(w * g.x, h * 0.72); ctx.rotate((t / 700) * g.speed);
+      ctx.strokeStyle = "#a8a29e"; ctx.lineWidth = 4;
+      ctx.beginPath(); ctx.arc(0, 0, g.r, 0, 7); ctx.stroke();
+      for (let i = 0; i < 8; i++) {
+        const a = (i / 8) * Math.PI * 2;
+        ctx.beginPath(); ctx.moveTo(Math.cos(a) * g.r, Math.sin(a) * g.r); ctx.lineTo(Math.cos(a) * (g.r + 6), Math.sin(a) * (g.r + 6)); ctx.stroke();
+      }
+      ctx.restore();
+    });
+    // Glowing lightbulb "idea" moment, flickering on
+    const glow = 0.5 + Math.abs(Math.sin(t / 500)) * 0.5;
+    const bx = w * 0.66, by = h * 0.38;
+    ctx.fillStyle = `rgba(253,224,71,${glow})`;
+    ctx.shadowColor = "#fde68a"; ctx.shadowBlur = 30 * glow;
+    ctx.beginPath(); ctx.arc(bx, by, 26, 0, 7); ctx.fill();
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = "#78716c"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(bx, by, 26, 0.2, Math.PI - 0.2); ctx.stroke();
+    ctx.fillStyle = "#78716c"; ctx.fillRect(bx - 8, by + 22, 16, 10);
+    // Filament glow lines inside the bulb
+    ctx.strokeStyle = "rgba(120,53,15,0.6)"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(bx - 8, by + 6); ctx.lineTo(bx, by - 8); ctx.lineTo(bx + 8, by + 6); ctx.stroke();
+  },
+
+  // Routes matter/energy pages to the specific concept they're teaching
+  // (states of matter, magnetism, simple machines) instead of the same
+  // orbiting-electron atom diagram for every physical-science topic.
+  atom: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/state(s)? of matter|\bsolid\b|\bliquid\b|\bgas\b|melt|freeze|boil/.test(rt)) { VIDEO_SCENES._statesOfMatter(ctx, w, h, t); return; }
+    if (/magnet/.test(rt)) { VIDEO_SCENES._magnetScene(ctx, w, h, t); return; }
+    if (/simple machine|lever|pulley|inclined plane|\bwheel\b|\bramp\b/.test(rt)) { VIDEO_SCENES._simpleMachine(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericAtom(ctx, w, h, t);
+  },
+
+  _genericAtom: function (ctx, w, h, t) {
+    ctx.fillStyle = "#0c1929"; ctx.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2;
+    // Nucleus
+    ctx.fillStyle = "#38bdf8";
+    ctx.beginPath(); ctx.arc(cx, cy, 14, 0, 7); ctx.fill();
+    ctx.shadowColor = "#38bdf8"; ctx.shadowBlur = 20; ctx.fill(); ctx.shadowBlur = 0;
+    // Orbits with electrons
+    const orbits = [
+      { rx: 90, ry: 34, speed: 1, color: "#f472b6" },
+      { rx: 70, ry: 90, speed: 1.4, color: "#a78bfa" },
+      { rx: 100, ry: 55, speed: 0.7, color: "#34d399" }
+    ];
+    orbits.forEach((o, idx) => {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate((idx * Math.PI) / 3);
+      ctx.strokeStyle = "rgba(255,255,255,0.25)"; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.ellipse(0, 0, o.rx, o.ry, 0, 0, 7); ctx.stroke();
+      const angle = (t / 1000) * o.speed * Math.PI * 2;
+      const ex = Math.cos(angle) * o.rx, ey = Math.sin(angle) * o.ry;
+      ctx.fillStyle = o.color;
+      ctx.beginPath(); ctx.arc(ex, ey, 6, 0, 7); ctx.fill();
+      ctx.restore();
+    });
+  },
+
+  // The same block of particles shown as a tight solid, a sloshing
+  // liquid, and a spread-out gas, cycling through all three states so the
+  // page visibly demonstrates the concept instead of naming it.
+  _statesOfMatter: function (ctx, w, h, t) {
+    ctx.fillStyle = "#0c1929"; ctx.fillRect(0, 0, w, h);
+    const cyc = (t / 5000) % 3;
+    const phase = Math.floor(cyc);
+    const labels = ["SOLID", "LIQUID", "GAS"];
+    ctx.fillStyle = "#e0e7ff"; ctx.font = "bold 20px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText(labels[phase], w / 2, h * 0.16);
+    const container = { x: w * 0.3, y: h * 0.28, w: w * 0.4, h: h * 0.5 };
+    ctx.strokeStyle = "rgba(148,163,184,0.5)"; ctx.lineWidth = 2;
+    ctx.strokeRect(container.x, container.y, container.w, container.h);
+    const n = 12;
+    for (let i = 0; i < n; i++) {
+      let px, py;
+      if (phase === 0) {
+        // Solid: tight, vibrating grid
+        const col = i % 4, row = Math.floor(i / 4);
+        px = container.x + 20 + col * 26 + Math.sin(t / 90 + i) * 1.5;
+        py = container.y + container.h - 20 - row * 26 + Math.cos(t / 90 + i) * 1.5;
+      } else if (phase === 1) {
+        // Liquid: sloshing near the bottom, free to move sideways
+        const col = i % 4, row = Math.floor(i / 3);
+        px = container.x + 20 + col * 26 + Math.sin(t / 260 + i) * 10;
+        py = container.y + container.h - 16 - row * 22 + Math.sin(t / 400 + i * 2) * 3;
+      } else {
+        // Gas: bouncing freely around the whole container
+        const a = t / 700 + i * 1.3;
+        px = container.x + container.w / 2 + Math.sin(a) * (container.w / 2 - 12) * Math.sin(i);
+        py = container.y + container.h / 2 + Math.cos(a * 1.3) * (container.h / 2 - 12) * Math.cos(i);
+      }
+      ctx.fillStyle = "#38bdf8";
+      ctx.beginPath(); ctx.arc(px, py, 7, 0, 7); ctx.fill();
+    }
+  },
+
+  // A horseshoe magnet attracting iron filings that snap into visible
+  // field lines curving between its two poles.
+  _magnetScene: function (ctx, w, h, t) {
+    ctx.fillStyle = "#111827"; ctx.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h * 0.55;
+    ctx.save(); ctx.translate(cx, cy);
+    ctx.lineWidth = 26; ctx.lineCap = "round";
+    ctx.strokeStyle = "#dc2626";
+    ctx.beginPath(); ctx.arc(0, 0, 50, Math.PI * 0.55, Math.PI * 1.45, true); ctx.stroke();
+    ctx.strokeStyle = "#2563eb";
+    ctx.beginPath(); ctx.moveTo(-38, 38); ctx.lineTo(-38, 70); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(38, 38); ctx.lineTo(38, 70); ctx.stroke();
+    ctx.fillStyle = "#f8fafc"; ctx.font = "bold 13px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("N", -38, 58); ctx.fillText("S", 38, 58);
+    ctx.restore();
+    // Curving field lines between the poles
+    ctx.strokeStyle = "rgba(148,163,184,0.4)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 4; i++) {
+      const spread = 20 + i * 16;
+      ctx.beginPath();
+      ctx.moveTo(cx - 38, cy + 62);
+      ctx.quadraticCurveTo(cx, cy + 62 + spread, cx + 38, cy + 62);
+      ctx.stroke();
+    }
+    // Iron filings drawn in toward the poles, looping
+    for (let i = 0; i < 16; i++) {
+      const cyc = (t / 900 + i * 0.13) % 1;
+      const startX = w * 0.15 + (i % 8) * (w * 0.7 / 8);
+      const startY = h * 0.85;
+      const targetX = cx + (i % 2 === 0 ? -38 : 38);
+      const targetY = cy + 62;
+      const px = startX + (targetX - startX) * cyc;
+      const py = startY + (targetY - startY) * cyc;
+      ctx.fillStyle = "#94a3b8";
+      ctx.save(); ctx.translate(px, py); ctx.rotate(cyc * 2);
+      ctx.fillRect(-1.5, -6, 3, 12);
+      ctx.restore();
+    }
+  },
+
+  // A lever tipping a weight up and over, and a pulley hauling a crate,
+  // shown side by side as two working simple machines.
+  _simpleMachine: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e293b"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#334155"; ctx.fillRect(0, h * 0.82, w, h * 0.18);
+    // Lever (seesaw) on the left
+    const tilt = Math.sin(t / 1400) * 0.22;
+    ctx.save(); ctx.translate(w * 0.28, h * 0.72);
+    ctx.fillStyle = "#78716c"; ctx.beginPath(); ctx.moveTo(-14, 0); ctx.lineTo(14, 0); ctx.lineTo(0, -22); ctx.closePath(); ctx.fill();
+    ctx.rotate(tilt);
+    ctx.fillStyle = "#a8a29e"; ctx.fillRect(-70, -8, 140, 8);
+    ctx.fillStyle = "#dc2626"; ctx.beginPath(); ctx.arc(-60, -8 - 10 * Math.max(0, -Math.sin(t / 1400)), 10, 0, 7); ctx.fill();
+    ctx.fillStyle = "#3b82f6"; ctx.beginPath(); ctx.arc(60, -8 - 10 * Math.max(0, Math.sin(t / 1400)), 10, 0, 7); ctx.fill();
+    ctx.restore();
+    // Pulley hauling a crate on the right
+    const pulleyCx = w * 0.7, pulleyCy = h * 0.22;
+    ctx.strokeStyle = "#a8a29e"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(pulleyCx, h * 0.1); ctx.lineTo(pulleyCx, h * 0.82); ctx.stroke();
+    ctx.beginPath(); ctx.arc(pulleyCx, pulleyCy, 14, 0, 7); ctx.stroke();
+    const hoist = (Math.sin(t / 1600) + 1) / 2;
+    const crateY = h * 0.75 - hoist * h * 0.35;
+    ctx.strokeStyle = "#78716c"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(pulleyCx - 12, pulleyCy); ctx.lineTo(pulleyCx - 12, crateY); ctx.stroke();
+    ctx.fillStyle = "#92400e"; ctx.fillRect(pulleyCx - 26, crateY, 28, 22);
+  },
+
+  // Routes to a specific space moment — the moon landing, or a full solar
+  // system — instead of one generic orbiting-planet loop for every page.
+  space: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/moon landing|apollo|astronaut|footprint|lunar/.test(rt)) { VIDEO_SCENES._moonLanding(ctx, w, h, t); return; }
+    if (/solar system|mercury|venus|\bmars\b|jupiter|saturn|uranus|neptune|planets? (orbit|of)/.test(rt)) { VIDEO_SCENES._solarSystem(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericSpace(ctx, w, h, t);
+  },
+
+  _genericSpace: function (ctx, w, h, t) {
+    ctx.fillStyle = "#0b1026"; ctx.fillRect(0, 0, w, h);
+    // Stars twinkle
+    for (let i = 0; i < 40; i++) {
+      const sx = (i * 53) % w, sy = (i * 97) % h;
+      const tw = 0.4 + 0.6 * Math.abs(Math.sin(t / 400 + i));
+      ctx.fillStyle = `rgba(255,255,255,${tw})`;
+      ctx.fillRect(sx, sy, 2, 2);
+    }
+    // Orbiting planet + moon
+    const cx = w * 0.5, cy = h * 0.55;
+    ctx.fillStyle = "#f97316";
+    ctx.beginPath(); ctx.arc(cx, cy, 34, 0, 7); ctx.fill();
+    ctx.fillStyle = "rgba(0,0,0,0.15)";
+    ctx.beginPath(); ctx.arc(cx + 10, cy - 6, 34, 0, 7); ctx.fill();
+    const angle = t / 900;
+    const mx = cx + Math.cos(angle) * 70, my = cy + Math.sin(angle) * 24;
+    ctx.fillStyle = "#cbd5e1";
+    ctx.beginPath(); ctx.arc(mx, my, 9, 0, 7); ctx.fill();
+    ctx.strokeStyle = "rgba(148,163,184,0.3)";
+    ctx.beginPath(); ctx.ellipse(cx, cy, 70, 24, 0, 0, 7); ctx.stroke();
+  },
+
+  // Apollo-style moon landing: an astronaut plants a flag on the gray
+  // lunar surface next to the landing module, with Earth hanging in the
+  // black sky and the flag "waving" stiffly (no atmosphere, just a light
+  // sway from the pole) exactly like the famous footage.
+  _moonLanding: function (ctx, w, h, t) {
+    ctx.fillStyle = "#050510"; ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 50; i++) {
+      const sx = (i * 61) % w, sy = (i * 83) % (h * 0.7);
+      ctx.fillStyle = `rgba(255,255,255,${0.3 + 0.5 * Math.abs(Math.sin(t / 500 + i))})`;
+      ctx.fillRect(sx, sy, 1.5, 1.5);
+    }
+    // Earth rising in the black sky
+    ctx.fillStyle = "#1d4ed8";
+    ctx.beginPath(); ctx.arc(w * 0.8, h * 0.2, 22, 0, 7); ctx.fill();
+    ctx.fillStyle = "rgba(34,197,94,0.7)";
+    ctx.beginPath(); ctx.arc(w * 0.8 - 6, h * 0.2 - 4, 8, 0, 7); ctx.arc(w * 0.8 + 8, h * 0.2 + 6, 6, 0, 7); ctx.fill();
+    // Gray cratered moon surface
+    ctx.fillStyle = "#94a3b8"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    ctx.fillStyle = "rgba(100,116,139,0.5)";
+    for (let i = 0; i < 6; i++) {
+      const cx2 = (i * 71) % w, cy2 = h * 0.8 + (i * 13) % (h * 0.16);
+      ctx.beginPath(); ctx.ellipse(cx2, cy2, 10, 4, 0, 0, 7); ctx.fill();
+    }
+    // Lunar module in background
+    ctx.save(); ctx.translate(w * 0.72, h * 0.72);
+    ctx.fillStyle = "#e2e8f0"; ctx.fillRect(-18, -14, 36, 20);
+    ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.moveTo(-18, 6); ctx.lineTo(-28, 20); ctx.lineTo(-10, 20); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(18, 6); ctx.lineTo(28, 20); ctx.lineTo(10, 20); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    // Astronaut planting the flag
+    ctx.save(); ctx.translate(w * 0.34, h * 0.78);
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.arc(0, -30, 8, 0, 7); ctx.fill(); // helmet
+    ctx.fillRect(-8, -22, 16, 22); // suit torso/legs
+    ctx.fillStyle = "#cbd5e1"; ctx.beginPath(); ctx.arc(0, -30, 5, 0, 7); ctx.fill(); // visor glass
+    // Flagpole + stiffly waving flag
+    ctx.strokeStyle = "#e2e8f0"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(14, 0); ctx.lineTo(14, -46); ctx.stroke();
+    const sway = Math.sin(t / 1400) * 2;
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath(); ctx.moveTo(14, -46); ctx.lineTo(38 + sway, -44); ctx.lineTo(36 + sway, -36); ctx.lineTo(14, -36); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // The sun at center with the planets orbiting at their own distinct
+  // speeds and distances — a real solar-system model rather than one
+  // arbitrary planet+moon pair.
+  _solarSystem: function (ctx, w, h, t) {
+    ctx.fillStyle = "#05060f"; ctx.fillRect(0, 0, w, h);
+    for (let i = 0; i < 45; i++) {
+      const sx = (i * 59) % w, sy = (i * 89) % h;
+      ctx.fillStyle = `rgba(255,255,255,${0.3 + 0.5 * Math.abs(Math.sin(t / 450 + i))})`;
+      ctx.fillRect(sx, sy, 1.5, 1.5);
+    }
+    const cx = w / 2, cy = h / 2;
+    ctx.fillStyle = "#facc15";
+    ctx.shadowColor = "#facc15"; ctx.shadowBlur = 24;
+    ctx.beginPath(); ctx.arc(cx, cy, 18, 0, 7); ctx.fill();
+    ctx.shadowBlur = 0;
+    const planets = [
+      { r: 40, size: 3.5, speed: 4.1, color: "#94a3b8" },   // Mercury
+      { r: 56, size: 5, speed: 3, color: "#fbbf24" },       // Venus
+      { r: 74, size: 5.5, speed: 2.4, color: "#3b82f6" },   // Earth
+      { r: 92, size: 4.5, speed: 1.9, color: "#f97316" },   // Mars
+      { r: 116, size: 10, speed: 1.1, color: "#d97706" },   // Jupiter
+      { r: 142, size: 8, speed: 0.8, color: "#eab308" }     // Saturn
+    ];
+    planets.forEach((p, i) => {
+      ctx.strokeStyle = "rgba(148,163,184,0.2)"; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(cx, cy, p.r, 0, 7); ctx.stroke();
+      const angle = (t / 3000) * p.speed + i;
+      const px = cx + Math.cos(angle) * p.r, py = cy + Math.sin(angle) * p.r * 0.94;
+      ctx.fillStyle = p.color;
+      ctx.beginPath(); ctx.arc(px, py, p.size, 0, 7); ctx.fill();
+      if (p.color === "#eab308") {
+        ctx.strokeStyle = "rgba(234,179,8,0.6)"; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.ellipse(px, py, p.size + 6, p.size * 0.4, 0.4, 0, 7); ctx.stroke();
+      }
+    });
+  },
+
+  plant: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#bae6fd"); sky.addColorStop(1, "#ecfccb");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#84cc16"; ctx.fillRect(0, h * 0.8, w, h * 0.2);
+    const grow = Math.min(1, (t % 4000) / 3000);
+    const cx = w / 2, baseY = h * 0.8;
+    const stemH = 90 * grow;
+    ctx.strokeStyle = "#16a34a"; ctx.lineWidth = 6; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(cx, baseY); ctx.quadraticCurveTo(cx + 10, baseY - stemH / 2, cx, baseY - stemH); ctx.stroke();
+    if (grow > 0.3) {
+      const leafSize = Math.min(1, (grow - 0.3) / 0.5);
+      ctx.fillStyle = "#22c55e";
+      ctx.save(); ctx.translate(cx - 4, baseY - stemH * 0.55);
+      ctx.rotate(-0.5);
+      ctx.beginPath(); ctx.ellipse(0, 0, 22 * leafSize, 11 * leafSize, 0, 0, 7); ctx.fill();
+      ctx.restore();
+      ctx.save(); ctx.translate(cx + 4, baseY - stemH * 0.4);
+      ctx.rotate(0.5);
+      ctx.beginPath(); ctx.ellipse(0, 0, 22 * leafSize, 11 * leafSize, 0, 0, 7); ctx.fill();
+      ctx.restore();
+    }
+    if (grow > 0.7) {
+      const bloom = Math.min(1, (grow - 0.7) / 0.3);
+      ctx.fillStyle = "#f472b6";
+      for (let i = 0; i < 5; i++) {
+        const a = (i / 5) * Math.PI * 2;
+        ctx.beginPath();
+        ctx.ellipse(cx + Math.cos(a) * 12 * bloom, baseY - stemH + Math.sin(a) * 12 * bloom, 9 * bloom, 6 * bloom, a, 0, 7);
+        ctx.fill();
+      }
+      ctx.fillStyle = "#facc15";
+      ctx.beginPath(); ctx.arc(cx, baseY - stemH, 6 * bloom, 0, 7); ctx.fill();
+    }
+    // Sun
+    ctx.fillStyle = "rgba(250,204,21,0.9)"; ctx.beginPath(); ctx.arc(w * 0.82, h * 0.18, 22, 0, 7); ctx.fill();
+  },
+
+  // Routes to whichever specific animal the page names — a lesson about
+  // lions should show a lion, not the same generic orange critter every
+  // other animal/habitat/food-chain lesson at every grade level uses.
+  animal: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/\blion\b|lioness/.test(rt)) { VIDEO_SCENES._animalLion(ctx, w, h, t); return; }
+    if (/elephant/.test(rt)) { VIDEO_SCENES._animalElephant(ctx, w, h, t); return; }
+    if (/\btiger\b/.test(rt)) { VIDEO_SCENES._animalTiger(ctx, w, h, t); return; }
+    if (/\bbear\b|grizzly|polar bear/.test(rt)) { VIDEO_SCENES._animalBear(ctx, w, h, t); return; }
+    if (/\bfrog\b|toad/.test(rt)) { VIDEO_SCENES._animalFrog(ctx, w, h, t); return; }
+    if (/butterfly|caterpillar|chrysalis/.test(rt)) { VIDEO_SCENES._animalButterfly(ctx, w, h, t); return; }
+    if (/\bbee\b|honeybee|beehive/.test(rt)) { VIDEO_SCENES._animalBee(ctx, w, h, t); return; }
+    if (/\bfish\b|salmon|goldfish|guppy/.test(rt)) { VIDEO_SCENES._animalFish(ctx, w, h, t); return; }
+    if (/eagle|hawk|falcon/.test(rt)) { VIDEO_SCENES._animalEagle(ctx, w, h, t); return; }
+    if (/\bowl\b/.test(rt)) { VIDEO_SCENES._animalOwl(ctx, w, h, t); return; }
+    if (/snake|serpent/.test(rt)) { VIDEO_SCENES._animalSnake(ctx, w, h, t); return; }
+    if (/turtle|tortoise/.test(rt)) { VIDEO_SCENES._animalTurtle(ctx, w, h, t); return; }
+    if (/rabbit|bunny/.test(rt)) { VIDEO_SCENES._animalRabbit(ctx, w, h, t); return; }
+    if (/whale/.test(rt)) { VIDEO_SCENES._animalWhale(ctx, w, h, t); return; }
+    if (/spider|tarantula|arachnid/.test(rt)) { VIDEO_SCENES._animalSpider(ctx, w, h, t); return; }
+    if (/giraffe/.test(rt)) { VIDEO_SCENES._animalGiraffe(ctx, w, h, t); return; }
+    if (/\bwolf\b|wolves/.test(rt)) { VIDEO_SCENES._animalWolf(ctx, w, h, t); return; }
+    if (/\bfox\b/.test(rt)) { VIDEO_SCENES._animalFox(ctx, w, h, t); return; }
+    if (/\bdeer\b/.test(rt)) { VIDEO_SCENES._animalDeer(ctx, w, h, t); return; }
+    if (/zebra/.test(rt)) { VIDEO_SCENES._animalZebra(ctx, w, h, t); return; }
+    if (/monkey/.test(rt)) { VIDEO_SCENES._animalMonkey(ctx, w, h, t); return; }
+    if (/penguin/.test(rt)) { VIDEO_SCENES._animalPenguin(ctx, w, h, t); return; }
+    if (/shark/.test(rt)) { VIDEO_SCENES._animalShark(ctx, w, h, t); return; }
+    if (/dolphin/.test(rt)) { VIDEO_SCENES._animalDolphin(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericAnimal(ctx, w, h, t);
+  },
+
+  _genericAnimal: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#93c5fd"); sky.addColorStop(1, "#bbf7d0");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#4ade80"; ctx.fillRect(0, h * 0.75, w, h * 0.25);
+    // Bouncing/hopping creature (generic friendly critter)
+    const hop = Math.abs(Math.sin(t / 350)) * 22;
+    const cx = w * 0.5, cy = h * 0.7 - hop;
+    ctx.fillStyle = "#f59e0b";
+    ctx.beginPath(); ctx.ellipse(cx, cy, 26, 20, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(cx + 22, cy - 14, 13, 0, 7); ctx.fill();
+    ctx.fillStyle = "#1f2937";
+    ctx.beginPath(); ctx.arc(cx + 27, cy - 17, 2, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#f59e0b"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(cx - 24, cy); ctx.quadraticCurveTo(cx - 40, cy - 10 - hop / 2, cx - 46, cy - 4); ctx.stroke();
+    // Birds flying across
+    for (let i = 0; i < 3; i++) {
+      const bx = ((t / 20 + i * 150) % (w + 60)) - 30;
+      const by = h * (0.15 + i * 0.06);
+      const flap = Math.sin(t / 120 + i) * 6;
+      ctx.strokeStyle = "#334155"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(bx - 8, by - flap); ctx.lineTo(bx, by); ctx.lineTo(bx + 8, by - flap); ctx.stroke();
+    }
+  },
+
+  // Shared savanna backdrop used by the big-cat/safari animals so each one
+  // only needs to draw itself, not re-derive the ground and sky.
+  _savannaBG: function (ctx, w, h) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fde68a"); sky.addColorStop(1, "#fef3c7");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.7);
+    ctx.fillStyle = "rgba(253,224,71,0.9)"; ctx.beginPath(); ctx.arc(w * 0.85, h * 0.16, 22, 0, 7); ctx.fill();
+    ctx.fillStyle = "#ca8a04"; ctx.fillRect(0, h * 0.7, w, h * 0.3);
+  },
+
+  _animalLion: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const walk = Math.sin(t / 260) * 6;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78);
+    ctx.fillStyle = "#b45309";
+    for (let i = 0; i < 14; i++) {
+      const a = (i / 14) * Math.PI * 2;
+      ctx.beginPath(); ctx.arc(-22 + Math.cos(a) * 20, Math.sin(a) * 20, 8, 0, 7); ctx.fill();
+    }
+    ctx.fillStyle = "#d97706";
+    ctx.beginPath(); ctx.ellipse(0, 0, 30, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-24, -8, 15, 0, 7); ctx.fill();
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.arc(-32, -6, 2.5, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#d97706"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-14, 14); ctx.lineTo(-14 + walk, 26); ctx.moveTo(16, 14); ctx.lineTo(16 - walk, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalElephant: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const sway = Math.sin(t / 500) * 8;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78);
+    ctx.fillStyle = "#94a3b8";
+    ctx.beginPath(); ctx.ellipse(0, 0, 40, 24, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-34, -14, 18, 0, 7); ctx.fill();
+    ctx.fillStyle = "#cbd5e1"; ctx.beginPath(); ctx.ellipse(-46, -4, 12, 16, -0.3, 0, 7); ctx.fill(); // ear
+    ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.moveTo(-46, -10); ctx.quadraticCurveTo(-56 + sway, 4, -50 + sway, 18); ctx.stroke(); // trunk
+    ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 8;
+    ctx.beginPath(); ctx.moveTo(-20, 18); ctx.lineTo(-20, 32); ctx.moveTo(20, 18); ctx.lineTo(20, 32); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalTiger: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const stalk = Math.sin(t / 300) * 5;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.8);
+    ctx.fillStyle = "#f97316";
+    ctx.beginPath(); ctx.ellipse(0, 0, 30, 16, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-26, -6, 13, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 3;
+    for (let i = 0; i < 4; i++) { ctx.beginPath(); ctx.moveTo(-10 + i * 8, -10); ctx.lineTo(-14 + i * 8, 10); ctx.stroke(); }
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-30, -8, 2, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#f97316"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-12, 12); ctx.lineTo(-12 + stalk, 24); ctx.moveTo(14, 12); ctx.lineTo(14 - stalk, 24); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalBear: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const lumber = Math.sin(t / 380) * 6;
+    ctx.save(); ctx.translate(w * 0.5 + lumber, h * 0.8);
+    ctx.fillStyle = "#5c4326";
+    ctx.beginPath(); ctx.ellipse(0, 0, 28, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-24, -12, 14, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-32, -22, 5, 0, 7); ctx.arc(-16, -24, 5, 0, 7); ctx.fill(); // ears
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-30, -12, 2, 0, 7); ctx.fill();
+    ctx.restore();
+  },
+
+  // Shared pond/wetland backdrop for amphibians and reptiles.
+  _pondBG: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#a7f3d0"); sky.addColorStop(1, "#d9f99d");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.65);
+    ctx.fillStyle = "#0e7490"; ctx.fillRect(0, h * 0.65, w, h * 0.35);
+    ctx.fillStyle = "#22c55e";
+    for (let i = 0; i < 3; i++) { ctx.beginPath(); ctx.ellipse(w * (0.2 + i * 0.3), h * 0.68, 30, 8, 0, 0, 7); ctx.fill(); }
+  },
+
+  _animalFrog: function (ctx, w, h, t) {
+    VIDEO_SCENES._pondBG(ctx, w, h, t);
+    const hop = Math.abs(Math.sin(t / 500)) * 26;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.62 - hop);
+    ctx.fillStyle = "#22c55e";
+    ctx.beginPath(); ctx.ellipse(0, 0, 24, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-10, -14, 7, 0, 7); ctx.arc(10, -14, 7, 0, 7); ctx.fill();
+    ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.arc(-10, -16, 3, 0, 7); ctx.arc(10, -16, 3, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#22c55e"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-18, 12); ctx.lineTo(-28, 20 + hop / 3); ctx.moveTo(18, 12); ctx.lineTo(28, 20 + hop / 3); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalSnake: function (ctx, w, h, t) {
+    VIDEO_SCENES._pondBG(ctx, w, h, t);
+    ctx.strokeStyle = "#16a34a"; ctx.lineWidth = 14; ctx.lineCap = "round";
+    ctx.beginPath();
+    const slither = t / 40;
+    for (let x = 0; x <= w; x += 6) {
+      const y = h * 0.55 + Math.sin((x + slither) / 30) * 30;
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.fillStyle = "#facc15";
+    ctx.beginPath(); ctx.arc(w * 0.06, h * 0.55 + Math.sin(slither / 30) * 30, 3, 0, 7); ctx.fill();
+  },
+
+  _animalTurtle: function (ctx, w, h, t) {
+    VIDEO_SCENES._pondBG(ctx, w, h, t);
+    const crawl = ((t / 60) % (w + 60)) - 30;
+    const legShuffle = Math.sin(t / 260) * 4;
+    ctx.save(); ctx.translate(crawl, h * 0.62);
+    ctx.fillStyle = "#166534";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 18, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#14532d"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(-12, -12); ctx.lineTo(12, 12); ctx.moveTo(12, -12); ctx.lineTo(-12, 12); ctx.stroke();
+    ctx.fillStyle = "#65a30d"; ctx.beginPath(); ctx.arc(24, 2, 8, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#65a30d"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-14, 12); ctx.lineTo(-14 + legShuffle, 20); ctx.moveTo(10, 12); ctx.lineTo(10 - legShuffle, 20); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Shared open-meadow backdrop for small pollinators and garden animals.
+  _meadowBG: function (ctx, w, h) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#bae6fd"); sky.addColorStop(1, "#ecfccb");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#84cc16"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    ctx.fillStyle = "rgba(250,204,21,0.9)"; ctx.beginPath(); ctx.arc(w * 0.85, h * 0.18, 20, 0, 7); ctx.fill();
+    ["#f472b6", "#fb923c", "#a78bfa"].forEach((c, i) => {
+      ctx.fillStyle = c;
+      ctx.beginPath(); ctx.arc(w * (0.2 + i * 0.28), h * 0.82, 6, 0, 7); ctx.fill();
+    });
+  },
+
+  _animalButterfly: function (ctx, w, h, t) {
+    VIDEO_SCENES._meadowBG(ctx, w, h);
+    const bx = w * 0.5 + Math.sin(t / 600) * w * 0.28;
+    const by = h * 0.45 + Math.sin(t / 260) * 20;
+    const flap = Math.sin(t / 90);
+    ctx.save(); ctx.translate(bx, by);
+    ctx.fillStyle = "#f472b6";
+    ctx.save(); ctx.scale(1, 0.6 + Math.abs(flap) * 0.4);
+    ctx.beginPath(); ctx.ellipse(-12, 0, 14, 18, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(12, 0, 14, 18, 0, 0, 7); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#1c1917"; ctx.fillRect(-1.5, -12, 3, 24);
+    ctx.restore();
+  },
+
+  _animalBee: function (ctx, w, h, t) {
+    VIDEO_SCENES._meadowBG(ctx, w, h);
+    const bx = w * 0.5 + Math.sin(t / 420) * w * 0.24;
+    const by = h * 0.4 + Math.sin(t / 180) * 14;
+    const buzz = Math.sin(t / 60) * 3;
+    ctx.save(); ctx.translate(bx, by + buzz);
+    ctx.fillStyle = "#facc15";
+    ctx.beginPath(); ctx.ellipse(0, 0, 14, 10, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#1c1917";
+    for (let i = 0; i < 3; i++) { ctx.fillRect(-6 + i * 5, -6, 3, 12); }
+    ctx.fillStyle = "rgba(224,242,254,0.7)";
+    ctx.beginPath(); ctx.ellipse(-4, -10, 9, 5, -0.3, 0, 7); ctx.ellipse(4, -10, 9, 5, 0.3, 0, 7); ctx.fill();
+    ctx.restore();
+  },
+
+  _animalRabbit: function (ctx, w, h, t) {
+    VIDEO_SCENES._meadowBG(ctx, w, h);
+    const hop = Math.abs(Math.sin(t / 340)) * 20;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.72 - hop);
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(0, 0, 20, 16, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(16, -10, 10, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(20, -26, 4, 14, 0.2, 0, 7); ctx.ellipse(28, -24, 4, 14, 0.4, 0, 7); ctx.fill();
+    ctx.fillStyle = "#fda4af";
+    ctx.beginPath(); ctx.ellipse(21, -26, 2, 9, 0.2, 0, 7); ctx.fill();
+    ctx.restore();
+  },
+
+  // Shared open-ocean backdrop for sea life.
+  _oceanBG: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#0369a1"); sky.addColorStop(1, "#082f49");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "rgba(255,255,255,0.12)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 4; i++) {
+      const ry = h * (0.2 + i * 0.2);
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 10) {
+        const y = ry + Math.sin((x + t / 150 + i * 30) / 24) * 5;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  },
+
+  _animalFish: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    for (let i = 0; i < 3; i++) {
+      const progress = ((t / 3000) + i * 0.33) % 1;
+      const fx = w * progress, fy = h * (0.3 + i * 0.2) + Math.sin(t / 300 + i) * 8;
+      const wag = Math.sin(t / 120 + i) * 6;
+      ctx.save(); ctx.translate(fx, fy);
+      ctx.fillStyle = ["#fb923c", "#38bdf8", "#facc15"][i];
+      ctx.beginPath(); ctx.ellipse(0, 0, 16, 9, 0, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.moveTo(-14, 0); ctx.lineTo(-24, -8 + wag); ctx.lineTo(-24, 8 + wag); ctx.closePath(); ctx.fill();
+      ctx.restore();
+    }
+  },
+
+  _animalWhale: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    const bob = Math.sin(t / 700) * 10;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.5 + bob);
+    ctx.fillStyle = "#334155";
+    ctx.beginPath(); ctx.ellipse(0, 0, 60, 26, 0, 0, 7); ctx.fill();
+    const tailFlap = Math.sin(t / 500) * 0.3;
+    ctx.save(); ctx.translate(-58, 0); ctx.rotate(tailFlap);
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(-20, -16); ctx.lineTo(-8, 0); ctx.lineTo(-20, 16); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#f1f5f9"; ctx.beginPath(); ctx.ellipse(10, 10, 30, 10, 0, 0, 7); ctx.fill();
+    // Spout
+    const spout = (t / 30) % 40;
+    ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(40, -26); ctx.lineTo(40, -26 - spout); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalSpider: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1c1917"; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "rgba(226,232,240,0.5)"; ctx.lineWidth = 1;
+    const wx = w * 0.5, wy = h * 0.35;
+    for (let i = 0; i < 8; i++) {
+      const a = (i / 8) * Math.PI * 2;
+      ctx.beginPath(); ctx.moveTo(wx, wy); ctx.lineTo(wx + Math.cos(a) * 90, wy + Math.sin(a) * 90); ctx.stroke();
+    }
+    for (let r = 20; r <= 80; r += 20) {
+      ctx.beginPath();
+      for (let i = 0; i <= 8; i++) {
+        const a = (i / 8) * Math.PI * 2;
+        const x = wx + Math.cos(a) * r, y = wy + Math.sin(a) * r;
+        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    const drop = Math.sin(t / 800);
+    const sy = wy + Math.max(0, drop) * 40;
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.ellipse(wx, sy, 10, 8, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 2;
+    for (let i = 0; i < 4; i++) {
+      const legA = (i / 4) * Math.PI - Math.PI / 2;
+      ctx.beginPath(); ctx.moveTo(wx, sy); ctx.lineTo(wx + Math.cos(legA) * 18, sy + Math.sin(legA) * 10 + 10); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(wx, sy); ctx.lineTo(wx - Math.cos(legA) * 18, sy + Math.sin(legA) * 10 + 10); ctx.stroke();
+    }
+  },
+
+  _animalGiraffe: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const sway = Math.sin(t / 500) * 5;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78);
+    ctx.fillStyle = "#eab308";
+    ctx.beginPath(); ctx.ellipse(0, 20, 24, 14, 0, 0, 7); ctx.fill();
+    ctx.save(); ctx.translate(10, 20); ctx.rotate(sway * 0.02);
+    ctx.fillRect(-6, -70, 12, 70);
+    ctx.beginPath(); ctx.arc(0, -74, 10, 0, 7); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#92400e";
+    for (let i = 0; i < 5; i++) {
+      ctx.beginPath(); ctx.arc(-14 + (i % 3) * 12, 10 + Math.floor(i / 3) * 10, 4, 0, 7); ctx.fill();
+    }
+    ctx.strokeStyle = "#eab308"; ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.moveTo(-10, 32); ctx.lineTo(-10, 50); ctx.moveTo(14, 32); ctx.lineTo(14, 50); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Shared sky backdrop with drifting clouds for birds of prey.
+  _skyBG: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#38bdf8"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    for (let i = 0; i < 3; i++) {
+      const cx = ((t / 35 + i * 200) % (w + 120)) - 60;
+      const cy = h * (0.2 + i * 0.1);
+      ctx.beginPath(); ctx.arc(cx, cy, 16, 0, 7); ctx.arc(cx + 18, cy + 4, 12, 0, 7); ctx.arc(cx - 16, cy + 4, 12, 0, 7); ctx.fill();
+    }
+  },
+
+  _animalEagle: function (ctx, w, h, t) {
+    VIDEO_SCENES._skyBG(ctx, w, h, t);
+    const angle = t / 2000;
+    const ex = w * 0.5 + Math.cos(angle) * w * 0.3, ey = h * 0.4 + Math.sin(angle) * h * 0.18;
+    const flap = Math.sin(t / 200) * 10;
+    ctx.save(); ctx.translate(ex, ey);
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.ellipse(0, 0, 12, 8, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.arc(10, -2, 5, 0, 7); ctx.fill(); // white head
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-4, 0); ctx.quadraticCurveTo(-20, -8 - flap, -34, -4 - flap); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-4, 0); ctx.quadraticCurveTo(-20, 8 + flap, -34, 4 + flap); ctx.stroke();
+    ctx.restore();
+    // Ground far below
+    ctx.fillStyle = "#4ade80"; ctx.fillRect(0, h * 0.88, w, h * 0.12);
+  },
+
+  _animalOwl: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(255,255,255,0.8)";
+    for (let i = 0; i < 20; i++) {
+      const sx = (i * 53) % w, sy = (i * 91) % (h * 0.5);
+      ctx.beginPath(); ctx.arc(sx, sy, 1.4, 0, 7); ctx.fill();
+    }
+    // Tree branch
+    ctx.strokeStyle = "#3f2d1c"; ctx.lineWidth = 12; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(0, h * 0.82); ctx.lineTo(w, h * 0.78); ctx.stroke();
+    const blink = (Math.sin(t / 1600) + 1) / 2 > 0.9 ? 0.2 : 1;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.68);
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.ellipse(0, 0, 24, 28, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.arc(-10, -8, 10, 0, 7); ctx.arc(10, -8, 10, 0, 7); ctx.fill();
+    ctx.fillStyle = "#facc15";
+    ctx.save(); ctx.scale(1, blink);
+    ctx.beginPath(); ctx.arc(-10, -8, 5, 0, 7); ctx.arc(10, -8, 5, 0, 7); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-10, -8, 2.2, 0, 7); ctx.arc(10, -8, 2.2, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f97316"; ctx.beginPath(); ctx.moveTo(-4, 0); ctx.lineTo(4, 0); ctx.lineTo(0, 8); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  _animalWolf: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const trot = Math.sin(t / 260) * 6;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.8);
+    ctx.fillStyle = "#64748b";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 14, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(-20, -10); ctx.lineTo(-34, -6); ctx.lineTo(-20, 2); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f1f5f9"; ctx.beginPath(); ctx.arc(-30, -8, 2, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#64748b"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-10, 10); ctx.lineTo(-10 + trot, 22); ctx.moveTo(14, 10); ctx.lineTo(14 - trot, 22); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalFox: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const trot = ((t / 40) % (w + 60)) - 30;
+    ctx.save(); ctx.translate(trot, h * 0.86);
+    ctx.fillStyle = "#ea580c";
+    ctx.beginPath(); ctx.ellipse(0, 0, 18, 10, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(15, -7); ctx.lineTo(26, -4); ctx.lineTo(15, 3); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.arc(20, -3, 3, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.ellipse(-20, 2, 12, 5, 0.3, 0, 7); ctx.fill(); // bushy tail
+    ctx.restore();
+  },
+
+  _animalDeer: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const graze = Math.sin(t / 900) * 3;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.8 + graze);
+    ctx.fillStyle = "#a16207";
+    ctx.beginPath(); ctx.ellipse(0, 0, 24, 15, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(-22, -14, 10, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.moveTo(-26, -22); ctx.lineTo(-32, -34); ctx.lineTo(-28, -30); ctx.moveTo(-32, -34); ctx.lineTo(-34, -28);
+    ctx.moveTo(-18, -22); ctx.lineTo(-14, -34); ctx.lineTo(-18, -30); ctx.moveTo(-14, -34); ctx.lineTo(-12, -28); ctx.stroke();
+    ctx.strokeStyle = "#a16207"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-10, 12); ctx.lineTo(-10, 26); ctx.moveTo(12, 12); ctx.lineTo(12, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalZebra: function (ctx, w, h, t) {
+    VIDEO_SCENES._savannaBG(ctx, w, h);
+    const gallop = Math.abs(Math.sin(t / 220)) * 10;
+    ctx.save(); ctx.translate(w * 0.5, h * 0.78 - gallop);
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 15, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.arc(22, -8, 10, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 3;
+    for (let i = -20; i < 20; i += 8) { ctx.beginPath(); ctx.moveTo(i, -14); ctx.lineTo(i - 4, 14); ctx.stroke(); }
+    ctx.strokeStyle = "#1c1917"; ctx.lineWidth = 5;
+    ctx.beginPath(); ctx.moveTo(-14, 12); ctx.lineTo(-18, 26); ctx.moveTo(14, 12); ctx.lineTo(18, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  _animalMonkey: function (ctx, w, h, t) {
+    VIDEO_SCENES._forestBiome(ctx, w, h, t);
+    const swing = Math.sin(t / 500) * 30;
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(w * 0.5, h * 0.35); ctx.lineTo(w * 0.5 + swing * 0.3, h * 0.5); ctx.stroke();
+    ctx.save(); ctx.translate(w * 0.5 + swing * 0.3, h * 0.55);
+    ctx.rotate(swing / 200);
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.ellipse(0, 0, 16, 20, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#fcd34d"; ctx.beginPath(); ctx.arc(0, -16, 9, 0, 7); ctx.fill();
+    ctx.fillStyle = "#1c1917"; ctx.beginPath(); ctx.arc(-3, -17, 1.5, 0, 7); ctx.arc(3, -17, 1.5, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#92400e"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(0, 18); ctx.quadraticCurveTo(16, 28, 10, 40); ctx.stroke(); // tail
+    ctx.restore();
+  },
+
+  _animalPenguin: function (ctx, w, h, t) {
+    VIDEO_SCENES._polar(ctx, w, h, t);
+  },
+
+  _animalShark: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    const progress = ((t / 3500) % 1);
+    const sx = w * progress, sy = h * 0.45 + Math.sin(t / 400) * 10;
+    const wag = Math.sin(t / 160) * 8;
+    ctx.save(); ctx.translate(sx, sy);
+    ctx.fillStyle = "#64748b";
+    ctx.beginPath(); ctx.moveTo(-40, 0); ctx.quadraticCurveTo(0, -18, 40, 0); ctx.quadraticCurveTo(0, 14, -40, 0); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(0, -14); ctx.lineTo(6, -30); ctx.lineTo(14, -12); ctx.closePath(); ctx.fill(); // dorsal fin
+    ctx.beginPath(); ctx.moveTo(-40, 0); ctx.lineTo(-56, -14 + wag); ctx.lineTo(-56, 14 + wag); ctx.closePath(); ctx.fill(); // tail
+    ctx.restore();
+  },
+
+  _animalDolphin: function (ctx, w, h, t) {
+    VIDEO_SCENES._oceanBG(ctx, w, h, t);
+    const arc = Math.sin(t / 900);
+    const dx = w * 0.5 + Math.cos(t / 900) * w * 0.25;
+    const dy = h * 0.5 - Math.max(0, arc) * h * 0.2;
+    ctx.save(); ctx.translate(dx, dy); ctx.rotate(arc * 0.4);
+    ctx.fillStyle = "#38bdf8";
+    ctx.beginPath(); ctx.ellipse(0, 0, 34, 12, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(28, -4); ctx.quadraticCurveTo(40, -10, 42, 0); ctx.quadraticCurveTo(40, 6, 28, 4); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(0, -10); ctx.lineTo(6, -22); ctx.lineTo(10, -8); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // Routes to the full water-cycle diagram when the page is specifically
+  // about evaporation/condensation/precipitation; otherwise the generic
+  // rain-cloud-over-ocean loop for weather/water pages in general.
+  water: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/water cycle|evaporat|condens|precipitat/.test(rt)) { VIDEO_SCENES._waterCycle(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericWater(ctx, w, h, t);
+  },
+
+  _genericWater: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#7dd3fc"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.7);
+    ctx.fillStyle = "#0284c7"; ctx.fillRect(0, h * 0.7, w, h * 0.3);
+    // Cloud
+    ctx.fillStyle = "rgba(255,255,255,0.95)";
+    ctx.beginPath(); ctx.arc(w * 0.3, h * 0.2, 22, 0, 7); ctx.arc(w * 0.38, h * 0.17, 16, 0, 7); ctx.arc(w * 0.22, h * 0.17, 16, 0, 7); ctx.fill();
+    // Rain drops falling & looping
+    ctx.strokeStyle = "rgba(56,189,248,0.8)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 14; i++) {
+      const dx = (i * 37) % w;
+      const dy = ((t / 4 + i * 40) % (h * 0.55)) + h * 0.2;
+      ctx.beginPath(); ctx.moveTo(dx, dy); ctx.lineTo(dx - 3, dy + 10); ctx.stroke();
+    }
+    // Evaporation arrow rising from water
+    const rise = (t / 20) % 60;
+    ctx.strokeStyle = "rgba(255,255,255,0.6)"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(w * 0.7, h * 0.7 - rise); ctx.lineTo(w * 0.7, h * 0.4 - rise); ctx.stroke();
+  },
+
+  // The full water cycle as a single looping diagram: sun warms the ocean,
+  // droplets rise (evaporation), gather into a cloud (condensation), then
+  // fall back down as rain (precipitation) — all drawn as one continuous
+  // circular journey so the stages visibly connect instead of being three
+  // separate unrelated icons.
+  _waterCycle: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#bae6fd"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.72);
+    ctx.fillStyle = "#0369a1"; ctx.fillRect(0, h * 0.72, w, h * 0.28);
+    // Sun warming the ocean
+    ctx.fillStyle = "rgba(250,204,21,0.9)";
+    ctx.beginPath(); ctx.arc(w * 0.16, h * 0.18, 24, 0, 7); ctx.fill();
+    ctx.strokeStyle = "rgba(250,204,21,0.5)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 6; i++) {
+      const a = (i / 6) * Math.PI * 2 + t / 1200;
+      ctx.beginPath(); ctx.moveTo(w * 0.16 + Math.cos(a) * 28, h * 0.18 + Math.sin(a) * 28); ctx.lineTo(w * 0.16 + Math.cos(a) * 36, h * 0.18 + Math.sin(a) * 36); ctx.stroke();
+    }
+    // Cloud that "fills up" as droplets arrive (condensation)
+    ctx.fillStyle = "rgba(255,255,255,0.95)";
+    ctx.beginPath(); ctx.arc(w * 0.6, h * 0.28, 26, 0, 7); ctx.arc(w * 0.7, h * 0.24, 19, 0, 7); ctx.arc(w * 0.5, h * 0.24, 19, 0, 7); ctx.fill();
+    // Evaporation: droplets rise from the ocean toward the cloud
+    const cyc1 = (t / 1800) % 1;
+    if (cyc1 < 0.55) {
+      const p1 = cyc1 / 0.55;
+      const ex = w * 0.3 + (w * 0.3) * p1, ey = h * 0.7 - (h * 0.42) * p1;
+      ctx.fillStyle = "rgba(56,189,248,0.85)";
+      ctx.beginPath(); ctx.arc(ex, ey, 4, 0, 7); ctx.fill();
+    }
+    // Precipitation: rain falls from the cloud back to the ocean
+    ctx.strokeStyle = "rgba(56,189,248,0.8)"; ctx.lineWidth = 2;
+    for (let i = 0; i < 6; i++) {
+      const dCyc = ((t / 500) + i * 0.3) % 1;
+      const dx = w * 0.58 + i * 6;
+      const dy = h * 0.34 + dCyc * (h * 0.36);
+      ctx.beginPath(); ctx.moveTo(dx, dy); ctx.lineTo(dx - 2, dy + 8); ctx.stroke();
+    }
+    // Curved arrow tracing the full cycle path, animated dash to show flow direction
+    ctx.strokeStyle = "rgba(3,105,161,0.5)"; ctx.lineWidth = 2.5;
+    ctx.setLineDash([6, 8]); ctx.lineDashOffset = -(t / 22) % 14;
+    ctx.beginPath();
+    ctx.moveTo(w * 0.3, h * 0.7);
+    ctx.quadraticCurveTo(w * 0.35, h * 0.32, w * 0.6, h * 0.28);
+    ctx.quadraticCurveTo(w * 0.72, h * 0.5, w * 0.62, h * 0.7);
+    ctx.stroke();
+    ctx.setLineDash([]);
+  },
+
+  globe: function (ctx, w, h, t) {
+    ctx.fillStyle = "#022c22"; ctx.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2, r = Math.min(w, h) * 0.32;
+    ctx.fillStyle = "#0369a1";
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
+    // Rotating meridian lines to fake globe spin
+    const rot = t / 900;
+    ctx.strokeStyle = "rgba(255,255,255,0.35)"; ctx.lineWidth = 1.5;
+    for (let i = 0; i < 5; i++) {
+      const rx = Math.abs(Math.cos(rot + i * 0.6)) * r;
+      ctx.beginPath(); ctx.ellipse(cx, cy, rx, r, 0, 0, 7); ctx.stroke();
+    }
+    // Green "continents" that drift with rotation
+    ctx.fillStyle = "#22c55e";
+    for (let i = 0; i < 4; i++) {
+      const a = rot + i * 1.6;
+      const px = cx + Math.cos(a) * r * 0.55;
+      const py = cy + Math.sin(a) * r * 0.35 - r * 0.15;
+      if (Math.cos(a) > -0.3) {
+        ctx.beginPath(); ctx.ellipse(px, py, 14, 9, a, 0, 7); ctx.fill();
+      }
+    }
+    // Compass needle
+    ctx.save(); ctx.translate(w * 0.82, h * 0.2);
+    ctx.rotate(Math.sin(t / 700) * 0.3);
+    ctx.fillStyle = "#ef4444"; ctx.beginPath(); ctx.moveTo(0, -14); ctx.lineTo(4, 0); ctx.lineTo(-4, 0); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f1f5f9"; ctx.beginPath(); ctx.moveTo(0, 14); ctx.lineTo(4, 0); ctx.lineTo(-4, 0); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // Routes to the specific terrain the page is actually about (volcano,
+  // desert, mountain, polar, grassland, forest) instead of always showing
+  // the same generic river-valley scene — mirrors the `ship` pattern above.
+  landform: function (ctx, w, h, t, hints) {
+    const rt = (hints && hints.rawText) || "";
+    if (/volcano|erupt|lava|magma/.test(rt)) { VIDEO_SCENES._volcano(ctx, w, h, t); return; }
+    if (/desert|sahara|cactus|camel|sand dune|dune/.test(rt)) { VIDEO_SCENES._desert(ctx, w, h, t); return; }
+    if (/mountain|peak|summit|climb|andes|himalay|rocky mountains/.test(rt)) { VIDEO_SCENES._mountain(ctx, w, h, t); return; }
+    if (/polar|arctic|antarctic|glacier|ice cap|tundra|penguin|igloo/.test(rt)) { VIDEO_SCENES._polar(ctx, w, h, t); return; }
+    if (/grassland|prairie|savanna|plains\b/.test(rt)) { VIDEO_SCENES._grassland(ctx, w, h, t); return; }
+    if (/rainforest|jungle|forest|woodland/.test(rt)) { VIDEO_SCENES._forestBiome(ctx, w, h, t); return; }
+    VIDEO_SCENES._genericLandform(ctx, w, h, t);
+  },
+
+  _genericLandform: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fdba74"); sky.addColorStop(1, "#fef3c7");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.moveTo(0, h * 0.75); ctx.lineTo(w * 0.25, h * 0.4); ctx.lineTo(w * 0.5, h * 0.75); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#92400e";
+    ctx.beginPath(); ctx.moveTo(w * 0.3, h * 0.75); ctx.lineTo(w * 0.62, h * 0.3); ctx.lineTo(w * 0.95, h * 0.75); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.moveTo(w * 0.58, h * 0.38); ctx.lineTo(w * 0.62, h * 0.3); ctx.lineTo(w * 0.66, h * 0.38); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#166534"; ctx.fillRect(0, h * 0.75, w, h * 0.25);
+    // River winding + flowing shimmer
+    const flow = (t / 30) % 20;
+    ctx.strokeStyle = "#38bdf8"; ctx.lineWidth = 10;
+    ctx.beginPath();
+    ctx.moveTo(0, h * 0.9);
+    ctx.quadraticCurveTo(w * 0.3, h * 0.8, w * 0.5, h * 0.92);
+    ctx.quadraticCurveTo(w * 0.7, h, w, h * 0.85);
+    ctx.stroke();
+    ctx.setLineDash([6, 10]); ctx.lineDashOffset = -flow;
+    ctx.strokeStyle = "rgba(255,255,255,0.5)"; ctx.lineWidth = 2;
+    ctx.stroke();
+    ctx.setLineDash([]);
+  },
+
+  // Erupting volcano: glowing lava spits from the crater, a molten river
+  // flows down the slope, and ash/smoke billows into an orange sky.
+  _volcano: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#7c2d12"); sky.addColorStop(1, "#292524");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    const baseY = h * 0.82, peakX = w * 0.5, peakY = h * 0.28;
+    ctx.fillStyle = "#44403c";
+    ctx.beginPath(); ctx.moveTo(w * 0.12, baseY); ctx.lineTo(peakX, peakY); ctx.lineTo(w * 0.88, baseY); ctx.closePath(); ctx.fill();
+    // Glowing crater mouth, pulsing
+    const glow = 0.55 + Math.sin(t / 260) * 0.35;
+    ctx.fillStyle = `rgba(251,146,60,${glow})`;
+    ctx.beginPath(); ctx.ellipse(peakX, peakY + 4, 16, 7, 0, 0, 7); ctx.fill();
+    // Lava river flowing down the slope
+    const flow = (t / 25) % 20;
+    ctx.strokeStyle = "#f97316"; ctx.lineWidth = 6;
+    ctx.beginPath(); ctx.moveTo(peakX, peakY + 6); ctx.quadraticCurveTo(peakX - 20, h * 0.55, peakX - 10, baseY);
+    ctx.stroke();
+    ctx.setLineDash([5, 9]); ctx.lineDashOffset = -flow;
+    ctx.strokeStyle = "rgba(254,240,138,0.8)"; ctx.lineWidth = 2.5; ctx.stroke(); ctx.setLineDash([]);
+    // Erupting lava chunks arcing out
+    for (let i = 0; i < 4; i++) {
+      const cyc = (t / 700 + i * 0.27) % 1;
+      const ex = peakX + Math.sin(i * 2) * 30;
+      const ey = peakY - Math.sin(cyc * Math.PI) * 60;
+      const spread = (cyc - 0.5) * 60 * (i % 2 === 0 ? 1 : -1);
+      ctx.fillStyle = "rgba(251,191,36,0.9)";
+      ctx.beginPath(); ctx.arc(ex + spread, ey, 3.5, 0, 7); ctx.fill();
+    }
+    // Rising ash/smoke
+    ctx.fillStyle = "rgba(87,83,78,0.5)";
+    for (let i = 0; i < 10; i++) {
+      const sx = peakX + Math.sin(i * 1.7 + t / 900) * 24;
+      const sy = peakY - 10 - ((t / 18 + i * 22) % (h * 0.5));
+      ctx.beginPath(); ctx.arc(sx, sy, 10 + i * 0.8, 0, 7); ctx.fill();
+    }
+  },
+
+  // Sandy dunes under a blazing sun, a cactus in the foreground, and a
+  // camel plodding across the horizon.
+  _desert: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fb923c"); sky.addColorStop(1, "#fde68a");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(253,224,71,0.95)";
+    ctx.beginPath(); ctx.arc(w * 0.78, h * 0.2, 26, 0, 7); ctx.fill();
+    ctx.fillStyle = "#d97706";
+    ctx.beginPath(); ctx.moveTo(0, h * 0.62); ctx.quadraticCurveTo(w * 0.3, h * 0.5, w * 0.6, h * 0.64); ctx.quadraticCurveTo(w * 0.85, h * 0.72, w, h * 0.6); ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#b45309";
+    ctx.beginPath(); ctx.moveTo(0, h * 0.75); ctx.quadraticCurveTo(w * 0.4, h * 0.66, w, h * 0.8); ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath(); ctx.fill();
+    // Cactus
+    ctx.fillStyle = "#166534";
+    ctx.fillRect(w * 0.16 - 6, h * 0.55, 12, h * 0.22);
+    ctx.fillRect(w * 0.16 - 20, h * 0.6, 12, h * 0.1);
+    ctx.fillRect(w * 0.16 + 8, h * 0.63, 12, h * 0.09);
+    // Camel walking across
+    const cx = ((t / 45) % (w + 100)) - 50;
+    const legSwing = Math.sin(t / 220) * 8;
+    ctx.save(); ctx.translate(cx, h * 0.72);
+    ctx.fillStyle = "#c2703d";
+    ctx.beginPath(); ctx.ellipse(0, 0, 26, 14, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(-6, -14, 10, 10, 0, 0, 7); ctx.fill(); // hump
+    ctx.beginPath(); ctx.ellipse(24, -6, 7, 9, 0, 0, 7); ctx.fill(); // neck/head
+    ctx.strokeStyle = "#c2703d"; ctx.lineWidth = 4;
+    ctx.beginPath(); ctx.moveTo(-14, 10); ctx.lineTo(-14 + legSwing, 26); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(10, 10); ctx.lineTo(10 - legSwing, 26); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Snow-capped triple peaks with drifting clouds and a tiny climber
+  // ascending a zigzag trail toward the summit.
+  _mountain: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#7dd3fc"); sky.addColorStop(1, "#e0f2fe");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = "rgba(255,255,255,0.9)";
+    for (let i = 0; i < 3; i++) {
+      const cx = ((t / 35 + i * 200) % (w + 120)) - 60;
+      const cy = h * (0.14 + i * 0.06);
+      ctx.beginPath(); ctx.arc(cx, cy, 16, 0, 7); ctx.arc(cx + 18, cy + 4, 12, 0, 7); ctx.arc(cx - 16, cy + 4, 12, 0, 7); ctx.fill();
+    }
+    const peaks = [
+      { x: 0.18, top: 0.32, color: "#78716c" },
+      { x: 0.5, top: 0.18, color: "#57534e" },
+      { x: 0.82, top: 0.38, color: "#78716c" }
+    ];
+    peaks.forEach(p => {
+      ctx.fillStyle = p.color;
+      ctx.beginPath(); ctx.moveTo(w * (p.x - 0.22), h * 0.85); ctx.lineTo(w * p.x, h * p.top); ctx.lineTo(w * (p.x + 0.22), h * 0.85); ctx.closePath(); ctx.fill();
+      ctx.fillStyle = "#f8fafc";
+      ctx.beginPath(); ctx.moveTo(w * (p.x - 0.07), h * (p.top + 0.1)); ctx.lineTo(w * p.x, h * p.top); ctx.lineTo(w * (p.x + 0.07), h * (p.top + 0.1)); ctx.closePath(); ctx.fill();
+    });
+    ctx.fillStyle = "#166534"; ctx.fillRect(0, h * 0.85, w, h * 0.15);
+    // Climber ascending the middle peak on a zigzag trail
+    const climb = (Math.sin(t / 5000) + 1) / 2;
+    const climbY = h * 0.85 - climb * h * 0.4;
+    const climbX = w * 0.5 + Math.sin(climb * 10) * 14;
+    ctx.fillStyle = "#dc2626";
+    ctx.beginPath(); ctx.arc(climbX, climbY, 4, 0, 7); ctx.fill();
+    ctx.fillRect(climbX - 2, climbY + 4, 4, 8);
+  },
+
+  // Icy tundra with a shimmering aurora overhead, snowfall, and a penguin
+  // waddling across the foreground.
+  _polar: function (ctx, w, h, t) {
+    ctx.fillStyle = "#0c1929"; ctx.fillRect(0, 0, w, h);
+    // Aurora bands
+    for (let i = 0; i < 3; i++) {
+      const hue = ["rgba(74,222,128,0.28)", "rgba(56,189,248,0.22)", "rgba(167,139,250,0.22)"][i];
+      ctx.strokeStyle = hue; ctx.lineWidth = 22;
+      ctx.beginPath();
+      for (let x = 0; x <= w; x += 10) {
+        const y = h * (0.16 + i * 0.07) + Math.sin((x + t / 200 + i * 80) / 40) * 18;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+    ctx.fillStyle = "#e2e8f0"; ctx.fillRect(0, h * 0.78, w, h * 0.22);
+    // Iceberg
+    ctx.fillStyle = "#f1f5f9";
+    ctx.beginPath(); ctx.moveTo(w * 0.62, h * 0.78); ctx.lineTo(w * 0.72, h * 0.58); ctx.lineTo(w * 0.84, h * 0.78); ctx.closePath(); ctx.fill();
+    // Falling snow
+    ctx.fillStyle = "rgba(255,255,255,0.85)";
+    for (let i = 0; i < 22; i++) {
+      const sx = (i * 43 + t / 14) % w, sy = (i * 29 + t / 10) % h;
+      ctx.beginPath(); ctx.arc(sx, sy, 1.5, 0, 7); ctx.fill();
+    }
+    // Waddling penguin
+    const px = ((t / 30) % (w + 60)) - 30;
+    const waddle = Math.sin(t / 130) * 0.18;
+    ctx.save(); ctx.translate(px, h * 0.86); ctx.rotate(waddle);
+    ctx.fillStyle = "#1e293b";
+    ctx.beginPath(); ctx.ellipse(0, 0, 12, 20, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f8fafc";
+    ctx.beginPath(); ctx.ellipse(0, 4, 7, 13, 0, 0, 7); ctx.fill();
+    ctx.fillStyle = "#f59e0b";
+    ctx.beginPath(); ctx.moveTo(0, -16); ctx.lineTo(6, -12); ctx.lineTo(0, -10); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  },
+
+  // Golden tall grass swaying in the wind under an open sky, with a gazelle
+  // galloping across the savanna.
+  _grassland: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#fde68a"); sky.addColorStop(1, "#fef3c7");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h * 0.6);
+    ctx.fillStyle = "rgba(253,224,71,0.95)"; ctx.beginPath(); ctx.arc(w * 0.8, h * 0.16, 24, 0, 7); ctx.fill();
+    ctx.fillStyle = "#ca8a04"; ctx.fillRect(0, h * 0.55, w, h * 0.45);
+    // Swaying grass blades
+    ctx.strokeStyle = "#a16207"; ctx.lineWidth = 3;
+    for (let i = 0; i < 26; i++) {
+      const bx = (i * 31) % w;
+      const sway = Math.sin(t / 260 + i) * 8;
+      ctx.beginPath(); ctx.moveTo(bx, h * 0.85); ctx.quadraticCurveTo(bx + sway, h * 0.72, bx + sway * 1.5, h * 0.6); ctx.stroke();
+    }
+    // Galloping gazelle silhouette
+    const gx = ((t / 40) % (w + 80)) - 40;
+    const bound = Math.abs(Math.sin(t / 180)) * 10;
+    ctx.save(); ctx.translate(gx, h * 0.72 - bound);
+    ctx.fillStyle = "#78350f";
+    ctx.beginPath(); ctx.ellipse(0, 0, 18, 9, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.ellipse(16, -8, 6, 7, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#78350f"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(-10, 8); ctx.lineTo(-14, 20); ctx.moveTo(10, 8); ctx.lineTo(16, 20); ctx.stroke();
+    ctx.restore();
+  },
+
+  // Dense forest canopy with diagonal sunbeams filtering through the
+  // treetops, falling leaves, and a fox trotting between the trunks.
+  _forestBiome: function (ctx, w, h, t) {
+    const sky = ctx.createLinearGradient(0, 0, 0, h);
+    sky.addColorStop(0, "#166534"); sky.addColorStop(1, "#052e16");
+    ctx.fillStyle = sky; ctx.fillRect(0, 0, w, h);
+    // Tree trunks
+    ctx.fillStyle = "#3f2d1c";
+    for (let i = 0; i < 5; i++) {
+      const tx = (w / 5) * i + 20;
+      ctx.fillRect(tx, h * 0.35, 14, h * 0.6);
+    }
+    // Canopy blobs
+    ctx.fillStyle = "#14532d";
+    for (let i = 0; i < 5; i++) {
+      const tx = (w / 5) * i + 27;
+      ctx.beginPath(); ctx.arc(tx, h * 0.3, 46, 0, 7); ctx.fill();
+    }
+    // Sunbeams
+    ctx.save(); ctx.globalAlpha = 0.16 + Math.sin(t / 900) * 0.06;
+    ctx.fillStyle = "#fef08a";
+    for (let i = 0; i < 3; i++) {
+      ctx.save(); ctx.translate(w * (0.25 + i * 0.25), 0); ctx.rotate(0.3);
+      ctx.fillRect(-14, 0, 28, h);
+      ctx.restore();
+    }
+    ctx.restore();
+    // Falling leaves
+    ctx.fillStyle = "#facc15";
+    for (let i = 0; i < 10; i++) {
+      const lx = (i * 53 + Math.sin(t / 500 + i) * 20) % w;
+      const ly = (i * 47 + t / 20) % h;
+      ctx.beginPath(); ctx.ellipse(lx, ly, 4, 6, t / 300 + i, 0, 7); ctx.fill();
+    }
+    // Trotting fox
+    const fx = ((t / 35) % (w + 60)) - 30;
+    ctx.save(); ctx.translate(fx, h * 0.86);
+    ctx.fillStyle = "#ea580c";
+    ctx.beginPath(); ctx.ellipse(0, 0, 16, 9, 0, 0, 7); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(14, -6); ctx.lineTo(24, -4); ctx.lineTo(14, 2); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.arc(18, -3, 3, 0, 7); ctx.fill();
+    ctx.restore();
+  },
+
+  numberline: function (ctx, w, h, t, hints) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const nums = ((hints && hints.numbers) || []).map(x => parseFloat(x)).filter(x => !isNaN(x) && x >= 0 && x <= 30);
+    const a = nums[0], b = nums[1];
+    let n = 10;
+    if (a !== undefined) n = Math.max(10, Math.min(20, Math.ceil(a) + (b !== undefined ? Math.ceil(b) : 2) + 2));
+    const y = h / 2, margin = 40;
+    ctx.strokeStyle = "#818cf8"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(w - margin, y); ctx.stroke();
+    for (let i = 0; i <= n; i++) {
+      const x = margin + ((w - margin * 2) / n) * i;
+      ctx.beginPath(); ctx.moveTo(x, y - 8); ctx.lineTo(x, y + 8); ctx.stroke();
+      ctx.fillStyle = "#c7d2fe"; ctx.font = "12px sans-serif"; ctx.textAlign = "center";
+      ctx.fillText(String(i), x, y + 24);
+    }
+
+    // When the actual page mentions specific numbers, hop between THEM
+    // (e.g. a "7 + 5" page hops from 7 to 12) instead of an arbitrary loop.
+    let startVal = 0, endVal = n, label = null;
+    const opSign = hints && hints.op === 'add' ? '+' : (hints && hints.op === 'subtract' ? '−' : null);
+    if (a !== undefined && b !== undefined && opSign) {
+      startVal = a;
+      endVal = hints.op === 'add' ? a + b : Math.max(0, a - b);
+      label = `${Math.round(a)} ${opSign} ${Math.round(b)} = ${Math.round(endVal)}`;
+    } else if (a !== undefined) {
+      startVal = 0; endVal = a;
+      label = `Counting to ${Math.round(a)}`;
+    }
+    endVal = Math.max(0, Math.min(n, endVal));
+    startVal = Math.max(0, Math.min(n, startVal));
+
+    if (label) {
+      ctx.fillStyle = "#fef08a"; ctx.font = "bold 16px sans-serif"; ctx.textAlign = "center";
+      ctx.fillText(label, w / 2, 28);
+    }
+
+    const xForVal = (v) => margin + ((w - margin * 2) / n) * v;
+    if (startVal !== endVal) {
+      ctx.fillStyle = "rgba(74,222,128,0.9)";
+      ctx.beginPath(); ctx.arc(xForVal(startVal), y, 6, 0, 7); ctx.fill();
+      ctx.fillStyle = "rgba(251,191,36,0.9)";
+      ctx.beginPath(); ctx.arc(xForVal(endVal), y, 6, 0, 7); ctx.fill();
+    }
+
+    // Hopping marker animates back and forth between startVal and endVal.
+    const span = Math.max(1, Math.abs(endVal - startVal));
+    const cyclePos = (t / 700) % span;
+    const dir = endVal >= startVal ? 1 : -1;
+    const hopIdx = Math.floor(cyclePos);
+    const hopFrac = cyclePos - hopIdx;
+    const curVal = startVal + dir * hopIdx;
+    const nextVal = startVal + dir * (hopIdx + 1);
+    const xA = xForVal(curVal), xB = xForVal(nextVal);
+    const x = xA + (xB - xA) * hopFrac;
+    const arc = Math.sin(hopFrac * Math.PI) * 26;
+    ctx.fillStyle = "#fbbf24";
+    ctx.beginPath(); ctx.arc(x, y - 14 - arc, 9, 0, 7); ctx.fill();
+  },
+
+  counters: function (ctx, w, h, t, hints, seed) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const nums = ((hints && hints.numbers) || []).map(x => parseInt(x, 10)).filter(x => !isNaN(x) && x >= 1 && x <= 20);
+    const target = nums.length ? nums[0] : (5 + ((seed || 0) % 5));
+    const cols = Math.min(5, target) || 5;
+    const rows = Math.max(1, Math.ceil(target / cols));
+    const cycleLen = target + 3;
+    const count = 1 + Math.floor((t / 600) % cycleLen);
+    const cellW = w / (cols + 1), cellH = h / (rows + 2);
+    let n = 0;
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        n++;
+        if (n > target) continue;
+        const cx = cellW * (c + 1), cy = cellH * (r + 1.4);
+        const active = n <= count;
+        const pop = active ? Math.min(1, ((t % 600) / 250)) : 0;
+        ctx.fillStyle = active ? "#34d399" : "rgba(255,255,255,0.12)";
+        ctx.beginPath(); ctx.arc(cx, cy, 14 * (active ? 0.7 + pop * 0.3 : 1), 0, 7); ctx.fill();
+      }
+    }
+    ctx.fillStyle = "#e0e7ff"; ctx.font = "bold 20px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText(String(count), w / 2, h - 12);
+  },
+
+  clock: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2, r = Math.min(w, h) * 0.32;
+    ctx.fillStyle = "#f8fafc"; ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#312e81"; ctx.lineWidth = 4; ctx.stroke();
+    for (let i = 0; i < 12; i++) {
+      const a = (i / 12) * Math.PI * 2;
+      const x1 = cx + Math.cos(a) * r * 0.85, y1 = cy + Math.sin(a) * r * 0.85;
+      const x2 = cx + Math.cos(a) * r * 0.95, y2 = cy + Math.sin(a) * r * 0.95;
+      ctx.strokeStyle = "#4338ca"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
+    }
+    const minuteAngle = (t / 3000) * Math.PI * 2;
+    const hourAngle = minuteAngle / 12;
+    ctx.strokeStyle = "#1e1b4b"; ctx.lineWidth = 5; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.sin(hourAngle) * r * 0.45, cy - Math.cos(hourAngle) * r * 0.45); ctx.stroke();
+    ctx.strokeStyle = "#ef4444"; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + Math.sin(minuteAngle) * r * 0.7, cy - Math.cos(minuteAngle) * r * 0.7); ctx.stroke();
+    ctx.fillStyle = "#1e1b4b"; ctx.beginPath(); ctx.arc(cx, cy, 4, 0, 7); ctx.fill();
+  },
+
+  coins: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const coins = [
+      { color: "#d1d5db", label: "1¢" },
+      { color: "#e5e7eb", label: "5¢" },
+      { color: "#fbbf24", label: "10¢" },
+      { color: "#f3f4f6", label: "25¢" }
+    ];
+    coins.forEach((c, i) => {
+      const bounce = Math.abs(Math.sin(t / 400 + i * 1.3)) * 14;
+      const cx = (w / (coins.length + 1)) * (i + 1);
+      const cy = h * 0.55 - bounce;
+      ctx.fillStyle = c.color;
+      ctx.beginPath(); ctx.arc(cx, cy, 22, 0, 7); ctx.fill();
+      ctx.strokeStyle = "#78716c"; ctx.lineWidth = 2; ctx.stroke();
+      ctx.fillStyle = "#44403c"; ctx.font = "bold 12px sans-serif"; ctx.textAlign = "center";
+      ctx.fillText(c.label, cx, cy + 4);
+    });
+  },
+
+  shapes: function (ctx, w, h, t) {
+    ctx.fillStyle = "#312e81"; ctx.fillRect(0, 0, w, h);
+    const shapesList = ["circle", "square", "triangle", "hexagon"];
+    const idx = Math.floor((t / 1000) % shapesList.length);
+    const cx = w / 2, cy = h / 2;
+    const spin = (t / 1500);
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(Math.sin(spin) * 0.15);
+    ctx.fillStyle = "#818cf8"; ctx.strokeStyle = "#c7d2fe"; ctx.lineWidth = 3;
+    const s = shapesList[idx];
+    ctx.beginPath();
+    if (s === "circle") { ctx.arc(0, 0, 50, 0, 7); }
+    else if (s === "square") { ctx.rect(-45, -45, 90, 90); }
+    else if (s === "triangle") { ctx.moveTo(0, -55); ctx.lineTo(48, 40); ctx.lineTo(-48, 40); ctx.closePath(); }
+    else { for (let i = 0; i < 6; i++) { const a = (i / 6) * Math.PI * 2; const px = Math.cos(a) * 50, py = Math.sin(a) * 50; if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py); } ctx.closePath(); }
+    ctx.fill(); ctx.stroke();
+    ctx.restore();
+  },
+
+  fraction: function (ctx, w, h, t, hints) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2, r = Math.min(w, h) * 0.3;
+    // If the page text contains an actual fraction like "3/4", use it.
+    const nums = (hints && hints.numbers) || [];
+    const fracStr = nums.find(x => x.indexOf('/') !== -1);
+    let slices = 4, fixedFill = null;
+    if (fracStr) {
+      const parts = fracStr.split('/').map(v => parseInt(v, 10));
+      if (parts.length === 2 && parts[1] >= 2 && parts[1] <= 8 && parts[0] >= 0 && parts[0] <= parts[1]) {
+        slices = parts[1]; fixedFill = parts[0];
+      }
+    }
+    const fillCount = fixedFill !== null ? fixedFill : (1 + Math.floor((t / 700) % slices));
+    for (let i = 0; i < slices; i++) {
+      const a0 = (i / slices) * Math.PI * 2 - Math.PI / 2;
+      const a1 = ((i + 1) / slices) * Math.PI * 2 - Math.PI / 2;
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, r, a0, a1); ctx.closePath();
+      ctx.fillStyle = i < fillCount ? "#f472b6" : "rgba(255,255,255,0.1)";
+      ctx.fill();
+      ctx.strokeStyle = "#1e1b4b"; ctx.lineWidth = 2; ctx.stroke();
+    }
+    ctx.fillStyle = "#e0e7ff"; ctx.font = "bold 16px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText(`${fillCount}/${slices}`, cx, cy + r + 26);
+  },
+
+  graph: function (ctx, w, h, t) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const bars = [0.4, 0.7, 0.5, 0.9, 0.3];
+    const bw = w / (bars.length * 2);
+    bars.forEach((b, i) => {
+      const grow = Math.min(1, (t / 800) - i * 0.15);
+      const bh = Math.max(0, b * h * 0.6 * Math.min(1, Math.max(0, grow)));
+      const x = bw + i * bw * 2;
+      ctx.fillStyle = "#34d399";
+      ctx.fillRect(x, h * 0.8 - bh, bw * 0.8, bh);
+    });
+    ctx.strokeStyle = "#818cf8"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(20, h * 0.8); ctx.lineTo(w - 10, h * 0.8); ctx.stroke();
+  },
+
+  place_value: function (ctx, w, h, t, hints) {
+    ctx.fillStyle = "#1e1b4b"; ctx.fillRect(0, 0, w, h);
+    const nums = ((hints && hints.numbers) || []).map(x => parseInt(x, 10)).filter(x => !isNaN(x) && x >= 10 && x <= 99);
+    let tens, ones;
+    if (nums.length) {
+      const val = nums[0];
+      tens = Math.floor(val / 10);
+      ones = val % 10;
+    } else {
+      tens = 1 + Math.floor((t / 900) % 5);
+      ones = Math.floor((t / 300) % 10);
+    }
+    ctx.fillStyle = "#a5b4fc"; ctx.font = "bold 14px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("TENS", w * 0.28, 24);
+    ctx.fillText("ONES", w * 0.72, 24);
+    for (let i = 0; i < tens; i++) {
+      const x = w * 0.12 + (i % 3) * 22;
+      const y = 46 + Math.floor(i / 3) * 40;
+      ctx.fillStyle = "#818cf8"; ctx.fillRect(x, y, 14, 32);
+    }
+    for (let i = 0; i < ones; i++) {
+      const x = w * 0.62 + (i % 5) * 16;
+      const y = 46 + Math.floor(i / 5) * 20;
+      ctx.fillStyle = "#34d399"; ctx.beginPath(); ctx.arc(x, y, 6, 0, 7); ctx.fill();
+    }
+  },
+
+  book: function (ctx, w, h, t, hints) {
+    ctx.fillStyle = "#451a03"; ctx.fillRect(0, 0, w, h);
+    const cx = w / 2, cy = h / 2;
+    const flip = (t / 900) % 1;
+    ctx.fillStyle = "#fef3c7";
+    ctx.fillRect(cx - 80, cy - 60, 80, 120);
+    ctx.save();
+    ctx.translate(cx, cy - 60);
+    const scaleX = Math.cos(flip * Math.PI);
+    ctx.scale(Math.max(0.05, Math.abs(scaleX)), 1);
+    ctx.fillStyle = "#fde68a";
+    ctx.fillRect(0, 0, 80, 120);
+    ctx.strokeStyle = "#92400e";
+    for (let i = 0; i < 5; i++) { ctx.beginPath(); ctx.moveTo(8, 16 + i * 18); ctx.lineTo(70, 16 + i * 18); ctx.stroke(); }
+    ctx.restore();
+    // floating letters — spell the page's featured word when we have one
+    const word = (hints && hints.word) ? hints.word.toUpperCase().slice(0, 6).split('') : ["A", "B", "C"];
+    const letters = word;
+    const letterGap = Math.min(60, (w - 60) / Math.max(1, letters.length - 1 || 1));
+    letters.forEach((l, i) => {
+      const fy = cy - 90 - Math.sin(t / 400 + i) * 8;
+      const fx = cx - (letters.length - 1) * letterGap / 2 + i * letterGap;
+      ctx.fillStyle = "#fbbf24"; ctx.font = "bold 22px sans-serif"; ctx.textAlign = "center";
+      ctx.fillText(l, fx, fy);
+    });
+  },
+
+  letters: function (ctx, w, h, t, hints) {
+    ctx.fillStyle = "#7c2d12"; ctx.fillRect(0, 0, w, h);
+    const wordStr = (hints && hints.word) ? hints.word.toUpperCase().slice(0, 8) : "CAT";
+    const word = wordStr.split('');
+    const gap = Math.min(60, (w - 60) / Math.max(1, word.length - 1 || 1));
+    word.forEach((l, i) => {
+      const bounce = Math.abs(Math.sin(t / 350 + i * 0.8)) * 16;
+      const x = w / 2 - (word.length - 1) * gap / 2 + i * gap;
+      const y = h / 2 - bounce;
+      ctx.fillStyle = "#fed7aa";
+      ctx.fillRect(x - 24, y - 24, 48, 48);
+      ctx.strokeStyle = "#fb923c"; ctx.lineWidth = 3; ctx.strokeRect(x - 24, y - 24, 48, 48);
+      ctx.fillStyle = "#7c2d12"; ctx.font = "bold 26px sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.fillText(l, x, y + 2);
+    });
+    ctx.textBaseline = "alphabetic";
+  },
+
+  grammar: function (ctx, w, h, t) {
+    ctx.fillStyle = "#7c2d12"; ctx.fillRect(0, 0, w, h);
+    const parts = [{t:"Noun",c:"#60a5fa"},{t:"Verb",c:"#f472b6"},{t:"Adj",c:"#34d399"}];
+    parts.forEach((p, i) => {
+      const slide = Math.min(1, (t / 700) - i * 0.2);
+      const x = -60 + Math.max(0, Math.min(1, slide)) * (w / (parts.length + 1) * (i + 1) + 60 - -60);
+      const y = h / 2 + (i - 1) * 44;
+      ctx.fillStyle = p.c;
+      const bx = w / (parts.length + 1) * (i + 1);
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(bx - 34, y - 16, 68, 32, 8) : ctx.rect(bx - 34, y - 16, 68, 32);
+      ctx.fill();
+      ctx.fillStyle = "#fff"; ctx.font = "bold 13px sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "middle";
+      ctx.fillText(p.t, bx, y + 1);
+    });
+    ctx.textBaseline = "alphabetic";
+  },
+
+  palette: function (ctx, w, h, t) {
+    ctx.fillStyle = "#3b0764"; ctx.fillRect(0, 0, w, h);
+    const colors = ["#ef4444", "#f59e0b", "#eab308", "#22c55e", "#3b82f6", "#a855f7"];
+    const cx = w / 2, cy = h / 2, r = Math.min(w, h) * 0.28;
+    colors.forEach((c, i) => {
+      const a0 = (i / colors.length) * Math.PI * 2 + t / 3000;
+      const a1 = ((i + 1) / colors.length) * Math.PI * 2 + t / 3000;
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, r, a0, a1); ctx.closePath();
+      ctx.fillStyle = c; ctx.fill();
+    });
+    ctx.fillStyle = "#f5f3ff"; ctx.beginPath(); ctx.arc(cx, cy, r * 0.28, 0, 7); ctx.fill();
+    // Paintbrush dab
+    const bx = cx + Math.cos(t / 600) * (r + 30), by = cy + Math.sin(t / 600) * (r + 30);
+    ctx.fillStyle = "#facc15"; ctx.beginPath(); ctx.arc(bx, by, 6, 0, 7); ctx.fill();
+  },
+
+  brush: function (ctx, w, h, t) {
+    ctx.fillStyle = "#f5f3ff"; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "#a855f7"; ctx.lineWidth = 8; ctx.lineCap = "round"; ctx.lineJoin = "round";
+    const progress = (t / 2200) % 1;
+    ctx.beginPath();
+    const pts = [];
+    const n = 6;
+    for (let i = 0; i <= n; i++) {
+      const a = (i / n) * Math.PI * 2;
+      pts.push([w / 2 + Math.cos(a) * 60, h / 2 + Math.sin(a) * 60]);
+    }
+    const total = Math.floor(progress * n);
+    ctx.moveTo(pts[0][0], pts[0][1]);
+    for (let i = 1; i <= total; i++) ctx.lineTo(pts[i][0], pts[i][1]);
+    const frac = progress * n - total;
+    if (total < n) {
+      const x = pts[total][0] + (pts[total + 1][0] - pts[total][0]) * frac;
+      const y = pts[total][1] + (pts[total + 1][1] - pts[total][1]) * frac;
+      ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+};
+
+// ---------- Ambient particle overlay ----------
+// A light dusting of drifting sparkle particles layered on top of every
+// scene for a bit of cinematic polish, independent of the scene's own art.
+function drawAmbientParticles(ctx, w, h, t, seed) {
+  const count = 14;
+  const s = Math.abs(seed || 1);
+  ctx.save();
+  for (let i = 0; i < count; i++) {
+    const rnd = Math.sin((i + 1) * 12.9898 + s * 0.001) * 43758.5453;
+    const frac = rnd - Math.floor(rnd);
+    const baseX = frac * w;
+    const speed = 6000 + (i % 5) * 1400;
+    const driftY = ((t + i * 900) / speed) % 1.2;
+    const y = h * 1.05 - driftY * h * 1.15;
+    const x = baseX + Math.sin((t / 1800) + i) * 14;
+    const twinkle = 0.15 + Math.abs(Math.sin(t / 500 + i * 2)) * 0.35;
+    const size = 1.2 + (i % 3) * 0.9;
+    ctx.globalAlpha = twinkle * (1 - Math.min(1, driftY));
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath(); ctx.arc(x, y, size, 0, 7); ctx.fill();
+  }
+  ctx.restore();
+}
+
+// ---------- Scene loop management ----------
+let __videoSceneRAF = null;
+function stopVideoScene() {
+  if (__videoSceneRAF) { cancelAnimationFrame(__videoSceneRAF); __videoSceneRAF = null; }
+}
+function startVideoScene(canvas, category, hints, seed) {
+  stopVideoScene();
+  if (!canvas || !canvas.getContext) return;
+  const ctx = canvas.getContext('2d');
+  const drawFn = VIDEO_SCENES[category] || VIDEO_SCENES.numberline;
+  const startT = performance.now();
+  const sceneSeed = seed || 1;
+  // Ken Burns: slow, gentle pan + zoom drift, unique per page via sceneSeed.
+  const kbDur = 16000 + (sceneSeed % 5000);
+  const kbMaxZoom = 1.05 + ((sceneSeed % 7) / 100);
+  const kbAngle = ((sceneSeed % 360) * Math.PI) / 180;
+  function frame(now) {
+    const w = canvas.width, h = canvas.height;
+    const elapsed = now - startT;
+    ctx.save();
+    ctx.clearRect(0, 0, w, h);
+    const kbPhase = (Math.sin((elapsed / kbDur) * Math.PI * 2 + kbAngle) + 1) / 2; // 0..1..0
+    const zoom = 1 + (kbMaxZoom - 1) * kbPhase;
+    const panX = Math.cos(kbAngle) * (w * 0.02) * kbPhase;
+    const panY = Math.sin(kbAngle) * (h * 0.02) * kbPhase;
+    ctx.translate(w / 2 + panX, h / 2 + panY);
+    ctx.scale(zoom, zoom);
+    ctx.translate(-w / 2, -h / 2);
+    try { drawFn(ctx, w, h, elapsed, hints, sceneSeed); } catch (e) { /* fail quietly, keep video usable */ }
+    ctx.restore();
+    try { drawAmbientParticles(ctx, w, h, elapsed, sceneSeed); } catch (e) { /* ignore */ }
+    __videoSceneRAF = requestAnimationFrame(frame);
+  }
+  __videoSceneRAF = requestAnimationFrame(frame);
+}
+
+if (typeof module !== 'undefined') {
+  module.exports = { pickLivelyVoice, splitIntoSentences, speakSentencesWithSubtitles, pickSceneCategory, hashStringToSeed, extractSceneHints, startVideoScene, stopVideoScene };
+}

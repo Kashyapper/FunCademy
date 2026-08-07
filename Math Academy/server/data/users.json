@@ -1,0 +1,454 @@
+{
+  "kash": {
+    "passwordHash": "ef6e9844da1314c6d39d5b69b34be241229e53b6e27d5c034d427b078d5e732726fbd73a30d6e30dd17565d10280968111fdf387bc397426e43986bbfb3ab073",
+    "passwordSalt": "e283038ba66672c6c1af57454b43de01",
+    "displayName": "Kash",
+    "avatarEmoji": "🐼",
+    "createdAt": 1785021875286,
+    "lastLoginAt": 1785028553775,
+    "loginCount": 2,
+    "state": {
+      "stars": 0,
+      "level": 1,
+      "streak": 1,
+      "avatarIndex": 0,
+      "username": "Kash",
+      "currentSubject": "math",
+      "completedCountsMath": {
+        "1": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "2": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "3": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "4": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "5": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        }
+      },
+      "completedCountsEla": {
+        "1": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "2": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "3": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "4": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "5": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        }
+      },
+      "completedCountsHistory": {
+        "1": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "2": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "3": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "4": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "5": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        }
+      },
+      "completedCountsGeography": {
+        "1": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "2": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "3": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "4": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "5": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        }
+      },
+      "completedCountsScience": {
+        "1": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "2": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "3": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "4": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "5": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        }
+      },
+      "completedCountsArt": {
+        "1": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "2": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "3": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "4": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        },
+        "5": {
+          "lessonsCompleted": 0,
+          "examsPassed": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "reviewCompleted": false,
+          "gradeTestPassed": false
+        }
+      },
+      "isSoundOn": false,
+      "sidebarCollapsed": false,
+      "testAttemptsCount": 0,
+      "masteryHistory": [],
+      "textLessonMode": true,
+      "points": 0,
+      "streakLastActiveDate": "",
+      "dailyLessonsCount": 0,
+      "dailyLessonsDate": "7/25/2026",
+      "dailyAssignmentSkipped": false,
+      "chatbotUseCount": 0,
+      "chatbotUseDate": "7/25/2026",
+      "chatbotUnlimitedUntil": 0,
+      "purchasedAvatars": [
+        0
+      ],
+      "purchasedGameTime": 0,
+      "dailyCompletedSubjects": [],
+      "dailyCrossSubjectBonusAwardedToday": false,
+      "doubleStarsUntil": 0,
+      "goldenFrameOwned": false,
+      "goldenFrameEquipped": false,
+      "arcadeThemeOwned": false,
+      "activeTheme": "default",
+      "monthlyLessonsCount": 0,
+      "monthlyLessonsMonth": "",
+      "currentGrade": 1,
+      "totalQuestionsAnswered": 0,
+      "correctQuestionsAnswered": 0,
+      "activeSublesson": 1,
+      "lessonPracticeScore": 0,
+      "lessonTotalQuestions": 0
+    },
+    "weeklyData": null
+  }
+}

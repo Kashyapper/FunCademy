@@ -143,11 +143,13 @@
             <button class="nav-btn" data-grade="5">
               <span>Grade 5</span>
             </button>
-            <button class="nav-btn" data-grade="6">
+            <button class="nav-btn locked" data-grade="6" disabled>
               <span>Grade 6</span>
+              <span class="lock-badge">🔒</span>
             </button>
-            <button class="nav-btn" data-grade="7">
+            <button class="nav-btn locked" data-grade="7" disabled>
               <span>Grade 7</span>
+              <span class="lock-badge">🔒</span>
             </button>
             <button class="nav-btn locked" data-grade="8" disabled>
               <span>Grade 8</span>
@@ -1098,7 +1100,6 @@
   <script src="content/ela-quiz-overrides.js"></script>
   <script src="content/video-engine.js"></script>
   <script>
-<<<<<<< HEAD
     // Where the app looks for the FunCademy backend (server/server.js).
     // Leave as-is while running everything on your own computer.
     // Once you deploy the server somewhere public (see server/README),
@@ -1107,10 +1108,6 @@
     // change.
     window.FUNCADEMY_API_BASE_URL = 'https://funcademy.onrender.com';
   </script>
-=======
-     window.FUNCADEMY_API_BASE_URL = 'https://funcademy.onrender.com';
-   </script>
->>>>>>> 5be1dc30a508bf0653264f601573d11026f20569
   <script src="app.js"></script>
 </body>
 </html>
