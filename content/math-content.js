@@ -1015,6 +1015,546 @@ const MATH_LESSON_CONTENT = {
     page5: "Now let's plot (2, 7). Step 1: Start at origin. Step 2: Move right 2. Step 3: Move up 7, and mark the point.",
     page6: "A helpful trick: always double check you moved along the x-axis (right) before moving along the y-axis (up) — mixing up the order plots the wrong point.",
     page7: "You reviewed the coordinate plane's structure and practiced plotting points using their x and y values."
+  },
+  "Intro to Ratios": {
+    page1: "In this lesson, you will learn what a ratio is and how to use ratio language to compare two quantities, like the number of red marbles to blue marbles in a bag.",
+    page2: "A ratio is a comparison of two quantities by division. It tells you how many of one thing there are for every certain number of another thing. Ratios can compare part-to-part (red marbles to blue marbles) or part-to-whole (red marbles to all marbles).",
+    page3: "The rule is: write a ratio as 'a to b', 'a:b', or as the fraction a/b, keeping the order of the quantities exactly as described in the problem.",
+    page4: "Let's write the ratio of 4 dogs to 9 cats. Step 1: Identify the two quantities in order: dogs first, cats second. Step 2: Write it as 4 to 9, or 4:9, or 4/9. Step 3: This means for every 4 dogs, there are 9 cats.",
+    page5: "Now let's write the ratio of 15 apples to 5 oranges in a basket of fruit. Step 1: Apples first: 15, oranges second: 5. Step 2: Write it as 15:5. Step 3: This simplifies to 3:1, meaning 3 apples for every orange.",
+    page6: "A helpful trick: order matters in a ratio. 'Dogs to cats' is different from 'cats to dogs' — always match the order the words are given in the problem.",
+    page7: "You learned that a ratio compares two quantities using 'to', a colon, or a fraction, and that the order of the quantities must match the order given, as in 4 dogs to 9 cats written as 4:9."
+  },
+  "Equivalent Ratios": {
+    page1: "In this lesson, you will learn how to find equivalent ratios and use a ratio table to scale a ratio up or down.",
+    page2: "Equivalent ratios are ratios that describe the same relationship between two quantities, even though the actual numbers are different. Just like equivalent fractions, you multiply or divide both terms of a ratio by the same number.",
+    page3: "The rule is: to find an equivalent ratio, multiply or divide both parts of the ratio by the same nonzero number.",
+    page4: "Let's find a ratio equivalent to 2:3. Step 1: Choose a multiplier, say 4. Step 2: Multiply both terms: 2x4=8, 3x4=12. Step 3: 8:12 is equivalent to 2:3.",
+    page5: "Now let's find an equivalent ratio for 12:18 in simplest form. Step 1: Find the GCF of 12 and 18, which is 6. Step 2: Divide both terms by 6: 12÷6=2, 18÷6=3. Step 3: The simplest form is 2:3.",
+    page6: "A helpful trick: build a ratio table by listing multiples of both numbers in matching columns — this makes it easy to scale a recipe or compare rates at a glance.",
+    page7: "You learned that equivalent ratios are found by multiplying or dividing both terms by the same number, as in 2:3 = 8:12, which simplifies back to 2:3."
+  },
+  "Rate and Unit Rate": {
+    page1: "In this lesson, you will learn to calculate a unit rate, which tells you an amount per single unit, like miles per hour or price per item.",
+    page2: "A rate compares two quantities with different units, such as dollars and pounds. A unit rate is a rate where the second quantity is 1, making it easy to compare prices, speeds, or other measurements.",
+    page3: "The rule is: to find a unit rate, divide the first quantity by the second quantity so that the second number becomes 1.",
+    page4: "Let's find the unit rate if a car travels 240 miles in 4 hours. Step 1: Divide miles by hours: 240 ÷ 4 = 60. Step 2: The unit rate is 60 miles per hour.",
+    page5: "Now let's find the unit price if 5 notebooks cost $10. Step 1: Divide cost by quantity: 10 ÷ 5 = 2. Step 2: The unit rate is $2 per notebook.",
+    page6: "A helpful trick: to compare two deals, always find the unit rate for each — the smaller unit price or the larger unit rate (like speed) is usually the better value.",
+    page7: "You learned to find a unit rate by dividing the first quantity by the second so the second quantity equals 1, as in 240 miles ÷ 4 hours = 60 miles per hour."
+  },
+  "Percent as a Ratio": {
+    page1: "In this lesson, you will learn that a percent is a special ratio that compares a number to 100, and how to convert between percents, fractions, and decimals.",
+    page2: "Percent means 'per hundred.' A percent is a ratio where the second term is always 100, so 45% means 45 out of every 100. Because of this, percents can always be written as fractions with denominator 100 or as decimals.",
+    page3: "The rule is: to change a percent to a decimal, divide by 100 (move the decimal point two places left). To change a decimal to a percent, multiply by 100. To change a fraction to a percent, first write it as an equivalent fraction over 100.",
+    page4: "Let's convert 3/4 to a percent. Step 1: Find an equivalent fraction with denominator 100: 3/4 = 75/100. Step 2: Write as a percent: 75%.",
+    page5: "Now let's convert 0.6 to a percent. Step 1: Multiply by 100: 0.6 x 100 = 60. Step 2: Write as a percent: 60%.",
+    page6: "A helpful trick: memorize common fraction-percent pairs like 1/2=50%, 1/4=25%, 1/5=20%, and 1/10=10% — they help you estimate other percents quickly.",
+    page7: "You learned that percent means 'per hundred,' and you can convert between fractions, decimals, and percents, as in 3/4 = 75/100 = 75%."
+  },
+  "Ratio Word Problems": {
+    page1: "In this lesson, you will use ratio and rate reasoning to solve real-world word problems.",
+    page2: "Many real-world situations, like mixing paint colors, adjusting recipes, or comparing prices, can be solved using ratio tables, equivalent ratios, or unit rates.",
+    page3: "The rule is: identify the ratio given in the problem, set up an equivalent ratio or ratio table with the unknown value, and solve by finding the scale factor or missing term.",
+    page4: "Let's solve: a recipe uses 2 cups of flour for every 3 cups of sugar. How much flour is needed for 12 cups of sugar? Step 1: Set up the ratio 2:3 = x:12. Step 2: Find the scale factor: 12÷3=4. Step 3: Multiply flour by 4: 2x4=8. You need 8 cups of flour.",
+    page5: "Now let's solve: a car uses 5 gallons of gas to travel 150 miles. How far can it go on 8 gallons? Step 1: Find the unit rate: 150÷5=30 miles per gallon. Step 2: Multiply: 30x8=240. The car can travel 240 miles.",
+    page6: "A helpful trick: draw a ratio table with two rows — one for each quantity — and look for the multiplier that connects the known value to the unknown value.",
+    page7: "You learned to solve ratio word problems by setting up equivalent ratios or finding a unit rate and applying it, as in scaling a recipe from 3 cups of sugar to 12 cups."
+  },
+  "Dividing Fractions by Fractions": {
+    page1: "In this lesson, you will learn to divide a fraction by another fraction, like 2/3 ÷ 1/4.",
+    page2: "Dividing by a fraction means finding how many times that fraction fits into another number. Instead of dividing directly, we use the fact that dividing by a fraction is the same as multiplying by its reciprocal, the fraction flipped upside down.",
+    page3: "The rule is: keep the first fraction the same, change division to multiplication, and flip (find the reciprocal of) the second fraction. Then multiply numerators and multiply denominators.",
+    page4: "Let's solve 2/3 ÷ 1/4. Step 1: Keep 2/3, change to multiplication, flip 1/4 to 4/1. Step 2: Multiply: 2/3 x 4/1 = 8/3. Step 3: Simplify: 8/3 = 2 2/3.",
+    page5: "Now let's solve 3/5 ÷ 2/7. Step 1: Keep 3/5, flip 2/7 to 7/2. Step 2: Multiply: 3/5 x 7/2 = 21/10. Step 3: Simplify: 21/10 = 2 1/10.",
+    page6: "A helpful trick: remember 'keep, change, flip' — keep the first fraction, change the sign to multiplication, and flip the second fraction before multiplying.",
+    page7: "You learned to divide fractions by multiplying by the reciprocal, using 'keep, change, flip', as in 2/3 ÷ 1/4 = 2/3 x 4/1 = 8/3."
+  },
+  "Fraction Division Word Problems": {
+    page1: "In this lesson, you will apply fraction division to solve real-world word problems.",
+    page2: "Fraction division word problems often ask how many equal-sized fractional groups fit into a total amount, such as how many 3/4-cup servings are in a container of juice.",
+    page3: "The rule is: identify the total amount and the size of each group (both as fractions if needed), then divide the total by the group size using 'keep, change, flip'.",
+    page4: "Let's solve: a ribbon is 5/6 yard long. How many 1/6-yard pieces can be cut from it? Step 1: Set up division: 5/6 ÷ 1/6. Step 2: Keep, change, flip: 5/6 x 6/1 = 30/6 = 5. Step 3: You can cut 5 pieces.",
+    page5: "Now let's solve: you have 3/4 pound of trail mix and want to split it into 1/8-pound bags. How many bags can you make? Step 1: Set up: 3/4 ÷ 1/8. Step 2: Keep, change, flip: 3/4 x 8/1 = 24/4 = 6. Step 3: You can make 6 bags.",
+    page6: "A helpful trick: when a problem asks 'how many groups of a certain size fit into a total', that phrasing is a signal to divide the total by the group size.",
+    page7: "You learned to solve fraction division word problems by dividing the total amount by the fractional group size, as in 5/6 ÷ 1/6 = 5 pieces."
+  },
+  "Greatest Common Factor": {
+    page1: "In this lesson, you will learn to find the greatest common factor, or GCF, of two whole numbers up to 100.",
+    page2: "The greatest common factor of two numbers is the largest number that divides evenly into both of them. It's useful for simplifying fractions and factoring expressions.",
+    page3: "The rule is: list the factors of each number, identify the common factors, and choose the largest one. You can also use prime factorization and multiply the shared prime factors.",
+    page4: "Let's find the GCF of 18 and 24. Step 1: Factors of 18: 1,2,3,6,9,18. Step 2: Factors of 24: 1,2,3,4,6,8,12,24. Step 3: Common factors: 1,2,3,6. The GCF is 6.",
+    page5: "Now let's find the GCF of 36 and 48 using prime factorization. Step 1: 36 = 2x2x3x3. Step 2: 48 = 2x2x2x2x3. Step 3: Shared factors: 2x2x3 = 12. The GCF is 12.",
+    page6: "A helpful trick: the GCF is never larger than the smaller of the two numbers — that's a quick way to check your answer makes sense.",
+    page7: "You learned to find the greatest common factor by listing common factors or using prime factorization, as in the GCF of 18 and 24 being 6."
+  },
+  "Least Common Multiple": {
+    page1: "In this lesson, you will learn to find the least common multiple, or LCM, of two whole numbers up to 12.",
+    page2: "The least common multiple of two numbers is the smallest number that both numbers divide into evenly. It's especially useful when adding or subtracting fractions with different denominators.",
+    page3: "The rule is: list the multiples of each number until you find the smallest one they share, or use prime factorization and multiply the highest power of each prime that appears.",
+    page4: "Let's find the LCM of 4 and 6. Step 1: Multiples of 4: 4,8,12,16. Step 2: Multiples of 6: 6,12,18. Step 3: The smallest shared multiple is 12. The LCM is 12.",
+    page5: "Now let's find the LCM of 5 and 8. Step 1: Multiples of 5: 5,10,15,20,25,30,35,40. Step 2: Multiples of 8: 8,16,24,32,40. Step 3: The smallest shared multiple is 40. The LCM is 40.",
+    page6: "A helpful trick: if two numbers share no common factors besides 1, like 5 and 8, their LCM is simply their product.",
+    page7: "You learned to find the least common multiple by listing multiples or using prime factorization, as in the LCM of 4 and 6 being 12."
+  },
+  "Fraction and Decimal Conversion": {
+    page1: "In this lesson, you will learn to convert fluently between fractions, decimals, and percents.",
+    page2: "Fractions, decimals, and percents are three different ways to represent the same value. Being able to switch between them helps you compare quantities and solve problems more flexibly.",
+    page3: "The rule is: to change a fraction to a decimal, divide the numerator by the denominator. To change a decimal to a fraction, write it over a power of 10 and simplify. To connect to percents, multiply a decimal by 100.",
+    page4: "Let's convert 3/8 to a decimal. Step 1: Divide 3 by 8: 3 ÷ 8 = 0.375. Step 2: 3/8 = 0.375, which is also 37.5%.",
+    page5: "Now let's convert 0.45 to a fraction. Step 1: Write as 45/100. Step 2: Simplify using the GCF of 45 and 100, which is 5: 45÷5=9, 100÷5=20. Step 3: 0.45 = 9/20.",
+    page6: "A helpful trick: memorize that any decimal's place value tells you the denominator — tenths give /10, hundredths give /100, and so on.",
+    page7: "You learned to convert between fractions and decimals by dividing or writing over a power of 10, as in 3/8 = 0.375 and 0.45 = 9/20."
+  },
+  "Intro to Negative Numbers": {
+    page1: "In this lesson, you will learn what negative numbers are and how they describe values below zero in real-world situations.",
+    page2: "Negative numbers are numbers less than zero, written with a minus sign, like -5. They're used to describe things like temperatures below freezing, elevations below sea level, or money owed.",
+    page3: "The rule is: a negative number represents the opposite direction or value from a positive number of the same size — for example, -5 is the opposite of 5, both being 5 units from zero but in opposite directions.",
+    page4: "Let's interpret -10 degrees Fahrenheit. Step 1: The negative sign means below zero. Step 2: -10°F means 10 degrees colder than 0°F.",
+    page5: "Now let's interpret an elevation of -50 feet. Step 1: Negative means below a reference point, like sea level. Step 2: -50 feet means 50 feet below sea level.",
+    page6: "A helpful trick: think of zero as a starting line — positive numbers move one direction (up, right, above) and negative numbers move the opposite direction (down, left, below).",
+    page7: "You learned that negative numbers represent values less than zero and are used to describe real-world situations like temperature, elevation, and debt."
+  },
+  "Integers on the Number Line": {
+    page1: "In this lesson, you will learn to plot and order positive and negative integers on a number line.",
+    page2: "Integers are whole numbers and their opposites, including negative numbers, zero, and positive numbers. On a number line, numbers increase as you move right and decrease as you move left.",
+    page3: "The rule is: to plot an integer, count that many units from zero in the correct direction — right for positive, left for negative. A number further right is always greater.",
+    page4: "Let's plot -3 and 4 on a number line. Step 1: Start at 0. Step 2: Move 3 units left to plot -3. Step 3: Move 4 units right to plot 4. Since 4 is to the right of -3, 4 > -3.",
+    page5: "Now let's order -7, 2, -1, and 5 from least to greatest. Step 1: Plot each on a number line. Step 2: Read left to right: -7, -1, 2, 5. Step 3: The order from least to greatest is -7, -1, 2, 5.",
+    page6: "A helpful trick: on a number line, 'greater than' always means 'further to the right', no matter whether the numbers are negative or positive.",
+    page7: "You learned to plot integers on a number line and to order them by position, with numbers further right being greater, as in -7 < -1 < 2 < 5."
+  },
+  "Absolute Value": {
+    page1: "In this lesson, you will learn to find the absolute value of a number and understand it as the distance from zero.",
+    page2: "Absolute value is the distance a number is from zero on the number line, and distance is always positive or zero. The absolute value of a number is written with two vertical bars, like |−7|.",
+    page3: "The rule is: to find the absolute value, drop the sign of the number — both positive and negative numbers of the same size have the same absolute value.",
+    page4: "Let's find |−8|. Step 1: -8 is 8 units from zero. Step 2: |−8| = 8.",
+    page5: "Now let's find |6| and |−6| and compare them. Step 1: |6| = 6, since 6 is 6 units from zero. Step 2: |−6| = 6, since -6 is also 6 units from zero. Step 3: |6| = |−6|, they are equal.",
+    page6: "A helpful trick: absolute value answers the question 'how far?' not 'which direction?' — so the answer is never negative.",
+    page7: "You learned that absolute value is the distance a number is from zero, so it is always positive, as in |−8| = 8."
+  },
+  "Comparing and Ordering Integers": {
+    page1: "In this lesson, you will learn to compare and order integers using the symbols <, >, and =.",
+    page2: "Comparing integers means deciding which of two numbers is larger, including cases where one or both numbers are negative. Remember that on a number line, numbers get smaller as you move left, even into negative territory.",
+    page3: "The rule is: any positive number is greater than any negative number, zero is greater than any negative number, and between two negative numbers, the one closer to zero is greater.",
+    page4: "Let's compare -4 and -9. Step 1: Both are negative, so compare distance from zero. Step 2: -4 is closer to zero than -9. Step 3: So -4 > -9.",
+    page5: "Now let's order -2, 3, -8, 0 from greatest to least. Step 1: Positive numbers are greatest: 3. Step 2: Then zero: 0. Step 3: Then negatives, closest to zero first: -2, then -8. Order: 3, 0, -2, -8.",
+    page6: "A helpful trick: for two negative numbers, the one with the smaller number part (ignoring the sign) is actually the greater number, like -4 > -9 because 4 < 9.",
+    page7: "You learned to compare and order integers, remembering that negative numbers closer to zero are greater, as in -4 > -9."
+  },
+  "The Coordinate Plane and Four Quadrants": {
+    page1: "In this lesson, you will learn to plot and identify points in all four quadrants of the coordinate plane.",
+    page2: "The coordinate plane is formed by a horizontal x-axis and a vertical y-axis crossing at the origin (0,0). The axes divide the plane into four regions called quadrants, numbered I through IV counterclockwise starting from the upper right, and points can now have negative coordinates.",
+    page3: "The rule is: in Quadrant I, both x and y are positive. In Quadrant II, x is negative and y is positive. In Quadrant III, both x and y are negative. In Quadrant IV, x is positive and y is negative.",
+    page4: "Let's plot (-3, 5). Step 1: x is negative and y is positive. Step 2: This places the point in Quadrant II. Step 3: Move 3 left and 5 up from the origin.",
+    page5: "Now let's identify the quadrant for (4, -2). Step 1: x is positive and y is negative. Step 2: This places the point in Quadrant IV.",
+    page6: "A helpful trick: remember the quadrants go counterclockwise starting from the top right (Quadrant I), matching the sign patterns (+,+), (−,+), (−,−), (+,−).",
+    page7: "You learned to plot points and identify quadrants on the coordinate plane using the signs of the x and y coordinates, as in (-3,5) being in Quadrant II."
+  },
+  "Writing Algebraic Expressions": {
+    page1: "In this lesson, you will learn to translate verbal phrases into algebraic expressions using variables.",
+    page2: "An algebraic expression uses letters, called variables, to represent unknown numbers, combined with numbers and operations. Word phrases like '5 more than a number' can be translated directly into symbols.",
+    page3: "The rule is: identify the operation from key words (sum/more than = add, difference/less than = subtract, product/times = multiply, quotient = divide), then write the expression using a variable for the unknown.",
+    page4: "Let's translate '7 less than a number x'. Step 1: 'Less than' means subtraction, and it reverses order. Step 2: Write x - 7, not 7 - x. Step 3: The expression is x - 7.",
+    page5: "Now let's translate 'the product of 4 and a number y, increased by 3'. Step 1: Product of 4 and y is 4y. Step 2: Increased by 3 means add 3. Step 3: The expression is 4y + 3.",
+    page6: "A helpful trick: watch out for 'less than' and 'subtracted from' — they flip the order of the subtraction compared to how the sentence reads.",
+    page7: "You learned to translate word phrases into algebraic expressions by identifying operations and key words, as in '7 less than a number' becoming x - 7."
+  },
+  "Evaluating Algebraic Expressions": {
+    page1: "In this lesson, you will learn to evaluate algebraic expressions by substituting given values for the variables.",
+    page2: "Evaluating an expression means replacing each variable with a specific number and then simplifying using the order of operations.",
+    page3: "The rule is: substitute the given value for each variable, then simplify using PEMDAS (parentheses, exponents, multiplication/division, addition/subtraction) to find the final value.",
+    page4: "Let's evaluate 3x + 5 when x = 4. Step 1: Substitute: 3(4) + 5. Step 2: Multiply: 12 + 5. Step 3: Add: 17.",
+    page5: "Now let's evaluate 2a² - b when a = 3 and b = 7. Step 1: Substitute: 2(3)² - 7. Step 2: Exponent: 2(9) - 7. Step 3: Multiply, then subtract: 18 - 7 = 11.",
+    page6: "A helpful trick: put the substituted value in parentheses before simplifying — this prevents sign errors, especially with negative numbers or exponents.",
+    page7: "You learned to evaluate algebraic expressions by substituting values for variables and simplifying with order of operations, as in 3x+5 at x=4 equaling 17."
+  },
+  "Solving One-Step Equations": {
+    page1: "In this lesson, you will learn to solve one-step equations involving addition, subtraction, multiplication, and division.",
+    page2: "An equation is a statement that two expressions are equal. Solving an equation means finding the value of the variable that makes the equation true, using inverse operations to isolate the variable.",
+    page3: "The rule is: perform the inverse operation on both sides of the equation to undo whatever is being done to the variable, keeping the equation balanced.",
+    page4: "Let's solve x + 9 = 15. Step 1: The inverse of adding 9 is subtracting 9. Step 2: Subtract 9 from both sides: x = 15 - 9. Step 3: x = 6.",
+    page5: "Now let's solve 4x = 28. Step 1: The inverse of multiplying by 4 is dividing by 4. Step 2: Divide both sides by 4: x = 28 ÷ 4. Step 3: x = 7.",
+    page6: "A helpful trick: whatever you do to one side of the equation, you must do to the other side too — this keeps the equation balanced like a scale.",
+    page7: "You learned to solve one-step equations by applying inverse operations to both sides, as in x + 9 = 15 giving x = 6."
+  },
+  "Independent and Dependent Variables": {
+    page1: "In this lesson, you will learn to identify independent and dependent variables and represent their relationship with an equation, table, or graph.",
+    page2: "In a relationship between two quantities, the independent variable is the one you choose or control, and the dependent variable's value depends on the independent variable. For example, the number of hours worked (independent) affects the total pay earned (dependent).",
+    page3: "The rule is: ask which quantity depends on the other. The one that changes because of the other is the dependent variable; the one that causes the change is the independent variable.",
+    page4: "Let's identify the variables: the total cost depends on the number of items bought. Step 1: Number of items is chosen freely — it's independent. Step 2: Total cost depends on that choice — it's dependent.",
+    page5: "Now let's write an equation: each ticket costs $8. Let x = number of tickets (independent), y = total cost (dependent). Step 1: Cost equals price times quantity. Step 2: The equation is y = 8x.",
+    page6: "A helpful trick: the dependent variable is usually the one you're trying to find or predict, often plotted on the vertical (y) axis of a graph.",
+    page7: "You learned to identify independent and dependent variables and to write an equation relating them, as in y = 8x for ticket cost."
+  },
+  "Inequalities on a Number Line": {
+    page1: "In this lesson, you will learn to write and graph simple inequalities on a number line.",
+    page2: "An inequality compares two values that are not necessarily equal, using symbols like <, >, ≤, or ≥. Unlike an equation, an inequality's solution is often a whole range of numbers.",
+    page3: "The rule is: use an open circle for < or > (the boundary value is not included) and a closed circle for ≤ or ≥ (the boundary value is included), then shade the number line in the direction of the solutions.",
+    page4: "Let's graph x > 3. Step 1: Draw an open circle at 3, since 3 is not included. Step 2: Shade to the right, since values must be greater than 3.",
+    page5: "Now let's graph x ≤ -2. Step 1: Draw a closed circle at -2, since -2 is included. Step 2: Shade to the left, since values must be less than or equal to -2.",
+    page6: "A helpful trick: think of the circle as a 'gate' — open means you can't stand exactly there, closed means you can — then shade toward all the valid values.",
+    page7: "You learned to graph inequalities on a number line using open or closed circles and shading, as in x > 3 shown with an open circle at 3 shaded rightward."
+  },
+  "Area of Triangles": {
+    page1: "In this lesson, you will learn to find the area of a triangle using its base and height.",
+    page2: "The area of a triangle is the amount of space it covers, measured in square units. A triangle's area is exactly half the area of a rectangle with the same base and height, because two triangles can form that rectangle.",
+    page3: "The rule is: Area = 1/2 × base × height, where the height is measured perpendicular (at a right angle) to the base.",
+    page4: "Let's find the area of a triangle with base 8 cm and height 5 cm. Step 1: Multiply base and height: 8x5=40. Step 2: Multiply by 1/2: 40÷2=20. Step 3: The area is 20 square cm.",
+    page5: "Now let's find the area of a triangle with base 12 in and height 7 in. Step 1: Multiply: 12x7=84. Step 2: Half of 84 is 42. Step 3: The area is 42 square inches.",
+    page6: "A helpful trick: the height must always be perpendicular to the base — if a triangle is tilted, imagine dropping a straight vertical line from the top vertex to the base to find the true height.",
+    page7: "You learned to find the area of a triangle using Area = 1/2 × base × height, as in a triangle with base 8 and height 5 having an area of 20 square cm."
+  },
+  "Area of Quadrilaterals": {
+    page1: "In this lesson, you will learn to find the area of parallelograms, trapezoids, and other quadrilaterals.",
+    page2: "Quadrilaterals are four-sided shapes, and different types have different area formulas. A parallelogram's area works like a rectangle's, while a trapezoid's area averages its two parallel sides.",
+    page3: "The rule is: for a parallelogram, Area = base × height. For a trapezoid, Area = 1/2 × (base1 + base2) × height, where height is the perpendicular distance between the parallel sides.",
+    page4: "Let's find the area of a parallelogram with base 10 m and height 6 m. Step 1: Multiply: 10x6=60. Step 2: The area is 60 square meters.",
+    page5: "Now let's find the area of a trapezoid with bases 8 cm and 12 cm and height 5 cm. Step 1: Add the bases: 8+12=20. Step 2: Multiply by height: 20x5=100. Step 3: Multiply by 1/2: 100÷2=50. The area is 50 square cm.",
+    page6: "A helpful trick: you can split a parallelogram into a rectangle and two triangles, or a trapezoid into a rectangle and triangles, to see why these formulas work.",
+    page7: "You learned to find the area of parallelograms (base × height) and trapezoids (1/2 × sum of bases × height), as in a trapezoid with bases 8 and 12 having an area of 50 square cm."
+  },
+  "Area of Composite Polygons": {
+    page1: "In this lesson, you will learn to find the area of composite shapes by breaking them into simpler polygons.",
+    page2: "A composite shape is made up of two or more simple shapes, like rectangles, triangles, and trapezoids, combined together. To find its total area, you find the area of each simple piece and add or subtract them.",
+    page3: "The rule is: divide the composite shape into familiar shapes, find the area of each piece using the correct formula, and then add the areas together, or subtract if a piece is removed, like a hole.",
+    page4: "Let's find the area of an L-shaped figure made of a 6x4 rectangle with a 2x2 square cut from one corner. Step 1: Area of rectangle: 6x4=24. Step 2: Area of square cut out: 2x2=4. Step 3: Subtract: 24-4=20. The area is 20 square units.",
+    page5: "Now let's find the area of a shape made of a rectangle (5x3) with a triangle (base 5, height 4) on top. Step 1: Rectangle area: 5x3=15. Step 2: Triangle area: 1/2 x5x4=10. Step 3: Add: 15+10=25. The total area is 25 square units.",
+    page6: "A helpful trick: sketch dashed lines to divide the composite shape into simple pieces before calculating — labeling each piece prevents missed or double-counted regions.",
+    page7: "You learned to find the area of composite shapes by breaking them into simple polygons and adding or subtracting their areas, as in an L-shape with area 20 square units."
+  },
+  "Surface Area of Prisms": {
+    page1: "In this lesson, you will learn to use nets to find the surface area of rectangular and triangular prisms.",
+    page2: "Surface area is the total area of all the outer faces of a 3D shape. A net is a 2D pattern that folds up into the 3D shape, showing all its faces flattened out, which makes them easier to measure and add together.",
+    page3: "The rule is: unfold the prism into its net, find the area of each face, and add all the face areas together to get the total surface area.",
+    page4: "Let's find the surface area of a rectangular prism 4 x 3 x 2 (length x width x height). Step 1: Find area of each pair of faces: 2(4x3)=24, 2(4x2)=16, 2(3x2)=12. Step 2: Add: 24+16+12=52. The surface area is 52 square units.",
+    page5: "Now let's find the surface area of a triangular prism with two triangular faces (base 6, height 4) and three rectangular faces each 6 by 5. Step 1: Triangle faces: 2 x (1/2x6x4)=24. Step 2: Rectangle faces: 3 x (6x5) = 90. Step 3: Add: 24+90=114. The surface area is 114 square units.",
+    page6: "A helpful trick: a rectangular prism always has three pairs of matching faces — find the area of just three different faces, double each, and add.",
+    page7: "You learned to find surface area by unfolding a prism into a net and adding the areas of all its faces, as in a 4x3x2 rectangular prism having a surface area of 52 square units."
+  },
+  "Volume of Rectangular Prisms": {
+    page1: "In this lesson, you will learn to find the volume of rectangular prisms, including those with fractional edge lengths.",
+    page2: "Volume measures how much space a 3D shape takes up, in cubic units. For a rectangular prism, volume is found by multiplying its three dimensions: length, width, and height — and this works the same way even when the edges are fractions.",
+    page3: "The rule is: Volume = length × width × height, multiplying all three dimensions together, whether they are whole numbers or fractions.",
+    page4: "Let's find the volume of a prism with length 5, width 3, and height 2. Step 1: Multiply length and width: 5x3=15. Step 2: Multiply by height: 15x2=30. The volume is 30 cubic units.",
+    page5: "Now let's find the volume of a prism with length 1/2 ft, width 3 ft, and height 4 ft. Step 1: Multiply length and width: 1/2 x 3 = 3/2. Step 2: Multiply by height: 3/2 x 4 = 12/2 = 6. The volume is 6 cubic feet.",
+    page6: "A helpful trick: when multiplying fractional dimensions, convert mixed numbers to improper fractions first — it keeps the multiplication simple and avoids mistakes.",
+    page7: "You learned to find the volume of a rectangular prism using V = length × width × height, even with fractional edges, as in a prism with a 1/2 ft edge having a volume of 6 cubic feet."
+  },
+  "Statistical Questions": {
+    page1: "In this lesson, you will learn to recognize statistical questions and understand what a data distribution shows.",
+    page2: "A statistical question is one that anticipates variability in the data, meaning different answers are expected. 'How old is my teacher?' is not statistical since there's one clear answer, but 'How old are the students in my class?' is statistical, because ages will vary.",
+    page3: "The rule is: a question is statistical if you expect to collect multiple different responses and need to look at the spread, or distribution, of the data to answer it.",
+    page4: "Let's decide if 'How many pets does each student in the class have?' is statistical. Step 1: Different students will likely give different numbers of pets. Step 2: Since answers vary, this is a statistical question.",
+    page5: "Now let's decide if 'How many days are in a week?' is statistical. Step 1: This has one fixed answer, 7, for everyone. Step 2: Since there's no variability, this is not a statistical question.",
+    page6: "A helpful trick: ask yourself if you asked 20 different people this question, would you expect 20 different answers? If yes, it's likely statistical.",
+    page7: "You learned that a statistical question expects variability in its answers, as in 'How many pets does each student have?' being statistical while 'How many days are in a week?' is not."
+  },
+  "Mean, Median, and Mode": {
+    page1: "In this lesson, you will learn to calculate the mean, median, and mode to describe a data set.",
+    page2: "Mean, median, and mode are all measures of center that summarize a data set with a single typical value. The mean is the average, the median is the middle value when data is ordered, and the mode is the most frequently occurring value.",
+    page3: "The rule is: for mean, add all values and divide by the count. For median, order the data and find the middle value, or average the two middle values if there's an even count. For mode, find the value(s) that appear most often.",
+    page4: "Let's find the mean, median, and mode of 4, 7, 4, 9, 6. Step 1: Mean: (4+7+4+9+6)÷5 = 30÷5 = 6. Step 2: Ordered: 4,4,6,7,9 — median is 6. Step 3: Mode is 4, since it appears twice.",
+    page5: "Now let's find the mean and median of 2, 8, 5, 11. Step 1: Mean: (2+8+5+11)÷4=26÷4=6.5. Step 2: Ordered: 2,5,8,11 — middle two are 5 and 8, so median is (5+8)÷2=6.5.",
+    page6: "A helpful trick: always order the data from least to greatest before finding the median — trying to find the middle of unordered data leads to mistakes.",
+    page7: "You learned to calculate mean (average), median (middle value), and mode (most frequent value), as in the data set 4,7,4,9,6 having a mean and median of 6 and a mode of 4."
+  },
+  "Range and Variability": {
+    page1: "In this lesson, you will learn to measure the spread of a data set using range and interquartile range.",
+    page2: "While mean, median, and mode describe the center of data, range and interquartile range (IQR) describe how spread out or variable the data is. A larger range or IQR means the data values are more spread apart.",
+    page3: "The rule is: Range = maximum value − minimum value. Interquartile range (IQR) = Q3 (upper quartile, the median of the upper half) − Q1 (lower quartile, the median of the lower half).",
+    page4: "Let's find the range of 12, 5, 9, 18, 7. Step 1: Maximum is 18, minimum is 5. Step 2: Subtract: 18-5=13. The range is 13.",
+    page5: "Now let's find the IQR of 2, 4, 5, 7, 9, 11, 12. Step 1: Median is 7, splitting into lower half (2,4,5) and upper half (9,11,12). Step 2: Q1, the median of the lower half, is 4. Q3, the median of the upper half, is 11. Step 3: IQR = 11-4=7.",
+    page6: "A helpful trick: the IQR describes the spread of the middle 50% of the data and is less affected by extreme outliers than the range is.",
+    page7: "You learned to measure data spread using range (max − min) and interquartile range (Q3 − Q1), as in a data set with a range of 13 and an IQR of 7."
+  },
+  "Dot Plots and Histograms": {
+    page1: "In this lesson, you will learn to display and interpret data using dot plots and histograms.",
+    page2: "A dot plot shows individual data values as dots above a number line, making it easy to see every data point and its frequency. A histogram groups data into equal-sized intervals called bins and uses bars to show how many values fall in each interval.",
+    page3: "The rule is: for a dot plot, place one dot above the number line for each data value, stacking dots for repeated values. For a histogram, choose equal-width intervals, count how many data values fall in each interval, and draw a bar with that height.",
+    page4: "Let's make a dot plot for test scores 80, 85, 80, 90, 85, 85. Step 1: List unique values: 80, 85, 90. Step 2: Count occurrences: 80 has 2 dots, 85 has 3 dots, 90 has 1 dot. Step 3: Stack dots above each value on the number line.",
+    page5: "Now let's build a histogram for ages 12,13,13,15,16,17,19 using bins of size 3 (12-14, 15-17, 18-20). Step 1: Count values in each bin: 12-14 has 3 values, 15-17 has 3 values, 18-20 has 1 value. Step 2: Draw bars of heights 3, 3, 1 for the three bins.",
+    page6: "A helpful trick: use a dot plot for smaller data sets where you want to see every value, and a histogram for larger data sets where grouping into bins makes the shape of the distribution clearer.",
+    page7: "You learned to create and interpret dot plots, with individual dots per value, and histograms, with bars for grouped intervals, to visualize data distributions."
+  },
+  "Grade 6 Math Review": {
+    page1: "In this lesson, you will review the key skills from Grade 6 math, including ratios, negative numbers, expressions, geometry, and statistics.",
+    page2: "Throughout Grade 6, you learned to compare quantities with ratios and rates, work with negative numbers on the coordinate plane, write and solve algebraic expressions and equations, find area and volume of shapes, and describe data using statistics.",
+    page3: "The rule is: when reviewing, revisit each unit's core method — ratio tables and unit rates, integer comparison and quadrants, inverse operations for equations, area and volume formulas, and mean/median/mode/range for data.",
+    page4: "Let's review a ratio and equation problem together. If a recipe ratio is 3 cups flour to 2 cups sugar, how much flour is needed for 8 cups of sugar? Step 1: Set up 3:2 = x:8. Step 2: Scale factor: 8÷2=4. Step 3: Multiply: 3x4=12 cups of flour.",
+    page5: "Now let's review a geometry and statistics problem. Find the area of a triangle with base 10 and height 6, then find the mean of 6, 8, and that area. Step 1: Triangle area: 1/2x10x6=30. Step 2: Mean of 6,8,30: (6+8+30)÷3=44÷3≈14.7.",
+    page6: "A helpful trick: when reviewing for a test, work one problem from every unit rather than many problems from just one unit — this builds confidence across all the year's skills.",
+    page7: "You reviewed the major Grade 6 math topics: ratios and rates, negative numbers and the coordinate plane, expressions and equations, area/surface area/volume, and statistics."
+  },
+  "Unit Rates with Fractions": {
+    page1: "In this lesson, you will learn to compute unit rates when the quantities being compared involve fractions, such as miles per hour when distance and time are both fractions.",
+    page2: "A unit rate compares a quantity to exactly 1 unit of another quantity. When the numbers involved are fractions, you find the unit rate by dividing the first fraction by the second.",
+    page3: "The rule is: to divide by a fraction, multiply by its reciprocal (flip the second fraction and multiply), then simplify the result.",
+    page4: "Let's find the unit rate if a runner covers 2/3 mile in 1/4 hour. Step 1: Set up 2/3 ÷ 1/4. Step 2: Multiply by the reciprocal: 2/3 x 4/1 = 8/3. Step 3: 8/3 = 2 2/3 miles per hour.",
+    page5: "Now let's find the unit rate if a recipe uses 3/4 cup of sugar for 1/2 of a batch. Step 1: Set up 3/4 ÷ 1/2. Step 2: Multiply by the reciprocal: 3/4 x 2/1 = 6/4. Step 3: Simplify: 6/4 = 1 1/2 cups per whole batch.",
+    page6: "A helpful trick: remember 'Keep, Change, Flip' — keep the first fraction, change division to multiplication, and flip the second fraction before multiplying.",
+    page7: "You learned to find unit rates with fractions by dividing the first quantity by the second using the reciprocal method, as in 2/3 mile ÷ 1/4 hour equaling 2 2/3 miles per hour."
+  },
+  "Identifying Proportional Relationships": {
+    page1: "In this lesson, you will learn to determine whether a relationship between two quantities is proportional using tables, graphs, or equations.",
+    page2: "A relationship is proportional if the ratio between the two quantities stays constant for every pair of values, and its graph is a straight line that passes through the origin (0, 0).",
+    page3: "The rule is: divide y by x for every pair in a table — if the ratio y/x is the same every time, the relationship is proportional; on a graph, it must be a straight line through the origin.",
+    page4: "Let's check the table x: 2, 4, 6 and y: 6, 12, 18. Step 1: Divide each pair: 6/2=3, 12/4=3, 18/6=3. Step 2: Every ratio equals 3. Step 3: Since the ratio is constant, this relationship is proportional.",
+    page5: "Now let's check the table x: 1, 2, 3 and y: 3, 5, 7. Step 1: Divide each pair: 3/1=3, 5/2=2.5, 7/3≈2.33. Step 2: The ratios are different. Step 3: Since the ratio is not constant, this relationship is not proportional.",
+    page6: "A helpful trick: a proportional graph must pass through the origin — if the line crosses the y-axis anywhere other than (0,0), it is not proportional, even if it's straight.",
+    page7: "You learned to identify proportional relationships by checking that y/x is constant across all pairs and that the graph passes through the origin."
+  },
+  "Constant of Proportionality": {
+    page1: "In this lesson, you will learn to identify the constant of proportionality, k, in tables, graphs, and equations of the form y = kx.",
+    page2: "The constant of proportionality is the fixed number that relates x and y in a proportional relationship. It represents how much y changes for every one unit of x, just like a unit rate.",
+    page3: "The rule is: from a table, divide any y value by its matching x value (k = y/x); from a graph, use rise over run between any point and the origin; from an equation y = kx, k is the number multiplying x.",
+    page4: "Let's find k from the table x: 3, 6, 9 and y: 12, 24, 36. Step 1: Pick a pair, like x=3, y=12. Step 2: Divide: k = 12/3 = 4. Step 3: The equation is y = 4x.",
+    page5: "Now let's find k from a graph that passes through the point (5, 15). Step 1: Divide y by x: k = 15/5 = 3. Step 2: The equation is y = 3x. Step 3: This means y increases by 3 for every 1 unit increase in x.",
+    page6: "A helpful trick: the constant of proportionality is exactly the same idea as a unit rate — it tells you 'how much y for every 1 x.'",
+    page7: "You learned to find the constant of proportionality k from tables, graphs, and equations, always by dividing a y value by its matching x value."
+  },
+  "Graphing Proportional Relationships": {
+    page1: "In this lesson, you will learn to graph proportional relationships and interpret the unit rate as the slope of the line.",
+    page2: "A proportional relationship graphs as a straight line that passes through the origin. The steepness of the line, called the slope, is equal to the constant of proportionality k.",
+    page3: "The rule is: to graph y = kx, plot the origin (0,0) first, then use k as rise over run to plot a second point, and draw a straight line through both points.",
+    page4: "Let's graph y = 2x. Step 1: Plot the origin (0,0). Step 2: Since k=2, move right 1 and up 2 to plot (1,2). Step 3: Draw a straight line through (0,0) and (1,2), extending in both directions.",
+    page5: "Now let's find k from a graph that passes through (0,0) and (4,12). Step 1: Rise/run = 12/4. Step 2: Simplify: k = 3. Step 3: The equation is y = 3x, meaning the line rises 3 units for every 1 unit across.",
+    page6: "A helpful trick: always check that the line passes through the origin before calling it proportional — a straight line that misses (0,0) is not a proportional relationship.",
+    page7: "You learned to graph proportional relationships as straight lines through the origin and to read the unit rate as the slope, or steepness, of that line."
+  },
+  "Proportion Word Problems": {
+    page1: "In this lesson, you will learn to solve multi-step real-world ratio and percent problems by setting up and solving proportions.",
+    page2: "A proportion is an equation stating that two ratios are equal. Many real-world problems, like scaling recipes or converting map distances, can be solved by setting up a proportion and solving for the unknown.",
+    page3: "The rule is: write two equal ratios with matching units in the same position, then cross multiply (multiply diagonally) and solve for the unknown variable.",
+    page4: "Let's solve: if 3 pens cost $6, how much do 8 pens cost? Step 1: Set up 3 pens/$6 = 8 pens/x. Step 2: Cross multiply: 3x = 6 x 8 = 48. Step 3: Divide: x = 48 ÷ 3 = $16.",
+    page5: "Now let's solve: a map has a scale of 1 inch to 25 miles. Two cities are 4.5 inches apart on the map. Step 1: Set up 1 inch/25 miles = 4.5 inches/x. Step 2: Cross multiply: x = 4.5 x 25. Step 3: x = 112.5 miles.",
+    page6: "A helpful trick: label the units in both ratios the same way, like 'pens over dollars' in both spots, so your proportion isn't set up upside down.",
+    page7: "You learned to solve proportion word problems by setting up two equal ratios with matching units and cross multiplying to find the unknown value."
+  },
+  "Adding and Subtracting Integers": {
+    page1: "In this lesson, you will learn to add and subtract positive and negative integers using number line models.",
+    page2: "Integers include positive numbers, negative numbers, and zero. On a number line, adding a positive number moves right, adding a negative number moves left, and subtracting is the same as adding the opposite.",
+    page3: "The rule is: for same signs, add the absolute values and keep that sign; for different signs, subtract the smaller absolute value from the larger and keep the sign of the number with the greater absolute value.",
+    page4: "Let's solve -5 + 8. Step 1: The signs are different, so subtract: 8 - 5 = 3. Step 2: Keep the sign of the number with the larger absolute value, which is 8 (positive). Step 3: The answer is 3.",
+    page5: "Now let's solve -3 - 7. Step 1: Rewrite subtraction as adding the opposite: -3 + (-7). Step 2: Same signs, so add: 3 + 7 = 10. Step 3: Keep the negative sign: the answer is -10.",
+    page6: "A helpful trick: 'same signs, add and keep; different signs, subtract and keep the sign of the bigger number' — say this rule out loud every time you add or subtract integers.",
+    page7: "You learned to add and subtract integers using number line reasoning, including rewriting subtraction as adding the opposite, as in -3 - 7 becoming -3 + (-7) = -10."
+  },
+  "Multiplying and Dividing Integers": {
+    page1: "In this lesson, you will learn to multiply and divide integers and apply the rules for determining the sign of the result.",
+    page2: "When multiplying or dividing integers, the sign of the answer depends only on the signs of the numbers involved, not their size.",
+    page3: "The rule is: multiply or divide the absolute values first, then apply the sign rule — same signs give a positive result, different signs give a negative result.",
+    page4: "Let's solve -6 x 4. Step 1: Multiply the absolute values: 6 x 4 = 24. Step 2: The signs are different (negative and positive). Step 3: The answer is -24.",
+    page5: "Now let's solve -36 ÷ -9. Step 1: Divide the absolute values: 36 ÷ 9 = 4. Step 2: The signs are the same (both negative). Step 3: The answer is 4.",
+    page6: "A helpful trick: count the number of negative signs in the problem — an even number of negatives gives a positive answer, and an odd number of negatives gives a negative answer.",
+    page7: "You learned to multiply and divide integers by finding the answer's magnitude first, then applying the sign rule: same signs make a positive result, different signs make a negative result."
+  },
+  "Adding and Subtracting Rational Numbers": {
+    page1: "In this lesson, you will learn to add and subtract rational numbers, including fractions, decimals, and negative numbers.",
+    page2: "Rational numbers include integers, fractions, and decimals. Adding and subtracting them uses the same sign rules as integers, combined with finding common denominators for fractions or aligning decimal points for decimals.",
+    page3: "The rule is: convert fractions to a common denominator before adding or subtracting, align decimal points for decimals, and apply the same-sign/different-sign rules for integers throughout.",
+    page4: "Let's solve -1/2 + 3/4. Step 1: Find a common denominator: 4. Step 2: Rewrite -1/2 as -2/4. Step 3: Add: -2/4 + 3/4 = 1/4.",
+    page5: "Now let's solve -2.5 - 1.75. Step 1: Rewrite as adding the opposite: -2.5 + (-1.75). Step 2: Same signs, so add the magnitudes: 2.5 + 1.75 = 4.25. Step 3: Keep the negative sign: the answer is -4.25.",
+    page6: "A helpful trick: treat subtraction of rational numbers exactly like integers — rewrite it as 'adding the opposite' before you do anything else.",
+    page7: "You learned to add and subtract rational numbers by finding common denominators or aligning decimals and applying integer sign rules, as in -2.5 - 1.75 = -4.25."
+  },
+  "Multiplying and Dividing Rational Numbers": {
+    page1: "In this lesson, you will learn to multiply and divide rational numbers and interpret the sign of the result.",
+    page2: "Multiplying and dividing fractions, decimals, and negative numbers follows the same sign rules as integers: same signs give a positive result, different signs give a negative result.",
+    page3: "The rule is: multiply numerators and denominators for fractions (or multiply decimals normally), then apply the sign rule based on how many negative numbers are involved.",
+    page4: "Let's solve -2/3 x 3/5. Step 1: Multiply numerators: -2 x 3 = -6. Step 2: Multiply denominators: 3 x 5 = 15. Step 3: Simplify -6/15 to -2/5.",
+    page5: "Now let's solve -0.4 x -5. Step 1: Multiply the magnitudes: 0.4 x 5 = 2. Step 2: Both signs are negative, so the result is positive. Step 3: The answer is 2.",
+    page6: "A helpful trick: simplify or cancel common factors in fractions before multiplying — it keeps the numbers smaller and easier to work with.",
+    page7: "You learned to multiply and divide rational numbers by computing the magnitude first and then applying the sign rule, as in -0.4 x -5 = 2 because two negatives make a positive."
+  },
+  "Rational Number Word Problems": {
+    page1: "In this lesson, you will learn to solve real-world problems involving all four operations — addition, subtraction, multiplication, and division — with rational numbers.",
+    page2: "Real-world situations like temperature changes, elevation, and money often require combining several operations with positive and negative rational numbers.",
+    page3: "The rule is: identify the operation from context clues (gain/loss, above/below, total, split evenly), translate the situation into a numeric expression, and compute carefully while tracking signs.",
+    page4: "Let's solve: the temperature was -4°F and rose 9°F. Step 1: Rising means adding. Step 2: -4 + 9 = 5. Step 3: The new temperature is 5°F.",
+    page5: "Now let's solve: a submarine at -120 feet dives to 3 times its depth. Step 1: 'Times its depth' means multiply. Step 2: -120 x 3 = -360. Step 3: The submarine is now at -360 feet.",
+    page6: "A helpful trick: sketch a quick number line or vertical scale for elevation and temperature problems — seeing the direction of change helps you pick the right operation.",
+    page7: "You learned to solve rational number word problems by identifying the correct operation from context and computing with careful attention to sign, as in -120 feet x 3 = -360 feet."
+  },
+  "Simplifying Expressions with Rational Coefficients": {
+    page1: "In this lesson, you will learn to simplify linear expressions that have rational (fraction or decimal) coefficients by combining like terms.",
+    page2: "Like terms share the same variable raised to the same power. To simplify an expression, combine the coefficients of like terms, even when those coefficients are fractions or decimals.",
+    page3: "The rule is: use the distributive property to remove any parentheses first, then add or subtract the coefficients of like terms, keeping the variable part unchanged.",
+    page4: "Let's simplify 1/2x + 3 - 1/4x + 5. Step 1: Combine the x terms: 1/2x - 1/4x = 1/4x. Step 2: Combine the constants: 3 + 5 = 8. Step 3: The simplified expression is 1/4x + 8.",
+    page5: "Now let's simplify 0.5(4x - 6) + 2x. Step 1: Distribute 0.5: 0.5(4x) - 0.5(6) = 2x - 3. Step 2: Combine with the remaining term: 2x - 3 + 2x. Step 3: Add like terms: 4x - 3.",
+    page6: "A helpful trick: find a common denominator for fraction coefficients the same way you would when adding two fractions — it makes combining like terms much easier.",
+    page7: "You learned to simplify expressions with rational coefficients by distributing first and then combining like terms, as in 1/2x - 1/4x + 8 = 1/4x + 8."
+  },
+  "Factoring Expressions": {
+    page1: "In this lesson, you will learn to factor linear expressions by pulling out the greatest common factor using the distributive property.",
+    page2: "Factoring is the reverse of distributing. Instead of multiplying a number through parentheses, you find a common factor shared by every term and write it outside the parentheses.",
+    page3: "The rule is: find the greatest common factor (GCF) of all the coefficients (and any shared variable), then write the expression as GCF times the sum or difference of the remaining terms.",
+    page4: "Let's factor 6x + 9. Step 1: Find the GCF of 6 and 9, which is 3. Step 2: Divide each term by 3: 6x÷3=2x and 9÷3=3. Step 3: Write it as 3(2x + 3).",
+    page5: "Now let's factor 12x - 18y. Step 1: Find the GCF of 12 and 18, which is 6. Step 2: Divide each term by 6: 12x÷6=2x and 18y÷6=3y. Step 3: Write it as 6(2x - 3y).",
+    page6: "A helpful trick: check your factoring by distributing the factored form back out — it should exactly match the original expression.",
+    page7: "You learned to factor expressions by finding the greatest common factor and writing it outside parentheses, as in 6x + 9 factoring to 3(2x + 3)."
+  },
+  "Solving Multi-Step Equations": {
+    page1: "In this lesson, you will learn to solve multi-step equations that involve rational numbers, combining like terms and using inverse operations.",
+    page2: "A multi-step equation often requires simplifying each side first — by distributing or combining like terms — before you can isolate the variable using inverse operations.",
+    page3: "The rule is: simplify both sides of the equation completely, then undo operations in reverse order (addition/subtraction, then multiplication/division) to isolate the variable, doing the same thing to both sides.",
+    page4: "Let's solve 2x + 5 = 17. Step 1: Subtract 5 from both sides: 2x = 12. Step 2: Divide both sides by 2: x = 6. Step 3: Check: 2(6)+5=17. ✓",
+    page5: "Now let's solve 3(x - 2) = 15. Step 1: Distribute: 3x - 6 = 15. Step 2: Add 6 to both sides: 3x = 21. Step 3: Divide by 3: x = 7.",
+    page6: "A helpful trick: always simplify and distribute completely before you start moving terms across the equal sign — it prevents careless errors.",
+    page7: "You learned to solve multi-step equations by simplifying each side and then applying inverse operations, as in 3(x-2)=15 giving x=7."
+  },
+  "Equations with Variables on Both Sides": {
+    page1: "In this lesson, you will learn to solve equations that have variable terms on both sides of the equal sign.",
+    page2: "When variables appear on both sides of an equation, you first need to move all the variable terms to one side by adding or subtracting the same term from both sides.",
+    page3: "The rule is: choose one side to move the variable terms to, add or subtract that term from both sides to eliminate it from the other side, then solve the resulting one-variable equation.",
+    page4: "Let's solve 5x + 3 = 2x + 12. Step 1: Subtract 2x from both sides: 3x + 3 = 12. Step 2: Subtract 3: 3x = 9. Step 3: Divide by 3: x = 3.",
+    page5: "Now let's solve 7 - 2x = 3x - 8. Step 1: Add 2x to both sides: 7 = 5x - 8. Step 2: Add 8 to both sides: 15 = 5x. Step 3: Divide by 5: x = 3.",
+    page6: "A helpful trick: move the variable term with the smaller coefficient — it keeps your remaining coefficient positive and easier to work with.",
+    page7: "You learned to solve equations with variables on both sides by collecting all variable terms on one side first, as in 5x+3=2x+12 giving x=3."
+  },
+  "Translating Word Problems into Equations": {
+    page1: "In this lesson, you will learn to translate real-world word problems into algebraic equations and then solve them.",
+    page2: "Key phrases in word problems map to math operations: 'more than' and 'sum' mean addition, 'less than' means subtraction (in reverse order), 'times' or 'product' means multiplication, and 'is' means equals.",
+    page3: "The rule is: define a variable for the unknown quantity, translate the sentence into an equation phrase by phrase, then solve the equation using inverse operations.",
+    page4: "Let's translate and solve: 'Five more than twice a number is 17.' Step 1: Let n be the number: 2n + 5 = 17. Step 2: Subtract 5: 2n = 12. Step 3: Divide by 2: n = 6.",
+    page5: "Now let's translate and solve: 'Three less than a number, divided by 4, is 5.' Step 1: (n - 3)/4 = 5. Step 2: Multiply both sides by 4: n - 3 = 20. Step 3: Add 3: n = 23.",
+    page6: "A helpful trick: watch out for 'less than,' which reverses the order — 'three less than n' means n - 3, not 3 - n.",
+    page7: "You learned to translate word problems into equations using key phrases and then solve them, as in 'five more than twice a number is 17' becoming 2n+5=17 with n=6."
+  },
+  "Solving Inequalities": {
+    page1: "In this lesson, you will learn to solve multi-step inequalities and correctly interpret the solution set.",
+    page2: "Inequalities compare expressions using <, >, ≤, or ≥ instead of an equal sign. You solve them almost the same way as equations, using inverse operations to isolate the variable.",
+    page3: "The rule is: isolate the variable using inverse operations just like an equation, but flip the inequality symbol whenever you multiply or divide both sides by a negative number.",
+    page4: "Let's solve 3x - 4 < 11. Step 1: Add 4 to both sides: 3x < 15. Step 2: Divide both sides by 3: x < 5. Step 3: The solution is all numbers less than 5.",
+    page5: "Now let's solve -2x + 6 ≥ 10. Step 1: Subtract 6 from both sides: -2x ≥ 4. Step 2: Divide both sides by -2 and flip the sign: x ≤ -2. Step 3: The solution is all numbers less than or equal to -2.",
+    page6: "A helpful trick: whenever you multiply or divide by a negative number, immediately flip the inequality sign — it's the one rule that's different from solving equations.",
+    page7: "You learned to solve multi-step inequalities using inverse operations, remembering to flip the inequality sign when multiplying or dividing by a negative, as in -2x+6≥10 giving x≤-2."
+  },
+  "Graphing Inequality Solutions": {
+    page1: "In this lesson, you will learn to graph the solution set of an inequality on a number line.",
+    page2: "The solution to an inequality is a whole range of values, shown on a number line as a ray or segment. An open circle means the boundary point is not included, and a closed circle means it is included.",
+    page3: "The rule is: plot the boundary value with an open circle for < or > and a closed circle for ≤ or ≥, then shade the direction of the number line that satisfies the inequality.",
+    page4: "Let's graph x > 3. Step 1: Since it's strictly greater than, use an open circle at 3. Step 2: Shade to the right, toward larger numbers. Step 3: The arrow points right, showing all numbers greater than 3.",
+    page5: "Now let's graph x ≤ -2. Step 1: Since it includes -2, use a closed (filled-in) circle at -2. Step 2: Shade to the left, toward smaller numbers. Step 3: The arrow points left, showing all numbers less than or equal to -2.",
+    page6: "A helpful trick: a closed circle 'closes the deal' — it means the boundary number is included because the inequality has an 'or equal to' part.",
+    page7: "You learned to graph inequality solutions using open circles for strict inequalities and closed circles for 'or equal to' inequalities, shading in the correct direction."
+  },
+  "Percent Increase and Decrease": {
+    page1: "In this lesson, you will learn to solve problems involving percent increase and percent decrease.",
+    page2: "Percent change compares how much a quantity has changed to its original amount, expressed as a percent. An increase makes the quantity larger, and a decrease makes it smaller.",
+    page3: "The rule is: find the percent amount by multiplying the percent (as a decimal) by the original number, then add that amount for an increase or subtract it for a decrease.",
+    page4: "Let's solve: a $40 shirt increases in price by 25%. Step 1: Find 25% of 40: 0.25 x 40 = 10. Step 2: Add to the original: 40 + 10 = 50. Step 3: The new price is $50.",
+    page5: "Now let's solve: a population of 200 decreases by 15%. Step 1: Find 15% of 200: 0.15 x 200 = 30. Step 2: Subtract from the original: 200 - 30 = 170. Step 3: The new population is 170.",
+    page6: "A helpful trick: to increase by a percent in one step, multiply by (1 + the decimal percent); to decrease, multiply by (1 - the decimal percent) — for example, 40 x 1.25 = 50 directly.",
+    page7: "You learned to solve percent increase and decrease problems by finding the percent amount and adding or subtracting it from the original, as in a $40 shirt increasing 25% to $50."
+  },
+  "Simple Interest": {
+    page1: "In this lesson, you will learn to calculate simple interest using the formula I = prt, where p is principal, r is rate, and t is time.",
+    page2: "Simple interest is the amount of money earned or owed on a principal (starting) amount over a period of time, at a fixed interest rate, without compounding.",
+    page3: "The rule is: convert the interest rate to a decimal, then multiply principal x rate x time (in years) to find the interest earned or owed; add the interest to the principal to find the total amount.",
+    page4: "Let's find the interest on $500 at 4% annual interest for 3 years. Step 1: Convert 4% to 0.04. Step 2: Multiply: I = 500 x 0.04 x 3. Step 3: I = $60.",
+    page5: "Now let's find the total amount owed on $1200 at 5% interest for 2 years. Step 1: Find the interest: I = 1200 x 0.05 x 2 = $120. Step 2: Add to the principal: 1200 + 120. Step 3: The total amount is $1320.",
+    page6: "A helpful trick: always convert the percent rate to a decimal (divide by 100) before plugging it into the I = prt formula.",
+    page7: "You learned to calculate simple interest using I = prt, as in $500 at 4% for 3 years earning $60 in interest."
+  },
+  "Percent Word Problems": {
+    page1: "In this lesson, you will learn to solve multi-step real-world percent problems, including tax, tip, and discount.",
+    page2: "Percent problems in daily life often start with a base price and require adding a percent for tax or tip, or subtracting a percent for a discount, to find the final amount.",
+    page3: "The rule is: find the percent amount by multiplying the percent (as a decimal) by the base price, then add that amount for tax/tip or subtract it for a discount.",
+    page4: "Let's solve: a $60 meal has an 18% tip. Step 1: Find 18% of 60: 0.18 x 60 = 10.80. Step 2: Add to the base: 60 + 10.80. Step 3: The total is $70.80.",
+    page5: "Now let's solve: an $80 jacket is 30% off. Step 1: Find 30% of 80: 0.30 x 80 = 24. Step 2: Subtract from the base: 80 - 24. Step 3: The sale price is $56.",
+    page6: "A helpful trick: for tax or tip, multiply the base price by (1 + the percent); for a discount, multiply by (1 - the percent) — this finds the final amount in a single step.",
+    page7: "You learned to solve multi-step percent word problems involving tax, tip, and discount by finding the percent amount and adding or subtracting it from the base price."
+  },
+  "Scale Drawings": {
+    page1: "In this lesson, you will learn to compute actual lengths and areas from a scale drawing using a given scale factor.",
+    page2: "A scale drawing represents a real object or space with lengths that are proportional to the actual lengths, connected by a scale such as 1 inch to 5 miles.",
+    page3: "The rule is: set up a proportion between the scale measurement and the actual measurement, keeping units consistent, then cross multiply or use the scale factor to solve for the unknown length.",
+    page4: "Let's solve: a scale is 1 cm to 5 m. A wall measures 8 cm on the drawing. Step 1: Set up 1 cm/5 m = 8 cm/x. Step 2: Cross multiply: x = 8 x 5. Step 3: The actual wall is 40 m long.",
+    page5: "Now let's solve: a scale factor is 1:200, and a room is actually 12 m long. Step 1: Set up actual length ÷ scale factor: 12 ÷ 200. Step 2: Compute: 0.06 m. Step 3: On the drawing, the room is 6 cm long.",
+    page6: "A helpful trick: if lengths scale by a factor k, area scales by k² — so doubling the scale factor of a drawing multiplies the represented area by 4, not 2.",
+    page7: "You learned to compute actual and scaled lengths from a scale drawing by setting up and solving a proportion based on the given scale."
+  },
+  "Circumference and Area of Circles": {
+    page1: "In this lesson, you will learn to find the circumference and area of circles using either the radius or the diameter.",
+    page2: "Circumference is the distance around a circle, and area is the space inside it. Both formulas depend on the radius (the distance from the center to the edge) and the constant π, which is approximately 3.14.",
+    page3: "The rule is: circumference C = 2πr (or C = πd, since diameter is twice the radius); area A = πr².",
+    page4: "Let's find the circumference and area of a circle with radius 5. Step 1: Circumference: C = 2π(5) = 10π ≈ 31.4. Step 2: Area: A = π(5)² = 25π ≈ 78.5. Step 3: So C ≈ 31.4 units and A ≈ 78.5 square units.",
+    page5: "Now let's find the circumference and area of a circle with diameter 12 (radius 6). Step 1: Circumference: C = π(12) = 12π ≈ 37.68. Step 2: Area: A = π(6)² = 36π ≈ 113.04. Step 3: So C ≈ 37.68 units and A ≈ 113.04 square units.",
+    page6: "A helpful trick: circumference uses the radius to the first power (2πr), but area uses the radius squared (πr²) — don't accidentally square the radius when finding circumference.",
+    page7: "You learned to find the circumference and area of circles using C = 2πr and A = πr², given either the radius or diameter."
+  },
+  "Angle Relationships": {
+    page1: "In this lesson, you will learn to use facts about supplementary, complementary, vertical, and adjacent angles to solve for unknown angle measures.",
+    page2: "Complementary angles add up to 90°, supplementary angles add up to 180°, vertical angles (formed by intersecting lines) are always equal, and adjacent angles share a common ray and vertex.",
+    page3: "The rule is: identify the angle relationship shown in the diagram or description, then write an equation using the sum (90° or 180°) or the equality of vertical angles, and solve for the unknown.",
+    page4: "Let's solve: two angles are complementary, and one measures 35°. Step 1: Complementary angles sum to 90°. Step 2: Set up 35 + x = 90. Step 3: Subtract 35: x = 55°.",
+    page5: "Now let's solve: two supplementary angles measure 3x and 2x + 30. Step 1: Supplementary angles sum to 180°: 3x + 2x + 30 = 180. Step 2: Combine like terms: 5x + 30 = 180. Step 3: Subtract 30 and divide by 5: x = 30, so the angles are 90° and 90°.",
+    page6: "A helpful trick: remember 'Complementary = Corner (90°)' and 'Supplementary = Straight (180°)' — C comes before S alphabetically, just like 90 comes before 180 numerically.",
+    page7: "You learned to use complementary, supplementary, and vertical angle relationships to write equations and solve for unknown angle measures."
+  },
+  "Cross-Sections of 3D Figures": {
+    page1: "In this lesson, you will learn to describe the two-dimensional cross-sections formed when a three-dimensional figure is sliced by a plane.",
+    page2: "A cross-section is the flat, 2D shape you see when you slice through a solid. The shape of the cross-section depends on the solid's shape and the direction of the slice.",
+    page3: "The rule is: picture the plane cutting through the solid — parallel to the base, perpendicular to the base, or at an angle — and identify the outline exposed at that cut.",
+    page4: "Let's find the cross-section of a rectangular prism sliced parallel to its base. Step 1: The base is a rectangle. Step 2: Slicing parallel to it exposes the same shape. Step 3: The cross-section is a rectangle.",
+    page5: "Now let's find the cross-sections of a cone sliced two different ways. Step 1: Slicing parallel to the circular base gives a circle. Step 2: Slicing straight down through the apex gives a triangle. Step 3: The same solid can have different cross-sections depending on the slice direction.",
+    page6: "A helpful trick: imagine slicing a loaf of bread — the shape of each slice depends entirely on the angle of the knife relative to the loaf.",
+    page7: "You learned to describe the 2D cross-sections created by slicing 3D figures, and that the direction of the slice determines the resulting shape."
+  },
+  "Surface Area and Volume of Solids": {
+    page1: "In this lesson, you will learn to solve real-world problems involving the surface area and volume of prisms and pyramids.",
+    page2: "Surface area is the total area of all the outer faces of a solid, while volume is the amount of space inside it. Each type of solid has its own formulas for these measurements.",
+    page3: "The rule is: for prisms, surface area equals the sum of the areas of all faces (found using a net), and volume equals base area times height; for pyramids, volume equals 1/3 times base area times height.",
+    page4: "Let's find the surface area and volume of a rectangular prism with length 4, width 3, and height 5. Step 1: Surface area: SA = 2(4x3 + 4x5 + 3x5) = 2(12+20+15) = 2(47) = 94 square units. Step 2: Volume: V = 4x3x5 = 60 cubic units.",
+    page5: "Now let's find the volume of a square pyramid with base side 6 and height 8. Step 1: Base area: 6x6=36. Step 2: Volume: V = 1/3 x 36 x 8. Step 3: V = 96 cubic units.",
+    page6: "A helpful trick: to find surface area, imagine unfolding the solid into its flat net — then just add up the area of each individual flat shape.",
+    page7: "You learned to find the surface area and volume of prisms and pyramids using nets and the formulas V = Bh for prisms and V = 1/3 Bh for pyramids."
+  },
+  "Probability of Simple Events": {
+    page1: "In this lesson, you will learn to find the probability of a simple event and express it as a fraction, decimal, and percent.",
+    page2: "Probability measures how likely an event is to happen. It is calculated by comparing the number of favorable outcomes to the total number of possible outcomes.",
+    page3: "The rule is: P(event) = number of favorable outcomes ÷ total number of possible outcomes; this fraction can be converted to a decimal or percent.",
+    page4: "Let's find the probability of drawing a red marble from a bag with 3 red and 5 blue marbles. Step 1: Total marbles: 3+5=8. Step 2: Favorable outcomes: 3 red. Step 3: P(red) = 3/8 = 0.375 = 37.5%.",
+    page5: "Now let's find the probability of rolling a number greater than 4 on a standard die. Step 1: Total outcomes: 6. Step 2: Favorable outcomes: 5 and 6, so 2 outcomes. Step 3: P = 2/6 = 1/3 ≈ 33.3%.",
+    page6: "A helpful trick: probability is always between 0 (impossible) and 1 (certain) — if your calculated probability falls outside that range, recheck your work.",
+    page7: "You learned to find the probability of simple events as a fraction, decimal, and percent by dividing favorable outcomes by total possible outcomes."
+  },
+  "Experimental vs Theoretical Probability": {
+    page1: "In this lesson, you will learn to compare experimental probability, based on actual trial results, with theoretical probability, based on mathematical reasoning.",
+    page2: "Theoretical probability is calculated using a formula based on all possible equally likely outcomes. Experimental probability is calculated from the results of actually performing trials or observations.",
+    page3: "The rule is: theoretical probability = favorable outcomes ÷ total possible outcomes; experimental probability = number of times the event occurred ÷ total number of trials conducted.",
+    page4: "Let's compare: a coin is flipped 50 times and lands heads 28 times. Step 1: Experimental P(heads) = 28/50 = 0.56. Step 2: Theoretical P(heads) = 1/2 = 0.5. Step 3: The experimental result is close to, but not exactly, the theoretical probability.",
+    page5: "Now let's compare a 4-section spinner. Step 1: Theoretical P(section 1) = 1/4 = 0.25. Step 2: In 20 spins, section 1 came up 7 times: experimental P = 7/20 = 0.35. Step 3: The experimental probability differs from theoretical because of chance in a limited number of trials.",
+    page6: "A helpful trick: the more trials you run, the closer the experimental probability tends to get to the theoretical probability — this is called the law of large numbers.",
+    page7: "You learned to compare experimental probability, based on trial results, with theoretical probability, based on calculation, and that more trials bring them closer together."
+  },
+  "Compound Events": {
+    page1: "In this lesson, you will learn to find the probability of compound events, which involve two or more simple events, using organized lists and tree diagrams.",
+    page2: "A compound event happens when two or more simple events occur together, such as flipping a coin and rolling a die at the same time.",
+    page3: "The rule is: list all possible outcomes using a tree diagram or organized list, then find P(compound event) = favorable combined outcomes ÷ total combined outcomes; for independent events, you can also multiply the individual probabilities.",
+    page4: "Let's find the probability of flipping heads and rolling a 6. Step 1: P(heads) = 1/2. Step 2: P(rolling a 6) = 1/6. Step 3: Since the events are independent, multiply: 1/2 x 1/6 = 1/12.",
+    page5: "Now let's find the probability that two spinners, each with 3 equal sections (A, B, C), both land on A. Step 1: Total combined outcomes: 3 x 3 = 9. Step 2: Favorable outcome: only (A, A), so 1 outcome. Step 3: P = 1/9, which matches 1/3 x 1/3.",
+    page6: "A helpful trick: for independent events, the word 'and' means multiply — just multiply the individual probabilities together to get the compound probability.",
+    page7: "You learned to find the probability of compound events using tree diagrams, organized lists, and by multiplying individual probabilities for independent events."
+  },
+  "Sampling and Populations": {
+    page1: "In this lesson, you will learn to use random sampling to draw reasonable inferences about a larger population.",
+    page2: "A population is the entire group being studied, while a sample is a smaller, randomly selected subset used to estimate characteristics of that population without surveying everyone.",
+    page3: "The rule is: a random sample should fairly represent the population; use the sample's proportion or statistic to estimate the same measure for the whole population, and larger random samples tend to give more reliable estimates.",
+    page4: "Let's solve: a random sample of 50 students from a school of 800 shows 30 prefer pizza. Step 1: Find the sample proportion: 30/50 = 0.6. Step 2: Apply that proportion to the population: 0.6 x 800. Step 3: About 480 students in the whole school likely prefer pizza.",
+    page5: "Now let's solve: two random samples of 40 fish from a lake found average lengths of 12 inches and 13 inches. Step 1: Compare the two sample means: 12 in. and 13 in. Step 2: Since they are close together, they suggest a consistent estimate. Step 3: The lake's fish are likely typically around 12 to 13 inches long.",
+    page6: "A helpful trick: a sample must be both random and large enough to fairly represent the population — a small or biased sample can lead to misleading conclusions.",
+    page7: "You learned to use random samples to estimate characteristics of a larger population, and that larger, truly random samples produce more reliable estimates."
+  },
+  "Grade 7 Math Review": {
+    page1: "In this lesson, you will review the key skills from Grade 7 math, including proportional relationships, rational numbers, equations, inequalities, percent, geometry, and probability.",
+    page2: "Throughout Grade 7, you learned to identify and graph proportional relationships, add/subtract/multiply/divide rational numbers, solve multi-step equations and inequalities, solve percent and interest problems, find measurements of circles and solids, and calculate probability of simple and compound events.",
+    page3: "The rule is: when reviewing, revisit each unit's core method — constant of proportionality for ratios, sign rules for rational numbers, inverse operations for equations and inequalities, percent formulas, circle and solid formulas, and favorable-over-total for probability.",
+    page4: "Let's review a proportion and equation problem together. If 3 notebooks cost $12, and a solved equation for the total cost of n notebooks is c = 4n, find the cost of 7 notebooks. Step 1: Unit rate: 12÷3=4. Step 2: c = 4(7). Step 3: c = $28.",
+    page5: "Now let's review a geometry and probability problem. Find the area of a circle with radius 4, then find the probability of rolling a number less than that area's tens digit on a die. Step 1: Area: π(4)²=16π≈50.24. Step 2: Tens digit context aside, practice reading such combined problems slowly, one step at a time. Step 3: This kind of multi-step reasoning is exactly what a review should reinforce.",
+    page6: "A helpful trick: when reviewing for a test, work one problem from every unit rather than many problems from just one unit — this builds confidence across the whole year's skills.",
+    page7: "You reviewed the major Grade 7 math topics: proportional relationships, operations with rational numbers, expressions and equations, inequalities and percent, geometry, and probability and statistics."
   }
 };
 if (typeof module !== 'undefined') module.exports = MATH_LESSON_CONTENT;

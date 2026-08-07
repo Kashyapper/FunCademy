@@ -997,6 +997,548 @@ const ELA_LESSON_CONTENT = {
     page5: "Now let's review three science texts on ecosystems, each with a different focus. Step 1: Note the unique facts from each. Step 2: Synthesize them into one complete overview of ecosystems.",
     page6: "A helpful trick: when synthesizing multiple texts with different points of view, note where they agree AND where they disagree — both are valuable in building a full picture.",
     page7: "You reviewed analyzing point of view, comparing text structures, and synthesizing information from multiple texts."
+  },
+
+  // ===================== GRADE 6 =====================
+  "Identifying Theme": {
+    page1: "In this lesson, you will learn to identify the theme of a story — the deeper message or life lesson the author wants readers to take away.",
+    page2: "A theme is different from a topic or a summary. The topic of a story might be 'a girl learning to skateboard,' but the theme is the bigger idea about life that the story teaches, like 'practice and patience lead to growth.'",
+    page3: "The rule is: look at what the main character learns or how they change, notice ideas that repeat throughout the story, and then state that lesson as a general sentence about life — not about one specific character.",
+    page4: "Let's find the theme of a story where a boy cheats on a test, feels guilty all week, and finally confesses to his teacher and feels relieved. Step 1: The boy changes from dishonest to honest. Step 2: He feels better after telling the truth. Step 3: The theme is 'honesty brings peace of mind, even when it's hard.'",
+    page5: "Now let's find the theme of a story where a slow, steady tortoise beats a fast but overconfident hare in a race. Step 1: The hare loses because he stopped to nap. Step 2: The tortoise wins by staying steady. Step 3: The theme is 'slow, steady effort can beat natural talent that isn't used well.'",
+    page6: "A helpful trick: ask yourself, 'What did the main character learn by the end?' Then turn that lesson into a sentence that could apply to anyone's life, not just the character in the book.",
+    page7: "You learned to identify a story's theme by examining how the main character changes and turning that lesson into a general statement about life."
+  },
+  "Plot Structure": {
+    page1: "In this lesson, you will learn the five parts of plot structure: exposition, rising action, climax, falling action, and resolution.",
+    page2: "The exposition introduces the characters and setting. The rising action builds tension through a series of events. The climax is the turning point, the moment of highest tension. The falling action shows what happens right after, and the resolution wraps up the story.",
+    page3: "The rule is: to find the climax, look for the single most tense or exciting moment where the outcome of the whole story is decided — everything before that moment is rising action, and everything after is falling action and resolution.",
+    page4: "Let's map the plot of a story about a hiker lost in the woods. Step 1 (exposition): a hiker sets off on a trail. Step 2 (rising action): he takes a wrong turn and the sun starts setting. Step 3 (climax): he finds a ranger station just as it gets dark. Step 4 (resolution): he is safely reunited with his family.",
+    page5: "Now let's map the plot of a story about a soccer team's championship game. Step 1 (exposition): the team practices all season. Step 2 (rising action): they fall behind in the final game. Step 3 (climax): a player scores the tying goal in the last minute. Step 4 (resolution): the team celebrates their hard-earned tie.",
+    page6: "A helpful trick: picture the plot as a mountain — you climb up through the rising action, reach the peak at the climax, and come back down through the falling action to the resolution.",
+    page7: "You learned the five parts of plot structure — exposition, rising action, climax, falling action, and resolution — and how to map a story onto that structure."
+  },
+  "Character Development": {
+    page1: "In this lesson, you will learn to track character development — how a character's traits, beliefs, or behavior change over the course of a story.",
+    page2: "A dynamic character changes in an important way by the end of the story, while a static character stays essentially the same. Authors reveal character development through a character's actions, dialogue, thoughts, and how other characters react to them.",
+    page3: "The rule is: compare the character at the beginning of the story to the character at the end, and identify the key event or 'turning point' that caused the change.",
+    page4: "Let's track a character in a story where a shy student refuses to speak in class, then slowly gains confidence after a kind teacher encourages her, and finally gives a class presentation by the end. Step 1: Beginning trait — shy and silent. Step 2: Turning point — encouragement from her teacher. Step 3: Ending trait — confident enough to speak in front of the class.",
+    page5: "Now let's track a character in a story where a boy is selfish with his toys, then learns to share after seeing a younger child left out, and later organizes a toy swap for his neighborhood. Step 1: Beginning trait — selfish. Step 2: Turning point — seeing the younger child's disappointment. Step 3: Ending trait — generous and community-minded.",
+    page6: "A helpful trick: look for a specific scene where the character makes a different choice than they would have made at the start of the story — that scene is usually the turning point of their development.",
+    page7: "You learned to track character development by comparing a character's traits at the beginning and end of a story and identifying the turning point that caused the change."
+  },
+  "Point of View in Fiction": {
+    page1: "In this lesson, you will learn to identify point of view in fiction: first person, third person limited, and third person omniscient.",
+    page2: "First person point of view uses 'I' and 'we,' letting readers experience only what the narrator sees and feels. Third person limited uses 'he,' 'she,' or 'they' but stays inside one character's thoughts. Third person omniscient also uses 'he,' 'she,' or 'they,' but the narrator can reveal the thoughts and feelings of every character.",
+    page3: "The rule is: check the pronouns first to rule out first person, then ask how many characters' thoughts the narrator can access — just one means third person limited, and more than one means third person omniscient.",
+    page4: "Let's identify the point of view in this passage: 'I gripped the rope tightly, my heart pounding as I looked down at the canyon below.' Step 1: The pronoun is 'I'. Step 2: We only know the narrator's own feelings. Step 3: This is first person point of view.",
+    page5: "Now let's identify the point of view in: 'Maria felt nervous, but across the room, Jake was secretly terrified too, though neither of them knew it.' Step 1: The pronouns are 'she/he' (third person). Step 2: The narrator knows both Maria's and Jake's private feelings. Step 3: This is third person omniscient.",
+    page6: "A helpful trick: if the narrator only ever knows what one character is thinking and feeling, it's third person limited; if the narrator seems to know everyone's inner thoughts like a mind reader, it's third person omniscient.",
+    page7: "You learned to identify point of view in fiction — first person, third person limited, and third person omniscient — by examining pronouns and whose thoughts the narrator can reveal."
+  },
+  "Comparing Literary Texts": {
+    page1: "In this lesson, you will learn to compare and contrast two literary texts that share a similar topic, theme, or form.",
+    page2: "Comparing literary texts means looking closely at how two stories, poems, or plays are alike and different in their characters, plots, themes, or writing styles, even when they cover similar subject matter.",
+    page3: "The rule is: identify the shared topic or theme first, then examine specific elements like setting, character choices, and tone to find meaningful similarities and differences, not just surface details.",
+    page4: "Let's compare two stories about facing fear: one where a boy overcomes a fear of the dark by exploring a cave with a flashlight, and one where a girl overcomes a fear of public speaking by practicing with her family. Step 1: Both share the theme 'facing fear builds courage.' Step 2: They differ in setting and the specific fear. Step 3: Both use a supportive family member to help the character grow.",
+    page5: "Now let's compare two poems about the ocean: one that describes it as calm and peaceful, and one that describes it as wild and powerful. Step 1: Both share the topic of the ocean. Step 2: They differ sharply in tone and mood. Step 3: The difference shows how the same subject can be viewed from very different perspectives.",
+    page6: "A helpful trick: make a two-column list — one column for 'same' and one for 'different' — and fill it in for theme, characters, setting, and tone as you read each text.",
+    page7: "You learned to compare and contrast two literary texts by examining their shared topic or theme alongside differences in character, setting, and tone."
+  },
+  "Central Idea and Supporting Details": {
+    page1: "In this lesson, you will learn to determine the central idea of a nonfiction text and identify the details that support it.",
+    page2: "The central idea is the most important point an author wants you to understand about a topic, while supporting details are the facts, statistics, examples, and explanations the author uses to prove or explain that central idea.",
+    page3: "The rule is: read the whole passage first, ask 'what is this mostly about,' state that as one sentence, and then find at least two or three details in the text that back it up.",
+    page4: "Let's find the central idea of a passage that explains how bees pollinate flowers, describes their role in growing fruits and vegetables, and notes that many crops would fail without them. Step 1: Every detail connects to bees' importance. Step 2: Central idea: 'Bees play a critical role in growing the food we eat.' Step 3: Supporting details include pollination, crop growth, and the risk of crop failure without bees.",
+    page5: "Now let's find the central idea of a passage describing how volcanoes form, why some erupt violently, and how they shape the surrounding land. Step 1: Every paragraph connects back to volcanoes. Step 2: Central idea: 'Volcanoes are powerful forces that both form and reshape land.' Step 3: Supporting details include their formation, eruption types, and effects on landscape.",
+    page6: "A helpful trick: the central idea is often, but not always, stated directly in the first or last paragraph — if you can't find it stated outright, summarize what all the paragraphs have in common.",
+    page7: "You learned to determine the central idea of a nonfiction text and identify the specific details that support it."
+  },
+  "Author's Purpose in Nonfiction Texts": {
+    page1: "In this lesson, you will learn to determine an author's purpose for writing a nonfiction text — to inform, persuade, entertain, or explain.",
+    page2: "An author's purpose shapes every choice in a text: informative texts present facts objectively, persuasive texts try to convince you of an opinion using evidence and emotional appeals, and explanatory texts break down how or why something works.",
+    page3: "The rule is: examine the author's word choice and structure — objective facts and neutral language suggest 'inform,' opinion words and calls to action suggest 'persuade,' and step-by-step explanations suggest 'explain.'",
+    page4: "Let's determine the purpose of a passage that states, 'Recycling one aluminum can saves enough energy to power a TV for three hours. You should recycle every can you use.' Step 1: It presents a fact. Step 2: It also gives a direct call to action ('you should'). Step 3: The purpose is to persuade readers to recycle.",
+    page5: "Now let's determine the purpose of a passage that objectively lists the boiling point, freezing point, and density of water without any opinion language. Step 1: There are no opinions or calls to action. Step 2: It presents neutral facts. Step 3: The purpose is to inform.",
+    page6: "A helpful trick: look for opinion words like 'should,' 'must,' or 'best' — if you find them, the author is very likely trying to persuade you, not just inform you.",
+    page7: "You learned to determine an author's purpose in nonfiction writing — to inform, persuade, entertain, or explain — by examining word choice and text structure."
+  },
+  "Text Structures": {
+    page1: "In this lesson, you will learn to identify five common nonfiction text structures: cause and effect, compare and contrast, problem and solution, chronological order, and description.",
+    page2: "Each text structure organizes information differently: cause and effect shows why something happened, compare and contrast shows similarities and differences, problem and solution presents an issue and a fix, chronological order tells events in time order, and description gives details about a topic.",
+    page3: "The rule is: look for signal words — 'because' and 'as a result' signal cause and effect; 'however' and 'similarly' signal compare and contrast; 'first,' 'then,' and 'finally' signal chronological order.",
+    page4: "Let's identify the structure of a passage: 'Because factories released pollution into the river, fish populations declined. As a result, local fishermen lost income.' Step 1: The signal words are 'because' and 'as a result.' Step 2: The structure is cause and effect.",
+    page5: "Now let's identify the structure of: 'Unlike wolves, which hunt in packs, mountain lions typically hunt alone. However, both are skilled predators.' Step 1: The signal words are 'unlike' and 'however.' Step 2: The structure is compare and contrast.",
+    page6: "A helpful trick: keep a mental list of signal words for each structure, and scan a passage for those words first before reading closely — they act like road signs pointing to the structure.",
+    page7: "You learned to identify five nonfiction text structures — cause/effect, compare/contrast, problem/solution, chronological order, and description — by recognizing their signal words."
+  },
+  "Evaluating Arguments": {
+    page1: "In this lesson, you will learn to evaluate an argument in a text by examining its claim, evidence, and reasoning.",
+    page2: "An argument is made up of a claim (what the author believes), evidence (facts, examples, or data supporting the claim), and reasoning (the explanation connecting the evidence to the claim). A strong argument has evidence that is relevant, accurate, and sufficient.",
+    page3: "The rule is: identify the claim first, then check whether the evidence actually supports that specific claim, and whether there is enough evidence to be convincing, not just one weak example.",
+    page4: "Let's evaluate this argument: 'Our school should start later because one study showed that teenagers who sleep more perform better on a single math test.' Step 1: Claim — school should start later. Step 2: Evidence — one study, one test. Step 3: This is weak because the evidence is limited to a single study and a single subject.",
+    page5: "Now let's evaluate: 'Our school should start later because multiple large studies across the country show that later start times consistently improve teen attendance, grades, and mental health.' Step 1: Claim — same as before. Step 2: Evidence — multiple large studies, several outcomes. Step 3: This is a stronger argument because the evidence is broader and more convincing.",
+    page6: "A helpful trick: ask 'is this evidence relevant, accurate, and enough?' A single opinion or one small example is rarely enough to fully support a big claim.",
+    page7: "You learned to evaluate an argument by examining its claim, checking whether the evidence truly supports it, and judging whether there is enough evidence to be convincing."
+  },
+  "Citing Textual Evidence": {
+    page1: "In this lesson, you will learn to cite textual evidence — using an author's exact words or specific details from a text to support your own explanation or analysis.",
+    page2: "Citing textual evidence means quoting directly from the text (using quotation marks) or referring to a specific, precise detail, rather than relying on your general memory or opinion of what the text said.",
+    page3: "The rule is: state your point first, then support it with an exact quote or specific detail from the text, and finally explain how that evidence proves your point.",
+    page4: "Let's cite evidence to support the claim that a character is brave. The text says, 'Even though her hands were shaking, Ana walked straight into the burning building to find her dog.' Step 1: Claim — Ana is brave. Step 2: Evidence — the quote about walking into the fire despite shaking hands. Step 3: Explanation — acting despite fear shows true bravery.",
+    page5: "Now let's cite evidence to support the claim that a scientific experiment was carefully controlled. The text says, 'Researchers tested 500 plants under identical light, water, and soil conditions.' Step 1: Claim — the experiment was carefully controlled. Step 2: Evidence — the exact quote about identical conditions. Step 3: Explanation — controlling every variable except one is the definition of a controlled experiment.",
+    page6: "A helpful trick: always put the author's exact words inside quotation marks when citing — this shows the reader you are using real proof from the text, not a rough paraphrase.",
+    page7: "You learned to cite textual evidence by quoting or precisely referencing specific details from a text to support and explain your own claims."
+  },
+  "Using Context Clues": {
+    page1: "In this lesson, you will learn to use context clues — hints in the surrounding sentence — to figure out the meaning of unfamiliar words.",
+    page2: "Context clues come in several types: a definition clue explains the word directly, a synonym clue uses a similar word nearby, an antonym clue uses an opposite word, and an example clue gives a specific instance that reveals the meaning.",
+    page3: "The rule is: reread the sentence and the sentences around the unknown word, look for a clue word or phrase that hints at the meaning, and then test your guess by substituting it back into the sentence.",
+    page4: "Let's find the meaning of 'meticulous' in: 'She was so meticulous that she checked every stitch of her costume three times before the show.' Step 1: The example shows extreme care and attention to detail. Step 2: This is an example clue. Step 3: 'Meticulous' means extremely careful and precise.",
+    page5: "Now let's find the meaning of 'reluctant' in: 'Unlike his eager teammates, Diego was reluctant to dive into the cold lake.' Step 1: 'Unlike' signals a contrast with 'eager.' Step 2: This is an antonym clue. Step 3: 'Reluctant' means unwilling or hesitant.",
+    page6: "A helpful trick: if you can't find a clue in the exact sentence with the unknown word, widen your search to the sentence right before or after it — clues often appear nearby, not always in the same sentence.",
+    page7: "You learned to use context clues — definitions, synonyms, antonyms, and examples — to determine the meaning of unfamiliar words."
+  },
+  "Greek and Latin Roots": {
+    page1: "In this lesson, you will learn to use common Greek and Latin roots to figure out the meanings of unfamiliar words.",
+    page2: "Many English words are built from Greek and Latin roots that carry a core meaning. For example, 'graph' (Greek) means 'write,' 'tele' (Greek) means 'far,' 'bio' (Greek) means 'life,' and 'dict' (Latin) means 'say' or 'speak.'",
+    page3: "The rule is: break the unfamiliar word into its root and any prefixes or suffixes, recall the root's core meaning, and combine that meaning with the rest of the word to form a definition.",
+    page4: "Let's figure out 'biography.' Step 1: The root 'bio' means 'life.' Step 2: The root 'graph' means 'write.' Step 3: 'Biography' means 'writing about someone's life.'",
+    page5: "Now let's figure out 'telephone.' Step 1: The root 'tele' means 'far.' Step 2: The root 'phon' means 'sound.' Step 3: 'Telephone' means 'sound from far away' — a device for talking across distance.",
+    page6: "A helpful trick: keep a running list of roots you learn, like tele-, bio-, graph-, dict-, and photo- — once you know just ten common roots, you can unlock the meaning of hundreds of English words.",
+    page7: "You learned to use Greek and Latin roots like graph, tele, bio, and dict to determine the meanings of unfamiliar English words."
+  },
+  "Figurative Language": {
+    page1: "In this lesson, you will learn to identify and interpret figurative language: similes, metaphors, personification, and hyperbole.",
+    page2: "A simile compares two things using 'like' or 'as' (her smile was like sunshine). A metaphor compares two things directly, without 'like' or 'as' (her smile was sunshine). Personification gives human qualities to non-human things (the wind whispered). Hyperbole is extreme exaggeration for effect (I've told you a million times).",
+    page3: "The rule is: check whether the sentence uses 'like' or 'as' for a simile, states something directly is something else for a metaphor, gives a non-human thing human actions for personification, or clearly overstates reality for hyperbole.",
+    page4: "Let's identify the figurative language in: 'The old house groaned and creaked as if it were complaining about its age.' Step 1: The house, a non-human thing, is 'complaining.' Step 2: This gives it a human action. Step 3: This is personification.",
+    page5: "Now let's identify the figurative language in: 'I've explained this a thousand times already!' Step 1: No one has literally explained something a thousand times. Step 2: This is an extreme exaggeration for effect. Step 3: This is hyperbole.",
+    page6: "A helpful trick: if the sentence uses 'like' or 'as,' it's almost certainly a simile — that's the fastest one to spot, so rule it out first before checking for the others.",
+    page7: "You learned to identify and interpret figurative language — similes, metaphors, personification, and hyperbole — by examining how each compares or exaggerates ideas."
+  },
+  "Connotation and Denotation": {
+    page1: "In this lesson, you will learn the difference between a word's denotation (its literal, dictionary definition) and its connotation (the feeling or association it carries).",
+    page2: "Two words can share the same denotation but have very different connotations. 'Skinny' and 'slender' both denote 'having little body fat,' but 'skinny' often carries a negative connotation while 'slender' carries a positive, more flattering one.",
+    page3: "The rule is: first identify the word's literal dictionary meaning (denotation), then ask whether the word makes you feel positive, negative, or neutral about the thing it describes (connotation).",
+    page4: "Let's compare 'cheap' and 'frugal.' Step 1: Denotation — both mean 'spending little money.' Step 2: 'Cheap' has a negative connotation, suggesting stinginess or poor quality. Step 3: 'Frugal' has a positive connotation, suggesting wise, careful spending.",
+    page5: "Now let's compare 'childish' and 'youthful.' Step 1: Denotation — both relate to being like a child. Step 2: 'Childish' has a negative connotation, suggesting immaturity. Step 3: 'Youthful' has a positive connotation, suggesting energy and freshness.",
+    page6: "A helpful trick: when writers want to persuade you to feel a certain way, they carefully choose words with strong connotations instead of neutral ones — noticing this is a powerful way to detect an author's bias.",
+    page7: "You learned to distinguish between a word's denotation, its literal meaning, and its connotation, the feeling or association it carries."
+  },
+  "Academic Vocabulary": {
+    page1: "In this lesson, you will learn academic vocabulary — words like 'analyze,' 'evaluate,' 'summarize,' and 'justify' that appear across many school subjects.",
+    page2: "Academic vocabulary words are not tied to one specific topic; instead, they describe the kind of thinking you're asked to do, and understanding them helps you correctly interpret instructions and questions in any subject.",
+    page3: "The rule is: learn the specific thinking task each academic word asks for — 'analyze' means to break something into parts and examine them, 'evaluate' means to judge the value or quality of something, and 'summarize' means to state the main points briefly.",
+    page4: "Let's apply 'analyze' to a science question: 'Analyze the data from the plant growth experiment.' Step 1: 'Analyze' means examine closely and break into parts. Step 2: You would look at each measurement and identify patterns or trends. Step 3: This is different from just summarizing the data.",
+    page5: "Now let's apply 'justify' to a math question: 'Justify your answer to the equation.' Step 1: 'Justify' means to give reasons and evidence for your answer. Step 2: You would explain each step of your solution and why it is mathematically valid. Step 3: This requires more than just stating the final answer.",
+    page6: "A helpful trick: keep a personal glossary of academic verbs like analyze, evaluate, summarize, justify, and interpret — knowing exactly what each one asks you to do will help you answer test questions more accurately.",
+    page7: "You learned academic vocabulary — words like analyze, evaluate, summarize, and justify — that describe specific types of thinking used across school subjects."
+  },
+  "Pronoun Case": {
+    page1: "In this lesson, you will learn about pronoun case: subjective (I, he, she, they), objective (me, him, her, them), and possessive (mine, his, hers, theirs).",
+    page2: "Pronoun case depends on the pronoun's job in the sentence. Subjective pronouns perform the action (She ran fast). Objective pronouns receive the action (The coach praised her). Possessive pronouns show ownership (The trophy is hers).",
+    page3: "The rule is: use a subjective pronoun when the pronoun is doing the action as the subject, and use an objective pronoun when the pronoun is receiving the action as the object of the verb or preposition.",
+    page4: "Let's choose the correct pronoun: 'Give the book to (I/me).' Step 1: The pronoun follows the preposition 'to,' making it an object. Step 2: Objective pronouns follow prepositions. Step 3: The correct sentence is 'Give the book to me.'",
+    page5: "Now let's choose the correct pronoun: '(Him and me / He and I) finished the project early.' Step 1: The pronouns are the subject performing the action 'finished.' Step 2: Subjects need subjective pronouns. Step 3: The correct sentence is 'He and I finished the project early.'",
+    page6: "A helpful trick: when a sentence has two subjects or objects joined by 'and,' try each pronoun alone in the sentence — 'Him finished' sounds wrong, but 'He finished' sounds right, revealing the correct case.",
+    page7: "You learned to use correct pronoun case — subjective, objective, and possessive — based on the pronoun's role in the sentence."
+  },
+  "Subject-Verb Agreement in Complex Sentences": {
+    page1: "In this lesson, you will learn to make subjects and verbs agree in number even within long or complex sentences.",
+    page2: "In a complex sentence, extra phrases or clauses can sit between the subject and its verb, which can make it tricky to identify what the verb should actually agree with — the true subject, not a nearby noun in a phrase.",
+    page3: "The rule is: find the true subject of the sentence by mentally crossing out any prepositional phrases or interrupting clauses, and then match the verb to that true subject, not to the closest noun.",
+    page4: "Let's fix this sentence: 'The list of ingredients (is/are) posted on the wall.' Step 1: Cross out the prepositional phrase 'of ingredients.' Step 2: The true subject is 'list' (singular). Step 3: The correct sentence is 'The list of ingredients is posted on the wall.'",
+    page5: "Now let's fix: 'The players, along with their coach, (was/were) celebrating the win.' Step 1: Cross out the interrupting phrase 'along with their coach.' Step 2: The true subject is 'players' (plural). Step 3: The correct sentence is 'The players, along with their coach, were celebrating the win.'",
+    page6: "A helpful trick: physically cover up any phrase that starts with a preposition like 'of,' 'with,' or 'along with' — what remains is usually the true subject the verb needs to match.",
+    page7: "You learned to ensure subject-verb agreement in complex sentences by identifying the true subject and ignoring interrupting phrases."
+  },
+  "Phrases and Clauses": {
+    page1: "In this lesson, you will learn the difference between a phrase and a clause, and between independent and dependent clauses.",
+    page2: "A phrase is a group of related words without both a subject and a verb (in the morning, running quickly). A clause has both a subject and a verb. An independent clause can stand alone as a complete sentence, while a dependent clause cannot, even though it has a subject and verb (because it rained).",
+    page3: "The rule is: check for a subject and a verb together — if there isn't one, it's a phrase; if there is one but the group of words still sounds incomplete, it's a dependent clause; if it sounds complete, it's an independent clause.",
+    page4: "Let's classify 'after the game ended.' Step 1: It has a subject ('game') and a verb ('ended'). Step 2: It doesn't sound complete alone — it needs more information. Step 3: This is a dependent clause.",
+    page5: "Now let's classify 'in the middle of the night.' Step 1: There is no subject-verb pair. Step 2: It's just a group of related words. Step 3: This is a phrase.",
+    page6: "A helpful trick: say the group of words out loud by itself — if it leaves you thinking 'and then what?', it's a dependent clause or a phrase, not a complete independent clause.",
+    page7: "You learned to distinguish between phrases and clauses, and between independent clauses that stand alone and dependent clauses that cannot."
+  },
+  "Varying Sentence Patterns": {
+    page1: "In this lesson, you will learn to vary your sentence patterns using simple, compound, and complex sentences to make your writing more interesting.",
+    page2: "A simple sentence has one independent clause (The dog barked). A compound sentence joins two independent clauses with a conjunction like 'and' or 'but' (The dog barked, and the cat ran). A complex sentence joins an independent clause with a dependent clause (Because the dog barked, the cat ran).",
+    page3: "The rule is: avoid using the same sentence pattern over and over — mix short simple sentences with longer compound and complex ones to control pacing and keep readers engaged.",
+    page4: "Let's revise a repetitive paragraph: 'The rain started. The game stopped. The players left. The fans went home.' Step 1: Notice every sentence is short and simple. Step 2: Combine some with conjunctions. Step 3: Revised: 'When the rain started, the game stopped, and the players left as the fans went home.'",
+    page5: "Now let's revise: 'She studied hard. She passed the test. She celebrated with friends.' Step 1: All simple sentences again. Step 2: Vary the pattern. Step 3: Revised: 'Because she studied hard, she passed the test, and she celebrated with friends.'",
+    page6: "A helpful trick: read your paragraph aloud — if every sentence sounds choppy and the same length, that's a sign you need to combine some sentences into compound or complex ones.",
+    page7: "You learned to vary sentence patterns using simple, compound, and complex sentences to improve the flow and interest of your writing."
+  },
+  "Correcting Run-ons and Fragments": {
+    page1: "In this lesson, you will learn to recognize and correct run-on sentences and sentence fragments.",
+    page2: "A run-on sentence incorrectly joins two or more independent clauses without proper punctuation (I love pizza it is my favorite food). A sentence fragment is an incomplete thought missing a subject, a verb, or a complete idea (Running through the park).",
+    page3: "The rule is: fix a run-on by adding a period, a semicolon, or a comma plus a conjunction between the independent clauses; fix a fragment by adding the missing subject, verb, or connecting it to a nearby complete sentence.",
+    page4: "Let's fix this run-on: 'The storm was intense the power went out for hours.' Step 1: These are two independent clauses run together. Step 2: Add a comma and conjunction, or a period. Step 3: Corrected: 'The storm was intense, and the power went out for hours.'",
+    page5: "Now let's fix this fragment: 'Walking home from school in the pouring rain.' Step 1: There is no complete subject-verb thought. Step 2: Add a subject and complete the idea. Step 3: Corrected: 'Maya was walking home from school in the pouring rain.'",
+    page6: "A helpful trick: read each sentence alone and ask 'does this sound like two full sentences mashed together?' (run-on) or 'does this leave me hanging, waiting for more?' (fragment).",
+    page7: "You learned to recognize and correct run-on sentences and sentence fragments using proper punctuation and complete subject-verb thoughts."
+  },
+  "Narrative Writing": {
+    page1: "In this lesson, you will learn to write a narrative that develops a real or imagined experience using effective technique, descriptive details, and a clear sequence of events.",
+    page2: "Strong narrative writing includes a clear setting, well-developed characters, dialogue that sounds natural, sensory details that help readers picture the scene, and a logical sequence from beginning to end.",
+    page3: "The rule is: plan your narrative's beginning, middle, and end before writing, then use dialogue and specific sensory details ('the gravel crunched under my sneakers') instead of vague statements ('I walked').",
+    page4: "Let's improve a vague sentence: 'I was scared during the storm.' Step 1: This tells the feeling but doesn't show it. Step 2: Add sensory and physical detail. Step 3: Revised: 'My hands trembled as thunder rattled the windows and the lights flickered out.'",
+    page5: "Now let's add dialogue to a flat narrative moment: 'My friend was upset that I was late.' Step 1: This just states the feeling. Step 2: Add realistic dialogue. Step 3: Revised: '\"You said five o'clock,\" she snapped, arms crossed. \"It's almost six.\"'",
+    page6: "A helpful trick: use the 'show, don't tell' rule — instead of naming an emotion directly, describe an action, physical reaction, or piece of dialogue that reveals that emotion to the reader.",
+    page7: "You learned to write narratives that develop real or imagined experiences using dialogue, sensory details, and a clear sequence of events."
+  },
+  "Argumentative Writing": {
+    page1: "In this lesson, you will learn to write an argumentative piece that supports a clear claim with logical reasons and relevant evidence.",
+    page2: "Argumentative writing states a clear claim (your opinion or position), backs it up with reasons and evidence, addresses a counterclaim (an opposing view), and uses transitions to connect ideas logically.",
+    page3: "The rule is: state your claim clearly in the introduction, support it with at least two or three strong reasons backed by evidence, acknowledge an opposing view, and explain why your position is still stronger.",
+    page4: "Let's build an argument for the claim 'Students should have a voice in choosing school lunch menus.' Step 1: Claim stated clearly. Step 2: Reason with evidence — 'Surveys show students eat 30% more when they help choose the menu.' Step 3: Counterclaim addressed — 'Some worry students would only choose junk food, but menus could still require balanced options.'",
+    page5: "Now let's build an argument for 'Schools should offer more hands-on elective classes.' Step 1: Claim stated. Step 2: Reason with evidence — 'Studies show hands-on learning improves retention and engagement.' Step 3: Counterclaim addressed — 'Some worry about cost, but many hands-on electives use low-cost, reusable materials.'",
+    page6: "A helpful trick: always include one sentence that addresses the other side's view and explains why your claim still holds up — this makes your argument feel fair and much more convincing.",
+    page7: "You learned to write argumentative pieces that support a clear claim with logical reasons, relevant evidence, and a response to a counterclaim."
+  },
+  "Informative and Explanatory Writing": {
+    page1: "In this lesson, you will learn to write informative and explanatory texts that examine a topic clearly using relevant facts, definitions, and examples.",
+    page2: "Informative and explanatory writing presents factual information objectively, without persuading the reader toward an opinion, and organizes ideas using headings, clear topic sentences, and precise vocabulary related to the topic.",
+    page3: "The rule is: introduce the topic clearly, organize supporting facts into logical groups or paragraphs, define any technical terms, and end with a conclusion that reinforces the main points.",
+    page4: "Let's plan an informative paragraph about how volcanoes erupt. Step 1: Topic sentence — 'Volcanoes erupt when pressure builds beneath the Earth's crust.' Step 2: Supporting facts — magma rises through cracks, gas pressure increases, eruption releases lava and ash. Step 3: Conclusion — this pressure-release process shapes new land over time.",
+    page5: "Now let's plan an informative paragraph about how the water cycle works. Step 1: Topic sentence — 'Water continuously moves through the atmosphere, land, and oceans in a repeating cycle.' Step 2: Supporting facts — evaporation, condensation, precipitation, collection. Step 3: Conclusion — this cycle keeps Earth's freshwater supply constantly renewed.",
+    page6: "A helpful trick: define any specialized or technical word the very first time you use it, so a reader unfamiliar with the topic can still follow your explanation.",
+    page7: "You learned to write informative and explanatory texts that clearly examine a topic using organized facts, definitions, and examples."
+  },
+  "Organizing an Essay": {
+    page1: "In this lesson, you will learn to organize an essay using a clear introduction, body paragraphs, a conclusion, and logical transitions between ideas.",
+    page2: "A well-organized essay opens with an introduction that states the main idea or thesis, develops that idea across several focused body paragraphs, and closes with a conclusion that reinforces the main points without simply repeating them word for word.",
+    page3: "The rule is: outline your essay before writing by listing your thesis, then one clear point per body paragraph, then a closing thought, and use transition words like 'first,' 'additionally,' and 'in conclusion' to connect them smoothly.",
+    page4: "Let's outline an essay about why school gardens are valuable. Step 1: Introduction — thesis that school gardens teach valuable life skills. Step 2: Body paragraph 1 — gardens teach responsibility. Body paragraph 2 — gardens teach science concepts. Step 3: Conclusion — restate the value of school gardens in a fresh way.",
+    page5: "Now let's outline an essay about why reading fiction builds empathy. Step 1: Introduction — thesis that fiction helps readers understand other perspectives. Step 2: Body paragraph 1 — fiction shows characters' inner thoughts. Body paragraph 2 — fiction exposes readers to different life experiences. Step 3: Conclusion — connect this empathy to real-world kindness.",
+    page6: "A helpful trick: give each body paragraph just one main point — if you notice a paragraph covering two big ideas, that's a sign it should be split into two separate paragraphs.",
+    page7: "You learned to organize an essay with a clear introduction, focused body paragraphs, a strong conclusion, and smooth transitions between ideas."
+  },
+  "Revising and Editing": {
+    page1: "In this lesson, you will learn the difference between revising, which improves your writing's ideas and organization, and editing, which corrects grammar, spelling, and punctuation.",
+    page2: "Revising happens first and focuses on the big picture: Is the thesis clear? Are ideas organized logically? Is more evidence needed? Editing happens second and focuses on smaller details: Are there spelling errors, punctuation mistakes, or grammar issues?",
+    page3: "The rule is: always revise before you edit — there's no point perfecting the grammar of a sentence or paragraph you might delete or completely rewrite during revision.",
+    page4: "Let's revise this weak paragraph for content: 'Dogs are good pets. They are fun. The end.' Step 1: The ideas are underdeveloped. Step 2: Add specific reasons and details. Step 3: Revised: 'Dogs make loyal companions because they can be trained to help with daily tasks and provide comfort during stressful times.'",
+    page5: "Now let's edit a grammatically flawed sentence: 'Me and him goes to the park everyday.' Step 1: Fix pronoun case — 'He and I.' Step 2: Fix subject-verb agreement — 'go,' not 'goes.' Step 3: Fix spacing — 'every day.' Edited: 'He and I go to the park every day.'",
+    page6: "A helpful trick: do at least two separate passes over your writing — one pass focused only on ideas and organization (revising), and a completely separate pass focused only on grammar and spelling (editing).",
+    page7: "You learned to revise your writing to strengthen its ideas and organization, then edit it separately to correct grammar, spelling, and punctuation errors."
+  },
+  "The Research Process": {
+    page1: "In this lesson, you will learn the steps of the research process: forming a research question, searching for sources, gathering information, organizing notes, and citing sources.",
+    page2: "Good research starts with a focused question, not a broad topic — 'How does light pollution affect nocturnal animals?' is more useful than just 'animals.' From there, researchers search reliable sources, take organized notes, and always keep track of where each fact came from.",
+    page3: "The rule is: narrow a broad topic into one specific, answerable question first, then gather information from multiple reliable sources, organize your notes by subtopic, and cite every source you use.",
+    page4: "Let's narrow a broad topic: 'space.' Step 1: 'Space' is far too broad to research well. Step 2: Narrow it by asking a specific question. Step 3: Narrowed question: 'How do astronauts grow food safely on the International Space Station?'",
+    page5: "Now let's organize notes for the question 'How does exercise affect the teenage brain?' Step 1: Gather facts from several sources. Step 2: Group notes into subtopics: memory, mood, focus. Step 3: This organization will make writing the final report much easier.",
+    page6: "A helpful trick: write your research question on an index card or at the top of your notes page, and check back on it often — it's easy to drift off-topic while researching interesting side facts.",
+    page7: "You learned the steps of the research process — forming a focused question, gathering information, organizing notes, and citing sources."
+  },
+  "Evaluating Sources": {
+    page1: "In this lesson, you will learn to evaluate the credibility of research sources by examining the author's expertise, the source's currency, and possible bias.",
+    page2: "A credible source is written by a qualified author or organization, is reasonably current for the topic, and presents information fairly rather than pushing a one-sided opinion or trying to sell something.",
+    page3: "The rule is: ask who wrote it and what their expertise is, when it was published or last updated, and whether the source has a clear motive to present only one side of an issue.",
+    page4: "Let's evaluate a source about climate data: an article from a national science agency, published this year, citing measured data from weather stations. Step 1: Author — a credible science agency. Step 2: Currency — recently published. Step 3: This is a highly credible source.",
+    page5: "Now let's evaluate a source: a blog post from an anonymous writer, with no date, making claims with no data or citations. Step 1: Author — unknown, no stated expertise. Step 2: Currency — unclear, no date given. Step 3: This source is not credible and should not be relied upon for research.",
+    page6: "A helpful trick: check the 'About' page or author bio on any website before using it as a source — if you can't tell who wrote it or why, be very cautious about trusting its claims.",
+    page7: "You learned to evaluate the credibility of research sources by examining the author's expertise, the source's currency, and possible bias."
+  },
+  "Presenting Information": {
+    page1: "In this lesson, you will learn to present research findings clearly, using logical sequencing, appropriate visual aids, and confident delivery.",
+    page2: "An effective presentation organizes information in a logical order, uses visual aids like slides or charts to clarify complex points, and is delivered with clear speech, appropriate pacing, and eye contact with the audience.",
+    page3: "The rule is: open with your main point or question, walk through supporting information in a logical order, use one clear visual per key idea, and close by restating your main takeaway.",
+    page4: "Let's plan a short presentation on 'Why Bees Matter.' Step 1: Open — 'Bees pollinate one-third of the food we eat.' Step 2: Support with a simple chart showing crops that depend on bee pollination. Step 3: Close — 'Protecting bee habitats protects our food supply.'",
+    page5: "Now let's plan a presentation on 'The Water Cycle.' Step 1: Open with a question — 'Where does rain actually come from?' Step 2: Use a labeled diagram to show evaporation, condensation, and precipitation. Step 3: Close by connecting the cycle back to the original question.",
+    page6: "A helpful trick: practice your presentation out loud at least twice before delivering it — this helps you notice awkward phrasing and builds the confidence needed for good pacing and eye contact.",
+    page7: "You learned to present information clearly by organizing ideas logically, using visual aids effectively, and delivering with confidence and eye contact."
+  },
+  "Collaborative Discussion": {
+    page1: "In this lesson, you will learn skills for effective collaborative discussion: active listening, building on others' ideas, and respectfully disagreeing.",
+    page2: "Collaborative discussion works best when participants listen carefully to understand (not just to respond), build on classmates' ideas by referencing what they said, and express disagreement respectfully by focusing on the idea, not the person.",
+    page3: "The rule is: before sharing your own idea, briefly acknowledge or reference what the previous speaker said, and when you disagree, explain your reasoning calmly instead of dismissing the other person's point.",
+    page4: "Let's build on an idea in a discussion about a class read book. Someone says, 'I think the main character was brave.' Step 1: Acknowledge their idea. Step 2: Add to it. Step 3: Response: 'I agree with what Sam said about bravery, and I'd add that her bravery grew stronger after her friend supported her.'",
+    page5: "Now let's respectfully disagree in a discussion about a proposed class project. Someone says, 'We should skip research and just start building.' Step 1: Acknowledge their idea. Step 2: Explain your different view calmly. Step 3: Response: 'I see why starting fast feels exciting, but I think a little research first could save us time later by avoiding mistakes.'",
+    page6: "A helpful trick: use sentence starters like 'I agree with ___ because...' or 'I see it differently because...' to keep discussions respectful and focused on ideas rather than personal disagreements.",
+    page7: "You learned to participate effectively in collaborative discussions through active listening, building on others' ideas, and respectful disagreement."
+  },
+  "Grade 6 ELA Review": {
+    page1: "In this lesson, you will review key Grade 6 ELA skills, including identifying theme, analyzing nonfiction structure, using context clues, and writing with organized structure.",
+    page2: "This review combines reading skills, like finding theme and evaluating arguments, with language skills, like pronoun case and sentence variety, and writing skills, like organizing an argumentative or informative essay.",
+    page3: "The rule is: for reading, always support your ideas with theme and evidence; for language, check that pronouns and verbs match their proper role and number; for writing, organize with a clear introduction, body, and conclusion.",
+    page4: "Let's review theme and evidence together: in a story where a team loses every game but keeps practicing and finally wins the championship, the theme is 'persistence pays off,' supported by the evidence of their continued practice despite losses.",
+    page5: "Now let's review sentence variety and organization together: instead of writing three short, choppy sentences about a science experiment, combine them into one clear complex sentence, and place it within an organized paragraph that has a clear topic sentence.",
+    page6: "A helpful trick: when reviewing multiple Grade 6 skills together, tackle them one at a time — first check your reading comprehension and evidence, then your grammar and sentence variety, then your overall essay organization.",
+    page7: "You reviewed core Grade 6 ELA skills across reading, vocabulary, grammar, and writing, preparing you for more advanced analysis in Grade 7."
+  },
+  "Analyzing Theme Development": {
+    page1: "In this lesson, you will learn to analyze how a theme develops and is shaped by specific details across an entire text, not just stated at the end.",
+    page2: "A theme doesn't appear all at once — it emerges gradually as an author reinforces it through a character's choices, recurring symbols, and key moments spread throughout the story. Tracking theme development means noticing how the message is being built, piece by piece.",
+    page3: "The rule is: identify a possible theme early in the text, then look for at least three separate moments — beginning, middle, and end — where the text reinforces or complicates that theme, showing how it deepens.",
+    page4: "Let's trace the theme development in a story where a girl is embarrassed by her immigrant grandmother's accent at first, feels guilty when her grandmother helps her through a hard day, and finally proudly introduces her grandmother to her friends. Step 1 (beginning): shame over difference. Step 2 (middle): growing appreciation through a personal connection. Step 3 (end): open pride. Step 4: The theme 'we come to value what once embarrassed us once we understand its worth' develops gradually across all three moments.",
+    page5: "Now let's trace theme development in a story where a boy refuses to ask for help on a school project, struggles alone for weeks, finally accepts help from a classmate, and finishes ahead of schedule with a stronger project than he expected. Step 1: independence taken to a stubborn extreme. Step 2: mounting struggle. Step 3: relief and better results after accepting help. Step 4: The theme 'accepting help is a strength, not a weakness' develops through the contrast between his struggle alone and his success once he opens up.",
+    page6: "A helpful trick: highlight or jot down every moment in a text that connects to your possible theme as you read — if you can find at least three connected moments spread across the text, your theme interpretation is well supported.",
+    page7: "You learned to analyze how a theme develops and is shaped by specific details spread across the beginning, middle, and end of a text."
+  },
+  "Analyzing Plot and Conflict": {
+    page1: "In this lesson, you will learn to analyze how elements of plot interact with the story's central conflict to advance the story.",
+    page2: "Conflict is the struggle that drives a plot forward — it can be external (character vs. character, vs. nature, vs. society) or internal (character vs. self). Each stage of the plot exists because of this conflict: rising action intensifies it, the climax forces a decisive confrontation with it, and the resolution shows its outcome.",
+    page3: "The rule is: first identify the type and source of the central conflict, then trace how each major plot event either raises the stakes of that conflict or moves the character closer to resolving it.",
+    page4: "Let's analyze the conflict in a story where a captain must decide whether to risk his ship in a storm to rescue a stranded crew member. Step 1: The conflict is external (captain vs. nature) and internal (duty vs. self-preservation). Step 2: Each rising-action event — worsening weather, a failing engine — raises the stakes of both conflicts simultaneously. Step 3: The climax, sailing directly into the storm, forces a decision that resolves both conflicts at once.",
+    page5: "Now let's analyze the conflict in a story where two former friends compete for the same scholarship. Step 1: The conflict is external (character vs. character) layered with an internal conflict about loyalty versus ambition. Step 2: Plot events like a shared study session complicate the external conflict by deepening the internal one. Step 3: The climax, when one friend helps the other despite the competition, resolves the internal conflict even though the external one continues.",
+    page6: "A helpful trick: for any major plot event, ask 'which conflict does this event make worse, and which does it start to resolve?' — strong plots often develop more than one conflict at the same time.",
+    page7: "You learned to analyze how elements of plot interact with a story's central conflict, tracing how rising action intensifies conflict and how the climax forces its resolution."
+  },
+  "Analyzing Character Motivation": {
+    page1: "In this lesson, you will learn to analyze how a character's motivations — their underlying wants, fears, and needs — affect the decisions they make and the plot that follows.",
+    page2: "A character's motivation is the deeper reason behind their actions, which is not always stated directly. Authors reveal motivation through a character's background, their reactions to events, and the choices they make when under pressure.",
+    page3: "The rule is: look at what a character does at a key decision point, then ask what underlying want, fear, or need would explain that specific choice, using evidence from earlier in the text to support your answer.",
+    page4: "Let's analyze the motivation of a character who, despite being offered a spot on the varsity team, chooses to keep playing on the junior team with her younger sister. Step 1: The action — turning down an individual opportunity. Step 2: Evidence — earlier passages show she promised her sister they'd always play together. Step 3: Motivation — loyalty to her sister outweighs personal advancement.",
+    page5: "Now let's analyze the motivation of a character who lies to his parents about a bad grade even though he knows lying usually gets him in more trouble. Step 1: The action — lying despite past consequences. Step 2: Evidence — earlier text shows intense pressure from his parents' high expectations. Step 3: Motivation — fear of disappointing his parents outweighs his fear of getting caught.",
+    page6: "A helpful trick: when a character's action seems surprising or doesn't quite make sense on the surface, that's usually a signal to dig for a hidden motivation — go back and look for earlier clues about their fears or desires.",
+    page7: "You learned to analyze how a character's underlying motivations shape their decisions, using evidence from earlier in the text to explain choices at key moments."
+  },
+  "Point of View and Perspective": {
+    page1: "In this lesson, you will learn to analyze how an author develops and contrasts differing points of view or perspectives, including how they create effects like dramatic irony.",
+    page2: "Beyond simply identifying first or third person, this lesson focuses on how authors use perspective to control what readers know. When readers know something a character doesn't, that creates dramatic irony. When two characters view the same event differently, that reveals their contrasting perspectives.",
+    page3: "The rule is: compare what different characters know, believe, or feel about the same event, and consider what effect the author creates by revealing — or withholding — certain information from the reader through the chosen point of view.",
+    page4: "Let's analyze perspective in a story where the reader knows a surprise party is being planned, but the narrator (the birthday character) has no idea. Step 1: The reader has more information than the narrator. Step 2: This gap creates dramatic irony. Step 3: The effect is suspense, as readers wait to see the character's genuine reaction.",
+    page5: "Now let's analyze contrasting perspectives in a story where one character sees a rainstorm as ruining her plans, while another sees the same rainstorm as a relief for the drought-stricken farm. Step 1: Same event, different perspectives. Step 2: Each character's perspective reflects their personal priorities. Step 3: The contrast highlights how personal circumstances shape how people interpret the same event.",
+    page6: "A helpful trick: whenever you notice the reader knows more (or less) than a character, pause and ask why the author chose to reveal information in that order — it's almost always for a specific emotional effect like suspense or surprise.",
+    page7: "You learned to analyze how authors develop and contrast points of view, including how gaps between reader and character knowledge create effects like dramatic irony."
+  },
+  "Comparing Literary Genres": {
+    page1: "In this lesson, you will learn to compare and contrast a written story to its dramatic, poetic, or filmed version, analyzing what is emphasized or absent in each.",
+    page2: "Different genres and formats have different tools available. A novel can describe a character's inner thoughts directly; a play relies on dialogue and stage directions; a film uses camera angles, music, and actors' expressions; a poem uses rhythm and condensed imagery.",
+    page3: "The rule is: identify a specific moment that appears in both versions, then analyze which techniques each format uses to convey that moment, and consider what is gained or lost in the adaptation.",
+    page4: "Let's compare a novel's description of a character's fear ('Her stomach twisted with dread as she read the letter') to a film adaptation of the same scene. Step 1: The novel uses inner thoughts directly. Step 2: The film instead uses close-up shots of the actor's trembling hands and tense music. Step 3: The film conveys the same fear visually and aurally instead of through narrated thoughts.",
+    page5: "Now let's compare a play's stage direction ('Enter JAMES, pacing anxiously') to how a novel might convey the same character trait. Step 1: The play shows anxiety through physical staging and an actor's performance. Step 2: A novel might instead directly narrate, 'James paced the room, unable to sit still.' Step 3: Both convey anxiety, but the play requires an audience to interpret physical action, while the novel states the feeling directly.",
+    page6: "A helpful trick: for any adapted scene, make a two-column comparison of 'what tools this format has' versus 'what tools the other format has' — this quickly reveals what had to change in the adaptation.",
+    page7: "You learned to compare a written story to its dramatic, poetic, or filmed version by analyzing the different techniques each format uses to convey the same content."
+  },
+  "Analyzing Central Ideas": {
+    page1: "In this lesson, you will learn to analyze the interaction between individuals, ideas, or events in a text and how that interaction shapes its central idea.",
+    page2: "In grade 7 nonfiction analysis, the central idea is often revealed through how people, ideas, or events interact and influence one another — not just through isolated facts. Understanding these interactions helps explain why the central idea matters.",
+    page3: "The rule is: identify the central idea, then trace at least one specific interaction — between two people, two ideas, or two events — that the author uses to develop or explain that central idea.",
+    page4: "Let's analyze a passage about how a scientist's discovery challenged an accepted theory, leading other researchers to test and eventually confirm her findings. Step 1: Central idea — scientific progress often requires challenging established beliefs. Step 2: Interaction — the scientist's discovery versus the accepted theory, and other researchers' responses. Step 3: This interaction shows exactly how scientific consensus can change over time.",
+    page5: "Now let's analyze a passage about how a new law changed farming practices, which then affected local food prices. Step 1: Central idea — policy decisions can create ripple effects through an economy. Step 2: Interaction — the law affects farmers, who affect food supply, who affect prices. Step 3: This chain of interactions shows how the central idea plays out concretely.",
+    page6: "A helpful trick: when the central idea feels complex, ask 'who or what is affecting whom?' — mapping out that chain of interactions often reveals exactly how the author wants you to understand the central idea.",
+    page7: "You learned to analyze the interactions between individuals, ideas, or events in a text and how the author uses those interactions to develop the text's central idea."
+  },
+  "Analyzing an Author's Argument": {
+    page1: "In this lesson, you will learn to trace and evaluate an author's argument across a text, assessing whether the reasoning is sound and the evidence is relevant.",
+    page2: "Tracing an argument means following how an author builds their case from the introduction through each supporting point to the conclusion. Evaluating it means judging whether each piece of reasoning logically connects to the evidence and whether any steps in the argument are weak or missing.",
+    page3: "The rule is: outline the author's claim and each supporting reason in order, then check each reason individually for whether its evidence is relevant, sufficient, and logically connected to the claim, not just true.",
+    page4: "Let's trace an argument that a city should build more bike lanes: Claim — bike lanes improve cities. Reason 1 (with evidence) — bike lanes reduce car traffic, citing accident-reduction data. Reason 2 (with evidence) — bike lanes improve public health, citing exercise statistics. Step 1: Both reasons connect logically to the claim. Step 2: Both are backed by specific, relevant evidence. Step 3: This is a well-supported argument.",
+    page5: "Now let's evaluate an argument that a school should ban all technology: Claim — banning technology helps students focus. Reason (with evidence) — one student got a lower grade after getting a phone. Step 1: The evidence is a single, personal example. Step 2: One anecdote doesn't logically prove a broad claim about all students. Step 3: This argument has weak, insufficient evidence for such a large claim.",
+    page6: "A helpful trick: for each reason an author gives, ask 'does the evidence actually prove this specific reason, or could it just be a coincidence or one-time example?' — that question exposes weak arguments quickly.",
+    page7: "You learned to trace and evaluate an author's argument by outlining each claim and reason, then judging whether the evidence is relevant, sufficient, and logically connected."
+  },
+  "Analyzing Text Structure": {
+    page1: "In this lesson, you will learn to analyze how a text's structure contributes to its overall meaning and persuasive power, going beyond simply identifying the structure.",
+    page2: "Authors choose a text structure — like problem/solution, chronological, or compare/contrast — deliberately, because that structure shapes how convincing or clear the message becomes. For example, presenting a problem before its solution builds urgency, making the solution feel more necessary.",
+    page3: "The rule is: identify the text structure, then ask why the author might have chosen that specific structure over another, and how that choice affects the reader's understanding or emotional response.",
+    page4: "Let's analyze a text that opens with alarming statistics about ocean pollution before presenting a proposed cleanup solution. Step 1: The structure is problem/solution. Step 2: Presenting the alarming problem first builds urgency and concern. Step 3: This makes the proposed solution feel more necessary and the argument more persuasive than if the solution had been presented first.",
+    page5: "Now let's analyze a text that describes an event in strict chronological order, hour by hour, during a hurricane's landfall. Step 1: The structure is chronological. Step 2: This structure lets readers experience the escalating danger in real time, moment by moment. Step 3: This builds tension and makes the account feel more immediate and dramatic than a summary would.",
+    page6: "A helpful trick: imagine the same content presented in a different structure — for instance, imagine the solution presented before the problem — and ask what would be lost; the difference reveals exactly why the author's actual choice was effective.",
+    page7: "You learned to analyze how a text's structure — like problem/solution or chronological order — contributes to its overall meaning and persuasive power."
+  },
+  "Evaluating Evidence and Reasoning": {
+    page1: "In this lesson, you will learn to assess whether the reasoning in a text is sound and whether the evidence provided is sufficient to support its claims.",
+    page2: "Sound reasoning connects evidence to a claim in a logical way, without gaps, exaggerations, or irrelevant information. Sufficient evidence means there is enough relevant proof — not just one example — to reasonably support the claim being made.",
+    page3: "The rule is: check each piece of evidence by asking whether it is directly relevant to the specific claim, whether there's enough of it, and whether the reasoning connecting evidence to claim actually makes logical sense.",
+    page4: "Let's evaluate this passage: 'Video games cause violence. My cousin plays video games and got in a fight last week.' Step 1: The evidence is one anecdote about one person. Step 2: This is not nearly enough evidence to support a claim about video games in general. Step 3: The reasoning also ignores other possible causes of the fight, making it unsound.",
+    page5: "Now let's evaluate: 'Regular exercise improves academic performance. Multiple long-term studies across different school districts found that students who exercised regularly scored higher on standardized tests, even after controlling for other factors.' Step 1: The evidence includes multiple studies across different settings. Step 2: This is sufficient, relevant evidence. Step 3: The reasoning logically connects the evidence (studies show a correlation, controlling for other factors) to the claim.",
+    page6: "A helpful trick: ask 'is this evidence a pattern across many cases, or just a single story?' — single stories (anecdotes) are almost never sufficient on their own to prove a broad claim.",
+    page7: "You learned to evaluate whether a text's reasoning is sound and its evidence is sufficient and relevant enough to truly support its claims."
+  },
+  "Comparing Multiple Sources": {
+    page1: "In this lesson, you will learn to compare and contrast how multiple authors present information on the same topic, noting differing interpretations of facts.",
+    page2: "When multiple sources cover the same topic, they may agree on the basic facts but differ significantly in their interpretation, emphasis, or conclusions — often based on their purpose, audience, or point of view.",
+    page3: "The rule is: identify the shared facts across the sources first, then compare how each source's interpretation, tone, or emphasis differs, and consider what might explain those differences.",
+    page4: "Let's compare two sources about a new highway project: one from the city government emphasizing reduced commute times, and one from a local environmental group emphasizing habitat destruction. Step 1: Shared fact — the highway will be built. Step 2: Different emphasis — convenience versus environmental cost. Step 3: The difference likely reflects each source's differing priorities and purpose.",
+    page5: "Now let's compare two historical accounts of the same battle: one written by a soldier praising the strategy, and one written decades later by a historian critiquing the high casualties. Step 1: Shared facts — the battle's location and outcome. Step 2: Different interpretation — the soldier focuses on heroism, and the historian focuses on cost. Step 3: The difference reflects each writer's distance from the event and differing purposes.",
+    page6: "A helpful trick: for any two sources on the same topic, list the facts they agree on in one column, and their differing interpretations or emphases in another — the second column usually reveals each author's underlying perspective.",
+    page7: "You learned to compare and contrast how multiple authors present information on the same topic, identifying differing interpretations even when the basic facts agree."
+  },
+  "Multiple-Meaning Words": {
+    page1: "In this lesson, you will learn to determine the correct meaning of words that have multiple meanings, based on how they are used in context.",
+    page2: "Many English words have several unrelated or loosely related meanings (like 'bark,' which can mean the sound a dog makes or the outer covering of a tree). Choosing the right meaning requires looking closely at the surrounding sentence.",
+    page3: "The rule is: identify all possible meanings you know for the word, then reread the sentence and choose the meaning that makes logical sense within that specific context.",
+    page4: "Let's determine the meaning of 'novel' in: 'Her novel approach to the science project impressed the judges.' Step 1: 'Novel' could mean a book or 'new and original.' Step 2: The sentence describes an 'approach,' not a book. Step 3: Here, 'novel' means 'new and original.'",
+    page5: "Now let's determine the meaning of 'fair' in: 'Was the referee's call really fair to both teams?' Step 1: 'Fair' could mean a carnival, light-colored, or just/unbiased. Step 2: The context involves a referee's decision. Step 3: Here, 'fair' means 'just and unbiased.'",
+    page6: "A helpful trick: try substituting each possible meaning back into the sentence — only the meaning that keeps the sentence logical and sensible is the correct one.",
+    page7: "You learned to determine the correct meaning of multiple-meaning words by examining how they are used within their specific sentence context."
+  },
+  "Analyzing Word Relationships": {
+    page1: "In this lesson, you will learn to analyze relationships among words, including synonyms, antonyms, and word families that share a common root.",
+    page2: "Words relate to each other in several ways: synonyms share similar meanings, antonyms have opposite meanings, and word families share a root but take different forms (like 'act,' 'active,' 'action,' and 'reaction').",
+    page3: "The rule is: identify the base or root word, then determine how the related word changes its meaning or part of speech through prefixes, suffixes, or its relationship as a synonym or antonym.",
+    page4: "Let's analyze the word family built from 'construct.' Step 1: The root 'construct' means to build. Step 2: 'Construction' adds a suffix to make it a noun (the act of building). Step 3: 'Reconstruct' adds a prefix meaning 'to build again.'",
+    page5: "Now let's analyze the relationship between 'transparent' and 'opaque.' Step 1: 'Transparent' means able to be seen through. Step 2: 'Opaque' means not able to be seen through. Step 3: These words are antonyms — they express opposite qualities.",
+    page6: "A helpful trick: when you learn a new root word, brainstorm every related word you can think of that shares it — this builds a whole 'word family' in your vocabulary at once, instead of just one word.",
+    page7: "You learned to analyze relationships among words, including synonyms, antonyms, and word families that share a common root."
+  },
+  "Analogies": {
+    page1: "In this lesson, you will learn to complete and interpret analogies that show a specific relationship between pairs of words.",
+    page2: "An analogy compares two pairs of words that share the same type of relationship, such as synonym, antonym, category/example, or cause/effect. Analogies are often written as 'A is to B as C is to D.'",
+    page3: "The rule is: first determine the exact relationship between the first pair of words, then find a word that creates the same relationship with the second given word.",
+    page4: "Let's complete the analogy: 'Hot is to cold as up is to ___.' Step 1: The relationship between 'hot' and 'cold' is antonyms (opposites). Step 2: We need the opposite of 'up.' Step 3: The answer is 'down.'",
+    page5: "Now let's complete the analogy: 'Author is to book as sculptor is to ___.' Step 1: The relationship between 'author' and 'book' is creator-to-creation. Step 2: We need what a sculptor creates. Step 3: The answer is 'sculpture' (or 'statue').",
+    page6: "A helpful trick: put the relationship into a full sentence first, like 'a hot temperature is the opposite of a cold temperature,' then apply that exact same sentence pattern to the second pair of words.",
+    page7: "You learned to complete and interpret analogies by identifying the specific relationship between a pair of words and applying that same relationship to a new pair."
+  },
+  "Idioms and Figurative Language": {
+    page1: "In this lesson, you will learn to interpret idioms, similes, metaphors, and other figurative language in context, going beyond literal meaning.",
+    page2: "An idiom is a phrase whose meaning cannot be determined from the literal meaning of its individual words (like 'break the ice' or 'under the weather'). Along with similes and metaphors, idioms require readers to recognize a figurative, non-literal meaning.",
+    page3: "The rule is: notice when a literal reading of a phrase doesn't make sense in context, then consider the phrase's commonly understood figurative meaning instead.",
+    page4: "Let's interpret the idiom in: 'After the long meeting, everyone was finally ready to hit the road.' Step 1: Literally, 'hit the road' would mean striking pavement, which makes no sense here. Step 2: This is a common idiom. Step 3: It figuratively means 'to leave' or 'depart.'",
+    page5: "Now let's interpret the idiom in: 'I think we should let the cat out of the bag before the surprise party gets ruined.' Step 1: Literally releasing a cat from a bag doesn't fit the context of a party. Step 2: This is a common idiom. Step 3: It figuratively means 'to reveal a secret.'",
+    page6: "A helpful trick: keep a running list of idioms you encounter along with their figurative meanings — many idioms appear again and again across different texts and conversations.",
+    page7: "You learned to interpret idioms and other figurative language by recognizing when a literal reading doesn't make sense and applying the phrase's figurative meaning instead."
+  },
+  "Precise Word Choice": {
+    page1: "In this lesson, you will learn to choose precise, vivid language that expresses your ideas clearly and concisely instead of relying on vague or overused words.",
+    page2: "Precise word choice replaces vague, general words (like 'good,' 'bad,' or 'walked') with specific, vivid words that convey exact meaning and tone (like 'exceptional,' 'disastrous,' or 'trudged'). Precise words often eliminate the need for extra descriptive words.",
+    page3: "The rule is: identify vague or overused words in a sentence, then replace them with a more specific word that captures the exact meaning, tone, or intensity you want to express.",
+    page4: "Let's revise the vague sentence: 'The weather was bad during the game.' Step 1: 'Bad' is vague — bad how? Step 2: Consider the specific type of bad weather. Step 3: Revised: 'The weather was torrential during the game,' which is far more precise and vivid.",
+    page5: "Now let's revise: 'She walked into the room because she was upset.' Step 1: 'Walked' and 'upset' are both vague. Step 2: Consider more specific verbs and emotions. Step 3: Revised: 'She stormed into the room, furious,' which conveys much more precise meaning in fewer words.",
+    page6: "A helpful trick: whenever you use an overused word like 'good,' 'bad,' 'nice,' 'said,' or 'walked,' pause and brainstorm at least three more specific alternatives before choosing the best one.",
+    page7: "You learned to choose precise, vivid language to express your ideas clearly and concisely, replacing vague or overused words with specific ones."
+  },
+  "Verbals - Gerunds, Participles, and Infinitives": {
+    page1: "In this lesson, you will learn to identify and use verbals — gerunds, participles, and infinitives — which are verb forms that function as other parts of speech in a sentence.",
+    page2: "A gerund is a verb form ending in '-ing' that acts as a noun (Swimming is great exercise). A participle is a verb form, often ending in '-ing' or '-ed,' that acts as an adjective (the barking dog). An infinitive is 'to' plus the base verb, and can act as a noun, adjective, or adverb (She wants to win).",
+    page3: "The rule is: check what job the '-ing,' '-ed,' or 'to + verb' word is doing in the sentence — if it's acting as a noun (a subject or object), it's a gerund; if it's describing a noun, it's a participle; if it starts with 'to,' it's likely an infinitive.",
+    page4: "Let's identify the verbal in: 'Running every morning improved her stamina.' Step 1: 'Running' ends in '-ing.' Step 2: It functions as the subject of the sentence (a noun job). Step 3: This is a gerund.",
+    page5: "Now let's identify the verbal in: 'The exhausted runner collapsed at the finish line.' Step 1: 'Exhausted' ends in '-ed.' Step 2: It describes the noun 'runner' (an adjective job). Step 3: This is a participle.",
+    page6: "A helpful trick: an '-ing' word is a gerund only if you could replace it with another noun, like 'it' or 'that activity' — if the sentence still makes sense, it's functioning as a noun.",
+    page7: "You learned to identify and use verbals — gerunds acting as nouns, participles acting as adjectives, and infinitives acting as nouns, adjectives, or adverbs."
+  },
+  "Active and Passive Voice": {
+    page1: "In this lesson, you will learn to recognize and use active and passive voice appropriately, and to understand when each is the better choice.",
+    page2: "In active voice, the subject performs the action (The dog chased the ball). In passive voice, the subject receives the action, and the doer is often introduced with 'by' or omitted entirely (The ball was chased by the dog / The ball was chased). Active voice is usually more direct and concise.",
+    page3: "The rule is: identify whether the subject is doing the action (active) or having the action done to it (passive), and generally prefer active voice unless you specifically want to emphasize the receiver of the action or the doer is unknown.",
+    page4: "Let's convert this passive sentence to active: 'The trophy was awarded to the team by the coach.' Step 1: The subject 'trophy' is receiving the action — this is passive. Step 2: Identify the true doer, 'the coach.' Step 3: Active version: 'The coach awarded the trophy to the team.'",
+    page5: "Now let's decide when passive voice is actually the better choice: 'The ancient ruins were discovered in 1922.' Step 1: This is passive, and the doer is unknown or unimportant. Step 2: Making it active would require guessing who discovered it. Step 3: Passive voice is the right choice here because the discoverer isn't the focus of the sentence.",
+    page6: "A helpful trick: if you can insert 'by zombies' after the verb and the sentence still grammatically makes sense (like 'the ball was chased by zombies'), the sentence is passive voice.",
+    page7: "You learned to recognize active and passive voice and to choose active voice for directness, while reserving passive voice for when the doer is unknown or unimportant."
+  },
+  "Misplaced and Dangling Modifiers": {
+    page1: "In this lesson, you will learn to identify and correct misplaced and dangling modifiers, which create confusing or unintentionally funny sentences.",
+    page2: "A misplaced modifier is placed too far from the word it's meant to describe, creating confusion about what it modifies (Almost, she ate the entire pizza). A dangling modifier describes a word that isn't actually present in the sentence at all (Walking to school, the rain started falling), leaving it unclear who is performing the action.",
+    page3: "The rule is: find the modifying phrase, identify what it's logically supposed to describe, and then move it directly next to that word — or, for dangling modifiers, add the missing subject the phrase is meant to describe.",
+    page4: "Let's fix this misplaced modifier: 'She served sandwiches to the kids wrapped in plastic.' Step 1: 'Wrapped in plastic' is placed next to 'kids,' making it sound like the kids are wrapped in plastic. Step 2: It should describe 'sandwiches' instead. Step 3: Corrected: 'She served sandwiches wrapped in plastic to the kids.'",
+    page5: "Now let's fix this dangling modifier: 'After finishing the race, a huge trophy was awarded.' Step 1: 'After finishing the race' has no clear subject — a trophy can't finish a race. Step 2: We need to add who finished the race. Step 3: Corrected: 'After finishing the race, Maria was awarded a huge trophy.'",
+    page6: "A helpful trick: after any introductory phrase ending in a comma, check that the very next word in the sentence is the person or thing actually doing that action — if it isn't, you likely have a dangling modifier.",
+    page7: "You learned to identify and correct misplaced and dangling modifiers by placing modifying phrases next to the word they describe and ensuring that word is clearly present."
+  },
+  "Punctuation for Clarity": {
+    page1: "In this lesson, you will learn to use commas, semicolons, and colons correctly to clarify meaning in complex sentences.",
+    page2: "Commas separate items, clauses, and introductory elements. Semicolons join two closely related independent clauses without a conjunction, or separate items in a complex list. Colons introduce a list, explanation, or emphatic statement after a complete independent clause.",
+    page3: "The rule is: use a comma for pauses and separations within a sentence, a semicolon to join two complete related sentences or separate complex list items, and a colon only after a complete sentence to introduce something that follows.",
+    page4: "Let's punctuate: 'I have visited three countries France Japan and Brazil.' Step 1: This is a simple list needing commas. Step 2: Add commas between items. Step 3: Corrected: 'I have visited three countries: France, Japan, and Brazil.' — note the colon introduces the list after a complete sentence.",
+    page5: "Now let's punctuate: 'The team practiced for months they were still nervous before the championship.' Step 1: These are two complete, closely related independent clauses. Step 2: A semicolon can join them without a conjunction. Step 3: Corrected: 'The team practiced for months; they were still nervous before the championship.'",
+    page6: "A helpful trick: a semicolon should always have a complete sentence on both sides of it — if either side isn't a full independent clause, a semicolon is the wrong punctuation mark to use.",
+    page7: "You learned to use commas, semicolons, and colons to clarify meaning, joining or separating ideas correctly within complex sentences."
+  },
+  "Formal versus Informal Style": {
+    page1: "In this lesson, you will learn to adjust your word choice and tone to match formal and informal writing situations.",
+    page2: "Formal style avoids contractions, slang, and casual phrasing, and uses precise vocabulary appropriate for academic or professional writing. Informal style uses contractions, casual expressions, and a conversational tone appropriate for texting friends or writing personal narratives.",
+    page3: "The rule is: consider your audience and purpose first — academic essays, cover letters, and reports call for formal style, while personal messages, dialogue, and casual blog posts call for informal style.",
+    page4: "Let's revise this informal sentence for a formal essay: 'This experiment kinda shows that plants need sunlight, which is pretty obvious.' Step 1: 'Kinda' and 'pretty obvious' are casual and vague. Step 2: Replace with formal, precise language. Step 3: Revised: 'This experiment demonstrates that plants require sunlight for growth.'",
+    page5: "Now let's revise this overly formal sentence for a casual text message to a friend: 'I would like to inform you that I shall be arriving at your residence at approximately six o'clock.' Step 1: This is far too formal for a text to a friend. Step 2: Simplify and make it conversational. Step 3: Revised: 'Hey, I'll be at your place around six!'",
+    page6: "A helpful trick: read your writing aloud and ask 'would I actually say this out loud to my teacher?' or 'would I actually text this to a friend?' — if the answer is no, adjust the formality to match your real audience.",
+    page7: "You learned to adjust word choice and tone to match formal and informal writing situations based on your audience and purpose."
+  },
+  "Argumentative Essay": {
+    page1: "In this lesson, you will learn to write a full argumentative essay that supports a claim with logical reasoning and well-integrated evidence across multiple paragraphs.",
+    page2: "A strong argumentative essay has an introduction with a clear thesis, body paragraphs that each develop one supporting reason with evidence and explanation, a paragraph addressing a counterclaim, and a conclusion that reinforces the thesis without merely repeating it.",
+    page3: "The rule is: plan your thesis and at least two supporting reasons before writing, dedicate one body paragraph to each reason with its own evidence, include a paragraph addressing the strongest opposing view, and end with a conclusion that reflects on why your argument matters.",
+    page4: "Let's outline an essay arguing that middle schools should offer more career exploration programs. Step 1: Thesis — career exploration programs help students make informed future choices. Step 2: Reason 1 with evidence — surveys show most students feel unprepared to choose a career path. Step 3: Reason 2 with evidence — schools with these programs report higher student engagement. Step 4: Counterclaim addressed — some worry about cost, but many programs can partner with local businesses at low expense.",
+    page5: "Now let's outline an essay arguing against year-round homework over school breaks. Step 1: Thesis — extended breaks without homework support student wellbeing without harming learning. Step 2: Reason 1 with evidence — studies link rest to improved long-term retention. Step 3: Reason 2 with evidence — many students report high stress from break homework. Step 4: Counterclaim addressed — some worry about learning loss, but light optional reading can bridge that gap without formal assignments.",
+    page6: "A helpful trick: write your counterclaim paragraph as if you were arguing against yourself as fairly as possible — the more honestly you represent the other side, the more convincing your rebuttal will be.",
+    page7: "You learned to write a full argumentative essay with a clear thesis, well-supported body paragraphs, a counterclaim response, and a strong conclusion."
+  },
+  "Literary Analysis Essay": {
+    page1: "In this lesson, you will learn to write a literary analysis essay that supports a specific claim about a text using textual evidence and clear explanation.",
+    page2: "A literary analysis essay makes an interpretive claim about an element of a text — like theme, character, or symbolism — and defends that claim using direct quotes or specific details from the text, followed by explanation of how that evidence supports the claim.",
+    page3: "The rule is: state a specific, arguable claim about the text (not just a summary), select two or three pieces of textual evidence that support it, and explain — don't just present — how each piece of evidence proves your claim.",
+    page4: "Let's build a paragraph analyzing symbolism in a story where a wilting plant reappears throughout as a character's hope fades. Step 1: Claim — the wilting plant symbolizes the character's fading hope. Step 2: Evidence — quote the passage describing the plant at three different points in the story. Step 3: Explanation — connect each description of the plant's condition to the character's emotional state at that moment.",
+    page5: "Now let's build a paragraph analyzing a character's transformation. Step 1: Claim — the character's transformation from cowardly to courageous is driven by his friendship with a braver classmate. Step 2: Evidence — quote a moment of initial cowardice and a later moment of courage. Step 3: Explanation — connect the friendship's influence directly to the contrast between those two quoted moments.",
+    page6: "A helpful trick: after every quote you include, ask yourself 'so what?' — then write a sentence explaining exactly what that quote proves about your claim, rather than letting the quote speak for itself.",
+    page7: "You learned to write a literary analysis essay that supports a specific, arguable claim about a text using well-explained textual evidence."
+  },
+  "Narrative Techniques": {
+    page1: "In this lesson, you will learn to use narrative techniques such as dialogue, pacing, and description to develop experiences and events in your writing.",
+    page2: "Pacing controls how quickly or slowly a story moves — short sentences and paragraphs speed up tense moments, while longer, more detailed passages slow the pace down for important or emotional scenes. Dialogue reveals character and moves plot forward more naturally than long summaries.",
+    page3: "The rule is: slow your pacing with detailed description during emotionally important or tense moments, speed up pacing with short sentences during fast action, and use dialogue to reveal character personality rather than simply stating traits.",
+    page4: "Let's apply pacing to a chase scene: 'He ran. He turned the corner. He didn't look back.' Step 1: Short, choppy sentences. Step 2: This speeds up the pace to match the urgency of the action. Step 3: This technique makes the reader feel the character's panic and momentum.",
+    page5: "Now let's apply pacing to an emotional scene: instead of writing 'She was sad about her grandmother,' slow down with detail: 'She traced her fingers along the worn edges of the photograph, remembering the smell of her grandmother's kitchen, the sound of her laugh, all of it fading a little more each year.' Step 1: Longer, sensory sentences. Step 2: This slows the pace to emphasize emotional weight. Step 3: This technique lets the reader feel the depth of the character's grief.",
+    page6: "A helpful trick: count your sentence lengths in a scene — a string of short sentences naturally speeds up action, while longer, layered sentences naturally slow readers down for reflection or emotion.",
+    page7: "You learned to use narrative techniques like dialogue, pacing, and description to develop experiences and events effectively in your writing."
+  },
+  "Using Evidence Effectively": {
+    page1: "In this lesson, you will learn to select and integrate relevant evidence smoothly into a written argument or analysis, rather than simply dropping in quotes.",
+    page2: "Using evidence effectively means choosing the most relevant piece of evidence for your specific point, introducing it with context (who said it, when, or under what circumstance), and following it with explanation that connects it clearly back to your claim.",
+    page3: "The rule is: introduce your evidence with a signal phrase, present the quote or fact, and then explain in your own words how it supports your specific point — never leave a quote to stand alone without explanation.",
+    page4: "Let's integrate evidence into an argument that recycling programs are effective. Step 1: Signal phrase — 'According to a 2023 city report,'. Step 2: Evidence — 'recycling rates increased by 40% after curbside bins were introduced.' Step 3: Explanation — 'This dramatic increase shows that making recycling more convenient directly leads to higher participation.'",
+    page5: "Now let's integrate evidence into a literary analysis. Step 1: Signal phrase — 'The narrator reveals his guilt when he admits,'. Step 2: Evidence — 'I couldn't meet her eyes, knowing what I had done.' Step 3: Explanation — 'His inability to make eye contact physically shows the shame he feels, even though he never says the word guilt directly.'",
+    page6: "A helpful trick: never end a paragraph on a quote — always add at least one more sentence of your own explaining why that quote matters, so the evidence works for your argument instead of sitting there unexplained.",
+    page7: "You learned to select and integrate relevant evidence effectively by introducing it with context and following it with clear explanation."
+  },
+  "Revising for Style": {
+    page1: "In this lesson, you will learn to revise your writing specifically to improve style — word choice, sentence variety, and voice — beyond just fixing errors.",
+    page2: "Revising for style means reading your own writing critically and asking whether it sounds engaging, whether your word choices are precise, and whether your sentences vary in length and structure, rather than just checking for correctness.",
+    page3: "The rule is: reread your draft aloud, mark any sentences that sound repetitive, flat, or vague, and revise those specific sentences for stronger word choice, varied sentence length, or a more distinct voice.",
+    page4: "Let's revise for style: 'The dog was big. The dog was scary. The dog barked loudly.' Step 1: Three short, repetitive sentences with the same subject. Step 2: Combine and vary them with stronger words. Step 3: Revised: 'The massive, menacing dog barked with a thunderous growl.'",
+    page5: "Now let's revise for voice: 'I went to the store. I bought some things. Then I went home.' Step 1: Flat, generic sentences with no distinct voice. Step 2: Add personality and specific detail. Step 3: Revised: 'I dashed to the corner store, grabbed the last bag of chips and a questionable amount of candy, and sprinted home before dinner.'",
+    page6: "A helpful trick: read your paragraph aloud and circle any word you've used more than twice — repeated words are often a sign that stronger, more varied vocabulary would improve your style.",
+    page7: "You learned to revise your writing specifically for style, improving word choice, sentence variety, and voice beyond simply correcting errors."
+  },
+  "Research and Note-Taking": {
+    page1: "In this lesson, you will learn to conduct research and take organized, well-documented notes while avoiding plagiarism.",
+    page2: "Effective research note-taking means recording information in your own words whenever possible, clearly marking any direct quotes with quotation marks, and always noting exactly which source each piece of information came from.",
+    page3: "The rule is: for every note you take, write down the source it came from immediately, use your own words unless you specifically need a direct quote, and mark any direct quotes clearly so you don't accidentally present them as your own words later.",
+    page4: "Let's take a proper research note from a source stating 'Coral reefs support approximately 25% of all marine species.' Step 1: Paraphrase in your own words — 'About a quarter of ocean species rely on coral reefs.' Step 2: Record the source, like 'Ocean Institute Report, 2023.' Step 3: This note is now properly documented and ready to use without risk of plagiarism.",
+    page5: "Now let's take a note when a direct quote is worth preserving: a scientist says, 'We were stunned by how quickly the reef recovered.' Step 1: Since the exact wording is powerful, keep it as a direct quote in quotation marks. Step 2: Record the source and the speaker's name. Step 3: This note is ready to use as a properly marked direct quotation, not paraphrased text.",
+    page6: "A helpful trick: use a simple note-card system where every card has three parts — the source, the note (paraphrased or quoted), and a marker showing which it is — this makes citing sources later much easier and avoids accidental plagiarism.",
+    page7: "You learned to conduct research and take organized notes by paraphrasing accurately, marking direct quotes clearly, and recording sources for every note."
+  },
+  "Paraphrasing and Avoiding Plagiarism": {
+    page1: "In this lesson, you will learn to paraphrase source information accurately in your own words while giving proper credit to avoid plagiarism.",
+    page2: "Paraphrasing means restating someone else's idea using your own sentence structure and vocabulary, not just swapping a few words in the original sentence. Even a well-paraphrased idea still requires a citation, because the idea itself came from another source.",
+    page3: "The rule is: read the original passage, put it away, restate the idea completely in your own words and sentence structure from memory, then check your paraphrase against the original to ensure you didn't copy phrasing, and always cite the source.",
+    page4: "Let's paraphrase this passage: 'Rising ocean temperatures are causing coral bleaching events to occur more frequently around the world.' Step 1: A weak paraphrase just swaps synonyms: 'Increasing sea temperatures are causing coral whitening events to happen more often.' This is too close to the original. Step 2: A strong paraphrase restructures the idea: 'As oceans continue to warm, coral reefs are experiencing bleaching at a growing rate worldwide.' Step 3: Add a citation regardless, since the idea still came from the source.",
+    page5: "Now let's identify plagiarism versus proper paraphrasing. A student writes, 'Ocean temperatures rising are causing bleaching events more frequently around the world,' with no citation. Step 1: This barely changes the original's word order and wording. Step 2: It also lacks a citation. Step 3: This is plagiarism, both because the phrasing is too close to the original and because there's no credit given.",
+    page6: "A helpful trick: after paraphrasing, cover up the original source and read only your paraphrase — if it sounds like your own natural writing style rather than an echo of the original, you've paraphrased successfully.",
+    page7: "You learned to paraphrase source information accurately in your own words while giving proper credit through citations to avoid plagiarism."
+  },
+  "Analyzing Media Messages": {
+    page1: "In this lesson, you will learn to analyze how visual and multimedia elements — like images, video, audio, and layout — contribute to a message's overall meaning.",
+    page2: "Media messages combine words with visual and audio elements that shape how an audience interprets the content. Color choices, camera angles, music, and layout can emphasize certain ideas, create emotional responses, or subtly persuade an audience beyond what the words alone convey.",
+    page3: "The rule is: identify the multimedia elements present (images, color, sound, layout), then ask what specific emotion or idea each element emphasizes, and how that shapes the audience's overall impression of the message.",
+    page4: "Let's analyze a charity advertisement that uses slow, somber music and close-up images of struggling families. Step 1: Elements — somber music, close-up imagery. Step 2: These elements evoke sympathy and urgency. Step 3: This combination is designed to persuade viewers to donate by creating an emotional connection beyond just the spoken facts.",
+    page5: "Now let's analyze a product advertisement using bright colors, upbeat music, and quick, energetic camera cuts. Step 1: Elements — bright colors, upbeat music, fast pacing. Step 2: These elements create excitement and a sense of fun or energy. Step 3: This combination is designed to make the product feel appealing and exciting rather than to inform viewers with facts.",
+    page6: "A helpful trick: try muting the sound or removing the images from a media message in your mind, and notice how differently — and less persuasively — the words alone would land without those supporting elements.",
+    page7: "You learned to analyze how visual and multimedia elements contribute to a media message's overall meaning and persuasive effect."
+  },
+  "Oral Presentation Skills": {
+    page1: "In this lesson, you will learn to present claims and findings clearly, using appropriate eye contact, volume, pacing, and supporting visuals.",
+    page2: "Strong oral presentations combine clear content organization with effective delivery: steady eye contact builds connection with the audience, appropriate volume ensures everyone can hear, deliberate pacing helps the audience absorb information, and visuals reinforce key points without cluttering the message.",
+    page3: "The rule is: organize your main points before speaking, practice maintaining eye contact instead of reading directly from notes, speak at a volume and pace suited to the room and audience, and use visuals to support — not replace — your spoken explanation.",
+    page4: "Let's plan the delivery of a presentation on renewable energy. Step 1: Organize main points — types of renewable energy, benefits, and challenges. Step 2: Practice looking up from notes to make eye contact during each main point. Step 3: Use one simple chart comparing energy costs as a visual, explained aloud rather than just displayed.",
+    page5: "Now let's fix a weak presentation habit: a student reads directly from a script in a quiet, rushed monotone. Step 1: Identify the issues — no eye contact, low volume, rushed pace. Step 2: Revise the approach — use brief notecards with key words only, not full sentences. Step 3: This allows for natural eye contact, a steadier pace, and a more confident, audible delivery.",
+    page6: "A helpful trick: practice your presentation in front of a mirror or record yourself — this helps you notice your own eye contact, pacing, and volume issues before presenting to a real audience.",
+    page7: "You learned to present claims and findings clearly and confidently, using effective eye contact, volume, pacing, and supporting visuals."
+  },
+  "Grade 7 ELA Review": {
+    page1: "In this lesson, you will review key Grade 7 ELA skills, including analyzing theme development, evaluating arguments and evidence, using precise language and complex grammar, and writing well-supported essays.",
+    page2: "This review combines advanced reading skills, like tracing theme development and evaluating an author's reasoning, with language skills, like verbals and active/passive voice, and writing skills, like building argumentative and literary analysis essays with strong evidence.",
+    page3: "The rule is: for reading, always trace ideas and conflicts across the whole text, not just one moment; for language, check that every word and sentence structure is doing a precise, deliberate job; for writing, always follow evidence with clear explanation.",
+    page4: "Let's review evaluating an argument together: for the claim 'students should have longer lunch periods,' check whether the evidence (a single classmate's opinion versus multiple school surveys) is sufficient — multiple surveys make a far stronger case than one person's opinion.",
+    page5: "Now let's review precise word choice and evidence together: instead of writing 'the character was sad' with no proof, revise to 'the character's voice cracked as she read the letter one last time,' which shows the emotion precisely and could be followed by a properly cited textual quote in an essay.",
+    page6: "A helpful trick: when reviewing multiple Grade 7 skills together, work through them in order — first check your reading analysis and evidence, then your grammar and word choice, then your essay's structure and support.",
+    page7: "You reviewed core Grade 7 ELA skills across advanced reading analysis, vocabulary, grammar, and evidence-based writing, preparing you for high school-level English coursework."
   }
 };
 if (typeof module !== 'undefined') module.exports = ELA_LESSON_CONTENT;

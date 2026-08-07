@@ -451,6 +451,22 @@ const GRADE_UNITS_DB = {
       "Volume & Measurement Conversions",
       "Coordinate Planes & Geometry",
       "Grade 5 Math Review"
+    ],
+    "6": [
+      "Ratios & Rates",
+      "Fractions & Number Theory",
+      "Negative Numbers & the Coordinate Plane",
+      "Expressions & Equations",
+      "Area, Surface Area & Volume",
+      "Statistics & Data"
+    ],
+    "7": [
+      "Proportional Relationships",
+      "Operations with Rational Numbers",
+      "Expressions & Linear Equations",
+      "Inequalities & Percent",
+      "Geometry",
+      "Probability & Statistics"
     ]
   },
   "ela": {
@@ -493,6 +509,22 @@ const GRADE_UNITS_DB = {
       "Text Structure: Compare Structure",
       "Writing Arguments & Punctuation",
       "ELA Review & Mechanics"
+    ],
+    "6": [
+      "Reading Fiction & Theme",
+      "Reading Nonfiction",
+      "Vocabulary & Word Study",
+      "Grammar & Usage",
+      "Writing",
+      "Speaking, Listening & Research"
+    ],
+    "7": [
+      "Analyzing Literature",
+      "Analyzing Informational Text",
+      "Vocabulary & Language",
+      "Grammar & Conventions",
+      "Writing",
+      "Research & Media"
     ]
   },
   "science": {
@@ -535,6 +567,22 @@ const GRADE_UNITS_DB = {
       "Earth's Systems & Spheres",
       "Deep Space & Observing the Sky",
       "Environmental Protection"
+    ],
+    "6": [
+      "Scientific Method & Matter",
+      "Energy & Forces",
+      "Earth's Structure",
+      "Weather & Climate",
+      "Cells & Life Systems",
+      "Ecosystems"
+    ],
+    "7": [
+      "Genetics & Heredity",
+      "Evolution",
+      "Human Body Systems",
+      "Classification & Diversity",
+      "Chemistry Basics",
+      "Space Science"
     ]
   },
   "history": {
@@ -577,6 +625,22 @@ const GRADE_UNITS_DB = {
       "The Great Depression & World War II",
       "The Civil Rights Movement",
       "Modern Inventors & Explorers"
+    ],
+    "6": [
+      "Early Human Societies",
+      "Ancient Mesopotamia",
+      "Ancient Egypt",
+      "Ancient India & China",
+      "Ancient Greece",
+      "Ancient Rome"
+    ],
+    "7": [
+      "The Byzantine Empire & Islam",
+      "Medieval Europe",
+      "African & American Civilizations",
+      "The Renaissance & Reformation",
+      "The Age of Exploration",
+      "The Early Modern World"
     ]
   },
   "geography": {
@@ -619,6 +683,22 @@ const GRADE_UNITS_DB = {
       "Human Migration & Population Shifts",
       "Topographic Maps & Elevation",
       "Map Skills: Scale, Grid & Direction"
+    ],
+    "6": [
+      "Geographic Tools & Concepts",
+      "Earth's Physical Systems",
+      "North America",
+      "South America",
+      "Europe",
+      "Human-Environment Interaction"
+    ],
+    "7": [
+      "Africa",
+      "Asia",
+      "The Middle East",
+      "Oceania & Polar Regions",
+      "Global Economic Geography",
+      "Geography & Global Issues"
     ]
   },
   "art": {
@@ -661,6 +741,22 @@ const GRADE_UNITS_DB = {
       "Architecture Through History",
       "Digital Art Tools & Techniques",
       "Abstract Art & Expressionism"
+    ],
+    "6": [
+      "Elements of Art",
+      "Principles of Design",
+      "Drawing Techniques",
+      "Painting & Color",
+      "Art History: Ancient to Renaissance",
+      "Sculpture & 3D Art"
+    ],
+    "7": [
+      "Art Movements: Baroque to Impressionism",
+      "Modern Art Movements",
+      "Design & Media",
+      "Printmaking & Mixed Media",
+      "Global Art Traditions",
+      "Art Criticism & Careers"
     ]
   }
 };
@@ -8732,6 +8828,3970 @@ const GRADE_2_5_QUESTIONS = {
           "hint": "Read Page 5 to review the summary rule."
         }
       ]
+    },
+    "6": {
+      "1": [
+        {
+          "theme": "The Scientific Method",
+          "fact_stem": "guides scientists through observing, questioning, and testing ideas",
+          "concept": "The Scientific Method",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of the scientific method on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Scientific Method",
+          "fact_stem": "guides scientists through observing, questioning, and testing ideas",
+          "concept": "The Scientific Method",
+          "questionText": "What explains how the scientific method maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Scientific Method",
+          "fact_stem": "guides scientists through observing, questioning, and testing ideas",
+          "concept": "The Scientific Method",
+          "questionText": "What physical change can heat or cooling cause in the scientific method on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Scientific Method",
+          "fact_stem": "guides scientists through observing, questioning, and testing ideas",
+          "concept": "The Scientific Method",
+          "questionText": "Which statement summarizes the behavior of the scientific method taught on Page 5?",
+          "correctAnswer": "That the scientific method guides scientists through observing, questioning, and testing ideas under normal physical conditions.",
+          "options": [
+            "That the scientific method guides scientists through observing, questioning, and testing ideas under normal physical conditions.",
+            "That the scientific method behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "States of Matter",
+          "fact_stem": "describes how matter exists as a solid, liquid, or gas",
+          "concept": "States of Matter",
+          "questionText": "What is the primary characteristic of states of matter on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "States of Matter",
+          "fact_stem": "describes how matter exists as a solid, liquid, or gas",
+          "concept": "States of Matter",
+          "questionText": "What governs the internal structure or behavior of states of matter on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "States of Matter",
+          "fact_stem": "describes how matter exists as a solid, liquid, or gas",
+          "concept": "States of Matter",
+          "questionText": "What happens when states of matter is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "States of Matter",
+          "fact_stem": "describes how matter exists as a solid, liquid, or gas",
+          "concept": "States of Matter",
+          "questionText": "Which statement summarizes the scientific concept of states of matter on Page 5?",
+          "correctAnswer": "That states of matter describes how matter exists as a solid, liquid, or gas.",
+          "options": [
+            "That states of matter describes how matter exists as a solid, liquid, or gas.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "Physical and Chemical Changes",
+          "fact_stem": "distinguishes changes in form from changes in chemical identity",
+          "concept": "Physical and Chemical Changes",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of physical and chemical changes on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical and Chemical Changes",
+          "fact_stem": "distinguishes changes in form from changes in chemical identity",
+          "concept": "Physical and Chemical Changes",
+          "questionText": "What explains how physical and chemical changes maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical and Chemical Changes",
+          "fact_stem": "distinguishes changes in form from changes in chemical identity",
+          "concept": "Physical and Chemical Changes",
+          "questionText": "What physical change can heat or cooling cause in physical and chemical changes on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical and Chemical Changes",
+          "fact_stem": "distinguishes changes in form from changes in chemical identity",
+          "concept": "Physical and Chemical Changes",
+          "questionText": "Which statement summarizes the behavior of physical and chemical changes taught on Page 5?",
+          "correctAnswer": "That physical and chemical changes distinguishes changes in form from changes in chemical identity under normal physical conditions.",
+          "options": [
+            "That physical and chemical changes distinguishes changes in form from changes in chemical identity under normal physical conditions.",
+            "That physical and chemical changes behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "Atoms and Elements",
+          "fact_stem": "describes the tiny particles that make up all elements and matter",
+          "concept": "Atoms and Elements",
+          "questionText": "What is the primary characteristic of atoms and elements on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Atoms and Elements",
+          "fact_stem": "describes the tiny particles that make up all elements and matter",
+          "concept": "Atoms and Elements",
+          "questionText": "What governs the internal structure or behavior of atoms and elements on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Atoms and Elements",
+          "fact_stem": "describes the tiny particles that make up all elements and matter",
+          "concept": "Atoms and Elements",
+          "questionText": "What happens when atoms and elements is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Atoms and Elements",
+          "fact_stem": "describes the tiny particles that make up all elements and matter",
+          "concept": "Atoms and Elements",
+          "questionText": "Which statement summarizes the scientific concept of atoms and elements on Page 5?",
+          "correctAnswer": "That atoms and elements describes the tiny particles that make up all elements and matter.",
+          "options": [
+            "That atoms and elements describes the tiny particles that make up all elements and matter.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "The Periodic Table",
+          "fact_stem": "organizes all known elements by their properties and atomic number",
+          "concept": "The Periodic Table",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of the periodic table on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Periodic Table",
+          "fact_stem": "organizes all known elements by their properties and atomic number",
+          "concept": "The Periodic Table",
+          "questionText": "What explains how the periodic table maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Periodic Table",
+          "fact_stem": "organizes all known elements by their properties and atomic number",
+          "concept": "The Periodic Table",
+          "questionText": "What physical change can heat or cooling cause in the periodic table on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Periodic Table",
+          "fact_stem": "organizes all known elements by their properties and atomic number",
+          "concept": "The Periodic Table",
+          "questionText": "Which statement summarizes the behavior of the periodic table taught on Page 5?",
+          "correctAnswer": "That the periodic table organizes all known elements by their properties and atomic number under normal physical conditions.",
+          "options": [
+            "That the periodic table organizes all known elements by their properties and atomic number under normal physical conditions.",
+            "That the periodic table behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Forms of Energy",
+          "fact_stem": "classifies energy into types like kinetic, potential, thermal, and light",
+          "concept": "Forms of Energy",
+          "questionText": "What is the primary characteristic of forms of energy on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Forms of Energy",
+          "fact_stem": "classifies energy into types like kinetic, potential, thermal, and light",
+          "concept": "Forms of Energy",
+          "questionText": "What governs the internal structure or behavior of forms of energy on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Forms of Energy",
+          "fact_stem": "classifies energy into types like kinetic, potential, thermal, and light",
+          "concept": "Forms of Energy",
+          "questionText": "What happens when forms of energy is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Forms of Energy",
+          "fact_stem": "classifies energy into types like kinetic, potential, thermal, and light",
+          "concept": "Forms of Energy",
+          "questionText": "Which statement summarizes the scientific concept of forms of energy on Page 5?",
+          "correctAnswer": "That forms of energy classifies energy into types like kinetic, potential, thermal, and light.",
+          "options": [
+            "That forms of energy classifies energy into types like kinetic, potential, thermal, and light.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "Energy Transformation",
+          "fact_stem": "changes energy from one form into another form",
+          "concept": "Energy Transformation",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of energy transformation on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Energy Transformation",
+          "fact_stem": "changes energy from one form into another form",
+          "concept": "Energy Transformation",
+          "questionText": "What explains how energy transformation maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Energy Transformation",
+          "fact_stem": "changes energy from one form into another form",
+          "concept": "Energy Transformation",
+          "questionText": "What physical change can heat or cooling cause in energy transformation on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Energy Transformation",
+          "fact_stem": "changes energy from one form into another form",
+          "concept": "Energy Transformation",
+          "questionText": "Which statement summarizes the behavior of energy transformation taught on Page 5?",
+          "correctAnswer": "That energy transformation changes energy from one form into another form under normal physical conditions.",
+          "options": [
+            "That energy transformation changes energy from one form into another form under normal physical conditions.",
+            "That energy transformation behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "Newton's Laws of Motion",
+          "fact_stem": "explains how forces affect the motion of objects",
+          "concept": "Newton's Laws of Motion",
+          "questionText": "What is the primary characteristic of newton's laws of motion on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Newton's Laws of Motion",
+          "fact_stem": "explains how forces affect the motion of objects",
+          "concept": "Newton's Laws of Motion",
+          "questionText": "What governs the internal structure or behavior of newton's laws of motion on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Newton's Laws of Motion",
+          "fact_stem": "explains how forces affect the motion of objects",
+          "concept": "Newton's Laws of Motion",
+          "questionText": "What happens when newton's laws of motion is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Newton's Laws of Motion",
+          "fact_stem": "explains how forces affect the motion of objects",
+          "concept": "Newton's Laws of Motion",
+          "questionText": "Which statement summarizes the scientific concept of newton's laws of motion on Page 5?",
+          "correctAnswer": "That newton's laws of motion explains how forces affect the motion of objects.",
+          "options": [
+            "That newton's laws of motion explains how forces affect the motion of objects.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "Simple Machines",
+          "fact_stem": "make work easier by changing the size or direction of a force",
+          "concept": "Simple Machines",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of simple machines on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Simple Machines",
+          "fact_stem": "make work easier by changing the size or direction of a force",
+          "concept": "Simple Machines",
+          "questionText": "What explains how simple machines maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Simple Machines",
+          "fact_stem": "make work easier by changing the size or direction of a force",
+          "concept": "Simple Machines",
+          "questionText": "What physical change can heat or cooling cause in simple machines on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Simple Machines",
+          "fact_stem": "make work easier by changing the size or direction of a force",
+          "concept": "Simple Machines",
+          "questionText": "Which statement summarizes the behavior of simple machines taught on Page 5?",
+          "correctAnswer": "That simple machines make work easier by changing the size or direction of a force under normal physical conditions.",
+          "options": [
+            "That simple machines make work easier by changing the size or direction of a force under normal physical conditions.",
+            "That simple machines behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "Heat Transfer",
+          "fact_stem": "moves thermal energy through conduction, convection, and radiation",
+          "concept": "Heat Transfer",
+          "questionText": "What is the primary characteristic of heat transfer on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Heat Transfer",
+          "fact_stem": "moves thermal energy through conduction, convection, and radiation",
+          "concept": "Heat Transfer",
+          "questionText": "What governs the internal structure or behavior of heat transfer on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Heat Transfer",
+          "fact_stem": "moves thermal energy through conduction, convection, and radiation",
+          "concept": "Heat Transfer",
+          "questionText": "What happens when heat transfer is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Heat Transfer",
+          "fact_stem": "moves thermal energy through conduction, convection, and radiation",
+          "concept": "Heat Transfer",
+          "questionText": "Which statement summarizes the scientific concept of heat transfer on Page 5?",
+          "correctAnswer": "That heat transfer moves thermal energy through conduction, convection, and radiation.",
+          "options": [
+            "That heat transfer moves thermal energy through conduction, convection, and radiation.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "Earth's Layers",
+          "fact_stem": "describes the crust, mantle, outer core, and inner core of our planet",
+          "concept": "Earth's Layers",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of earth's layers on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Earth's Layers",
+          "fact_stem": "describes the crust, mantle, outer core, and inner core of our planet",
+          "concept": "Earth's Layers",
+          "questionText": "What explains how earth's layers maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Earth's Layers",
+          "fact_stem": "describes the crust, mantle, outer core, and inner core of our planet",
+          "concept": "Earth's Layers",
+          "questionText": "What physical change can heat or cooling cause in earth's layers on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Earth's Layers",
+          "fact_stem": "describes the crust, mantle, outer core, and inner core of our planet",
+          "concept": "Earth's Layers",
+          "questionText": "Which statement summarizes the behavior of earth's layers taught on Page 5?",
+          "correctAnswer": "That earth's layers describes the crust, mantle, outer core, and inner core of our planet under normal physical conditions.",
+          "options": [
+            "That earth's layers describes the crust, mantle, outer core, and inner core of our planet under normal physical conditions.",
+            "That earth's layers behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "Plate Tectonics and Earthquakes",
+          "fact_stem": "explains how moving crustal plates cause earthquakes",
+          "concept": "Plate Tectonics and Earthquakes",
+          "questionText": "What is the primary characteristic of plate tectonics and earthquakes on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Plate Tectonics and Earthquakes",
+          "fact_stem": "explains how moving crustal plates cause earthquakes",
+          "concept": "Plate Tectonics and Earthquakes",
+          "questionText": "What governs the internal structure or behavior of plate tectonics and earthquakes on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Plate Tectonics and Earthquakes",
+          "fact_stem": "explains how moving crustal plates cause earthquakes",
+          "concept": "Plate Tectonics and Earthquakes",
+          "questionText": "What happens when plate tectonics and earthquakes is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Plate Tectonics and Earthquakes",
+          "fact_stem": "explains how moving crustal plates cause earthquakes",
+          "concept": "Plate Tectonics and Earthquakes",
+          "questionText": "Which statement summarizes the scientific concept of plate tectonics and earthquakes on Page 5?",
+          "correctAnswer": "That plate tectonics and earthquakes explains how moving crustal plates cause earthquakes.",
+          "options": [
+            "That plate tectonics and earthquakes explains how moving crustal plates cause earthquakes.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "Volcanoes",
+          "fact_stem": "form when molten rock erupts through weak spots in Earth's crust",
+          "concept": "Volcanoes",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of volcanoes on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Volcanoes",
+          "fact_stem": "form when molten rock erupts through weak spots in Earth's crust",
+          "concept": "Volcanoes",
+          "questionText": "What explains how volcanoes maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Volcanoes",
+          "fact_stem": "form when molten rock erupts through weak spots in Earth's crust",
+          "concept": "Volcanoes",
+          "questionText": "What physical change can heat or cooling cause in volcanoes on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Volcanoes",
+          "fact_stem": "form when molten rock erupts through weak spots in Earth's crust",
+          "concept": "Volcanoes",
+          "questionText": "Which statement summarizes the behavior of volcanoes taught on Page 5?",
+          "correctAnswer": "That volcanoes form when molten rock erupts through weak spots in Earth's crust under normal physical conditions.",
+          "options": [
+            "That volcanoes form when molten rock erupts through weak spots in Earth's crust under normal physical conditions.",
+            "That volcanoes behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "The Rock Cycle",
+          "fact_stem": "recycles rock material among igneous, sedimentary, and metamorphic forms",
+          "concept": "The Rock Cycle",
+          "questionText": "What is the primary characteristic of the rock cycle on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Rock Cycle",
+          "fact_stem": "recycles rock material among igneous, sedimentary, and metamorphic forms",
+          "concept": "The Rock Cycle",
+          "questionText": "What governs the internal structure or behavior of the rock cycle on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Rock Cycle",
+          "fact_stem": "recycles rock material among igneous, sedimentary, and metamorphic forms",
+          "concept": "The Rock Cycle",
+          "questionText": "What happens when the rock cycle is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Rock Cycle",
+          "fact_stem": "recycles rock material among igneous, sedimentary, and metamorphic forms",
+          "concept": "The Rock Cycle",
+          "questionText": "Which statement summarizes the scientific concept of the rock cycle on Page 5?",
+          "correctAnswer": "That the rock cycle recycles rock material among igneous, sedimentary, and metamorphic forms.",
+          "options": [
+            "That the rock cycle recycles rock material among igneous, sedimentary, and metamorphic forms.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "Minerals and Rocks",
+          "fact_stem": "combine to form the solid materials of Earth's crust",
+          "concept": "Minerals and Rocks",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of minerals and rocks on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Minerals and Rocks",
+          "fact_stem": "combine to form the solid materials of Earth's crust",
+          "concept": "Minerals and Rocks",
+          "questionText": "What explains how minerals and rocks maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Minerals and Rocks",
+          "fact_stem": "combine to form the solid materials of Earth's crust",
+          "concept": "Minerals and Rocks",
+          "questionText": "What physical change can heat or cooling cause in minerals and rocks on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Minerals and Rocks",
+          "fact_stem": "combine to form the solid materials of Earth's crust",
+          "concept": "Minerals and Rocks",
+          "questionText": "Which statement summarizes the behavior of minerals and rocks taught on Page 5?",
+          "correctAnswer": "That minerals and rocks combine to form the solid materials of Earth's crust under normal physical conditions.",
+          "options": [
+            "That minerals and rocks combine to form the solid materials of Earth's crust under normal physical conditions.",
+            "That minerals and rocks behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "Layers of the Atmosphere",
+          "fact_stem": "separates the air around Earth into distinct layers by altitude",
+          "concept": "Layers of the Atmosphere",
+          "questionText": "What is the primary characteristic of layers of the atmosphere on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Layers of the Atmosphere",
+          "fact_stem": "separates the air around Earth into distinct layers by altitude",
+          "concept": "Layers of the Atmosphere",
+          "questionText": "What governs the internal structure or behavior of layers of the atmosphere on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Layers of the Atmosphere",
+          "fact_stem": "separates the air around Earth into distinct layers by altitude",
+          "concept": "Layers of the Atmosphere",
+          "questionText": "What happens when layers of the atmosphere is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Layers of the Atmosphere",
+          "fact_stem": "separates the air around Earth into distinct layers by altitude",
+          "concept": "Layers of the Atmosphere",
+          "questionText": "Which statement summarizes the scientific concept of layers of the atmosphere on Page 5?",
+          "correctAnswer": "That layers of the atmosphere separates the air around Earth into distinct layers by altitude.",
+          "options": [
+            "That layers of the atmosphere separates the air around Earth into distinct layers by altitude.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "Weather Patterns",
+          "fact_stem": "describes short-term changes in temperature, pressure, and moisture",
+          "concept": "Weather Patterns",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of weather patterns on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Weather Patterns",
+          "fact_stem": "describes short-term changes in temperature, pressure, and moisture",
+          "concept": "Weather Patterns",
+          "questionText": "What explains how weather patterns maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Weather Patterns",
+          "fact_stem": "describes short-term changes in temperature, pressure, and moisture",
+          "concept": "Weather Patterns",
+          "questionText": "What physical change can heat or cooling cause in weather patterns on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Weather Patterns",
+          "fact_stem": "describes short-term changes in temperature, pressure, and moisture",
+          "concept": "Weather Patterns",
+          "questionText": "Which statement summarizes the behavior of weather patterns taught on Page 5?",
+          "correctAnswer": "That weather patterns describes short-term changes in temperature, pressure, and moisture under normal physical conditions.",
+          "options": [
+            "That weather patterns describes short-term changes in temperature, pressure, and moisture under normal physical conditions.",
+            "That weather patterns behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "The Water Cycle",
+          "fact_stem": "moves water between the ocean, atmosphere, and land through evaporation and precipitation",
+          "concept": "The Water Cycle",
+          "questionText": "What is the primary characteristic of the water cycle on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Water Cycle",
+          "fact_stem": "moves water between the ocean, atmosphere, and land through evaporation and precipitation",
+          "concept": "The Water Cycle",
+          "questionText": "What governs the internal structure or behavior of the water cycle on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Water Cycle",
+          "fact_stem": "moves water between the ocean, atmosphere, and land through evaporation and precipitation",
+          "concept": "The Water Cycle",
+          "questionText": "What happens when the water cycle is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Water Cycle",
+          "fact_stem": "moves water between the ocean, atmosphere, and land through evaporation and precipitation",
+          "concept": "The Water Cycle",
+          "questionText": "Which statement summarizes the scientific concept of the water cycle on Page 5?",
+          "correctAnswer": "That the water cycle moves water between the ocean, atmosphere, and land through evaporation and precipitation.",
+          "options": [
+            "That the water cycle moves water between the ocean, atmosphere, and land through evaporation and precipitation.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "Climate versus Weather",
+          "fact_stem": "compares long-term climate patterns to short-term daily weather",
+          "concept": "Climate versus Weather",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of climate versus weather on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Climate versus Weather",
+          "fact_stem": "compares long-term climate patterns to short-term daily weather",
+          "concept": "Climate versus Weather",
+          "questionText": "What explains how climate versus weather maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Climate versus Weather",
+          "fact_stem": "compares long-term climate patterns to short-term daily weather",
+          "concept": "Climate versus Weather",
+          "questionText": "What physical change can heat or cooling cause in climate versus weather on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Climate versus Weather",
+          "fact_stem": "compares long-term climate patterns to short-term daily weather",
+          "concept": "Climate versus Weather",
+          "questionText": "Which statement summarizes the behavior of climate versus weather taught on Page 5?",
+          "correctAnswer": "That climate versus weather compares long-term climate patterns to short-term daily weather under normal physical conditions.",
+          "options": [
+            "That climate versus weather compares long-term climate patterns to short-term daily weather under normal physical conditions.",
+            "That climate versus weather behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "Severe Weather Patterns",
+          "fact_stem": "produces dangerous storms like hurricanes, tornadoes, and blizzards",
+          "concept": "Severe Weather Patterns",
+          "questionText": "What is the primary characteristic of severe weather on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Severe Weather Patterns",
+          "fact_stem": "produces dangerous storms like hurricanes, tornadoes, and blizzards",
+          "concept": "Severe Weather Patterns",
+          "questionText": "What governs the internal structure or behavior of severe weather on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Severe Weather Patterns",
+          "fact_stem": "produces dangerous storms like hurricanes, tornadoes, and blizzards",
+          "concept": "Severe Weather Patterns",
+          "questionText": "What happens when severe weather is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Severe Weather Patterns",
+          "fact_stem": "produces dangerous storms like hurricanes, tornadoes, and blizzards",
+          "concept": "Severe Weather Patterns",
+          "questionText": "Which statement summarizes the scientific concept of severe weather on Page 5?",
+          "correctAnswer": "That severe weather produces dangerous storms like hurricanes, tornadoes, and blizzards.",
+          "options": [
+            "That severe weather produces dangerous storms like hurricanes, tornadoes, and blizzards.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "Cell Theory",
+          "fact_stem": "states that all living things are made of one or more cells",
+          "concept": "Cell Theory",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of cell theory on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Cell Theory",
+          "fact_stem": "states that all living things are made of one or more cells",
+          "concept": "Cell Theory",
+          "questionText": "What explains how cell theory maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Cell Theory",
+          "fact_stem": "states that all living things are made of one or more cells",
+          "concept": "Cell Theory",
+          "questionText": "What physical change can heat or cooling cause in cell theory on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Cell Theory",
+          "fact_stem": "states that all living things are made of one or more cells",
+          "concept": "Cell Theory",
+          "questionText": "Which statement summarizes the behavior of cell theory taught on Page 5?",
+          "correctAnswer": "That cell theory states that all living things are made of one or more cells under normal physical conditions.",
+          "options": [
+            "That cell theory states that all living things are made of one or more cells under normal physical conditions.",
+            "That cell theory behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "Plant versus Animal Cells",
+          "fact_stem": "compares the structures found in plant cells and animal cells",
+          "concept": "Plant versus Animal Cells",
+          "questionText": "What is the primary characteristic of plant versus animal cells on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Plant versus Animal Cells",
+          "fact_stem": "compares the structures found in plant cells and animal cells",
+          "concept": "Plant versus Animal Cells",
+          "questionText": "What governs the internal structure or behavior of plant versus animal cells on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Plant versus Animal Cells",
+          "fact_stem": "compares the structures found in plant cells and animal cells",
+          "concept": "Plant versus Animal Cells",
+          "questionText": "What happens when plant versus animal cells is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Plant versus Animal Cells",
+          "fact_stem": "compares the structures found in plant cells and animal cells",
+          "concept": "Plant versus Animal Cells",
+          "questionText": "Which statement summarizes the scientific concept of plant versus animal cells on Page 5?",
+          "correctAnswer": "That plant versus animal cells compares the structures found in plant cells and animal cells.",
+          "options": [
+            "That plant versus animal cells compares the structures found in plant cells and animal cells.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "Cell Organelles",
+          "fact_stem": "perform specialized jobs inside every living cell",
+          "concept": "Cell Organelles",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of cell organelles on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Cell Organelles",
+          "fact_stem": "perform specialized jobs inside every living cell",
+          "concept": "Cell Organelles",
+          "questionText": "What explains how cell organelles maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Cell Organelles",
+          "fact_stem": "perform specialized jobs inside every living cell",
+          "concept": "Cell Organelles",
+          "questionText": "What physical change can heat or cooling cause in cell organelles on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Cell Organelles",
+          "fact_stem": "perform specialized jobs inside every living cell",
+          "concept": "Cell Organelles",
+          "questionText": "Which statement summarizes the behavior of cell organelles taught on Page 5?",
+          "correctAnswer": "That cell organelles perform specialized jobs inside every living cell under normal physical conditions.",
+          "options": [
+            "That cell organelles perform specialized jobs inside every living cell under normal physical conditions.",
+            "That cell organelles behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "Levels of Biological Organization",
+          "fact_stem": "arranges life from cells to tissues, organs, and organisms",
+          "concept": "Levels of Biological Organization",
+          "questionText": "What is the primary characteristic of levels of biological organization on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Levels of Biological Organization",
+          "fact_stem": "arranges life from cells to tissues, organs, and organisms",
+          "concept": "Levels of Biological Organization",
+          "questionText": "What governs the internal structure or behavior of levels of biological organization on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Levels of Biological Organization",
+          "fact_stem": "arranges life from cells to tissues, organs, and organisms",
+          "concept": "Levels of Biological Organization",
+          "questionText": "What happens when levels of biological organization is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Levels of Biological Organization",
+          "fact_stem": "arranges life from cells to tissues, organs, and organisms",
+          "concept": "Levels of Biological Organization",
+          "questionText": "Which statement summarizes the scientific concept of levels of biological organization on Page 5?",
+          "correctAnswer": "That levels of biological organization arranges life from cells to tissues, organs, and organisms.",
+          "options": [
+            "That levels of biological organization arranges life from cells to tissues, organs, and organisms.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "Photosynthesis and Respiration",
+          "fact_stem": "exchanges energy between plants and animals through gases and sugars",
+          "concept": "Photosynthesis and Respiration",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of photosynthesis and respiration on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Photosynthesis and Respiration",
+          "fact_stem": "exchanges energy between plants and animals through gases and sugars",
+          "concept": "Photosynthesis and Respiration",
+          "questionText": "What explains how photosynthesis and respiration maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Photosynthesis and Respiration",
+          "fact_stem": "exchanges energy between plants and animals through gases and sugars",
+          "concept": "Photosynthesis and Respiration",
+          "questionText": "What physical change can heat or cooling cause in photosynthesis and respiration on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Photosynthesis and Respiration",
+          "fact_stem": "exchanges energy between plants and animals through gases and sugars",
+          "concept": "Photosynthesis and Respiration",
+          "questionText": "Which statement summarizes the behavior of photosynthesis and respiration taught on Page 5?",
+          "correctAnswer": "That photosynthesis and respiration exchanges energy between plants and animals through gases and sugars under normal physical conditions.",
+          "options": [
+            "That photosynthesis and respiration exchanges energy between plants and animals through gases and sugars under normal physical conditions.",
+            "That photosynthesis and respiration behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "Food Chains and Food Webs",
+          "fact_stem": "shows how energy passes from producers to consumers",
+          "concept": "Food Chains and Food Webs",
+          "questionText": "What is the primary characteristic of food chains and food webs on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Food Chains and Food Webs",
+          "fact_stem": "shows how energy passes from producers to consumers",
+          "concept": "Food Chains and Food Webs",
+          "questionText": "What governs the internal structure or behavior of food chains and food webs on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Food Chains and Food Webs",
+          "fact_stem": "shows how energy passes from producers to consumers",
+          "concept": "Food Chains and Food Webs",
+          "questionText": "What happens when food chains and food webs is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Food Chains and Food Webs",
+          "fact_stem": "shows how energy passes from producers to consumers",
+          "concept": "Food Chains and Food Webs",
+          "questionText": "Which statement summarizes the scientific concept of food chains and food webs on Page 5?",
+          "correctAnswer": "That food chains and food webs shows how energy passes from producers to consumers.",
+          "options": [
+            "That food chains and food webs shows how energy passes from producers to consumers.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "The Energy Pyramid",
+          "fact_stem": "shows how available energy decreases at each feeding level",
+          "concept": "The Energy Pyramid",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of the energy pyramid on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Energy Pyramid",
+          "fact_stem": "shows how available energy decreases at each feeding level",
+          "concept": "The Energy Pyramid",
+          "questionText": "What explains how the energy pyramid maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Energy Pyramid",
+          "fact_stem": "shows how available energy decreases at each feeding level",
+          "concept": "The Energy Pyramid",
+          "questionText": "What physical change can heat or cooling cause in the energy pyramid on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Energy Pyramid",
+          "fact_stem": "shows how available energy decreases at each feeding level",
+          "concept": "The Energy Pyramid",
+          "questionText": "Which statement summarizes the behavior of the energy pyramid taught on Page 5?",
+          "correctAnswer": "That the energy pyramid shows how available energy decreases at each feeding level under normal physical conditions.",
+          "options": [
+            "That the energy pyramid shows how available energy decreases at each feeding level under normal physical conditions.",
+            "That the energy pyramid behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "Biomes",
+          "fact_stem": "groups regions of Earth by their climate, plants, and animals",
+          "concept": "Biomes",
+          "questionText": "What is the primary characteristic of biomes on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Biomes",
+          "fact_stem": "groups regions of Earth by their climate, plants, and animals",
+          "concept": "Biomes",
+          "questionText": "What governs the internal structure or behavior of biomes on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Biomes",
+          "fact_stem": "groups regions of Earth by their climate, plants, and animals",
+          "concept": "Biomes",
+          "questionText": "What happens when biomes is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Biomes",
+          "fact_stem": "groups regions of Earth by their climate, plants, and animals",
+          "concept": "Biomes",
+          "questionText": "Which statement summarizes the scientific concept of biomes on Page 5?",
+          "correctAnswer": "That biomes groups regions of Earth by their climate, plants, and animals.",
+          "options": [
+            "That biomes groups regions of Earth by their climate, plants, and animals.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Human Impact on Ecosystems",
+          "fact_stem": "changes natural habitats through pollution, farming, and development",
+          "concept": "Human Impact on Ecosystems",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of human impact on ecosystems on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Human Impact on Ecosystems",
+          "fact_stem": "changes natural habitats through pollution, farming, and development",
+          "concept": "Human Impact on Ecosystems",
+          "questionText": "What explains how human impact on ecosystems maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Human Impact on Ecosystems",
+          "fact_stem": "changes natural habitats through pollution, farming, and development",
+          "concept": "Human Impact on Ecosystems",
+          "questionText": "What physical change can heat or cooling cause in human impact on ecosystems on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Human Impact on Ecosystems",
+          "fact_stem": "changes natural habitats through pollution, farming, and development",
+          "concept": "Human Impact on Ecosystems",
+          "questionText": "Which statement summarizes the behavior of human impact on ecosystems taught on Page 5?",
+          "correctAnswer": "That human impact on ecosystems changes natural habitats through pollution, farming, and development under normal physical conditions.",
+          "options": [
+            "That human impact on ecosystems changes natural habitats through pollution, farming, and development under normal physical conditions.",
+            "That human impact on ecosystems behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 6 Science Review",
+          "fact_stem": "reviews matter, energy, Earth science, and life science concepts from Grade 6",
+          "concept": "Grade 6 Science Review",
+          "questionText": "What is the primary characteristic of grade 6 science review on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 6 Science Review",
+          "fact_stem": "reviews matter, energy, Earth science, and life science concepts from Grade 6",
+          "concept": "Grade 6 Science Review",
+          "questionText": "What governs the internal structure or behavior of grade 6 science review on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 6 Science Review",
+          "fact_stem": "reviews matter, energy, Earth science, and life science concepts from Grade 6",
+          "concept": "Grade 6 Science Review",
+          "questionText": "What happens when grade 6 science review is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 6 Science Review",
+          "fact_stem": "reviews matter, energy, Earth science, and life science concepts from Grade 6",
+          "concept": "Grade 6 Science Review",
+          "questionText": "Which statement summarizes the scientific concept of grade 6 science review on Page 5?",
+          "correctAnswer": "That grade 6 science review reviews matter, energy, Earth science, and life science concepts from Grade 6.",
+          "options": [
+            "That grade 6 science review reviews matter, energy, Earth science, and life science concepts from Grade 6.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
+    },
+    "7": {
+      "1": [
+        {
+          "theme": "DNA Structure",
+          "fact_stem": "stores genetic instructions in a double helix of nucleotides",
+          "concept": "DNA Structure",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of dna structure on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "DNA Structure",
+          "fact_stem": "stores genetic instructions in a double helix of nucleotides",
+          "concept": "DNA Structure",
+          "questionText": "What explains how dna structure maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "DNA Structure",
+          "fact_stem": "stores genetic instructions in a double helix of nucleotides",
+          "concept": "DNA Structure",
+          "questionText": "What physical change can heat or cooling cause in dna structure on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "DNA Structure",
+          "fact_stem": "stores genetic instructions in a double helix of nucleotides",
+          "concept": "DNA Structure",
+          "questionText": "Which statement summarizes the behavior of dna structure taught on Page 5?",
+          "correctAnswer": "That dna structure stores genetic instructions in a double helix of nucleotides under normal physical conditions.",
+          "options": [
+            "That dna structure stores genetic instructions in a double helix of nucleotides under normal physical conditions.",
+            "That dna structure behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "Genes and Chromosomes",
+          "fact_stem": "carry hereditary information passed from parents to offspring",
+          "concept": "Genes and Chromosomes",
+          "questionText": "What is the primary characteristic of genes and chromosomes on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Genes and Chromosomes",
+          "fact_stem": "carry hereditary information passed from parents to offspring",
+          "concept": "Genes and Chromosomes",
+          "questionText": "What governs the internal structure or behavior of genes and chromosomes on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Genes and Chromosomes",
+          "fact_stem": "carry hereditary information passed from parents to offspring",
+          "concept": "Genes and Chromosomes",
+          "questionText": "What happens when genes and chromosomes is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Genes and Chromosomes",
+          "fact_stem": "carry hereditary information passed from parents to offspring",
+          "concept": "Genes and Chromosomes",
+          "questionText": "Which statement summarizes the scientific concept of genes and chromosomes on Page 5?",
+          "correctAnswer": "That genes and chromosomes carry hereditary information passed from parents to offspring.",
+          "options": [
+            "That genes and chromosomes carry hereditary information passed from parents to offspring.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "Dominant and Recessive Traits",
+          "fact_stem": "determines which inherited trait appears in an organism",
+          "concept": "Dominant and Recessive Traits",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of dominant and recessive traits on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Dominant and Recessive Traits",
+          "fact_stem": "determines which inherited trait appears in an organism",
+          "concept": "Dominant and Recessive Traits",
+          "questionText": "What explains how dominant and recessive traits maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Dominant and Recessive Traits",
+          "fact_stem": "determines which inherited trait appears in an organism",
+          "concept": "Dominant and Recessive Traits",
+          "questionText": "What physical change can heat or cooling cause in dominant and recessive traits on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Dominant and Recessive Traits",
+          "fact_stem": "determines which inherited trait appears in an organism",
+          "concept": "Dominant and Recessive Traits",
+          "questionText": "Which statement summarizes the behavior of dominant and recessive traits taught on Page 5?",
+          "correctAnswer": "That dominant and recessive traits determines which inherited trait appears in an organism under normal physical conditions.",
+          "options": [
+            "That dominant and recessive traits determines which inherited trait appears in an organism under normal physical conditions.",
+            "That dominant and recessive traits behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "Punnett Squares",
+          "fact_stem": "predicts the probability of inherited traits in offspring",
+          "concept": "Punnett Squares",
+          "questionText": "What is the primary characteristic of punnett squares on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Punnett Squares",
+          "fact_stem": "predicts the probability of inherited traits in offspring",
+          "concept": "Punnett Squares",
+          "questionText": "What governs the internal structure or behavior of punnett squares on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Punnett Squares",
+          "fact_stem": "predicts the probability of inherited traits in offspring",
+          "concept": "Punnett Squares",
+          "questionText": "What happens when punnett squares is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Punnett Squares",
+          "fact_stem": "predicts the probability of inherited traits in offspring",
+          "concept": "Punnett Squares",
+          "questionText": "Which statement summarizes the scientific concept of punnett squares on Page 5?",
+          "correctAnswer": "That punnett squares predicts the probability of inherited traits in offspring.",
+          "options": [
+            "That punnett squares predicts the probability of inherited traits in offspring.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "Genetic Mutations",
+          "fact_stem": "changes the sequence of DNA and can alter traits",
+          "concept": "Genetic Mutations",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of genetic mutations on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Genetic Mutations",
+          "fact_stem": "changes the sequence of DNA and can alter traits",
+          "concept": "Genetic Mutations",
+          "questionText": "What explains how genetic mutations maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Genetic Mutations",
+          "fact_stem": "changes the sequence of DNA and can alter traits",
+          "concept": "Genetic Mutations",
+          "questionText": "What physical change can heat or cooling cause in genetic mutations on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Genetic Mutations",
+          "fact_stem": "changes the sequence of DNA and can alter traits",
+          "concept": "Genetic Mutations",
+          "questionText": "Which statement summarizes the behavior of genetic mutations taught on Page 5?",
+          "correctAnswer": "That genetic mutations changes the sequence of DNA and can alter traits under normal physical conditions.",
+          "options": [
+            "That genetic mutations changes the sequence of DNA and can alter traits under normal physical conditions.",
+            "That genetic mutations behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Charles Darwin and Natural Selection",
+          "fact_stem": "explains how organisms with helpful traits survive and reproduce",
+          "concept": "Charles Darwin and Natural Selection",
+          "questionText": "What is the primary characteristic of charles darwin and natural selection on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Charles Darwin and Natural Selection",
+          "fact_stem": "explains how organisms with helpful traits survive and reproduce",
+          "concept": "Charles Darwin and Natural Selection",
+          "questionText": "What governs the internal structure or behavior of charles darwin and natural selection on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Charles Darwin and Natural Selection",
+          "fact_stem": "explains how organisms with helpful traits survive and reproduce",
+          "concept": "Charles Darwin and Natural Selection",
+          "questionText": "What happens when charles darwin and natural selection is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Charles Darwin and Natural Selection",
+          "fact_stem": "explains how organisms with helpful traits survive and reproduce",
+          "concept": "Charles Darwin and Natural Selection",
+          "questionText": "Which statement summarizes the scientific concept of charles darwin and natural selection on Page 5?",
+          "correctAnswer": "That charles darwin and natural selection explains how organisms with helpful traits survive and reproduce.",
+          "options": [
+            "That charles darwin and natural selection explains how organisms with helpful traits survive and reproduce.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "Evidence for Evolution",
+          "fact_stem": "supports the idea that species change over time",
+          "concept": "Evidence for Evolution",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of evidence for evolution on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Evidence for Evolution",
+          "fact_stem": "supports the idea that species change over time",
+          "concept": "Evidence for Evolution",
+          "questionText": "What explains how evidence for evolution maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Evidence for Evolution",
+          "fact_stem": "supports the idea that species change over time",
+          "concept": "Evidence for Evolution",
+          "questionText": "What physical change can heat or cooling cause in evidence for evolution on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Evidence for Evolution",
+          "fact_stem": "supports the idea that species change over time",
+          "concept": "Evidence for Evolution",
+          "questionText": "Which statement summarizes the behavior of evidence for evolution taught on Page 5?",
+          "correctAnswer": "That evidence for evolution supports the idea that species change over time under normal physical conditions.",
+          "options": [
+            "That evidence for evolution supports the idea that species change over time under normal physical conditions.",
+            "That evidence for evolution behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "Adaptation",
+          "fact_stem": "helps organisms survive better in their environment",
+          "concept": "Adaptation",
+          "questionText": "What is the primary characteristic of adaptation on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Adaptation",
+          "fact_stem": "helps organisms survive better in their environment",
+          "concept": "Adaptation",
+          "questionText": "What governs the internal structure or behavior of adaptation on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Adaptation",
+          "fact_stem": "helps organisms survive better in their environment",
+          "concept": "Adaptation",
+          "questionText": "What happens when adaptation is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Adaptation",
+          "fact_stem": "helps organisms survive better in their environment",
+          "concept": "Adaptation",
+          "questionText": "Which statement summarizes the scientific concept of adaptation on Page 5?",
+          "correctAnswer": "That adaptation helps organisms survive better in their environment.",
+          "options": [
+            "That adaptation helps organisms survive better in their environment.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "Speciation",
+          "fact_stem": "forms new species when populations become reproductively isolated",
+          "concept": "Speciation",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of speciation on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Speciation",
+          "fact_stem": "forms new species when populations become reproductively isolated",
+          "concept": "Speciation",
+          "questionText": "What explains how speciation maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Speciation",
+          "fact_stem": "forms new species when populations become reproductively isolated",
+          "concept": "Speciation",
+          "questionText": "What physical change can heat or cooling cause in speciation on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Speciation",
+          "fact_stem": "forms new species when populations become reproductively isolated",
+          "concept": "Speciation",
+          "questionText": "Which statement summarizes the behavior of speciation taught on Page 5?",
+          "correctAnswer": "That speciation forms new species when populations become reproductively isolated under normal physical conditions.",
+          "options": [
+            "That speciation forms new species when populations become reproductively isolated under normal physical conditions.",
+            "That speciation behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "The Fossil Record",
+          "fact_stem": "preserves evidence of organisms that lived long ago",
+          "concept": "The Fossil Record",
+          "questionText": "What is the primary characteristic of the fossil record on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Fossil Record",
+          "fact_stem": "preserves evidence of organisms that lived long ago",
+          "concept": "The Fossil Record",
+          "questionText": "What governs the internal structure or behavior of the fossil record on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Fossil Record",
+          "fact_stem": "preserves evidence of organisms that lived long ago",
+          "concept": "The Fossil Record",
+          "questionText": "What happens when the fossil record is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Fossil Record",
+          "fact_stem": "preserves evidence of organisms that lived long ago",
+          "concept": "The Fossil Record",
+          "questionText": "Which statement summarizes the scientific concept of the fossil record on Page 5?",
+          "correctAnswer": "That the fossil record preserves evidence of organisms that lived long ago.",
+          "options": [
+            "That the fossil record preserves evidence of organisms that lived long ago.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "The Skeletal and Muscular Systems",
+          "fact_stem": "work together to support the body and produce movement",
+          "concept": "The Skeletal and Muscular Systems",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of the skeletal and muscular systems on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Skeletal and Muscular Systems",
+          "fact_stem": "work together to support the body and produce movement",
+          "concept": "The Skeletal and Muscular Systems",
+          "questionText": "What explains how the skeletal and muscular systems maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Skeletal and Muscular Systems",
+          "fact_stem": "work together to support the body and produce movement",
+          "concept": "The Skeletal and Muscular Systems",
+          "questionText": "What physical change can heat or cooling cause in the skeletal and muscular systems on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Skeletal and Muscular Systems",
+          "fact_stem": "work together to support the body and produce movement",
+          "concept": "The Skeletal and Muscular Systems",
+          "questionText": "Which statement summarizes the behavior of the skeletal and muscular systems taught on Page 5?",
+          "correctAnswer": "That the skeletal and muscular systems work together to support the body and produce movement under normal physical conditions.",
+          "options": [
+            "That the skeletal and muscular systems work together to support the body and produce movement under normal physical conditions.",
+            "That the skeletal and muscular systems behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "The Digestive System",
+          "fact_stem": "breaks down food into nutrients the body can use",
+          "concept": "The Digestive System",
+          "questionText": "What is the primary characteristic of the digestive system on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Digestive System",
+          "fact_stem": "breaks down food into nutrients the body can use",
+          "concept": "The Digestive System",
+          "questionText": "What governs the internal structure or behavior of the digestive system on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Digestive System",
+          "fact_stem": "breaks down food into nutrients the body can use",
+          "concept": "The Digestive System",
+          "questionText": "What happens when the digestive system is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Digestive System",
+          "fact_stem": "breaks down food into nutrients the body can use",
+          "concept": "The Digestive System",
+          "questionText": "Which statement summarizes the scientific concept of the digestive system on Page 5?",
+          "correctAnswer": "That the digestive system breaks down food into nutrients the body can use.",
+          "options": [
+            "That the digestive system breaks down food into nutrients the body can use.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "The Circulatory and Respiratory Systems",
+          "fact_stem": "move blood and oxygen throughout the body",
+          "concept": "The Circulatory and Respiratory Systems",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of the circulatory and respiratory systems on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Circulatory and Respiratory Systems",
+          "fact_stem": "move blood and oxygen throughout the body",
+          "concept": "The Circulatory and Respiratory Systems",
+          "questionText": "What explains how the circulatory and respiratory systems maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Circulatory and Respiratory Systems",
+          "fact_stem": "move blood and oxygen throughout the body",
+          "concept": "The Circulatory and Respiratory Systems",
+          "questionText": "What physical change can heat or cooling cause in the circulatory and respiratory systems on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Circulatory and Respiratory Systems",
+          "fact_stem": "move blood and oxygen throughout the body",
+          "concept": "The Circulatory and Respiratory Systems",
+          "questionText": "Which statement summarizes the behavior of the circulatory and respiratory systems taught on Page 5?",
+          "correctAnswer": "That the circulatory and respiratory systems move blood and oxygen throughout the body under normal physical conditions.",
+          "options": [
+            "That the circulatory and respiratory systems move blood and oxygen throughout the body under normal physical conditions.",
+            "That the circulatory and respiratory systems behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "The Nervous System",
+          "fact_stem": "carries electrical signals between the brain and the body",
+          "concept": "The Nervous System",
+          "questionText": "What is the primary characteristic of the nervous system on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Nervous System",
+          "fact_stem": "carries electrical signals between the brain and the body",
+          "concept": "The Nervous System",
+          "questionText": "What governs the internal structure or behavior of the nervous system on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Nervous System",
+          "fact_stem": "carries electrical signals between the brain and the body",
+          "concept": "The Nervous System",
+          "questionText": "What happens when the nervous system is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Nervous System",
+          "fact_stem": "carries electrical signals between the brain and the body",
+          "concept": "The Nervous System",
+          "questionText": "Which statement summarizes the scientific concept of the nervous system on Page 5?",
+          "correctAnswer": "That the nervous system carries electrical signals between the brain and the body.",
+          "options": [
+            "That the nervous system carries electrical signals between the brain and the body.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "The Immune System",
+          "fact_stem": "defends the body against harmful pathogens",
+          "concept": "The Immune System",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of the immune system on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Immune System",
+          "fact_stem": "defends the body against harmful pathogens",
+          "concept": "The Immune System",
+          "questionText": "What explains how the immune system maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Immune System",
+          "fact_stem": "defends the body against harmful pathogens",
+          "concept": "The Immune System",
+          "questionText": "What physical change can heat or cooling cause in the immune system on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Immune System",
+          "fact_stem": "defends the body against harmful pathogens",
+          "concept": "The Immune System",
+          "questionText": "Which statement summarizes the behavior of the immune system taught on Page 5?",
+          "correctAnswer": "That the immune system defends the body against harmful pathogens under normal physical conditions.",
+          "options": [
+            "That the immune system defends the body against harmful pathogens under normal physical conditions.",
+            "That the immune system behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "Taxonomy and Classification",
+          "fact_stem": "organizes living things into groups based on shared traits",
+          "concept": "Taxonomy and Classification",
+          "questionText": "What is the primary characteristic of taxonomy and classification on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Taxonomy and Classification",
+          "fact_stem": "organizes living things into groups based on shared traits",
+          "concept": "Taxonomy and Classification",
+          "questionText": "What governs the internal structure or behavior of taxonomy and classification on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Taxonomy and Classification",
+          "fact_stem": "organizes living things into groups based on shared traits",
+          "concept": "Taxonomy and Classification",
+          "questionText": "What happens when taxonomy and classification is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Taxonomy and Classification",
+          "fact_stem": "organizes living things into groups based on shared traits",
+          "concept": "Taxonomy and Classification",
+          "questionText": "Which statement summarizes the scientific concept of taxonomy and classification on Page 5?",
+          "correctAnswer": "That taxonomy and classification organizes living things into groups based on shared traits.",
+          "options": [
+            "That taxonomy and classification organizes living things into groups based on shared traits.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "Kingdoms of Life",
+          "fact_stem": "sorts all organisms into major groups like animals, plants, and fungi",
+          "concept": "Kingdoms of Life",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of kingdoms of life on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Kingdoms of Life",
+          "fact_stem": "sorts all organisms into major groups like animals, plants, and fungi",
+          "concept": "Kingdoms of Life",
+          "questionText": "What explains how kingdoms of life maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Kingdoms of Life",
+          "fact_stem": "sorts all organisms into major groups like animals, plants, and fungi",
+          "concept": "Kingdoms of Life",
+          "questionText": "What physical change can heat or cooling cause in kingdoms of life on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Kingdoms of Life",
+          "fact_stem": "sorts all organisms into major groups like animals, plants, and fungi",
+          "concept": "Kingdoms of Life",
+          "questionText": "Which statement summarizes the behavior of kingdoms of life taught on Page 5?",
+          "correctAnswer": "That kingdoms of life sorts all organisms into major groups like animals, plants, and fungi under normal physical conditions.",
+          "options": [
+            "That kingdoms of life sorts all organisms into major groups like animals, plants, and fungi under normal physical conditions.",
+            "That kingdoms of life behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "Bacteria and Viruses",
+          "fact_stem": "are microscopic organisms that can cause disease",
+          "concept": "Bacteria and Viruses",
+          "questionText": "What is the primary characteristic of bacteria and viruses on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Bacteria and Viruses",
+          "fact_stem": "are microscopic organisms that can cause disease",
+          "concept": "Bacteria and Viruses",
+          "questionText": "What governs the internal structure or behavior of bacteria and viruses on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Bacteria and Viruses",
+          "fact_stem": "are microscopic organisms that can cause disease",
+          "concept": "Bacteria and Viruses",
+          "questionText": "What happens when bacteria and viruses is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Bacteria and Viruses",
+          "fact_stem": "are microscopic organisms that can cause disease",
+          "concept": "Bacteria and Viruses",
+          "questionText": "Which statement summarizes the scientific concept of bacteria and viruses on Page 5?",
+          "correctAnswer": "That bacteria and viruses are microscopic organisms that can cause disease.",
+          "options": [
+            "That bacteria and viruses are microscopic organisms that can cause disease.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "Fungi",
+          "fact_stem": "absorb nutrients from their surroundings and reproduce using spores",
+          "concept": "Fungi",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of fungi on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Fungi",
+          "fact_stem": "absorb nutrients from their surroundings and reproduce using spores",
+          "concept": "Fungi",
+          "questionText": "What explains how fungi maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Fungi",
+          "fact_stem": "absorb nutrients from their surroundings and reproduce using spores",
+          "concept": "Fungi",
+          "questionText": "What physical change can heat or cooling cause in fungi on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Fungi",
+          "fact_stem": "absorb nutrients from their surroundings and reproduce using spores",
+          "concept": "Fungi",
+          "questionText": "Which statement summarizes the behavior of fungi taught on Page 5?",
+          "correctAnswer": "That fungi absorb nutrients from their surroundings and reproduce using spores under normal physical conditions.",
+          "options": [
+            "That fungi absorb nutrients from their surroundings and reproduce using spores under normal physical conditions.",
+            "That fungi behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "Plant Diversity",
+          "fact_stem": "includes many types of plants adapted to different environments",
+          "concept": "Plant Diversity",
+          "questionText": "What is the primary characteristic of plant diversity on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Plant Diversity",
+          "fact_stem": "includes many types of plants adapted to different environments",
+          "concept": "Plant Diversity",
+          "questionText": "What governs the internal structure or behavior of plant diversity on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Plant Diversity",
+          "fact_stem": "includes many types of plants adapted to different environments",
+          "concept": "Plant Diversity",
+          "questionText": "What happens when plant diversity is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Plant Diversity",
+          "fact_stem": "includes many types of plants adapted to different environments",
+          "concept": "Plant Diversity",
+          "questionText": "Which statement summarizes the scientific concept of plant diversity on Page 5?",
+          "correctAnswer": "That plant diversity includes many types of plants adapted to different environments.",
+          "options": [
+            "That plant diversity includes many types of plants adapted to different environments.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "Physical and Chemical Properties",
+          "fact_stem": "describe how matter looks, behaves, and reacts",
+          "concept": "Physical and Chemical Properties",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of physical and chemical properties on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical and Chemical Properties",
+          "fact_stem": "describe how matter looks, behaves, and reacts",
+          "concept": "Physical and Chemical Properties",
+          "questionText": "What explains how physical and chemical properties maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical and Chemical Properties",
+          "fact_stem": "describe how matter looks, behaves, and reacts",
+          "concept": "Physical and Chemical Properties",
+          "questionText": "What physical change can heat or cooling cause in physical and chemical properties on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical and Chemical Properties",
+          "fact_stem": "describe how matter looks, behaves, and reacts",
+          "concept": "Physical and Chemical Properties",
+          "questionText": "Which statement summarizes the behavior of physical and chemical properties taught on Page 5?",
+          "correctAnswer": "That physical and chemical properties describe how matter looks, behaves, and reacts under normal physical conditions.",
+          "options": [
+            "That physical and chemical properties describe how matter looks, behaves, and reacts under normal physical conditions.",
+            "That physical and chemical properties behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "Chemical Reactions",
+          "fact_stem": "rearrange atoms to form new substances",
+          "concept": "Chemical Reactions",
+          "questionText": "What is the primary characteristic of chemical reactions on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Chemical Reactions",
+          "fact_stem": "rearrange atoms to form new substances",
+          "concept": "Chemical Reactions",
+          "questionText": "What governs the internal structure or behavior of chemical reactions on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Chemical Reactions",
+          "fact_stem": "rearrange atoms to form new substances",
+          "concept": "Chemical Reactions",
+          "questionText": "What happens when chemical reactions is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Chemical Reactions",
+          "fact_stem": "rearrange atoms to form new substances",
+          "concept": "Chemical Reactions",
+          "questionText": "Which statement summarizes the scientific concept of chemical reactions on Page 5?",
+          "correctAnswer": "That chemical reactions rearrange atoms to form new substances.",
+          "options": [
+            "That chemical reactions rearrange atoms to form new substances.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "Acids and Bases",
+          "fact_stem": "are chemical substances measured using the pH scale",
+          "concept": "Acids and Bases",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of acids and bases on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Acids and Bases",
+          "fact_stem": "are chemical substances measured using the pH scale",
+          "concept": "Acids and Bases",
+          "questionText": "What explains how acids and bases maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Acids and Bases",
+          "fact_stem": "are chemical substances measured using the pH scale",
+          "concept": "Acids and Bases",
+          "questionText": "What physical change can heat or cooling cause in acids and bases on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Acids and Bases",
+          "fact_stem": "are chemical substances measured using the pH scale",
+          "concept": "Acids and Bases",
+          "questionText": "Which statement summarizes the behavior of acids and bases taught on Page 5?",
+          "correctAnswer": "That acids and bases are chemical substances measured using the pH scale under normal physical conditions.",
+          "options": [
+            "That acids and bases are chemical substances measured using the pH scale under normal physical conditions.",
+            "That acids and bases behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "Mixtures and Solutions",
+          "fact_stem": "combine substances that keep or lose their individual properties",
+          "concept": "Mixtures and Solutions",
+          "questionText": "What is the primary characteristic of mixtures and solutions on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Mixtures and Solutions",
+          "fact_stem": "combine substances that keep or lose their individual properties",
+          "concept": "Mixtures and Solutions",
+          "questionText": "What governs the internal structure or behavior of mixtures and solutions on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Mixtures and Solutions",
+          "fact_stem": "combine substances that keep or lose their individual properties",
+          "concept": "Mixtures and Solutions",
+          "questionText": "What happens when mixtures and solutions is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Mixtures and Solutions",
+          "fact_stem": "combine substances that keep or lose their individual properties",
+          "concept": "Mixtures and Solutions",
+          "questionText": "Which statement summarizes the scientific concept of mixtures and solutions on Page 5?",
+          "correctAnswer": "That mixtures and solutions combine substances that keep or lose their individual properties.",
+          "options": [
+            "That mixtures and solutions combine substances that keep or lose their individual properties.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "The Periodic Table in Depth",
+          "fact_stem": "reveals patterns in atomic structure and element behavior",
+          "concept": "The Periodic Table in Depth",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of the periodic table in depth on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Periodic Table in Depth",
+          "fact_stem": "reveals patterns in atomic structure and element behavior",
+          "concept": "The Periodic Table in Depth",
+          "questionText": "What explains how the periodic table in depth maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Periodic Table in Depth",
+          "fact_stem": "reveals patterns in atomic structure and element behavior",
+          "concept": "The Periodic Table in Depth",
+          "questionText": "What physical change can heat or cooling cause in the periodic table in depth on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Periodic Table in Depth",
+          "fact_stem": "reveals patterns in atomic structure and element behavior",
+          "concept": "The Periodic Table in Depth",
+          "questionText": "Which statement summarizes the behavior of the periodic table in depth taught on Page 5?",
+          "correctAnswer": "That the periodic table in depth reveals patterns in atomic structure and element behavior under normal physical conditions.",
+          "options": [
+            "That the periodic table in depth reveals patterns in atomic structure and element behavior under normal physical conditions.",
+            "That the periodic table in depth behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "The Solar System",
+          "fact_stem": "contains the Sun, planets, moons, and other objects held by gravity",
+          "concept": "The Solar System",
+          "questionText": "What is the primary characteristic of the solar system on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Solar System",
+          "fact_stem": "contains the Sun, planets, moons, and other objects held by gravity",
+          "concept": "The Solar System",
+          "questionText": "What governs the internal structure or behavior of the solar system on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Solar System",
+          "fact_stem": "contains the Sun, planets, moons, and other objects held by gravity",
+          "concept": "The Solar System",
+          "questionText": "What happens when the solar system is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Solar System",
+          "fact_stem": "contains the Sun, planets, moons, and other objects held by gravity",
+          "concept": "The Solar System",
+          "questionText": "Which statement summarizes the scientific concept of the solar system on Page 5?",
+          "correctAnswer": "That the solar system contains the Sun, planets, moons, and other objects held by gravity.",
+          "options": [
+            "That the solar system contains the Sun, planets, moons, and other objects held by gravity.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "Stars and Galaxies",
+          "fact_stem": "are massive collections of gas, dust, and stars across the universe",
+          "concept": "Stars and Galaxies",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of stars and galaxies on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Stars and Galaxies",
+          "fact_stem": "are massive collections of gas, dust, and stars across the universe",
+          "concept": "Stars and Galaxies",
+          "questionText": "What explains how stars and galaxies maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Stars and Galaxies",
+          "fact_stem": "are massive collections of gas, dust, and stars across the universe",
+          "concept": "Stars and Galaxies",
+          "questionText": "What physical change can heat or cooling cause in stars and galaxies on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Stars and Galaxies",
+          "fact_stem": "are massive collections of gas, dust, and stars across the universe",
+          "concept": "Stars and Galaxies",
+          "questionText": "Which statement summarizes the behavior of stars and galaxies taught on Page 5?",
+          "correctAnswer": "That stars and galaxies are massive collections of gas, dust, and stars across the universe under normal physical conditions.",
+          "options": [
+            "That stars and galaxies are massive collections of gas, dust, and stars across the universe under normal physical conditions.",
+            "That stars and galaxies behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "Earth's Moon and Tides",
+          "fact_stem": "pulls on Earth's oceans to create rising and falling tides",
+          "concept": "Earth's Moon and Tides",
+          "questionText": "What is the primary characteristic of earth's moon and tides on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Earth's Moon and Tides",
+          "fact_stem": "pulls on Earth's oceans to create rising and falling tides",
+          "concept": "Earth's Moon and Tides",
+          "questionText": "What governs the internal structure or behavior of earth's moon and tides on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Earth's Moon and Tides",
+          "fact_stem": "pulls on Earth's oceans to create rising and falling tides",
+          "concept": "Earth's Moon and Tides",
+          "questionText": "What happens when earth's moon and tides is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Earth's Moon and Tides",
+          "fact_stem": "pulls on Earth's oceans to create rising and falling tides",
+          "concept": "Earth's Moon and Tides",
+          "questionText": "Which statement summarizes the scientific concept of earth's moon and tides on Page 5?",
+          "correctAnswer": "That earth's moon and tides pulls on Earth's oceans to create rising and falling tides.",
+          "options": [
+            "That earth's moon and tides pulls on Earth's oceans to create rising and falling tides.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Space Exploration",
+          "fact_stem": "uses technology like rockets and satellites to study space",
+          "concept": "Space Exploration",
+          "questionText": "What determines the physical state (firm, fluid, or gaseous) of space exploration on Page 2?",
+          "correctAnswer": "The spacing, organization, and distance between its internal particles.",
+          "options": [
+            "The spacing, organization, and distance between its internal particles.",
+            "The total weight of the scientist observing the material.",
+            "The color of the container holding the substance.",
+            "The time of day the experiment is conducted."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Space Exploration",
+          "fact_stem": "uses technology like rockets and satellites to study space",
+          "concept": "Space Exploration",
+          "questionText": "What explains how space exploration maintains its shape or volume on Page 3?",
+          "correctAnswer": "The molecular bonds and forces that influence how its particles slide or vibrate.",
+          "options": [
+            "The molecular bonds and forces that influence how its particles slide or vibrate.",
+            "The price of the material in local retail shops.",
+            "Whether the material is kept in a dark drawer.",
+            "The speed of the wind blowing outside the laboratory."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Space Exploration",
+          "fact_stem": "uses technology like rockets and satellites to study space",
+          "concept": "Space Exploration",
+          "questionText": "What physical change can heat or cooling cause in space exploration on Page 4?",
+          "correctAnswer": "It changes the speed of its particles, causing state transitions.",
+          "options": [
+            "It changes the speed of its particles, causing state transitions.",
+            "It causes the material to turn into magnetic radio waves.",
+            "It remains completely frozen and unaffected by temperature.",
+            "It causes the material to disappear from the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Space Exploration",
+          "fact_stem": "uses technology like rockets and satellites to study space",
+          "concept": "Space Exploration",
+          "questionText": "Which statement summarizes the behavior of space exploration taught on Page 5?",
+          "correctAnswer": "That space exploration uses technology like rockets and satellites to study space under normal physical conditions.",
+          "options": [
+            "That space exploration uses technology like rockets and satellites to study space under normal physical conditions.",
+            "That space exploration behaves differently depending on its color.",
+            "That physical science is only an opinion with no set rules.",
+            "That matter does not occupy space or have weight."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 7 Science Review",
+          "fact_stem": "reviews genetics, evolution, body systems, and chemistry concepts from Grade 7",
+          "concept": "Grade 7 Science Review",
+          "questionText": "What is the primary characteristic of grade 7 science review on Page 2?",
+          "correctAnswer": "It shows specific patterns or physical features that scientists measure.",
+          "options": [
+            "It shows specific patterns or physical features that scientists measure.",
+            "It has no measurable features or patterns.",
+            "It behaves differently depending on the scientist observing it.",
+            "It only exists when we write down a hypothesis."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 7 Science Review",
+          "fact_stem": "reviews genetics, evolution, body systems, and chemistry concepts from Grade 7",
+          "concept": "Grade 7 Science Review",
+          "questionText": "What governs the internal structure or behavior of grade 7 science review on Page 3?",
+          "correctAnswer": "Its internal parts or forces follow natural laws to maintain balance.",
+          "options": [
+            "Its internal parts or forces follow natural laws to maintain balance.",
+            "It is governed by magic rather than physical laws.",
+            "Its parts move randomly without any set forces.",
+            "It has no internal parts or energy structures."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 7 Science Review",
+          "fact_stem": "reviews genetics, evolution, body systems, and chemistry concepts from Grade 7",
+          "concept": "Grade 7 Science Review",
+          "questionText": "What happens when grade 7 science review is affected by temperature, force, or changes on Page 4?",
+          "correctAnswer": "It adapts, changes speed, or changes state according to the energy applied.",
+          "options": [
+            "It adapts, changes speed, or changes state according to the energy applied.",
+            "It stops existing and turns into empty space.",
+            "It remains completely unaffected by any physical force.",
+            "It instantly explodes when exposed to normal pressure."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 7 Science Review",
+          "fact_stem": "reviews genetics, evolution, body systems, and chemistry concepts from Grade 7",
+          "concept": "Grade 7 Science Review",
+          "questionText": "Which statement summarizes the scientific concept of grade 7 science review on Page 5?",
+          "correctAnswer": "That grade 7 science review reviews genetics, evolution, body systems, and chemistry concepts from Grade 7.",
+          "options": [
+            "That grade 7 science review reviews genetics, evolution, body systems, and chemistry concepts from Grade 7.",
+            "That the concept has no set definitions or rules.",
+            "That we cannot study it because it does not follow patterns.",
+            "That it is not part of the physical world."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
     }
   },
   "history": {
@@ -16653,6 +20713,3970 @@ const GRADE_2_5_QUESTIONS = {
           "correctAnswer": "That Going to Space led to astronauts landing on the Moon for the first time.",
           "options": [
             "That Going to Space led to astronauts landing on the Moon for the first time.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
+    },
+    "6": {
+      "1": [
+        {
+          "theme": "Early Humans and Migration",
+          "fact_stem": "spread across continents in search of food and better climates",
+          "concept": "Early Humans and Migration",
+          "questionText": "Why is the action of Early Humans and Migration important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Early Humans and Migration",
+          "fact_stem": "spread across continents in search of food and better climates",
+          "concept": "Early Humans and Migration",
+          "questionText": "What historic challenges did people face during the era of Early Humans and Migration on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Early Humans and Migration",
+          "fact_stem": "spread across continents in search of food and better climates",
+          "concept": "Early Humans and Migration",
+          "questionText": "How did Early Humans and Migration influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Early Humans and Migration",
+          "fact_stem": "spread across continents in search of food and better climates",
+          "concept": "Early Humans and Migration",
+          "questionText": "Which statement summarizes the historical lessons of Early Humans and Migration on Page 5?",
+          "correctAnswer": "That Early Humans and Migration spread across continents in search of food and better climates to shape our society.",
+          "options": [
+            "That Early Humans and Migration spread across continents in search of food and better climates to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "The Agricultural Revolution",
+          "fact_stem": "transformed nomadic hunter-gatherers into settled farmers",
+          "concept": "The Agricultural Revolution",
+          "questionText": "What is a major milestone of the era of The Agricultural Revolution on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Agricultural Revolution",
+          "fact_stem": "transformed nomadic hunter-gatherers into settled farmers",
+          "concept": "The Agricultural Revolution",
+          "questionText": "What was the economic basis of communities during the time of The Agricultural Revolution on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Agricultural Revolution",
+          "fact_stem": "transformed nomadic hunter-gatherers into settled farmers",
+          "concept": "The Agricultural Revolution",
+          "questionText": "What were the long-term consequences of The Agricultural Revolution on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Agricultural Revolution",
+          "fact_stem": "transformed nomadic hunter-gatherers into settled farmers",
+          "concept": "The Agricultural Revolution",
+          "questionText": "Which statement summarizes the historical significance of The Agricultural Revolution on Page 5?",
+          "correctAnswer": "That The Agricultural Revolution transformed nomadic hunter-gatherers into settled farmers.",
+          "options": [
+            "That The Agricultural Revolution transformed nomadic hunter-gatherers into settled farmers.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "Rise of Early Villages",
+          "fact_stem": "grew into permanent settlements near fertile land",
+          "concept": "Rise of Early Villages",
+          "questionText": "Why is the action of Rise of Early Villages important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Rise of Early Villages",
+          "fact_stem": "grew into permanent settlements near fertile land",
+          "concept": "Rise of Early Villages",
+          "questionText": "What historic challenges did people face during the era of Rise of Early Villages on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Rise of Early Villages",
+          "fact_stem": "grew into permanent settlements near fertile land",
+          "concept": "Rise of Early Villages",
+          "questionText": "How did Rise of Early Villages influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Rise of Early Villages",
+          "fact_stem": "grew into permanent settlements near fertile land",
+          "concept": "Rise of Early Villages",
+          "questionText": "Which statement summarizes the historical lessons of Rise of Early Villages on Page 5?",
+          "correctAnswer": "That Rise of Early Villages grew into permanent settlements near fertile land to shape our society.",
+          "options": [
+            "That Rise of Early Villages grew into permanent settlements near fertile land to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "The Bronze Age",
+          "fact_stem": "introduced bronze tools and weapons that reshaped ancient societies",
+          "concept": "The Bronze Age",
+          "questionText": "What is a major milestone of the era of The Bronze Age on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Bronze Age",
+          "fact_stem": "introduced bronze tools and weapons that reshaped ancient societies",
+          "concept": "The Bronze Age",
+          "questionText": "What was the economic basis of communities during the time of The Bronze Age on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Bronze Age",
+          "fact_stem": "introduced bronze tools and weapons that reshaped ancient societies",
+          "concept": "The Bronze Age",
+          "questionText": "What were the long-term consequences of The Bronze Age on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Bronze Age",
+          "fact_stem": "introduced bronze tools and weapons that reshaped ancient societies",
+          "concept": "The Bronze Age",
+          "questionText": "Which statement summarizes the historical significance of The Bronze Age on Page 5?",
+          "correctAnswer": "That The Bronze Age introduced bronze tools and weapons that reshaped ancient societies.",
+          "options": [
+            "That The Bronze Age introduced bronze tools and weapons that reshaped ancient societies.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "River Valley Civilizations",
+          "fact_stem": "flourished along fertile rivers that supported farming and trade",
+          "concept": "River Valley Civilizations",
+          "questionText": "Why is the action of River Valley Civilizations important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "River Valley Civilizations",
+          "fact_stem": "flourished along fertile rivers that supported farming and trade",
+          "concept": "River Valley Civilizations",
+          "questionText": "What historic challenges did people face during the era of River Valley Civilizations on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "River Valley Civilizations",
+          "fact_stem": "flourished along fertile rivers that supported farming and trade",
+          "concept": "River Valley Civilizations",
+          "questionText": "How did River Valley Civilizations influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "River Valley Civilizations",
+          "fact_stem": "flourished along fertile rivers that supported farming and trade",
+          "concept": "River Valley Civilizations",
+          "questionText": "Which statement summarizes the historical lessons of River Valley Civilizations on Page 5?",
+          "correctAnswer": "That River Valley Civilizations flourished along fertile rivers that supported farming and trade to shape our society.",
+          "options": [
+            "That River Valley Civilizations flourished along fertile rivers that supported farming and trade to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Sumer and City-States",
+          "fact_stem": "built the world's first cities in ancient Mesopotamia",
+          "concept": "Sumer and City-States",
+          "questionText": "What is a major milestone of the era of Sumer and City-States on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Sumer and City-States",
+          "fact_stem": "built the world's first cities in ancient Mesopotamia",
+          "concept": "Sumer and City-States",
+          "questionText": "What was the economic basis of communities during the time of Sumer and City-States on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Sumer and City-States",
+          "fact_stem": "built the world's first cities in ancient Mesopotamia",
+          "concept": "Sumer and City-States",
+          "questionText": "What were the long-term consequences of Sumer and City-States on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Sumer and City-States",
+          "fact_stem": "built the world's first cities in ancient Mesopotamia",
+          "concept": "Sumer and City-States",
+          "questionText": "Which statement summarizes the historical significance of Sumer and City-States on Page 5?",
+          "correctAnswer": "That Sumer and City-States built the world's first cities in ancient Mesopotamia.",
+          "options": [
+            "That Sumer and City-States built the world's first cities in ancient Mesopotamia.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "Hammurabi's Code",
+          "fact_stem": "established one of the earliest written sets of laws",
+          "concept": "Hammurabi's Code",
+          "questionText": "Why is the action of Hammurabi's Code important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Hammurabi's Code",
+          "fact_stem": "established one of the earliest written sets of laws",
+          "concept": "Hammurabi's Code",
+          "questionText": "What historic challenges did people face during the era of Hammurabi's Code on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Hammurabi's Code",
+          "fact_stem": "established one of the earliest written sets of laws",
+          "concept": "Hammurabi's Code",
+          "questionText": "How did Hammurabi's Code influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Hammurabi's Code",
+          "fact_stem": "established one of the earliest written sets of laws",
+          "concept": "Hammurabi's Code",
+          "questionText": "Which statement summarizes the historical lessons of Hammurabi's Code on Page 5?",
+          "correctAnswer": "That Hammurabi's Code established one of the earliest written sets of laws to shape our society.",
+          "options": [
+            "That Hammurabi's Code established one of the earliest written sets of laws to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "Cuneiform Writing",
+          "fact_stem": "used wedge-shaped marks pressed into clay tablets",
+          "concept": "Cuneiform Writing",
+          "questionText": "What is a major milestone of the era of Cuneiform Writing on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Cuneiform Writing",
+          "fact_stem": "used wedge-shaped marks pressed into clay tablets",
+          "concept": "Cuneiform Writing",
+          "questionText": "What was the economic basis of communities during the time of Cuneiform Writing on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Cuneiform Writing",
+          "fact_stem": "used wedge-shaped marks pressed into clay tablets",
+          "concept": "Cuneiform Writing",
+          "questionText": "What were the long-term consequences of Cuneiform Writing on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Cuneiform Writing",
+          "fact_stem": "used wedge-shaped marks pressed into clay tablets",
+          "concept": "Cuneiform Writing",
+          "questionText": "Which statement summarizes the historical significance of Cuneiform Writing on Page 5?",
+          "correctAnswer": "That Cuneiform Writing used wedge-shaped marks pressed into clay tablets.",
+          "options": [
+            "That Cuneiform Writing used wedge-shaped marks pressed into clay tablets.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "The Babylonian Empire",
+          "fact_stem": "rose to power under rulers like Hammurabi and Nebuchadnezzar",
+          "concept": "The Babylonian Empire",
+          "questionText": "Why is the action of The Babylonian Empire important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Babylonian Empire",
+          "fact_stem": "rose to power under rulers like Hammurabi and Nebuchadnezzar",
+          "concept": "The Babylonian Empire",
+          "questionText": "What historic challenges did people face during the era of The Babylonian Empire on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Babylonian Empire",
+          "fact_stem": "rose to power under rulers like Hammurabi and Nebuchadnezzar",
+          "concept": "The Babylonian Empire",
+          "questionText": "How did The Babylonian Empire influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Babylonian Empire",
+          "fact_stem": "rose to power under rulers like Hammurabi and Nebuchadnezzar",
+          "concept": "The Babylonian Empire",
+          "questionText": "Which statement summarizes the historical lessons of The Babylonian Empire on Page 5?",
+          "correctAnswer": "That The Babylonian Empire rose to power under rulers like Hammurabi and Nebuchadnezzar to shape our society.",
+          "options": [
+            "That The Babylonian Empire rose to power under rulers like Hammurabi and Nebuchadnezzar to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "The Assyrian Empire",
+          "fact_stem": "built a powerful military empire across Mesopotamia",
+          "concept": "The Assyrian Empire",
+          "questionText": "What is a major milestone of the era of The Assyrian Empire on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Assyrian Empire",
+          "fact_stem": "built a powerful military empire across Mesopotamia",
+          "concept": "The Assyrian Empire",
+          "questionText": "What was the economic basis of communities during the time of The Assyrian Empire on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Assyrian Empire",
+          "fact_stem": "built a powerful military empire across Mesopotamia",
+          "concept": "The Assyrian Empire",
+          "questionText": "What were the long-term consequences of The Assyrian Empire on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Assyrian Empire",
+          "fact_stem": "built a powerful military empire across Mesopotamia",
+          "concept": "The Assyrian Empire",
+          "questionText": "Which statement summarizes the historical significance of The Assyrian Empire on Page 5?",
+          "correctAnswer": "That The Assyrian Empire built a powerful military empire across Mesopotamia.",
+          "options": [
+            "That The Assyrian Empire built a powerful military empire across Mesopotamia.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "The Nile River and Egypt",
+          "fact_stem": "provided fertile soil and a reliable trade route through the desert",
+          "concept": "The Nile River and Egypt",
+          "questionText": "Why is the action of The Nile River and Egypt important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Nile River and Egypt",
+          "fact_stem": "provided fertile soil and a reliable trade route through the desert",
+          "concept": "The Nile River and Egypt",
+          "questionText": "What historic challenges did people face during the era of The Nile River and Egypt on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Nile River and Egypt",
+          "fact_stem": "provided fertile soil and a reliable trade route through the desert",
+          "concept": "The Nile River and Egypt",
+          "questionText": "How did The Nile River and Egypt influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Nile River and Egypt",
+          "fact_stem": "provided fertile soil and a reliable trade route through the desert",
+          "concept": "The Nile River and Egypt",
+          "questionText": "Which statement summarizes the historical lessons of The Nile River and Egypt on Page 5?",
+          "correctAnswer": "That The Nile River and Egypt provided fertile soil and a reliable trade route through the desert to shape our society.",
+          "options": [
+            "That The Nile River and Egypt provided fertile soil and a reliable trade route through the desert to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "Pharaohs and Pyramids",
+          "fact_stem": "were built as monumental tombs to honor Egypt's god-kings",
+          "concept": "Pharaohs and Pyramids",
+          "questionText": "What is a major milestone of the era of Pharaohs and Pyramids on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Pharaohs and Pyramids",
+          "fact_stem": "were built as monumental tombs to honor Egypt's god-kings",
+          "concept": "Pharaohs and Pyramids",
+          "questionText": "What was the economic basis of communities during the time of Pharaohs and Pyramids on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Pharaohs and Pyramids",
+          "fact_stem": "were built as monumental tombs to honor Egypt's god-kings",
+          "concept": "Pharaohs and Pyramids",
+          "questionText": "What were the long-term consequences of Pharaohs and Pyramids on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Pharaohs and Pyramids",
+          "fact_stem": "were built as monumental tombs to honor Egypt's god-kings",
+          "concept": "Pharaohs and Pyramids",
+          "questionText": "Which statement summarizes the historical significance of Pharaohs and Pyramids on Page 5?",
+          "correctAnswer": "That Pharaohs and Pyramids were built as monumental tombs to honor Egypt's god-kings.",
+          "options": [
+            "That Pharaohs and Pyramids were built as monumental tombs to honor Egypt's god-kings.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "Egyptian Religion",
+          "fact_stem": "worshipped many gods and believed strongly in the afterlife",
+          "concept": "Egyptian Religion",
+          "questionText": "Why is the action of Egyptian Religion important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Egyptian Religion",
+          "fact_stem": "worshipped many gods and believed strongly in the afterlife",
+          "concept": "Egyptian Religion",
+          "questionText": "What historic challenges did people face during the era of Egyptian Religion on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Egyptian Religion",
+          "fact_stem": "worshipped many gods and believed strongly in the afterlife",
+          "concept": "Egyptian Religion",
+          "questionText": "How did Egyptian Religion influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Egyptian Religion",
+          "fact_stem": "worshipped many gods and believed strongly in the afterlife",
+          "concept": "Egyptian Religion",
+          "questionText": "Which statement summarizes the historical lessons of Egyptian Religion on Page 5?",
+          "correctAnswer": "That Egyptian Religion worshipped many gods and believed strongly in the afterlife to shape our society.",
+          "options": [
+            "That Egyptian Religion worshipped many gods and believed strongly in the afterlife to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "Egyptian Hieroglyphics",
+          "fact_stem": "used picture symbols to record language on papyrus and stone",
+          "concept": "Egyptian Hieroglyphics",
+          "questionText": "What is a major milestone of the era of Egyptian Hieroglyphics on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Egyptian Hieroglyphics",
+          "fact_stem": "used picture symbols to record language on papyrus and stone",
+          "concept": "Egyptian Hieroglyphics",
+          "questionText": "What was the economic basis of communities during the time of Egyptian Hieroglyphics on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Egyptian Hieroglyphics",
+          "fact_stem": "used picture symbols to record language on papyrus and stone",
+          "concept": "Egyptian Hieroglyphics",
+          "questionText": "What were the long-term consequences of Egyptian Hieroglyphics on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Egyptian Hieroglyphics",
+          "fact_stem": "used picture symbols to record language on papyrus and stone",
+          "concept": "Egyptian Hieroglyphics",
+          "questionText": "Which statement summarizes the historical significance of Egyptian Hieroglyphics on Page 5?",
+          "correctAnswer": "That Egyptian Hieroglyphics used picture symbols to record language on papyrus and stone.",
+          "options": [
+            "That Egyptian Hieroglyphics used picture symbols to record language on papyrus and stone.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "Egyptian Trade and Daily Life",
+          "fact_stem": "connected the Nile Valley to distant lands through boats and caravans",
+          "concept": "Egyptian Trade and Daily Life",
+          "questionText": "Why is the action of Egyptian Trade and Daily Life important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Egyptian Trade and Daily Life",
+          "fact_stem": "connected the Nile Valley to distant lands through boats and caravans",
+          "concept": "Egyptian Trade and Daily Life",
+          "questionText": "What historic challenges did people face during the era of Egyptian Trade and Daily Life on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Egyptian Trade and Daily Life",
+          "fact_stem": "connected the Nile Valley to distant lands through boats and caravans",
+          "concept": "Egyptian Trade and Daily Life",
+          "questionText": "How did Egyptian Trade and Daily Life influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Egyptian Trade and Daily Life",
+          "fact_stem": "connected the Nile Valley to distant lands through boats and caravans",
+          "concept": "Egyptian Trade and Daily Life",
+          "questionText": "Which statement summarizes the historical lessons of Egyptian Trade and Daily Life on Page 5?",
+          "correctAnswer": "That Egyptian Trade and Daily Life connected the Nile Valley to distant lands through boats and caravans to shape our society.",
+          "options": [
+            "That Egyptian Trade and Daily Life connected the Nile Valley to distant lands through boats and caravans to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "The Indus Valley Civilization",
+          "fact_stem": "built advanced cities with planned streets and drainage systems",
+          "concept": "The Indus Valley Civilization",
+          "questionText": "What is a major milestone of the era of The Indus Valley Civilization on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Indus Valley Civilization",
+          "fact_stem": "built advanced cities with planned streets and drainage systems",
+          "concept": "The Indus Valley Civilization",
+          "questionText": "What was the economic basis of communities during the time of The Indus Valley Civilization on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Indus Valley Civilization",
+          "fact_stem": "built advanced cities with planned streets and drainage systems",
+          "concept": "The Indus Valley Civilization",
+          "questionText": "What were the long-term consequences of The Indus Valley Civilization on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Indus Valley Civilization",
+          "fact_stem": "built advanced cities with planned streets and drainage systems",
+          "concept": "The Indus Valley Civilization",
+          "questionText": "Which statement summarizes the historical significance of The Indus Valley Civilization on Page 5?",
+          "correctAnswer": "That The Indus Valley Civilization built advanced cities with planned streets and drainage systems.",
+          "options": [
+            "That The Indus Valley Civilization built advanced cities with planned streets and drainage systems.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "Ancient Hinduism and Buddhism",
+          "fact_stem": "shaped spiritual beliefs and ways of life across South Asia",
+          "concept": "Ancient Hinduism and Buddhism",
+          "questionText": "Why is the action of Ancient Hinduism and Buddhism important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Ancient Hinduism and Buddhism",
+          "fact_stem": "shaped spiritual beliefs and ways of life across South Asia",
+          "concept": "Ancient Hinduism and Buddhism",
+          "questionText": "What historic challenges did people face during the era of Ancient Hinduism and Buddhism on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Ancient Hinduism and Buddhism",
+          "fact_stem": "shaped spiritual beliefs and ways of life across South Asia",
+          "concept": "Ancient Hinduism and Buddhism",
+          "questionText": "How did Ancient Hinduism and Buddhism influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Ancient Hinduism and Buddhism",
+          "fact_stem": "shaped spiritual beliefs and ways of life across South Asia",
+          "concept": "Ancient Hinduism and Buddhism",
+          "questionText": "Which statement summarizes the historical lessons of Ancient Hinduism and Buddhism on Page 5?",
+          "correctAnswer": "That Ancient Hinduism and Buddhism shaped spiritual beliefs and ways of life across South Asia to shape our society.",
+          "options": [
+            "That Ancient Hinduism and Buddhism shaped spiritual beliefs and ways of life across South Asia to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "Ancient Chinese Dynasties",
+          "fact_stem": "ruled vast territories and introduced lasting systems of government",
+          "concept": "Ancient Chinese Dynasties",
+          "questionText": "What is a major milestone of the era of Ancient Chinese Dynasties on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Ancient Chinese Dynasties",
+          "fact_stem": "ruled vast territories and introduced lasting systems of government",
+          "concept": "Ancient Chinese Dynasties",
+          "questionText": "What was the economic basis of communities during the time of Ancient Chinese Dynasties on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Ancient Chinese Dynasties",
+          "fact_stem": "ruled vast territories and introduced lasting systems of government",
+          "concept": "Ancient Chinese Dynasties",
+          "questionText": "What were the long-term consequences of Ancient Chinese Dynasties on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Ancient Chinese Dynasties",
+          "fact_stem": "ruled vast territories and introduced lasting systems of government",
+          "concept": "Ancient Chinese Dynasties",
+          "questionText": "Which statement summarizes the historical significance of Ancient Chinese Dynasties on Page 5?",
+          "correctAnswer": "That Ancient Chinese Dynasties ruled vast territories and introduced lasting systems of government.",
+          "options": [
+            "That Ancient Chinese Dynasties ruled vast territories and introduced lasting systems of government.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "Confucius and Chinese Philosophy",
+          "fact_stem": "taught principles of respect, order, and moral behavior",
+          "concept": "Confucius and Chinese Philosophy",
+          "questionText": "Why is the action of Confucius and Chinese Philosophy important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Confucius and Chinese Philosophy",
+          "fact_stem": "taught principles of respect, order, and moral behavior",
+          "concept": "Confucius and Chinese Philosophy",
+          "questionText": "What historic challenges did people face during the era of Confucius and Chinese Philosophy on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Confucius and Chinese Philosophy",
+          "fact_stem": "taught principles of respect, order, and moral behavior",
+          "concept": "Confucius and Chinese Philosophy",
+          "questionText": "How did Confucius and Chinese Philosophy influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Confucius and Chinese Philosophy",
+          "fact_stem": "taught principles of respect, order, and moral behavior",
+          "concept": "Confucius and Chinese Philosophy",
+          "questionText": "Which statement summarizes the historical lessons of Confucius and Chinese Philosophy on Page 5?",
+          "correctAnswer": "That Confucius and Chinese Philosophy taught principles of respect, order, and moral behavior to shape our society.",
+          "options": [
+            "That Confucius and Chinese Philosophy taught principles of respect, order, and moral behavior to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "The Silk Road",
+          "fact_stem": "connected East and West through the exchange of goods and ideas",
+          "concept": "The Silk Road",
+          "questionText": "What is a major milestone of the era of The Silk Road on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Silk Road",
+          "fact_stem": "connected East and West through the exchange of goods and ideas",
+          "concept": "The Silk Road",
+          "questionText": "What was the economic basis of communities during the time of The Silk Road on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Silk Road",
+          "fact_stem": "connected East and West through the exchange of goods and ideas",
+          "concept": "The Silk Road",
+          "questionText": "What were the long-term consequences of The Silk Road on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Silk Road",
+          "fact_stem": "connected East and West through the exchange of goods and ideas",
+          "concept": "The Silk Road",
+          "questionText": "Which statement summarizes the historical significance of The Silk Road on Page 5?",
+          "correctAnswer": "That The Silk Road connected East and West through the exchange of goods and ideas.",
+          "options": [
+            "That The Silk Road connected East and West through the exchange of goods and ideas.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "Greek City-States",
+          "fact_stem": "governed themselves independently with unique laws and customs",
+          "concept": "Greek City-States",
+          "questionText": "Why is the action of Greek City-States important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Greek City-States",
+          "fact_stem": "governed themselves independently with unique laws and customs",
+          "concept": "Greek City-States",
+          "questionText": "What historic challenges did people face during the era of Greek City-States on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Greek City-States",
+          "fact_stem": "governed themselves independently with unique laws and customs",
+          "concept": "Greek City-States",
+          "questionText": "How did Greek City-States influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Greek City-States",
+          "fact_stem": "governed themselves independently with unique laws and customs",
+          "concept": "Greek City-States",
+          "questionText": "Which statement summarizes the historical lessons of Greek City-States on Page 5?",
+          "correctAnswer": "That Greek City-States governed themselves independently with unique laws and customs to shape our society.",
+          "options": [
+            "That Greek City-States governed themselves independently with unique laws and customs to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "Athenian Democracy",
+          "fact_stem": "gave citizens a voice in government for the first time in history",
+          "concept": "Athenian Democracy",
+          "questionText": "What is a major milestone of the era of Athenian Democracy on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Athenian Democracy",
+          "fact_stem": "gave citizens a voice in government for the first time in history",
+          "concept": "Athenian Democracy",
+          "questionText": "What was the economic basis of communities during the time of Athenian Democracy on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Athenian Democracy",
+          "fact_stem": "gave citizens a voice in government for the first time in history",
+          "concept": "Athenian Democracy",
+          "questionText": "What were the long-term consequences of Athenian Democracy on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Athenian Democracy",
+          "fact_stem": "gave citizens a voice in government for the first time in history",
+          "concept": "Athenian Democracy",
+          "questionText": "Which statement summarizes the historical significance of Athenian Democracy on Page 5?",
+          "correctAnswer": "That Athenian Democracy gave citizens a voice in government for the first time in history.",
+          "options": [
+            "That Athenian Democracy gave citizens a voice in government for the first time in history.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "Greek Mythology and Religion",
+          "fact_stem": "explained natural events through stories of gods and heroes",
+          "concept": "Greek Mythology and Religion",
+          "questionText": "Why is the action of Greek Mythology and Religion important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Greek Mythology and Religion",
+          "fact_stem": "explained natural events through stories of gods and heroes",
+          "concept": "Greek Mythology and Religion",
+          "questionText": "What historic challenges did people face during the era of Greek Mythology and Religion on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Greek Mythology and Religion",
+          "fact_stem": "explained natural events through stories of gods and heroes",
+          "concept": "Greek Mythology and Religion",
+          "questionText": "How did Greek Mythology and Religion influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Greek Mythology and Religion",
+          "fact_stem": "explained natural events through stories of gods and heroes",
+          "concept": "Greek Mythology and Religion",
+          "questionText": "Which statement summarizes the historical lessons of Greek Mythology and Religion on Page 5?",
+          "correctAnswer": "That Greek Mythology and Religion explained natural events through stories of gods and heroes to shape our society.",
+          "options": [
+            "That Greek Mythology and Religion explained natural events through stories of gods and heroes to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "Greek Philosophy",
+          "fact_stem": "encouraged deep questioning about truth, ethics, and knowledge",
+          "concept": "Greek Philosophy",
+          "questionText": "What is a major milestone of the era of Greek Philosophy on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Greek Philosophy",
+          "fact_stem": "encouraged deep questioning about truth, ethics, and knowledge",
+          "concept": "Greek Philosophy",
+          "questionText": "What was the economic basis of communities during the time of Greek Philosophy on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Greek Philosophy",
+          "fact_stem": "encouraged deep questioning about truth, ethics, and knowledge",
+          "concept": "Greek Philosophy",
+          "questionText": "What were the long-term consequences of Greek Philosophy on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Greek Philosophy",
+          "fact_stem": "encouraged deep questioning about truth, ethics, and knowledge",
+          "concept": "Greek Philosophy",
+          "questionText": "Which statement summarizes the historical significance of Greek Philosophy on Page 5?",
+          "correctAnswer": "That Greek Philosophy encouraged deep questioning about truth, ethics, and knowledge.",
+          "options": [
+            "That Greek Philosophy encouraged deep questioning about truth, ethics, and knowledge.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "Alexander the Great",
+          "fact_stem": "built one of history's largest empires through military conquest",
+          "concept": "Alexander the Great",
+          "questionText": "Why is the action of Alexander the Great important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Alexander the Great",
+          "fact_stem": "built one of history's largest empires through military conquest",
+          "concept": "Alexander the Great",
+          "questionText": "What historic challenges did people face during the era of Alexander the Great on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Alexander the Great",
+          "fact_stem": "built one of history's largest empires through military conquest",
+          "concept": "Alexander the Great",
+          "questionText": "How did Alexander the Great influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Alexander the Great",
+          "fact_stem": "built one of history's largest empires through military conquest",
+          "concept": "Alexander the Great",
+          "questionText": "Which statement summarizes the historical lessons of Alexander the Great on Page 5?",
+          "correctAnswer": "That Alexander the Great built one of history's largest empires through military conquest to shape our society.",
+          "options": [
+            "That Alexander the Great built one of history's largest empires through military conquest to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "The Founding of Rome",
+          "fact_stem": "began as a small settlement along the Tiber River",
+          "concept": "The Founding of Rome",
+          "questionText": "What is a major milestone of the era of The Founding of Rome on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Founding of Rome",
+          "fact_stem": "began as a small settlement along the Tiber River",
+          "concept": "The Founding of Rome",
+          "questionText": "What was the economic basis of communities during the time of The Founding of Rome on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Founding of Rome",
+          "fact_stem": "began as a small settlement along the Tiber River",
+          "concept": "The Founding of Rome",
+          "questionText": "What were the long-term consequences of The Founding of Rome on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Founding of Rome",
+          "fact_stem": "began as a small settlement along the Tiber River",
+          "concept": "The Founding of Rome",
+          "questionText": "Which statement summarizes the historical significance of The Founding of Rome on Page 5?",
+          "correctAnswer": "That The Founding of Rome began as a small settlement along the Tiber River.",
+          "options": [
+            "That The Founding of Rome began as a small settlement along the Tiber River.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "The Roman Republic",
+          "fact_stem": "introduced a system of elected representatives and checks on power",
+          "concept": "The Roman Republic",
+          "questionText": "Why is the action of The Roman Republic important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Roman Republic",
+          "fact_stem": "introduced a system of elected representatives and checks on power",
+          "concept": "The Roman Republic",
+          "questionText": "What historic challenges did people face during the era of The Roman Republic on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Roman Republic",
+          "fact_stem": "introduced a system of elected representatives and checks on power",
+          "concept": "The Roman Republic",
+          "questionText": "How did The Roman Republic influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Roman Republic",
+          "fact_stem": "introduced a system of elected representatives and checks on power",
+          "concept": "The Roman Republic",
+          "questionText": "Which statement summarizes the historical lessons of The Roman Republic on Page 5?",
+          "correctAnswer": "That The Roman Republic introduced a system of elected representatives and checks on power to shape our society.",
+          "options": [
+            "That The Roman Republic introduced a system of elected representatives and checks on power to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "The Roman Empire",
+          "fact_stem": "spread Roman law, culture, and engineering across three continents",
+          "concept": "The Roman Empire",
+          "questionText": "What is a major milestone of the era of The Roman Empire on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Roman Empire",
+          "fact_stem": "spread Roman law, culture, and engineering across three continents",
+          "concept": "The Roman Empire",
+          "questionText": "What was the economic basis of communities during the time of The Roman Empire on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Roman Empire",
+          "fact_stem": "spread Roman law, culture, and engineering across three continents",
+          "concept": "The Roman Empire",
+          "questionText": "What were the long-term consequences of The Roman Empire on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Roman Empire",
+          "fact_stem": "spread Roman law, culture, and engineering across three continents",
+          "concept": "The Roman Empire",
+          "questionText": "Which statement summarizes the historical significance of The Roman Empire on Page 5?",
+          "correctAnswer": "That The Roman Empire spread Roman law, culture, and engineering across three continents.",
+          "options": [
+            "That The Roman Empire spread Roman law, culture, and engineering across three continents.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Roman Engineering and Law",
+          "fact_stem": "produced roads, aqueducts, and legal codes still admired today",
+          "concept": "Roman Engineering and Law",
+          "questionText": "Why is the action of Roman Engineering and Law important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Roman Engineering and Law",
+          "fact_stem": "produced roads, aqueducts, and legal codes still admired today",
+          "concept": "Roman Engineering and Law",
+          "questionText": "What historic challenges did people face during the era of Roman Engineering and Law on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Roman Engineering and Law",
+          "fact_stem": "produced roads, aqueducts, and legal codes still admired today",
+          "concept": "Roman Engineering and Law",
+          "questionText": "How did Roman Engineering and Law influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Roman Engineering and Law",
+          "fact_stem": "produced roads, aqueducts, and legal codes still admired today",
+          "concept": "Roman Engineering and Law",
+          "questionText": "Which statement summarizes the historical lessons of Roman Engineering and Law on Page 5?",
+          "correctAnswer": "That Roman Engineering and Law produced roads, aqueducts, and legal codes still admired today to shape our society.",
+          "options": [
+            "That Roman Engineering and Law produced roads, aqueducts, and legal codes still admired today to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 6 History Review",
+          "fact_stem": "connected ancient civilizations from Mesopotamia to Rome",
+          "concept": "Grade 6 History Review",
+          "questionText": "What is a major milestone of the era of Grade 6 History Review on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 6 History Review",
+          "fact_stem": "connected ancient civilizations from Mesopotamia to Rome",
+          "concept": "Grade 6 History Review",
+          "questionText": "What was the economic basis of communities during the time of Grade 6 History Review on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 6 History Review",
+          "fact_stem": "connected ancient civilizations from Mesopotamia to Rome",
+          "concept": "Grade 6 History Review",
+          "questionText": "What were the long-term consequences of Grade 6 History Review on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 6 History Review",
+          "fact_stem": "connected ancient civilizations from Mesopotamia to Rome",
+          "concept": "Grade 6 History Review",
+          "questionText": "Which statement summarizes the historical significance of Grade 6 History Review on Page 5?",
+          "correctAnswer": "That Grade 6 History Review connected ancient civilizations from Mesopotamia to Rome.",
+          "options": [
+            "That Grade 6 History Review connected ancient civilizations from Mesopotamia to Rome.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
+    },
+    "7": {
+      "1": [
+        {
+          "theme": "The Byzantine Empire",
+          "fact_stem": "preserved Roman traditions and Greek culture for a thousand years",
+          "concept": "The Byzantine Empire",
+          "questionText": "Why is the action of The Byzantine Empire important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Byzantine Empire",
+          "fact_stem": "preserved Roman traditions and Greek culture for a thousand years",
+          "concept": "The Byzantine Empire",
+          "questionText": "What historic challenges did people face during the era of The Byzantine Empire on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Byzantine Empire",
+          "fact_stem": "preserved Roman traditions and Greek culture for a thousand years",
+          "concept": "The Byzantine Empire",
+          "questionText": "How did The Byzantine Empire influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Byzantine Empire",
+          "fact_stem": "preserved Roman traditions and Greek culture for a thousand years",
+          "concept": "The Byzantine Empire",
+          "questionText": "Which statement summarizes the historical lessons of The Byzantine Empire on Page 5?",
+          "correctAnswer": "That The Byzantine Empire preserved Roman traditions and Greek culture for a thousand years to shape our society.",
+          "options": [
+            "That The Byzantine Empire preserved Roman traditions and Greek culture for a thousand years to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "The Rise of Islam",
+          "fact_stem": "began in Arabia and quickly spread new beliefs across three continents",
+          "concept": "The Rise of Islam",
+          "questionText": "What is a major milestone of the era of The Rise of Islam on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Rise of Islam",
+          "fact_stem": "began in Arabia and quickly spread new beliefs across three continents",
+          "concept": "The Rise of Islam",
+          "questionText": "What was the economic basis of communities during the time of The Rise of Islam on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Rise of Islam",
+          "fact_stem": "began in Arabia and quickly spread new beliefs across three continents",
+          "concept": "The Rise of Islam",
+          "questionText": "What were the long-term consequences of The Rise of Islam on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Rise of Islam",
+          "fact_stem": "began in Arabia and quickly spread new beliefs across three continents",
+          "concept": "The Rise of Islam",
+          "questionText": "Which statement summarizes the historical significance of The Rise of Islam on Page 5?",
+          "correctAnswer": "That The Rise of Islam began in Arabia and quickly spread new beliefs across three continents.",
+          "options": [
+            "That The Rise of Islam began in Arabia and quickly spread new beliefs across three continents.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "The Islamic Golden Age",
+          "fact_stem": "produced major advances in science, medicine, and mathematics",
+          "concept": "The Islamic Golden Age",
+          "questionText": "Why is the action of The Islamic Golden Age important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Islamic Golden Age",
+          "fact_stem": "produced major advances in science, medicine, and mathematics",
+          "concept": "The Islamic Golden Age",
+          "questionText": "What historic challenges did people face during the era of The Islamic Golden Age on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Islamic Golden Age",
+          "fact_stem": "produced major advances in science, medicine, and mathematics",
+          "concept": "The Islamic Golden Age",
+          "questionText": "How did The Islamic Golden Age influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Islamic Golden Age",
+          "fact_stem": "produced major advances in science, medicine, and mathematics",
+          "concept": "The Islamic Golden Age",
+          "questionText": "Which statement summarizes the historical lessons of The Islamic Golden Age on Page 5?",
+          "correctAnswer": "That The Islamic Golden Age produced major advances in science, medicine, and mathematics to shape our society.",
+          "options": [
+            "That The Islamic Golden Age produced major advances in science, medicine, and mathematics to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "The Ottoman Empire",
+          "fact_stem": "expanded from a small state into a powerful empire spanning three continents",
+          "concept": "The Ottoman Empire",
+          "questionText": "What is a major milestone of the era of The Ottoman Empire on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Ottoman Empire",
+          "fact_stem": "expanded from a small state into a powerful empire spanning three continents",
+          "concept": "The Ottoman Empire",
+          "questionText": "What was the economic basis of communities during the time of The Ottoman Empire on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Ottoman Empire",
+          "fact_stem": "expanded from a small state into a powerful empire spanning three continents",
+          "concept": "The Ottoman Empire",
+          "questionText": "What were the long-term consequences of The Ottoman Empire on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Ottoman Empire",
+          "fact_stem": "expanded from a small state into a powerful empire spanning three continents",
+          "concept": "The Ottoman Empire",
+          "questionText": "Which statement summarizes the historical significance of The Ottoman Empire on Page 5?",
+          "correctAnswer": "That The Ottoman Empire expanded from a small state into a powerful empire spanning three continents.",
+          "options": [
+            "That The Ottoman Empire expanded from a small state into a powerful empire spanning three continents.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "The Crusades",
+          "fact_stem": "were religious wars fought over control of the Holy Land",
+          "concept": "The Crusades",
+          "questionText": "Why is the action of The Crusades important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Crusades",
+          "fact_stem": "were religious wars fought over control of the Holy Land",
+          "concept": "The Crusades",
+          "questionText": "What historic challenges did people face during the era of The Crusades on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Crusades",
+          "fact_stem": "were religious wars fought over control of the Holy Land",
+          "concept": "The Crusades",
+          "questionText": "How did The Crusades influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Crusades",
+          "fact_stem": "were religious wars fought over control of the Holy Land",
+          "concept": "The Crusades",
+          "questionText": "Which statement summarizes the historical lessons of The Crusades on Page 5?",
+          "correctAnswer": "That The Crusades were religious wars fought over control of the Holy Land to shape our society.",
+          "options": [
+            "That The Crusades were religious wars fought over control of the Holy Land to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Feudalism",
+          "fact_stem": "organized medieval society around land, loyalty, and obligation",
+          "concept": "Feudalism",
+          "questionText": "What is a major milestone of the era of Feudalism on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Feudalism",
+          "fact_stem": "organized medieval society around land, loyalty, and obligation",
+          "concept": "Feudalism",
+          "questionText": "What was the economic basis of communities during the time of Feudalism on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Feudalism",
+          "fact_stem": "organized medieval society around land, loyalty, and obligation",
+          "concept": "Feudalism",
+          "questionText": "What were the long-term consequences of Feudalism on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Feudalism",
+          "fact_stem": "organized medieval society around land, loyalty, and obligation",
+          "concept": "Feudalism",
+          "questionText": "Which statement summarizes the historical significance of Feudalism on Page 5?",
+          "correctAnswer": "That Feudalism organized medieval society around land, loyalty, and obligation.",
+          "options": [
+            "That Feudalism organized medieval society around land, loyalty, and obligation.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "The Catholic Church in Medieval Europe",
+          "fact_stem": "held enormous influence over politics, education, and daily life",
+          "concept": "The Catholic Church in Medieval Europe",
+          "questionText": "Why is the action of The Catholic Church in Medieval Europe important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Catholic Church in Medieval Europe",
+          "fact_stem": "held enormous influence over politics, education, and daily life",
+          "concept": "The Catholic Church in Medieval Europe",
+          "questionText": "What historic challenges did people face during the era of The Catholic Church in Medieval Europe on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Catholic Church in Medieval Europe",
+          "fact_stem": "held enormous influence over politics, education, and daily life",
+          "concept": "The Catholic Church in Medieval Europe",
+          "questionText": "How did The Catholic Church in Medieval Europe influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Catholic Church in Medieval Europe",
+          "fact_stem": "held enormous influence over politics, education, and daily life",
+          "concept": "The Catholic Church in Medieval Europe",
+          "questionText": "Which statement summarizes the historical lessons of The Catholic Church in Medieval Europe on Page 5?",
+          "correctAnswer": "That The Catholic Church in Medieval Europe held enormous influence over politics, education, and daily life to shape our society.",
+          "options": [
+            "That The Catholic Church in Medieval Europe held enormous influence over politics, education, and daily life to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "Medieval Knights and Castles",
+          "fact_stem": "defended feudal lands and followed a code of chivalry",
+          "concept": "Medieval Knights and Castles",
+          "questionText": "What is a major milestone of the era of Medieval Knights and Castles on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Medieval Knights and Castles",
+          "fact_stem": "defended feudal lands and followed a code of chivalry",
+          "concept": "Medieval Knights and Castles",
+          "questionText": "What was the economic basis of communities during the time of Medieval Knights and Castles on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Medieval Knights and Castles",
+          "fact_stem": "defended feudal lands and followed a code of chivalry",
+          "concept": "Medieval Knights and Castles",
+          "questionText": "What were the long-term consequences of Medieval Knights and Castles on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Medieval Knights and Castles",
+          "fact_stem": "defended feudal lands and followed a code of chivalry",
+          "concept": "Medieval Knights and Castles",
+          "questionText": "Which statement summarizes the historical significance of Medieval Knights and Castles on Page 5?",
+          "correctAnswer": "That Medieval Knights and Castles defended feudal lands and followed a code of chivalry.",
+          "options": [
+            "That Medieval Knights and Castles defended feudal lands and followed a code of chivalry.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "The Black Death",
+          "fact_stem": "killed millions across Europe and reshaped society and the economy",
+          "concept": "The Black Death",
+          "questionText": "Why is the action of The Black Death important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Black Death",
+          "fact_stem": "killed millions across Europe and reshaped society and the economy",
+          "concept": "The Black Death",
+          "questionText": "What historic challenges did people face during the era of The Black Death on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Black Death",
+          "fact_stem": "killed millions across Europe and reshaped society and the economy",
+          "concept": "The Black Death",
+          "questionText": "How did The Black Death influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Black Death",
+          "fact_stem": "killed millions across Europe and reshaped society and the economy",
+          "concept": "The Black Death",
+          "questionText": "Which statement summarizes the historical lessons of The Black Death on Page 5?",
+          "correctAnswer": "That The Black Death killed millions across Europe and reshaped society and the economy to shape our society.",
+          "options": [
+            "That The Black Death killed millions across Europe and reshaped society and the economy to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "The Magna Carta",
+          "fact_stem": "limited the power of the king and established early legal rights",
+          "concept": "The Magna Carta",
+          "questionText": "What is a major milestone of the era of The Magna Carta on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Magna Carta",
+          "fact_stem": "limited the power of the king and established early legal rights",
+          "concept": "The Magna Carta",
+          "questionText": "What was the economic basis of communities during the time of The Magna Carta on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Magna Carta",
+          "fact_stem": "limited the power of the king and established early legal rights",
+          "concept": "The Magna Carta",
+          "questionText": "What were the long-term consequences of The Magna Carta on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Magna Carta",
+          "fact_stem": "limited the power of the king and established early legal rights",
+          "concept": "The Magna Carta",
+          "questionText": "Which statement summarizes the historical significance of The Magna Carta on Page 5?",
+          "correctAnswer": "That The Magna Carta limited the power of the king and established early legal rights.",
+          "options": [
+            "That The Magna Carta limited the power of the king and established early legal rights.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "West African Kingdoms",
+          "fact_stem": "grew wealthy through control of gold and salt trade routes",
+          "concept": "West African Kingdoms",
+          "questionText": "Why is the action of West African Kingdoms important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "West African Kingdoms",
+          "fact_stem": "grew wealthy through control of gold and salt trade routes",
+          "concept": "West African Kingdoms",
+          "questionText": "What historic challenges did people face during the era of West African Kingdoms on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "West African Kingdoms",
+          "fact_stem": "grew wealthy through control of gold and salt trade routes",
+          "concept": "West African Kingdoms",
+          "questionText": "How did West African Kingdoms influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "West African Kingdoms",
+          "fact_stem": "grew wealthy through control of gold and salt trade routes",
+          "concept": "West African Kingdoms",
+          "questionText": "Which statement summarizes the historical lessons of West African Kingdoms on Page 5?",
+          "correctAnswer": "That West African Kingdoms grew wealthy through control of gold and salt trade routes to shape our society.",
+          "options": [
+            "That West African Kingdoms grew wealthy through control of gold and salt trade routes to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "The Maya Civilization",
+          "fact_stem": "developed advanced writing, mathematics, and astronomy in Central America",
+          "concept": "The Maya Civilization",
+          "questionText": "What is a major milestone of the era of The Maya Civilization on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Maya Civilization",
+          "fact_stem": "developed advanced writing, mathematics, and astronomy in Central America",
+          "concept": "The Maya Civilization",
+          "questionText": "What was the economic basis of communities during the time of The Maya Civilization on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Maya Civilization",
+          "fact_stem": "developed advanced writing, mathematics, and astronomy in Central America",
+          "concept": "The Maya Civilization",
+          "questionText": "What were the long-term consequences of The Maya Civilization on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Maya Civilization",
+          "fact_stem": "developed advanced writing, mathematics, and astronomy in Central America",
+          "concept": "The Maya Civilization",
+          "questionText": "Which statement summarizes the historical significance of The Maya Civilization on Page 5?",
+          "correctAnswer": "That The Maya Civilization developed advanced writing, mathematics, and astronomy in Central America.",
+          "options": [
+            "That The Maya Civilization developed advanced writing, mathematics, and astronomy in Central America.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "The Aztec Empire",
+          "fact_stem": "built a powerful capital city on an island in a lake",
+          "concept": "The Aztec Empire",
+          "questionText": "Why is the action of The Aztec Empire important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Aztec Empire",
+          "fact_stem": "built a powerful capital city on an island in a lake",
+          "concept": "The Aztec Empire",
+          "questionText": "What historic challenges did people face during the era of The Aztec Empire on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Aztec Empire",
+          "fact_stem": "built a powerful capital city on an island in a lake",
+          "concept": "The Aztec Empire",
+          "questionText": "How did The Aztec Empire influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Aztec Empire",
+          "fact_stem": "built a powerful capital city on an island in a lake",
+          "concept": "The Aztec Empire",
+          "questionText": "Which statement summarizes the historical lessons of The Aztec Empire on Page 5?",
+          "correctAnswer": "That The Aztec Empire built a powerful capital city on an island in a lake to shape our society.",
+          "options": [
+            "That The Aztec Empire built a powerful capital city on an island in a lake to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "The Inca Empire",
+          "fact_stem": "united a vast mountain empire with roads and record-keeping",
+          "concept": "The Inca Empire",
+          "questionText": "What is a major milestone of the era of The Inca Empire on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Inca Empire",
+          "fact_stem": "united a vast mountain empire with roads and record-keeping",
+          "concept": "The Inca Empire",
+          "questionText": "What was the economic basis of communities during the time of The Inca Empire on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Inca Empire",
+          "fact_stem": "united a vast mountain empire with roads and record-keeping",
+          "concept": "The Inca Empire",
+          "questionText": "What were the long-term consequences of The Inca Empire on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Inca Empire",
+          "fact_stem": "united a vast mountain empire with roads and record-keeping",
+          "concept": "The Inca Empire",
+          "questionText": "Which statement summarizes the historical significance of The Inca Empire on Page 5?",
+          "correctAnswer": "That The Inca Empire united a vast mountain empire with roads and record-keeping.",
+          "options": [
+            "That The Inca Empire united a vast mountain empire with roads and record-keeping.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "The Trans-Saharan Trade",
+          "fact_stem": "linked West Africa to the Mediterranean world through desert caravans",
+          "concept": "The Trans-Saharan Trade",
+          "questionText": "Why is the action of The Trans-Saharan Trade important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Trans-Saharan Trade",
+          "fact_stem": "linked West Africa to the Mediterranean world through desert caravans",
+          "concept": "The Trans-Saharan Trade",
+          "questionText": "What historic challenges did people face during the era of The Trans-Saharan Trade on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Trans-Saharan Trade",
+          "fact_stem": "linked West Africa to the Mediterranean world through desert caravans",
+          "concept": "The Trans-Saharan Trade",
+          "questionText": "How did The Trans-Saharan Trade influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Trans-Saharan Trade",
+          "fact_stem": "linked West Africa to the Mediterranean world through desert caravans",
+          "concept": "The Trans-Saharan Trade",
+          "questionText": "Which statement summarizes the historical lessons of The Trans-Saharan Trade on Page 5?",
+          "correctAnswer": "That The Trans-Saharan Trade linked West Africa to the Mediterranean world through desert caravans to shape our society.",
+          "options": [
+            "That The Trans-Saharan Trade linked West Africa to the Mediterranean world through desert caravans to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "The Italian Renaissance",
+          "fact_stem": "revived interest in classical art, learning, and human potential",
+          "concept": "The Italian Renaissance",
+          "questionText": "What is a major milestone of the era of The Italian Renaissance on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Italian Renaissance",
+          "fact_stem": "revived interest in classical art, learning, and human potential",
+          "concept": "The Italian Renaissance",
+          "questionText": "What was the economic basis of communities during the time of The Italian Renaissance on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Italian Renaissance",
+          "fact_stem": "revived interest in classical art, learning, and human potential",
+          "concept": "The Italian Renaissance",
+          "questionText": "What were the long-term consequences of The Italian Renaissance on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Italian Renaissance",
+          "fact_stem": "revived interest in classical art, learning, and human potential",
+          "concept": "The Italian Renaissance",
+          "questionText": "Which statement summarizes the historical significance of The Italian Renaissance on Page 5?",
+          "correctAnswer": "That The Italian Renaissance revived interest in classical art, learning, and human potential.",
+          "options": [
+            "That The Italian Renaissance revived interest in classical art, learning, and human potential.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "Renaissance Art and Science",
+          "fact_stem": "combined careful observation with new techniques in painting and study",
+          "concept": "Renaissance Art and Science",
+          "questionText": "Why is the action of Renaissance Art and Science important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Renaissance Art and Science",
+          "fact_stem": "combined careful observation with new techniques in painting and study",
+          "concept": "Renaissance Art and Science",
+          "questionText": "What historic challenges did people face during the era of Renaissance Art and Science on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Renaissance Art and Science",
+          "fact_stem": "combined careful observation with new techniques in painting and study",
+          "concept": "Renaissance Art and Science",
+          "questionText": "How did Renaissance Art and Science influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Renaissance Art and Science",
+          "fact_stem": "combined careful observation with new techniques in painting and study",
+          "concept": "Renaissance Art and Science",
+          "questionText": "Which statement summarizes the historical lessons of Renaissance Art and Science on Page 5?",
+          "correctAnswer": "That Renaissance Art and Science combined careful observation with new techniques in painting and study to shape our society.",
+          "options": [
+            "That Renaissance Art and Science combined careful observation with new techniques in painting and study to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "The Printing Press",
+          "fact_stem": "made books faster and cheaper to produce, spreading knowledge widely",
+          "concept": "The Printing Press",
+          "questionText": "What is a major milestone of the era of The Printing Press on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Printing Press",
+          "fact_stem": "made books faster and cheaper to produce, spreading knowledge widely",
+          "concept": "The Printing Press",
+          "questionText": "What was the economic basis of communities during the time of The Printing Press on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Printing Press",
+          "fact_stem": "made books faster and cheaper to produce, spreading knowledge widely",
+          "concept": "The Printing Press",
+          "questionText": "What were the long-term consequences of The Printing Press on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Printing Press",
+          "fact_stem": "made books faster and cheaper to produce, spreading knowledge widely",
+          "concept": "The Printing Press",
+          "questionText": "Which statement summarizes the historical significance of The Printing Press on Page 5?",
+          "correctAnswer": "That The Printing Press made books faster and cheaper to produce, spreading knowledge widely.",
+          "options": [
+            "That The Printing Press made books faster and cheaper to produce, spreading knowledge widely.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "The Protestant Reformation",
+          "fact_stem": "challenged the authority of the Catholic Church and divided Christianity",
+          "concept": "The Protestant Reformation",
+          "questionText": "Why is the action of The Protestant Reformation important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Protestant Reformation",
+          "fact_stem": "challenged the authority of the Catholic Church and divided Christianity",
+          "concept": "The Protestant Reformation",
+          "questionText": "What historic challenges did people face during the era of The Protestant Reformation on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Protestant Reformation",
+          "fact_stem": "challenged the authority of the Catholic Church and divided Christianity",
+          "concept": "The Protestant Reformation",
+          "questionText": "How did The Protestant Reformation influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Protestant Reformation",
+          "fact_stem": "challenged the authority of the Catholic Church and divided Christianity",
+          "concept": "The Protestant Reformation",
+          "questionText": "Which statement summarizes the historical lessons of The Protestant Reformation on Page 5?",
+          "correctAnswer": "That The Protestant Reformation challenged the authority of the Catholic Church and divided Christianity to shape our society.",
+          "options": [
+            "That The Protestant Reformation challenged the authority of the Catholic Church and divided Christianity to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "The Scientific Revolution",
+          "fact_stem": "introduced new methods of observation and experimentation",
+          "concept": "The Scientific Revolution",
+          "questionText": "What is a major milestone of the era of The Scientific Revolution on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Scientific Revolution",
+          "fact_stem": "introduced new methods of observation and experimentation",
+          "concept": "The Scientific Revolution",
+          "questionText": "What was the economic basis of communities during the time of The Scientific Revolution on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Scientific Revolution",
+          "fact_stem": "introduced new methods of observation and experimentation",
+          "concept": "The Scientific Revolution",
+          "questionText": "What were the long-term consequences of The Scientific Revolution on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Scientific Revolution",
+          "fact_stem": "introduced new methods of observation and experimentation",
+          "concept": "The Scientific Revolution",
+          "questionText": "Which statement summarizes the historical significance of The Scientific Revolution on Page 5?",
+          "correctAnswer": "That The Scientific Revolution introduced new methods of observation and experimentation.",
+          "options": [
+            "That The Scientific Revolution introduced new methods of observation and experimentation.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "Causes of European Exploration",
+          "fact_stem": "were driven by the desire for wealth, trade routes, and glory",
+          "concept": "Causes of European Exploration",
+          "questionText": "Why is the action of Causes of European Exploration important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Causes of European Exploration",
+          "fact_stem": "were driven by the desire for wealth, trade routes, and glory",
+          "concept": "Causes of European Exploration",
+          "questionText": "What historic challenges did people face during the era of Causes of European Exploration on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Causes of European Exploration",
+          "fact_stem": "were driven by the desire for wealth, trade routes, and glory",
+          "concept": "Causes of European Exploration",
+          "questionText": "How did Causes of European Exploration influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Causes of European Exploration",
+          "fact_stem": "were driven by the desire for wealth, trade routes, and glory",
+          "concept": "Causes of European Exploration",
+          "questionText": "Which statement summarizes the historical lessons of Causes of European Exploration on Page 5?",
+          "correctAnswer": "That Causes of European Exploration were driven by the desire for wealth, trade routes, and glory to shape our society.",
+          "options": [
+            "That Causes of European Exploration were driven by the desire for wealth, trade routes, and glory to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "Christopher Columbus",
+          "fact_stem": "crossed the Atlantic Ocean and opened contact between Europe and the Americas",
+          "concept": "Christopher Columbus",
+          "questionText": "What is a major milestone of the era of Christopher Columbus on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Christopher Columbus",
+          "fact_stem": "crossed the Atlantic Ocean and opened contact between Europe and the Americas",
+          "concept": "Christopher Columbus",
+          "questionText": "What was the economic basis of communities during the time of Christopher Columbus on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Christopher Columbus",
+          "fact_stem": "crossed the Atlantic Ocean and opened contact between Europe and the Americas",
+          "concept": "Christopher Columbus",
+          "questionText": "What were the long-term consequences of Christopher Columbus on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Christopher Columbus",
+          "fact_stem": "crossed the Atlantic Ocean and opened contact between Europe and the Americas",
+          "concept": "Christopher Columbus",
+          "questionText": "Which statement summarizes the historical significance of Christopher Columbus on Page 5?",
+          "correctAnswer": "That Christopher Columbus crossed the Atlantic Ocean and opened contact between Europe and the Americas.",
+          "options": [
+            "That Christopher Columbus crossed the Atlantic Ocean and opened contact between Europe and the Americas.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "The Columbian Exchange",
+          "fact_stem": "moved plants, animals, and diseases between the Old and New Worlds",
+          "concept": "The Columbian Exchange",
+          "questionText": "Why is the action of The Columbian Exchange important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Columbian Exchange",
+          "fact_stem": "moved plants, animals, and diseases between the Old and New Worlds",
+          "concept": "The Columbian Exchange",
+          "questionText": "What historic challenges did people face during the era of The Columbian Exchange on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Columbian Exchange",
+          "fact_stem": "moved plants, animals, and diseases between the Old and New Worlds",
+          "concept": "The Columbian Exchange",
+          "questionText": "How did The Columbian Exchange influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Columbian Exchange",
+          "fact_stem": "moved plants, animals, and diseases between the Old and New Worlds",
+          "concept": "The Columbian Exchange",
+          "questionText": "Which statement summarizes the historical lessons of The Columbian Exchange on Page 5?",
+          "correctAnswer": "That The Columbian Exchange moved plants, animals, and diseases between the Old and New Worlds to shape our society.",
+          "options": [
+            "That The Columbian Exchange moved plants, animals, and diseases between the Old and New Worlds to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "European Colonization of the Americas",
+          "fact_stem": "established new settlements and claimed territory across two continents",
+          "concept": "European Colonization of the Americas",
+          "questionText": "What is a major milestone of the era of European Colonization of the Americas on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "European Colonization of the Americas",
+          "fact_stem": "established new settlements and claimed territory across two continents",
+          "concept": "European Colonization of the Americas",
+          "questionText": "What was the economic basis of communities during the time of European Colonization of the Americas on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "European Colonization of the Americas",
+          "fact_stem": "established new settlements and claimed territory across two continents",
+          "concept": "European Colonization of the Americas",
+          "questionText": "What were the long-term consequences of European Colonization of the Americas on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "European Colonization of the Americas",
+          "fact_stem": "established new settlements and claimed territory across two continents",
+          "concept": "European Colonization of the Americas",
+          "questionText": "Which statement summarizes the historical significance of European Colonization of the Americas on Page 5?",
+          "correctAnswer": "That European Colonization of the Americas established new settlements and claimed territory across two continents.",
+          "options": [
+            "That European Colonization of the Americas established new settlements and claimed territory across two continents.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "The Atlantic Slave Trade",
+          "fact_stem": "forcibly transported millions of Africans to the Americas",
+          "concept": "The Atlantic Slave Trade",
+          "questionText": "Why is the action of The Atlantic Slave Trade important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Atlantic Slave Trade",
+          "fact_stem": "forcibly transported millions of Africans to the Americas",
+          "concept": "The Atlantic Slave Trade",
+          "questionText": "What historic challenges did people face during the era of The Atlantic Slave Trade on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Atlantic Slave Trade",
+          "fact_stem": "forcibly transported millions of Africans to the Americas",
+          "concept": "The Atlantic Slave Trade",
+          "questionText": "How did The Atlantic Slave Trade influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Atlantic Slave Trade",
+          "fact_stem": "forcibly transported millions of Africans to the Americas",
+          "concept": "The Atlantic Slave Trade",
+          "questionText": "Which statement summarizes the historical lessons of The Atlantic Slave Trade on Page 5?",
+          "correctAnswer": "That The Atlantic Slave Trade forcibly transported millions of Africans to the Americas to shape our society.",
+          "options": [
+            "That The Atlantic Slave Trade forcibly transported millions of Africans to the Americas to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "Absolute Monarchies in Europe",
+          "fact_stem": "concentrated total power in the hands of a single ruler",
+          "concept": "Absolute Monarchies in Europe",
+          "questionText": "What is a major milestone of the era of Absolute Monarchies in Europe on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Absolute Monarchies in Europe",
+          "fact_stem": "concentrated total power in the hands of a single ruler",
+          "concept": "Absolute Monarchies in Europe",
+          "questionText": "What was the economic basis of communities during the time of Absolute Monarchies in Europe on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Absolute Monarchies in Europe",
+          "fact_stem": "concentrated total power in the hands of a single ruler",
+          "concept": "Absolute Monarchies in Europe",
+          "questionText": "What were the long-term consequences of Absolute Monarchies in Europe on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Absolute Monarchies in Europe",
+          "fact_stem": "concentrated total power in the hands of a single ruler",
+          "concept": "Absolute Monarchies in Europe",
+          "questionText": "Which statement summarizes the historical significance of Absolute Monarchies in Europe on Page 5?",
+          "correctAnswer": "That Absolute Monarchies in Europe concentrated total power in the hands of a single ruler.",
+          "options": [
+            "That Absolute Monarchies in Europe concentrated total power in the hands of a single ruler.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "The Enlightenment",
+          "fact_stem": "promoted reason, individual rights, and new ideas about government",
+          "concept": "The Enlightenment",
+          "questionText": "Why is the action of The Enlightenment important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Enlightenment",
+          "fact_stem": "promoted reason, individual rights, and new ideas about government",
+          "concept": "The Enlightenment",
+          "questionText": "What historic challenges did people face during the era of The Enlightenment on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Enlightenment",
+          "fact_stem": "promoted reason, individual rights, and new ideas about government",
+          "concept": "The Enlightenment",
+          "questionText": "How did The Enlightenment influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Enlightenment",
+          "fact_stem": "promoted reason, individual rights, and new ideas about government",
+          "concept": "The Enlightenment",
+          "questionText": "Which statement summarizes the historical lessons of The Enlightenment on Page 5?",
+          "correctAnswer": "That The Enlightenment promoted reason, individual rights, and new ideas about government to shape our society.",
+          "options": [
+            "That The Enlightenment promoted reason, individual rights, and new ideas about government to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "The Rise of Nation-States",
+          "fact_stem": "unified people under centralized governments and shared identity",
+          "concept": "The Rise of Nation-States",
+          "questionText": "What is a major milestone of the era of The Rise of Nation-States on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Rise of Nation-States",
+          "fact_stem": "unified people under centralized governments and shared identity",
+          "concept": "The Rise of Nation-States",
+          "questionText": "What was the economic basis of communities during the time of The Rise of Nation-States on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Rise of Nation-States",
+          "fact_stem": "unified people under centralized governments and shared identity",
+          "concept": "The Rise of Nation-States",
+          "questionText": "What were the long-term consequences of The Rise of Nation-States on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Rise of Nation-States",
+          "fact_stem": "unified people under centralized governments and shared identity",
+          "concept": "The Rise of Nation-States",
+          "questionText": "Which statement summarizes the historical significance of The Rise of Nation-States on Page 5?",
+          "correctAnswer": "That The Rise of Nation-States unified people under centralized governments and shared identity.",
+          "options": [
+            "That The Rise of Nation-States unified people under centralized governments and shared identity.",
+            "That the past has no connection to modern life.",
+            "That all events in history happened by accident.",
+            "That societies never changed their government."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Global Trade Networks",
+          "fact_stem": "connected distant regions through the exchange of goods and culture",
+          "concept": "Global Trade Networks",
+          "questionText": "Why is the action of Global Trade Networks important to study on Page 2?",
+          "correctAnswer": "Because it had a lasting impact on community rules and human rights.",
+          "options": [
+            "Because it had a lasting impact on community rules and human rights.",
+            "Because it forced all towns to be abandoned.",
+            "Because it prevented citizens from learning history.",
+            "Because it showed that leadership is not important."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Global Trade Networks",
+          "fact_stem": "connected distant regions through the exchange of goods and culture",
+          "concept": "Global Trade Networks",
+          "questionText": "What historic challenges did people face during the era of Global Trade Networks on Page 3?",
+          "correctAnswer": "They had to cooperate and stand up against unfair treatment.",
+          "options": [
+            "They had to cooperate and stand up against unfair treatment.",
+            "They had to live without any language or writing.",
+            "They were forced to move to other planets.",
+            "They only studied events that happened in the future."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Global Trade Networks",
+          "fact_stem": "connected distant regions through the exchange of goods and culture",
+          "concept": "Global Trade Networks",
+          "questionText": "How did Global Trade Networks influence democratic principles on Page 4?",
+          "correctAnswer": "By spreading new ideas, inventions, or civic values to future generations.",
+          "options": [
+            "By spreading new ideas, inventions, or civic values to future generations.",
+            "By stopping all trade and communication.",
+            "By declaring that laws would never change.",
+            "By convincing other nations to ignore history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Global Trade Networks",
+          "fact_stem": "connected distant regions through the exchange of goods and culture",
+          "concept": "Global Trade Networks",
+          "questionText": "Which statement summarizes the historical lessons of Global Trade Networks on Page 5?",
+          "correctAnswer": "That Global Trade Networks connected distant regions through the exchange of goods and culture to shape our society.",
+          "options": [
+            "That Global Trade Networks connected distant regions through the exchange of goods and culture to shape our society.",
+            "That history has no connection to modern civic duties.",
+            "That leaders never made difficult choices.",
+            "That communities never changed over time."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 7 History Review",
+          "fact_stem": "connected the medieval world to the beginnings of the modern era",
+          "concept": "Grade 7 History Review",
+          "questionText": "What is a major milestone of the era of Grade 7 History Review on Page 2?",
+          "correctAnswer": "It altered the balance of power and shaped local economies.",
+          "options": [
+            "It altered the balance of power and shaped local economies.",
+            "It caused all nations to dissolve immediately.",
+            "It stopped people from trading with other regions.",
+            "It prevented governments from writing laws."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 7 History Review",
+          "fact_stem": "connected the medieval world to the beginnings of the modern era",
+          "concept": "Grade 7 History Review",
+          "questionText": "What was the economic basis of communities during the time of Grade 7 History Review on Page 3?",
+          "correctAnswer": "They relied on agriculture, craftsmanship, and trade networks.",
+          "options": [
+            "They relied on agriculture, craftsmanship, and trade networks.",
+            "They only traded with digital currencies.",
+            "They lived without any food or resources.",
+            "They did not use any tools or farming."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 7 History Review",
+          "fact_stem": "connected the medieval world to the beginnings of the modern era",
+          "concept": "Grade 7 History Review",
+          "questionText": "What were the long-term consequences of Grade 7 History Review on Page 4?",
+          "correctAnswer": "Innovations in engineering, changes in national borders, and treaties.",
+          "options": [
+            "Innovations in engineering, changes in national borders, and treaties.",
+            "The complete disappearance of all historical records.",
+            "A ban on all forms of education.",
+            "The stop of all seasonal weather changes."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 7 History Review",
+          "fact_stem": "connected the medieval world to the beginnings of the modern era",
+          "concept": "Grade 7 History Review",
+          "questionText": "Which statement summarizes the historical significance of Grade 7 History Review on Page 5?",
+          "correctAnswer": "That Grade 7 History Review connected the medieval world to the beginnings of the modern era.",
+          "options": [
+            "That Grade 7 History Review connected the medieval world to the beginnings of the modern era.",
             "That the past has no connection to modern life.",
             "That all events in history happened by accident.",
             "That societies never changed their government."
@@ -24592,6 +32616,3970 @@ const GRADE_2_5_QUESTIONS = {
           "hint": "Read Page 5 to review the summary rule."
         }
       ]
+    },
+    "6": {
+      "1": [
+        {
+          "theme": "The Five Themes of Geography",
+          "fact_stem": "organize geographic study into location, place, region, movement, and human-environment interaction",
+          "concept": "The Five Themes of Geography",
+          "questionText": "What is the main purpose of the grid system used for the five themes of geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Five Themes of Geography",
+          "fact_stem": "organize geographic study into location, place, region, movement, and human-environment interaction",
+          "concept": "The Five Themes of Geography",
+          "questionText": "Which map features help us analyze spatial relationships of the five themes of geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Five Themes of Geography",
+          "fact_stem": "organize geographic study into location, place, region, movement, and human-environment interaction",
+          "concept": "The Five Themes of Geography",
+          "questionText": "Why is the geographic information of the five themes of geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Five Themes of Geography",
+          "fact_stem": "organize geographic study into location, place, region, movement, and human-environment interaction",
+          "concept": "The Five Themes of Geography",
+          "questionText": "Which statement summarizes the geographical use of the five themes of geography on Page 5?",
+          "correctAnswer": "That the five themes of geography organize geographic study into location, place, region, movement, and human-environment interaction.",
+          "options": [
+            "That the five themes of geography organize geographic study into location, place, region, movement, and human-environment interaction.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "Map Projections",
+          "fact_stem": "are methods of representing the round Earth on a flat map, each with different distortions",
+          "concept": "Map Projections",
+          "questionText": "What is the main purpose of the grid system used for map projections on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Map Projections",
+          "fact_stem": "are methods of representing the round Earth on a flat map, each with different distortions",
+          "concept": "Map Projections",
+          "questionText": "Which map features help us analyze spatial relationships of map projections on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Map Projections",
+          "fact_stem": "are methods of representing the round Earth on a flat map, each with different distortions",
+          "concept": "Map Projections",
+          "questionText": "Why is the geographic information of map projections essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Map Projections",
+          "fact_stem": "are methods of representing the round Earth on a flat map, each with different distortions",
+          "concept": "Map Projections",
+          "questionText": "Which statement summarizes the geographical use of map projections on Page 5?",
+          "correctAnswer": "That map projections are methods of representing the round Earth on a flat map, each with different distortions.",
+          "options": [
+            "That map projections are methods of representing the round Earth on a flat map, each with different distortions.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "Latitude and Longitude",
+          "fact_stem": "are imaginary grid lines used to pinpoint exact locations on Earth's surface",
+          "concept": "Latitude and Longitude",
+          "questionText": "What is the main purpose of the grid system used for latitude and longitude on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Latitude and Longitude",
+          "fact_stem": "are imaginary grid lines used to pinpoint exact locations on Earth's surface",
+          "concept": "Latitude and Longitude",
+          "questionText": "Which map features help us analyze spatial relationships of latitude and longitude on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Latitude and Longitude",
+          "fact_stem": "are imaginary grid lines used to pinpoint exact locations on Earth's surface",
+          "concept": "Latitude and Longitude",
+          "questionText": "Why is the geographic information of latitude and longitude essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Latitude and Longitude",
+          "fact_stem": "are imaginary grid lines used to pinpoint exact locations on Earth's surface",
+          "concept": "Latitude and Longitude",
+          "questionText": "Which statement summarizes the geographical use of latitude and longitude on Page 5?",
+          "correctAnswer": "That latitude and longitude are imaginary grid lines used to pinpoint exact locations on Earth's surface.",
+          "options": [
+            "That latitude and longitude are imaginary grid lines used to pinpoint exact locations on Earth's surface.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "GIS and Satellite Imagery",
+          "fact_stem": "use computer mapping and orbital cameras to collect and analyze geographic data",
+          "concept": "GIS and Satellite Imagery",
+          "questionText": "What is the main purpose of the grid system used for gis and satellite imagery on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "GIS and Satellite Imagery",
+          "fact_stem": "use computer mapping and orbital cameras to collect and analyze geographic data",
+          "concept": "GIS and Satellite Imagery",
+          "questionText": "Which map features help us analyze spatial relationships of gis and satellite imagery on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "GIS and Satellite Imagery",
+          "fact_stem": "use computer mapping and orbital cameras to collect and analyze geographic data",
+          "concept": "GIS and Satellite Imagery",
+          "questionText": "Why is the geographic information of gis and satellite imagery essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "GIS and Satellite Imagery",
+          "fact_stem": "use computer mapping and orbital cameras to collect and analyze geographic data",
+          "concept": "GIS and Satellite Imagery",
+          "questionText": "Which statement summarizes the geographical use of gis and satellite imagery on Page 5?",
+          "correctAnswer": "That gis and satellite imagery use computer mapping and orbital cameras to collect and analyze geographic data.",
+          "options": [
+            "That gis and satellite imagery use computer mapping and orbital cameras to collect and analyze geographic data.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "Physical versus Human Geography",
+          "fact_stem": "divides geography into natural landscape features and the impact of people on the land",
+          "concept": "Physical versus Human Geography",
+          "questionText": "What is the main purpose of the grid system used for physical versus human geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical versus Human Geography",
+          "fact_stem": "divides geography into natural landscape features and the impact of people on the land",
+          "concept": "Physical versus Human Geography",
+          "questionText": "Which map features help us analyze spatial relationships of physical versus human geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical versus Human Geography",
+          "fact_stem": "divides geography into natural landscape features and the impact of people on the land",
+          "concept": "Physical versus Human Geography",
+          "questionText": "Why is the geographic information of physical versus human geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical versus Human Geography",
+          "fact_stem": "divides geography into natural landscape features and the impact of people on the land",
+          "concept": "Physical versus Human Geography",
+          "questionText": "Which statement summarizes the geographical use of physical versus human geography on Page 5?",
+          "correctAnswer": "That physical versus human geography divides geography into natural landscape features and the impact of people on the land.",
+          "options": [
+            "That physical versus human geography divides geography into natural landscape features and the impact of people on the land.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Plate Tectonics",
+          "fact_stem": "explains how giant pieces of Earth's crust move and shape continents over millions of years",
+          "concept": "Plate Tectonics",
+          "questionText": "What is the main purpose of the grid system used for plate tectonics on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Plate Tectonics",
+          "fact_stem": "explains how giant pieces of Earth's crust move and shape continents over millions of years",
+          "concept": "Plate Tectonics",
+          "questionText": "Which map features help us analyze spatial relationships of plate tectonics on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Plate Tectonics",
+          "fact_stem": "explains how giant pieces of Earth's crust move and shape continents over millions of years",
+          "concept": "Plate Tectonics",
+          "questionText": "Why is the geographic information of plate tectonics essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Plate Tectonics",
+          "fact_stem": "explains how giant pieces of Earth's crust move and shape continents over millions of years",
+          "concept": "Plate Tectonics",
+          "questionText": "Which statement summarizes the geographical use of plate tectonics on Page 5?",
+          "correctAnswer": "That plate tectonics explains how giant pieces of Earth's crust move and shape continents over millions of years.",
+          "options": [
+            "That plate tectonics explains how giant pieces of Earth's crust move and shape continents over millions of years.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "Landform Formation",
+          "fact_stem": "describes how mountains, valleys, and plains are created by tectonic and erosional forces",
+          "concept": "Landform Formation",
+          "questionText": "What is the main purpose of the grid system used for landform formation on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Landform Formation",
+          "fact_stem": "describes how mountains, valleys, and plains are created by tectonic and erosional forces",
+          "concept": "Landform Formation",
+          "questionText": "Which map features help us analyze spatial relationships of landform formation on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Landform Formation",
+          "fact_stem": "describes how mountains, valleys, and plains are created by tectonic and erosional forces",
+          "concept": "Landform Formation",
+          "questionText": "Why is the geographic information of landform formation essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Landform Formation",
+          "fact_stem": "describes how mountains, valleys, and plains are created by tectonic and erosional forces",
+          "concept": "Landform Formation",
+          "questionText": "Which statement summarizes the geographical use of landform formation on Page 5?",
+          "correctAnswer": "That landform formation describes how mountains, valleys, and plains are created by tectonic and erosional forces.",
+          "options": [
+            "That landform formation describes how mountains, valleys, and plains are created by tectonic and erosional forces.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "Climate Zones",
+          "fact_stem": "are regions of Earth defined by consistent patterns of temperature and precipitation",
+          "concept": "Climate Zones",
+          "questionText": "What is the main purpose of the grid system used for climate zones on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Climate Zones",
+          "fact_stem": "are regions of Earth defined by consistent patterns of temperature and precipitation",
+          "concept": "Climate Zones",
+          "questionText": "Which map features help us analyze spatial relationships of climate zones on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Climate Zones",
+          "fact_stem": "are regions of Earth defined by consistent patterns of temperature and precipitation",
+          "concept": "Climate Zones",
+          "questionText": "Why is the geographic information of climate zones essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Climate Zones",
+          "fact_stem": "are regions of Earth defined by consistent patterns of temperature and precipitation",
+          "concept": "Climate Zones",
+          "questionText": "Which statement summarizes the geographical use of climate zones on Page 5?",
+          "correctAnswer": "That climate zones are regions of Earth defined by consistent patterns of temperature and precipitation.",
+          "options": [
+            "That climate zones are regions of Earth defined by consistent patterns of temperature and precipitation.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "Biomes of the World",
+          "fact_stem": "are large communities of plants and animals adapted to a specific climate and region",
+          "concept": "Biomes of the World",
+          "questionText": "What is the main purpose of the grid system used for biomes of the world on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Biomes of the World",
+          "fact_stem": "are large communities of plants and animals adapted to a specific climate and region",
+          "concept": "Biomes of the World",
+          "questionText": "Which map features help us analyze spatial relationships of biomes of the world on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Biomes of the World",
+          "fact_stem": "are large communities of plants and animals adapted to a specific climate and region",
+          "concept": "Biomes of the World",
+          "questionText": "Why is the geographic information of biomes of the world essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Biomes of the World",
+          "fact_stem": "are large communities of plants and animals adapted to a specific climate and region",
+          "concept": "Biomes of the World",
+          "questionText": "Which statement summarizes the geographical use of biomes of the world on Page 5?",
+          "correctAnswer": "That biomes of the world are large communities of plants and animals adapted to a specific climate and region.",
+          "options": [
+            "That biomes of the world are large communities of plants and animals adapted to a specific climate and region.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "The Water Cycle and Watersheds",
+          "fact_stem": "describes how water evaporates, condenses, and flows across land into rivers and oceans",
+          "concept": "The Water Cycle and Watersheds",
+          "questionText": "What is the main purpose of the grid system used for the water cycle and watersheds on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Water Cycle and Watersheds",
+          "fact_stem": "describes how water evaporates, condenses, and flows across land into rivers and oceans",
+          "concept": "The Water Cycle and Watersheds",
+          "questionText": "Which map features help us analyze spatial relationships of the water cycle and watersheds on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Water Cycle and Watersheds",
+          "fact_stem": "describes how water evaporates, condenses, and flows across land into rivers and oceans",
+          "concept": "The Water Cycle and Watersheds",
+          "questionText": "Why is the geographic information of the water cycle and watersheds essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Water Cycle and Watersheds",
+          "fact_stem": "describes how water evaporates, condenses, and flows across land into rivers and oceans",
+          "concept": "The Water Cycle and Watersheds",
+          "questionText": "Which statement summarizes the geographical use of the water cycle and watersheds on Page 5?",
+          "correctAnswer": "That the water cycle and watersheds describes how water evaporates, condenses, and flows across land into rivers and oceans.",
+          "options": [
+            "That the water cycle and watersheds describes how water evaporates, condenses, and flows across land into rivers and oceans.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "Physical Geography of North America",
+          "fact_stem": "includes the mountains, plains, and coastlines that shape the continent's landscape",
+          "concept": "Physical Geography of North America",
+          "questionText": "What is the main purpose of the grid system used for physical geography of north america on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical Geography of North America",
+          "fact_stem": "includes the mountains, plains, and coastlines that shape the continent's landscape",
+          "concept": "Physical Geography of North America",
+          "questionText": "Which map features help us analyze spatial relationships of physical geography of north america on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical Geography of North America",
+          "fact_stem": "includes the mountains, plains, and coastlines that shape the continent's landscape",
+          "concept": "Physical Geography of North America",
+          "questionText": "Why is the geographic information of physical geography of north america essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical Geography of North America",
+          "fact_stem": "includes the mountains, plains, and coastlines that shape the continent's landscape",
+          "concept": "Physical Geography of North America",
+          "questionText": "Which statement summarizes the geographical use of physical geography of north america on Page 5?",
+          "correctAnswer": "That physical geography of north america includes the mountains, plains, and coastlines that shape the continent's landscape.",
+          "options": [
+            "That physical geography of north america includes the mountains, plains, and coastlines that shape the continent's landscape.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "United States Regions",
+          "fact_stem": "are groupings of states that share similar climate, landforms, and culture",
+          "concept": "United States Regions",
+          "questionText": "What is the main purpose of the grid system used for united states regions on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "United States Regions",
+          "fact_stem": "are groupings of states that share similar climate, landforms, and culture",
+          "concept": "United States Regions",
+          "questionText": "Which map features help us analyze spatial relationships of united states regions on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "United States Regions",
+          "fact_stem": "are groupings of states that share similar climate, landforms, and culture",
+          "concept": "United States Regions",
+          "questionText": "Why is the geographic information of united states regions essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "United States Regions",
+          "fact_stem": "are groupings of states that share similar climate, landforms, and culture",
+          "concept": "United States Regions",
+          "questionText": "Which statement summarizes the geographical use of united states regions on Page 5?",
+          "correctAnswer": "That united states regions are groupings of states that share similar climate, landforms, and culture.",
+          "options": [
+            "That united states regions are groupings of states that share similar climate, landforms, and culture.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "Canada's Geography",
+          "fact_stem": "features vast forests, tundra, and the world's longest coastline",
+          "concept": "Canada's Geography",
+          "questionText": "What is the main purpose of the grid system used for canada's geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Canada's Geography",
+          "fact_stem": "features vast forests, tundra, and the world's longest coastline",
+          "concept": "Canada's Geography",
+          "questionText": "Which map features help us analyze spatial relationships of canada's geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Canada's Geography",
+          "fact_stem": "features vast forests, tundra, and the world's longest coastline",
+          "concept": "Canada's Geography",
+          "questionText": "Why is the geographic information of canada's geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Canada's Geography",
+          "fact_stem": "features vast forests, tundra, and the world's longest coastline",
+          "concept": "Canada's Geography",
+          "questionText": "Which statement summarizes the geographical use of canada's geography on Page 5?",
+          "correctAnswer": "That canada's geography features vast forests, tundra, and the world's longest coastline.",
+          "options": [
+            "That canada's geography features vast forests, tundra, and the world's longest coastline.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "Mexico and Central America",
+          "fact_stem": "is a land bridge connecting North and South America with mountains and rainforests",
+          "concept": "Mexico and Central America",
+          "questionText": "What is the main purpose of the grid system used for mexico and central america on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Mexico and Central America",
+          "fact_stem": "is a land bridge connecting North and South America with mountains and rainforests",
+          "concept": "Mexico and Central America",
+          "questionText": "Which map features help us analyze spatial relationships of mexico and central america on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Mexico and Central America",
+          "fact_stem": "is a land bridge connecting North and South America with mountains and rainforests",
+          "concept": "Mexico and Central America",
+          "questionText": "Why is the geographic information of mexico and central america essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Mexico and Central America",
+          "fact_stem": "is a land bridge connecting North and South America with mountains and rainforests",
+          "concept": "Mexico and Central America",
+          "questionText": "Which statement summarizes the geographical use of mexico and central america on Page 5?",
+          "correctAnswer": "That mexico and central america is a land bridge connecting North and South America with mountains and rainforests.",
+          "options": [
+            "That mexico and central america is a land bridge connecting North and South America with mountains and rainforests.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "North American Resources",
+          "fact_stem": "include fertile farmland, minerals, and freshwater that support the continent's economy",
+          "concept": "North American Resources",
+          "questionText": "What is the main purpose of the grid system used for north american resources on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "North American Resources",
+          "fact_stem": "include fertile farmland, minerals, and freshwater that support the continent's economy",
+          "concept": "North American Resources",
+          "questionText": "Which map features help us analyze spatial relationships of north american resources on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "North American Resources",
+          "fact_stem": "include fertile farmland, minerals, and freshwater that support the continent's economy",
+          "concept": "North American Resources",
+          "questionText": "Why is the geographic information of north american resources essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "North American Resources",
+          "fact_stem": "include fertile farmland, minerals, and freshwater that support the continent's economy",
+          "concept": "North American Resources",
+          "questionText": "Which statement summarizes the geographical use of north american resources on Page 5?",
+          "correctAnswer": "That north american resources include fertile farmland, minerals, and freshwater that support the continent's economy.",
+          "options": [
+            "That north american resources include fertile farmland, minerals, and freshwater that support the continent's economy.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "Physical Geography of South America",
+          "fact_stem": "is shaped by the Andes Mountains, the Amazon Basin, and long coastlines",
+          "concept": "Physical Geography of South America",
+          "questionText": "What is the main purpose of the grid system used for physical geography of south america on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical Geography of South America",
+          "fact_stem": "is shaped by the Andes Mountains, the Amazon Basin, and long coastlines",
+          "concept": "Physical Geography of South America",
+          "questionText": "Which map features help us analyze spatial relationships of physical geography of south america on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical Geography of South America",
+          "fact_stem": "is shaped by the Andes Mountains, the Amazon Basin, and long coastlines",
+          "concept": "Physical Geography of South America",
+          "questionText": "Why is the geographic information of physical geography of south america essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical Geography of South America",
+          "fact_stem": "is shaped by the Andes Mountains, the Amazon Basin, and long coastlines",
+          "concept": "Physical Geography of South America",
+          "questionText": "Which statement summarizes the geographical use of physical geography of south america on Page 5?",
+          "correctAnswer": "That physical geography of south america is shaped by the Andes Mountains, the Amazon Basin, and long coastlines.",
+          "options": [
+            "That physical geography of south america is shaped by the Andes Mountains, the Amazon Basin, and long coastlines.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "The Amazon Rainforest",
+          "fact_stem": "is the world's largest tropical rainforest, home to unmatched biodiversity",
+          "concept": "The Amazon Rainforest",
+          "questionText": "What is the main purpose of the grid system used for the amazon rainforest on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Amazon Rainforest",
+          "fact_stem": "is the world's largest tropical rainforest, home to unmatched biodiversity",
+          "concept": "The Amazon Rainforest",
+          "questionText": "Which map features help us analyze spatial relationships of the amazon rainforest on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Amazon Rainforest",
+          "fact_stem": "is the world's largest tropical rainforest, home to unmatched biodiversity",
+          "concept": "The Amazon Rainforest",
+          "questionText": "Why is the geographic information of the amazon rainforest essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Amazon Rainforest",
+          "fact_stem": "is the world's largest tropical rainforest, home to unmatched biodiversity",
+          "concept": "The Amazon Rainforest",
+          "questionText": "Which statement summarizes the geographical use of the amazon rainforest on Page 5?",
+          "correctAnswer": "That the amazon rainforest is the world's largest tropical rainforest, home to unmatched biodiversity.",
+          "options": [
+            "That the amazon rainforest is the world's largest tropical rainforest, home to unmatched biodiversity.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "The Andes Mountains",
+          "fact_stem": "form the longest mountain range in the world, running along South America's western edge",
+          "concept": "The Andes Mountains",
+          "questionText": "What is the main purpose of the grid system used for the andes mountains on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Andes Mountains",
+          "fact_stem": "form the longest mountain range in the world, running along South America's western edge",
+          "concept": "The Andes Mountains",
+          "questionText": "Which map features help us analyze spatial relationships of the andes mountains on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Andes Mountains",
+          "fact_stem": "form the longest mountain range in the world, running along South America's western edge",
+          "concept": "The Andes Mountains",
+          "questionText": "Why is the geographic information of the andes mountains essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Andes Mountains",
+          "fact_stem": "form the longest mountain range in the world, running along South America's western edge",
+          "concept": "The Andes Mountains",
+          "questionText": "Which statement summarizes the geographical use of the andes mountains on Page 5?",
+          "correctAnswer": "That the andes mountains form the longest mountain range in the world, running along South America's western edge.",
+          "options": [
+            "That the andes mountains form the longest mountain range in the world, running along South America's western edge.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "South American Culture Regions",
+          "fact_stem": "reflect a blend of Indigenous, European, and African influences across the continent",
+          "concept": "South American Culture Regions",
+          "questionText": "What is the main purpose of the grid system used for south american culture regions on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "South American Culture Regions",
+          "fact_stem": "reflect a blend of Indigenous, European, and African influences across the continent",
+          "concept": "South American Culture Regions",
+          "questionText": "Which map features help us analyze spatial relationships of south american culture regions on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "South American Culture Regions",
+          "fact_stem": "reflect a blend of Indigenous, European, and African influences across the continent",
+          "concept": "South American Culture Regions",
+          "questionText": "Why is the geographic information of south american culture regions essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "South American Culture Regions",
+          "fact_stem": "reflect a blend of Indigenous, European, and African influences across the continent",
+          "concept": "South American Culture Regions",
+          "questionText": "Which statement summarizes the geographical use of south american culture regions on Page 5?",
+          "correctAnswer": "That south american culture regions reflect a blend of Indigenous, European, and African influences across the continent.",
+          "options": [
+            "That south american culture regions reflect a blend of Indigenous, European, and African influences across the continent.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "South American Economies",
+          "fact_stem": "rely on agriculture, mining, and natural resource exports",
+          "concept": "South American Economies",
+          "questionText": "What is the main purpose of the grid system used for south american economies on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "South American Economies",
+          "fact_stem": "rely on agriculture, mining, and natural resource exports",
+          "concept": "South American Economies",
+          "questionText": "Which map features help us analyze spatial relationships of south american economies on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "South American Economies",
+          "fact_stem": "rely on agriculture, mining, and natural resource exports",
+          "concept": "South American Economies",
+          "questionText": "Why is the geographic information of south american economies essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "South American Economies",
+          "fact_stem": "rely on agriculture, mining, and natural resource exports",
+          "concept": "South American Economies",
+          "questionText": "Which statement summarizes the geographical use of south american economies on Page 5?",
+          "correctAnswer": "That south american economies rely on agriculture, mining, and natural resource exports.",
+          "options": [
+            "That south american economies rely on agriculture, mining, and natural resource exports.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "Physical Geography of Europe",
+          "fact_stem": "is marked by peninsulas, mountain ranges, and a long, irregular coastline",
+          "concept": "Physical Geography of Europe",
+          "questionText": "What is the main purpose of the grid system used for physical geography of europe on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical Geography of Europe",
+          "fact_stem": "is marked by peninsulas, mountain ranges, and a long, irregular coastline",
+          "concept": "Physical Geography of Europe",
+          "questionText": "Which map features help us analyze spatial relationships of physical geography of europe on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical Geography of Europe",
+          "fact_stem": "is marked by peninsulas, mountain ranges, and a long, irregular coastline",
+          "concept": "Physical Geography of Europe",
+          "questionText": "Why is the geographic information of physical geography of europe essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical Geography of Europe",
+          "fact_stem": "is marked by peninsulas, mountain ranges, and a long, irregular coastline",
+          "concept": "Physical Geography of Europe",
+          "questionText": "Which statement summarizes the geographical use of physical geography of europe on Page 5?",
+          "correctAnswer": "That physical geography of europe is marked by peninsulas, mountain ranges, and a long, irregular coastline.",
+          "options": [
+            "That physical geography of europe is marked by peninsulas, mountain ranges, and a long, irregular coastline.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "The European Union and Political Geography",
+          "fact_stem": "is a political and economic union of European countries that cooperate on trade and policy",
+          "concept": "The European Union and Political Geography",
+          "questionText": "What is the main purpose of the grid system used for the european union and political geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The European Union and Political Geography",
+          "fact_stem": "is a political and economic union of European countries that cooperate on trade and policy",
+          "concept": "The European Union and Political Geography",
+          "questionText": "Which map features help us analyze spatial relationships of the european union and political geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The European Union and Political Geography",
+          "fact_stem": "is a political and economic union of European countries that cooperate on trade and policy",
+          "concept": "The European Union and Political Geography",
+          "questionText": "Why is the geographic information of the european union and political geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The European Union and Political Geography",
+          "fact_stem": "is a political and economic union of European countries that cooperate on trade and policy",
+          "concept": "The European Union and Political Geography",
+          "questionText": "Which statement summarizes the geographical use of the european union and political geography on Page 5?",
+          "correctAnswer": "That the european union and political geography is a political and economic union of European countries that cooperate on trade and policy.",
+          "options": [
+            "That the european union and political geography is a political and economic union of European countries that cooperate on trade and policy.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "Rivers of Europe",
+          "fact_stem": "such as the Rhine and Danube have long supported trade, farming, and settlement",
+          "concept": "Rivers of Europe",
+          "questionText": "What is the main purpose of the grid system used for rivers of europe on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Rivers of Europe",
+          "fact_stem": "such as the Rhine and Danube have long supported trade, farming, and settlement",
+          "concept": "Rivers of Europe",
+          "questionText": "Which map features help us analyze spatial relationships of rivers of europe on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Rivers of Europe",
+          "fact_stem": "such as the Rhine and Danube have long supported trade, farming, and settlement",
+          "concept": "Rivers of Europe",
+          "questionText": "Why is the geographic information of rivers of europe essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Rivers of Europe",
+          "fact_stem": "such as the Rhine and Danube have long supported trade, farming, and settlement",
+          "concept": "Rivers of Europe",
+          "questionText": "Which statement summarizes the geographical use of rivers of europe on Page 5?",
+          "correctAnswer": "That rivers of europe such as the Rhine and Danube have long supported trade, farming, and settlement.",
+          "options": [
+            "That rivers of europe such as the Rhine and Danube have long supported trade, farming, and settlement.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "European Climate and Agriculture",
+          "fact_stem": "features a mild climate that supports productive farming across the continent",
+          "concept": "European Climate and Agriculture",
+          "questionText": "What is the main purpose of the grid system used for european climate and agriculture on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "European Climate and Agriculture",
+          "fact_stem": "features a mild climate that supports productive farming across the continent",
+          "concept": "European Climate and Agriculture",
+          "questionText": "Which map features help us analyze spatial relationships of european climate and agriculture on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "European Climate and Agriculture",
+          "fact_stem": "features a mild climate that supports productive farming across the continent",
+          "concept": "European Climate and Agriculture",
+          "questionText": "Why is the geographic information of european climate and agriculture essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "European Climate and Agriculture",
+          "fact_stem": "features a mild climate that supports productive farming across the continent",
+          "concept": "European Climate and Agriculture",
+          "questionText": "Which statement summarizes the geographical use of european climate and agriculture on Page 5?",
+          "correctAnswer": "That european climate and agriculture features a mild climate that supports productive farming across the continent.",
+          "options": [
+            "That european climate and agriculture features a mild climate that supports productive farming across the continent.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "Eastern versus Western Europe",
+          "fact_stem": "reflects historical, economic, and cultural differences shaped by geography and history",
+          "concept": "Eastern versus Western Europe",
+          "questionText": "What is the main purpose of the grid system used for eastern versus western europe on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Eastern versus Western Europe",
+          "fact_stem": "reflects historical, economic, and cultural differences shaped by geography and history",
+          "concept": "Eastern versus Western Europe",
+          "questionText": "Which map features help us analyze spatial relationships of eastern versus western europe on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Eastern versus Western Europe",
+          "fact_stem": "reflects historical, economic, and cultural differences shaped by geography and history",
+          "concept": "Eastern versus Western Europe",
+          "questionText": "Why is the geographic information of eastern versus western europe essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Eastern versus Western Europe",
+          "fact_stem": "reflects historical, economic, and cultural differences shaped by geography and history",
+          "concept": "Eastern versus Western Europe",
+          "questionText": "Which statement summarizes the geographical use of eastern versus western europe on Page 5?",
+          "correctAnswer": "That eastern versus western europe reflects historical, economic, and cultural differences shaped by geography and history.",
+          "options": [
+            "That eastern versus western europe reflects historical, economic, and cultural differences shaped by geography and history.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "Urbanization",
+          "fact_stem": "is the growth of cities as people move from rural areas to urban centers",
+          "concept": "Urbanization",
+          "questionText": "What is the main purpose of the grid system used for urbanization on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Urbanization",
+          "fact_stem": "is the growth of cities as people move from rural areas to urban centers",
+          "concept": "Urbanization",
+          "questionText": "Which map features help us analyze spatial relationships of urbanization on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Urbanization",
+          "fact_stem": "is the growth of cities as people move from rural areas to urban centers",
+          "concept": "Urbanization",
+          "questionText": "Why is the geographic information of urbanization essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Urbanization",
+          "fact_stem": "is the growth of cities as people move from rural areas to urban centers",
+          "concept": "Urbanization",
+          "questionText": "Which statement summarizes the geographical use of urbanization on Page 5?",
+          "correctAnswer": "That urbanization is the growth of cities as people move from rural areas to urban centers.",
+          "options": [
+            "That urbanization is the growth of cities as people move from rural areas to urban centers.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "Population Distribution",
+          "fact_stem": "describes how people are spread unevenly across Earth's surface",
+          "concept": "Population Distribution",
+          "questionText": "What is the main purpose of the grid system used for population distribution on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Population Distribution",
+          "fact_stem": "describes how people are spread unevenly across Earth's surface",
+          "concept": "Population Distribution",
+          "questionText": "Which map features help us analyze spatial relationships of population distribution on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Population Distribution",
+          "fact_stem": "describes how people are spread unevenly across Earth's surface",
+          "concept": "Population Distribution",
+          "questionText": "Why is the geographic information of population distribution essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Population Distribution",
+          "fact_stem": "describes how people are spread unevenly across Earth's surface",
+          "concept": "Population Distribution",
+          "questionText": "Which statement summarizes the geographical use of population distribution on Page 5?",
+          "correctAnswer": "That population distribution describes how people are spread unevenly across Earth's surface.",
+          "options": [
+            "That population distribution describes how people are spread unevenly across Earth's surface.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "Migration Patterns",
+          "fact_stem": "show how and why people move from one place to another",
+          "concept": "Migration Patterns",
+          "questionText": "What is the main purpose of the grid system used for migration patterns on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Migration Patterns",
+          "fact_stem": "show how and why people move from one place to another",
+          "concept": "Migration Patterns",
+          "questionText": "Which map features help us analyze spatial relationships of migration patterns on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Migration Patterns",
+          "fact_stem": "show how and why people move from one place to another",
+          "concept": "Migration Patterns",
+          "questionText": "Why is the geographic information of migration patterns essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Migration Patterns",
+          "fact_stem": "show how and why people move from one place to another",
+          "concept": "Migration Patterns",
+          "questionText": "Which statement summarizes the geographical use of migration patterns on Page 5?",
+          "correctAnswer": "That migration patterns show how and why people move from one place to another.",
+          "options": [
+            "That migration patterns show how and why people move from one place to another.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Sustainable Development",
+          "fact_stem": "balances economic growth with protecting the environment for future generations",
+          "concept": "Sustainable Development",
+          "questionText": "What is the main purpose of the grid system used for sustainable development on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Sustainable Development",
+          "fact_stem": "balances economic growth with protecting the environment for future generations",
+          "concept": "Sustainable Development",
+          "questionText": "Which map features help us analyze spatial relationships of sustainable development on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Sustainable Development",
+          "fact_stem": "balances economic growth with protecting the environment for future generations",
+          "concept": "Sustainable Development",
+          "questionText": "Why is the geographic information of sustainable development essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Sustainable Development",
+          "fact_stem": "balances economic growth with protecting the environment for future generations",
+          "concept": "Sustainable Development",
+          "questionText": "Which statement summarizes the geographical use of sustainable development on Page 5?",
+          "correctAnswer": "That sustainable development balances economic growth with protecting the environment for future generations.",
+          "options": [
+            "That sustainable development balances economic growth with protecting the environment for future generations.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 6 Geography Review",
+          "fact_stem": "reviews the key geographic tools, physical systems, and regions studied throughout the year",
+          "concept": "Grade 6 Geography Review",
+          "questionText": "What is the main purpose of the grid system used for grade 6 geography review on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 6 Geography Review",
+          "fact_stem": "reviews the key geographic tools, physical systems, and regions studied throughout the year",
+          "concept": "Grade 6 Geography Review",
+          "questionText": "Which map features help us analyze spatial relationships of grade 6 geography review on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 6 Geography Review",
+          "fact_stem": "reviews the key geographic tools, physical systems, and regions studied throughout the year",
+          "concept": "Grade 6 Geography Review",
+          "questionText": "Why is the geographic information of grade 6 geography review essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 6 Geography Review",
+          "fact_stem": "reviews the key geographic tools, physical systems, and regions studied throughout the year",
+          "concept": "Grade 6 Geography Review",
+          "questionText": "Which statement summarizes the geographical use of grade 6 geography review on Page 5?",
+          "correctAnswer": "That grade 6 geography review reviews the key geographic tools, physical systems, and regions studied throughout the year.",
+          "options": [
+            "That grade 6 geography review reviews the key geographic tools, physical systems, and regions studied throughout the year.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
+    },
+    "7": {
+      "1": [
+        {
+          "theme": "Physical Geography of Africa",
+          "fact_stem": "features vast deserts, savannas, rainforests, and the Great Rift Valley",
+          "concept": "Physical Geography of Africa",
+          "questionText": "What is the main purpose of the grid system used for physical geography of africa on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical Geography of Africa",
+          "fact_stem": "features vast deserts, savannas, rainforests, and the Great Rift Valley",
+          "concept": "Physical Geography of Africa",
+          "questionText": "Which map features help us analyze spatial relationships of physical geography of africa on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical Geography of Africa",
+          "fact_stem": "features vast deserts, savannas, rainforests, and the Great Rift Valley",
+          "concept": "Physical Geography of Africa",
+          "questionText": "Why is the geographic information of physical geography of africa essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical Geography of Africa",
+          "fact_stem": "features vast deserts, savannas, rainforests, and the Great Rift Valley",
+          "concept": "Physical Geography of Africa",
+          "questionText": "Which statement summarizes the geographical use of physical geography of africa on Page 5?",
+          "correctAnswer": "That physical geography of africa features vast deserts, savannas, rainforests, and the Great Rift Valley.",
+          "options": [
+            "That physical geography of africa features vast deserts, savannas, rainforests, and the Great Rift Valley.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "African Climate Zones and the Sahara",
+          "fact_stem": "range from tropical rainforests to the world's largest hot desert",
+          "concept": "African Climate Zones and the Sahara",
+          "questionText": "What is the main purpose of the grid system used for african climate zones and the sahara on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "African Climate Zones and the Sahara",
+          "fact_stem": "range from tropical rainforests to the world's largest hot desert",
+          "concept": "African Climate Zones and the Sahara",
+          "questionText": "Which map features help us analyze spatial relationships of african climate zones and the sahara on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "African Climate Zones and the Sahara",
+          "fact_stem": "range from tropical rainforests to the world's largest hot desert",
+          "concept": "African Climate Zones and the Sahara",
+          "questionText": "Why is the geographic information of african climate zones and the sahara essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "African Climate Zones and the Sahara",
+          "fact_stem": "range from tropical rainforests to the world's largest hot desert",
+          "concept": "African Climate Zones and the Sahara",
+          "questionText": "Which statement summarizes the geographical use of african climate zones and the sahara on Page 5?",
+          "correctAnswer": "That african climate zones and the sahara range from tropical rainforests to the world's largest hot desert.",
+          "options": [
+            "That african climate zones and the sahara range from tropical rainforests to the world's largest hot desert.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "The Nile River System",
+          "fact_stem": "is the longest river in the world and the lifeline of northeastern Africa",
+          "concept": "The Nile River System",
+          "questionText": "What is the main purpose of the grid system used for the nile river system on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Nile River System",
+          "fact_stem": "is the longest river in the world and the lifeline of northeastern Africa",
+          "concept": "The Nile River System",
+          "questionText": "Which map features help us analyze spatial relationships of the nile river system on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Nile River System",
+          "fact_stem": "is the longest river in the world and the lifeline of northeastern Africa",
+          "concept": "The Nile River System",
+          "questionText": "Why is the geographic information of the nile river system essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Nile River System",
+          "fact_stem": "is the longest river in the world and the lifeline of northeastern Africa",
+          "concept": "The Nile River System",
+          "questionText": "Which statement summarizes the geographical use of the nile river system on Page 5?",
+          "correctAnswer": "That the nile river system is the longest river in the world and the lifeline of northeastern Africa.",
+          "options": [
+            "That the nile river system is the longest river in the world and the lifeline of northeastern Africa.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "African Political Geography",
+          "fact_stem": "includes 54 nations with borders often drawn during colonial rule",
+          "concept": "African Political Geography",
+          "questionText": "What is the main purpose of the grid system used for african political geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "African Political Geography",
+          "fact_stem": "includes 54 nations with borders often drawn during colonial rule",
+          "concept": "African Political Geography",
+          "questionText": "Which map features help us analyze spatial relationships of african political geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "African Political Geography",
+          "fact_stem": "includes 54 nations with borders often drawn during colonial rule",
+          "concept": "African Political Geography",
+          "questionText": "Why is the geographic information of african political geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "African Political Geography",
+          "fact_stem": "includes 54 nations with borders often drawn during colonial rule",
+          "concept": "African Political Geography",
+          "questionText": "Which statement summarizes the geographical use of african political geography on Page 5?",
+          "correctAnswer": "That african political geography includes 54 nations with borders often drawn during colonial rule.",
+          "options": [
+            "That african political geography includes 54 nations with borders often drawn during colonial rule.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "African Cultural Regions",
+          "fact_stem": "reflect thousands of distinct ethnic groups and languages across the continent",
+          "concept": "African Cultural Regions",
+          "questionText": "What is the main purpose of the grid system used for african cultural regions on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "African Cultural Regions",
+          "fact_stem": "reflect thousands of distinct ethnic groups and languages across the continent",
+          "concept": "African Cultural Regions",
+          "questionText": "Which map features help us analyze spatial relationships of african cultural regions on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "African Cultural Regions",
+          "fact_stem": "reflect thousands of distinct ethnic groups and languages across the continent",
+          "concept": "African Cultural Regions",
+          "questionText": "Why is the geographic information of african cultural regions essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "African Cultural Regions",
+          "fact_stem": "reflect thousands of distinct ethnic groups and languages across the continent",
+          "concept": "African Cultural Regions",
+          "questionText": "Which statement summarizes the geographical use of african cultural regions on Page 5?",
+          "correctAnswer": "That african cultural regions reflect thousands of distinct ethnic groups and languages across the continent.",
+          "options": [
+            "That african cultural regions reflect thousands of distinct ethnic groups and languages across the continent.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Physical Geography of Asia",
+          "fact_stem": "is the largest continent, featuring the Himalayas, vast plains, and long coastlines",
+          "concept": "Physical Geography of Asia",
+          "questionText": "What is the main purpose of the grid system used for physical geography of asia on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical Geography of Asia",
+          "fact_stem": "is the largest continent, featuring the Himalayas, vast plains, and long coastlines",
+          "concept": "Physical Geography of Asia",
+          "questionText": "Which map features help us analyze spatial relationships of physical geography of asia on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical Geography of Asia",
+          "fact_stem": "is the largest continent, featuring the Himalayas, vast plains, and long coastlines",
+          "concept": "Physical Geography of Asia",
+          "questionText": "Why is the geographic information of physical geography of asia essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical Geography of Asia",
+          "fact_stem": "is the largest continent, featuring the Himalayas, vast plains, and long coastlines",
+          "concept": "Physical Geography of Asia",
+          "questionText": "Which statement summarizes the geographical use of physical geography of asia on Page 5?",
+          "correctAnswer": "That physical geography of asia is the largest continent, featuring the Himalayas, vast plains, and long coastlines.",
+          "options": [
+            "That physical geography of asia is the largest continent, featuring the Himalayas, vast plains, and long coastlines.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "South Asia and the Himalayas",
+          "fact_stem": "is home to the world's tallest mountain range and densely populated river valleys",
+          "concept": "South Asia and the Himalayas",
+          "questionText": "What is the main purpose of the grid system used for south asia and the himalayas on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "South Asia and the Himalayas",
+          "fact_stem": "is home to the world's tallest mountain range and densely populated river valleys",
+          "concept": "South Asia and the Himalayas",
+          "questionText": "Which map features help us analyze spatial relationships of south asia and the himalayas on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "South Asia and the Himalayas",
+          "fact_stem": "is home to the world's tallest mountain range and densely populated river valleys",
+          "concept": "South Asia and the Himalayas",
+          "questionText": "Why is the geographic information of south asia and the himalayas essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "South Asia and the Himalayas",
+          "fact_stem": "is home to the world's tallest mountain range and densely populated river valleys",
+          "concept": "South Asia and the Himalayas",
+          "questionText": "Which statement summarizes the geographical use of south asia and the himalayas on Page 5?",
+          "correctAnswer": "That south asia and the himalayas is home to the world's tallest mountain range and densely populated river valleys.",
+          "options": [
+            "That south asia and the himalayas is home to the world's tallest mountain range and densely populated river valleys.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "East Asia's Geography",
+          "fact_stem": "includes China, Japan, and Korea, shaped by mountains, rivers, and coastlines",
+          "concept": "East Asia's Geography",
+          "questionText": "What is the main purpose of the grid system used for east asia's geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "East Asia's Geography",
+          "fact_stem": "includes China, Japan, and Korea, shaped by mountains, rivers, and coastlines",
+          "concept": "East Asia's Geography",
+          "questionText": "Which map features help us analyze spatial relationships of east asia's geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "East Asia's Geography",
+          "fact_stem": "includes China, Japan, and Korea, shaped by mountains, rivers, and coastlines",
+          "concept": "East Asia's Geography",
+          "questionText": "Why is the geographic information of east asia's geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "East Asia's Geography",
+          "fact_stem": "includes China, Japan, and Korea, shaped by mountains, rivers, and coastlines",
+          "concept": "East Asia's Geography",
+          "questionText": "Which statement summarizes the geographical use of east asia's geography on Page 5?",
+          "correctAnswer": "That east asia's geography includes China, Japan, and Korea, shaped by mountains, rivers, and coastlines.",
+          "options": [
+            "That east asia's geography includes China, Japan, and Korea, shaped by mountains, rivers, and coastlines.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "Southeast Asia's Geography",
+          "fact_stem": "is a region of peninsulas and islands with a tropical monsoon climate",
+          "concept": "Southeast Asia's Geography",
+          "questionText": "What is the main purpose of the grid system used for southeast asia's geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Southeast Asia's Geography",
+          "fact_stem": "is a region of peninsulas and islands with a tropical monsoon climate",
+          "concept": "Southeast Asia's Geography",
+          "questionText": "Which map features help us analyze spatial relationships of southeast asia's geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Southeast Asia's Geography",
+          "fact_stem": "is a region of peninsulas and islands with a tropical monsoon climate",
+          "concept": "Southeast Asia's Geography",
+          "questionText": "Why is the geographic information of southeast asia's geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Southeast Asia's Geography",
+          "fact_stem": "is a region of peninsulas and islands with a tropical monsoon climate",
+          "concept": "Southeast Asia's Geography",
+          "questionText": "Which statement summarizes the geographical use of southeast asia's geography on Page 5?",
+          "correctAnswer": "That southeast asia's geography is a region of peninsulas and islands with a tropical monsoon climate.",
+          "options": [
+            "That southeast asia's geography is a region of peninsulas and islands with a tropical monsoon climate.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "Central Asia and the Steppe",
+          "fact_stem": "is a landlocked region of vast grasslands and historic trade routes",
+          "concept": "Central Asia and the Steppe",
+          "questionText": "What is the main purpose of the grid system used for central asia and the steppe on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Central Asia and the Steppe",
+          "fact_stem": "is a landlocked region of vast grasslands and historic trade routes",
+          "concept": "Central Asia and the Steppe",
+          "questionText": "Which map features help us analyze spatial relationships of central asia and the steppe on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Central Asia and the Steppe",
+          "fact_stem": "is a landlocked region of vast grasslands and historic trade routes",
+          "concept": "Central Asia and the Steppe",
+          "questionText": "Why is the geographic information of central asia and the steppe essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Central Asia and the Steppe",
+          "fact_stem": "is a landlocked region of vast grasslands and historic trade routes",
+          "concept": "Central Asia and the Steppe",
+          "questionText": "Which statement summarizes the geographical use of central asia and the steppe on Page 5?",
+          "correctAnswer": "That central asia and the steppe is a landlocked region of vast grasslands and historic trade routes.",
+          "options": [
+            "That central asia and the steppe is a landlocked region of vast grasslands and historic trade routes.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "Physical Geography of the Middle East",
+          "fact_stem": "is dominated by deserts, plateaus, and a few major river valleys",
+          "concept": "Physical Geography of the Middle East",
+          "questionText": "What is the main purpose of the grid system used for physical geography of the middle east on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Physical Geography of the Middle East",
+          "fact_stem": "is dominated by deserts, plateaus, and a few major river valleys",
+          "concept": "Physical Geography of the Middle East",
+          "questionText": "Which map features help us analyze spatial relationships of physical geography of the middle east on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Physical Geography of the Middle East",
+          "fact_stem": "is dominated by deserts, plateaus, and a few major river valleys",
+          "concept": "Physical Geography of the Middle East",
+          "questionText": "Why is the geographic information of physical geography of the middle east essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Physical Geography of the Middle East",
+          "fact_stem": "is dominated by deserts, plateaus, and a few major river valleys",
+          "concept": "Physical Geography of the Middle East",
+          "questionText": "Which statement summarizes the geographical use of physical geography of the middle east on Page 5?",
+          "correctAnswer": "That physical geography of the middle east is dominated by deserts, plateaus, and a few major river valleys.",
+          "options": [
+            "That physical geography of the middle east is dominated by deserts, plateaus, and a few major river valleys.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "Oil and Natural Resources",
+          "fact_stem": "are abundant beneath the deserts of the Middle East and drive the region's economy",
+          "concept": "Oil and Natural Resources",
+          "questionText": "What is the main purpose of the grid system used for oil and natural resources on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Oil and Natural Resources",
+          "fact_stem": "are abundant beneath the deserts of the Middle East and drive the region's economy",
+          "concept": "Oil and Natural Resources",
+          "questionText": "Which map features help us analyze spatial relationships of oil and natural resources on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Oil and Natural Resources",
+          "fact_stem": "are abundant beneath the deserts of the Middle East and drive the region's economy",
+          "concept": "Oil and Natural Resources",
+          "questionText": "Why is the geographic information of oil and natural resources essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Oil and Natural Resources",
+          "fact_stem": "are abundant beneath the deserts of the Middle East and drive the region's economy",
+          "concept": "Oil and Natural Resources",
+          "questionText": "Which statement summarizes the geographical use of oil and natural resources on Page 5?",
+          "correctAnswer": "That oil and natural resources are abundant beneath the deserts of the Middle East and drive the region's economy.",
+          "options": [
+            "That oil and natural resources are abundant beneath the deserts of the Middle East and drive the region's economy.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "The Tigris and Euphrates Rivers",
+          "fact_stem": "flow through Mesopotamia and supported some of the earliest civilizations",
+          "concept": "The Tigris and Euphrates Rivers",
+          "questionText": "What is the main purpose of the grid system used for the tigris and euphrates rivers on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Tigris and Euphrates Rivers",
+          "fact_stem": "flow through Mesopotamia and supported some of the earliest civilizations",
+          "concept": "The Tigris and Euphrates Rivers",
+          "questionText": "Which map features help us analyze spatial relationships of the tigris and euphrates rivers on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Tigris and Euphrates Rivers",
+          "fact_stem": "flow through Mesopotamia and supported some of the earliest civilizations",
+          "concept": "The Tigris and Euphrates Rivers",
+          "questionText": "Why is the geographic information of the tigris and euphrates rivers essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Tigris and Euphrates Rivers",
+          "fact_stem": "flow through Mesopotamia and supported some of the earliest civilizations",
+          "concept": "The Tigris and Euphrates Rivers",
+          "questionText": "Which statement summarizes the geographical use of the tigris and euphrates rivers on Page 5?",
+          "correctAnswer": "That the tigris and euphrates rivers flow through Mesopotamia and supported some of the earliest civilizations.",
+          "options": [
+            "That the tigris and euphrates rivers flow through Mesopotamia and supported some of the earliest civilizations.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "Deserts of the Middle East",
+          "fact_stem": "cover much of the region with arid, sandy, and rocky landscapes",
+          "concept": "Deserts of the Middle East",
+          "questionText": "What is the main purpose of the grid system used for deserts of the middle east on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Deserts of the Middle East",
+          "fact_stem": "cover much of the region with arid, sandy, and rocky landscapes",
+          "concept": "Deserts of the Middle East",
+          "questionText": "Which map features help us analyze spatial relationships of deserts of the middle east on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Deserts of the Middle East",
+          "fact_stem": "cover much of the region with arid, sandy, and rocky landscapes",
+          "concept": "Deserts of the Middle East",
+          "questionText": "Why is the geographic information of deserts of the middle east essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Deserts of the Middle East",
+          "fact_stem": "cover much of the region with arid, sandy, and rocky landscapes",
+          "concept": "Deserts of the Middle East",
+          "questionText": "Which statement summarizes the geographical use of deserts of the middle east on Page 5?",
+          "correctAnswer": "That deserts of the middle east cover much of the region with arid, sandy, and rocky landscapes.",
+          "options": [
+            "That deserts of the middle east cover much of the region with arid, sandy, and rocky landscapes.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "Middle East Political Geography",
+          "fact_stem": "includes diverse nations shaped by religion, resources, and historic borders",
+          "concept": "Middle East Political Geography",
+          "questionText": "What is the main purpose of the grid system used for middle east political geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Middle East Political Geography",
+          "fact_stem": "includes diverse nations shaped by religion, resources, and historic borders",
+          "concept": "Middle East Political Geography",
+          "questionText": "Which map features help us analyze spatial relationships of middle east political geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Middle East Political Geography",
+          "fact_stem": "includes diverse nations shaped by religion, resources, and historic borders",
+          "concept": "Middle East Political Geography",
+          "questionText": "Why is the geographic information of middle east political geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Middle East Political Geography",
+          "fact_stem": "includes diverse nations shaped by religion, resources, and historic borders",
+          "concept": "Middle East Political Geography",
+          "questionText": "Which statement summarizes the geographical use of middle east political geography on Page 5?",
+          "correctAnswer": "That middle east political geography includes diverse nations shaped by religion, resources, and historic borders.",
+          "options": [
+            "That middle east political geography includes diverse nations shaped by religion, resources, and historic borders.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "Australia's Geography",
+          "fact_stem": "is the smallest continent, known for its outback deserts and unique wildlife",
+          "concept": "Australia's Geography",
+          "questionText": "What is the main purpose of the grid system used for australia's geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Australia's Geography",
+          "fact_stem": "is the smallest continent, known for its outback deserts and unique wildlife",
+          "concept": "Australia's Geography",
+          "questionText": "Which map features help us analyze spatial relationships of australia's geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Australia's Geography",
+          "fact_stem": "is the smallest continent, known for its outback deserts and unique wildlife",
+          "concept": "Australia's Geography",
+          "questionText": "Why is the geographic information of australia's geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Australia's Geography",
+          "fact_stem": "is the smallest continent, known for its outback deserts and unique wildlife",
+          "concept": "Australia's Geography",
+          "questionText": "Which statement summarizes the geographical use of australia's geography on Page 5?",
+          "correctAnswer": "That australia's geography is the smallest continent, known for its outback deserts and unique wildlife.",
+          "options": [
+            "That australia's geography is the smallest continent, known for its outback deserts and unique wildlife.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "Pacific Island Nations",
+          "fact_stem": "are scattered across the vast Pacific Ocean and vulnerable to rising sea levels",
+          "concept": "Pacific Island Nations",
+          "questionText": "What is the main purpose of the grid system used for pacific island nations on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Pacific Island Nations",
+          "fact_stem": "are scattered across the vast Pacific Ocean and vulnerable to rising sea levels",
+          "concept": "Pacific Island Nations",
+          "questionText": "Which map features help us analyze spatial relationships of pacific island nations on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Pacific Island Nations",
+          "fact_stem": "are scattered across the vast Pacific Ocean and vulnerable to rising sea levels",
+          "concept": "Pacific Island Nations",
+          "questionText": "Why is the geographic information of pacific island nations essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Pacific Island Nations",
+          "fact_stem": "are scattered across the vast Pacific Ocean and vulnerable to rising sea levels",
+          "concept": "Pacific Island Nations",
+          "questionText": "Which statement summarizes the geographical use of pacific island nations on Page 5?",
+          "correctAnswer": "That pacific island nations are scattered across the vast Pacific Ocean and vulnerable to rising sea levels.",
+          "options": [
+            "That pacific island nations are scattered across the vast Pacific Ocean and vulnerable to rising sea levels.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "The Arctic",
+          "fact_stem": "is the northern polar region covered by sea ice and surrounded by several countries",
+          "concept": "The Arctic",
+          "questionText": "What is the main purpose of the grid system used for the arctic on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Arctic",
+          "fact_stem": "is the northern polar region covered by sea ice and surrounded by several countries",
+          "concept": "The Arctic",
+          "questionText": "Which map features help us analyze spatial relationships of the arctic on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Arctic",
+          "fact_stem": "is the northern polar region covered by sea ice and surrounded by several countries",
+          "concept": "The Arctic",
+          "questionText": "Why is the geographic information of the arctic essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Arctic",
+          "fact_stem": "is the northern polar region covered by sea ice and surrounded by several countries",
+          "concept": "The Arctic",
+          "questionText": "Which statement summarizes the geographical use of the arctic on Page 5?",
+          "correctAnswer": "That the arctic is the northern polar region covered by sea ice and surrounded by several countries.",
+          "options": [
+            "That the arctic is the northern polar region covered by sea ice and surrounded by several countries.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "Antarctica",
+          "fact_stem": "is the coldest, driest continent, covered almost entirely by ice",
+          "concept": "Antarctica",
+          "questionText": "What is the main purpose of the grid system used for antarctica on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Antarctica",
+          "fact_stem": "is the coldest, driest continent, covered almost entirely by ice",
+          "concept": "Antarctica",
+          "questionText": "Which map features help us analyze spatial relationships of antarctica on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Antarctica",
+          "fact_stem": "is the coldest, driest continent, covered almost entirely by ice",
+          "concept": "Antarctica",
+          "questionText": "Why is the geographic information of antarctica essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Antarctica",
+          "fact_stem": "is the coldest, driest continent, covered almost entirely by ice",
+          "concept": "Antarctica",
+          "questionText": "Which statement summarizes the geographical use of antarctica on Page 5?",
+          "correctAnswer": "That antarctica is the coldest, driest continent, covered almost entirely by ice.",
+          "options": [
+            "That antarctica is the coldest, driest continent, covered almost entirely by ice.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "Ocean Currents and Climate",
+          "fact_stem": "move warm and cold water around the globe, shaping regional climates",
+          "concept": "Ocean Currents and Climate",
+          "questionText": "What is the main purpose of the grid system used for ocean currents and climate on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Ocean Currents and Climate",
+          "fact_stem": "move warm and cold water around the globe, shaping regional climates",
+          "concept": "Ocean Currents and Climate",
+          "questionText": "Which map features help us analyze spatial relationships of ocean currents and climate on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Ocean Currents and Climate",
+          "fact_stem": "move warm and cold water around the globe, shaping regional climates",
+          "concept": "Ocean Currents and Climate",
+          "questionText": "Why is the geographic information of ocean currents and climate essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Ocean Currents and Climate",
+          "fact_stem": "move warm and cold water around the globe, shaping regional climates",
+          "concept": "Ocean Currents and Climate",
+          "questionText": "Which statement summarizes the geographical use of ocean currents and climate on Page 5?",
+          "correctAnswer": "That ocean currents and climate move warm and cold water around the globe, shaping regional climates.",
+          "options": [
+            "That ocean currents and climate move warm and cold water around the globe, shaping regional climates.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "Globalization",
+          "fact_stem": "is the increasing connection of economies and cultures around the world",
+          "concept": "Globalization",
+          "questionText": "What is the main purpose of the grid system used for globalization on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Globalization",
+          "fact_stem": "is the increasing connection of economies and cultures around the world",
+          "concept": "Globalization",
+          "questionText": "Which map features help us analyze spatial relationships of globalization on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Globalization",
+          "fact_stem": "is the increasing connection of economies and cultures around the world",
+          "concept": "Globalization",
+          "questionText": "Why is the geographic information of globalization essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Globalization",
+          "fact_stem": "is the increasing connection of economies and cultures around the world",
+          "concept": "Globalization",
+          "questionText": "Which statement summarizes the geographical use of globalization on Page 5?",
+          "correctAnswer": "That globalization is the increasing connection of economies and cultures around the world.",
+          "options": [
+            "That globalization is the increasing connection of economies and cultures around the world.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "International Trade Routes",
+          "fact_stem": "are the paths goods travel by sea, air, and land between countries",
+          "concept": "International Trade Routes",
+          "questionText": "What is the main purpose of the grid system used for international trade routes on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "International Trade Routes",
+          "fact_stem": "are the paths goods travel by sea, air, and land between countries",
+          "concept": "International Trade Routes",
+          "questionText": "Which map features help us analyze spatial relationships of international trade routes on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "International Trade Routes",
+          "fact_stem": "are the paths goods travel by sea, air, and land between countries",
+          "concept": "International Trade Routes",
+          "questionText": "Why is the geographic information of international trade routes essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "International Trade Routes",
+          "fact_stem": "are the paths goods travel by sea, air, and land between countries",
+          "concept": "International Trade Routes",
+          "questionText": "Which statement summarizes the geographical use of international trade routes on Page 5?",
+          "correctAnswer": "That international trade routes are the paths goods travel by sea, air, and land between countries.",
+          "options": [
+            "That international trade routes are the paths goods travel by sea, air, and land between countries.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "Levels of Economic Development",
+          "fact_stem": "classify countries as developed, developing, or least developed based on wealth and infrastructure",
+          "concept": "Levels of Economic Development",
+          "questionText": "What is the main purpose of the grid system used for levels of economic development on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Levels of Economic Development",
+          "fact_stem": "classify countries as developed, developing, or least developed based on wealth and infrastructure",
+          "concept": "Levels of Economic Development",
+          "questionText": "Which map features help us analyze spatial relationships of levels of economic development on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Levels of Economic Development",
+          "fact_stem": "classify countries as developed, developing, or least developed based on wealth and infrastructure",
+          "concept": "Levels of Economic Development",
+          "questionText": "Why is the geographic information of levels of economic development essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Levels of Economic Development",
+          "fact_stem": "classify countries as developed, developing, or least developed based on wealth and infrastructure",
+          "concept": "Levels of Economic Development",
+          "questionText": "Which statement summarizes the geographical use of levels of economic development on Page 5?",
+          "correctAnswer": "That levels of economic development classify countries as developed, developing, or least developed based on wealth and infrastructure.",
+          "options": [
+            "That levels of economic development classify countries as developed, developing, or least developed based on wealth and infrastructure.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "Natural Resource Distribution",
+          "fact_stem": "is uneven across the globe, shaping trade and economic power",
+          "concept": "Natural Resource Distribution",
+          "questionText": "What is the main purpose of the grid system used for natural resource distribution on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Natural Resource Distribution",
+          "fact_stem": "is uneven across the globe, shaping trade and economic power",
+          "concept": "Natural Resource Distribution",
+          "questionText": "Which map features help us analyze spatial relationships of natural resource distribution on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Natural Resource Distribution",
+          "fact_stem": "is uneven across the globe, shaping trade and economic power",
+          "concept": "Natural Resource Distribution",
+          "questionText": "Why is the geographic information of natural resource distribution essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Natural Resource Distribution",
+          "fact_stem": "is uneven across the globe, shaping trade and economic power",
+          "concept": "Natural Resource Distribution",
+          "questionText": "Which statement summarizes the geographical use of natural resource distribution on Page 5?",
+          "correctAnswer": "That natural resource distribution is uneven across the globe, shaping trade and economic power.",
+          "options": [
+            "That natural resource distribution is uneven across the globe, shaping trade and economic power.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "Global Supply Chains",
+          "fact_stem": "connect raw materials, factories, and consumers across many countries",
+          "concept": "Global Supply Chains",
+          "questionText": "What is the main purpose of the grid system used for global supply chains on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Global Supply Chains",
+          "fact_stem": "connect raw materials, factories, and consumers across many countries",
+          "concept": "Global Supply Chains",
+          "questionText": "Which map features help us analyze spatial relationships of global supply chains on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Global Supply Chains",
+          "fact_stem": "connect raw materials, factories, and consumers across many countries",
+          "concept": "Global Supply Chains",
+          "questionText": "Why is the geographic information of global supply chains essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Global Supply Chains",
+          "fact_stem": "connect raw materials, factories, and consumers across many countries",
+          "concept": "Global Supply Chains",
+          "questionText": "Which statement summarizes the geographical use of global supply chains on Page 5?",
+          "correctAnswer": "That global supply chains connect raw materials, factories, and consumers across many countries.",
+          "options": [
+            "That global supply chains connect raw materials, factories, and consumers across many countries.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "Climate Change Geography",
+          "fact_stem": "examines how rising temperatures are reshaping ecosystems and coastlines worldwide",
+          "concept": "Climate Change Geography",
+          "questionText": "What is the main purpose of the grid system used for climate change geography on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Climate Change Geography",
+          "fact_stem": "examines how rising temperatures are reshaping ecosystems and coastlines worldwide",
+          "concept": "Climate Change Geography",
+          "questionText": "Which map features help us analyze spatial relationships of climate change geography on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Climate Change Geography",
+          "fact_stem": "examines how rising temperatures are reshaping ecosystems and coastlines worldwide",
+          "concept": "Climate Change Geography",
+          "questionText": "Why is the geographic information of climate change geography essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Climate Change Geography",
+          "fact_stem": "examines how rising temperatures are reshaping ecosystems and coastlines worldwide",
+          "concept": "Climate Change Geography",
+          "questionText": "Which statement summarizes the geographical use of climate change geography on Page 5?",
+          "correctAnswer": "That climate change geography examines how rising temperatures are reshaping ecosystems and coastlines worldwide.",
+          "options": [
+            "That climate change geography examines how rising temperatures are reshaping ecosystems and coastlines worldwide.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "Deforestation",
+          "fact_stem": "is the clearing of forests for farming, logging, and development",
+          "concept": "Deforestation",
+          "questionText": "What is the main purpose of the grid system used for deforestation on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Deforestation",
+          "fact_stem": "is the clearing of forests for farming, logging, and development",
+          "concept": "Deforestation",
+          "questionText": "Which map features help us analyze spatial relationships of deforestation on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Deforestation",
+          "fact_stem": "is the clearing of forests for farming, logging, and development",
+          "concept": "Deforestation",
+          "questionText": "Why is the geographic information of deforestation essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Deforestation",
+          "fact_stem": "is the clearing of forests for farming, logging, and development",
+          "concept": "Deforestation",
+          "questionText": "Which statement summarizes the geographical use of deforestation on Page 5?",
+          "correctAnswer": "That deforestation is the clearing of forests for farming, logging, and development.",
+          "options": [
+            "That deforestation is the clearing of forests for farming, logging, and development.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "Water Scarcity",
+          "fact_stem": "affects regions where freshwater supply cannot meet population demand",
+          "concept": "Water Scarcity",
+          "questionText": "What is the main purpose of the grid system used for water scarcity on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Water Scarcity",
+          "fact_stem": "affects regions where freshwater supply cannot meet population demand",
+          "concept": "Water Scarcity",
+          "questionText": "Which map features help us analyze spatial relationships of water scarcity on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Water Scarcity",
+          "fact_stem": "affects regions where freshwater supply cannot meet population demand",
+          "concept": "Water Scarcity",
+          "questionText": "Why is the geographic information of water scarcity essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Water Scarcity",
+          "fact_stem": "affects regions where freshwater supply cannot meet population demand",
+          "concept": "Water Scarcity",
+          "questionText": "Which statement summarizes the geographical use of water scarcity on Page 5?",
+          "correctAnswer": "That water scarcity affects regions where freshwater supply cannot meet population demand.",
+          "options": [
+            "That water scarcity affects regions where freshwater supply cannot meet population demand.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Geographic Information Technology",
+          "fact_stem": "uses digital tools like GPS and GIS to map and analyze the modern world",
+          "concept": "Geographic Information Technology",
+          "questionText": "What is the main purpose of the grid system used for geographic information technology on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Geographic Information Technology",
+          "fact_stem": "uses digital tools like GPS and GIS to map and analyze the modern world",
+          "concept": "Geographic Information Technology",
+          "questionText": "Which map features help us analyze spatial relationships of geographic information technology on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Geographic Information Technology",
+          "fact_stem": "uses digital tools like GPS and GIS to map and analyze the modern world",
+          "concept": "Geographic Information Technology",
+          "questionText": "Why is the geographic information of geographic information technology essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Geographic Information Technology",
+          "fact_stem": "uses digital tools like GPS and GIS to map and analyze the modern world",
+          "concept": "Geographic Information Technology",
+          "questionText": "Which statement summarizes the geographical use of geographic information technology on Page 5?",
+          "correctAnswer": "That geographic information technology uses digital tools like GPS and GIS to map and analyze the modern world.",
+          "options": [
+            "That geographic information technology uses digital tools like GPS and GIS to map and analyze the modern world.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 7 Geography Review",
+          "fact_stem": "reviews the physical, political, and economic geography of Africa, Asia, and the wider world",
+          "concept": "Grade 7 Geography Review",
+          "questionText": "What is the main purpose of the grid system used for grade 7 geography review on Page 2?",
+          "correctAnswer": "To determine precise locations using lines of latitude and longitude.",
+          "options": [
+            "To determine precise locations using lines of latitude and longitude.",
+            "To draw decorative pictures on the map.",
+            "To hide important places from travelers.",
+            "To change the coordinates of the equator."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 7 Geography Review",
+          "fact_stem": "reviews the physical, political, and economic geography of Africa, Asia, and the wider world",
+          "concept": "Grade 7 Geography Review",
+          "questionText": "Which map features help us analyze spatial relationships of grade 7 geography review on Page 3?",
+          "correctAnswer": "Map legends, compass roses, and scale bars.",
+          "options": [
+            "Map legends, compass roses, and scale bars.",
+            "Color palettes used in abstract art.",
+            "Temperature dials on thermometers.",
+            "Speeches from historical leaders."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 7 Geography Review",
+          "fact_stem": "reviews the physical, political, and economic geography of Africa, Asia, and the wider world",
+          "concept": "Grade 7 Geography Review",
+          "questionText": "Why is the geographic information of grade 7 geography review essential on Page 4?",
+          "correctAnswer": "It helps travelers navigate safely and cities plan developments.",
+          "options": [
+            "It helps travelers navigate safely and cities plan developments.",
+            "It prevents the sun from rising in the morning.",
+            "It changes the physical shape of the mountains.",
+            "It forces everyone to live in the same house."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 7 Geography Review",
+          "fact_stem": "reviews the physical, political, and economic geography of Africa, Asia, and the wider world",
+          "concept": "Grade 7 Geography Review",
+          "questionText": "Which statement summarizes the geographical use of grade 7 geography review on Page 5?",
+          "correctAnswer": "That grade 7 geography review reviews the physical, political, and economic geography of Africa, Asia, and the wider world.",
+          "options": [
+            "That grade 7 geography review reviews the physical, political, and economic geography of Africa, Asia, and the wider world.",
+            "That map directions are always incorrect.",
+            "That locations do not have set grid coordinates.",
+            "That geography is only useful for ship captains."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
     }
   },
   "art": {
@@ -32522,9 +44510,3974 @@ const GRADE_2_5_QUESTIONS = {
           "hint": "Read Page 5 to review the summary rule."
         }
       ]
+    },
+    "6": {
+      "1": [
+        {
+          "theme": "Line Shape and Form",
+          "fact_stem": "uses line to define shape, then adds value to shape so it reads as three-dimensional form",
+          "concept": "Line Shape and Form",
+          "questionText": "What is the effect of using the design technique of line shape and form on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Line Shape and Form",
+          "fact_stem": "uses line to define shape, then adds value to shape so it reads as three-dimensional form",
+          "concept": "Line Shape and Form",
+          "questionText": "How do artists create visual focus in paintings using line shape and form on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Line Shape and Form",
+          "fact_stem": "uses line to define shape, then adds value to shape so it reads as three-dimensional form",
+          "concept": "Line Shape and Form",
+          "questionText": "Which artistic media are suitable for applying line shape and form on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Line Shape and Form",
+          "fact_stem": "uses line to define shape, then adds value to shape so it reads as three-dimensional form",
+          "concept": "Line Shape and Form",
+          "questionText": "Which statement summarizes the artistic design of line shape and form on Page 5?",
+          "correctAnswer": "That line shape and form uses line to define shape, then adds value to shape so it reads as three-dimensional form.",
+          "options": [
+            "That line shape and form uses line to define shape, then adds value to shape so it reads as three-dimensional form.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "Color Theory",
+          "fact_stem": "organizes hues on a wheel to explain how colors relate, contrast, and mix",
+          "concept": "Color Theory",
+          "questionText": "What is the effect of using the design technique of color theory on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Color Theory",
+          "fact_stem": "organizes hues on a wheel to explain how colors relate, contrast, and mix",
+          "concept": "Color Theory",
+          "questionText": "How do artists create visual focus in paintings using color theory on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Color Theory",
+          "fact_stem": "organizes hues on a wheel to explain how colors relate, contrast, and mix",
+          "concept": "Color Theory",
+          "questionText": "Which artistic media are suitable for applying color theory on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Color Theory",
+          "fact_stem": "organizes hues on a wheel to explain how colors relate, contrast, and mix",
+          "concept": "Color Theory",
+          "questionText": "Which statement summarizes the artistic design of color theory on Page 5?",
+          "correctAnswer": "That color theory organizes hues on a wheel to explain how colors relate, contrast, and mix.",
+          "options": [
+            "That color theory organizes hues on a wheel to explain how colors relate, contrast, and mix.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "Texture",
+          "fact_stem": "describes how a surface looks or feels, whether rendered visually or felt by touch",
+          "concept": "Texture",
+          "questionText": "What is the effect of using the design technique of texture on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Texture",
+          "fact_stem": "describes how a surface looks or feels, whether rendered visually or felt by touch",
+          "concept": "Texture",
+          "questionText": "How do artists create visual focus in paintings using texture on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Texture",
+          "fact_stem": "describes how a surface looks or feels, whether rendered visually or felt by touch",
+          "concept": "Texture",
+          "questionText": "Which artistic media are suitable for applying texture on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Texture",
+          "fact_stem": "describes how a surface looks or feels, whether rendered visually or felt by touch",
+          "concept": "Texture",
+          "questionText": "Which statement summarizes the artistic design of texture on Page 5?",
+          "correctAnswer": "That texture describes how a surface looks or feels, whether rendered visually or felt by touch.",
+          "options": [
+            "That texture describes how a surface looks or feels, whether rendered visually or felt by touch.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "Space and Perspective Basics",
+          "fact_stem": "uses depth cues like overlap, size, and placement to suggest space on a flat surface",
+          "concept": "Space and Perspective Basics",
+          "questionText": "What is the effect of using the design technique of space and perspective basics on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Space and Perspective Basics",
+          "fact_stem": "uses depth cues like overlap, size, and placement to suggest space on a flat surface",
+          "concept": "Space and Perspective Basics",
+          "questionText": "How do artists create visual focus in paintings using space and perspective basics on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Space and Perspective Basics",
+          "fact_stem": "uses depth cues like overlap, size, and placement to suggest space on a flat surface",
+          "concept": "Space and Perspective Basics",
+          "questionText": "Which artistic media are suitable for applying space and perspective basics on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Space and Perspective Basics",
+          "fact_stem": "uses depth cues like overlap, size, and placement to suggest space on a flat surface",
+          "concept": "Space and Perspective Basics",
+          "questionText": "Which statement summarizes the artistic design of space and perspective basics on Page 5?",
+          "correctAnswer": "That space and perspective basics uses depth cues like overlap, size, and placement to suggest space on a flat surface.",
+          "options": [
+            "That space and perspective basics uses depth cues like overlap, size, and placement to suggest space on a flat surface.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "The Elements of Art Combined",
+          "fact_stem": "brings line, shape, color, value, texture, form, and space into a single composition",
+          "concept": "The Elements of Art Combined",
+          "questionText": "What is the effect of using the design technique of the elements of art combined on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Elements of Art Combined",
+          "fact_stem": "brings line, shape, color, value, texture, form, and space into a single composition",
+          "concept": "The Elements of Art Combined",
+          "questionText": "How do artists create visual focus in paintings using the elements of art combined on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Elements of Art Combined",
+          "fact_stem": "brings line, shape, color, value, texture, form, and space into a single composition",
+          "concept": "The Elements of Art Combined",
+          "questionText": "Which artistic media are suitable for applying the elements of art combined on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Elements of Art Combined",
+          "fact_stem": "brings line, shape, color, value, texture, form, and space into a single composition",
+          "concept": "The Elements of Art Combined",
+          "questionText": "Which statement summarizes the artistic design of the elements of art combined on Page 5?",
+          "correctAnswer": "That the elements of art combined brings line, shape, color, value, texture, form, and space into a single composition.",
+          "options": [
+            "That the elements of art combined brings line, shape, color, value, texture, form, and space into a single composition.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Balance in Art",
+          "fact_stem": "distributes visual weight symmetrically or asymmetrically so a composition feels stable",
+          "concept": "Balance in Art",
+          "questionText": "What is the effect of using the design technique of balance in art on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Balance in Art",
+          "fact_stem": "distributes visual weight symmetrically or asymmetrically so a composition feels stable",
+          "concept": "Balance in Art",
+          "questionText": "How do artists create visual focus in paintings using balance in art on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Balance in Art",
+          "fact_stem": "distributes visual weight symmetrically or asymmetrically so a composition feels stable",
+          "concept": "Balance in Art",
+          "questionText": "Which artistic media are suitable for applying balance in art on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Balance in Art",
+          "fact_stem": "distributes visual weight symmetrically or asymmetrically so a composition feels stable",
+          "concept": "Balance in Art",
+          "questionText": "Which statement summarizes the artistic design of balance in art on Page 5?",
+          "correctAnswer": "That balance in art distributes visual weight symmetrically or asymmetrically so a composition feels stable.",
+          "options": [
+            "That balance in art distributes visual weight symmetrically or asymmetrically so a composition feels stable.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "Contrast",
+          "fact_stem": "places opposite qualities like light and dark or rough and smooth side by side for visual interest",
+          "concept": "Contrast",
+          "questionText": "What is the effect of using the design technique of contrast on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Contrast",
+          "fact_stem": "places opposite qualities like light and dark or rough and smooth side by side for visual interest",
+          "concept": "Contrast",
+          "questionText": "How do artists create visual focus in paintings using contrast on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Contrast",
+          "fact_stem": "places opposite qualities like light and dark or rough and smooth side by side for visual interest",
+          "concept": "Contrast",
+          "questionText": "Which artistic media are suitable for applying contrast on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Contrast",
+          "fact_stem": "places opposite qualities like light and dark or rough and smooth side by side for visual interest",
+          "concept": "Contrast",
+          "questionText": "Which statement summarizes the artistic design of contrast on Page 5?",
+          "correctAnswer": "That contrast places opposite qualities like light and dark or rough and smooth side by side for visual interest.",
+          "options": [
+            "That contrast places opposite qualities like light and dark or rough and smooth side by side for visual interest.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "Emphasis",
+          "fact_stem": "uses color, size, or placement to draw the viewer's eye to a focal point",
+          "concept": "Emphasis",
+          "questionText": "What is the effect of using the design technique of emphasis on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Emphasis",
+          "fact_stem": "uses color, size, or placement to draw the viewer's eye to a focal point",
+          "concept": "Emphasis",
+          "questionText": "How do artists create visual focus in paintings using emphasis on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Emphasis",
+          "fact_stem": "uses color, size, or placement to draw the viewer's eye to a focal point",
+          "concept": "Emphasis",
+          "questionText": "Which artistic media are suitable for applying emphasis on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Emphasis",
+          "fact_stem": "uses color, size, or placement to draw the viewer's eye to a focal point",
+          "concept": "Emphasis",
+          "questionText": "Which statement summarizes the artistic design of emphasis on Page 5?",
+          "correctAnswer": "That emphasis uses color, size, or placement to draw the viewer's eye to a focal point.",
+          "options": [
+            "That emphasis uses color, size, or placement to draw the viewer's eye to a focal point.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "Pattern and Rhythm",
+          "fact_stem": "repeats visual elements at regular or varied intervals to create movement across a composition",
+          "concept": "Pattern and Rhythm",
+          "questionText": "What is the effect of using the design technique of pattern and rhythm on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Pattern and Rhythm",
+          "fact_stem": "repeats visual elements at regular or varied intervals to create movement across a composition",
+          "concept": "Pattern and Rhythm",
+          "questionText": "How do artists create visual focus in paintings using pattern and rhythm on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Pattern and Rhythm",
+          "fact_stem": "repeats visual elements at regular or varied intervals to create movement across a composition",
+          "concept": "Pattern and Rhythm",
+          "questionText": "Which artistic media are suitable for applying pattern and rhythm on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Pattern and Rhythm",
+          "fact_stem": "repeats visual elements at regular or varied intervals to create movement across a composition",
+          "concept": "Pattern and Rhythm",
+          "questionText": "Which statement summarizes the artistic design of pattern and rhythm on Page 5?",
+          "correctAnswer": "That pattern and rhythm repeats visual elements at regular or varied intervals to create movement across a composition.",
+          "options": [
+            "That pattern and rhythm repeats visual elements at regular or varied intervals to create movement across a composition.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "Unity and Variety",
+          "fact_stem": "balances consistent elements with enough difference to keep a composition interesting",
+          "concept": "Unity and Variety",
+          "questionText": "What is the effect of using the design technique of unity and variety on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Unity and Variety",
+          "fact_stem": "balances consistent elements with enough difference to keep a composition interesting",
+          "concept": "Unity and Variety",
+          "questionText": "How do artists create visual focus in paintings using unity and variety on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Unity and Variety",
+          "fact_stem": "balances consistent elements with enough difference to keep a composition interesting",
+          "concept": "Unity and Variety",
+          "questionText": "Which artistic media are suitable for applying unity and variety on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Unity and Variety",
+          "fact_stem": "balances consistent elements with enough difference to keep a composition interesting",
+          "concept": "Unity and Variety",
+          "questionText": "Which statement summarizes the artistic design of unity and variety on Page 5?",
+          "correctAnswer": "That unity and variety balances consistent elements with enough difference to keep a composition interesting.",
+          "options": [
+            "That unity and variety balances consistent elements with enough difference to keep a composition interesting.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "Shading Techniques",
+          "fact_stem": "uses value gradations like hatching and blending to suggest light and three-dimensional form",
+          "concept": "Shading Techniques",
+          "questionText": "Why did historic art movements adopt the style of shading techniques on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Shading Techniques",
+          "fact_stem": "uses value gradations like hatching and blending to suggest light and three-dimensional form",
+          "concept": "Shading Techniques",
+          "questionText": "What composition techniques did artists use in shading techniques on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Shading Techniques",
+          "fact_stem": "uses value gradations like hatching and blending to suggest light and three-dimensional form",
+          "concept": "Shading Techniques",
+          "questionText": "What is the historic legacy of shading techniques on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Shading Techniques",
+          "fact_stem": "uses value gradations like hatching and blending to suggest light and three-dimensional form",
+          "concept": "Shading Techniques",
+          "questionText": "Which statement summarizes the art history of shading techniques on Page 5?",
+          "correctAnswer": "That shading techniques uses value gradations like hatching and blending to suggest light and three-dimensional form.",
+          "options": [
+            "That shading techniques uses value gradations like hatching and blending to suggest light and three-dimensional form.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "Perspective Drawing",
+          "fact_stem": "uses vanishing points and converging lines to represent three-dimensional space on paper",
+          "concept": "Perspective Drawing",
+          "questionText": "Why did historic art movements adopt the style of perspective drawing on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Perspective Drawing",
+          "fact_stem": "uses vanishing points and converging lines to represent three-dimensional space on paper",
+          "concept": "Perspective Drawing",
+          "questionText": "What composition techniques did artists use in perspective drawing on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Perspective Drawing",
+          "fact_stem": "uses vanishing points and converging lines to represent three-dimensional space on paper",
+          "concept": "Perspective Drawing",
+          "questionText": "What is the historic legacy of perspective drawing on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Perspective Drawing",
+          "fact_stem": "uses vanishing points and converging lines to represent three-dimensional space on paper",
+          "concept": "Perspective Drawing",
+          "questionText": "Which statement summarizes the art history of perspective drawing on Page 5?",
+          "correctAnswer": "That perspective drawing uses vanishing points and converging lines to represent three-dimensional space on paper.",
+          "options": [
+            "That perspective drawing uses vanishing points and converging lines to represent three-dimensional space on paper.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "Figure Drawing Basics",
+          "fact_stem": "breaks the human body into simplified proportional shapes to capture pose and structure",
+          "concept": "Figure Drawing Basics",
+          "questionText": "Why did historic art movements adopt the style of figure drawing basics on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Figure Drawing Basics",
+          "fact_stem": "breaks the human body into simplified proportional shapes to capture pose and structure",
+          "concept": "Figure Drawing Basics",
+          "questionText": "What composition techniques did artists use in figure drawing basics on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Figure Drawing Basics",
+          "fact_stem": "breaks the human body into simplified proportional shapes to capture pose and structure",
+          "concept": "Figure Drawing Basics",
+          "questionText": "What is the historic legacy of figure drawing basics on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Figure Drawing Basics",
+          "fact_stem": "breaks the human body into simplified proportional shapes to capture pose and structure",
+          "concept": "Figure Drawing Basics",
+          "questionText": "Which statement summarizes the art history of figure drawing basics on Page 5?",
+          "correctAnswer": "That figure drawing basics breaks the human body into simplified proportional shapes to capture pose and structure.",
+          "options": [
+            "That figure drawing basics breaks the human body into simplified proportional shapes to capture pose and structure.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "Still Life Drawing",
+          "fact_stem": "arranges ordinary objects as a subject for studying light, shadow, and composition",
+          "concept": "Still Life Drawing",
+          "questionText": "Why did historic art movements adopt the style of still life drawing on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Still Life Drawing",
+          "fact_stem": "arranges ordinary objects as a subject for studying light, shadow, and composition",
+          "concept": "Still Life Drawing",
+          "questionText": "What composition techniques did artists use in still life drawing on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Still Life Drawing",
+          "fact_stem": "arranges ordinary objects as a subject for studying light, shadow, and composition",
+          "concept": "Still Life Drawing",
+          "questionText": "What is the historic legacy of still life drawing on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Still Life Drawing",
+          "fact_stem": "arranges ordinary objects as a subject for studying light, shadow, and composition",
+          "concept": "Still Life Drawing",
+          "questionText": "Which statement summarizes the art history of still life drawing on Page 5?",
+          "correctAnswer": "That still life drawing arranges ordinary objects as a subject for studying light, shadow, and composition.",
+          "options": [
+            "That still life drawing arranges ordinary objects as a subject for studying light, shadow, and composition.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "Gesture Drawing",
+          "fact_stem": "captures the energy and movement of a pose in a few quick, loose lines",
+          "concept": "Gesture Drawing",
+          "questionText": "Why did historic art movements adopt the style of gesture drawing on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Gesture Drawing",
+          "fact_stem": "captures the energy and movement of a pose in a few quick, loose lines",
+          "concept": "Gesture Drawing",
+          "questionText": "What composition techniques did artists use in gesture drawing on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Gesture Drawing",
+          "fact_stem": "captures the energy and movement of a pose in a few quick, loose lines",
+          "concept": "Gesture Drawing",
+          "questionText": "What is the historic legacy of gesture drawing on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Gesture Drawing",
+          "fact_stem": "captures the energy and movement of a pose in a few quick, loose lines",
+          "concept": "Gesture Drawing",
+          "questionText": "Which statement summarizes the art history of gesture drawing on Page 5?",
+          "correctAnswer": "That gesture drawing captures the energy and movement of a pose in a few quick, loose lines.",
+          "options": [
+            "That gesture drawing captures the energy and movement of a pose in a few quick, loose lines.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "Primary and Secondary Colors",
+          "fact_stem": "combine to build the full range of hues used across the color wheel",
+          "concept": "Primary and Secondary Colors",
+          "questionText": "Why did historic art movements adopt the style of primary and secondary colors on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Primary and Secondary Colors",
+          "fact_stem": "combine to build the full range of hues used across the color wheel",
+          "concept": "Primary and Secondary Colors",
+          "questionText": "What composition techniques did artists use in primary and secondary colors on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Primary and Secondary Colors",
+          "fact_stem": "combine to build the full range of hues used across the color wheel",
+          "concept": "Primary and Secondary Colors",
+          "questionText": "What is the historic legacy of primary and secondary colors on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Primary and Secondary Colors",
+          "fact_stem": "combine to build the full range of hues used across the color wheel",
+          "concept": "Primary and Secondary Colors",
+          "questionText": "Which statement summarizes the art history of primary and secondary colors on Page 5?",
+          "correctAnswer": "That primary and secondary colors combine to build the full range of hues used across the color wheel.",
+          "options": [
+            "That primary and secondary colors combine to build the full range of hues used across the color wheel.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "Color Mixing",
+          "fact_stem": "combines pigments in different ratios to produce an almost unlimited range of new hues",
+          "concept": "Color Mixing",
+          "questionText": "Why did historic art movements adopt the style of color mixing on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Color Mixing",
+          "fact_stem": "combines pigments in different ratios to produce an almost unlimited range of new hues",
+          "concept": "Color Mixing",
+          "questionText": "What composition techniques did artists use in color mixing on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Color Mixing",
+          "fact_stem": "combines pigments in different ratios to produce an almost unlimited range of new hues",
+          "concept": "Color Mixing",
+          "questionText": "What is the historic legacy of color mixing on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Color Mixing",
+          "fact_stem": "combines pigments in different ratios to produce an almost unlimited range of new hues",
+          "concept": "Color Mixing",
+          "questionText": "Which statement summarizes the art history of color mixing on Page 5?",
+          "correctAnswer": "That color mixing combines pigments in different ratios to produce an almost unlimited range of new hues.",
+          "options": [
+            "That color mixing combines pigments in different ratios to produce an almost unlimited range of new hues.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "Watercolor Techniques",
+          "fact_stem": "relies on transparent pigment and water control to create washes, blooms, and layered glazes",
+          "concept": "Watercolor Techniques",
+          "questionText": "Why did historic art movements adopt the style of watercolor techniques on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Watercolor Techniques",
+          "fact_stem": "relies on transparent pigment and water control to create washes, blooms, and layered glazes",
+          "concept": "Watercolor Techniques",
+          "questionText": "What composition techniques did artists use in watercolor techniques on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Watercolor Techniques",
+          "fact_stem": "relies on transparent pigment and water control to create washes, blooms, and layered glazes",
+          "concept": "Watercolor Techniques",
+          "questionText": "What is the historic legacy of watercolor techniques on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Watercolor Techniques",
+          "fact_stem": "relies on transparent pigment and water control to create washes, blooms, and layered glazes",
+          "concept": "Watercolor Techniques",
+          "questionText": "Which statement summarizes the art history of watercolor techniques on Page 5?",
+          "correctAnswer": "That watercolor techniques relies on transparent pigment and water control to create washes, blooms, and layered glazes.",
+          "options": [
+            "That watercolor techniques relies on transparent pigment and water control to create washes, blooms, and layered glazes.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "Acrylic Painting Basics",
+          "fact_stem": "dries quickly and can be thinned or thickened to mimic watercolor or oil painting effects",
+          "concept": "Acrylic Painting Basics",
+          "questionText": "Why did historic art movements adopt the style of acrylic painting basics on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Acrylic Painting Basics",
+          "fact_stem": "dries quickly and can be thinned or thickened to mimic watercolor or oil painting effects",
+          "concept": "Acrylic Painting Basics",
+          "questionText": "What composition techniques did artists use in acrylic painting basics on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Acrylic Painting Basics",
+          "fact_stem": "dries quickly and can be thinned or thickened to mimic watercolor or oil painting effects",
+          "concept": "Acrylic Painting Basics",
+          "questionText": "What is the historic legacy of acrylic painting basics on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Acrylic Painting Basics",
+          "fact_stem": "dries quickly and can be thinned or thickened to mimic watercolor or oil painting effects",
+          "concept": "Acrylic Painting Basics",
+          "questionText": "Which statement summarizes the art history of acrylic painting basics on Page 5?",
+          "correctAnswer": "That acrylic painting basics dries quickly and can be thinned or thickened to mimic watercolor or oil painting effects.",
+          "options": [
+            "That acrylic painting basics dries quickly and can be thinned or thickened to mimic watercolor or oil painting effects.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "Color Mood and Emotion",
+          "fact_stem": "uses warm and cool hues deliberately to shape how a viewer feels about a scene",
+          "concept": "Color Mood and Emotion",
+          "questionText": "Why did historic art movements adopt the style of color mood and emotion on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Color Mood and Emotion",
+          "fact_stem": "uses warm and cool hues deliberately to shape how a viewer feels about a scene",
+          "concept": "Color Mood and Emotion",
+          "questionText": "What composition techniques did artists use in color mood and emotion on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Color Mood and Emotion",
+          "fact_stem": "uses warm and cool hues deliberately to shape how a viewer feels about a scene",
+          "concept": "Color Mood and Emotion",
+          "questionText": "What is the historic legacy of color mood and emotion on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Color Mood and Emotion",
+          "fact_stem": "uses warm and cool hues deliberately to shape how a viewer feels about a scene",
+          "concept": "Color Mood and Emotion",
+          "questionText": "Which statement summarizes the art history of color mood and emotion on Page 5?",
+          "correctAnswer": "That color mood and emotion uses warm and cool hues deliberately to shape how a viewer feels about a scene.",
+          "options": [
+            "That color mood and emotion uses warm and cool hues deliberately to shape how a viewer feels about a scene.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "Prehistoric Cave Art",
+          "fact_stem": "used mineral pigments and finger painting to depict animals on cave walls tens of thousands of years ago",
+          "concept": "Prehistoric Cave Art",
+          "questionText": "Why did historic art movements adopt the style of prehistoric cave art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Prehistoric Cave Art",
+          "fact_stem": "used mineral pigments and finger painting to depict animals on cave walls tens of thousands of years ago",
+          "concept": "Prehistoric Cave Art",
+          "questionText": "What composition techniques did artists use in prehistoric cave art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Prehistoric Cave Art",
+          "fact_stem": "used mineral pigments and finger painting to depict animals on cave walls tens of thousands of years ago",
+          "concept": "Prehistoric Cave Art",
+          "questionText": "What is the historic legacy of prehistoric cave art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Prehistoric Cave Art",
+          "fact_stem": "used mineral pigments and finger painting to depict animals on cave walls tens of thousands of years ago",
+          "concept": "Prehistoric Cave Art",
+          "questionText": "Which statement summarizes the art history of prehistoric cave art on Page 5?",
+          "correctAnswer": "That prehistoric cave art used mineral pigments and finger painting to depict animals on cave walls tens of thousands of years ago.",
+          "options": [
+            "That prehistoric cave art used mineral pigments and finger painting to depict animals on cave walls tens of thousands of years ago.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "Ancient Egyptian Art",
+          "fact_stem": "followed strict rules of proportion and profile view to honor gods and preserve the afterlife",
+          "concept": "Ancient Egyptian Art",
+          "questionText": "Why did historic art movements adopt the style of ancient egyptian art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Ancient Egyptian Art",
+          "fact_stem": "followed strict rules of proportion and profile view to honor gods and preserve the afterlife",
+          "concept": "Ancient Egyptian Art",
+          "questionText": "What composition techniques did artists use in ancient egyptian art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Ancient Egyptian Art",
+          "fact_stem": "followed strict rules of proportion and profile view to honor gods and preserve the afterlife",
+          "concept": "Ancient Egyptian Art",
+          "questionText": "What is the historic legacy of ancient egyptian art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Ancient Egyptian Art",
+          "fact_stem": "followed strict rules of proportion and profile view to honor gods and preserve the afterlife",
+          "concept": "Ancient Egyptian Art",
+          "questionText": "Which statement summarizes the art history of ancient egyptian art on Page 5?",
+          "correctAnswer": "That ancient egyptian art followed strict rules of proportion and profile view to honor gods and preserve the afterlife.",
+          "options": [
+            "That ancient egyptian art followed strict rules of proportion and profile view to honor gods and preserve the afterlife.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "Ancient Greek Art",
+          "fact_stem": "idealized the human body in sculpture and painted detailed scenes on ceramic vases",
+          "concept": "Ancient Greek Art",
+          "questionText": "Why did historic art movements adopt the style of ancient greek art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Ancient Greek Art",
+          "fact_stem": "idealized the human body in sculpture and painted detailed scenes on ceramic vases",
+          "concept": "Ancient Greek Art",
+          "questionText": "What composition techniques did artists use in ancient greek art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Ancient Greek Art",
+          "fact_stem": "idealized the human body in sculpture and painted detailed scenes on ceramic vases",
+          "concept": "Ancient Greek Art",
+          "questionText": "What is the historic legacy of ancient greek art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Ancient Greek Art",
+          "fact_stem": "idealized the human body in sculpture and painted detailed scenes on ceramic vases",
+          "concept": "Ancient Greek Art",
+          "questionText": "Which statement summarizes the art history of ancient greek art on Page 5?",
+          "correctAnswer": "That ancient greek art idealized the human body in sculpture and painted detailed scenes on ceramic vases.",
+          "options": [
+            "That ancient greek art idealized the human body in sculpture and painted detailed scenes on ceramic vases.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "Medieval Art",
+          "fact_stem": "used flat, symbolic imagery and gold backgrounds to convey religious meaning rather than realism",
+          "concept": "Medieval Art",
+          "questionText": "Why did historic art movements adopt the style of medieval art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Medieval Art",
+          "fact_stem": "used flat, symbolic imagery and gold backgrounds to convey religious meaning rather than realism",
+          "concept": "Medieval Art",
+          "questionText": "What composition techniques did artists use in medieval art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Medieval Art",
+          "fact_stem": "used flat, symbolic imagery and gold backgrounds to convey religious meaning rather than realism",
+          "concept": "Medieval Art",
+          "questionText": "What is the historic legacy of medieval art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Medieval Art",
+          "fact_stem": "used flat, symbolic imagery and gold backgrounds to convey religious meaning rather than realism",
+          "concept": "Medieval Art",
+          "questionText": "Which statement summarizes the art history of medieval art on Page 5?",
+          "correctAnswer": "That medieval art used flat, symbolic imagery and gold backgrounds to convey religious meaning rather than realism.",
+          "options": [
+            "That medieval art used flat, symbolic imagery and gold backgrounds to convey religious meaning rather than realism.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "Renaissance Art",
+          "fact_stem": "revived classical realism through linear perspective, anatomy study, and oil painting technique",
+          "concept": "Renaissance Art",
+          "questionText": "Why did historic art movements adopt the style of renaissance art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Renaissance Art",
+          "fact_stem": "revived classical realism through linear perspective, anatomy study, and oil painting technique",
+          "concept": "Renaissance Art",
+          "questionText": "What composition techniques did artists use in renaissance art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Renaissance Art",
+          "fact_stem": "revived classical realism through linear perspective, anatomy study, and oil painting technique",
+          "concept": "Renaissance Art",
+          "questionText": "What is the historic legacy of renaissance art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Renaissance Art",
+          "fact_stem": "revived classical realism through linear perspective, anatomy study, and oil painting technique",
+          "concept": "Renaissance Art",
+          "questionText": "Which statement summarizes the art history of renaissance art on Page 5?",
+          "correctAnswer": "That renaissance art revived classical realism through linear perspective, anatomy study, and oil painting technique.",
+          "options": [
+            "That renaissance art revived classical realism through linear perspective, anatomy study, and oil painting technique.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "Sculpture Techniques",
+          "fact_stem": "shapes three-dimensional form through carving, modeling, casting, or assembling materials",
+          "concept": "Sculpture Techniques",
+          "questionText": "Why did historic art movements adopt the style of sculpture techniques on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Sculpture Techniques",
+          "fact_stem": "shapes three-dimensional form through carving, modeling, casting, or assembling materials",
+          "concept": "Sculpture Techniques",
+          "questionText": "What composition techniques did artists use in sculpture techniques on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Sculpture Techniques",
+          "fact_stem": "shapes three-dimensional form through carving, modeling, casting, or assembling materials",
+          "concept": "Sculpture Techniques",
+          "questionText": "What is the historic legacy of sculpture techniques on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Sculpture Techniques",
+          "fact_stem": "shapes three-dimensional form through carving, modeling, casting, or assembling materials",
+          "concept": "Sculpture Techniques",
+          "questionText": "Which statement summarizes the art history of sculpture techniques on Page 5?",
+          "correctAnswer": "That sculpture techniques shapes three-dimensional form through carving, modeling, casting, or assembling materials.",
+          "options": [
+            "That sculpture techniques shapes three-dimensional form through carving, modeling, casting, or assembling materials.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "Relief versus Freestanding Sculpture",
+          "fact_stem": "differ in whether a form projects from a flat background or stands fully in the round",
+          "concept": "Relief versus Freestanding Sculpture",
+          "questionText": "Why did historic art movements adopt the style of relief versus freestanding sculpture on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Relief versus Freestanding Sculpture",
+          "fact_stem": "differ in whether a form projects from a flat background or stands fully in the round",
+          "concept": "Relief versus Freestanding Sculpture",
+          "questionText": "What composition techniques did artists use in relief versus freestanding sculpture on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Relief versus Freestanding Sculpture",
+          "fact_stem": "differ in whether a form projects from a flat background or stands fully in the round",
+          "concept": "Relief versus Freestanding Sculpture",
+          "questionText": "What is the historic legacy of relief versus freestanding sculpture on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Relief versus Freestanding Sculpture",
+          "fact_stem": "differ in whether a form projects from a flat background or stands fully in the round",
+          "concept": "Relief versus Freestanding Sculpture",
+          "questionText": "Which statement summarizes the art history of relief versus freestanding sculpture on Page 5?",
+          "correctAnswer": "That relief versus freestanding sculpture differ in whether a form projects from a flat background or stands fully in the round.",
+          "options": [
+            "That relief versus freestanding sculpture differ in whether a form projects from a flat background or stands fully in the round.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "Clay and Ceramics",
+          "fact_stem": "is shaped while wet and permanently hardened through high-temperature firing in a kiln",
+          "concept": "Clay and Ceramics",
+          "questionText": "Why did historic art movements adopt the style of clay and ceramics on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Clay and Ceramics",
+          "fact_stem": "is shaped while wet and permanently hardened through high-temperature firing in a kiln",
+          "concept": "Clay and Ceramics",
+          "questionText": "What composition techniques did artists use in clay and ceramics on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Clay and Ceramics",
+          "fact_stem": "is shaped while wet and permanently hardened through high-temperature firing in a kiln",
+          "concept": "Clay and Ceramics",
+          "questionText": "What is the historic legacy of clay and ceramics on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Clay and Ceramics",
+          "fact_stem": "is shaped while wet and permanently hardened through high-temperature firing in a kiln",
+          "concept": "Clay and Ceramics",
+          "questionText": "Which statement summarizes the art history of clay and ceramics on Page 5?",
+          "correctAnswer": "That clay and ceramics is shaped while wet and permanently hardened through high-temperature firing in a kiln.",
+          "options": [
+            "That clay and ceramics is shaped while wet and permanently hardened through high-temperature firing in a kiln.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Assemblage Art",
+          "fact_stem": "combines found objects and everyday materials into a single three-dimensional artwork",
+          "concept": "Assemblage Art",
+          "questionText": "Why did historic art movements adopt the style of assemblage art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Assemblage Art",
+          "fact_stem": "combines found objects and everyday materials into a single three-dimensional artwork",
+          "concept": "Assemblage Art",
+          "questionText": "What composition techniques did artists use in assemblage art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Assemblage Art",
+          "fact_stem": "combines found objects and everyday materials into a single three-dimensional artwork",
+          "concept": "Assemblage Art",
+          "questionText": "What is the historic legacy of assemblage art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Assemblage Art",
+          "fact_stem": "combines found objects and everyday materials into a single three-dimensional artwork",
+          "concept": "Assemblage Art",
+          "questionText": "Which statement summarizes the art history of assemblage art on Page 5?",
+          "correctAnswer": "That assemblage art combines found objects and everyday materials into a single three-dimensional artwork.",
+          "options": [
+            "That assemblage art combines found objects and everyday materials into a single three-dimensional artwork.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 6 Art Review",
+          "fact_stem": "connects the elements and principles of design through drawing, painting, sculpture, and art history",
+          "concept": "Grade 6 Art Review",
+          "questionText": "Why did historic art movements adopt the style of grade 6 art review on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 6 Art Review",
+          "fact_stem": "connects the elements and principles of design through drawing, painting, sculpture, and art history",
+          "concept": "Grade 6 Art Review",
+          "questionText": "What composition techniques did artists use in grade 6 art review on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 6 Art Review",
+          "fact_stem": "connects the elements and principles of design through drawing, painting, sculpture, and art history",
+          "concept": "Grade 6 Art Review",
+          "questionText": "What is the historic legacy of grade 6 art review on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 6 Art Review",
+          "fact_stem": "connects the elements and principles of design through drawing, painting, sculpture, and art history",
+          "concept": "Grade 6 Art Review",
+          "questionText": "Which statement summarizes the art history of grade 6 art review on Page 5?",
+          "correctAnswer": "That grade 6 art review connects the elements and principles of design through drawing, painting, sculpture, and art history.",
+          "options": [
+            "That grade 6 art review connects the elements and principles of design through drawing, painting, sculpture, and art history.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
+    },
+    "7": {
+      "1": [
+        {
+          "theme": "Baroque Art",
+          "fact_stem": "used dramatic light and shadow contrast to create emotional intensity and movement in the 1600s",
+          "concept": "Baroque Art",
+          "questionText": "What is the effect of using the design technique of baroque art on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Baroque Art",
+          "fact_stem": "used dramatic light and shadow contrast to create emotional intensity and movement in the 1600s",
+          "concept": "Baroque Art",
+          "questionText": "How do artists create visual focus in paintings using baroque art on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Baroque Art",
+          "fact_stem": "used dramatic light and shadow contrast to create emotional intensity and movement in the 1600s",
+          "concept": "Baroque Art",
+          "questionText": "Which artistic media are suitable for applying baroque art on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Baroque Art",
+          "fact_stem": "used dramatic light and shadow contrast to create emotional intensity and movement in the 1600s",
+          "concept": "Baroque Art",
+          "questionText": "Which statement summarizes the artistic design of baroque art on Page 5?",
+          "correctAnswer": "That baroque art used dramatic light and shadow contrast to create emotional intensity and movement in the 1600s.",
+          "options": [
+            "That baroque art used dramatic light and shadow contrast to create emotional intensity and movement in the 1600s.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "2": [
+        {
+          "theme": "Romanticism",
+          "fact_stem": "emphasized intense emotion, imagination, and the power of nature over strict rational order",
+          "concept": "Romanticism",
+          "questionText": "What is the effect of using the design technique of romanticism on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Romanticism",
+          "fact_stem": "emphasized intense emotion, imagination, and the power of nature over strict rational order",
+          "concept": "Romanticism",
+          "questionText": "How do artists create visual focus in paintings using romanticism on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Romanticism",
+          "fact_stem": "emphasized intense emotion, imagination, and the power of nature over strict rational order",
+          "concept": "Romanticism",
+          "questionText": "Which artistic media are suitable for applying romanticism on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Romanticism",
+          "fact_stem": "emphasized intense emotion, imagination, and the power of nature over strict rational order",
+          "concept": "Romanticism",
+          "questionText": "Which statement summarizes the artistic design of romanticism on Page 5?",
+          "correctAnswer": "That romanticism emphasized intense emotion, imagination, and the power of nature over strict rational order.",
+          "options": [
+            "That romanticism emphasized intense emotion, imagination, and the power of nature over strict rational order.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "3": [
+        {
+          "theme": "Realism in Art",
+          "fact_stem": "depicted everyday people and ordinary life honestly, rejecting idealized or romanticized subjects",
+          "concept": "Realism in Art",
+          "questionText": "What is the effect of using the design technique of realism in art on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Realism in Art",
+          "fact_stem": "depicted everyday people and ordinary life honestly, rejecting idealized or romanticized subjects",
+          "concept": "Realism in Art",
+          "questionText": "How do artists create visual focus in paintings using realism in art on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Realism in Art",
+          "fact_stem": "depicted everyday people and ordinary life honestly, rejecting idealized or romanticized subjects",
+          "concept": "Realism in Art",
+          "questionText": "Which artistic media are suitable for applying realism in art on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Realism in Art",
+          "fact_stem": "depicted everyday people and ordinary life honestly, rejecting idealized or romanticized subjects",
+          "concept": "Realism in Art",
+          "questionText": "Which statement summarizes the artistic design of realism in art on Page 5?",
+          "correctAnswer": "That realism in art depicted everyday people and ordinary life honestly, rejecting idealized or romanticized subjects.",
+          "options": [
+            "That realism in art depicted everyday people and ordinary life honestly, rejecting idealized or romanticized subjects.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "4": [
+        {
+          "theme": "Impressionism",
+          "fact_stem": "captured fleeting light and color with loose, visible brushstrokes painted outdoors",
+          "concept": "Impressionism",
+          "questionText": "What is the effect of using the design technique of impressionism on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Impressionism",
+          "fact_stem": "captured fleeting light and color with loose, visible brushstrokes painted outdoors",
+          "concept": "Impressionism",
+          "questionText": "How do artists create visual focus in paintings using impressionism on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Impressionism",
+          "fact_stem": "captured fleeting light and color with loose, visible brushstrokes painted outdoors",
+          "concept": "Impressionism",
+          "questionText": "Which artistic media are suitable for applying impressionism on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Impressionism",
+          "fact_stem": "captured fleeting light and color with loose, visible brushstrokes painted outdoors",
+          "concept": "Impressionism",
+          "questionText": "Which statement summarizes the artistic design of impressionism on Page 5?",
+          "correctAnswer": "That impressionism captured fleeting light and color with loose, visible brushstrokes painted outdoors.",
+          "options": [
+            "That impressionism captured fleeting light and color with loose, visible brushstrokes painted outdoors.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "5": [
+        {
+          "theme": "Post-Impressionism",
+          "fact_stem": "pushed beyond Impressionism's light effects toward bold color, structure, and personal expression",
+          "concept": "Post-Impressionism",
+          "questionText": "What is the effect of using the design technique of post-impressionism on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Post-Impressionism",
+          "fact_stem": "pushed beyond Impressionism's light effects toward bold color, structure, and personal expression",
+          "concept": "Post-Impressionism",
+          "questionText": "How do artists create visual focus in paintings using post-impressionism on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Post-Impressionism",
+          "fact_stem": "pushed beyond Impressionism's light effects toward bold color, structure, and personal expression",
+          "concept": "Post-Impressionism",
+          "questionText": "Which artistic media are suitable for applying post-impressionism on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Post-Impressionism",
+          "fact_stem": "pushed beyond Impressionism's light effects toward bold color, structure, and personal expression",
+          "concept": "Post-Impressionism",
+          "questionText": "Which statement summarizes the artistic design of post-impressionism on Page 5?",
+          "correctAnswer": "That post-impressionism pushed beyond Impressionism's light effects toward bold color, structure, and personal expression.",
+          "options": [
+            "That post-impressionism pushed beyond Impressionism's light effects toward bold color, structure, and personal expression.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "6": [
+        {
+          "theme": "Cubism",
+          "fact_stem": "broke subjects into fragmented geometric planes shown from multiple viewpoints at once",
+          "concept": "Cubism",
+          "questionText": "What is the effect of using the design technique of cubism on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Cubism",
+          "fact_stem": "broke subjects into fragmented geometric planes shown from multiple viewpoints at once",
+          "concept": "Cubism",
+          "questionText": "How do artists create visual focus in paintings using cubism on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Cubism",
+          "fact_stem": "broke subjects into fragmented geometric planes shown from multiple viewpoints at once",
+          "concept": "Cubism",
+          "questionText": "Which artistic media are suitable for applying cubism on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Cubism",
+          "fact_stem": "broke subjects into fragmented geometric planes shown from multiple viewpoints at once",
+          "concept": "Cubism",
+          "questionText": "Which statement summarizes the artistic design of cubism on Page 5?",
+          "correctAnswer": "That cubism broke subjects into fragmented geometric planes shown from multiple viewpoints at once.",
+          "options": [
+            "That cubism broke subjects into fragmented geometric planes shown from multiple viewpoints at once.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "7": [
+        {
+          "theme": "Surrealism",
+          "fact_stem": "combined unrelated images drawn from dreams and the unconscious mind into startling scenes",
+          "concept": "Surrealism",
+          "questionText": "What is the effect of using the design technique of surrealism on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Surrealism",
+          "fact_stem": "combined unrelated images drawn from dreams and the unconscious mind into startling scenes",
+          "concept": "Surrealism",
+          "questionText": "How do artists create visual focus in paintings using surrealism on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Surrealism",
+          "fact_stem": "combined unrelated images drawn from dreams and the unconscious mind into startling scenes",
+          "concept": "Surrealism",
+          "questionText": "Which artistic media are suitable for applying surrealism on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Surrealism",
+          "fact_stem": "combined unrelated images drawn from dreams and the unconscious mind into startling scenes",
+          "concept": "Surrealism",
+          "questionText": "Which statement summarizes the artistic design of surrealism on Page 5?",
+          "correctAnswer": "That surrealism combined unrelated images drawn from dreams and the unconscious mind into startling scenes.",
+          "options": [
+            "That surrealism combined unrelated images drawn from dreams and the unconscious mind into startling scenes.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "8": [
+        {
+          "theme": "Abstract Expressionism",
+          "fact_stem": "used large-scale gesture, color, and spontaneous technique instead of recognizable subjects",
+          "concept": "Abstract Expressionism",
+          "questionText": "What is the effect of using the design technique of abstract expressionism on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Abstract Expressionism",
+          "fact_stem": "used large-scale gesture, color, and spontaneous technique instead of recognizable subjects",
+          "concept": "Abstract Expressionism",
+          "questionText": "How do artists create visual focus in paintings using abstract expressionism on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Abstract Expressionism",
+          "fact_stem": "used large-scale gesture, color, and spontaneous technique instead of recognizable subjects",
+          "concept": "Abstract Expressionism",
+          "questionText": "Which artistic media are suitable for applying abstract expressionism on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Abstract Expressionism",
+          "fact_stem": "used large-scale gesture, color, and spontaneous technique instead of recognizable subjects",
+          "concept": "Abstract Expressionism",
+          "questionText": "Which statement summarizes the artistic design of abstract expressionism on Page 5?",
+          "correctAnswer": "That abstract expressionism used large-scale gesture, color, and spontaneous technique instead of recognizable subjects.",
+          "options": [
+            "That abstract expressionism used large-scale gesture, color, and spontaneous technique instead of recognizable subjects.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "9": [
+        {
+          "theme": "Pop Art",
+          "fact_stem": "borrowed imagery from advertising and mass media to comment on consumer culture",
+          "concept": "Pop Art",
+          "questionText": "What is the effect of using the design technique of pop art on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Pop Art",
+          "fact_stem": "borrowed imagery from advertising and mass media to comment on consumer culture",
+          "concept": "Pop Art",
+          "questionText": "How do artists create visual focus in paintings using pop art on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Pop Art",
+          "fact_stem": "borrowed imagery from advertising and mass media to comment on consumer culture",
+          "concept": "Pop Art",
+          "questionText": "Which artistic media are suitable for applying pop art on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Pop Art",
+          "fact_stem": "borrowed imagery from advertising and mass media to comment on consumer culture",
+          "concept": "Pop Art",
+          "questionText": "Which statement summarizes the artistic design of pop art on Page 5?",
+          "correctAnswer": "That pop art borrowed imagery from advertising and mass media to comment on consumer culture.",
+          "options": [
+            "That pop art borrowed imagery from advertising and mass media to comment on consumer culture.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "10": [
+        {
+          "theme": "Modern Sculpture",
+          "fact_stem": "broke from traditional realism to explore abstraction, new materials, and industrial fabrication",
+          "concept": "Modern Sculpture",
+          "questionText": "What is the effect of using the design technique of modern sculpture on Page 2?",
+          "correctAnswer": "It establishes the style, mood, and balance of the artwork.",
+          "options": [
+            "It establishes the style, mood, and balance of the artwork.",
+            "It makes the canvas disappear completely.",
+            "It prevents anyone from seeing the drawing.",
+            "It increases the physical weight of the paint."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Modern Sculpture",
+          "fact_stem": "broke from traditional realism to explore abstraction, new materials, and industrial fabrication",
+          "concept": "Modern Sculpture",
+          "questionText": "How do artists create visual focus in paintings using modern sculpture on Page 3?",
+          "correctAnswer": "By placing light values next to dark values to create contrast.",
+          "options": [
+            "By placing light values next to dark values to create contrast.",
+            "By using only one color for the entire canvas.",
+            "By carving the frame out of solid stone.",
+            "By throwing paint randomly without looking."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Modern Sculpture",
+          "fact_stem": "broke from traditional realism to explore abstraction, new materials, and industrial fabrication",
+          "concept": "Modern Sculpture",
+          "questionText": "Which artistic media are suitable for applying modern sculpture on Page 4?",
+          "correctAnswer": "Paint, clay, paper, wood, and other physical materials.",
+          "options": [
+            "Paint, clay, paper, wood, and other physical materials.",
+            "Only digital tablets, as physical paint is banned.",
+            "Only gaseous water vapor and steam.",
+            "No materials, as art is only a thought."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Modern Sculpture",
+          "fact_stem": "broke from traditional realism to explore abstraction, new materials, and industrial fabrication",
+          "concept": "Modern Sculpture",
+          "questionText": "Which statement summarizes the artistic design of modern sculpture on Page 5?",
+          "correctAnswer": "That modern sculpture broke from traditional realism to explore abstraction, new materials, and industrial fabrication.",
+          "options": [
+            "That modern sculpture broke from traditional realism to explore abstraction, new materials, and industrial fabrication.",
+            "That all art must look exactly the same.",
+            "That artists never make choices about design.",
+            "That composition has no effect on meaning."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "11": [
+        {
+          "theme": "Graphic Design Basics",
+          "fact_stem": "arranges text and image together to communicate a message clearly to an audience",
+          "concept": "Graphic Design Basics",
+          "questionText": "Why did historic art movements adopt the style of graphic design basics on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Graphic Design Basics",
+          "fact_stem": "arranges text and image together to communicate a message clearly to an audience",
+          "concept": "Graphic Design Basics",
+          "questionText": "What composition techniques did artists use in graphic design basics on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Graphic Design Basics",
+          "fact_stem": "arranges text and image together to communicate a message clearly to an audience",
+          "concept": "Graphic Design Basics",
+          "questionText": "What is the historic legacy of graphic design basics on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Graphic Design Basics",
+          "fact_stem": "arranges text and image together to communicate a message clearly to an audience",
+          "concept": "Graphic Design Basics",
+          "questionText": "Which statement summarizes the art history of graphic design basics on Page 5?",
+          "correctAnswer": "That graphic design basics arranges text and image together to communicate a message clearly to an audience.",
+          "options": [
+            "That graphic design basics arranges text and image together to communicate a message clearly to an audience.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "12": [
+        {
+          "theme": "Typography",
+          "fact_stem": "designs and arranges letterforms so that text is both readable and visually expressive",
+          "concept": "Typography",
+          "questionText": "Why did historic art movements adopt the style of typography on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Typography",
+          "fact_stem": "designs and arranges letterforms so that text is both readable and visually expressive",
+          "concept": "Typography",
+          "questionText": "What composition techniques did artists use in typography on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Typography",
+          "fact_stem": "designs and arranges letterforms so that text is both readable and visually expressive",
+          "concept": "Typography",
+          "questionText": "What is the historic legacy of typography on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Typography",
+          "fact_stem": "designs and arranges letterforms so that text is both readable and visually expressive",
+          "concept": "Typography",
+          "questionText": "Which statement summarizes the art history of typography on Page 5?",
+          "correctAnswer": "That typography designs and arranges letterforms so that text is both readable and visually expressive.",
+          "options": [
+            "That typography designs and arranges letterforms so that text is both readable and visually expressive.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "13": [
+        {
+          "theme": "Digital Art Tools",
+          "fact_stem": "use software brushes, layers, and a stylus tablet to create or edit images entirely on a screen",
+          "concept": "Digital Art Tools",
+          "questionText": "Why did historic art movements adopt the style of digital art tools on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Digital Art Tools",
+          "fact_stem": "use software brushes, layers, and a stylus tablet to create or edit images entirely on a screen",
+          "concept": "Digital Art Tools",
+          "questionText": "What composition techniques did artists use in digital art tools on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Digital Art Tools",
+          "fact_stem": "use software brushes, layers, and a stylus tablet to create or edit images entirely on a screen",
+          "concept": "Digital Art Tools",
+          "questionText": "What is the historic legacy of digital art tools on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Digital Art Tools",
+          "fact_stem": "use software brushes, layers, and a stylus tablet to create or edit images entirely on a screen",
+          "concept": "Digital Art Tools",
+          "questionText": "Which statement summarizes the art history of digital art tools on Page 5?",
+          "correctAnswer": "That digital art tools use software brushes, layers, and a stylus tablet to create or edit images entirely on a screen.",
+          "options": [
+            "That digital art tools use software brushes, layers, and a stylus tablet to create or edit images entirely on a screen.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "14": [
+        {
+          "theme": "Photography Basics",
+          "fact_stem": "captures light through a lens onto a sensor or film to record a permanent image",
+          "concept": "Photography Basics",
+          "questionText": "Why did historic art movements adopt the style of photography basics on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Photography Basics",
+          "fact_stem": "captures light through a lens onto a sensor or film to record a permanent image",
+          "concept": "Photography Basics",
+          "questionText": "What composition techniques did artists use in photography basics on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Photography Basics",
+          "fact_stem": "captures light through a lens onto a sensor or film to record a permanent image",
+          "concept": "Photography Basics",
+          "questionText": "What is the historic legacy of photography basics on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Photography Basics",
+          "fact_stem": "captures light through a lens onto a sensor or film to record a permanent image",
+          "concept": "Photography Basics",
+          "questionText": "Which statement summarizes the art history of photography basics on Page 5?",
+          "correctAnswer": "That photography basics captures light through a lens onto a sensor or film to record a permanent image.",
+          "options": [
+            "That photography basics captures light through a lens onto a sensor or film to record a permanent image.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "15": [
+        {
+          "theme": "Composition in Photography",
+          "fact_stem": "uses guidelines like the rule of thirds and leading lines to arrange a frame effectively",
+          "concept": "Composition in Photography",
+          "questionText": "Why did historic art movements adopt the style of composition in photography on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Composition in Photography",
+          "fact_stem": "uses guidelines like the rule of thirds and leading lines to arrange a frame effectively",
+          "concept": "Composition in Photography",
+          "questionText": "What composition techniques did artists use in composition in photography on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Composition in Photography",
+          "fact_stem": "uses guidelines like the rule of thirds and leading lines to arrange a frame effectively",
+          "concept": "Composition in Photography",
+          "questionText": "What is the historic legacy of composition in photography on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Composition in Photography",
+          "fact_stem": "uses guidelines like the rule of thirds and leading lines to arrange a frame effectively",
+          "concept": "Composition in Photography",
+          "questionText": "Which statement summarizes the art history of composition in photography on Page 5?",
+          "correctAnswer": "That composition in photography uses guidelines like the rule of thirds and leading lines to arrange a frame effectively.",
+          "options": [
+            "That composition in photography uses guidelines like the rule of thirds and leading lines to arrange a frame effectively.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "16": [
+        {
+          "theme": "Printmaking Techniques",
+          "fact_stem": "transfers an inked image from a prepared surface onto paper, allowing multiple identical copies",
+          "concept": "Printmaking Techniques",
+          "questionText": "Why did historic art movements adopt the style of printmaking techniques on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Printmaking Techniques",
+          "fact_stem": "transfers an inked image from a prepared surface onto paper, allowing multiple identical copies",
+          "concept": "Printmaking Techniques",
+          "questionText": "What composition techniques did artists use in printmaking techniques on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Printmaking Techniques",
+          "fact_stem": "transfers an inked image from a prepared surface onto paper, allowing multiple identical copies",
+          "concept": "Printmaking Techniques",
+          "questionText": "What is the historic legacy of printmaking techniques on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Printmaking Techniques",
+          "fact_stem": "transfers an inked image from a prepared surface onto paper, allowing multiple identical copies",
+          "concept": "Printmaking Techniques",
+          "questionText": "Which statement summarizes the art history of printmaking techniques on Page 5?",
+          "correctAnswer": "That printmaking techniques transfers an inked image from a prepared surface onto paper, allowing multiple identical copies.",
+          "options": [
+            "That printmaking techniques transfers an inked image from a prepared surface onto paper, allowing multiple identical copies.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "17": [
+        {
+          "theme": "Collage Art",
+          "fact_stem": "assembles cut or torn paper and found materials onto a surface to build a new image",
+          "concept": "Collage Art",
+          "questionText": "Why did historic art movements adopt the style of collage art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Collage Art",
+          "fact_stem": "assembles cut or torn paper and found materials onto a surface to build a new image",
+          "concept": "Collage Art",
+          "questionText": "What composition techniques did artists use in collage art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Collage Art",
+          "fact_stem": "assembles cut or torn paper and found materials onto a surface to build a new image",
+          "concept": "Collage Art",
+          "questionText": "What is the historic legacy of collage art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Collage Art",
+          "fact_stem": "assembles cut or torn paper and found materials onto a surface to build a new image",
+          "concept": "Collage Art",
+          "questionText": "Which statement summarizes the art history of collage art on Page 5?",
+          "correctAnswer": "That collage art assembles cut or torn paper and found materials onto a surface to build a new image.",
+          "options": [
+            "That collage art assembles cut or torn paper and found materials onto a surface to build a new image.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "18": [
+        {
+          "theme": "Mixed Media Art",
+          "fact_stem": "combines two or more different materials or techniques within a single artwork",
+          "concept": "Mixed Media Art",
+          "questionText": "Why did historic art movements adopt the style of mixed media art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Mixed Media Art",
+          "fact_stem": "combines two or more different materials or techniques within a single artwork",
+          "concept": "Mixed Media Art",
+          "questionText": "What composition techniques did artists use in mixed media art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Mixed Media Art",
+          "fact_stem": "combines two or more different materials or techniques within a single artwork",
+          "concept": "Mixed Media Art",
+          "questionText": "What is the historic legacy of mixed media art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Mixed Media Art",
+          "fact_stem": "combines two or more different materials or techniques within a single artwork",
+          "concept": "Mixed Media Art",
+          "questionText": "Which statement summarizes the art history of mixed media art on Page 5?",
+          "correctAnswer": "That mixed media art combines two or more different materials or techniques within a single artwork.",
+          "options": [
+            "That mixed media art combines two or more different materials or techniques within a single artwork.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "19": [
+        {
+          "theme": "Stencil and Screen Printing",
+          "fact_stem": "forces ink through or around a cut template to repeat a crisp image multiple times",
+          "concept": "Stencil and Screen Printing",
+          "questionText": "Why did historic art movements adopt the style of stencil and screen printing on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Stencil and Screen Printing",
+          "fact_stem": "forces ink through or around a cut template to repeat a crisp image multiple times",
+          "concept": "Stencil and Screen Printing",
+          "questionText": "What composition techniques did artists use in stencil and screen printing on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Stencil and Screen Printing",
+          "fact_stem": "forces ink through or around a cut template to repeat a crisp image multiple times",
+          "concept": "Stencil and Screen Printing",
+          "questionText": "What is the historic legacy of stencil and screen printing on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Stencil and Screen Printing",
+          "fact_stem": "forces ink through or around a cut template to repeat a crisp image multiple times",
+          "concept": "Stencil and Screen Printing",
+          "questionText": "Which statement summarizes the art history of stencil and screen printing on Page 5?",
+          "correctAnswer": "That stencil and screen printing forces ink through or around a cut template to repeat a crisp image multiple times.",
+          "options": [
+            "That stencil and screen printing forces ink through or around a cut template to repeat a crisp image multiple times.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "20": [
+        {
+          "theme": "Found Object Art",
+          "fact_stem": "repurposes everyday manufactured items as sculpture or assemblage material",
+          "concept": "Found Object Art",
+          "questionText": "Why did historic art movements adopt the style of found object art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Found Object Art",
+          "fact_stem": "repurposes everyday manufactured items as sculpture or assemblage material",
+          "concept": "Found Object Art",
+          "questionText": "What composition techniques did artists use in found object art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Found Object Art",
+          "fact_stem": "repurposes everyday manufactured items as sculpture or assemblage material",
+          "concept": "Found Object Art",
+          "questionText": "What is the historic legacy of found object art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Found Object Art",
+          "fact_stem": "repurposes everyday manufactured items as sculpture or assemblage material",
+          "concept": "Found Object Art",
+          "questionText": "Which statement summarizes the art history of found object art on Page 5?",
+          "correctAnswer": "That found object art repurposes everyday manufactured items as sculpture or assemblage material.",
+          "options": [
+            "That found object art repurposes everyday manufactured items as sculpture or assemblage material.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "21": [
+        {
+          "theme": "African Art Traditions",
+          "fact_stem": "uses carved masks, figures, and textiles that carry spiritual and community meaning across many cultures",
+          "concept": "African Art Traditions",
+          "questionText": "Why did historic art movements adopt the style of african art traditions on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "African Art Traditions",
+          "fact_stem": "uses carved masks, figures, and textiles that carry spiritual and community meaning across many cultures",
+          "concept": "African Art Traditions",
+          "questionText": "What composition techniques did artists use in african art traditions on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "African Art Traditions",
+          "fact_stem": "uses carved masks, figures, and textiles that carry spiritual and community meaning across many cultures",
+          "concept": "African Art Traditions",
+          "questionText": "What is the historic legacy of african art traditions on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "African Art Traditions",
+          "fact_stem": "uses carved masks, figures, and textiles that carry spiritual and community meaning across many cultures",
+          "concept": "African Art Traditions",
+          "questionText": "Which statement summarizes the art history of african art traditions on Page 5?",
+          "correctAnswer": "That african art traditions uses carved masks, figures, and textiles that carry spiritual and community meaning across many cultures.",
+          "options": [
+            "That african art traditions uses carved masks, figures, and textiles that carry spiritual and community meaning across many cultures.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "22": [
+        {
+          "theme": "Asian Art Traditions",
+          "fact_stem": "spans calligraphy, ink painting, ceramics, and textile traditions developed across China, Japan, and Korea",
+          "concept": "Asian Art Traditions",
+          "questionText": "Why did historic art movements adopt the style of asian art traditions on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Asian Art Traditions",
+          "fact_stem": "spans calligraphy, ink painting, ceramics, and textile traditions developed across China, Japan, and Korea",
+          "concept": "Asian Art Traditions",
+          "questionText": "What composition techniques did artists use in asian art traditions on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Asian Art Traditions",
+          "fact_stem": "spans calligraphy, ink painting, ceramics, and textile traditions developed across China, Japan, and Korea",
+          "concept": "Asian Art Traditions",
+          "questionText": "What is the historic legacy of asian art traditions on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Asian Art Traditions",
+          "fact_stem": "spans calligraphy, ink painting, ceramics, and textile traditions developed across China, Japan, and Korea",
+          "concept": "Asian Art Traditions",
+          "questionText": "Which statement summarizes the art history of asian art traditions on Page 5?",
+          "correctAnswer": "That asian art traditions spans calligraphy, ink painting, ceramics, and textile traditions developed across China, Japan, and Korea.",
+          "options": [
+            "That asian art traditions spans calligraphy, ink painting, ceramics, and textile traditions developed across China, Japan, and Korea.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "23": [
+        {
+          "theme": "Indigenous American Art",
+          "fact_stem": "expresses cultural identity and storytelling through weaving, pottery, beadwork, and carving",
+          "concept": "Indigenous American Art",
+          "questionText": "Why did historic art movements adopt the style of indigenous american art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Indigenous American Art",
+          "fact_stem": "expresses cultural identity and storytelling through weaving, pottery, beadwork, and carving",
+          "concept": "Indigenous American Art",
+          "questionText": "What composition techniques did artists use in indigenous american art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Indigenous American Art",
+          "fact_stem": "expresses cultural identity and storytelling through weaving, pottery, beadwork, and carving",
+          "concept": "Indigenous American Art",
+          "questionText": "What is the historic legacy of indigenous american art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Indigenous American Art",
+          "fact_stem": "expresses cultural identity and storytelling through weaving, pottery, beadwork, and carving",
+          "concept": "Indigenous American Art",
+          "questionText": "Which statement summarizes the art history of indigenous american art on Page 5?",
+          "correctAnswer": "That indigenous american art expresses cultural identity and storytelling through weaving, pottery, beadwork, and carving.",
+          "options": [
+            "That indigenous american art expresses cultural identity and storytelling through weaving, pottery, beadwork, and carving.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "24": [
+        {
+          "theme": "Islamic Art and Geometric Design",
+          "fact_stem": "favors intricate geometric and calligraphic pattern instead of figural imagery in religious contexts",
+          "concept": "Islamic Art and Geometric Design",
+          "questionText": "Why did historic art movements adopt the style of islamic art and geometric design on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Islamic Art and Geometric Design",
+          "fact_stem": "favors intricate geometric and calligraphic pattern instead of figural imagery in religious contexts",
+          "concept": "Islamic Art and Geometric Design",
+          "questionText": "What composition techniques did artists use in islamic art and geometric design on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Islamic Art and Geometric Design",
+          "fact_stem": "favors intricate geometric and calligraphic pattern instead of figural imagery in religious contexts",
+          "concept": "Islamic Art and Geometric Design",
+          "questionText": "What is the historic legacy of islamic art and geometric design on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Islamic Art and Geometric Design",
+          "fact_stem": "favors intricate geometric and calligraphic pattern instead of figural imagery in religious contexts",
+          "concept": "Islamic Art and Geometric Design",
+          "questionText": "Which statement summarizes the art history of islamic art and geometric design on Page 5?",
+          "correctAnswer": "That islamic art and geometric design favors intricate geometric and calligraphic pattern instead of figural imagery in religious contexts.",
+          "options": [
+            "That islamic art and geometric design favors intricate geometric and calligraphic pattern instead of figural imagery in religious contexts.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "25": [
+        {
+          "theme": "Contemporary Global Art",
+          "fact_stem": "spans painting, installation, digital media, and performance created by living artists worldwide",
+          "concept": "Contemporary Global Art",
+          "questionText": "Why did historic art movements adopt the style of contemporary global art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Contemporary Global Art",
+          "fact_stem": "spans painting, installation, digital media, and performance created by living artists worldwide",
+          "concept": "Contemporary Global Art",
+          "questionText": "What composition techniques did artists use in contemporary global art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Contemporary Global Art",
+          "fact_stem": "spans painting, installation, digital media, and performance created by living artists worldwide",
+          "concept": "Contemporary Global Art",
+          "questionText": "What is the historic legacy of contemporary global art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Contemporary Global Art",
+          "fact_stem": "spans painting, installation, digital media, and performance created by living artists worldwide",
+          "concept": "Contemporary Global Art",
+          "questionText": "Which statement summarizes the art history of contemporary global art on Page 5?",
+          "correctAnswer": "That contemporary global art spans painting, installation, digital media, and performance created by living artists worldwide.",
+          "options": [
+            "That contemporary global art spans painting, installation, digital media, and performance created by living artists worldwide.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "26": [
+        {
+          "theme": "The Art Criticism Process",
+          "fact_stem": "follows description, analysis, interpretation, and judgment to evaluate a work of art",
+          "concept": "The Art Criticism Process",
+          "questionText": "Why did historic art movements adopt the style of the art criticism process on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "The Art Criticism Process",
+          "fact_stem": "follows description, analysis, interpretation, and judgment to evaluate a work of art",
+          "concept": "The Art Criticism Process",
+          "questionText": "What composition techniques did artists use in the art criticism process on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "The Art Criticism Process",
+          "fact_stem": "follows description, analysis, interpretation, and judgment to evaluate a work of art",
+          "concept": "The Art Criticism Process",
+          "questionText": "What is the historic legacy of the art criticism process on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "The Art Criticism Process",
+          "fact_stem": "follows description, analysis, interpretation, and judgment to evaluate a work of art",
+          "concept": "The Art Criticism Process",
+          "questionText": "Which statement summarizes the art history of the art criticism process on Page 5?",
+          "correctAnswer": "That the art criticism process follows description, analysis, interpretation, and judgment to evaluate a work of art.",
+          "options": [
+            "That the art criticism process follows description, analysis, interpretation, and judgment to evaluate a work of art.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "27": [
+        {
+          "theme": "Analyzing Meaning in Art",
+          "fact_stem": "considers symbolism, context, and artist intent to interpret what a work communicates",
+          "concept": "Analyzing Meaning in Art",
+          "questionText": "Why did historic art movements adopt the style of analyzing meaning in art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Analyzing Meaning in Art",
+          "fact_stem": "considers symbolism, context, and artist intent to interpret what a work communicates",
+          "concept": "Analyzing Meaning in Art",
+          "questionText": "What composition techniques did artists use in analyzing meaning in art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Analyzing Meaning in Art",
+          "fact_stem": "considers symbolism, context, and artist intent to interpret what a work communicates",
+          "concept": "Analyzing Meaning in Art",
+          "questionText": "What is the historic legacy of analyzing meaning in art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Analyzing Meaning in Art",
+          "fact_stem": "considers symbolism, context, and artist intent to interpret what a work communicates",
+          "concept": "Analyzing Meaning in Art",
+          "questionText": "Which statement summarizes the art history of analyzing meaning in art on Page 5?",
+          "correctAnswer": "That analyzing meaning in art considers symbolism, context, and artist intent to interpret what a work communicates.",
+          "options": [
+            "That analyzing meaning in art considers symbolism, context, and artist intent to interpret what a work communicates.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "28": [
+        {
+          "theme": "Careers in Art",
+          "fact_stem": "range from illustration and animation to design, curation, and fine art practice",
+          "concept": "Careers in Art",
+          "questionText": "Why did historic art movements adopt the style of careers in art on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Careers in Art",
+          "fact_stem": "range from illustration and animation to design, curation, and fine art practice",
+          "concept": "Careers in Art",
+          "questionText": "What composition techniques did artists use in careers in art on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Careers in Art",
+          "fact_stem": "range from illustration and animation to design, curation, and fine art practice",
+          "concept": "Careers in Art",
+          "questionText": "What is the historic legacy of careers in art on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Careers in Art",
+          "fact_stem": "range from illustration and animation to design, curation, and fine art practice",
+          "concept": "Careers in Art",
+          "questionText": "Which statement summarizes the art history of careers in art on Page 5?",
+          "correctAnswer": "That careers in art range from illustration and animation to design, curation, and fine art practice.",
+          "options": [
+            "That careers in art range from illustration and animation to design, curation, and fine art practice.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "29": [
+        {
+          "theme": "Building an Art Portfolio",
+          "fact_stem": "collects an artist's strongest, most varied work to show skill and range to schools or employers",
+          "concept": "Building an Art Portfolio",
+          "questionText": "Why did historic art movements adopt the style of building an art portfolio on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Building an Art Portfolio",
+          "fact_stem": "collects an artist's strongest, most varied work to show skill and range to schools or employers",
+          "concept": "Building an Art Portfolio",
+          "questionText": "What composition techniques did artists use in building an art portfolio on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Building an Art Portfolio",
+          "fact_stem": "collects an artist's strongest, most varied work to show skill and range to schools or employers",
+          "concept": "Building an Art Portfolio",
+          "questionText": "What is the historic legacy of building an art portfolio on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Building an Art Portfolio",
+          "fact_stem": "collects an artist's strongest, most varied work to show skill and range to schools or employers",
+          "concept": "Building an Art Portfolio",
+          "questionText": "Which statement summarizes the art history of building an art portfolio on Page 5?",
+          "correctAnswer": "That building an art portfolio collects an artist's strongest, most varied work to show skill and range to schools or employers.",
+          "options": [
+            "That building an art portfolio collects an artist's strongest, most varied work to show skill and range to schools or employers.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ],
+      "30": [
+        {
+          "theme": "Grade 7 Art Review",
+          "fact_stem": "connects art movements, media, global traditions, and criticism skills studied throughout the year",
+          "concept": "Grade 7 Art Review",
+          "questionText": "Why did historic art movements adopt the style of grade 7 art review on Page 2?",
+          "correctAnswer": "To introduce new ideas, represent light, or challenge old rules.",
+          "options": [
+            "To introduce new ideas, represent light, or challenge old rules.",
+            "To make all paintings look identical.",
+            "To prevent museums from showing their work.",
+            "To stop people from learning about history."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This property is explained on Page 2 of the lesson.",
+          "hint": "Read Page 2 to learn about the properties of this topic."
+        },
+        {
+          "theme": "Grade 7 Art Review",
+          "fact_stem": "connects art movements, media, global traditions, and criticism skills studied throughout the year",
+          "concept": "Grade 7 Art Review",
+          "questionText": "What composition techniques did artists use in grade 7 art review on Page 3?",
+          "correctAnswer": "Three-dimensional perspective drawing, value scales, and shading.",
+          "options": [
+            "Three-dimensional perspective drawing, value scales, and shading.",
+            "Only drawing simple two-dimensional borders.",
+            "Throwing clay at the canvas from far away.",
+            "Avoiding all light sources and shadows."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This is explained on Page 3 of the lesson.",
+          "hint": "Read Page 3 to learn how molecules behave in this state."
+        },
+        {
+          "theme": "Grade 7 Art Review",
+          "fact_stem": "connects art movements, media, global traditions, and criticism skills studied throughout the year",
+          "concept": "Grade 7 Art Review",
+          "questionText": "What is the historic legacy of grade 7 art review on Page 4?",
+          "correctAnswer": "It inspired new schools of design and is preserved in museums.",
+          "options": [
+            "It inspired new schools of design and is preserved in museums.",
+            "It proved that art has no value to society.",
+            "It forced all museums to close down.",
+            "It convinced artists to stop drawing."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This transition is explained on Page 4 of the lesson.",
+          "hint": "Read Page 4 to learn about state changes."
+        },
+        {
+          "theme": "Grade 7 Art Review",
+          "fact_stem": "connects art movements, media, global traditions, and criticism skills studied throughout the year",
+          "concept": "Grade 7 Art Review",
+          "questionText": "Which statement summarizes the art history of grade 7 art review on Page 5?",
+          "correctAnswer": "That grade 7 art review connects art movements, media, global traditions, and criticism skills studied throughout the year.",
+          "options": [
+            "That grade 7 art review connects art movements, media, global traditions, and criticism skills studied throughout the year.",
+            "That visual art never changes over time.",
+            "That shading is not useful for drawing.",
+            "That creative works have no historical value."
+          ],
+          "visualContent": "<div style=\"font-size: 48px;\">📖</div>",
+          "explanation": "This summary rule is taught on Page 5 of the lesson.",
+          "hint": "Read Page 5 to review the summary rule."
+        }
+      ]
     }
   }
 };
+//__ART_GRADE67_INSERT_POINT__
 
 
 // Post-process GRADE_2_5_QUESTIONS to add a 5th question to each lesson for science, history, geography, art
@@ -36574,12 +52527,14 @@ function migrateProgressMap(savedVal) {
     2: JSON.parse(JSON.stringify(freshCounts)),
     3: JSON.parse(JSON.stringify(freshCounts)),
     4: JSON.parse(JSON.stringify(freshCounts)),
-    5: JSON.parse(JSON.stringify(freshCounts))
+    5: JSON.parse(JSON.stringify(freshCounts)),
+    6: JSON.parse(JSON.stringify(freshCounts)),
+    7: JSON.parse(JSON.stringify(freshCounts))
   };
 
   if (savedVal) {
     if (savedVal[1] || savedVal["1"]) {
-      for (let g = 1; g <= 5; g++) {
+      for (let g = 1; g <= 7; g++) {
         if (savedVal[g]) {
           map[g] = savedVal[g];
         }
@@ -36603,7 +52558,9 @@ function createFreshProgressMap() {
     2: JSON.parse(JSON.stringify(freshCounts)),
     3: JSON.parse(JSON.stringify(freshCounts)),
     4: JSON.parse(JSON.stringify(freshCounts)),
-    5: JSON.parse(JSON.stringify(freshCounts))
+    5: JSON.parse(JSON.stringify(freshCounts)),
+    6: JSON.parse(JSON.stringify(freshCounts)),
+    7: JSON.parse(JSON.stringify(freshCounts))
   };
 }
 
@@ -37735,7 +53692,7 @@ class AppState {
 // Accounts allowed to see the Admin Stats dashboard (registration counts,
 // everyone's grade, per-user progress). Usernames are always stored/compared
 // lowercase (see AuthSystem.register/login below), so list them lowercase here.
-const ADMIN_USERNAMES = ['akshara', 'kashyapper', 'kash'];
+const ADMIN_USERNAMES = ['akshara', 'kashyapper', 'kash', 'kashyap'];
 
 // ══════════════════════════════════════════════════════════
 //  Feedback Inbox — any logged-in user can submit a message via the
@@ -38299,7 +54256,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!navWizardGradeGrid) return;
     navWizardGradeGrid.innerHTML = '';
     for (let g = 1; g <= 12; g++) {
-      const locked = g > 5;
+      const locked = g > 7;
       const btn = document.createElement('button');
       btn.className = `nav-btn ${locked ? 'locked' : ''} ${!locked && appState.currentGrade === g ? 'active' : ''}`;
       btn.innerHTML = `<span>Grade ${g}</span>${locked ? '<span class="lock-badge">🔒</span>' : ''}`;
@@ -45105,6 +61062,250 @@ const GRADE_2_5_LESSON_DETAILS = {
         "Geometry Review",
         "Review hierarchy of 2D shapes and polygon properties."
       ]
+    },
+    "6": {
+      "1": [
+        "Intro to Ratios",
+        "Understand what a ratio is and how to write it to compare two quantities."
+      ],
+      "2": [
+        "Equivalent Ratios",
+        "Find equivalent ratios and use ratio tables to scale quantities up or down."
+      ],
+      "3": [
+        "Rate and Unit Rate",
+        "Calculate unit rates to compare costs, speeds, and other quantities."
+      ],
+      "4": [
+        "Percent as a Ratio",
+        "Understand percent as a rate per 100 and convert between percents, fractions, and decimals."
+      ],
+      "5": [
+        "Ratio Word Problems",
+        "Solve real-world problems using ratio and rate reasoning."
+      ],
+      "6": [
+        "Dividing Fractions by Fractions",
+        "Divide fractions by fractions using the reciprocal method."
+      ],
+      "7": [
+        "Fraction Division Word Problems",
+        "Apply fraction division to solve real-world word problems."
+      ],
+      "8": [
+        "Greatest Common Factor",
+        "Find the greatest common factor of two whole numbers up to 100."
+      ],
+      "9": [
+        "Least Common Multiple",
+        "Find the least common multiple of two whole numbers up to 12."
+      ],
+      "10": [
+        "Fraction and Decimal Conversion",
+        "Convert fluently between fractions, decimals, and percents."
+      ],
+      "11": [
+        "Intro to Negative Numbers",
+        "Understand negative numbers as values less than zero in real-world contexts."
+      ],
+      "12": [
+        "Integers on the Number Line",
+        "Plot and order positive and negative integers on a number line."
+      ],
+      "13": [
+        "Absolute Value",
+        "Find the absolute value of a number and interpret it as distance from zero."
+      ],
+      "14": [
+        "Comparing and Ordering Integers",
+        "Compare and order integers using inequality symbols."
+      ],
+      "15": [
+        "The Coordinate Plane and Four Quadrants",
+        "Plot and identify points in all four quadrants of the coordinate plane."
+      ],
+      "16": [
+        "Writing Algebraic Expressions",
+        "Translate verbal phrases into algebraic expressions."
+      ],
+      "17": [
+        "Evaluating Algebraic Expressions",
+        "Evaluate algebraic expressions by substituting values for variables."
+      ],
+      "18": [
+        "Solving One-Step Equations",
+        "Solve one-step addition, subtraction, multiplication, and division equations."
+      ],
+      "19": [
+        "Independent and Dependent Variables",
+        "Identify independent and dependent variables and represent their relationship."
+      ],
+      "20": [
+        "Inequalities on a Number Line",
+        "Write and graph simple inequalities on a number line."
+      ],
+      "21": [
+        "Area of Triangles",
+        "Find the area of triangles using the base-height formula."
+      ],
+      "22": [
+        "Area of Quadrilaterals",
+        "Find the area of parallelograms, trapezoids, and other quadrilaterals."
+      ],
+      "23": [
+        "Area of Composite Polygons",
+        "Decompose composite shapes into simpler polygons to find total area."
+      ],
+      "24": [
+        "Surface Area of Prisms",
+        "Use nets to find the surface area of rectangular and triangular prisms."
+      ],
+      "25": [
+        "Volume of Rectangular Prisms",
+        "Find the volume of rectangular prisms with fractional edge lengths."
+      ],
+      "26": [
+        "Statistical Questions",
+        "Recognize statistical questions and understand what a data distribution shows."
+      ],
+      "27": [
+        "Mean, Median, and Mode",
+        "Calculate mean, median, and mode to describe a data set."
+      ],
+      "28": [
+        "Range and Variability",
+        "Measure the spread of a data set using range and interquartile range."
+      ],
+      "29": [
+        "Dot Plots and Histograms",
+        "Display and interpret data using dot plots and histograms."
+      ],
+      "30": [
+        "Grade 6 Math Review",
+        "Review key Grade 6 math skills including ratios, integers, expressions, and geometry."
+      ]
+    },
+    "7": {
+      "1": [
+        "Unit Rates with Fractions",
+        "Compute unit rates involving fractions, including fraction-per-fraction ratios."
+      ],
+      "2": [
+        "Identifying Proportional Relationships",
+        "Determine whether a relationship is proportional from tables, graphs, or equations."
+      ],
+      "3": [
+        "Constant of Proportionality",
+        "Identify the constant of proportionality in tables, graphs, and equations."
+      ],
+      "4": [
+        "Graphing Proportional Relationships",
+        "Graph proportional relationships and interpret the unit rate as the slope."
+      ],
+      "5": [
+        "Proportion Word Problems",
+        "Solve multi-step ratio and percent problems using proportions."
+      ],
+      "6": [
+        "Adding and Subtracting Integers",
+        "Add and subtract positive and negative integers using number line models."
+      ],
+      "7": [
+        "Multiplying and Dividing Integers",
+        "Multiply and divide integers and apply the rules for signs."
+      ],
+      "8": [
+        "Adding and Subtracting Rational Numbers",
+        "Add and subtract rational numbers, including fractions and decimals."
+      ],
+      "9": [
+        "Multiplying and Dividing Rational Numbers",
+        "Multiply and divide rational numbers and interpret the sign of the result."
+      ],
+      "10": [
+        "Rational Number Word Problems",
+        "Solve real-world problems involving all four operations with rational numbers."
+      ],
+      "11": [
+        "Simplifying Expressions with Rational Coefficients",
+        "Simplify linear expressions with rational coefficients by combining like terms."
+      ],
+      "12": [
+        "Factoring Expressions",
+        "Factor linear expressions using the distributive property."
+      ],
+      "13": [
+        "Solving Multi-Step Equations",
+        "Solve multi-step equations involving rational numbers."
+      ],
+      "14": [
+        "Equations with Variables on Both Sides",
+        "Solve equations with variables on both sides of the equal sign."
+      ],
+      "15": [
+        "Translating Word Problems into Equations",
+        "Translate real-world scenarios into equations and solve them."
+      ],
+      "16": [
+        "Solving Inequalities",
+        "Solve multi-step inequalities and interpret the solution set."
+      ],
+      "17": [
+        "Graphing Inequality Solutions",
+        "Graph the solution set of an inequality on a number line."
+      ],
+      "18": [
+        "Percent Increase and Decrease",
+        "Solve problems involving percent increase and percent decrease."
+      ],
+      "19": [
+        "Simple Interest",
+        "Calculate simple interest using the formula I = prt."
+      ],
+      "20": [
+        "Percent Word Problems",
+        "Solve multi-step real-world percent problems, including tax, tip, and discount."
+      ],
+      "21": [
+        "Scale Drawings",
+        "Compute actual lengths and areas from a scale drawing."
+      ],
+      "22": [
+        "Circumference and Area of Circles",
+        "Find the circumference and area of circles using radius or diameter."
+      ],
+      "23": [
+        "Angle Relationships",
+        "Use facts about supplementary, complementary, vertical, and adjacent angles to solve for unknown angles."
+      ],
+      "24": [
+        "Cross-Sections of 3D Figures",
+        "Describe the two-dimensional cross-sections formed by slicing three-dimensional figures."
+      ],
+      "25": [
+        "Surface Area and Volume of Solids",
+        "Solve real-world problems involving surface area and volume of prisms and pyramids."
+      ],
+      "26": [
+        "Probability of Simple Events",
+        "Find the probability of a simple event as a fraction, decimal, and percent."
+      ],
+      "27": [
+        "Experimental vs Theoretical Probability",
+        "Compare experimental and theoretical probabilities of an event."
+      ],
+      "28": [
+        "Compound Events",
+        "Find the probability of compound events using organized lists and tree diagrams."
+      ],
+      "29": [
+        "Sampling and Populations",
+        "Use random sampling to draw inferences about a larger population."
+      ],
+      "30": [
+        "Grade 7 Math Review",
+        "Review key Grade 7 math skills including proportions, rational numbers, equations, and probability."
+      ]
     }
   },
   "ela": {
@@ -45594,6 +61795,250 @@ const GRADE_2_5_LESSON_DETAILS = {
       "30": [
         "Writing Mechanics Review",
         "Review titles, commas, academic vocabulary, and spelling."
+      ]
+    },
+    "6": {
+      "1": [
+        "Identifying Theme",
+        "Determine the theme of a story and explain how it is conveyed through details."
+      ],
+      "2": [
+        "Plot Structure",
+        "Analyze how the plot unfolds through exposition, rising action, climax, and resolution."
+      ],
+      "3": [
+        "Character Development",
+        "Explain how characters change and grow over the course of a story."
+      ],
+      "4": [
+        "Point of View in Fiction",
+        "Explain how an author develops the point of view of the narrator."
+      ],
+      "5": [
+        "Comparing Literary Texts",
+        "Compare and contrast the themes and plots of two literary texts."
+      ],
+      "6": [
+        "Central Idea and Supporting Details",
+        "Determine the central idea of a text and how it is supported by details."
+      ],
+      "7": [
+        "Author's Purpose in Nonfiction Texts",
+        "Determine an author's purpose for writing and how it shapes the text."
+      ],
+      "8": [
+        "Text Structures",
+        "Analyze how a text is organized using structures like cause/effect and compare/contrast."
+      ],
+      "9": [
+        "Evaluating Arguments",
+        "Evaluate the argument and claims in a text, distinguishing supported claims from unsupported ones."
+      ],
+      "10": [
+        "Citing Textual Evidence",
+        "Cite textual evidence to support analysis of what a text says explicitly."
+      ],
+      "11": [
+        "Using Context Clues",
+        "Use context clues within a sentence to determine the meaning of unfamiliar words."
+      ],
+      "12": [
+        "Greek and Latin Roots",
+        "Use common Greek and Latin roots to determine the meaning of unfamiliar words."
+      ],
+      "13": [
+        "Figurative Language",
+        "Interpret figures of speech such as personification and hyperbole in context."
+      ],
+      "14": [
+        "Connotation and Denotation",
+        "Distinguish between the denotation and connotation of words with similar meanings."
+      ],
+      "15": [
+        "Academic Vocabulary",
+        "Acquire and accurately use grade-appropriate academic and domain-specific words."
+      ],
+      "16": [
+        "Pronoun Case",
+        "Use correct pronoun case (subjective, objective, possessive) in sentences."
+      ],
+      "17": [
+        "Subject-Verb Agreement in Complex Sentences",
+        "Ensure subjects and verbs agree in number within complex sentences."
+      ],
+      "18": [
+        "Phrases and Clauses",
+        "Identify and use phrases and clauses to add detail and variety to sentences."
+      ],
+      "19": [
+        "Varying Sentence Patterns",
+        "Vary sentence patterns for meaning, reader interest, and style."
+      ],
+      "20": [
+        "Correcting Run-ons and Fragments",
+        "Recognize and correct run-on sentences and sentence fragments."
+      ],
+      "21": [
+        "Narrative Writing",
+        "Write narratives that develop real or imagined experiences using effective technique."
+      ],
+      "22": [
+        "Argumentative Writing",
+        "Write arguments to support claims with clear reasons and relevant evidence."
+      ],
+      "23": [
+        "Informative and Explanatory Writing",
+        "Write informative texts that examine a topic through relevant facts and details."
+      ],
+      "24": [
+        "Organizing an Essay",
+        "Organize ideas in an essay using a clear structure with transitions."
+      ],
+      "25": [
+        "Revising and Editing",
+        "Revise and edit writing to strengthen it and correct errors."
+      ],
+      "26": [
+        "The Research Process",
+        "Conduct short research projects to answer a question, using multiple sources."
+      ],
+      "27": [
+        "Evaluating Sources",
+        "Gather information from print and digital sources, assessing the credibility of each."
+      ],
+      "28": [
+        "Presenting Information",
+        "Present claims and findings, sequencing ideas logically for a listener."
+      ],
+      "29": [
+        "Collaborative Discussion",
+        "Engage effectively in collaborative discussions, building on others' ideas."
+      ],
+      "30": [
+        "Grade 6 ELA Review",
+        "Review key reading, writing, grammar, and vocabulary skills from Grade 6."
+      ]
+    },
+    "7": {
+      "1": [
+        "Analyzing Theme Development",
+        "Analyze how a theme develops and is shaped by specific details over a text."
+      ],
+      "2": [
+        "Analyzing Plot and Conflict",
+        "Analyze how elements of plot and conflict interact to advance the story."
+      ],
+      "3": [
+        "Analyzing Character Motivation",
+        "Analyze how a character's motivations affect their decisions and the plot."
+      ],
+      "4": [
+        "Point of View and Perspective",
+        "Analyze how an author develops and contrasts differing points of view."
+      ],
+      "5": [
+        "Comparing Literary Genres",
+        "Compare and contrast a written story to its dramatic, poetic, or filmed version."
+      ],
+      "6": [
+        "Analyzing Central Ideas",
+        "Analyze the interaction between individuals, ideas, or events in a text and its central idea."
+      ],
+      "7": [
+        "Analyzing an Author's Argument",
+        "Trace and evaluate an author's argument, assessing the reasoning and evidence."
+      ],
+      "8": [
+        "Analyzing Text Structure",
+        "Analyze how a text's structure contributes to its meaning and persuasive power."
+      ],
+      "9": [
+        "Evaluating Evidence and Reasoning",
+        "Assess whether the reasoning in a text is sound and the evidence is sufficient."
+      ],
+      "10": [
+        "Comparing Multiple Sources",
+        "Compare and contrast how multiple authors present information on the same topic."
+      ],
+      "11": [
+        "Multiple-Meaning Words",
+        "Determine the meaning of words with multiple meanings based on context."
+      ],
+      "12": [
+        "Analyzing Word Relationships",
+        "Analyze relationships among words, including synonyms, antonyms, and word families."
+      ],
+      "13": [
+        "Analogies",
+        "Complete and interpret analogies that show relationships between word pairs."
+      ],
+      "14": [
+        "Idioms and Figurative Language",
+        "Interpret idioms, similes, metaphors, and other figurative language in context."
+      ],
+      "15": [
+        "Precise Word Choice",
+        "Choose precise, vivid language to express ideas clearly and concisely."
+      ],
+      "16": [
+        "Verbals - Gerunds, Participles, and Infinitives",
+        "Identify and use gerunds, participles, and infinitives in sentences."
+      ],
+      "17": [
+        "Active and Passive Voice",
+        "Recognize and use active and passive voice appropriately in writing."
+      ],
+      "18": [
+        "Misplaced and Dangling Modifiers",
+        "Identify and correct misplaced and dangling modifiers in sentences."
+      ],
+      "19": [
+        "Punctuation for Clarity",
+        "Use commas, semicolons, and colons to clarify meaning in sentences."
+      ],
+      "20": [
+        "Formal versus Informal Style",
+        "Adjust word choice and tone to match formal and informal writing situations."
+      ],
+      "21": [
+        "Argumentative Essay",
+        "Write an argumentative essay that supports claims with logical reasoning and evidence."
+      ],
+      "22": [
+        "Literary Analysis Essay",
+        "Write a literary analysis essay that supports a claim with textual evidence."
+      ],
+      "23": [
+        "Narrative Techniques",
+        "Use narrative techniques such as dialogue and pacing to develop experiences."
+      ],
+      "24": [
+        "Using Evidence Effectively",
+        "Select and integrate relevant evidence to support a written argument or analysis."
+      ],
+      "25": [
+        "Revising for Style",
+        "Revise writing to improve style, word choice, and sentence variety."
+      ],
+      "26": [
+        "Research and Note-Taking",
+        "Conduct research and take organized notes while avoiding plagiarism."
+      ],
+      "27": [
+        "Paraphrasing and Avoiding Plagiarism",
+        "Paraphrase source information accurately while giving proper credit."
+      ],
+      "28": [
+        "Analyzing Media Messages",
+        "Analyze how visual and multimedia elements contribute to a message's meaning."
+      ],
+      "29": [
+        "Oral Presentation Skills",
+        "Present claims and findings clearly, using appropriate eye contact and volume."
+      ],
+      "30": [
+        "Grade 7 ELA Review",
+        "Review key reading, writing, grammar, and vocabulary skills from Grade 7."
       ]
     }
   }

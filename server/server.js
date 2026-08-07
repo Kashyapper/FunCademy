@@ -31,7 +31,7 @@ const SESSIONS_FILE = path.join(DATA_DIR, 'sessions.json');
 // Same two accounts the client already treats as admin-only
 // (ADMIN_USERNAMES in app.js) — kept in sync manually since this is a
 // tiny fixed list, not worth a shared config file.
-const ADMIN_USERNAMES = ['akshara', 'kashyapper', 'kash'];
+const ADMIN_USERNAMES = ['akshara', 'kashyapper', 'kash', 'kashyap'];
 
 const SESSION_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 

@@ -1409,6 +1409,1088 @@ function genRealWorldCoordinates(seed, idx) {
 }
 
 // ============================================================
+// GRADE 6 QUIZ GENERATORS
+// ============================================================
+
+function lcmMQ(a, b) {
+  return (a * b) / gcdMQ(a, b);
+}
+
+function genRatioWrite(seed, idx) {
+  const items = [
+    { a: 'red marbles', b: 'blue marbles', emoji: '🔴🔵' },
+    { a: 'dogs', b: 'cats', emoji: '🐶🐱' },
+    { a: 'apples', b: 'oranges', emoji: '🍎🍊' },
+    { a: 'boys', b: 'girls', emoji: '🧒👧' }
+  ];
+  const item = items[(seed + idx) % items.length];
+  const a = 2 + ((seed * 3 + idx * 5) % 10);
+  const b = 2 + ((seed * 7 + idx * 11) % 10);
+  const correct = `${a}:${b}`;
+  return {
+    questionText: `A group has ${a} ${item.a} and ${b} ${item.b}. What is the ratio of ${item.a} to ${item.b}?`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, [`${b}:${a}`, `${a}:${a + b}`, `${a + 1}:${b}`]),
+    visualContent: `<div style="font-size: 48px;">${item.emoji}</div>`,
+    hint: `Write the ${item.a} first, then the ${item.b}: ${a}:${b}.`
+  };
+}
+
+function genEquivalentRatio(seed, idx) {
+  const a = 2 + (seed % 6), b = 2 + (idx % 6);
+  const mult = 2 + ((seed * 3 + idx) % 5);
+  const correct = `${a * mult}:${b * mult}`;
+  return {
+    questionText: `Which ratio is equivalent to ${a}:${b}?`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, [`${a * mult + 1}:${b * mult}`, `${a + mult}:${b + mult}`, `${a * mult}:${b * mult + 1}`]),
+    visualContent: `<div style="font-size: 48px;">⚖️🔢</div>`,
+    hint: `Multiply both terms of ${a}:${b} by ${mult} to get ${correct}.`
+  };
+}
+
+function genUnitRateG6(seed, idx) {
+  const r = 2 + ((seed * 3 + idx * 5) % 11);
+  const qty = 2 + ((seed + idx) % 8);
+  const total = r * qty;
+  return {
+    questionText: `A car travels ${total} miles in ${qty} hours. What is the unit rate in miles per hour?`,
+    correctAnswer: String(r),
+    options: uniqOptions(r, [r + 1, r - 1, qty]),
+    visualContent: `<div style="font-size: 48px;">🚗💨</div>`,
+    hint: `${total} ÷ ${qty} = ${r} miles per hour.`
+  };
+}
+
+function genPercentAsRatio(seed, idx) {
+  const map = [[1, 2, '50%'], [1, 4, '25%'], [3, 4, '75%'], [1, 5, '20%'], [2, 5, '40%'], [1, 10, '10%'], [3, 10, '30%'], [1, 20, '5%'], [1, 25, '4%'], [1, 50, '2%']];
+  const item = map[(seed + idx) % map.length];
+  const n = item[0], d = item[1], pct = item[2];
+  if (idx % 2 === 0) {
+    return {
+      questionText: `What percent is equivalent to ${n}/${d}?`,
+      correctAnswer: pct,
+      options: uniqOptions(pct, [`${n}%`, `${d}%`, `${parseInt(pct) + 10}%`]),
+      visualContent: `<div style="font-size: 48px;">💯</div>`,
+      hint: `${n}/${d} means ${n} out of ${d}. Scale to a denominator of 100 to get ${pct}.`
+    };
+  } else {
+    return {
+      questionText: `What fraction (in simplest form) is equivalent to ${pct}?`,
+      correctAnswer: `${n}/${d}`,
+      options: uniqOptions(`${n}/${d}`, [`${d}/${n}`, `${n + 1}/${d}`, `${n}/${d + 1}`]),
+      visualContent: `<div style="font-size: 48px;">💯</div>`,
+      hint: `${pct} means ${parseInt(pct)} out of 100. Simplify to ${n}/${d}.`
+    };
+  }
+}
+
+function genRatioWordProblem(seed, idx) {
+  const a = 2 + (seed % 5), b = 2 + (idx % 5);
+  const scale = 2 + ((seed * 3 + idx) % 5);
+  const newB = b * scale;
+  const newA = a * scale;
+  return {
+    questionText: `A recipe uses ${a} cups of flour for every ${b} cups of sugar. If you use ${newB} cups of sugar, how many cups of flour do you need?`,
+    correctAnswer: String(newA),
+    options: uniqOptions(newA, [newA + 1, newA - 1, newB]),
+    visualContent: `<div style="font-size: 48px;">🍰</div>`,
+    hint: `Scale factor: ${newB}÷${b}=${scale}. Flour: ${a}x${scale}=${newA}.`
+  };
+}
+
+function genDivideFractionsByFractions(seed, idx) {
+  const denoms = [2, 3, 4, 5, 6];
+  const d1 = denoms[(seed + idx) % denoms.length];
+  const d2 = denoms[(seed * 3 + idx * 5 + 1) % denoms.length];
+  const n1 = 1 + (seed % (d1 - 1));
+  const n2 = 1 + (idx % (d2 - 1));
+  const rawN = n1 * d2, rawD = d1 * n2;
+  const g = gcdMQ(rawN, rawD);
+  const simpN = rawN / g, simpD = rawD / g;
+  return {
+    questionText: `${n1}/${d1} ÷ ${n2}/${d2} = ?`,
+    correctAnswer: `${simpN}/${simpD}`,
+    options: uniqOptions(`${simpN}/${simpD}`, [`${n1 * n2}/${d1 * d2}`, `${rawN}/${rawD}`, `${simpN + 1}/${simpD}`]),
+    visualContent: `<div style="font-size: 48px;">➗🟦</div>`,
+    hint: `Multiply by the reciprocal: ${n1}/${d1} x ${d2}/${n2} = ${rawN}/${rawD} = ${simpN}/${simpD}.`
+  };
+}
+
+function genFractionDivisionWordProblem(seed, idx) {
+  const d = 2 + ((seed + idx) % 6);
+  const n = 1 + (seed % (d - 1 || 1));
+  const groups = 2 + ((seed * 3 + idx * 5) % 5);
+  const rawN = n, rawD = d * groups;
+  const g = gcdMQ(rawN, rawD);
+  const simpN = rawN / g, simpD = rawD / g;
+  return {
+    questionText: `You have ${n}/${d} of a pizza left and want to split it equally among ${groups} friends. What fraction of the whole pizza does each friend get?`,
+    correctAnswer: `${simpN}/${simpD}`,
+    options: uniqOptions(`${simpN}/${simpD}`, [`${n}/${d + groups}`, `${n * groups}/${d}`, `${simpN + 1}/${simpD}`]),
+    visualContent: `<div style="font-size: 48px;">🍕➗</div>`,
+    hint: `${n}/${d} ÷ ${groups} = ${n}/${d} x 1/${groups} = ${rawN}/${rawD} = ${simpN}/${simpD}.`
+  };
+}
+
+function genGCF(seed, idx) {
+  const nums = [12, 18, 20, 24, 30, 36, 40, 48, 54, 60, 16, 28, 42, 56, 64, 72, 80, 90];
+  const a = nums[(seed + idx) % nums.length];
+  const b = nums[(seed * 3 + idx * 5 + 1) % nums.length];
+  const correct = gcdMQ(a, b);
+  return {
+    questionText: `What is the greatest common factor (GCF) of ${a} and ${b}?`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [correct * 2, Math.max(1, correct - 1), correct + 2]),
+    visualContent: `<div style="font-size: 48px;">🔢🤝</div>`,
+    hint: `List the factors of ${a} and ${b} — the largest one they share is ${correct}.`
+  };
+}
+
+function genLCM(seed, idx) {
+  const nums = [2, 3, 4, 5, 6, 7, 8, 9, 10, 12];
+  const a = nums[(seed + idx) % nums.length];
+  let b = nums[(seed * 3 + idx * 5 + 1) % nums.length];
+  if (b === a) b = nums[(nums.indexOf(a) + 1) % nums.length];
+  const correct = lcmMQ(a, b);
+  return {
+    questionText: `What is the least common multiple (LCM) of ${a} and ${b}?`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [a * b, correct + a, Math.max(a, b)]),
+    visualContent: `<div style="font-size: 48px;">🔢➕</div>`,
+    hint: `List multiples of ${a} and ${b} — the smallest one they share is ${correct}.`
+  };
+}
+
+function genFractionDecimalConversion(seed, idx) {
+  const map = [[1, 2, 0.5], [1, 4, 0.25], [3, 4, 0.75], [1, 5, 0.2], [2, 5, 0.4], [3, 5, 0.6], [1, 8, 0.125], [3, 8, 0.375], [1, 10, 0.1], [7, 10, 0.7]];
+  const item = map[(seed + idx) % map.length];
+  const n = item[0], d = item[1], dec = item[2];
+  if (idx % 2 === 0) {
+    return {
+      questionText: `Convert ${n}/${d} to a decimal.`,
+      correctAnswer: String(dec),
+      options: uniqOptions(dec, [dec * 10, dec / 10, Math.round((dec + 0.1) * 1000) / 1000]),
+      visualContent: `<div style="font-size: 48px;">🔢.🔢</div>`,
+      hint: `${n} ÷ ${d} = ${dec}.`
+    };
+  } else {
+    return {
+      questionText: `Convert the decimal ${dec} to a fraction in simplest form.`,
+      correctAnswer: `${n}/${d}`,
+      options: uniqOptions(`${n}/${d}`, [`${d}/${n}`, `${n + 1}/${d}`, `${n}/${d + 1}`]),
+      visualContent: `<div style="font-size: 48px;">🔢.🔢</div>`,
+      hint: `${dec} = ${n}/${d} in simplest form.`
+    };
+  }
+}
+
+function genIntroNegativeNumbers(seed, idx) {
+  const contexts = [
+    (n) => ({ d: `a temperature of ${n} degrees below zero`, v: -n }),
+    (n) => ({ d: `a debt of $${n}`, v: -n }),
+    (n) => ({ d: `${n} feet below sea level`, v: -n }),
+    (n) => ({ d: `a gain of ${n} yards`, v: n })
+  ];
+  const n = 2 + ((seed * 3 + idx * 5) % 20);
+  const ctx = contexts[(seed + idx) % contexts.length](n);
+  return {
+    questionText: `Which integer represents ${ctx.d}?`,
+    correctAnswer: String(ctx.v),
+    options: uniqOptions(ctx.v, [-ctx.v, ctx.v + 1, ctx.v - 1]),
+    visualContent: `<div style="font-size: 48px;">➖🔢</div>`,
+    hint: `Below zero, debt, and below sea level are represented with negative numbers; gains are positive.`
+  };
+}
+
+function genIntegersNumberLine(seed, idx) {
+  const a = -10 + ((seed * 3 + idx * 5) % 21);
+  let b = -10 + ((seed * 7 + idx * 11) % 21);
+  if (a === b) b = a + 1 > 10 ? a - 1 : a + 1;
+  const askGreater = idx % 2 === 0;
+  const correct = askGreater ? Math.max(a, b) : Math.min(a, b);
+  return {
+    questionText: `On a number line, which integer is farther to the ${askGreater ? 'right' : 'left'}: ${a} or ${b}?`,
+    correctAnswer: String(correct),
+    options: [String(a), String(b)],
+    visualContent: `<div style="font-size: 48px;">📏➖➕</div>`,
+    hint: `On a number line, numbers increase to the right. ${Math.max(a, b)} is to the right of ${Math.min(a, b)}.`
+  };
+}
+
+function genAbsoluteValue(seed, idx) {
+  const n = -20 + ((seed * 3 + idx * 5) % 41);
+  const correct = Math.abs(n);
+  return {
+    questionText: `What is the absolute value of ${n}? (|${n}| = ?)`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [-correct, correct + 1, correct - 1]),
+    visualContent: `<div style="font-size: 48px;">|🔢|</div>`,
+    hint: `Absolute value is the distance from zero, so it's always positive (or zero): |${n}| = ${correct}.`
+  };
+}
+
+function genCompareIntegers(seed, idx) {
+  const a = -15 + ((seed * 3 + idx * 5) % 31);
+  let b = -15 + ((seed * 7 + idx * 11) % 31);
+  if (a === b) b = a + 3 > 15 ? a - 3 : a + 3;
+  const askGreater = idx % 2 === 0;
+  const correct = askGreater ? Math.max(a, b) : Math.min(a, b);
+  return {
+    questionText: `Which is ${askGreater ? 'greater' : 'smaller'}: ${a} or ${b}?`,
+    correctAnswer: String(correct),
+    options: [String(a), String(b)],
+    visualContent: `<div style="font-size: 48px;">⚖️➖</div>`,
+    hint: `${Math.max(a, b)} is greater than ${Math.min(a, b)} on the number line.`
+  };
+}
+
+function genCoordinateQuadrants(seed, idx) {
+  const signs = [[1, 1, 'I'], [-1, 1, 'II'], [-1, -1, 'III'], [1, -1, 'IV']];
+  const s = signs[(seed + idx) % 4];
+  const x = s[0] * (1 + ((seed * 3 + idx * 5) % 9));
+  const y = s[1] * (1 + ((seed * 7 + idx * 11) % 9));
+  const correct = `Quadrant ${s[2]}`;
+  return {
+    questionText: `In which quadrant is the point (${x}, ${y}) located?`,
+    correctAnswer: correct,
+    options: ['Quadrant I', 'Quadrant II', 'Quadrant III', 'Quadrant IV'],
+    visualContent: `<div style="font-size: 48px;">📍➕➖</div>`,
+    hint: `Positive x & positive y = Quadrant I; negative x & positive y = Quadrant II; both negative = Quadrant III; positive x & negative y = Quadrant IV.`
+  };
+}
+
+function genWriteAlgebraicExpression(seed, idx) {
+  const phrases = [
+    (n) => ({ p: `${n} more than a number x`, e: `x + ${n}` }),
+    (n) => ({ p: `${n} less than a number x`, e: `x - ${n}` }),
+    (n) => ({ p: `a number x times ${n}`, e: `${n}x` }),
+    (n) => ({ p: `a number x divided by ${n}`, e: `x/${n}` })
+  ];
+  const n = 2 + ((seed * 3 + idx * 5) % 12);
+  const item = phrases[(seed + idx) % phrases.length](n);
+  return {
+    questionText: `Write an algebraic expression for: "${item.p}"`,
+    correctAnswer: item.e,
+    options: uniqOptions(item.e, [`x + ${n + 1}`, `${n}x + 1`, `x - ${n}`]),
+    visualContent: `<div style="font-size: 48px;">✏️x</div>`,
+    hint: `Translate the words into symbols one piece at a time.`
+  };
+}
+
+function genEvaluateAlgebraicExpression(seed, idx) {
+  const a = 2 + ((seed + idx) % 9);
+  const b = 1 + ((seed * 3 + idx * 5) % 15);
+  const x = 1 + ((seed * 7 + idx * 11) % 10);
+  const correct = a * x + b;
+  return {
+    questionText: `Evaluate ${a}x + ${b} when x = ${x}.`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [correct + a, correct - b, a + b + x]),
+    visualContent: `<div style="font-size: 48px;">🔢x</div>`,
+    hint: `Substitute x=${x}: ${a}(${x}) + ${b} = ${a * x} + ${b} = ${correct}.`
+  };
+}
+
+function genSolveOneStepEquation(seed, idx) {
+  const ops = ['add', 'sub', 'mul', 'div'];
+  const op = ops[idx % 4];
+  const x = 2 + ((seed * 3 + idx * 5) % 20);
+  if (op === 'add') {
+    const b = 1 + ((seed + idx) % 20);
+    const c = x + b;
+    return { questionText: `Solve for x: x + ${b} = ${c}`, correctAnswer: String(x), options: uniqOptions(x, [x + 1, x - 1, c]), visualContent: `<div style="font-size: 48px;">🔢x</div>`, hint: `Subtract ${b} from both sides: x = ${c} - ${b} = ${x}.` };
+  } else if (op === 'sub') {
+    const b = 1 + ((seed + idx) % 20);
+    const c = x - b;
+    return { questionText: `Solve for x: x - ${b} = ${c}`, correctAnswer: String(x), options: uniqOptions(x, [x + 1, x - 1, c]), visualContent: `<div style="font-size: 48px;">🔢x</div>`, hint: `Add ${b} to both sides: x = ${c} + ${b} = ${x}.` };
+  } else if (op === 'mul') {
+    const b = 2 + ((seed + idx) % 9);
+    const c = x * b;
+    return { questionText: `Solve for x: ${b}x = ${c}`, correctAnswer: String(x), options: uniqOptions(x, [x + 1, x - 1, b]), visualContent: `<div style="font-size: 48px;">🔢x</div>`, hint: `Divide both sides by ${b}: x = ${c} ÷ ${b} = ${x}.` };
+  } else {
+    const b = 2 + ((seed + idx) % 9);
+    const q = x;
+    const dividend = q * b;
+    return { questionText: `Solve for x: x ÷ ${b} = ${q}`, correctAnswer: String(dividend), options: uniqOptions(dividend, [dividend + b, dividend - b, q]), visualContent: `<div style="font-size: 48px;">🔢x</div>`, hint: `Multiply both sides by ${b}: x = ${q} x ${b} = ${dividend}.` };
+  }
+}
+
+function genIndependentDependentVariable(seed, idx) {
+  const scenarios = [
+    { ctx: 'the number of hours you work and the amount you earn', ind: 'hours worked', dep: 'amount earned' },
+    { ctx: 'the number of candy bars you buy and the total cost', ind: 'number of candy bars', dep: 'total cost' },
+    { ctx: 'the temperature outside and the number of hot cocoas sold', ind: 'temperature', dep: 'number of hot cocoas sold' },
+    { ctx: 'the distance you drive and the amount of gas used', ind: 'distance driven', dep: 'gas used' }
+  ];
+  const item = scenarios[(seed + idx) % scenarios.length];
+  const askInd = idx % 2 === 0;
+  const correct = askInd ? item.ind : item.dep;
+  return {
+    questionText: `Consider ${item.ctx}. Which is the ${askInd ? 'independent' : 'dependent'} variable?`,
+    correctAnswer: correct,
+    options: [item.ind, item.dep],
+    visualContent: `<div style="font-size: 48px;">📊➡️</div>`,
+    hint: askInd ? `The independent variable is the one that changes on its own — here, that's ${item.ind}.` : `The dependent variable changes because of the independent variable — here, that's ${item.dep}.`
+  };
+}
+
+function genInequalityNumberLine(seed, idx) {
+  const n = -5 + ((seed * 3 + idx * 5) % 16);
+  const types = [
+    { sym: '>', word: 'greater than' },
+    { sym: '<', word: 'less than' },
+    { sym: '≥', word: 'greater than or equal to' },
+    { sym: '≤', word: 'less than or equal to' }
+  ];
+  const t = types[idx % 4];
+  const correct = `x ${t.sym} ${n}`;
+  return {
+    questionText: `Write an inequality for: "a number x is ${t.word} ${n}."`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, types.filter(o => o.sym !== t.sym).map(o => `x ${o.sym} ${n}`)),
+    visualContent: `<div style="font-size: 48px;">📏≥≤</div>`,
+    hint: `"${t.word}" translates directly to the symbol ${t.sym}.`
+  };
+}
+
+function genAreaTriangle(seed, idx) {
+  const b = 2 * (1 + ((seed + idx) % 10));
+  const h = 1 + ((seed * 3 + idx * 5) % 12);
+  const area = (b * h) / 2;
+  return {
+    questionText: `A triangle has a base of ${b} units and a height of ${h} units. What is its area?`,
+    correctAnswer: `${area} square units`,
+    options: uniqOptions(`${area} square units`, [`${b * h} square units`, `${area + b} square units`, `${area - h} square units`]),
+    visualContent: `<div style="font-size: 48px;">🔺📐</div>`,
+    hint: `Area = 1/2 x base x height = 1/2 x ${b} x ${h} = ${area}.`
+  };
+}
+
+function genAreaQuadrilateral(seed, idx) {
+  if (idx % 2 === 0) {
+    const b = 2 + ((seed + idx) % 12);
+    const h = 2 + ((seed * 3 + idx * 5) % 12);
+    const area = b * h;
+    return {
+      questionText: `A parallelogram has a base of ${b} units and a height of ${h} units. What is its area?`,
+      correctAnswer: `${area} square units`,
+      options: uniqOptions(`${area} square units`, [`${2 * (b + h)} square units`, `${area + b} square units`, `${area - h} square units`]),
+      visualContent: `<div style="font-size: 48px;">▱📐</div>`,
+      hint: `Area of a parallelogram = base x height = ${b} x ${h} = ${area}.`
+    };
+  } else {
+    const b1 = 2 * (1 + ((seed + idx) % 8));
+    const b2 = 2 * (1 + ((seed * 3 + idx) % 8));
+    const h = 1 + ((seed * 7 + idx * 11) % 10);
+    const area = ((b1 + b2) / 2) * h;
+    return {
+      questionText: `A trapezoid has parallel sides of ${b1} and ${b2} units and a height of ${h} units. What is its area?`,
+      correctAnswer: `${area} square units`,
+      options: uniqOptions(`${area} square units`, [`${(b1 + b2) * h} square units`, `${area + h} square units`, `${area - b1} square units`]),
+      visualContent: `<div style="font-size: 48px;">🔷📐</div>`,
+      hint: `Area of a trapezoid = ((b1+b2)/2) x height = ((${b1}+${b2})/2) x ${h} = ${area}.`
+    };
+  }
+}
+
+function genAreaComposite(seed, idx) {
+  const l1 = 2 + (seed % 8), w1 = 2 + (idx % 6);
+  const l2 = 2 + ((seed * 3) % 6), w2 = 2 + ((idx * 5) % 4);
+  const area1 = l1 * w1, area2 = l2 * w2;
+  const total = area1 + area2;
+  return {
+    questionText: `A composite figure is made of a ${l1}x${w1} rectangle and a ${l2}x${w2} rectangle joined together. What is the total area?`,
+    correctAnswer: `${total} square units`,
+    options: uniqOptions(`${total} square units`, [`${area1} square units`, `${area2} square units`, `${total + 2} square units`]),
+    visualContent: `<div style="font-size: 48px;">📐▭</div>`,
+    hint: `${l1}x${w1}=${area1} and ${l2}x${w2}=${area2}. ${area1}+${area2}=${total}.`
+  };
+}
+
+function genSurfaceAreaPrism(seed, idx) {
+  const l = 2 + ((seed + idx) % 9);
+  const w = 2 + ((seed * 3 + idx * 5) % 9);
+  const h = 2 + ((seed * 7 + idx * 11) % 9);
+  const sa = 2 * (l * w + l * h + w * h);
+  return {
+    questionText: `A rectangular prism has length ${l}, width ${w}, and height ${h}. What is its surface area?`,
+    correctAnswer: `${sa} square units`,
+    options: uniqOptions(`${sa} square units`, [`${l * w * h} square units`, `${sa + l} square units`, `${sa - w} square units`]),
+    visualContent: `<div style="font-size: 48px;">📦📐</div>`,
+    hint: `SA = 2(lw + lh + wh) = 2(${l * w} + ${l * h} + ${w * h}) = ${sa}.`
+  };
+}
+
+function genVolumeRectPrismFrac(seed, idx) {
+  const l = 2 + ((seed + idx) % 6);
+  const w = 2 + 2 * ((seed * 3 + idx * 5) % 3);
+  const hWhole = 2 + ((seed * 7 + idx * 11) % 6);
+  const volWhole = l * w * hWhole;
+  const volHalf = (l * w) / 2;
+  const correct = volWhole + volHalf;
+  return {
+    questionText: `A rectangular prism has length ${l}, width ${w}, and height ${hWhole}.5 units. What is its volume?`,
+    correctAnswer: `${correct} cubic units`,
+    options: uniqOptions(`${correct} cubic units`, [`${volWhole} cubic units`, `${correct + l} cubic units`, `${l * w} cubic units`]),
+    visualContent: `<div style="font-size: 48px;">📦</div>`,
+    hint: `Volume = l x w x h = ${l} x ${w} x ${hWhole}.5 = ${correct}.`
+  };
+}
+
+function genStatisticalQuestion(seed, idx) {
+  const bank = [
+    { correct: 'How many pets does each student in the class have?', distractors: ['How many pets does Sam have?', 'What is 5 + 3?', 'What is the capital of France?'] },
+    { correct: 'What are the heights of the players on the basketball team?', distractors: ['How tall is the tallest player?', 'What is 10 x 10?', 'What color is the gym floor?'] },
+    { correct: 'How long does it take each runner on the team to run a mile?', distractors: ['How long did the fastest runner take?', 'What day is the race?', 'How many laps are in a mile?'] },
+    { correct: 'What are the test scores of everyone in the class?', distractors: ['What was the highest test score?', 'What subject was the test on?', 'How many questions were on the test?'] }
+  ];
+  const item = bank[(seed + idx) % bank.length];
+  return {
+    questionText: `Which of these is a statistical question — one that expects variety in the answers?`,
+    correctAnswer: item.correct,
+    options: uniqOptions(item.correct, item.distractors),
+    visualContent: `<div style="font-size: 48px;">📊❓</div>`,
+    hint: `A statistical question anticipates variability — it's asked about a group, not just one specific answer.`
+  };
+}
+
+function genMeanMedianMode(seed, idx) {
+  const nums = [];
+  for (let i = 0; i < 5; i++) nums.push(2 + ((seed * (i + 3) + idx * (i + 2)) % 15));
+  const sorted = [...nums].sort((a, b) => a - b);
+  const sum = nums.reduce((a, b) => a + b, 0);
+  const mean = Math.round((sum / nums.length) * 100) / 100;
+  const median = sorted[2];
+  const which = idx % 2 === 0 ? 'mean' : 'median';
+  const correct = which === 'mean' ? mean : median;
+  const distractors = which === 'mean' ? [median, sorted[0], sorted[4]] : [mean, sorted[0], sorted[4]];
+  return {
+    questionText: `Find the ${which} of this data set: ${nums.join(', ')}.`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, distractors),
+    visualContent: `<div style="font-size: 48px;">📊</div>`,
+    hint: which === 'mean' ? `Add all values and divide by how many there are: ${sum} ÷ ${nums.length} = ${mean}.` : `Sort the values and pick the middle one: ${sorted.join(', ')} → median = ${median}.`
+  };
+}
+
+function genRangeVariability(seed, idx) {
+  const nums = [];
+  for (let i = 0; i < 5; i++) nums.push(2 + ((seed * (i + 3) + idx * (i + 2)) % 20));
+  const max = Math.max(...nums), min = Math.min(...nums);
+  const range = max - min;
+  return {
+    questionText: `Find the range of this data set: ${nums.join(', ')}.`,
+    correctAnswer: String(range),
+    options: uniqOptions(range, [max, min, range + 2]),
+    visualContent: `<div style="font-size: 48px;">📏📊</div>`,
+    hint: `Range = greatest value - least value = ${max} - ${min} = ${range}.`
+  };
+}
+
+function genDotPlotsHistograms(seed, idx) {
+  const v1 = 2 + (seed % 5), v2 = 2 + (idx % 5), v3 = 2 + ((seed + idx) % 5);
+  const c1 = 1 + ((seed * 3) % 4), c2 = 1 + ((idx * 5) % 4), c3 = 1 + ((seed * 7 + idx) % 4);
+  const total = c1 + c2 + c3;
+  return {
+    questionText: `A dot plot shows ${c1} dots above ${v1}, ${c2} dots above ${v2}, and ${c3} dots above ${v3}. How many total data points are there?`,
+    correctAnswer: String(total),
+    options: uniqOptions(total, [total + 1, total - 1, Math.max(c1, c2, c3)]),
+    visualContent: `<div style="font-size: 48px;">⚫📈</div>`,
+    hint: `${c1} + ${c2} + ${c3} = ${total}.`
+  };
+}
+
+function genGrade6Review(seed, idx) {
+  const gens = [genRatioWordProblem, genCompareIntegers, genSolveOneStepEquation, genAreaTriangle, genMeanMedianMode, genGCF];
+  return gens[idx % gens.length](seed, idx);
+}
+
+// ============================================================
+// GRADE 7 QUIZ GENERATORS
+// ============================================================
+
+function genUnitRateFractionsG7(seed, idx) {
+  const denomsTime = [2, 3, 4, 6];
+  const dTime = denomsTime[(seed + idx) % denomsTime.length];
+  const distNum = 1 + ((seed * 3 + idx * 5) % (dTime * 3));
+  const correct = distNum * dTime;
+  return {
+    questionText: `A cyclist rides ${distNum} miles in 1/${dTime} hour. What is the unit rate in miles per hour?`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [correct + dTime, correct - dTime, distNum]),
+    visualContent: `<div style="font-size: 48px;">🚴💨</div>`,
+    hint: `${distNum} ÷ (1/${dTime}) = ${distNum} x ${dTime} = ${correct} miles per hour.`
+  };
+}
+
+function genIdentifyProportional(seed, idx) {
+  const isProportional = idx % 2 === 0;
+  const k = 2 + ((seed + idx) % 8);
+  let xs, ys;
+  if (isProportional) {
+    xs = [1, 2, 3]; ys = xs.map(x => x * k);
+  } else {
+    const b = 1 + ((seed * 3) % 6);
+    xs = [1, 2, 3]; ys = xs.map(x => x * k + b);
+  }
+  const desc = xs.map((x, i) => `(${x}, ${ys[i]})`).join(', ');
+  return {
+    questionText: `Is the relationship shown by these points proportional? ${desc}`,
+    correctAnswer: isProportional ? 'Yes' : 'No',
+    options: ['Yes', 'No'],
+    visualContent: `<div style="font-size: 48px;">📈❓</div>`,
+    hint: isProportional ? `Every y/x ratio equals ${k}, and the pattern passes through (0,0), so it's proportional.` : `The y/x ratios are not constant and the relationship doesn't pass through the origin, so it's not proportional.`
+  };
+}
+
+function genConstantProportionality(seed, idx) {
+  const k = 2 + ((seed + idx) % 12);
+  const x = 1 + ((seed * 3 + idx * 5) % 9);
+  const y = k * x;
+  return {
+    questionText: `A table shows x = ${x} and y = ${y} for a proportional relationship. What is the constant of proportionality?`,
+    correctAnswer: String(k),
+    options: uniqOptions(k, [k + 1, k - 1, x]),
+    visualContent: `<div style="font-size: 48px;">🔢k</div>`,
+    hint: `k = y ÷ x = ${y} ÷ ${x} = ${k}.`
+  };
+}
+
+function genGraphProportional(seed, idx) {
+  const k = 2 + ((seed + idx) % 9);
+  const x = 1 + ((seed * 3 + idx * 5) % 8);
+  const y = k * x;
+  return {
+    questionText: `A line representing a proportional relationship passes through (0,0) and (${x}, ${y}). What is the slope (unit rate) of the line?`,
+    correctAnswer: String(k),
+    options: uniqOptions(k, [k + 1, k - 1, y]),
+    visualContent: `<div style="font-size: 48px;">📈📏</div>`,
+    hint: `Slope = rise/run = ${y}/${x} = ${k}.`
+  };
+}
+
+function genProportionWordProblem(seed, idx) {
+  const items = [{ n: 'pens', u: '$' }, { n: 'tickets', u: '$' }, { n: 'apples', u: '$' }];
+  const item = items[(seed + idx) % items.length];
+  const qty1 = 2 + ((seed + idx) % 8);
+  const price = 2 + ((seed * 3 + idx * 5) % 10);
+  const qty2 = qty1 * (2 + ((seed * 7) % 3));
+  const correct = (price / qty1) * qty2;
+  return {
+    questionText: `If ${qty1} ${item.n} cost ${item.u}${price}, how much do ${qty2} ${item.n} cost?`,
+    correctAnswer: `${item.u}${correct}`,
+    options: uniqOptions(`${item.u}${correct}`, [`${item.u}${correct + price}`, `${item.u}${correct - price}`, `${item.u}${price}`]),
+    visualContent: `<div style="font-size: 48px;">🛒⚖️</div>`,
+    hint: `Unit price: ${item.u}${price}÷${qty1}. Then multiply by ${qty2}: ${item.u}${correct}.`
+  };
+}
+
+function genAddSubIntegers(seed, idx) {
+  const a = -20 + ((seed * 3 + idx * 5) % 41);
+  const b = -20 + ((seed * 7 + idx * 11) % 41);
+  const isAdd = idx % 2 === 0;
+  const correct = isAdd ? a + b : a - b;
+  return {
+    questionText: `${a} ${isAdd ? '+' : '-'} (${b}) = ?`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [correct + 1, correct - 1, isAdd ? a - b : a + b]),
+    visualContent: `<div style="font-size: 48px;">➕➖</div>`,
+    hint: isAdd ? `${a} + (${b}) = ${correct}.` : `${a} - (${b}) = ${a} + (${-b}) = ${correct}.`
+  };
+}
+
+function genMulDivIntegers(seed, idx) {
+  if (idx % 2 === 0) {
+    const a = -12 + ((seed * 3 + idx * 5) % 25);
+    const b = -12 + ((seed * 7 + idx * 11) % 25);
+    const correct = a * b;
+    return {
+      questionText: `${a} x (${b}) = ?`,
+      correctAnswer: String(correct),
+      options: uniqOptions(correct, [-correct, correct + a, correct - b]),
+      visualContent: `<div style="font-size: 48px;">✖️➖</div>`,
+      hint: `Multiply the magnitudes, then apply the sign rule: ${a} x (${b}) = ${correct}.`
+    };
+  } else {
+    const divisor = 2 + ((seed + idx) % 10);
+    const quotientMag = 2 + ((seed * 3 + idx * 5) % 10);
+    const signDividend = ((seed + idx) % 2 === 0) ? 1 : -1;
+    const signDivisor = ((seed * 3 + idx) % 2 === 0) ? 1 : -1;
+    const dividend = signDividend * divisor * quotientMag;
+    const divisorSigned = signDivisor * divisor;
+    const correct = dividend / divisorSigned;
+    return {
+      questionText: `${dividend} ÷ (${divisorSigned}) = ?`,
+      correctAnswer: String(correct),
+      options: uniqOptions(correct, [-correct, correct + 1, correct - 1]),
+      visualContent: `<div style="font-size: 48px;">➗➖</div>`,
+      hint: `Divide the magnitudes, then apply the sign rule: ${dividend} ÷ (${divisorSigned}) = ${correct}.`
+    };
+  }
+}
+
+function genAddSubRational(seed, idx) {
+  if (idx % 2 === 0) {
+    const d = 2 + ((seed + idx) % 8);
+    const n1 = -(d - 1) + ((seed * 3) % (2 * d - 1));
+    const n2 = -(d - 1) + ((idx * 5) % (2 * d - 1));
+    const sumN = n1 + n2;
+    if (sumN === 0) {
+      return {
+        questionText: `${n1}/${d} + ${n2}/${d} = ?`,
+        correctAnswer: `0`,
+        options: uniqOptions('0', [`${n1}/${d}`, `1/${d}`, `-1/${d}`]),
+        visualContent: `<div style="font-size: 48px;">➕➖</div>`,
+        hint: `Same denominator: add numerators. ${n1} + (${n2}) = 0.`
+      };
+    }
+    const g = gcdMQ(Math.abs(sumN), d);
+    const simpN = sumN / g, simpD = d / g;
+    return {
+      questionText: `${n1}/${d} + ${n2}/${d} = ?`,
+      correctAnswer: `${simpN}/${simpD}`,
+      options: uniqOptions(`${simpN}/${simpD}`, [`${sumN}/${d}`, `${simpN + 1}/${simpD}`, `${simpN - 1}/${simpD}`]),
+      visualContent: `<div style="font-size: 48px;">➕➖</div>`,
+      hint: `Same denominator: add numerators. ${n1} + (${n2}) = ${sumN}, so the sum is ${sumN}/${d} = ${simpN}/${simpD}.`
+    };
+  } else {
+    const a = Math.round((-1000 + ((seed * 13 + idx * 7) % 2001))) / 100;
+    const b = Math.round((-1000 + ((seed * 7 + idx * 13) % 2001))) / 100;
+    const correct = Math.round((a - b) * 100) / 100;
+    return {
+      questionText: `${a} - (${b}) = ?`,
+      correctAnswer: String(correct),
+      options: uniqOptions(correct, [Math.round((correct + 1) * 100) / 100, Math.round((correct - 1) * 100) / 100, Math.round((a + b) * 100) / 100]),
+      visualContent: `<div style="font-size: 48px;">🔢.➖</div>`,
+      hint: `${a} - (${b}) = ${a} + (${-b}) = ${correct}.`
+    };
+  }
+}
+
+function genMulDivRational(seed, idx) {
+  if (idx % 2 === 0) {
+    const d1 = 2 + ((seed + idx) % 6);
+    const d2 = 2 + ((seed * 3 + idx * 5) % 6);
+    const n1sign = ((seed + idx) % 2 === 0) ? 1 : -1;
+    const n2sign = ((seed * 3 + idx) % 2 === 0) ? 1 : -1;
+    const n1 = n1sign * (1 + ((seed * 5) % (d1 - 1 || 1)));
+    const n2 = n2sign * (1 + ((idx * 7) % (d2 - 1 || 1)));
+    const rawN = n1 * n2, rawD = d1 * d2;
+    const g = gcdMQ(Math.abs(rawN), rawD);
+    const simpN = rawN / g, simpD = rawD / g;
+    return {
+      questionText: `${n1}/${d1} x ${n2}/${d2} = ?`,
+      correctAnswer: `${simpN}/${simpD}`,
+      options: uniqOptions(`${simpN}/${simpD}`, [`${rawN}/${rawD}`, `${simpN + 1}/${simpD}`, `${Math.abs(simpN)}/${simpD}`]),
+      visualContent: `<div style="font-size: 48px;">✖️➖</div>`,
+      hint: `Multiply numerators and denominators, then apply the sign rule: (${n1})x(${n2}) = ${rawN}, ${d1}x${d2}=${rawD}, simplify to ${simpN}/${simpD}.`
+    };
+  } else {
+    const magA = Math.round((10 + ((seed * 13 + idx * 7) % 990))) / 10;
+    const magB = Math.round((10 + ((seed * 7 + idx * 13) % 990))) / 10;
+    const signA = ((seed + idx) % 2 === 0) ? 1 : -1;
+    const signB = ((seed * 3 + idx) % 2 === 0) ? 1 : -1;
+    const a = signA * magA, b = signB * magB;
+    const correct = Math.round((a * b) * 100) / 100;
+    return {
+      questionText: `${a} x (${b}) = ?`,
+      correctAnswer: String(correct),
+      options: uniqOptions(correct, [-correct, Math.round((correct + 1) * 100) / 100, Math.round((correct - 1) * 100) / 100]),
+      visualContent: `<div style="font-size: 48px;">🔢.✖️</div>`,
+      hint: `Multiply the magnitudes, then apply the sign rule: ${a} x (${b}) = ${correct}.`
+    };
+  }
+}
+
+function genRationalWordProblem(seed, idx) {
+  if (idx % 2 === 0) {
+    const start = -20 + ((seed * 3 + idx * 5) % 41);
+    const change = 1 + ((seed * 7 + idx * 11) % 20);
+    const rises = (seed + idx) % 2 === 0;
+    const correct = rises ? start + change : start - change;
+    return {
+      questionText: `The temperature was ${start}°F and ${rises ? 'rose' : 'dropped'} ${change}°F. What is the new temperature?`,
+      correctAnswer: `${correct}°F`,
+      options: uniqOptions(`${correct}°F`, [`${correct + 2}°F`, `${correct - 2}°F`, `${start}°F`]),
+      visualContent: `<div style="font-size: 48px;">🌡️</div>`,
+      hint: rises ? `${start} + ${change} = ${correct}.` : `${start} - ${change} = ${correct}.`
+    };
+  } else {
+    const depth = -(5 + ((seed * 3 + idx * 5) % 50));
+    const factor = 2 + ((seed + idx) % 3);
+    const correct = depth * factor;
+    return {
+      questionText: `A submarine is at ${depth} feet and dives to ${factor} times that depth. What is its new depth?`,
+      correctAnswer: `${correct} feet`,
+      options: uniqOptions(`${correct} feet`, [`${-correct} feet`, `${correct + 10} feet`, `${depth} feet`]),
+      visualContent: `<div style="font-size: 48px;">🤿</div>`,
+      hint: `${depth} x ${factor} = ${correct}.`
+    };
+  }
+}
+
+function genSimplifyRationalCoeff(seed, idx) {
+  const useDecimal = idx % 2 === 1;
+  if (!useDecimal) {
+    const d = [2, 4, 6, 8][(seed + idx) % 4];
+    const n1 = 1 + ((seed * 3) % (d - 1));
+    const n2 = 1 + ((idx * 5) % (d - 1));
+    const c1 = 2 + ((seed * 7) % 10), c2 = 2 + ((idx * 11) % 10);
+    const nSum = n1 + n2, cSum = c1 + c2;
+    const g = gcdMQ(nSum, d);
+    const simpN = nSum / g, simpD = d / g;
+    const coeffStr = simpD === 1 ? `${simpN}` : `${simpN}/${simpD}`;
+    return {
+      questionText: `Simplify: ${n1}/${d}x + ${c1} + ${n2}/${d}x + ${c2}`,
+      correctAnswer: `${coeffStr}x + ${cSum}`,
+      options: uniqOptions(`${coeffStr}x + ${cSum}`, [`${coeffStr}x + ${cSum + 1}`, `${nSum}/${d}x + ${cSum}`, `${coeffStr}x + ${cSum - 1}`]),
+      visualContent: `<div style="font-size: 48px;">✏️x</div>`,
+      hint: `Combine the x-terms: ${n1}/${d}x + ${n2}/${d}x = ${nSum}/${d}x = ${coeffStr}x. Combine constants: ${c1} + ${c2} = ${cSum}.`
+    };
+  } else {
+    const c1 = Math.round((5 + ((seed * 13 + idx * 7) % 95))) / 10;
+    const c2 = Math.round((5 + ((seed * 7 + idx * 13) % 95))) / 10;
+    const b1 = 2 + ((seed + idx) % 8), b2 = 2 + ((seed * 3 + idx * 5) % 8);
+    const coeffSum = Math.round((c1 + c2) * 10) / 10;
+    const constSum = b1 + b2;
+    return {
+      questionText: `Simplify: ${c1}x + ${b1} + ${c2}x + ${b2}`,
+      correctAnswer: `${coeffSum}x + ${constSum}`,
+      options: uniqOptions(`${coeffSum}x + ${constSum}`, [`${coeffSum}x + ${constSum + 1}`, `${Math.round(c1 * c2 * 10) / 10}x + ${constSum}`, `${coeffSum}x + ${constSum - 1}`]),
+      visualContent: `<div style="font-size: 48px;">✏️x</div>`,
+      hint: `Combine the x-terms: ${c1}x + ${c2}x = ${coeffSum}x. Combine constants: ${b1} + ${b2} = ${constSum}.`
+    };
+  }
+}
+
+function genFactorExpression(seed, idx) {
+  const gcf = 2 + ((seed + idx) % 10);
+  const m1 = 2 + ((seed * 3 + idx * 5) % 8);
+  const m2 = 2 + ((seed * 7 + idx * 11) % 8);
+  const t1 = gcf * m1, t2 = gcf * m2;
+  const isSubtract = idx % 2 === 1;
+  const correct = `${gcf}(${m1}x ${isSubtract ? '-' : '+'} ${m2})`;
+  return {
+    questionText: `Factor completely: ${t1}x ${isSubtract ? '-' : '+'} ${t2}`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, [`${gcf}(${m1}x ${isSubtract ? '+' : '-'} ${m2})`, `${gcf + 1}(${m1}x ${isSubtract ? '-' : '+'} ${m2})`, `${gcf}(${m1 + 1}x ${isSubtract ? '-' : '+'} ${m2})`]),
+    visualContent: `<div style="font-size: 48px;">🔢()</div>`,
+    hint: `The GCF of ${t1} and ${t2} is ${gcf}. Divide each term by ${gcf}: ${t1}÷${gcf}=${m1}x and ${t2}÷${gcf}=${m2}.`
+  };
+}
+
+function genSolveMultiStepEquation(seed, idx) {
+  if (idx % 2 === 0) {
+    const a = 2 + ((seed + idx) % 9);
+    const x = 1 + ((seed * 3 + idx * 5) % 15);
+    const b = 1 + ((seed * 7 + idx * 11) % 20);
+    const c = a * x + b;
+    return {
+      questionText: `Solve for x: ${a}x + ${b} = ${c}`,
+      correctAnswer: String(x),
+      options: uniqOptions(x, [x + 1, x - 1, b]),
+      visualContent: `<div style="font-size: 48px;">🔢x</div>`,
+      hint: `Subtract ${b}: ${a}x = ${c - b}. Divide by ${a}: x = ${x}.`
+    };
+  } else {
+    const a = 2 + ((seed + idx) % 7);
+    const x = 1 + ((seed * 3 + idx * 5) % 12);
+    const b = 1 + ((seed * 7) % 8);
+    const inner = x - b;
+    const c = a * inner;
+    return {
+      questionText: `Solve for x: ${a}(x - ${b}) = ${c}`,
+      correctAnswer: String(x),
+      options: uniqOptions(x, [x + 1, x - 1, inner]),
+      visualContent: `<div style="font-size: 48px;">🔢x</div>`,
+      hint: `Distribute: ${a}x - ${a * b} = ${c}. Add ${a * b}: ${a}x = ${c + a * b}. Divide by ${a}: x = ${x}.`
+    };
+  }
+}
+
+function genEquationsBothSides(seed, idx) {
+  const x = 1 + ((seed + idx) % 15);
+  const rightCoeff = 2 + ((seed * 3 + idx * 5) % 5);
+  const leftCoeff = rightCoeff + 1 + ((idx * 7) % 5);
+  const rightConst = 1 + ((seed * 7 + idx * 11) % 20);
+  const leftConstCalc = rightConst - (leftCoeff - rightCoeff) * x;
+  const leftConstStr = leftConstCalc >= 0 ? `+ ${leftConstCalc}` : `- ${Math.abs(leftConstCalc)}`;
+  return {
+    questionText: `Solve for x: ${leftCoeff}x ${leftConstStr} = ${rightCoeff}x + ${rightConst}`,
+    correctAnswer: String(x),
+    options: uniqOptions(x, [x + 1, x - 1, leftCoeff - rightCoeff]),
+    visualContent: `<div style="font-size: 48px;">🔢x</div>`,
+    hint: `Subtract ${rightCoeff}x from both sides: ${leftCoeff - rightCoeff}x ${leftConstStr} = ${rightConst}. Solve for x: x = ${x}.`
+  };
+}
+
+function genTranslateWordProblem(seed, idx) {
+  const x = 1 + ((seed + idx) % 15);
+  if (idx % 2 === 0) {
+    const m = 2 + ((seed * 3 + idx * 5) % 6);
+    const b = 1 + ((seed * 7) % 15);
+    const result = m * x + b;
+    return {
+      questionText: `${b} more than ${m} times a number is ${result}. What is the number?`,
+      correctAnswer: String(x),
+      options: uniqOptions(x, [x + 1, x - 1, result]),
+      visualContent: `<div style="font-size: 48px;">📝🔢</div>`,
+      hint: `Translate: ${m}n + ${b} = ${result}. Subtract ${b}: ${m}n = ${result - b}. Divide by ${m}: n = ${x}.`
+    };
+  } else {
+    const b = 1 + ((seed * 3) % 10);
+    const d = 2 + ((idx * 5) % 6);
+    const result = 1 + ((seed * 7 + idx * 11) % 10);
+    const nMinusB = result * d;
+    const n = nMinusB + b;
+    return {
+      questionText: `${b} less than a number, divided by ${d}, is ${result}. What is the number?`,
+      correctAnswer: String(n),
+      options: uniqOptions(n, [n + 1, n - 1, nMinusB]),
+      visualContent: `<div style="font-size: 48px;">📝🔢</div>`,
+      hint: `Translate: (n - ${b})/${d} = ${result}. Multiply by ${d}: n - ${b} = ${nMinusB}. Add ${b}: n = ${n}.`
+    };
+  }
+}
+
+function genSolveInequality(seed, idx) {
+  const boundary = 1 + ((seed + idx) % 15);
+  const useNegativeCoeff = idx % 2 === 1;
+  const a = 2 + ((seed * 3 + idx * 5) % 6);
+  const b = 1 + ((seed * 7) % 15);
+  if (!useNegativeCoeff) {
+    const rhs = a * boundary + b;
+    return {
+      questionText: `Solve: ${a}x + ${b} < ${rhs}`,
+      correctAnswer: `x < ${boundary}`,
+      options: uniqOptions(`x < ${boundary}`, [`x > ${boundary}`, `x < ${boundary + 1}`, `x < ${boundary - 1}`]),
+      visualContent: `<div style="font-size: 48px;">📏≥≤</div>`,
+      hint: `Subtract ${b}: ${a}x < ${rhs - b}. Divide by ${a}: x < ${boundary}.`
+    };
+  } else {
+    const rhs = -a * boundary + b;
+    return {
+      questionText: `Solve: -${a}x + ${b} < ${rhs}`,
+      correctAnswer: `x > ${boundary}`,
+      options: uniqOptions(`x > ${boundary}`, [`x < ${boundary}`, `x > ${boundary + 1}`, `x > ${boundary - 1}`]),
+      visualContent: `<div style="font-size: 48px;">📏≥≤</div>`,
+      hint: `Subtract ${b}: -${a}x < ${rhs - b}. Divide by -${a} and flip the sign: x > ${boundary}.`
+    };
+  }
+}
+
+function genGraphInequality(seed, idx) {
+  const n = -8 + ((seed * 3 + idx * 5) % 17);
+  const types = [
+    { sym: '>', circle: 'open', dir: 'right' },
+    { sym: '<', circle: 'open', dir: 'left' },
+    { sym: '≥', circle: 'closed', dir: 'right' },
+    { sym: '≤', circle: 'closed', dir: 'left' }
+  ];
+  const t = types[idx % 4];
+  const correct = `${t.circle} circle at ${n}, shaded to the ${t.dir}`;
+  const others = types.filter(o => o !== t).map(o => `${o.circle} circle at ${n}, shaded to the ${o.dir}`);
+  return {
+    questionText: `How would you graph x ${t.sym} ${n} on a number line?`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, others),
+    visualContent: `<div style="font-size: 48px;">📏⚪⚫</div>`,
+    hint: `${(t.sym === '>' || t.sym === '<') ? 'Strict inequalities use an open circle.' : 'Inequalities with "or equal to" use a closed circle.'} ${(t.sym === '>' || t.sym === '≥') ? 'Greater than shades to the right.' : 'Less than shades to the left.'}`
+  };
+}
+
+function genPercentIncreaseDecrease(seed, idx) {
+  const base = 10 * (2 + ((seed + idx) % 20));
+  const pct = 5 * (1 + ((seed * 3 + idx * 5) % 12));
+  const isIncrease = idx % 2 === 0;
+  const change = (base * pct) / 100;
+  const correct = isIncrease ? base + change : base - change;
+  return {
+    questionText: `A $${base} item ${isIncrease ? 'increases' : 'decreases'} in price by ${pct}%. What is the new price?`,
+    correctAnswer: `$${correct}`,
+    options: uniqOptions(`$${correct}`, [`$${change}`, `$${correct + 5}`, `$${correct - 5}`]),
+    visualContent: `<div style="font-size: 48px;">💲${isIncrease ? '📈' : '📉'}</div>`,
+    hint: `${pct}% of ${base} is ${change}. ${isIncrease ? 'Add' : 'Subtract'}: ${base} ${isIncrease ? '+' : '-'} ${change} = ${correct}.`
+  };
+}
+
+function genSimpleInterest(seed, idx) {
+  const p = 100 * (2 + ((seed + idx) % 20));
+  const r = 1 + ((seed * 3 + idx * 5) % 9);
+  const t = 1 + ((seed * 7 + idx * 11) % 5);
+  const interest = (p * r * t) / 100;
+  const askTotal = idx % 2 === 1;
+  const correct = askTotal ? p + interest : interest;
+  return {
+    questionText: `Find the ${askTotal ? 'total amount (principal + interest)' : 'simple interest'} on $${p} at ${r}% annual interest for ${t} year(s). (I = prt)`,
+    correctAnswer: `$${correct}`,
+    options: uniqOptions(`$${correct}`, [`$${interest}`, `$${correct + p * 0.1}`, `$${correct - 10}`]),
+    visualContent: `<div style="font-size: 48px;">💰📈</div>`,
+    hint: `I = p x r x t = ${p} x ${r / 100} x ${t} = $${interest}.${askTotal ? ` Total = ${p} + ${interest} = $${correct}.` : ''}`
+  };
+}
+
+function genPercentWordProblem(seed, idx) {
+  const base = 5 * (2 + ((seed + idx) % 20));
+  const pct = 5 * (1 + ((seed * 3 + idx * 5) % 10));
+  const isTip = idx % 2 === 0;
+  const change = (base * pct) / 100;
+  const correct = isTip ? base + change : base - change;
+  return {
+    questionText: isTip ? `A $${base} meal has a ${pct}% tip. What is the total cost?` : `A $${base} jacket is ${pct}% off. What is the sale price?`,
+    correctAnswer: `$${correct}`,
+    options: uniqOptions(`$${correct}`, [`$${change}`, `$${correct + 5}`, `$${correct - 5}`]),
+    visualContent: `<div style="font-size: 48px;">💲🧾</div>`,
+    hint: `${pct}% of ${base} is ${change}. ${isTip ? 'Add' : 'Subtract'}: ${base} ${isTip ? '+' : '-'} ${change} = $${correct}.`
+  };
+}
+
+function genScaleDrawing(seed, idx) {
+  const scaleUnit2 = 2 + ((seed + idx) % 20);
+  const drawingLen = 2 + ((seed * 3 + idx * 5) % 15);
+  const correct = drawingLen * scaleUnit2;
+  return {
+    questionText: `A scale drawing uses a scale of 1 cm : ${scaleUnit2} m. If a wall measures ${drawingLen} cm on the drawing, what is its actual length?`,
+    correctAnswer: `${correct} m`,
+    options: uniqOptions(`${correct} m`, [`${drawingLen} m`, `${correct + scaleUnit2} m`, `${correct - scaleUnit2} m`]),
+    visualContent: `<div style="font-size: 48px;">📐🗺️</div>`,
+    hint: `${drawingLen} x ${scaleUnit2} = ${correct} m.`
+  };
+}
+
+function genCircleCircumferenceArea(seed, idx) {
+  const PI_APPROX = 3.14;
+  const r = 2 + ((seed + idx) % 13);
+  const askArea = idx % 2 === 1;
+  const circumference = Math.round(2 * PI_APPROX * r * 100) / 100;
+  const area = Math.round(PI_APPROX * r * r * 100) / 100;
+  const correct = askArea ? area : circumference;
+  return {
+    questionText: `A circle has a radius of ${r} units. What is its ${askArea ? 'area' : 'circumference'}? (Use π ≈ 3.14, round to 2 decimals)`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [askArea ? circumference : area, Math.round((correct + 1) * 100) / 100, Math.round((correct - 1) * 100) / 100]),
+    visualContent: `<div style="font-size: 48px;">⭕📏</div>`,
+    hint: askArea ? `Area = πr² ≈ 3.14 x ${r}² = ${correct}.` : `Circumference = 2πr ≈ 2 x 3.14 x ${r} = ${correct}.`
+  };
+}
+
+function genAngleRelationships(seed, idx) {
+  const isComplementary = idx % 2 === 0;
+  const total = isComplementary ? 90 : 180;
+  const a = 5 * (1 + ((seed + idx) % (total / 5 - 2)));
+  const correct = total - a;
+  return {
+    questionText: `Two angles are ${isComplementary ? 'complementary' : 'supplementary'}. One angle measures ${a}°. What is the measure of the other angle?`,
+    correctAnswer: `${correct}°`,
+    options: uniqOptions(`${correct}°`, [`${correct + 10}°`, `${correct - 10}°`, `${a}°`]),
+    visualContent: `<div style="font-size: 48px;">📐</div>`,
+    hint: `${isComplementary ? 'Complementary' : 'Supplementary'} angles sum to ${total}°: ${total} - ${a} = ${correct}.`
+  };
+}
+
+function genCrossSections(seed, idx) {
+  const bank = [
+    { q: 'A rectangular prism is sliced parallel to its base. What is the shape of the cross-section?', correct: 'Rectangle', options: ['Rectangle', 'Triangle', 'Circle', 'Pentagon'] },
+    { q: 'A cone is sliced parallel to its circular base. What is the shape of the cross-section?', correct: 'Circle', options: ['Circle', 'Triangle', 'Square', 'Rectangle'] },
+    { q: 'A cone is sliced straight down through its apex. What is the shape of the cross-section?', correct: 'Triangle', options: ['Triangle', 'Circle', 'Square', 'Rectangle'] },
+    { q: 'A cylinder is sliced parallel to its circular base. What is the shape of the cross-section?', correct: 'Circle', options: ['Circle', 'Rectangle', 'Triangle', 'Square'] },
+    { q: 'A cube is sliced parallel to one of its faces. What is the shape of the cross-section?', correct: 'Square', options: ['Square', 'Triangle', 'Circle', 'Pentagon'] },
+    { q: 'A square pyramid is sliced parallel to its base. What is the shape of the cross-section?', correct: 'Square', options: ['Square', 'Triangle', 'Circle', 'Rectangle'] }
+  ];
+  const item = bank[(seed + idx) % bank.length];
+  return { questionText: item.q, correctAnswer: item.correct, options: item.options, visualContent: `<div style="font-size: 48px;">🔪📦</div>`, hint: `Picture the flat shape exposed by the slice.` };
+}
+
+function genSurfaceVolumeSolids(seed, idx) {
+  const askVolume = idx % 2 === 0;
+  const l = 2 + ((seed + idx) % 8);
+  const w = 2 + ((seed * 3 + idx * 5) % 8);
+  const h = 2 + ((seed * 7 + idx * 11) % 8);
+  const vol = l * w * h;
+  const sa = 2 * (l * w + l * h + w * h);
+  const correct = askVolume ? vol : sa;
+  const unitLabel = askVolume ? 'cubic' : 'square';
+  return {
+    questionText: `A rectangular prism has length ${l}, width ${w}, and height ${h}. What is its ${askVolume ? 'volume' : 'surface area'}?`,
+    correctAnswer: `${correct} ${unitLabel} units`,
+    options: uniqOptions(`${correct} ${unitLabel} units`, [`${askVolume ? sa : vol} ${unitLabel} units`, `${correct + l} ${unitLabel} units`, `${l * w} ${unitLabel} units`]),
+    visualContent: `<div style="font-size: 48px;">📦</div>`,
+    hint: askVolume ? `Volume = l x w x h = ${l} x ${w} x ${h} = ${vol}.` : `Surface area = 2(lw+lh+wh) = 2(${l * w}+${l * h}+${w * h}) = ${sa}.`
+  };
+}
+
+function genProbabilitySimple(seed, idx) {
+  const fav = 1 + ((seed + idx) % 8);
+  const extra = 1 + ((seed * 3 + idx * 5) % 8);
+  const total = fav + extra;
+  const g = gcdMQ(fav, total);
+  const simpFav = fav / g, simpTotal = total / g;
+  const correct = `${simpFav}/${simpTotal}`;
+  return {
+    questionText: `A bag has ${fav} red marbles and ${extra} blue marbles. What is the probability of picking a red marble, in simplest form?`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, [`${fav}/${total}`, `${extra}/${total}`, `${simpFav + 1}/${simpTotal}`]),
+    visualContent: `<div style="font-size: 48px;">🔴🔵🎲</div>`,
+    hint: `P(red) = ${fav}/${total}, which simplifies to ${correct}.`
+  };
+}
+
+function genExperimentalTheoretical(seed, idx) {
+  const sections = 2 + ((seed + idx) % 5);
+  const askTheoretical = idx % 2 === 0;
+  const trials = 10 * (2 + ((seed * 3 + idx * 5) % 8));
+  const observed = 1 + ((seed * 7 + idx * 11) % (trials - 1));
+  const theoreticalStr = `1/${sections}`;
+  const g2 = gcdMQ(observed, trials);
+  const experimentalStr = `${observed / g2}/${trials / g2}`;
+  const correct = askTheoretical ? theoreticalStr : experimentalStr;
+  return {
+    questionText: askTheoretical
+      ? `A spinner has ${sections} equal sections. What is the theoretical probability of landing on any one specific section?`
+      : `A spinner with ${sections} equal sections was spun ${trials} times and landed on section 1 exactly ${observed} times. What is the experimental probability of landing on section 1?`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, [theoreticalStr, experimentalStr, `${observed}/${trials}`]),
+    visualContent: `<div style="font-size: 48px;">🎡</div>`,
+    hint: askTheoretical ? `Theoretical probability = 1 ÷ number of equal sections = 1/${sections}.` : `Experimental probability = times it happened ÷ total trials = ${observed}/${trials} = ${correct}.`
+  };
+}
+
+function genCompoundEvents(seed, idx) {
+  const sides = 2 + ((seed + idx) % 5);
+  const dieFavorable = 1 + ((seed * 3 + idx * 5) % 6);
+  const total = sides * 6;
+  const correct = `1/${total}`;
+  return {
+    questionText: `You spin a spinner with ${sides} equal sections and roll a standard 6-sided die. What is the probability of landing on section 1 AND rolling a ${dieFavorable}?`,
+    correctAnswer: correct,
+    options: uniqOptions(correct, [`1/${sides + 6}`, `2/${total}`, `1/${sides}`]),
+    visualContent: `<div style="font-size: 48px;">🎡🎲</div>`,
+    hint: `P(section 1) = 1/${sides}, P(${dieFavorable}) = 1/6. Multiply: 1/${sides} x 1/6 = 1/${total}.`
+  };
+}
+
+function genSamplingPopulations(seed, idx) {
+  const sampleSize = 10 * (2 + ((seed + idx) % 8));
+  const population = sampleSize * (5 + ((seed * 3 + idx * 5) % 15));
+  const sampleFav = 1 + ((seed * 7 + idx * 11) % (sampleSize - 1));
+  const proportion = sampleFav / sampleSize;
+  const correct = Math.round(proportion * population);
+  return {
+    questionText: `A random sample of ${sampleSize} students from a school of ${population} shows that ${sampleFav} prefer science class. Based on this sample, about how many students in the whole school prefer science class?`,
+    correctAnswer: String(correct),
+    options: uniqOptions(correct, [correct + sampleSize, Math.max(0, correct - sampleSize), sampleFav]),
+    visualContent: `<div style="font-size: 48px;">📋👥</div>`,
+    hint: `Sample proportion: ${sampleFav}/${sampleSize}. Apply to population: ${sampleFav}/${sampleSize} x ${population} = ${correct}.`
+  };
+}
+
+function genGrade7Review(seed, idx) {
+  const gens = [genProportionWordProblem, genAddSubRational, genSolveMultiStepEquation, genPercentWordProblem, genCircleCircumferenceArea, genProbabilitySimple];
+  return gens[idx % gens.length](seed, idx);
+}
+
+// ============================================================
 // DISPATCH TABLE — exact lesson title -> generator call
 // ============================================================
 
@@ -1525,7 +2607,71 @@ const MATH_QUIZ_TOPICS = {
   "PEMDAS & Decimals Review": (seed, idx) => genExpressionParens(seed, idx, { withDecimals: true }),
   "Fractions Mastery": (seed, idx) => genFractionsAdd(seed, idx, { like: true }),
   "Volume Review": (seed, idx) => genVolume(seed, idx),
-  "Coordinate Graphing Review": (seed, idx) => genCoordinateSystem(seed, idx)
+  "Coordinate Graphing Review": (seed, idx) => genCoordinateSystem(seed, idx),
+
+  // ---------- Grade 6 ----------
+  "Intro to Ratios": (seed, idx) => genRatioWrite(seed, idx),
+  "Equivalent Ratios": (seed, idx) => genEquivalentRatio(seed, idx),
+  "Rate and Unit Rate": (seed, idx) => genUnitRateG6(seed, idx),
+  "Percent as a Ratio": (seed, idx) => genPercentAsRatio(seed, idx),
+  "Ratio Word Problems": (seed, idx) => genRatioWordProblem(seed, idx),
+  "Dividing Fractions by Fractions": (seed, idx) => genDivideFractionsByFractions(seed, idx),
+  "Fraction Division Word Problems": (seed, idx) => genFractionDivisionWordProblem(seed, idx),
+  "Greatest Common Factor": (seed, idx) => genGCF(seed, idx),
+  "Least Common Multiple": (seed, idx) => genLCM(seed, idx),
+  "Fraction and Decimal Conversion": (seed, idx) => genFractionDecimalConversion(seed, idx),
+  "Intro to Negative Numbers": (seed, idx) => genIntroNegativeNumbers(seed, idx),
+  "Integers on the Number Line": (seed, idx) => genIntegersNumberLine(seed, idx),
+  "Absolute Value": (seed, idx) => genAbsoluteValue(seed, idx),
+  "Comparing and Ordering Integers": (seed, idx) => genCompareIntegers(seed, idx),
+  "The Coordinate Plane and Four Quadrants": (seed, idx) => genCoordinateQuadrants(seed, idx),
+  "Writing Algebraic Expressions": (seed, idx) => genWriteAlgebraicExpression(seed, idx),
+  "Evaluating Algebraic Expressions": (seed, idx) => genEvaluateAlgebraicExpression(seed, idx),
+  "Solving One-Step Equations": (seed, idx) => genSolveOneStepEquation(seed, idx),
+  "Independent and Dependent Variables": (seed, idx) => genIndependentDependentVariable(seed, idx),
+  "Inequalities on a Number Line": (seed, idx) => genInequalityNumberLine(seed, idx),
+  "Area of Triangles": (seed, idx) => genAreaTriangle(seed, idx),
+  "Area of Quadrilaterals": (seed, idx) => genAreaQuadrilateral(seed, idx),
+  "Area of Composite Polygons": (seed, idx) => genAreaComposite(seed, idx),
+  "Surface Area of Prisms": (seed, idx) => genSurfaceAreaPrism(seed, idx),
+  "Volume of Rectangular Prisms": (seed, idx) => genVolumeRectPrismFrac(seed, idx),
+  "Statistical Questions": (seed, idx) => genStatisticalQuestion(seed, idx),
+  "Mean, Median, and Mode": (seed, idx) => genMeanMedianMode(seed, idx),
+  "Range and Variability": (seed, idx) => genRangeVariability(seed, idx),
+  "Dot Plots and Histograms": (seed, idx) => genDotPlotsHistograms(seed, idx),
+  "Grade 6 Math Review": (seed, idx) => genGrade6Review(seed, idx),
+
+  // ---------- Grade 7 ----------
+  "Unit Rates with Fractions": (seed, idx) => genUnitRateFractionsG7(seed, idx),
+  "Identifying Proportional Relationships": (seed, idx) => genIdentifyProportional(seed, idx),
+  "Constant of Proportionality": (seed, idx) => genConstantProportionality(seed, idx),
+  "Graphing Proportional Relationships": (seed, idx) => genGraphProportional(seed, idx),
+  "Proportion Word Problems": (seed, idx) => genProportionWordProblem(seed, idx),
+  "Adding and Subtracting Integers": (seed, idx) => genAddSubIntegers(seed, idx),
+  "Multiplying and Dividing Integers": (seed, idx) => genMulDivIntegers(seed, idx),
+  "Adding and Subtracting Rational Numbers": (seed, idx) => genAddSubRational(seed, idx),
+  "Multiplying and Dividing Rational Numbers": (seed, idx) => genMulDivRational(seed, idx),
+  "Rational Number Word Problems": (seed, idx) => genRationalWordProblem(seed, idx),
+  "Simplifying Expressions with Rational Coefficients": (seed, idx) => genSimplifyRationalCoeff(seed, idx),
+  "Factoring Expressions": (seed, idx) => genFactorExpression(seed, idx),
+  "Solving Multi-Step Equations": (seed, idx) => genSolveMultiStepEquation(seed, idx),
+  "Equations with Variables on Both Sides": (seed, idx) => genEquationsBothSides(seed, idx),
+  "Translating Word Problems into Equations": (seed, idx) => genTranslateWordProblem(seed, idx),
+  "Solving Inequalities": (seed, idx) => genSolveInequality(seed, idx),
+  "Graphing Inequality Solutions": (seed, idx) => genGraphInequality(seed, idx),
+  "Percent Increase and Decrease": (seed, idx) => genPercentIncreaseDecrease(seed, idx),
+  "Simple Interest": (seed, idx) => genSimpleInterest(seed, idx),
+  "Percent Word Problems": (seed, idx) => genPercentWordProblem(seed, idx),
+  "Scale Drawings": (seed, idx) => genScaleDrawing(seed, idx),
+  "Circumference and Area of Circles": (seed, idx) => genCircleCircumferenceArea(seed, idx),
+  "Angle Relationships": (seed, idx) => genAngleRelationships(seed, idx),
+  "Cross-Sections of 3D Figures": (seed, idx) => genCrossSections(seed, idx),
+  "Surface Area and Volume of Solids": (seed, idx) => genSurfaceVolumeSolids(seed, idx),
+  "Probability of Simple Events": (seed, idx) => genProbabilitySimple(seed, idx),
+  "Experimental vs Theoretical Probability": (seed, idx) => genExperimentalTheoretical(seed, idx),
+  "Compound Events": (seed, idx) => genCompoundEvents(seed, idx),
+  "Sampling and Populations": (seed, idx) => genSamplingPopulations(seed, idx),
+  "Grade 7 Math Review": (seed, idx) => genGrade7Review(seed, idx)
 };
 
 if (typeof module !== 'undefined') module.exports = { MATH_QUIZ_TOPICS };
